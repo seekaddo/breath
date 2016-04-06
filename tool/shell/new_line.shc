@@ -1,0 +1,32 @@
+#  ===========================================================================
+#                       Copyright (c) 2008 Gennaro Prota
+#
+#                 Licensed under the BSD 3-Clause License.
+#            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+#              <https://opensource.org/licenses/BSD-3-Clause>)
+#  ___________________________________________________________________________
+
+
+#       new_line():
+#       -----------
+#
+#       Outputs max( $1, 0 ) newlines
+# ----------------------------------------------------------------------------
+new_line()
+{
+    count="$1" awk '
+        BEGIN {
+            for ( i = 1 ; i <= ENVIRON[ "count" ] ; ++ i ) {
+                printf "\n"
+            }
+            exit
+        }
+    '
+}
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# sh-indentation: 4
+# End:
+# vim: set ft=sh et sts=4 sw=4:

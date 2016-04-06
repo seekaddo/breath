@@ -1,0 +1,64 @@
+// =========================================================================
+//                    Copyright 2006-2015 Gennaro Prota
+//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
+
+#ifndef BREATH_GUARD_DJJ43p6UR3Ib7dPq3Qi3OoGCOlpQ0iRV
+#define BREATH_GUARD_DJJ43p6UR3Ib7dPq3Qi3OoGCOlpQ0iRV
+
+
+/*
+        Thin wrapper around the getenv() standard function
+
+        Overcomes three usability issues of getenv():
+
+        - const unsafety: getenv() returns a pointer to (non const) char
+          (which the program shall not modify)
+
+        - subsequent calls to getenv() may overwrite the pointed to string
+
+        - if the searched to string is not found getenv() returns a null
+          pointer; that can easily lead to undefined behavior, typically by
+          passing that value to one of the constructors of \c std::string which
+          take a const char *.
+*/
+
+#include "breath/idiom/string_argument.hpp"
+
+namespace breath {
+
+template< typename T > class
+                    maybe ;
+
+//      find_environment_string:
+//      ------------------------
+//
+//!     Searches an implementation-defined list, as if by
+//!     calling std::getenv(), for a string that matches
+//!     name.
+//!
+//!     We emphasize that the 'as if' above is part of this
+//!     function's contract; thus it is subject to the same
+//!     limitations as getenv() for what concerns e.g. calling
+//!     it before main() is entered and others.
+//!
+//! Warning:
+//!     The behavior on passing an empty string for the name
+//!     parameter is implementation-defined: please check the
+//!     documentation provided with your C++ implementation.
+// -----------------------------------------------------------------------
+maybe< std::string >
+                    find_environment_string( string_argument const & name );
+
+}
+
+#endif
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:

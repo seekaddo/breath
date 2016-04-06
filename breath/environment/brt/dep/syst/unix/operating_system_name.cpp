@@ -1,0 +1,54 @@
+// =========================================================================
+//                    Copyright 2007-2015 Gennaro Prota
+//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
+
+#include "breath/diagnostics/assert.hpp"
+#include "breath/diagnostics/exception.hpp"
+
+#include <cerrno>
+#include <ostream>
+#include <string.h> // for strerror(), strncpy
+#include <sys/utsname.h>
+
+namespace breath {
+
+operating_system_name_error::operating_system_name_error( std::string const & s ) throw()
+{
+    strncpy( m_what_str, s.c_str(), what_string_max_size ) ;
+}
+
+char const *
+operating_system_name_error::exception::what() const throw()
+{
+    return m_what_str ;
+}
+
+
+std::ostream &
+operator <<( std::ostream & dest, operating_system_name const &)
+{
+    uts_name            un  ;
+    int const           ret = uname( un ) ;
+
+    if ( ret == -1 ) {
+        throw breath::operating_system_name_error( strerror(errno) ) ;
+    }
+
+    dest << un.sysname
+                + un.nodename
+                + un.release
+                + un.version
+                + un.machine ;
+}
+
+}
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:

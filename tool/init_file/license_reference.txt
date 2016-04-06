@@ -1,0 +1,15 @@
+#       Note that the name of the license file is explicitly
+#       mentioned, and unambiguous. This is IMHO very useful if Breath
+#       is distributed together with software having a different
+#       license.
+# ----------------------------------------------------------------------------
+Licensed under the BSD 3-Clause License.
+(See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+<https://opensource.org/licenses/BSD-3-Clause>)
+
+# Local Variables:
+# mode: text
+# indent-tabs-mode: nil
+# End:
+# vim: set ft=txt et sts=4 sw=4:
+

@@ -1,0 +1,26 @@
+This file has had a "tormentata" development history :-)
+
+I had tried using the C++ iostreams but could not find a guaranteed way to turn
+off library buffering.
+
+So I tried both POSIX functions and C library. The amount of work for the last
+two is more or less the same, and I decided for the C library because it allowed
+turning off buffering (although, with no guarantee of actually managing to do so)
+while still leaving open the possibility...
+
+However, the C library fread() will simply block if /dev/random cannot provide [cosa? TUTTI i byte, o "nessun byte"?].
+Whereas POSIX allows specifying a "non-blocking" mode.
+
+Hence, after several "ondeggiamenti" I went for the POSIX implementation.
+
+
+NOTA: la migliore base che ho trovato per ora per i commenti è in:
+
+  Z:\dev\breeze\trunk\breeze\environment\dep\syst\unix\
+
+
+
+
+
+-- 
+Genny

@@ -1,0 +1,89 @@
+//////////////////////////////////////////////////////////////////////////////
+//                     Copyright 2006-2008 Gennaro Prota
+//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+//  _________________________________________________________________________
+
+#ifndef BREEZE_SECURE_FILL_GPROTA_2007JAN25_HPP
+#define BREEZE_SECURE_FILL_GPROTA_2007JAN25_HPP
+
+/*! \file   secure_fill.hpp
+    \brief
+        A security-aware fill algorithm
+
+        This is completely analogous to the \c std::fill algorithm, except
+        that, due to the \c volatile qualification, it guarantees that the
+        sequence is written to, even if it is never touched after the
+        secure_fill() call (in other words: it ensures that the compiler
+        will not optimize the function out); useful to zeroize passwords
+        and other sensitive data.
+
+        Note that a convenience overload for built-in arrays is provided.
+
+        Many thanks go to David R Tribble and Douglas A. Gwyn who clarified
+        my doubts in the comp.std.c; see the thread starting with
+
+          message-id: <38i6r2d5uksv7eovk0os7506k9bbshgl2j@4ax.com>
+*/
+
+#include "breath/idiom/volatilize.hpp"
+#include <cstddef>
+
+namespace breeze {
+
+
+// Note how this is intentionally implemented with a hand-coded loop. It's
+// not crystal clear whether we could use std::fill or std::fill_n (which
+// would bring the advantage of debugging mode and everything the underlying
+// standard library implementation might provide). On a relaxed reading of
+// the standard, it seems that, for instance
+//
+//      std::fill( arr, arr + n, value );
+//
+// should work as expected, since we pass regular pointers as iterators and
+// std::iterator_traits< T * >::value is required to be T, which in our case
+// is volatile qualified. It all depends, however, on how the expression
+// "assigns 'value' through all the iterators in the range [first ,last )",
+// in [alg.fill], is to be interpreted. Does it allow anything different
+// from the obvious *first = value, *first++ = value and similar?
+//
+template< typename T, std::size_t n >
+void
+secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
+{
+    for ( std::size_t i( 0 ) ; i < n ; ++ i ) {
+        arr[ i ] = value ;
+    }
+}
+
+// FUTURE [gps]:
+// As a result of core issue 226, C++09 is likely to allow
+// default template arguments for function templates; so
+// one day we can change this to
+//
+//    template< typename ForwardIterator, typename T
+//               = std::iterator_traits< ForwardIterator >::value_type
+//    >
+//    void secure_fill( ForwardIterator begin, ForwardIterator end,
+//                      T const & value = T() )
+template< typename ForwardIterator, typename T >
+void
+secure_fill( ForwardIterator begin, ForwardIterator end, T const & value )
+{
+    for ( ; begin != end ; ++ begin ) {
+        breeze::volatilize( *begin ) = value ;
+    }
+}
+
+}
+
+#endif // include guard
+
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:

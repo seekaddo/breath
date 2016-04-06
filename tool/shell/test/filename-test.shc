@@ -1,0 +1,46 @@
+#  ===========================================================================
+#                         Copyright 2008 Gennaro Prota
+#
+#                 Licensed under the BSD 3-Clause License.
+#            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+#              <https://opensource.org/licenses/BSD-3-Clause>)
+#  ___________________________________________________________________________
+
+.   "$BREEZE_ROOT/tool/shell/file_name.shc"
+
+
+# Test cases:
+#   $1                  result
+#   --                  ------
+#   name
+#   name.ext            ext
+#   name.ext1.ext2      ext2
+#   .dotfile
+#   a/b/c/file.txt      txt
+#   ./a/file.txt        txt
+
+{
+get_extension name
+get_extension name.ext
+get_extension name.ext1.ext2
+get_extension .dotfile
+get_extension a/b/c/file.txt
+get_extension ./a/file.txt
+}       >   output
+
+echo '
+
+ext
+ext2
+
+txt
+txt
+'       >   expected_output
+
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# sh-indentation: 4
+# End:
+# vim: set ft=sh et sts=4 sw=4:

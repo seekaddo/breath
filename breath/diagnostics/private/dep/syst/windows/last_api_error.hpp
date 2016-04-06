@@ -1,0 +1,53 @@
+// =========================================================================
+//                       Copyright 2015 Gennaro Prota
+//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
+
+#include "breath/diagnostics/exception.hpp"
+#include <iosfwd>
+
+namespace breath {
+
+// Represents the last error encountered in an API call. It corresponds
+// to GetLastError() in Windows and errno under Unix.
+//
+// The idea is that after an unsuccessful API call you write:
+//
+//   throw last_api_error( "<MyAPI> failed" ) ;
+//
+// and you're done with error handling.
+//
+// The class is OutputStreamable, so you can also use breath::as_string,
+// which gives more information than the member what(), but may
+// throw.
+// =====================================================================
+class last_api_error
+    :   public exception
+{
+public:
+    explicit            last_api_error( char const * ) throw() ;
+                        last_api_error( last_api_error const & other ) throw() ;
+                        ~last_api_error() throw() ;
+    unsigned long       code() const throw() ;
+    char const *        what() const throw() ;
+
+private:
+    void                operator=( last_api_error const & ) ; // not defined
+
+    friend std::ostream &
+                        operator<<( std::ostream &, last_api_error const & ) ;
+
+    unsigned long       m_last_error ;
+    char                m_message[ 64 * 1024 - 1 ] ;
+} ;
+
+}
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:

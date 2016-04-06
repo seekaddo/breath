@@ -1,0 +1,44 @@
+#  ===========================================================================
+#                    Copyright (c) 2006-2008 Gennaro Prota
+#
+#                 Licensed under the BSD 3-Clause License.
+#            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+#              <https://opensource.org/licenses/BSD-3-Clause>)
+#  ___________________________________________________________________________
+
+
+#       script_name():
+#       --------------
+#       
+#       Returns (outputs to standard output) the non-directory portion
+#       of the running script's name
+# ----------------------------------------------------------------------------
+script_name()
+{
+    basename -- "$0"
+}
+
+#       quit_script():
+#       --------------
+#       
+#       Exits the running script with a failure code (non-zero). If
+#       the first argument, seen as a string, has a non null length,
+#       then a message is output to standard error including that
+#       string. Any further arguments are ignored.
+# ----------------------------------------------------------------------------
+quit_script()
+{
+    if [ -n "$1" ]
+    then
+        printf '%s\n' "` script_name `: $1"  >&2
+    fi
+    exit 2
+}
+
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# sh-indentation: 4
+# End:
+# vim: set ft=sh et sts=4 sw=4:

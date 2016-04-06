@@ -1,0 +1,159 @@
+// =========================================================================
+//                       Copyright 2008 Gennaro Prota
+//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
+
+
+#include "Windows.h"
+#include "Wincrypt.h" // gps mixed-case?   da documentare!!!  quoted-form?
+
+#include "breath/diagnostics/assert.hpp"
+#include "breath/diagnostics/last_api_error.hpp"
+#include "breath/idiom/declare_non_copyable.hpp"
+#include "breath/preprocessing/prevent_macro_expansion.hpp"
+
+#include <limits>
+#include <string>
+#include <vector>
+
+// NOTA: inizio adesso (sabato 3 agosto 2013 12:15:21) a ricodificare tutto.
+//       NB: uso l'help locale di Visual Studio --dopo confronta con la versione che hai
+//           e con la docum. aggiornata.
+
+
+namespace breath {
+
+class entropy_source::impl
+{
+    BREATH_DECLARE_NON_COPYABLE( impl ) ;
+private:
+    HCRYPTPROV          m_provider_handle ;
+    bool                m_handle_is_valid ;
+
+public:
+                        impl() ;
+                        ~impl() ;
+
+    result_type         next() ;
+    bool                release() throw() ;
+
+    result_type         minimum() ;
+    result_type         maximum() ;
+
+private:
+    bool                acquire( DWORD flags = 0 ) ;
+    bool                is_done() const /*noexcept */;          // true == can no longer use this object (gps BETTER name?)
+    void                to_buffer( unsigned char * buffer, int count /* OK int?*/ ) ;
+} ;
+
+
+entropy_source::impl::
+impl() //gps "explicit"?
+    // note: m_handle_is_valid intentionally not initialized here --see below
+{
+    if ( ! acquire() ) {
+        entropy_source::exception::raise("cannot acquire the HCRYPTPROV handler") ;
+    }
+    // note that this member is intentionally not initialized in the ctor
+    // initializer list; in case of exceptions there is no way it could be used
+    m_handle_is_valid = true ;
+}
+
+entropy_source::result_type
+entropy_source::impl::minimum()
+{
+    return 0 ;
+}
+
+entropy_source::result_type
+entropy_source::impl::maximum()
+{
+    return static_cast< entropy_source::result_type >(
+        std::numeric_limits< BYTE >::max BREATH_PREVENT_MACRO_EXPANSION ()
+        ) ;
+}
+
+
+
+bool
+entropy_source::impl::acquire( DWORD flags )
+{
+    return ::CryptAcquireContext( &m_provider_handle,
+                                  nullptr,
+                                  nullptr,
+                                  PROV_RSA_FULL,
+                                  flags | CRYPT_VERIFYCONTEXT ) != 0 ;
+}
+
+
+bool
+entropy_source::impl::
+    is_done() const /*noexcept*/
+{
+    return ! m_handle_is_valid ;
+}
+
+
+// gps this release could be attempted more than once? this is different from Unix!
+bool
+entropy_source::impl::
+release() throw()
+{
+    bool            success = false ;
+    if ( ! is_done() ) {
+        success = ::CryptReleaseContext( m_provider_handle,
+                                         0 // this is reserved (future use) and must be zero
+                                       ) != 0 ;
+        m_handle_is_valid = ! success ; // gps?????
+    }
+    return success ;
+}
+
+void
+entropy_source::impl::to_buffer( unsigned char * buffer, int count )
+{
+    int const       r = ::CryptGenRandom( m_provider_handle, count, buffer ) ;
+    if ( r == 0 ) {
+        entropy_source::exception::raise( "cannot generate random number" ) ;
+    }
+}
+
+entropy_source::result_type
+entropy_source::impl::next()
+{
+    BREATH_ASSERT( ! is_done() ) ; //gps
+
+    unsigned char       c ;
+    to_buffer( &c, sizeof c ) ;
+    return c ;
+}
+
+entropy_source::impl::~impl()
+{
+    release() ;
+}
+
+void
+entropy_source::exception::raise( std::string const & message )
+{
+    std::string         what_msg = "Breath entropy_source: " +
+                                        message + " - " ;
+    last_api_error const
+                        err("") ;
+
+    what_msg += err.what() ;
+
+    throw entropy_source::exception( what_msg ) ;
+}
+
+}
+
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:

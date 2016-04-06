@@ -1,0 +1,159 @@
+// =========================================================================
+//                    Copyright 2006-2008 Gennaro Prota
+//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
+
+#ifndef BREATH_GUARD_fZUJ99c94EAQyLGNzV2BUxw0nzawpWpw
+#define BREATH_GUARD_fZUJ99c94EAQyLGNzV2BUxw0nzawpWpw
+
+/*! \file   merkle_damgard_hasher.hpp
+    \brief
+        Merkle Damgard hasher
+*/
+
+#include <iterator> // for iterator_traits (dispatching)
+#include <cstddef> // for std::size_t
+
+namespace breath {
+
+    template< typename T >
+    class accumulate_traits ;
+
+    template< typename Hasher >
+    class digest ;
+
+
+    //
+    //! This template models a simple state machine for Merkle-Damgard's
+    //! construction of unkeyed hash functions.
+    //!
+    //! Many popular hash functions (including MD5 and all the SHA variants)
+    //! follow this scheme and can thus be implemented easily by means of
+    //! this class template.
+    //!
+    //!
+    //! \p Engine, which is the algorithm-specific policy, must provide the two
+    //! static member functions described below:
+    //!
+    //!   - init_state( state_type & state )
+    //!     \c state_type is either a built-in array or an array-like type
+    //!        which provides const and non-const operator[] functions; the
+    //!        machine guarantees that data stored in the \p state parameter
+    //!        are wiped automatically when \c init_state() returns to the
+    //!        caller (for obvious security reasons)
+    //!
+    //!   process_block()
+    //   
+    //
+    //!\warning
+    //!         Hash algorithms depend on exact bit-patterns,
+    //!         thus the byte/char representation (e.g. ASCII
+    //!         vs. EBCDIC) of the input matters. You might need
+    //!         a conversion to a common format before hashing.
+    //!
+    //!\warning
+    //!         The current interface only supports hashing messages
+    //!         whose length is a multiple of the \c byte_width.
+    //!         In the future, bit iterators could be integrated here
+    //!         if possible.
+    //          (Note that internally we already keep the *bit* count
+    //          of the input, not the byte count, so extending it
+    //          should be fairly straightforward - gps )
+    //
+    template< typename Engine >
+    class merkle_damgard_machine
+    {
+        //
+        // These are basically the algorithm (<=> the Engine's) "traits"
+        //
+    public:
+        enum
+        {
+            // widths
+            byte_width   = Engine::byte_width,
+            word_width   = Engine::word_width,
+            digest_width = Engine::digest_width
+        } ;
+    private:
+        enum
+        {
+            // lengths
+            block_length = Engine::block_width / byte_width,
+            state_length = Engine::state_width / byte_width,
+            word_length  = word_width / byte_width,
+
+            length_count = Engine::length_exp / word_width
+        } ;
+
+        typedef typename Engine::word_type word_type ;
+        typedef typename Engine::byte_type byte_type ;
+
+        typedef typename Engine::state_type state_type ;// gps --possibly temp
+        typedef typename Engine::block_type block_type ;// gps see above
+
+    public:
+        //!\name Initialization
+        //!\{
+        // -------------------------------------------------------------------
+        merkle_damgard_machine() ;
+
+        //!    construct from an input range
+        // -------------------------------------------------------------------
+        template< typename InputIter >
+                        merkle_damgard_machine( InputIter begin, InputIter end ) ;
+        //!\}
+
+        //!\name Operations: "appending" one or more bytes
+        //!\{
+        // -------------------------------------------------------------------
+        void push_back( byte_type b ) ;
+
+        template< typename InputIter >
+        merkle_damgard_machine &
+                        append( InputIter begin, InputIter end ) ;
+        //!\}
+
+
+    private:
+        friend class digest< merkle_damgard_machine > ;
+
+        typedef word_type   length_unit_type ;
+        typedef byte_type   raw_digest_type[ digest_width / byte_width ] ;
+
+        // data
+        // gps do we characterize the Engine by count or by state_type?
+        state_type          m_state ;// gps word_type        m_state[ state_count ] ;
+        length_unit_type    m_bit_count[ length_count ] ; // low-unit first
+        byte_type           m_input_buffer[ block_length ] ;
+
+        void            compress() ;
+        void            final() ;
+        void            reset() ;
+        void            create_digest( raw_digest_type & ) ;
+
+        std::size_t     input_index() const ;
+        void            increase_count( std::size_t amount ) ;
+
+        template< typename It >
+        merkle_damgard_machine &
+                do_append( It begin, It end, std::input_iterator_tag const * ) ;
+
+        template< typename It >
+        merkle_damgard_machine &
+                do_append( It begin, It end, std::random_access_iterator_tag const * ) ;
+    } ;
+
+}
+
+#include "brt/merkle_damgard_hasher.tpp"
+#endif
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:
+

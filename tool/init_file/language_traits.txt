@@ -1,0 +1,67 @@
+#  ===========================================================================
+#                      Copyright 2007-2010 Gennaro Prota
+#
+#                 Licensed under the BSD 3-Clause License.
+#            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+#              <https://opensource.org/licenses/BSD-3-Clause>)
+# _________________________________________________________________________
+#
+#       Language traits:
+#       ================
+#
+#       This is just a table that lists some aspects, such as comment
+#       delimiters and similar, which we use from the relevant scripts
+#       to inizialize the content of newly created files.
+#
+#       The important thing is that it allows adding support for new
+#       types of files without changing the script themselves.
+#
+#       Any line beginning with '#' in this file is treated as a
+#       comment (not because this file is written in any particular
+#       language: just because, conventionally, we chose to do so, and
+#       filter out any such lines).
+#
+#       We also added an entry for .txt files. An abuse, but handy.
+#       Given the above, it seemed natural to choose '#' for
+#       "comments" in .txt files.
+#
+#       NOTE:
+#       * since, of course, we don't want to retrofit all existing
+#         files, changes to the table should be limited to *addition*
+#         of new entries, barring modifications which might be
+#         absolutely necessary.
+# ----------------------------------------------------------------------------
+
+
+#   Note:
+#       The css mode for Emacs seems to have been introduced starting
+#       from version 22.1 (!) What happens for unrecognized modes?
+
+
+
+# filename extension  comment  comment   line
+# (extended regexp)    start     end    comment    language
+# --------------------------------------------------------------------
+awk                     no       no       #          AWK
+[cht]pp                 /*       */       //         C++
+asm                     /*       */       #          Asm
+xhtml                   <!--     -->      no         XHTML
+xslt                    <!--     -->      no         XSLT
+css                     /*       */       no         CSS
+mk                      no       no       #          Make
+(sh|shc)                no       no       #          Shell
+
+vim                     no       no       "          Vim
+el                      no       no       ;;         Emacs-Lisp
+
+bat                     no       no       REM        Batch
+
+# --------------------------------------------------------------------
+txt                     no       no       #          Text
+
+
+# Local Variables:
+# mode: text
+# indent-tabs-mode: nil
+# End:
+# vim: set ft=txt et sts=4 sw=4:

@@ -1,0 +1,40 @@
+#  ===========================================================================
+#                         Copyright 2008 Gennaro Prota
+#
+#                 Licensed under the BSD 3-Clause License.
+#            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+#              <https://opensource.org/licenses/BSD-3-Clause>)
+#  ___________________________________________________________________________
+
+.   "$BREEZE_ROOT/tool/shell/new_line.shc"
+
+(
+start=0
+finish=10
+
+{
+i=$start
+while [ "$i" -lt "$finish" ]
+do
+    new_line "$i"  |  wc -l
+    i=` expr "$i" + 1 `
+done
+}       >   output
+
+{
+i=$start
+while [ "$i" -lt "$finish" ]
+do
+    printf '%s\n' "$i"
+    i=` expr "$i" + 1 `
+done
+}       >   expected_output
+
+)
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# sh-indentation: 4
+# End:
+# vim: set ft=sh et sts=4 sw=4:

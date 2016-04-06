@@ -1,0 +1,82 @@
+#  ===========================================================================
+#                      Copyright 2007-2008 Gennaro Prota
+#
+#                 Licensed under the BSD 3-Clause License.
+#            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+#              <https://opensource.org/licenses/BSD-3-Clause>)
+#  ___________________________________________________________________________
+
+
+#       make_string():
+#       --------------
+#
+#       Returns a string consisting of max( $1, 0 ) consecutive
+#       occurrences of "$2"; "$2" will often be a single-character
+#       string, but there's no reason why it couldn't be anything
+#       longer.
+#
+#       Resembles one of the basic_string constructors, I know :-)
+# ----------------------------------------------------------------------------
+make_string()
+{
+    count="$1" piece="$2" awk '
+        BEGIN {
+            for ( i = 1 ; i <= ENVIRON[ "count" ] ; ++ i ) {
+                printf( "%s", ENVIRON[ "piece" ] )
+            }
+            exit
+        }
+    '
+}
+
+#       string_length():
+#       ----------------
+#
+#       Returns the length in characters of the first argument
+#       (followed by a newline). Note that there is, intentionally, no
+#       backslash interpretation: the length of '\n', for instance, is
+#       two.
+#
+#       If you are thinking of changing the implementation, please
+#       read the following; I considered at least the following
+#       alternatives:
+#
+#                                           Reason for rejection
+#       --------------------------------------------------------------
+#           ${#par}                     I'm not sure how much it is
+#                                       portable in practice. In any
+#                                       case we'd need to filter out
+#                                       the cases of par being '*' or
+#                                       '@' (unspecified result), and
+#                                       perhaps null string as well.
+#
+#           expr "$1" : '.*'            obvious problems with some
+#                                       strings, e.g. '+' or '('
+#                                       (easily fixed, as in our
+#                                       version)
+#
+#           printf '%s' "$1" | wc -m    fine, but the -m option to wc
+#                                       wasn't available on all my
+#                                       environments (though it is
+#                                       POSIX)
+#
+#           s="$1" awk '                fine, too; the only reason I
+#               BEGIN {                 preferred the expr-based
+#                   print length(  \    implementation is that ENVIRON
+#                     ENVIRON[ "s" ] )  isn't in old awk: we do use it
+#                   exit                when we use awk, but given
+#               }                       that in this case we had a
+#           '                           reasonable alternative...
+#
+# ----------------------------------------------------------------------------
+string_length()
+{
+    expr "z$1" : '.*' - 1
+}
+
+# Local Variables:
+# mode: shell-script
+# indent-tabs-mode: nil
+# sh-indentation: 4
+# End:
+# vim: set ft=sh et sts=4 sw=4:
