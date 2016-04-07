@@ -41,7 +41,7 @@ void fire( char const * message, char const * file_name, unsigned long line_numb
 
 
 
-//      BREEZE_ASSERT:
+//      BREATH_ASSERT:
 //      --------------
 //
 //      The code

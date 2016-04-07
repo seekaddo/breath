@@ -11,7 +11,7 @@
 #       =============
 #
 #       This script must be used to initialize all text files intended
-#       for Breeze C++. It ensures, among other things, that our
+#       for Breath C++. It ensures, among other things, that our
 #       copyright notice and license reference (plus, guards for C++
 #       includes) are inserted. See the documentation for further
 #       details.
@@ -92,7 +92,7 @@ then
     quit_script 'no file name provided'
 elif [ -z "$name_extension" ]
 then
-    quit_script 'Breeze file names must have an extension'
+    quit_script 'Breath file names must have an extension'
 fi
 
 

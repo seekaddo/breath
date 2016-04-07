@@ -16,7 +16,7 @@
 namespace breath {
 
 //!
-//! support for \c breeze::accumulate()
+//! support for \c breath::accumulate()
 //
 template< typename Engine >
 class accumulate_traits< merkle_damgard_machine< Engine > >
@@ -54,7 +54,7 @@ merkle_damgard_machine< Engine >::merkle_damgard_machine( InputIter begin,
   //       (see also our reinitialize() facility)
 {
 #if 0
-    breeze::secure_fill( m_bit_count ) ;
+    breath::secure_fill( m_bit_count ) ;
     Engine::init_state( m_state ) ;
 #else
     reset() ;
@@ -106,11 +106,11 @@ merkle_damgard_machine< Engine >::compress()
     }
 
     // clear input data, for security
-    breeze::secure_fill( m_input_buffer ) ; // gps - improve idiom here
+    breath::secure_fill( m_input_buffer ) ; // gps - improve idiom here
 
     Engine::process_block( m_state, input_in_words ) ;
 
-    breeze::secure_fill( input_in_words ) ;
+    breath::secure_fill( input_in_words ) ;
 }
 
 // securely wipes all data (gps - at construction?)
@@ -120,8 +120,8 @@ merkle_damgard_machine< Engine >::reset()
 {
     Engine::init_state( m_state ) ;
 
-    breeze::secure_fill( m_bit_count ) ;
-    breeze::secure_fill( m_input_buffer ) ;
+    breath::secure_fill( m_bit_count ) ;
+    breath::secure_fill( m_input_buffer ) ;
 }
 
 template< typename Engine >

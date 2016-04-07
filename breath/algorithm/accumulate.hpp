@@ -16,7 +16,7 @@
 //      Traits
 //      ------
 //
-//      breeze::accumulate() uses accumulate_traits<> as a point of
+//      breath::accumulate() uses accumulate_traits<> as a point of
 //      customization: see below.
 //
 //      The default traits template performs a summation of the
@@ -32,12 +32,12 @@
 //          - compute()
 // ---------------------------------------------------------------------------
 
-namespace breeze {
+namespace breath {
 
 //      accumulate_traits<>:
 //      --------------------
 //
-//      Traits template for breeze::accumulate<>().
+//      Traits template for breath::accumulate<>().
 //      (gps should we use the term "policy" in place of "traits"?)
 // ---------------------------------------------------------------------------
 template< typename T >
@@ -58,8 +58,8 @@ public:
 //
 //      Generalized version of std::accumulate().
 //
-//      breeze::accumulate_traits<> is a customization point: you are
-//      allowed to specialize it, in namespace breeze, for your own
+//      breath::accumulate_traits<> is a customization point: you are
+//      allowed to specialize it, in namespace breath, for your own
 //      types.
 // ---------------------------------------------------------------------------
 template< typename InputIterator, typename T >
@@ -70,7 +70,7 @@ accumulate( InputIterator begin,
 
 }
 
-#include "brz/accumulate.tpp"
+#include "brt/accumulate.tpp"
 #endif
 // Local Variables:
 // mode: c++

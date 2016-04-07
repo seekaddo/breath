@@ -31,7 +31,7 @@
 #include "breath/idiom/volatilize.hpp"
 #include <cstddef>
 
-namespace breeze {
+namespace breath {
 
 
 // Note how this is intentionally implemented with a hand-coded loop. It's
@@ -73,7 +73,7 @@ void
 secure_fill( ForwardIterator begin, ForwardIterator end, T const & value )
 {
     for ( ; begin != end ; ++ begin ) {
-        breeze::volatilize( *begin ) = value ;
+        breath::volatilize( *begin ) = value ;
     }
 }
 

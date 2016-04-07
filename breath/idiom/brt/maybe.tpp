@@ -101,7 +101,7 @@ void
 maybe< T >::destroy()
 {
     // gps check the details
-    ///BREEZE_ASSERT( is_valid() ) ;
+    ///BREATH_ASSERT( is_valid() ) ;
 
     static_cast< T * >( m_buffer.address() )->T::~T() ;    // OK????
 

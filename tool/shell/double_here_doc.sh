@@ -7,7 +7,7 @@
 #              <https://opensource.org/licenses/BSD-3-Clause>)
 #  ___________________________________________________________________________
 
-.   "$BREEZE_ROOT/tool/shell/here_document.shc"
+.   "$BREATH_ROOT/tool/shell/here_document.shc"
 
 : <<eof1; : <<eof2
 Hello,

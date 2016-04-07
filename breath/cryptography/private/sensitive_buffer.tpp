@@ -16,7 +16,7 @@ template< typename T, std::size_t n >
 void
 sensitive_buffer< T[ n ] >::wipe()
 {
-    breeze::secure_fill( m_data ) ;
+    breath::secure_fill( m_data ) ;
 }
 
 template< typename T, std::size_t n >

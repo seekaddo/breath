@@ -191,7 +191,7 @@ endian_load( ByteRandomIter it )
 {
     typedef typename std::iterator_traits< ByteRandomIter >::value_type
                         Byte ;
-    return breeze::endian_codec< EndianPolicy, T, Byte >
+    return breath::endian_codec< EndianPolicy, T, Byte >
         ::decode( it ) ;
 }
 

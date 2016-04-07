@@ -36,7 +36,7 @@ namespace adl_shield {
 //!
 //!     Even though this uses the Barton-Nackman idiom and relies on
 //!     its standard-conforming, ADL-based, mechanics (no friend
-//!     injection), it is protected from ADL in namespace breeze
+//!     injection), it is protected from ADL in namespace breath
 //!     in a way which allows only the provided operator function to
 //!     be found.
 //!     This means that you can safely derive your own type \c C

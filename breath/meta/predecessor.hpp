@@ -10,7 +10,7 @@
 #define BREATH_GUARD_UdGvvEgZV1WGbMzbsiKOg7UnnY910Qsa
 
 
-namespace breeze {
+namespace breath {
 namespace meta {
 
     template< typename T >

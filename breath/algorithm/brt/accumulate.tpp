@@ -6,7 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // ___________________________________________________________________________
 
-namespace breeze {
+namespace breath {
 
 template< typename T >
 typename accumulate_traits< T >::init_type
@@ -34,7 +34,7 @@ accumulate( InputIterator begin,
             InputIterator end,
             T v )
 {
-    return breeze::accumulate_traits< T >::compute( begin, end, v ) ;
+    return breath::accumulate_traits< T >::compute( begin, end, v ) ;
 }
 
 }

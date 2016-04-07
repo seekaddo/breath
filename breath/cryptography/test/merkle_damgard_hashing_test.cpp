@@ -6,17 +6,17 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#include "breeze/counting/count.hpp"
-#include "breeze/temp_testing/test.hpp"
+#include "breath/counting/count.hpp"
+#include "breath/temp_testing/test.hpp"
 
 
-#include "breeze/cryptography/digest.hpp"
+#include "breath/cryptography/digest.hpp"
 // gps #include "breeze/cryptography/digest_io.hpp"
-#include "breeze/cryptography/md5_hasher.hpp"
-#include "breeze/cryptography/sha1_hasher.hpp"
-#include "breeze/cryptography/sha256_hasher.hpp"
-#include "breeze/cryptography/sha224_hasher.hpp"
-#include "breeze/cryptography/sha512_hasher.hpp"
+#include "breath/cryptography/md5_hasher.hpp"
+#include "breath/cryptography/sha1_hasher.hpp"
+#include "breath/cryptography/sha256_hasher.hpp"
+#include "breath/cryptography/sha224_hasher.hpp"
+#include "breath/cryptography/sha512_hasher.hpp"
 
 #include <string>
 #include <sstream>
@@ -48,8 +48,8 @@ namespace {
     // MD5 test vectors ---------------------------------------------------- //
 
     template<>
-    const test_vectors< breeze::md5_hasher >::test_entry
-        test_vectors< breeze::md5_hasher >::entries[] =
+    const test_vectors< breath::md5_hasher >::test_entry
+        test_vectors< breath::md5_hasher >::entries[] =
     {
         // test cases from RFC 1321
         {                           "" ,  "d41d8cd98f00b204e9800998ecf8427e" },
@@ -97,8 +97,8 @@ namespace {
     // SHA-1 test vectors -------------------------------------------------- //
 
     template<>
-    const test_vectors< breeze::sha1_hasher >::test_entry
-        test_vectors< breeze::sha1_hasher >::entries[] =
+    const test_vectors< breath::sha1_hasher >::test_entry
+        test_vectors< breath::sha1_hasher >::entries[] =
     {
         // test cases from FIPS 180-2 with change notice
         { "abc", "a9993e364706816aba3e25717850c26c9cd0d89d"},
@@ -121,8 +121,8 @@ namespace {
     // SHA-256 test vectors ------------------------------------------------ //
 
     template<>
-    const test_vectors< breeze::sha256_hasher >::test_entry
-        test_vectors< breeze::sha256_hasher >::entries[] =
+    const test_vectors< breath::sha256_hasher >::test_entry
+        test_vectors< breath::sha256_hasher >::entries[] =
     {
         // test cases from FIPS
         { "abc",
@@ -143,8 +143,8 @@ namespace {
     // SHA-224 test vectors ------------------------------------------------ //
 
     template<>
-    const test_vectors< breeze::sha224_hasher >::test_entry
-        test_vectors< breeze::sha224_hasher >::entries[] =
+    const test_vectors< breath::sha224_hasher >::test_entry
+        test_vectors< breath::sha224_hasher >::entries[] =
     {
         // from FIPS
         { "abc",
@@ -154,8 +154,8 @@ namespace {
 
     // SHA-512 test vectors ------------------------------------------------ //
     template<>
-    const test_vectors< breeze::sha512_hasher >::test_entry
-        test_vectors< breeze::sha512_hasher >::entries[] =
+    const test_vectors< breath::sha512_hasher >::test_entry
+        test_vectors< breath::sha512_hasher >::entries[] =
     {
         // from FIPS
         { "abc",
@@ -184,9 +184,9 @@ void check_known_digests()
     typedef std::string string_type;
     typedef test_vectors< Hasher > known;
 
-    for ( std::size_t i( 0 ); i < breeze::count( known::entries ); ++i ) {
+    for ( std::size_t i( 0 ); i < breath::count( known::entries ); ++i ) {
 
-        using breeze::digest;
+        using breath::digest;
 
         const typename known::test_entry & entry( known::entries[ i ] );
         const string_type & src( entry.source );
@@ -204,8 +204,7 @@ void check_known_digests()
         stream << d;
         std::string result;
         stream >> result;
-        /*breeze::check*/
-        BREEZE_CHECK( result /*== GPS CHANGEd TEMPrarly*/ == entry.expected );
+        BREATH_CHECK( result /*== GPS CHANGEd TEMPrarly*/ == entry.expected );
 
     }
 
@@ -275,16 +274,16 @@ int main()
         breeze::test_descriptor funcs[] =
     {
         breeze::test_descriptor( gimme_false, "dummy function" ),
-        check_known_digests< breeze::   md5_hasher > ,
-        check_known_digests< breeze::  sha1_hasher > ,
-        check_known_digests< breeze::sha256_hasher > ,
-        check_known_digests< breeze::sha224_hasher > ,
-        check_known_digests< breeze::sha512_hasher >
+        check_known_digests< breath::   md5_hasher > ,
+        check_known_digests< breath::  sha1_hasher > ,
+        check_known_digests< breath::sha256_hasher > ,
+        check_known_digests< breath::sha224_hasher > ,
+        check_known_digests< breath::sha512_hasher >
     } ;
 
 
-        breeze::test_group group( breeze::begin( funcs ), breeze::end( funcs ) ) ;
-        breeze::run_unit_tests() ;
+        breath::test_group group( breeze::begin( funcs ), breeze::end( funcs ) ) ;
+        breath::run_unit_tests() ;
 
     } catch ( std::exception & ex ) {
         //std::cout << "OK! Got exception from the hasher!!!\n";
