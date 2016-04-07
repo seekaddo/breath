@@ -1,11 +1,11 @@
 // =========================================================================
-//                       Copyright 2008 Gennaro Prota
+//                       Copyright 2016 Gennaro Prota
 //
 //                 Licensed under the BSD 3-Clause License.
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
+//
 // _________________________________________________________________________
-
 #ifndef BREEZE_LONG_LONG_HPP_20080719172252_GPROTA_A2B8BA0061D24B81DA35B5E46F57AB8D
 #define BREEZE_LONG_LONG_HPP_20080719172252_GPROTA_A2B8BA0061D24B81DA35B5E46F57AB8D
 

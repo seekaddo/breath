@@ -6,7 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#ifndef BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS#define BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS
+#ifndef BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS
+#define BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS
+
 #include "breath/diagnostics/exception.hpp"
 #include <iosfwd>
 #include <string>

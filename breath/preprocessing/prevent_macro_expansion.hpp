@@ -7,7 +7,9 @@
 // _________________________________________________________________________
 
 
-#ifndef BREATH_GUARD_KezEcitYEJtdq09HtWJssCKDNm4sXaV5#define BREATH_GUARD_KezEcitYEJtdq09HtWJssCKDNm4sXaV5
+#ifndef BREATH_GUARD_KezEcitYEJtdq09HtWJssCKDNm4sXaV5
+#define BREATH_GUARD_KezEcitYEJtdq09HtWJssCKDNm4sXaV5
+
 // The only purpose of this macro is to prevent the expansion of the
 // preceding identifier, in case it is defined as a function-like macro.
 // Any macro would do (in fact, anything which isn't an open paren), but

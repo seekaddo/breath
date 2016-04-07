@@ -6,7 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#ifndef BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR#define BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
+#ifndef BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
+#define BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
+
 #include "breath/idiom/string_argument.hpp"
 #include <string>
 
