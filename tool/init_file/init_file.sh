@@ -65,7 +65,6 @@ mark_section()
 get_line_width()
 {
     printf '%s' '78'
-         # ^^^ gps cambiato da 78, per sperimentare per Breath
 }
 
 dump()
