@@ -11,7 +11,7 @@
 
 #define BREATH_DECLARE_NON_COPYABLE( class_name )               \
                                                                 \
-                        class_name( class_name & ) = delete;    \
+                        class_name( class_name & ) = delete ;   \
     void                operator=( class_name & )  = delete ;   \
                                                              /**/
 
