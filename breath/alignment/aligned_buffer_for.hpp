@@ -22,7 +22,7 @@ class               aligned_buffer_for< T[ n ] > { /* disabled for arrays */ } ;
 
 namespace aligned_buffer_private {
 
-// -----------------------
+
 template< typename T >
 class align_of
 {
@@ -34,12 +34,11 @@ class align_of
 
 public:
     static std::size_t const
-                        value = sizeof( hack ) - sizeof( T ) ; // gps check!!!
+                        value = sizeof( hack ) - sizeof( T ) ;
 } ;
 
 template< typename T >
 std::size_t const       align_of< T >::value ;
-// -----------------------------------
 
 
 template< std::size_t index >
@@ -116,9 +115,8 @@ private:
     } ;
 
 public:
-        void *          address()       { return m_raw_buffer ; } ;
-        void const *    address() const { return m_raw_buffer ; } ;
-        // gps add const overload(?)
+        void *          address()       { return m_raw_buffer ; }
+        void const *    address() const { return m_raw_buffer ; }
 
 } ;
 
