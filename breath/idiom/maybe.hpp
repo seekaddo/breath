@@ -97,21 +97,19 @@ private:
 public:
 
                         maybe() ; // nothrow; POST: !is_valid()
-    /*explicit*/        maybe( maybe const & ) ;
-    /*explicit*/        maybe( T const & ) ; // Throws if... --gps
+                        maybe( maybe const & ) ;
+    explicit            maybe( T const & ) ;
                         ~maybe() ;
 
-    maybe &          operator=( T const & ) ;
+    maybe &             operator=( T const & ) ;
 
     bool                is_valid() const ;
-    // bool                failed()   const ;
 
-
-    T const &		value() const ;
+    T const &		    value() const ;
     T const &           default_to( T const & t ) const ;
 
 private:
-    void                construct( T const & source ) ; // PRE:...
+    void                construct( T const & source ) ;
     void                destroy() ; // PRE: there is an object
 } ;
 

@@ -13,7 +13,7 @@ namespace breath {
 
 template< typename T >
 maybe< T >::maybe()
-    :   m_buffer(), // gps OK?
+    :   m_buffer(),
         m_is_valid( false )
 {
 }
@@ -34,7 +34,6 @@ template< typename T > // gps explicit on the definition?
 maybe< T >::maybe( T const & t )
 {
     construct( t ) ;
-    ///:: /*gps OK?*/ new( m_buffer.address() ) T( t ) ; // may throw
     m_is_valid = true ;
 }
 
@@ -50,14 +49,12 @@ template< typename T >
 maybe< T > &
 maybe< T >::operator=( T const & rhs ) // gps strong guarantee???
 {
-    // gps check this impl from scratch!!! I was really too tired! [8:31 AM!]
-    //
     if ( is_valid() ) {
-	// Note how we set m_is_valid to false until we are sure
-	// that the subsequent operator=() on T does not throw
-	m_is_valid = false ;
+        // Note how we set m_is_valid to false until we are sure
+        // that the subsequent operator=() on T does not throw
+        m_is_valid = false ;
         *static_cast< T * >( m_buffer.address() ) = rhs ;
-        m_is_valid = true ;
+        // m_is_valid = true ;
     } else {
         construct( rhs ) ;
     }
@@ -85,8 +82,8 @@ T const &
 maybe< T >::default_to( T const & t ) const
 {
     return is_valid()
-	    ? value()
-	    : t ;
+        ? value()
+        : t ;
 }
 
 template< typename T >
@@ -100,9 +97,7 @@ template< typename T >
 void
 maybe< T >::destroy()
 {
-    // gps check the details
-    ///BREATH_ASSERT( is_valid() ) ;
-
+    BREATH_ASSERT( is_valid() ) ;
     static_cast< T * >( m_buffer.address() )->T::~T() ;    // OK????
 
 }
