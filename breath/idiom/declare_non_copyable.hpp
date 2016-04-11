@@ -9,14 +9,12 @@
 #ifndef BREATH_GUARD_BssKAsCiqQzBgpiZdcF0pqcl37YyLxoi
 #define BREATH_GUARD_BssKAsCiqQzBgpiZdcF0pqcl37YyLxoi
 
-
-//gps C++11 =delete
 #define BREATH_DECLARE_NON_COPYABLE( class_name )               \
                                                                 \
-private:                                                        \
-                        class_name( class_name & ) ;            \
-    void                operator=( class_name & ) ;             \
+                        class_name( class_name & ) = delete;    \
+    void                operator=( class_name & )  = delete ;   \
                                                              /**/
+
 #endif
 
 // Local Variables:
