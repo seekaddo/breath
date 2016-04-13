@@ -108,9 +108,6 @@
 //                      OSR2   Second Edition   additional info   service pack
 // ---------------------------------------------------------------------------
 //
-//    JAMES, I GUESS YOU CAN AVOID READING BELOW HERE - It needs cleanup;
-//    perhaps it will be removed altogether
-//
 // Further details can be gathered by examining the wSuiteMask member of
 // the OSVERSIONEX info structure (not available on...) and/or querying specific
 // registry values. This is basically all trivial switch-case like stuff and
@@ -127,10 +124,10 @@
 //
 // [*] Server 2003 editions:
 //      switch( SuiteMask )
-//        case DATACENTER: "Datacenter Edition" break;
-//        case ENTERPRISE: "Enterprise Edition" break;
-//        case BLADE:      "Web Edition"        break;
-//        default:         "Standard Edition"   break;
+//        case DATACENTER: "Datacenter Edition" break ;
+//        case ENTERPRISE: "Enterprise Edition" break ;
+//        case BLADE:      "Web Edition"        break ;
+//        default:         "Standard Edition"   break ;
 //
 // Limitations:
 //  For simplicity sake we avoid the following detections:
@@ -161,8 +158,8 @@ is_server_2003_r2()
 {
     // define the sm_* constant ourselves, for now, to avoid requiring
     // the latest SDK headers [FUTURE]
-    const int sm_serverr2( 89 );
-    return 0 != ::GetSystemMetrics( sm_serverr2 );
+    int const sm_serverr2( 89 ) ;
+    return 0 != ::GetSystemMetrics( sm_serverr2 ) ;
 }
 
 // PRE:  never call this for Windows NT 3.5 or earlier (see MS docs)
@@ -172,18 +169,17 @@ is_x64()
     // despite the "AMD64" in the macro name, this actually tests for x64
     // (AMD or Intel); --also, as perplexing as it may be, the docs make
     // no mention of any possible failure of GetSystemInfo...
-    SYSTEM_INFO si = {}; // gps 1. mi pare di aver usato "{ }" altrove
-                            // (what about the gcc warning?)
-    ::GetSystemInfo( &si );
-    return si.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64;
+    SYSTEM_INFO si = {} ;
+    ::GetSystemInfo( &si ) ;
+    return si.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64 ;
 }
 
 os_id
-identify_nt( const windows_version_info & info )
+identify_nt( windows_version_info const & info )
 {
-    os_id           id( os_id::windows_unknown );
-    const unsigned  version(
-             win_version( info.major_version(), info.minor_version() ) );
+    os_id           id( os_id::windows_unknown ) ;
+    unsigned const version(
+             win_version( info.major_version(), info.minor_version() ) ) ;
 
     switch( version )
     {
@@ -200,7 +196,7 @@ identify_nt( const windows_version_info & info )
         } else {
             id = os_id::windows_server_2008 ;
         }
-        break;
+        break ;
 
     case win_version( 5, 2 ):
         if( is_server_2003_r2() ) {
@@ -218,72 +214,72 @@ identify_nt( const windows_version_info & info )
         } else {
             id = os_id::windows_server_2003 ;
         }
-        break;
+        break ;
 
     case win_version( 5, 1 ):
-        id = os_id::windows_xp;
-        break;
+        id = os_id::windows_xp ;
+        break ;
 
     case win_version( 5, 0 ):
-        id = os_id::windows_2000;
-        break;
+        id = os_id::windows_2000 ;
+        break ;
 
     case win_version( 4, 0 ):
-        id = os_id::windows_nt;
-        break;
+        id = os_id::windows_nt ;
+        break ;
 
     default:
         // hmm... new version on the shelves?
-        id = os_id::windows_unknown;
-        break;
+        id = os_id::windows_unknown ;
+        break ;
     }
 
-    return id;
+    return id ;
 }
 
 os_id
-identify_9x( const windows_version_info & info )
+identify_9x( windows_version_info const & info )
 {
-    const unsigned version(
-        win_version( info.major_version(), info.minor_version() ) );
+    unsigned const version(
+        win_version( info.major_version(), info.minor_version() ) ) ;
 
     switch( version )
     {
         case win_version( 4, 90 ):
-            return os_id::windows_me;
-            break;
+            return os_id::windows_me ;
+            break ;
 
         case win_version( 4, 10 ):
-            return os_id::windows_98;
-            break;
+            return os_id::windows_98 ;
+            break ;
 
         case win_version( 4, 0 ):
-            return os_id::windows_95;
-            break;
+            return os_id::windows_95 ;
+            break ;
     }
 
     // shouldn't happen; they didn't produce a new OS in the 9x family, did
     // they?
-    BREATH_ASSERT( false );
-    return os_id::windows_unknown;
+    BREATH_ASSERT( false ) ;
+    return os_id::windows_unknown ;
 }
 }
 
 os_id
 get_os()
 {
-    const windows_version_info
-                        info;
-    const os_platform & platform( info.platform() );
+    windows_version_info const
+                        info ;
+    os_platform const & platform( info.platform() ) ;
 
     if(      platform == os_platform::windows_nt )
-        return identify_nt( info );
+        return identify_nt( info ) ;
     else if( platform == os_platform::windows_9x )
-        return identify_9x( info );
+        return identify_9x( info ) ;
     else if( platform == os_platform::win32s )
-        return os_id::win32s;
+        return os_id::win32s ;
     else
-        return os_id::windows_unknown;
+        return os_id::windows_unknown ;
 }
 
 }
