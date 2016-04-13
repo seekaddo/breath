@@ -80,7 +80,7 @@ windows_version_info::build_number() const
     // gps cast DWORD -> int Ok? :-/
     // -------------------------------------------------------------------
 
-    const DWORD n( m_api_info.dwBuildNumber );
+    DWORD const n( m_api_info.dwBuildNumber );
     return platform() == os_platform::windows_9x
         ? LOWORD( n )
         : n
@@ -272,25 +272,25 @@ windows_version_info::edition() const
             return "undocumented [PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE]" ; // gps
             break ;
         case PRODUCT_SMALLBUSINESS_SERVER_PREMIUM_CORE:
-            return "undocumented" ; //gps
+            return "undocumented [PRODUCT_SMALLBUSINESS_SERVER_PREMIUM_CORE]" ; //gps
             break ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMT:
-            return "undocumented" ; //gps
+            return "undocumented [PRODUCT_ESSENTIALBUSINESS_SERVER_MGMT]" ; //gps
             break ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDL:
-            return "undocumented" ; //gps
+            return "undocumented [PRODUCT_ESSENTIALBUSINESS_SERVER_ADDL]" ; //gps
             break ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMTSVC:
-            return "undocumented" ; // gps
+            return "undocumented [PRODUCT_ESSENTIALBUSINESS_SERVER_MGMTSVC]" ; // gps
             break ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDLSVC:
-            return "undocumented" ; // gps
+            return "undocumented [PRODUCT_ESSENTIALBUSINESS_SERVER_ADDLSVC]" ; // gps
             break ;
         case PRODUCT_CLUSTER_SERVER_V:
-            return "undocumented" ; // gps
+            return "undocumented [PRODUCT_CLUSTER_SERVER_V]" ; // gps
             break ;
         case PRODUCT_EMBEDDED:
-            return "undocumented" ; //gps
+            return "undocumented [PRODUCT_EMBEDDED]" ; //gps
             break ;
         case PRODUCT_STARTER_E:
             return "Starter E" ;
