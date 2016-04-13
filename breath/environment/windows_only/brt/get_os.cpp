@@ -147,11 +147,14 @@
 #include "breath/environment/windows_only/os_id.hpp"
 
 
-#define BREATH_version( major, minor )       ( (major) * 256u + (minor) )
-
-
 namespace breath {
 namespace        {
+
+unsigned constexpr
+win_version( int major, int minor )
+{
+    return major * 256u + minor ;
+}
 
 bool
 is_server_2003_r2()
@@ -180,18 +183,18 @@ identify_nt( const windows_version_info & info )
 {
     os_id           id( os_id::windows_unknown );
     const unsigned  version(
-            BREATH_version( info.major_version(), info.minor_version() ) );
+             win_version( info.major_version(), info.minor_version() ) );
 
     switch( version )
     {
-    case BREATH_version( 6, 1 ):
+    case win_version( 6, 1 ):
         if ( info.is_workstation() ) {
             id = os_id::windows_7 ;
         } else {
             id = os_id::windows_server_2008_r2 ;
         }
         break ;
-    case BREATH_version( 6, 0 ):
+    case win_version( 6, 0 ):
         if( info.is_workstation() ) {
             id = os_id::windows_vista ;
         } else {
@@ -199,7 +202,7 @@ identify_nt( const windows_version_info & info )
         }
         break;
 
-    case BREATH_version( 5, 2 ):
+    case win_version( 5, 2 ):
         if( is_server_2003_r2() ) {
             id = os_id::windows_server_2003_r2 ;
         }
@@ -217,15 +220,15 @@ identify_nt( const windows_version_info & info )
         }
         break;
 
-    case BREATH_version( 5, 1 ):
+    case win_version( 5, 1 ):
         id = os_id::windows_xp;
         break;
 
-    case BREATH_version( 5, 0 ):
+    case win_version( 5, 0 ):
         id = os_id::windows_2000;
         break;
 
-    case BREATH_version( 4, 0 ):
+    case win_version( 4, 0 ):
         id = os_id::windows_nt;
         break;
 
@@ -242,19 +245,19 @@ os_id
 identify_9x( const windows_version_info & info )
 {
     const unsigned version(
-        BREATH_version( info.major_version(), info.minor_version() ) );
+        win_version( info.major_version(), info.minor_version() ) );
 
     switch( version )
     {
-        case BREATH_version( 4, 90 ):
+        case win_version( 4, 90 ):
             return os_id::windows_me;
             break;
 
-        case BREATH_version( 4, 10 ):
+        case win_version( 4, 10 ):
             return os_id::windows_98;
             break;
 
-        case BREATH_version( 4, 0 ):
+        case win_version( 4, 0 ):
             return os_id::windows_95;
             break;
     }
@@ -285,7 +288,6 @@ get_os()
 
 }
 
-#undef BREATH_version
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil
