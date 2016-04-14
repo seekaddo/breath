@@ -6,17 +6,18 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
+#include "breath/text/trim_head.hpp"
 
-namespace breath
+namespace breath {
 
 std::string
 trim_head( std::string const & source, std::string const & to_remove )
 {
     auto const          pos =
         source.find_first_not_of( to_remove ) ;
-    return pos == std::string::npos //gps std::string?
+    return pos == std::string::npos
         ? ""
-        : std::string( s, pos )
+        : std::string( source, pos )
         ;
 
 
