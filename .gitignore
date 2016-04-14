@@ -30,6 +30,9 @@
 # Stack dumps
 *.stackdump
 
+# Vim swap files
+*.swp
+
 # =========================
 # Operating System Files
 # =========================
