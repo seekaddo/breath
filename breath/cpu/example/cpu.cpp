@@ -70,7 +70,10 @@ int
 main()
 {
     std::cout << "CPU vendor ID string: " << cpu_vendor_id_string() << std::endl ;
-    std::cout << "Processor brand string: " << processor_brand_string() << std::endl ;
+    std::cout << "Processor brand string: " << ( has_processor_brand_string()
+                                                    ? processor_brand_string()
+                                                    : "<not available>" )
+                                            << std::endl;
 }
 
 // Local Variables:
