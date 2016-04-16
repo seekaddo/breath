@@ -31,7 +31,7 @@ console_reporter::on_all_tests_begin()
 void
 console_reporter::on_all_tests_end()
 {
-    m_stream << std::endl << "Passed : " << m_passed << ", failed: " << m_failed
+    m_stream << std::endl << "Passed: " << m_passed << ", failed: " << m_failed
                           << ", unexp. exceptions: " << m_unexpected_exceptions
                           << std::endl ;
 }
