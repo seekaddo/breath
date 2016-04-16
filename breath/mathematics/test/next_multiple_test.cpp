@@ -13,7 +13,7 @@ main()
     using               breath::next_multiple ;
 
     {
-        DO_TEST( next_multiple( 8, 3) == 9 ) ;
-        DO_TEST( next_multiple( 9, 3) == 12 ) ;
+        DO_TEST( next_multiple( 8, 3 ) == 9 ) ;
+        DO_TEST( next_multiple( 9, 3 ) == 12 ) ;
     }
 }
