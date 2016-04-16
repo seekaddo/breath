@@ -27,11 +27,9 @@
 */
 
 #include "breath/idiom/string_argument.hpp"
+#include "breath/idiom/maybe.hpp"
 
 namespace breath {
-
-template< typename T > class
-                    maybe ;
 
 //      find_environment_string:
 //      ------------------------
