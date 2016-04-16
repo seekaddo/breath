@@ -6,7 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#ifndef BREATH_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb#define BREATH_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
+#ifndef BREATH_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
+#define BREATH_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb
+
 namespace breath {
 
 class performance_counter_timer

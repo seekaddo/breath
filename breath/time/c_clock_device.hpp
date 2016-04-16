@@ -6,7 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#ifndef BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA#define BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
+#ifndef BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
+#define BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
+
 #include <ctime>
 
 namespace breath {
