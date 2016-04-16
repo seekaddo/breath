@@ -8,6 +8,7 @@
 // _________________________________________________________________________
 
 #include "breath/testing/console_reporter.hpp"
+#include "breath/testing/test_exception.hpp"
 #include <ostream>
 #include <iostream >
 
@@ -48,9 +49,9 @@ console_reporter::on_test_passed( int )
     ++ m_passed ;
 }
 void
-console_reporter::on_test_failed( int )
+console_reporter::on_test_failed(int, const test_exception & ex )
 {
-    m_stream << "F]" ;
+    m_stream << "F (" << ex.filename() << ":" << ex.line() << ")]" ;
     ++ m_failed ;
 }
 
