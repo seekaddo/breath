@@ -35,19 +35,19 @@ namespace {
     T
     from_string( std::string const & s )
     {
-		T t ;
-		std::istringstream ss( s ) ;
-		ss >> t ;
-		return t ;
+        T t ;
+        std::istringstream ss( s ) ;
+        ss >> t ;
+        return t ;
     }
 
     template< typename T >
     std::string
     to_string( T const & t )
     {
-		std::ostringstream ss ;
-		ss << t ;
-		return ss.str();
+        std::ostringstream ss ;
+        ss << t ;
+        return ss.str();
     }
 
 
@@ -69,7 +69,7 @@ namespace {
 
     nist_file::nist_file( const char * filename )
     {
-	std::string subdir( "S:/breath/breath/cryptography/test/nist_vectors/" ); // gps!!
+        std::string subdir( "S:/breath/breath/cryptography/test/nist_vectors/" ); // gps!!
         m_stream.open( ( subdir + filename ).c_str() );
         if ( m_stream )
         {
@@ -90,10 +90,8 @@ namespace {
 
     bool nist_file::new_section()
     {
-        // gps
         for ( std::string s; s != "D>" && m_stream; ) {
             m_stream >> s;
-            //std::cout << s << '\n';
         }
 
         return m_stream.good();
@@ -207,7 +205,7 @@ void tests()
 
     std::string calculated;
     std::string msg;
-    montecarlo_test montecarlo_harness; // gps un po' di casino coi nomi eh?
+    montecarlo_test montecarlo_harness;
 
     for ( int sn( 0 ); sn < sections && hashes.good() ; /*++sn*/ )
     {
@@ -255,10 +253,10 @@ void tests()
         std::string expected;
         hashes >> expected;
         if ( expected == "<D" )
-            break; // gps done!
+            break; // done!
 
         std::string unused;
-        hashes >> unused; // gps terminator
+        hashes >> unused; // terminator
 
         if ( hashes.good() )
             ++total;
