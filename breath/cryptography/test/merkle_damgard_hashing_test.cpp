@@ -7,24 +7,21 @@
 // _________________________________________________________________________
 
 #include "breath/counting/count.hpp"
-#include "breath/temp_testing/test.hpp"
-
+#include "breath/testing/testing.hpp"
 
 #include "breath/cryptography/digest.hpp"
-// gps #include "breeze/cryptography/digest_io.hpp"
 #include "breath/cryptography/md5_hasher.hpp"
 #include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/cryptography/sha256_hasher.hpp"
 #include "breath/cryptography/sha224_hasher.hpp"
 #include "breath/cryptography/sha512_hasher.hpp"
+#include "breath/iteration/begin_end.hpp"
 
 #include <string>
 #include <sstream>
-#include <iostream> // gps temp
 #include <cstddef>
-
-// Questo non è ovviamente un test automatico.
-// Ma è già qualcosa :-) gps
+#include <ostream>
+#include <iostream>
 
 namespace {
 
@@ -108,11 +105,6 @@ namespace {
         { one_million_a,
           "34aa973cd4c4daa4f61eeb2bdbad27316534016f" },
 
-        //{ std::string( 1ul << 29, 'a' ),
-        //}
-
-        // gps { "a", "34aa973cd4c4daa4f61eeb2bdbad27316534016f" },
-
         // the usual "crazy cog" :-)
         { "The quick brown fox jumps over the lazy cog",
           "de9f2c7fd25e1b3afad3e85a0bd17d9b100db4b3" }
@@ -192,7 +184,6 @@ void check_known_digests()
         const string_type & src( entry.source );
 
         Hasher hasher( src.begin(), src.end() );
-        //Hasher hasher;
 
         // repetitions?
         for ( std::size_t r( 0 ); r < /*1 + */entry.repetitions; ++r ) {
@@ -210,70 +201,15 @@ void check_known_digests()
 
 }
 
-
-
-//{
-//    std::cout << "Tests for cv-filter (da spostare...)\n";
-//    //std::cout << "unsigned of char = " << typeid( breeze::meta::unsigned_of<const char>::type ).name() << '\n';
-//
-//    // gps da spostare
-//    BREEZE_STATIC_ASSERT( (breeze::meta::is_same<
-//        breeze::meta::unsigned_of< volatile char >::type,
-//        volatile unsigned char
-//                          >::value), "" );
-//}
-
-//#include "breeze/testing/test_error.hpp"
-//#include "breeze/testing/test_descriptor.hpp"
-void gimme_false()
-{
-    //BREEZE_CHECK( false ) ; // intentional failure
-    breeze::check( false, "intentional failure", BREEZE_SOURCE_LOCUS ) ;
-   
-}
-
 int main()
 {
-#if 0
-    using breeze::test_runner ;
+    using namespace breath ;
 
-    test_runner & runner = test_runner::instance() ;
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
 
-    breeze::test_descriptor descs[] =
+    test_descriptor     desc[] =
     {
-        check_known_digests< breeze::   md5_hasher > ,
-        check_known_digests< breeze::  sha1_hasher > ,
-        check_known_digests< breeze::sha256_hasher > ,
-        check_known_digests< breeze::sha224_hasher > ,
-        check_known_digests< breeze::sha512_hasher >
-    } ;
-#endif
-
-    try {
-        //breeze::test_group group( "Known digests", descs ) ;    
-        /*       group
-        .add(
-        check_known_digests< breeze::   md5_hasher > )
-        .add(
-        check_known_digests< breeze::  sha1_hasher > )
-        .add(
-        check_known_digests< breeze::sha256_hasher > )
-        .add(
-        check_known_digests< breeze::sha224_hasher > )
-        .add(
-        check_known_digests< breeze::sha512_hasher > )
-        ;*/
-
-        /*
-        breeze::test_reporter reporter( std::cout ) ;
-        runner.attach( reporter ) ;
-        //run.add( group ) ;
-        runner.run();
-        */
-
-        breeze::test_descriptor funcs[] =
-    {
-        breeze::test_descriptor( gimme_false, "dummy function" ),
         check_known_digests< breath::   md5_hasher > ,
         check_known_digests< breath::  sha1_hasher > ,
         check_known_digests< breath::sha256_hasher > ,
@@ -281,58 +217,8 @@ int main()
         check_known_digests< breath::sha512_hasher >
     } ;
 
+    test_runner::instance().run( begin( desc ), end( desc) ) ;
 
-        breath::test_group group( breeze::begin( funcs ), breeze::end( funcs ) ) ;
-        breath::run_unit_tests() ;
-
-    } catch ( std::exception & ex ) {
-        //std::cout << "OK! Got exception from the hasher!!!\n";
-        std::cout << "Exception while adding tests..." << std::endl ;
-        std::cout << "--> " << ex.what() << std::endl;
-    }
-
- 
-    //// gps Another test --- should go to another file??
-
-    ////2^64
-    //static const char fb[] = "/_\\|*";
-    //int pos = 0;
-
-    //std::string s = "abcdefghijklmnopqrstuvwxyz" ;
-    //for( int i = 0; i < 15; ++i )
-    //    s += s;
-
-
-    //try {
-
-
-    //for( std::size_t a = 0; a < (1ul << 16); ++ a ){
-    //for( std::size_t b = 0; b < (1ul << 16); ++ b )
-    //for ( std::size_t i = 0; i < (1ul << 16); ++ i ) {
-    //    for ( std::size_t k = 0; k < (1ul << 16); ++ k ) {
-    //        for (std::size_t m = 0; m < 8; ++m ) {
-    //            breeze::sha1_hasher h;
-    //            h.append( s.begin(), s.end() );
-    //        }
-    //        std::cout << '\r' << fb[ pos ] ;
-    //        pos = ( pos + 1 ) % sizeof fb ; 
-
-    //    }
-    //    std::cout << "i = " << i << std::endl;
-    //}
-    //std::cout << a << "\n";
-    //}
-
-    //}
-    //catch ( breeze::hashing_count::exception & ) {
-    //    std::cout << "OK! Got exception from the hasher!!!\n";
-    //}
-    //catch( std::length_error & )
-    //{
-    //    std::cout << std::endl;
-    //    std::cout << "Sorry, string threw :-(\n";
-    //
-    //} 
 }
 
 // Local Variables:
