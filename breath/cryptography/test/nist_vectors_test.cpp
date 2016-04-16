@@ -5,12 +5,16 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
-
+//
+//      Tests the SHA-1 implementation with the test vectors
+//      described at <http://www.nsrl.nist.gov/testdata/>.
+//
 
 #include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/cryptography/digest.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/time/c_clock_timer.hpp"
+#include "breath/environment/find_environment_string.hpp"
 
 #include <algorithm>
 #include <string>
@@ -20,13 +24,6 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-
-//
-// Da ricontrollare ma credo che l'url di riferimento sia
-//  http://www.nsrl.nist.gov/testdata/
-// In un'altra pagina però ho anche trovato file di vectors
-// preparati con un differente formato. [gps]
-//
 
 
 namespace {
@@ -69,7 +66,10 @@ namespace {
 
     nist_file::nist_file( const char * filename )
     {
-        std::string subdir( "S:/breath/breath/cryptography/test/nist_vectors/" ); // gps!!
+        std::string const 
+                        breath_root( breath::find_environment_string( "BREATH_ROOT" ).value() ) ;
+        std::string const
+                        subdir( breath_root + "/breath/cryptography/test/nist_vectors/" );
         m_stream.open( ( subdir + filename ).c_str() );
         if ( m_stream )
         {
