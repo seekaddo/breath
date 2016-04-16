@@ -43,7 +43,7 @@ test_runner::run( TestDescriptorIterator begin, TestDescriptorIterator end )
     for ( ; begin != end ; ++ begin, ++ test_number ) {
         try {
             m_reporter->on_test_begin( test_number ) ;
-            (begin->function)() ;
+            (begin->function())() ;
             m_reporter->on_test_passed( test_number );
         } catch ( test_exception const & ex ) {
             m_reporter->on_test_failed( test_number, ex ) ;
