@@ -15,6 +15,8 @@
 #include "breath/diagnostics/assert.hpp"
 #include "breath/time/c_clock_timer.hpp"
 #include "breath/environment/find_environment_string.hpp"
+#include "breath/time/windows_only/performance_counter_timer.hpp"
+#include "breath/cryptography/sha512_hasher.hpp"
 
 #include <algorithm>
 #include <string>
@@ -284,11 +286,6 @@ void tests()
               <<     "Failed: " << failed << std::endl;
 
 }
-
-// gps temp!!!
-#include "breath/cryptography/sha512_hasher.hpp"
-#include "breath/time/windows_only/performance_counter_timer.hpp"
-// --------------------
 
 int main()
 try
