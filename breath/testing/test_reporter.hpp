@@ -20,7 +20,7 @@ public:
     virtual void        on_all_tests_end()   = 0 ;
     virtual void        on_test_begin( int test_number, char const * name = "" ) = 0 ;
     virtual void        on_test_passed( int test_number ) = 0 ;
-    virtual void        on_test_failed( int test_number, const test_exception & ) = 0 ;
+    virtual void        on_test_failed( int test_number, test_exception const & ) = 0 ;
     virtual void        on_unexpected_exception( int test_number ) = 0 ;
 
     virtual             ~test_reporter() {}

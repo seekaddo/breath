@@ -49,7 +49,7 @@ console_reporter::on_test_passed( int )
     ++ m_passed ;
 }
 void
-console_reporter::on_test_failed(int, const test_exception & ex )
+console_reporter::on_test_failed(int, test_exception const & ex )
 {
     m_stream << "F (" << ex.filename() << ":" << ex.line() << ")]" ;
     ++ m_failed ;
