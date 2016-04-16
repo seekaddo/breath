@@ -17,6 +17,8 @@
 #include "breath/environment/find_environment_string.hpp"
 #include "breath/time/windows_only/performance_counter_timer.hpp"
 #include "breath/cryptography/sha512_hasher.hpp"
+#include "breath/text/from_string.hpp"
+#include "breath/text/to_string.hpp"
 
 #include <algorithm>
 #include <string>
@@ -29,28 +31,6 @@
 
 
 namespace {
-
-    template< typename T >
-    T
-    from_string( std::string const & s )
-    {
-        T t ;
-        std::istringstream ss( s ) ;
-        ss >> t ;
-        return t ;
-    }
-
-    template< typename T >
-    std::string
-    to_string( T const & t )
-    {
-        std::ostringstream ss ;
-        ss << t ;
-        return ss.str();
-    }
-
-
-
 
     class nist_file
     {
