@@ -17,7 +17,7 @@ namespace {
 void do_tests()
 {
     BREATH_CHECK( breath::from_string< int >( "12" ) == 12 )
-    //BREATH_CHECK_THROW( from_string<int>( "12 1" ) )
+    BREATH_CHECK_THROW( breath::from_string<int>( "12 1" ) )
 }
 
 }
