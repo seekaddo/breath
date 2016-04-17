@@ -10,10 +10,10 @@
 #define BREATH_GUARD_ljsq7ok4MwSNNxMyfe6xf8RevjbF8jrE
 
 #include "breath/idiom/declare_non_copyable.hpp"
+#include "breath/testing/test_reporter.hpp"
 
 namespace breath {
 
-class test_reporter;
 
 class test_runner
 {
