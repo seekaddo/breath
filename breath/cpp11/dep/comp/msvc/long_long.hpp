@@ -6,8 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#ifndef BREEZE_LONG_LONG_HPP_20080719171319_GPROTA_A7D8FD7B7E8CA76DA58DA2A783B10F99
-#define BREEZE_LONG_LONG_HPP_20080719171319_GPROTA_A7D8FD7B7E8CA76DA58DA2A783B10F99
+#ifndef BREATH_GUARD_p07OrEBTPTJUIyhzHM9V0AxaW1AqCepv
+#define BREATH_GUARD_p07OrEBTPTJUIyhzHM9V0AxaW1AqCepv
 
 namespace breath {
 

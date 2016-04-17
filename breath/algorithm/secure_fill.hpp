@@ -6,8 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 //  _________________________________________________________________________
 
-#ifndef BREEZE_SECURE_FILL_GPROTA_2007JAN25_HPP
-#define BREEZE_SECURE_FILL_GPROTA_2007JAN25_HPP
+#ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
+#define BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 
 /*! \file   secure_fill.hpp
     \brief

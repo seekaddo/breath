@@ -5,8 +5,9 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // ___________________________________________________________________________
-#ifndef BREEZE_ACCUMULATE_HPP_2010214dWLTmMbTGHlvhBejKlNTVRpd
-#define BREEZE_ACCUMULATE_HPP_2010214dWLTmMbTGHlvhBejKlNTVRpd
+
+#ifndef BREATH_GUARD_AIxamIWyjxqb3pPGHU23CYP8v7Zo1TTt
+#define BREATH_GUARD_AIxamIWyjxqb3pPGHU23CYP8v7Zo1TTt
 
 //      accumulate():
 //      =============

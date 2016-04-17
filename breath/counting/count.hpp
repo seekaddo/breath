@@ -6,9 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
-#ifndef BREEZE_COUNT_GPROTA_20070321_154859_HPP
-#define BREEZE_COUNT_GPROTA_20070321_154859_HPP
+#ifndef BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
+#define BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
 
 /*
         An extension of container::size to cover both standard containers and
