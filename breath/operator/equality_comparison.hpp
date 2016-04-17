@@ -65,10 +65,7 @@ class equality_comparison
     }
 
 protected:
-    ~equality_comparison()
-    {
-    }
-
+                        ~equality_comparison() = default ;
 } ;
 
 }
