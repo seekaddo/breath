@@ -18,6 +18,14 @@
             }                                                            /**/
 
 
+#define BREATH_CHECK_THROW( expression )                                    \
+            {                                                               \
+                try {                                                       \
+                    expression ;                                            \
+                    BREATH_CHECK( false ) ;                                 \
+                } catch ( ... ) {                                           \
+                }                                                           \
+            }                                                            /**/
 #endif
 
 // Local Variables:
