@@ -6,7 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#ifndef BREATH_GUARD_9eLHEHtKblEdQIGuXiqd2HmEUjrUscjf#define BREATH_GUARD_9eLHEHtKblEdQIGuXiqd2HmEUjrUscjf
+#ifndef BREATH_GUARD_9eLHEHtKblEdQIGuXiqd2HmEUjrUscjf
+#define BREATH_GUARD_9eLHEHtKblEdQIGuXiqd2HmEUjrUscjf
+
 
 #include "breath/operator/equality_comparison.hpp"
 
