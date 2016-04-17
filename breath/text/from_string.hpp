@@ -9,6 +9,8 @@
 #ifndef BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
 #define BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
 
+#include <string>
+
 namespace breath {
 
 template< typename T >
