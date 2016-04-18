@@ -32,8 +32,8 @@ namespace breath {
 //      (obviously, n).
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
-std::size_t
-count( T const ( & )[ n ] )
+std::size_t constexpr
+count( T const ( & )[ n ] ) noexcept
 {
     return n ;
 }
@@ -45,7 +45,7 @@ count( T const ( & )[ n ] )
 // -----------------------------------------------------------------------
 template< typename T >
 typename T::size_type
-count( T const & t ) // gps size_type??
+count( T const & t )
 {
     return t.size() ;
 }
