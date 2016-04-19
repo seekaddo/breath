@@ -16,11 +16,10 @@ namespace {
 
 void do_tests()
 {
-    BREATH_CHECK( breath::from_string< int >( "12" ) == 12 )
-    BREATH_CHECK_THROW( breath::from_string< int >( "12 1" ) )
-    BREATH_CHECK( breath::from_string< char >( "a" ) == 'a' )
-    BREATH_CHECK_THROW(breath::from_string< char >( "ab" ) )
-
+    BREATH_CHECK( breath::from_string< int >( "12" ) == 12 ) ;
+    BREATH_CHECK_THROW( breath::from_string< int >( "12 1" ) ) ;
+    BREATH_CHECK( breath::from_string< char >( "a" ) == 'a' ) ;
+    BREATH_CHECK_THROW(breath::from_string< char >( "ab" ) ) ;
 }
 
 }
