@@ -6,6 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
+#ifndef BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
+#define BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
+
 #include "breath/text/set_of_chars.hpp"
 #include <string>
 
@@ -17,6 +20,8 @@ std::string         trim_head( std::string const & str ) ;
 std::string         trim_head( std::string const &  str,
                                set_of_chars const & to_remove ) ;
 }
+
+#endif
 
 // Local Variables:
 // mode: c++
