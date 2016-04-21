@@ -13,6 +13,7 @@
 #include <deque>
 #include <iterator>
 #include <string>
+#include <climits>
 
 namespace breath {
 
