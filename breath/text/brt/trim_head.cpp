@@ -11,10 +11,16 @@
 namespace breath {
 
 std::string
-trim_head( std::string const & source, std::string const & to_remove )
+trim_head( std::string const & str )
+{
+    return breath::trim_head( str, set_of_chars( " \t" ) ) ;
+}
+
+std::string
+trim_head( std::string const & source, set_of_chars const & to_remove )
 {
     auto const          pos =
-        source.find_first_not_of( to_remove ) ;
+        source.find_first_not_of( to_remove.as_string() ) ;
     return pos == std::string::npos
         ? ""
         : std::string( source, pos )

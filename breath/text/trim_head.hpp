@@ -6,17 +6,16 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
+#include "breath/text/set_of_chars.hpp"
 #include <string>
 
 namespace breath {
 
 // gps dovrebbe rimuovere gli space secondo il locale?
-// più in là cmq userò una mia set_of_char, costruibile a sua volta
-// da una stringa
-//
-std::string         trim_head( std::string const & source,
-                               std::string const & to_remove = " \t" ) ;
+std::string         trim_head( std::string const & str ) ;
 
+std::string         trim_head( std::string const &  str,
+                               set_of_chars const & to_remove ) ;
 }
 
 // Local Variables:
