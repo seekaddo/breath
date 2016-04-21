@@ -6,6 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
+#ifndef BREATH_GUARD_Gq4RCdDZQAIMmQBL7I3lbPfT3oHjV7of
+#define BREATH_GUARD_Gq4RCdDZQAIMmQBL7I3lbPfT3oHjV7of
+
 #include <cstddef>
 #include <deque>
 #include <iterator>
@@ -130,6 +133,8 @@ set_of_chars::add( FwdIterator begin, FwdIterator end )
 }
 
 }
+
+#endif
 
 // Local Variables:
 // mode: c++
