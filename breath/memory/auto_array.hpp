@@ -24,6 +24,7 @@ public:
                         ~auto_array() ;
 
     T *                 get() ;
+    T const *           get() const ;
     void                reset( T * ) ;
 
 private:

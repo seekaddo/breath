@@ -37,6 +37,13 @@ auto_array< T >::get()
 }
 
 template< typename T >
+T const *
+auto_array< T >::get() const
+{
+    return m_ptr ;
+}
+
+template< typename T >
 void
 auto_array< T >::reset( T * p )
 {
