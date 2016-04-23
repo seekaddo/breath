@@ -6,7 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#ifndef BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn#define BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn
+#ifndef BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn
+#define BREATH_GUARD_FvaoTt7c3pTltKsed1Av5CAvE3SvnVIn
+
 #include "breath/idiom/declare_non_copyable.hpp"
 
 namespace breath {
