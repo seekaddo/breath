@@ -50,6 +50,14 @@ node_id::node_id()
     }
 }
 
+node_id const &
+node_id::instance()
+{
+    static const node_id
+                        id ;
+    return id ;
+}
+
 std::ostream &
 operator <<( std::ostream & os, node_id const & id )
 {
