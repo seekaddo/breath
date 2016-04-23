@@ -42,7 +42,7 @@ node_id::node_id()
                 && info->AddressLength == m_address.size() ) {
 
             found = true ;
-            for (unsigned i = 0 ; i < m_address.size() ; ++ i ) {
+            for ( unsigned i = 0 ; i < m_address.size() ; ++ i ) {
                 m_address[ i ] = info->Address[ i ] ;
             }
         }
