@@ -10,6 +10,7 @@
 #include "breath/diagnostics/exception.hpp"
 #include "breath/memory/auto_array.hpp"
 #include "breath/stream/format_saver.hpp"
+#include <iomanip>
 #include <ostream>
 #include <windows.h>
 #include <iphlpapi.h>
@@ -74,8 +75,7 @@ operator <<( std::ostream & os, node_id const & id )
     os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
 
     for ( auto it = id.m_address.cbegin(); it != id.m_address.cend() ; ++ it ) {
-        os << ( *it >> 4 )
-           << ( *it & 0x0f ) ;
+        os << std::setw( 2 ) << *it ;
         if ( it != ( id.m_address.cend() - 1 )) {
             os << '-' ;
         }
