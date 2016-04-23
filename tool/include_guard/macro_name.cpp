@@ -1,8 +1,10 @@
-// Copyright 2008-2013 Gennaro Prota
+// =========================================================================
+//                    Copyright 2008-2013 Gennaro Prota
 //
-// Released under: see license file.
-//
-// NUOVO FILE: meglio suddividere ---gps
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
 
 #include "tool/include_guard/macro_name.hpp"
 #include "breath/diagnostics/assert.hpp"
@@ -65,3 +67,10 @@ make_macro_name( std::string const & prefix,
 
     return prefix + str ;
 }
+
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:

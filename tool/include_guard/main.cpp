@@ -1,7 +1,10 @@
-// Copyright 2008-2015 Gennaro Prota
+// =========================================================================
+//                    Copyright 2008-2015 Gennaro Prota
 //
-// Released under: see license file.//gps
-//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
 
 #include "tool/include_guard/macro_name.hpp"
 #include "breath/diagnostics/exception.hpp"
@@ -55,3 +58,10 @@ main( int argc, char * argv[] )
     return program_status::instance().exit_status() ;
 
 }
+
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:
