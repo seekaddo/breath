@@ -62,6 +62,8 @@ std::ostream &
 operator <<( std::ostream & os, node_id const & id )
 {
     format_saver const  saver( os ) ;
+
+    os.setf( std::ios_base::uppercase ) ;
     for ( auto it = id.m_address.cbegin(); it != id.m_address.cend() ; ++ it ) {
         os << std::hex << ( *it >> 4 )
            <<             ( *it & 0x0f ) ;
