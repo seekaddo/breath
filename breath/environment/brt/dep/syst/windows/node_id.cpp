@@ -53,7 +53,7 @@ node_id::node_id()
 std::ostream &
 operator <<( std::ostream & os, node_id const & id )
 {
-    format_saver        saver( os ) ;
+    format_saver const  saver( os ) ;
     for ( auto it = id.m_address.cbegin(); it != id.m_address.cend() ; ++ it ) {
         os << std::hex << ( *it >> 4 )
            <<             ( *it & 0x0f ) ;
