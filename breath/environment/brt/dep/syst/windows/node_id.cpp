@@ -58,6 +58,12 @@ node_id::instance()
     return id ;
 }
 
+uint8_t
+node_id::operator[]( int n ) const
+{
+    return m_address[ n ] ;
+}
+
 std::ostream &
 operator <<( std::ostream & os, node_id const & id )
 {

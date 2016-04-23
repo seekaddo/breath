@@ -24,6 +24,7 @@ private:
 public:
     static node_id const &
                         instance() ;
+    uint8_t             operator[]( int n ) const ;
 private:
     std::array< uint8_t, 6 >
                         m_address ; // MAC Address
