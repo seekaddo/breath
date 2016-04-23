@@ -38,7 +38,8 @@ node_id::node_id()
     }
     bool                found = false ;
     while ( info != nullptr && ! found ) {
-        if ( info->Type == MIB_IF_TYPE_ETHERNET && info->AddressLength == m_address.size() ) {
+        if ( info->Type == MIB_IF_TYPE_ETHERNET
+                && info->AddressLength == m_address.size() ) {
 
             found = true ;
             for (unsigned i = 0 ; i < m_address.size() ; ++ i ) {
