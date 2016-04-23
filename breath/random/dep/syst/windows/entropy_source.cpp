@@ -7,13 +7,14 @@
 // _________________________________________________________________________
 
 
-#include "Windows.h"
-#include "Wincrypt.h" // gps mixed-case?   da documentare!!!  quoted-form?
-
+#include "breath/random/entropy_source.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
+
+#include <Windows.h>
+#include <Wincrypt.h>
 
 #include <limits>
 #include <string>
