@@ -9,11 +9,11 @@
 #ifndef BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
 #define BREATH_GUARD_VJhjD7vyKemLfcukUGXm4RzXGSsdvmrL
 
-#include "breath/text/set_of_chars.hpp"
 #include <string>
 
 namespace breath {
 
+class               set_of_chars ;
 // gps dovrebbe rimuovere gli space secondo il locale?
 std::string         trim_head( std::string const & str ) ;
 

@@ -7,6 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/text/trim_head.hpp"
+#include "breath/text/set_of_chars.hpp"
 
 namespace breath {
 

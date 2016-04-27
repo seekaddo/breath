@@ -9,10 +9,11 @@
 #ifndef BREATH_GUARD_rAf6FomrfEupsrKlsZvh9xwbNaeg8pxp
 #define BREATH_GUARD_rAf6FomrfEupsrKlsZvh9xwbNaeg8pxp
 
-#include "breath/text/set_of_chars.hpp"
 #include <string>
 
 namespace breath {
+
+class               set_of_chars ;
 
 std::string         trim_tail( std::string const & str ) ;
 
