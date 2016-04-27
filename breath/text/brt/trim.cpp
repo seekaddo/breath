@@ -17,7 +17,7 @@ namespace breath {
 std::string
 trim( std::string const & str )
 {
-    return breath::trim( str, set_of_chars(" \f\n\r\t\v") ) ;
+    return breath::trim( str, set_of_chars( " \f\n\r\t\v" ) ) ;
 }
 
 std::string
