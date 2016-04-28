@@ -111,7 +111,7 @@ begin( T ( &a )[ n ] ) noexcept
 
 template< typename T, std::size_t n >
 T const *
-cbegin( T const (&a)[ n ] ) noexcept
+cbegin( T const ( &a )[ n ] ) noexcept
 {
     return a ;
 }
