@@ -21,8 +21,8 @@
         begin_end.hpp.
 
         These functions are made obsolete in C++11 by the namespace scope
-        std::size()'s. However our version use a conditional noexcept that
-        the standard version doesn't have.
+        std::size()'s. However our version uses, for containers, a
+        conditional noexcept that the standard version doesn't have.
 */
 
 #include <cstddef>
