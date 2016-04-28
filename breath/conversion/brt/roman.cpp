@@ -32,8 +32,9 @@ roman::roman( int n )
     for ( ; p->value != 0 ; ++ p ) {
         int                 value = n / p->value;
         n %= p->value;
-        while ( value-- != 0 ) {
+        while ( value != 0 ) {
             m_representation += p->repr ;
+            -- value ;
         }
     }
 }
