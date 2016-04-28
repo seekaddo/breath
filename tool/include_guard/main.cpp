@@ -22,10 +22,6 @@ main( int argc, char * argv[] )
     using               breath::program_status ;
 
     try {
-        if ( argc != 2 ) {
-            program_status::instance().declare_error( program_status::fatal ) ;
-            return program_status::instance().exit_status() ;
-        }
 
         program_status::instance().parse_command_line( argc, argv/*, "include_guard"*/ ) ;
         std::string const   prefix = "BREATH_GUARD_" ;
