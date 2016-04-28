@@ -19,8 +19,10 @@
 void
 check()
 {
-    std::string const   breath_root = breath::find_environment_string( "BREATH_ROOT").value() ;
-    std::ifstream       is( breath_root + "/breath/conversion/test/a006968.txt" ) ;
+    std::string const   breath_root = breath::find_environment_string(
+                                                    "BREATH_ROOT" ).value() ;
+    std::ifstream       is( breath_root
+                            + "/breath/conversion/test/a006968.txt" ) ;
 
     // skip the first lines
     int const           lines_to_skip = 14 ;
