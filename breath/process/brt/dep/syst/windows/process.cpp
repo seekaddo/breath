@@ -21,7 +21,7 @@ class process::impl
 public:
                         impl() : m_info()
                         {}
-                        ~impl()
+                        ~impl() noexcept
                         {
                             CloseHandle( m_info.hThread ) ;
                             CloseHandle( m_info.hProcess ) ;
@@ -35,7 +35,7 @@ process::process()
 {
 }
 
-process::~process()
+process::~process() noexcept
 {
     delete m_impl ;
 }

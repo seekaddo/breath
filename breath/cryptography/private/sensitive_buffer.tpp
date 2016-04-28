@@ -43,7 +43,7 @@ sensitive_buffer< T[ n ] >::sensitive_buffer( T const ( &src )[ n ] )
 }
 
 template< typename T, std::size_t n >
-sensitive_buffer< T[ n ] >::~sensitive_buffer()
+sensitive_buffer< T[ n ] >::~sensitive_buffer() noexcept
 {
     wipe() ;
 }

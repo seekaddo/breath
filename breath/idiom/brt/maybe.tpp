@@ -38,7 +38,7 @@ maybe< T >::maybe( T const & t )
 }
 
 template< typename T >
-maybe< T >::~maybe()
+maybe< T >::~maybe() noexcept
 {
     if ( is_valid() ) {
         destroy() ;

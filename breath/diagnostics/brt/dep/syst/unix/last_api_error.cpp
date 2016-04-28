@@ -22,7 +22,7 @@ last_api_error::last_api_error( last_api_error const & other ) throw()
     strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
 }
 
-last_api_error::~last_api_error() throw()
+last_api_error::~last_api_error() noexcept
 {
 }
 

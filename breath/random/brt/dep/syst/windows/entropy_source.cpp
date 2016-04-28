@@ -36,7 +36,7 @@ private:
 
 public:
                         impl() ;
-                        ~impl() ;
+                        ~impl() noexcept ;
 
     result_type         next() ;
     bool                release() throw() ;
@@ -132,7 +132,7 @@ entropy_source::impl::next()
     return c ;
 }
 
-entropy_source::impl::~impl()
+entropy_source::impl::~impl() noexcept
 {
     release() ;
 }

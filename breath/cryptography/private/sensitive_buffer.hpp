@@ -42,7 +42,7 @@ public:
     explicit            sensitive_buffer( T const ( &src )[ n ] ) ;
 
     // destruction
-                        ~sensitive_buffer() ;
+                        ~sensitive_buffer() noexcept ;
 
     // iteration and access
     iterator            begin() ;

@@ -33,8 +33,8 @@ class entropy_source::impl
     
 public:
                         impl() ;
-                        ~impl() ;
-    bool                release() throw() ;
+                        ~impl() noexcept ;
+    bool                release() noexcept ;
     unsigned char /*gps*/
                         next() ;
     result_type         minimum() ;
@@ -65,7 +65,7 @@ entropy_source::impl::impl()
 
 }
 
-entropy_source::impl::~impl()
+entropy_source::impl::~impl() noexcept
 {
     release() ;
 }

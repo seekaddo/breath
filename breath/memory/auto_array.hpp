@@ -21,7 +21,7 @@ class auto_array
 public:
                         auto_array() ;
     explicit            auto_array( T * ) ;
-                        ~auto_array() ;
+                        ~auto_array() noexcept ;
 
     T *                 get() ;
     T const *           get() const ;

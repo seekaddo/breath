@@ -24,7 +24,7 @@ auto_array< T >::auto_array( T * p )
 }
 
 template< typename T >
-auto_array< T >::~auto_array()
+auto_array< T >::~auto_array() noexcept
 {
     do_delete() ;
 }

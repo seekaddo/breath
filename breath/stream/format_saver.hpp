@@ -94,7 +94,7 @@ class basic_format_saver
 
 public:
     explicit            basic_format_saver( std::basic_ios< Ch, Traits > & ) ;
-                        ~basic_format_saver() ;
+                        ~basic_format_saver() noexcept ;
 
 private:
     typedef Ch          char_type ;

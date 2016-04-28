@@ -17,7 +17,7 @@ class last_api_error
 public:
                         last_api_error() throw() ;
                         last_api_error( last_api_error const & other ) throw() ;
-                        ~last_api_error() throw() ;
+                        ~last_api_error() noexcept ;
     int                 code() const throw() ;
     char const *        what() const throw() ;
 private:

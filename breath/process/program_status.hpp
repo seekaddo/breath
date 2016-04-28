@@ -25,7 +25,7 @@ class program_status
 
 private:
                         program_status() ;
-                        ~program_status() ; // gps ??
+                        ~program_status() noexcept ; // gps ??
 
 #if 0
     // Rationale for the pimpl idiom:

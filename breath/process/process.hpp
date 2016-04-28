@@ -25,7 +25,7 @@ public:
                         id_type ;
 
                         process() ;
-                        ~process() ;
+                        ~process() noexcept ;
     id_type             id() const ;
 
     void                start( std::string const & app_name,

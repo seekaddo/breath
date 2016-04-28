@@ -99,7 +99,7 @@ public:
                         maybe() ; // nothrow; POST: !is_valid()
                         maybe( maybe const & ) ;
     explicit            maybe( T const & ) ;
-                        ~maybe() ;
+                        ~maybe() noexcept ;
 
     maybe &             operator=( T const & ) ;
 

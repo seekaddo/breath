@@ -43,7 +43,7 @@ public:
     class               exception ;
 public:
     explicit            entropy_source() ;
-    ~entropy_source() ;
+                        ~entropy_source() noexcept ;
 
 
     //      Returns the next random value. Each call gives (with

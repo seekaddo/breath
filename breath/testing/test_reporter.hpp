@@ -23,7 +23,7 @@ public:
     virtual void        on_test_failed( int test_number, test_exception const & ) = 0 ;
     virtual void        on_unexpected_exception( int test_number ) = 0 ;
 
-    virtual             ~test_reporter() {}
+    virtual             ~test_reporter() noexcept {}
 } ;
 
 }

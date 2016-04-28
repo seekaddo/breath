@@ -22,7 +22,7 @@ class handle
 public:
     explicit            handle( HANDLE h) : m_handle( h )
                         {}
-                        ~handle()
+                        ~handle() noexcept
                         {
                             if ( m_handle != NULL ) {
                                 CloseHandle( m_handle ) ;

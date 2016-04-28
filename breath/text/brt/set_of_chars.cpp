@@ -52,7 +52,7 @@ set_of_chars::set_of_chars( except_for, std::string const & s )
     remove( s ) ;
 }
 
-set_of_chars::~set_of_chars()
+set_of_chars::~set_of_chars() noexcept
 {
 }
 

@@ -22,7 +22,7 @@ entropy_source::entropy_source()
 {
 }
 
-entropy_source::~entropy_source()
+entropy_source::~entropy_source() noexcept
 {
     delete m_impl ;
 }

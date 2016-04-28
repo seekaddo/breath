@@ -37,7 +37,7 @@ program_status::program_status()
     std::clog.exceptions( std::ios_base::badbit ) ;
 }
 
-program_status::~program_status()
+program_status::~program_status() noexcept
 {
 }
 

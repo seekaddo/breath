@@ -18,15 +18,15 @@ namespace breath {
 class exception : public virtual std::exception
 {
 public:
-    exception() throw() ;
-    exception( std::string const & what_msg ) throw() ;
+    exception() noexcept ;
+    exception( std::string const & what_msg ) noexcept ;
 
-    exception( exception const & ) throw() ; //gps a) noexcept b) C++11 =default?
-    exception & operator=( exception const & ) throw() ;
+    exception( exception const & ) noexcept ; //gps C++11 =default?
+    exception & operator=( exception const & ) noexcept ;
 
-    virtual ~exception() throw() ;
+    virtual ~exception() noexcept ;
 
-    virtual char const * what() const throw() ;
+    virtual char const * what() const noexcept ;
 
 private:
     enum { what_message_max_size = 1023 } ;
