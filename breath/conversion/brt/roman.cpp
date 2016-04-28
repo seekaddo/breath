@@ -20,14 +20,15 @@ roman::roman( int n )
     {
         int                 value ;
         char const *        repr ;
-    } table[] = {
+    } const table[] = {
        { 1000, "M" },
         { 900, "CM" }, { 500, "D" }, { 400, "CD" }, { 100, "C" },
          { 90, "XC" },  { 50, "L" },  { 40, "XL" },  { 10, "X" },
           { 9, "IX" },   { 5, "V" },   { 4, "IV" },   { 1, "I" },
-          { 0,"" } 
+          { 0, "" } 
     } ;
 
+    m_representation.reserve( 15 ) ;
     struct table const * p = &table[ 0 ] ;
     for ( ; p->value != 0 ; ++ p ) {
         int                 value = n / p->value;
