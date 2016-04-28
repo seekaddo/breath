@@ -15,15 +15,16 @@ namespace breath {
 roman::roman( int n )
 {
     BREATH_ASSERT( 1 <= n && n <= 3999 ) ;
+
     struct table
     {
         int                 value ;
         char const *        repr ;
     } table[] = {
        { 1000, "M" },
-        { 900,"CM" }, { 500,"D" }, { 400,"CD" }, { 100,"C" },
-         { 90,"XC" },  { 50,"L" },  { 40,"XL" },  { 10,"X" },
-          { 9,"IX" },   { 5,"V" },   { 4,"IV" },   { 1,"I" },
+        { 900, "CM" }, { 500, "D" }, { 400, "CD" }, { 100, "C" },
+         { 90, "XC" },  { 50, "L" },  { 40, "XL" },  { 10, "X" },
+          { 9, "IX" },   { 5, "V" },   { 4, "IV" },   { 1, "I" },
           { 0,"" } 
     } ;
 
@@ -31,7 +32,7 @@ roman::roman( int n )
     for ( ; p->value != 0 ; ++ p ) {
         int                 value = n / p->value;
         n %= p->value;
-        while ( value-- ) {
+        while ( value-- != 0 ) {
             m_representation += p->repr ;
         }
     }
