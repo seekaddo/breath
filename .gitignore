@@ -33,6 +33,13 @@
 # Vim swap files
 *.swp
 
+# Visual C++ files and dirs
+*.ilk
+*.pdb
+*.VC.db
+*.VC.VC.opendb
+.vs/
+
 # =========================
 # Operating System Files
 # =========================
