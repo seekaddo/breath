@@ -50,21 +50,21 @@ namespace breath {
 // -----------------------------------------------------------------------
 template< typename C >
 typename C::iterator
-begin( C & c )
+begin( C & c ) noexcept( noexcept( c.begin() ) )
 {
     return c.begin() ;
 }
 
 template< typename C >
 typename C::const_iterator
-begin( C const & c )
+begin( C const & c ) noexcept( noexcept( c.begin() ) )
 {
     return c.begin() ;
 }
 
 template< typename C >
 typename C::const_iterator
-cbegin( C const & c )
+cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
 {
     return c.begin() ;
 }
@@ -77,21 +77,21 @@ cbegin( C const & c )
 // -----------------------------------------------------------------------
 template< typename C >
 typename C::iterator
-end( C & c )
+end( C & c ) noexcept( noexcept( c.end() ) )
 {
     return c.end() ;
 }
 
 template< typename C >
 typename C::const_iterator
-end( C const & c )
+end( C const & c ) noexcept( noexcept( c.end() ) )
 {
     return c.end() ;
 }
 
 template< typename C >
 typename C::const_iterator
-cend( C const & c )
+cend( C const & c ) noexcept( noexcept( c.end() ) )
 {
     return c.end() ;
 }
@@ -104,14 +104,14 @@ cend( C const & c )
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 T *
-begin( T ( &a )[ n ] )
+begin( T ( &a )[ n ] ) noexcept
 {
     return a ;
 }
 
 template< typename T, std::size_t n >
 T const *
-cbegin( T const (&a)[ n ] )
+cbegin( T const (&a)[ n ] ) noexcept
 {
     return a ;
 }
@@ -125,14 +125,14 @@ cbegin( T const (&a)[ n ] )
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 T *
-end( T ( &a )[ n ] )
+end( T ( &a )[ n ] ) noexcept
 {
     return a + n ;
 }
 
 template< typename T, std::size_t n >
 T const *
-cend( T const (&a)[ n ] )
+cend( T const (&a)[ n ] ) noexcept
 {
     return a + n ;
 }
