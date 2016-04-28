@@ -30,7 +30,7 @@
 #           only, but it doesn't do any harm for the others (it seems),
 #           so why adding further complexity...)
 #
-#           Note that it must appear *before* -std=c++11, or it will
+#           Note that it must appear *before* -std=c++14, or it will
 #           revert things to an earlier standard (C++03 or C++98, I
 #           haven't verified).
 #
@@ -47,7 +47,7 @@
 #           by James Kanze).
 # ----------------------------------------------------------------------------
 cpp_basic_options = -ansi       \
-                    -std=c++11  \
+                    -std=c++14  \
                     -Wall       \
                     -Wextra     \
                     -pedantic   \
