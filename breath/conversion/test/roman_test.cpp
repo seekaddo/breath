@@ -57,7 +57,7 @@ main()
         check
     } ;
 
-    test_runner::instance().run( begin( desc) , end( desc ) ) ;
+    test_runner::instance().run( begin( desc ) , end( desc ) ) ;
 
 }
 
