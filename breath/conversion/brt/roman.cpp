@@ -25,10 +25,11 @@ roman::roman( int n )
         { 900, "CM" }, { 500, "D" }, { 400, "CD" }, { 100, "C" },
          { 90, "XC" },  { 50, "L" },  { 40, "XL" },  { 10, "X" },
           { 9, "IX" },   { 5, "V" },   { 4, "IV" },   { 1, "I" },
-          { 0, nullptr } 
+          { 0, nullptr }
     } ;
 
-    m_representation.reserve( 15 ) ;
+    int const           max_roman_length = 15 ;
+    m_representation.reserve( max_roman_length ) ;
     struct table const * p = &table[ 0 ] ;
     for ( ; p->value != 0 ; ++ p ) {
         int                 value = n / p->value;
