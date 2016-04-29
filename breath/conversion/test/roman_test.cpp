@@ -41,7 +41,7 @@ check()
         is >> rep ;
 
         std::ostringstream  os ;
-        os << breath::roman( n ) ;
+        os << std::uppercase << breath::roman( n ) ;
         BREATH_CHECK( rep == os.str() ) ;
     } while ( n != max_roman ) ;
 }
