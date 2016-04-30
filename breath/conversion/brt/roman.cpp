@@ -9,7 +9,6 @@
 #include "breath/conversion/roman.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include <ostream>
-#include <cctype>
 
 namespace breath {
 
@@ -45,13 +44,7 @@ roman::roman( int n )
 std::ostream &
 operator<<( std::ostream & os, roman const & r )
 {
-    std::string         rep = r.m_representation ;
-    if ( ( os.flags() & std::ios_base::uppercase ) == 0) {
-        for ( auto & c : rep ) {
-            c = std::tolower( c ) ;
-        }
-    }
-    return os << rep ;
+    return os << r.m_representation ;
 }
 }
 
