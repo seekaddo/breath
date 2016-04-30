@@ -11,4 +11,3 @@ Licensed under the BSD 3-Clause License.
 # indent-tabs-mode: nil
 # End:
 # vim: set ft=txt et sts=4 sw=4:
-
