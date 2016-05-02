@@ -16,11 +16,11 @@
 void
 check()
 {
-    //  A bunch of known base64 encodings. Some from RFC 3548 and some
-    //  verified with:
+    //  A bunch of known base64 encodings. Some from RFC 3548, some
+    //  from RFC 4648 and some verified with:
     //      <https://www.base64encode.org/>.
-    //  The latter is not an authoritative reference but I couldn't find
-    //  any.
+    //  The latter is not an authoritative reference but I wanted some
+    //  more test vectors.
     //  ----------------------------------------------------------------
     struct
     {
@@ -38,6 +38,13 @@ check()
         { "\x14\xfb\x9c\x03\xd9\x7e", "FPucA9l+" },// this example from RFC 3548
         { "\x14\xfb\x9c\x03\xd9",     "FPucA9k=" },//   "     "      "  RFC 3548
         { "\x14\xfb\x9c\x03",         "FPucAw==" },//   "     "      "  RFC 3548
+        { "", "" },                                // this example from RFC 4648
+        { "f", "Zg==" },                           //   "     "      "  RFC 4648
+        { "fo", "Zm8=" },                          //   "     "      "  RFC 4648
+        { "foo", "Zm9v" },                         //   "     "      "  RFC 4648
+        { "foob", "Zm9vYg==" },                    //   "     "      "  RFC 4648
+        { "fooba", "Zm9vYmE=" },                   //   "     "      "  RFC 4648
+        { "foobar", "Zm9vYmFy" },                  //   "     "      "  RFC 4648
         { "Long string long string long string long string",
           "TG9uZyBzdHJpbmcgbG9uZyBzdHJpbmcgbG9uZyBzdHJpbmcgbG9uZyBzdHJpbmc=" },
         { "The quick brown fox jumps over the lazy dog",
