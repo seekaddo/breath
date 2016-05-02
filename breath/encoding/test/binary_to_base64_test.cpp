@@ -16,9 +16,11 @@
 void
 check()
 {
-    //  A bunch of known base64 encodings. Verified with:
+    //  A bunch of known base64 encodings. Some from RFC 3548 and some
+    //  verified with:
     //      <https://www.base64encode.org/>.
-    //  That's not an authoritative reference but I couldn't find any.
+    //  The latter is not an authoritative reference but I couldn't find
+    //  any.
     //  ----------------------------------------------------------------
     struct
     {
