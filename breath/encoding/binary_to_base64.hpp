@@ -15,7 +15,8 @@
 namespace breath {
 
 template< typename InputIter, typename OutputIter >
-void                binary_to_base64( InputIter begin, InputIter end, OutputIter out ) ;
+void                binary_to_base64( InputIter begin, InputIter end,
+                                      OutputIter out ) ;
 
 }
 
