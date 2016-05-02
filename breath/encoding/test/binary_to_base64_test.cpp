@@ -64,7 +64,7 @@ main()
                         desc[] =
     {
         check
-    };
+    } ;
 
     test_runner::instance().run( begin( desc ), end( desc ) ) ;
 }
