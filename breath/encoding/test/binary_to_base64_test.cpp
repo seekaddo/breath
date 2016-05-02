@@ -35,9 +35,9 @@ check()
         { "Hello", "SGVsbG8=" },
         { "Hello, world",  "SGVsbG8sIHdvcmxk" },
         { "Hello, world!", "SGVsbG8sIHdvcmxkIQ==" },
-        { "\x14\xfb\x9c\x03\xd9\x7e", "FPucA9l+" }, // this example from RFC 3548
-        { "\x14\xfb\x9c\x03\xd9",     "FPucA9k=" }, //   "     "      "  RFC 3548
-        { "\x14\xfb\x9c\x03",         "FPucAw==" }, //   "     "      "  RFC 3548
+        { "\x14\xfb\x9c\x03\xd9\x7e", "FPucA9l+" },// this example from RFC 3548
+        { "\x14\xfb\x9c\x03\xd9",     "FPucA9k=" },//   "     "      "  RFC 3548
+        { "\x14\xfb\x9c\x03",         "FPucAw==" },//   "     "      "  RFC 3548
         { "Long string long string long string long string",
           "TG9uZyBzdHJpbmcgbG9uZyBzdHJpbmcgbG9uZyBzdHJpbmcgbG9uZyBzdHJpbmc=" },
         { "The quick brown fox jumps over the lazy dog",
