@@ -33,24 +33,26 @@ binary_to_base64( InputIter begin, InputIter end, OutputIter out )
     //  of the range at each increment.
     //  ------------------------------------------------------------------
     while ( curr != end ) {
-        *out = alphabet[ *curr >> 2 ] ;
+        *out = alphabet[ static_cast< unsigned char>( *curr ) >> 2 ] ;
         ++ count ;
         ++ out ;
-        auto                tmp = ( *curr & 0x03 ) << 4 ;
+        auto                tmp = ( static_cast< unsigned char >( *curr )
+                                                             & 0x03 ) << 4 ;
         
         if ( ++curr != end ) {
             ++ count ;
-            tmp |= ( *curr & 0xf0 ) >> 4 ;
+            tmp |= ( static_cast< unsigned char >( *curr ) & 0xf0 ) >> 4 ;
             *out = alphabet[ tmp ] ;
             ++ out ;
 
-            auto            tmp2 = ( *curr & 0x0f ) << 2 ;
+            auto            tmp2 = ( static_cast< unsigned char >( *curr )
+                                                                & 0x0f ) << 2 ;
             if ( ++curr != end ) {
                 ++ count ;
-                tmp2 |= *curr >> 6 ;
+                tmp2 |= static_cast< unsigned char >( *curr ) >> 6 ;
                 *out = alphabet[ tmp2 ] ; 
                 ++ out ;
-                *out = alphabet[ *curr & 0x3f ] ;
+                *out = alphabet[ static_cast< unsigned char >( *curr ) & 0x3f ] ;
                 ++ out ;
                 ++ curr ;
             } else {
