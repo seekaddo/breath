@@ -63,7 +63,7 @@ binary_to_base64( InputIter begin, InputIter end, OutputIter out )
             *out = alphabet[ tmp ] ;
             ++ out ;
         }
-        count = count % 3 ;
+        count %= group_size ;
     }
 
     for ( int i = 0 ; i < ( group_size - count ) % group_size ; ++ i ) {
