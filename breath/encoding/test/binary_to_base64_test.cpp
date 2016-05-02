@@ -46,7 +46,7 @@ check()
 
     for ( auto it = breath::begin( known) ; it != breath::end( known) ; ++ it ) {
         std::string         out ;
-        breath::binary_to_base64( it->binary.begin(), it->binary.end(),
+        breath::binary_to_base64( it->binary.cbegin(), it->binary.cend(),
                                     std::back_inserter( out ) ) ;
         BREATH_CHECK( out == it->b64 ) ;
     }
