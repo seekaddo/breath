@@ -5,6 +5,9 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//      Base64 decoding, conforming to RFC 3548.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ubEInhYBWjgftwkYlSFbSOFcFUILqJgK
 #define BREATH_GUARD_ubEInhYBWjgftwkYlSFbSOFcFUILqJgK
