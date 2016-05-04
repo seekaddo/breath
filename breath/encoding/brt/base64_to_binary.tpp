@@ -6,6 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
+#include "breath/diagnostics/exception.hpp"
 #include <climits>
 #include <cstddef>
 
@@ -44,7 +45,13 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
     while ( curr != end ) {
         auto                x = static_cast< unsigned char >( *curr ) ;
         auto                value = table[ x ] ;
-        if ( value != invalid ) {
+
+        if ( value == invalid ) {
+            if ( x != '\n' && x != '=' ) {
+                throw exception( "invalid input to base64_to_binary" ) ;
+            }
+        }
+        else {
 
             block = block << block_length | value ;
             num_bits += block_length ;

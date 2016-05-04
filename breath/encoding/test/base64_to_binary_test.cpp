@@ -14,13 +14,13 @@
 #include <iostream>
 
 void
-check()
+check_valid()
 {
     //  The following array of vectors is almost identical to the one
     //  in
     //      binary_to_base64_test
     //  I have not put the code in common for two reasons:
-    //  first the vectors here contain some whitespace too, in order
+    //  first the vectors here contain some newlines too, in order
     //  to check that the decoding function ignores them; and second
     //  because the two arrays might diverge in the future in order
     //  to accomodate particular tests for the base64->binary
@@ -38,7 +38,7 @@ check()
         { "ABC", "QUJD" },
         { "Hello", "SGVsbG8=" },
         { "Hello, world",  "SGVs\nbG8s\nIHdv\ncmxk" },
-        { "Hello, world!", "SGVsb G8sIH dvcmx kIQ==" },
+        { "Hello, world!", "SGVsb\nG8sIH\ndvcmx\nkIQ==" },
         { "\x14\xfb\x9c\x03\xd9\x7e", "FPucA9l+" },// this example from RFC 3548
         { "\x14\xfb\x9c\x03\xd9",     "FPucA9k=" },//   "     "      "  RFC 3548
         { "\x14\xfb\x9c\x03",         "FPucAw==" },//   "     "      "  RFC 3548
@@ -63,6 +63,16 @@ check()
     }
 }
 
+void
+check_invalid()
+{
+    std::string const   invalid = "#AB"  ;
+    std::string         out ;
+    BREATH_CHECK_THROW( breath::base64_to_binary( invalid.cbegin(),
+                                                  invalid.cend(),
+                                                 std::back_inserter( out ) ) ) ;
+}
+
 int
 main()
 {
@@ -74,7 +84,8 @@ main()
     test_descriptor const
                         desc[] =
     {
-        check
+        check_valid,
+        check_invalid
     } ;
 
     test_runner::instance().run( begin( desc ), end( desc ) ) ;
