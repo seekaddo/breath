@@ -1,22 +1,21 @@
 // =========================================================================
 //                       Copyright 2015 Gennaro Prota
 //
-//                  Licensed under the BSD-X License. [gps]
-//                (See accompanying file BSD-X_LICENSE.txt or
-//             <http://opensource.org/licenses/bsd-license.php>)
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
 #include "breath/stream/format_saver.hpp"
+#include "breath/testing/testing.hpp"
 #include <iomanip>
 #include <sstream>
+#include <iostream>
+#include <ostream>
 
-///
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST( x )  BREATH_ASSERT( x )
 
-/////////
-int
-main()
+void
+check()
 {
     using breath::format_saver ;
     std::stringstream   str ;
@@ -25,20 +24,22 @@ main()
         str.setf( std::ios::hex, std::ios::basefield ) ;
         str.fill( '0' ) ;
         str << std::setw( 2 ) << 15 ;
-        DO_TEST( str.str() == "0f" ) ;
-        //std::string         discard ;
-        //str >> discard ;
+        BREATH_CHECK( str.str() == "0f" ) ;
     }
-    DO_TEST( (str.flags() & std::ios::hex) == 0 ) ;
-    DO_TEST( str.fill() == ' ' );
-    //str << 5 ;
-    //std::string Temp=str.str();
-    //DO_TEST( str.str() == "5" ) ;
+    BREATH_CHECK( (str.flags() & std::ios::hex) == 0 ) ;
+    BREATH_CHECK( str.fill() == ' ' );
 }
 
+int
+main()
+{
+    using namespace breath;
 
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
 
-
+    test_runner::instance().run( { check } ) ;
+}
 
 
 // Local Variables:
