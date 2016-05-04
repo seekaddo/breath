@@ -28,6 +28,7 @@ check()
     }
     BREATH_CHECK( (str.flags() & std::ios::hex) == 0 ) ;
     BREATH_CHECK( str.fill() == ' ' ) ;
+    BREATH_CHECK( str.width() == 0 ) ;
 }
 
 int
