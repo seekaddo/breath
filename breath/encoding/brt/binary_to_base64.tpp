@@ -21,10 +21,11 @@ binary_to_base64( InputIter begin, InputIter end, OutputIter out )
       || std::is_same< typename InputIter::value_type, unsigned char>::value),
      "" ) ;
 
-    static char const   alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    static char constexpr
+                        alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                      "abcdefghijklmnopqrstuvwxyz"
                                      "0123456789+/" ;
-    int const           group_size( 3 ) ;
+    int constexpr       group_size( 3 ) ;
     auto                curr( begin ) ;
     int                 count( 0 ) ;
 
