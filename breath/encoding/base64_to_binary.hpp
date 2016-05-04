@@ -14,6 +14,10 @@
 
 namespace breath {
 
+//      This function conforms to RFC 3548 with one exception: it
+//      allows newlines to appear anywhere in the input.
+//      It throws an exception on any other invalid input character.
+// ---------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
 void                base64_to_binary( InputIter begin, InputIter end,
                                       OutputIter out ) ;
