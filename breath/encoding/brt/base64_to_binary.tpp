@@ -71,9 +71,6 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
     }
 }
 
-
-
-
 }
 
 // Local Variables:
