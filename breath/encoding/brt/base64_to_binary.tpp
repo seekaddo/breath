@@ -36,7 +36,7 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
     } ;
 
     static_assert( CHAR_BIT == 8, "" ) ;
-    int const           invalid = -1 ;
+    int const           not_to_be_translated = -1 ;
     unsigned            block = 0 ;
     std::size_t         num_bits = 0 ;
     int const           block_length = 6 ;
@@ -46,7 +46,7 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
         auto                x = static_cast< unsigned char >( *curr ) ;
         auto                value = table[ x ] ;
 
-        if ( value == invalid ) {
+        if ( value == not_to_be_translated ) {
             if ( x != '\n' && x != '=' ) {
                 throw exception( "invalid input to base64_to_binary" ) ;
             }
