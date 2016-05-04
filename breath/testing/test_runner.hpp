@@ -13,6 +13,7 @@
 #include "breath/testing/test_reporter.hpp"
 #include "breath/testing/test_descriptor.hpp"
 #include "breath/testing/test_exception.hpp"
+#include <initializer_list>
 
 namespace breath {
 

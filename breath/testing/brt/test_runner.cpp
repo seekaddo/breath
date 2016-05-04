@@ -7,7 +7,6 @@
 // _________________________________________________________________________
 
 #include "breath/testing/test_runner.hpp"
-#include <initializer_list>
 
 namespace breath {
 
