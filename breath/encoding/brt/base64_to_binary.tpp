@@ -9,6 +9,7 @@
 #include "breath/diagnostics/exception.hpp"
 #include <climits>
 #include <cstddef>
+#include <type_traits>
 
 namespace breath {
 
@@ -35,7 +36,11 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
          -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
     } ;
 
-    static_assert( CHAR_BIT == 8, "" ) ;
+    static_assert( CHAR_BIT == 8
+               && (std::is_same< typename InputIter::value_type, char >::value
+      || std::is_same< typename InputIter::value_type, unsigned char>::value),
+     "" ) ;
+
     int const           not_to_be_translated = -1 ;
     unsigned            block = 0 ;
     std::size_t         num_bits = 0 ;
