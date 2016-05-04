@@ -11,6 +11,8 @@
 
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/testing/test_reporter.hpp"
+#include "breath/testing/test_descriptor.hpp"
+#include "breath/testing/test_exception.hpp"
 
 namespace breath {
 
@@ -28,7 +30,7 @@ public:
     void            attach_reporter( test_reporter & ) ;
     template< typename TestDescriptorIterator >
     void            run( TestDescriptorIterator begin, TestDescriptorIterator end ) ;
-
+    void            run( std::initializer_list< test_descriptor > list ) ;
 private:
     test_reporter * m_reporter ;
 } ;
