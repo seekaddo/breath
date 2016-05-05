@@ -59,7 +59,7 @@ void
 console_reporter::on_unexpected_exception( std::size_t )
 {
     m_stream << "X]" ;
-    ++m_unexpected_exceptions ;
+    ++ m_unexpected_exceptions ;
 }
 
 }
