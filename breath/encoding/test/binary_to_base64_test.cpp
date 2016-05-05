@@ -51,7 +51,7 @@ check()
           "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="}
     } ;
 
-    for ( auto it = breath::cbegin( known) ; it != breath::cend( known) ; ++ it ) {
+    for ( auto it = breath::cbegin( known ) ; it != breath::cend( known ) ; ++ it ) {
         std::string         out ;
         breath::binary_to_base64( it->binary.cbegin(), it->binary.cend(),
                                     std::back_inserter( out ) ) ;
