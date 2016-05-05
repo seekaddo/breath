@@ -9,11 +9,14 @@
 //      exit_code.hpp:
 //      ==============
 //
-//      Provides named constants for process termination codes.
+//!     Provides named constants for process termination codes.
 //
 // ---------------------------------------------------------------------------
+
 #ifndef BREATH_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
 #define BREATH_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
+
+//!     \file
 
 namespace breath {
 
