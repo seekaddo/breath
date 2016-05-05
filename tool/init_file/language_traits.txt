@@ -45,6 +45,7 @@
 awk                     no       no       #          AWK
 [cht]pp                 /*       */       //         C++
 asm                     /*       */       #          Asm
+html                    <!--     -->      no         HTML
 xhtml                   <!--     -->      no         XHTML
 xslt                    <!--     -->      no         XSLT
 css                     /*       */       no         CSS

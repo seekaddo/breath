@@ -113,12 +113,28 @@ VimModeline: set ft=lisp et sts=2 sw=2:
 Emacs-Lisp
 
 
-# All our HTML is actually XHTML. We could use nXhtml, but I'm
-# not sure. It requires (a separate package and) Emacs 22. Since
-# that was released in June 2007, it might be too recent, for
-# now, to have widespread usage in production. About nxml,
-# instead, there seems to be contradicting info on the net: does
-# it work with Emacs 21 or not? --gps
+:   <<HTML
+EmacsVariablesList:
+mode: nxml
+indent-tabs-mode: nil
+nxml-child-indent: $sw
+nxml-attribute-indent: $sw
+coding: utf-8
+End:
+VimModeline: set ft=html et sts=$sts sw=$sw:
+VimModeline: set fenc=utf-8 nobomb:
+HTML
+
+
+# Historical note (now outdated):
+# -------------------------------
+#
+# All "our" HTML (not Doxygen's) is actually XHTML. We could use
+# nXhtml, but I'm not sure. It requires (a separate package and)
+# Emacs 22. Since that was released in June 2007, it might be too
+# recent, for now, to have widespread usage in production. About
+# nxml, instead, there seems to be contradicting info on the net:
+# does it work with Emacs 21 or not? --gps
 #
 :   <<XHTML
 EmacsVariablesList:
