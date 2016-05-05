@@ -20,6 +20,7 @@ public:
     //!     std::string</code>. Intentionally not <code>explicit</code>.
     // -------------------------------------------------------------------------
                         string_argument( std::string const & ) ;
+
     //!     Constructs a <code>string_argument</code> from a <code>char const
     //!     *</code>. Intentionally not <code>explicit</code>. Asserts if
     //!     the argument equals <code>nullptr</code>.
