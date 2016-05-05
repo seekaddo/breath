@@ -14,9 +14,9 @@
 
 namespace breath {
 
-//          Returns the filename part of a path.
-//          Assumes that the path is well-formed.
-//      ===============================================
+//!         Returns the filename part of a path. Assumes that the path
+//!         is well-formed.
+//! -------------------------------------------------------------------
 std::string         base_filename( string_argument const & full_path ) ;
 
 }
