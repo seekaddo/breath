@@ -37,26 +37,26 @@ console_reporter::on_all_tests_end()
 }
 
 void
-console_reporter::on_test_begin( int test_number, char const * )
+console_reporter::on_test_begin( std::size_t test_number, char const * )
 {
     m_stream << "[" << test_number << "=" ;
 }
 
 void
-console_reporter::on_test_passed( int )
+console_reporter::on_test_passed( std::size_t )
 {
     m_stream << "P]" ;
     ++ m_passed ;
 }
 void
-console_reporter::on_test_failed(int, test_exception const & ex )
+console_reporter::on_test_failed( std::size_t, test_exception const & ex )
 {
     m_stream << "F (" << ex.filename() << ":" << ex.line() << ")]" ;
     ++ m_failed ;
 }
 
 void
-console_reporter::on_unexpected_exception( int )
+console_reporter::on_unexpected_exception( std::size_t )
 {
     m_stream << "X]" ;
     ++m_unexpected_exceptions ;
