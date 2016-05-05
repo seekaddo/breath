@@ -50,9 +50,6 @@ augroup             breath
     autocmd!
     autocmd BufNewFile  $BREATH_ROOT/*  call s:InitPhaseOne()
     autocmd BufWinEnter $BREATH_ROOT/*  call s:InitPhaseTwo()
-
-    "autocmd BufNewFile,BufRead
-     "               \   $BREATH_ROOT/*  call s:SetEncodingFromFile()
 augroup end
 
 
@@ -69,9 +66,6 @@ endfunction
 
 
 function            s:InitPhaseTwo()
-
-    "call s:DetectHtmlEncoding()
-
     if exists( "b:breath_initializing" )
         for x in [ "sh", "awk" ]
             if &filetype == x
@@ -89,36 +83,6 @@ function            s:InitPhaseTwo()
     endif
 endfunction
 
-
-"---  function!            s:SetEncodingFromFile()
-"---  
-"---      " check for 'multibyte' --gps
-"---  
-"---      let enc_vim_would_use =
-"---          \ &fileencoding != "" && &fileencoding != &encoding
-"---                  \ ? &fileencoding
-"---                  \ : &encoding
-"---  
-"---      "normal m`
-"---      "normal gg
-"---      call cursor( 1, 1, 0 )
-"---      if search( 'encoding="[-A-Za-z0-9_]\+"' ) != 0
-"---          let charset = matchstr( getline('.'), 'encoding="\zs[-A-Za-z0-9_]\+', col('.') - 1 )
-"---          """"""""""let charset=s:ConvertHtmlEncoding(charset)
-"---  
-"---          if charset != enc_vim_would_use
-"---              "echoerr "Detected a different encoding"
-"---              "finish
-"---          endif
-"---  
-"---          let syn = &syntax
-"---          silent! exec "edit ++enc=" . charset
-"---          if syn != ""
-"---              let &syntax = syn
-"---          endif
-"---  
-"---      endif
-"---  endfunction
 
 " Local Variables:
 " indent-tabs-mode: nil
