@@ -16,8 +16,8 @@ namespace breath {
 class string_argument
 {
 public:
-    //!     Constructs a <code>string_argument</code> from a <code>std::string
-    //!     </code>. Intentionally not <code>explicit</code>.
+    //!     Constructs a <code>string_argument</code> from a <code>
+    //!     std::string</code>. Intentionally not <code>explicit</code>.
     // -------------------------------------------------------------------------
                         string_argument( std::string const & ) ;
     //!     Constructs a <code>string_argument</code> from a <code>char const
@@ -25,7 +25,7 @@ public:
     //!     the argument equals <code>nullptr</code>.
     // -------------------------------------------------------------------------
                         string_argument( char const * ) ;
-    
+
     //!     Returns the value in this <code>string_argument</code> as a <code>
     //!     std::string</code>.
     // -------------------------------------------------------------------------
