@@ -71,13 +71,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_descriptor const
-                        desc[] =
-    {
-        check
-    } ;
-
-    test_runner::instance().run( begin( desc ), end( desc ) ) ;
+    test_runner::instance().run( { check } ) ;
 }
 
 // Local Variables:
