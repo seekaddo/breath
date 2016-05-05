@@ -32,31 +32,31 @@ class entropy_source {
     BREATH_DECLARE_NON_COPYABLE( entropy_source )
 
 public:
-//          note that the system entropy source may work on a
-//          smaller type (typically unsigned char); we don't
-//          use unsigned char here on the interface because we
-//          we don't want things such as std::cout << rnd.next()
-//          to output a character instead of a number
+//!         note that the system entropy source may work on a
+//!         smaller type (typically unsigned char); we don't
+//!         use unsigned char here on the interface because we
+//!         we don't want things such as std::cout << rnd.next()
+//!         to output a character instead of a number
 // ---------------------------------------------------------------------------
     typedef unsigned int
                         result_type ;
     class               exception ;
 public:
-    explicit            entropy_source() ;
+                        entropy_source() ;
                         ~entropy_source() noexcept ;
 
 
-    //      Returns the next random value. Each call gives (with
-    //      overwhelming probability) a different value
-    // ------------------------------------------------------------------------
+    //!     Returns the next random value. Each call gives (with
+    //!     overwhelming probability) a different value
+    //!------------------------------------------------------------------------
     result_type         next() ;
 
-    result_type         min() ;
-    result_type         max() ;
+    result_type         min() noexcept ;
+    result_type         max() noexcept ;
 
-    //      TODO:
-    //          define entropy()??? It should be 8 for /dev/random... what
-    //          about the CryptoAPI?
+    //!     TODO:
+    //!         define entropy()??? It should be 8 for /dev/random... what
+    //!         about the CryptoAPI?
     // ------------------------------------------------------------------------
     result_type         operator()() ;
     result_type         operator()( result_type maximum ) ;
@@ -73,7 +73,7 @@ public:
     //      NOTE: you cannot reattempt a release if it has already
     //            succeeded.
     // ------------------------------------------------------------------------
-    bool                release() throw() ;
+    bool                release() noexcept ;
 
 private:
     class               impl ;
@@ -85,9 +85,9 @@ class entropy_source::exception : public virtual breath::exception
 public:
     static void         raise( std::string const & message ) ;
     
-                        exception( std::string const & msg ) throw() ;
+    explicit            exception( std::string const & msg ) noexcept ;
     virtual char const *
-                        what() const throw() ;
+                        what() const noexcept ;
 private:
     enum { max_length = 4 * 1024 } ;
     char                m_message[ max_length ] ;

@@ -5,14 +5,14 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//      Implementation for systems that have /dev/random (Unix)
+// -------------------------------------------------------------------------
 
-// Implementation for systems that have /dev/random (Unix)
-
-
+#include "breath/random/entropy_source.hpp"
 #include "breath/diagnostics/assert.hpp"
-#include "breath/random/subrange_max.hpp"   // gps OK????
+#include "breath/random/subrange_max.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
-
 
 #include <cstddef>
 #include <cerrno>
@@ -29,7 +29,7 @@ namespace breath {
 
 class entropy_source::impl
 {
-    BREATH_DECLARE_NON_COPYABLE( impl ) ;
+    BREATH_DECLARE_NON_COPYABLE( impl )
     
 public:
                         impl() ;
@@ -37,12 +37,14 @@ public:
     bool                release() noexcept ;
     unsigned char /*gps*/
                         next() ;
-    result_type         minimum() ;
-    result_type         maximum() ;
+    result_type
+                        minimum() noexcept ;
+    result_type
+                        maximum() noexcept ;
 
 private:
-    bool                is_open() const ;
-    void                to_buffer( unsigned char /*gps*/ * buffer, std::size_t count ) ;
+    bool                is_open() const noexcept ;
+    void                to_buffer( unsigned char /*gps*/ * buffer, std::size_t count ) noexcept ;
 
 private:
     FILE *              m_file ;
@@ -58,11 +60,11 @@ entropy_source::impl::impl()
 
     // Attempt to turn off the library-level buffering. If that fails... --gps
     //
-    // (If the need arises to verify this, I might store the information given by setvbuf's return value and
-    // add an is_buffered() member function.)
-    //
+    // (If the need arises to verify this, I might store the information
+    // given by setvbuf's return value and add an is_buffered() member
+    // function.)
+    // -----------------------------------------------------------------
     ::setvbuf( m_file, nullptr, _IONBF, 0 ) ;
-
 }
 
 entropy_source::impl::~impl() noexcept
@@ -83,43 +85,26 @@ entropy_source::impl::next()
     return buffer[ 0 ] ;
 }
 
-#if 0  // -------------------------------------------------------------------------------------------
-// [0..cap[  OK? gps
-//
-unsigned char /*gps*/ next( unsigned int cap /*not inclusive OK?*/ )
-{
-    BREATH_ASSERT( cap > 0 ) ; // OK? or return 0?
-
-    auto                n( next() ) ;
-    while ( n > breath::subrange_max( cap-1, entropy_source::max() ) ) {
-        n = next() ;     // document complexity gps
-    }
-    return n ;
-}
-
-#endif // -----------------------------------------------------------------------------------------------------------
-
-
 entropy_source::result_type
-minimum()
+entropy_source::impl::minimum() noexcept
 {
     return 0 ;
 }
 
 entropy_source::result_type
-maximum()
+entropy_source::impl::maximum() noexcept
 {
     return 255 ;
 }
 
 bool
-entropy_source::impl::is_open() const
+entropy_source::impl::is_open() const noexcept
 {
     return m_file != nullptr ;
 }
 
 void
-entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::size_t count )
+entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::size_t count ) noexcept
 {
     auto const          read =
         ::fread( buffer, sizeof buffer[ 0 ], count, m_file ) ;
@@ -131,7 +116,7 @@ entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::size_t cou
 }
 
 bool
-entropy_source::impl::release() throw()
+entropy_source::impl::release() noexcept
 {
     // Close is attempted ONCE. Postcondition: is_open() == false, regardless
 
@@ -142,7 +127,6 @@ entropy_source::impl::release() throw()
     }
     return success ;
 }
-
 
 void
 entropy_source::exception::raise( std::string const & message )

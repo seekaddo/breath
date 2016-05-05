@@ -34,19 +34,19 @@ entropy_source::next()
 }
 
 bool
-entropy_source::release()
+entropy_source::release() noexcept
 {
     return m_impl->release() ;
 }
 
 entropy_source::result_type
-entropy_source::min BREATH_PREVENT_MACRO_EXPANSION ()
+entropy_source::min BREATH_PREVENT_MACRO_EXPANSION () noexcept
 {
     return m_impl->minimum() ;
 }
 
 entropy_source::result_type
-entropy_source::max BREATH_PREVENT_MACRO_EXPANSION ()
+entropy_source::max BREATH_PREVENT_MACRO_EXPANSION () noexcept
 {
     return m_impl->maximum() ;
 }

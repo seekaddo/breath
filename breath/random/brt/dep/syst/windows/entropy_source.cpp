@@ -46,13 +46,13 @@ public:
 
 private:
     bool                acquire( DWORD flags = 0 ) ;
-    bool                is_done() const /*noexcept */;          // true == can no longer use this object (gps BETTER name?)
+    bool                is_done() const noexcept ;          // true == can no longer use this object (gps BETTER name?)
     void                to_buffer( unsigned char * buffer, int count /* OK int?*/ ) ;
 } ;
 
 
 entropy_source::impl::
-impl() //gps "explicit"?
+impl()
     // note: m_handle_is_valid intentionally not initialized here --see below
 {
     if ( ! acquire() ) {
@@ -92,7 +92,7 @@ entropy_source::impl::acquire( DWORD flags )
 
 bool
 entropy_source::impl::
-    is_done() const /*noexcept*/
+    is_done() const noexcept
 {
     return ! m_handle_is_valid ;
 }
@@ -101,14 +101,14 @@ entropy_source::impl::
 // gps this release could be attempted more than once? this is different from Unix!
 bool
 entropy_source::impl::
-release() throw()
+release() noexcept
 {
     bool            success = false ;
     if ( ! is_done() ) {
         success = ::CryptReleaseContext( m_provider_handle,
                                          0 // this is reserved (future use) and must be zero
                                        ) != 0 ;
-        m_handle_is_valid = ! success ; // gps?????
+        m_handle_is_valid = ! success ;
     }
     return success ;
 }
