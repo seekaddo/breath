@@ -33,7 +33,7 @@ make_random_alnum( int length, breath::entropy_source & source )
         result.reserve( length ) ;
 
         int                 count = length ;
-        std::size_t         m = alnum.length() - 1 ;
+        unsigned            m = static_cast< unsigned >( alnum.length() - 1 ) ;
         while ( count > 0 ) {
             result.push_back( alnum[ source( m ) ] ) ;
             -- count ;
@@ -51,7 +51,7 @@ make_macro_name( std::string const & prefix,
                  int random_part_length,
                  macro_name_creation::exit_status * exit_status )
 {
-    int const           total_length = prefix.length() + random_part_length ;
+    std::size_t const   total_length = prefix.length() + random_part_length ;
     BREATH_ASSERT( total_length > 0
         && total_length <= 63 /* minimum required by C99 */ ) ;
 
