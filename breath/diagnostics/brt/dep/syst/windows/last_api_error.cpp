@@ -30,7 +30,7 @@ last_api_error::last_api_error( char const * p ) throw()
         m_last_error,
         0,
         m_message + offset,
-        sizeof m_message - offset,
+        static_cast< DWORD>( sizeof m_message - offset ),
         nullptr
         ) ;
     if( dw == 0 ) {
