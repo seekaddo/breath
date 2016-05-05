@@ -16,16 +16,16 @@
 
 namespace breath {
 
-//      NOTE: this class is designed to be usable with random_shuffle
-//            and shuffle. (This is, BTW, why it has members named "min"
-//            and "max", which I generally avoid, given how many sources
-//            define them as macro names.)
-//
-//      It satisfies the requirements of a "uniform random number
-//      generator".
-//
-//      What about the complexity of g()? [gps]
-//
+//!     NOTE: this class is designed to be usable with random_shuffle
+//!           and shuffle. (This is, BTW, why it has members named "min"
+//!           and "max", which I generally avoid, given how many sources
+//!           define them as macro names.)
+//!
+//!     It satisfies the requirements of a "uniform random number
+//!     generator".
+//!
+//!     What about the complexity of g()? [gps]
+//!
 // ---------------------------------------------------------------------------
 class entropy_source {
 
@@ -62,16 +62,16 @@ public:
     result_type         operator()( result_type maximum ) ;
 
 
-    //      Releases system resources associated with this object
-    //      (usually a file or a handle)
-    //
-    //      Returns true <=> the resource(s) were successfully
-    //      released.
-    //
-    //      Throws: nothing (reports via its return value)
-    //
-    //      NOTE: you cannot reattempt a release if it has already
-    //            succeeded.
+    //!     Releases system resources associated with this object
+    //!     (usually a file or a handle)
+    //!
+    //!     Returns true <=> the resource(s) were successfully
+    //!     released.
+    //!
+    //!     Throws: nothing (reports via its return value)
+    //!
+    //!     NOTE: you cannot reattempt a release if it has already
+    //!           succeeded.
     // ------------------------------------------------------------------------
     bool                release() noexcept ;
 
