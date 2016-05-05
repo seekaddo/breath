@@ -5,11 +5,13 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
-#ifndef BREATH_GUARD_FXhivw6tI6cV0C3govXyzZBmNCWa1e2o#define BREATH_GUARD_FXhivw6tI6cV0C3govXyzZBmNCWa1e2o
+
+#ifndef BREATH_GUARD_FXhivw6tI6cV0C3govXyzZBmNCWa1e2o
+#define BREATH_GUARD_FXhivw6tI6cV0C3govXyzZBmNCWa1e2o
+
 #include <string>
 
 namespace breath {
-
 
 bool                ends_with( std::string const & str,
                                std::string const & with ) ;

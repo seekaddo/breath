@@ -6,12 +6,12 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#ifndef BREATH_GUARD_vf6LuqjTQ9wAJWXZsNnALWlVf4PYtieN#define BREATH_GUARD_vf6LuqjTQ9wAJWXZsNnALWlVf4PYtieN
+#ifndef BREATH_GUARD_vf6LuqjTQ9wAJWXZsNnALWlVf4PYtieN
+#define BREATH_GUARD_vf6LuqjTQ9wAJWXZsNnALWlVf4PYtieN
 
 #include <string>
 
 namespace breath {
-
 
 std::string         remove_from_end( std::string const & str,
                                      std::string const & to_be_removed ) ;
