@@ -48,7 +48,11 @@ check()
         { "Long string long string long string long string",
           "TG9uZyBzdHJpbmcgbG9uZyBzdHJpbmcgbG9uZyBzdHJpbmcgbG9uZyBzdHJpbmc=" },
         { "The quick brown fox jumps over the lazy dog",
-          "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="}
+          "VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIHRoZSBsYXp5IGRvZw=="},
+        { "Pack my box with five dozen liquor jugs",
+          "UGFjayBteSBib3ggd2l0aCBmaXZlIGRvemVuIGxpcXVvciBqdWdz" },
+        { "The five boxing wizards jump quickly",
+          "VGhlIGZpdmUgYm94aW5nIHdpemFyZHMganVtcCBxdWlja2x5" }
     } ;
 
     for ( auto it = breath::cbegin( known ) ; it != breath::cend( known ) ; ++ it ) {
