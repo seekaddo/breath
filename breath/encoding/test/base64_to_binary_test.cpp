@@ -75,6 +75,7 @@ check_invalid()
                                                  std::back_inserter( out ) ) ) ;
 
     // This has equal signs followed by non-equal-signs.
+    //
     std::string const   invalid2 = "Zm9=x" ;
     BREATH_CHECK_THROW( breath::base64_to_binary( invalid2.cbegin(),
                                                   invalid2.cend(),
