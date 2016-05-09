@@ -28,11 +28,11 @@ class last_api_error
     :   public exception
 {
 public:
-    explicit            last_api_error( char const * ) throw() ;
-                        last_api_error( last_api_error const & other ) throw() ;
-                        ~last_api_error() throw() ;
-    unsigned long       code() const throw() ;
-    char const *        what() const throw() ;
+    explicit            last_api_error( char const * ) noexcept ;
+                        last_api_error( last_api_error const & other ) noexcept ;
+                        ~last_api_error() noexcept ;
+    unsigned long       code() const noexcept ;
+    char const *        what() const noexcept ;
 
 private:
     void                operator=( last_api_error const & ) ; // not defined

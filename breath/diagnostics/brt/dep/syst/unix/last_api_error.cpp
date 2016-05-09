@@ -5,8 +5,8 @@
 namespace breath {
 
 
-last_api_error::last_api_error() throw()
-    m_errno( errno )
+last_api_error::last_api_error() noexcept
+    : m_errno( errno )
 {
     int const           ret = strerror_r( m_errno,
                                           &m_message[ 0 ],
@@ -16,7 +16,7 @@ last_api_error::last_api_error() throw()
     }
 }
 
-last_api_error::last_api_error( last_api_error const & other ) throw()
+last_api_error::last_api_error( last_api_error const & other ) noexcept
     :   m_errno( other.m_errno )
 {
     strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
@@ -27,19 +27,19 @@ last_api_error::~last_api_error() noexcept
 }
 
 int
-last_api_error::code()
+last_api_error::code() const noexcept
 {
     return m_errno ;
 }
 
 char const *
-last_api_error::what() const throw()
+last_api_error::what() const noexcept
 {
     return m_message ;
 }
 
 std::ostream &
-operator<<( std::ostream &, last_api_error const & last)
+operator<<( std::ostream & dest, last_api_error const & last)
 {
 return dest << last.m_message << "[code: " << last.code() << "]";
 }

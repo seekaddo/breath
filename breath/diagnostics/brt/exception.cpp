@@ -7,12 +7,12 @@ namespace breath {
 namespace {
     char const      incipit[] = "Breath library base exception" ;
 }
-exception::exception() throw()
+exception::exception() noexcept
 {
     strcpy( m_what_message, incipit ) ;
 }
 
-exception::exception( std::string const & what_msg ) throw()
+exception::exception( std::string const & what_msg ) noexcept
 {
     char *              curr = &m_what_message[ 0 ] ;
     strcpy( curr, incipit ) ;
@@ -24,22 +24,22 @@ exception::exception( std::string const & what_msg ) throw()
         what_message_max_size - (curr - &m_what_message[0] ) ) ;
 }
 
-exception::exception( const exception & ) throw()
+exception::exception( const exception & ) noexcept
 {
 }
 
 exception &
-exception::operator=( const exception & ) throw()
+exception::operator=( const exception & ) noexcept
 {
     return *this ;
 }
 
-exception::~exception() throw()
+exception::~exception() noexcept
 {
 }
 
 char const *
-exception::what() const throw()
+exception::what() const noexcept
 {
     return m_what_message ;
 }
