@@ -54,11 +54,12 @@ entropy_source::impl::impl()
     : m_file( ::fopen( "/dev/random", "rb" ) )
 {
     if ( ! is_open() ) {
-        entropy_source::exception::raise("cannot open /dev/random") ;
+        entropy_source::exception::raise( "cannot open /dev/random" ) ;
     }
 
 
-    // Attempt to turn off the library-level buffering. If that fails... --gps
+    // Attempt to turn off the library-level buffering. If that fails
+    // we ignore the failure.
     //
     // (If the need arises to verify this, I might store the information
     // given by setvbuf's return value and add an is_buffered() member
