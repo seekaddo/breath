@@ -54,7 +54,7 @@ entropy_source::impl::impl()
     : m_file( ::fopen( "/dev/random", "rb" ) )
 {
     if ( ! is_open() ) {
-        throw 1 ;
+        entropy_source::exception::raise("cannot open /dev/random") ;
     }
 
 

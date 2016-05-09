@@ -6,7 +6,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
 #include "breath/random/entropy_source.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
@@ -19,11 +18,7 @@
 #include <limits>
 #include <string>
 #include <vector>
-
-// NOTA: inizio adesso (sabato 3 agosto 2013 12:15:21) a ricodificare tutto.
-//       NB: uso l'help locale di Visual Studio --dopo confronta con la versione che hai
-//           e con la docum. aggiornata.
-
+#include <cstddef>
 
 namespace breath {
 
@@ -39,7 +34,7 @@ public:
                         ~impl() noexcept ;
 
     result_type         next() ;
-    bool                release() throw() ;
+    bool                release() noexcept ;
 
     result_type         minimum() ;
     result_type         maximum() ;
@@ -47,7 +42,7 @@ public:
 private:
     bool                acquire( DWORD flags = 0 ) ;
     bool                is_done() const noexcept ;          // true == can no longer use this object (gps BETTER name?)
-    void                to_buffer( unsigned char * buffer, int count /* OK int?*/ ) ;
+    void                to_buffer( unsigned char * buffer, std::size_t count ) ;
 } ;
 
 
@@ -114,7 +109,7 @@ release() noexcept
 }
 
 void
-entropy_source::impl::to_buffer( unsigned char * buffer, int count )
+entropy_source::impl::to_buffer( unsigned char * buffer, std::size_t count )
 {
     int const       r = ::CryptGenRandom( m_provider_handle, count, buffer ) ;
     if ( r == 0 ) {
