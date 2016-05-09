@@ -22,9 +22,9 @@ class operating_system_name
 class operating_system_name_error
     : public exception
 {
-                        operating_system_name_error( std::string const & ) throw() ;
+                        operating_system_name_error( std::string const & ) noexcept ;
     virtual char const *
-                        what() const throw() ;
+                        what() const noexcept ;
 private:
     enum { what_string_max_size = 256 } ;
     char                m_what_str[ what_string_max_size ];

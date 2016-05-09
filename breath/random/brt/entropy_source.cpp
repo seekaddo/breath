@@ -66,13 +66,13 @@ entropy_source::operator()( result_type maximum )
 }
 
 entropy_source::exception::
-exception( std::string const & msg ) throw()
+exception( std::string const & msg ) noexcept
 {
     std::strncpy( &m_message[ 0 ], msg.c_str(), max_length ) ;
 }
 
 char const *
-entropy_source::exception::what() const throw()
+entropy_source::exception::what() const noexcept
 {
     return m_message ;
 }

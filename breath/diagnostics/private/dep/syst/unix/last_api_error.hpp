@@ -15,11 +15,11 @@ class last_api_error
     :   public exception
 {
 public:
-                        last_api_error() throw() ;
-                        last_api_error( last_api_error const & other ) throw() ;
+                        last_api_error() noexcept ;
+                        last_api_error( last_api_error const & other ) noexcept ;
                         ~last_api_error() noexcept ;
-    int                 code() const throw() ;
-    char const *        what() const throw() ;
+    int                 code() const noexcept ;
+    char const *        what() const noexcept ;
 private:
 
 

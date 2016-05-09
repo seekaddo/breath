@@ -1,4 +1,3 @@
-#include "breath/diagnostics/assert.hpp"
 #include <Windows.h>
 #include <cstddef>
 #include <cstring>
@@ -6,11 +5,11 @@
 
 namespace breath {
 
-last_api_error::last_api_error( char const * p ) throw()
+last_api_error::last_api_error( char const * p ) noexcept
     : m_last_error( GetLastError() )
 {
     int const           max_incipit_size = 1024;
-    BREATH_ASSERT( max_incipit_size < (sizeof m_message / 32 ) ) ;
+    static_assert( max_incipit_size < (sizeof m_message / 32 ), "" ) ;
     
     if ( p != nullptr ) {
         std::strncpy( m_message, p, max_incipit_size ) ;
@@ -42,7 +41,7 @@ last_api_error::last_api_error( char const * p ) throw()
     }
 }
 
-last_api_error::last_api_error( last_api_error const & other ) throw()
+last_api_error::last_api_error( last_api_error const & other ) noexcept
     :   m_last_error( other.m_last_error )
 {
     std::strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
@@ -53,13 +52,13 @@ last_api_error::~last_api_error() noexcept
 }
 
 DWORD
-last_api_error::code() const throw()
+last_api_error::code() const noexcept
 {
     return m_last_error ;
 }
 
 char const *
-last_api_error::what() const throw()
+last_api_error::what() const noexcept
 {
     return m_message ;
 }
