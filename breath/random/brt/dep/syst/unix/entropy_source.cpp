@@ -19,10 +19,7 @@
 #include <limits>
 #include <string.h> // for POSIX' strerror
 #include <vector>
-
-// -----------------------------------------------------------------------
-#include <stdio.h> // temp, and Unix only gps
-
+#include <stdio.h>
 
 
 namespace breath {
@@ -35,12 +32,9 @@ public:
                         impl() ;
                         ~impl() noexcept ;
     bool                release() noexcept ;
-    unsigned char /*gps*/
-                        next() ;
-    result_type
-                        minimum() noexcept ;
-    result_type
-                        maximum() noexcept ;
+    result_type         next() ;
+    result_type         minimum() noexcept ;
+    result_type         maximum() noexcept ;
 
 private:
     bool                is_open() const noexcept ;
@@ -74,11 +68,10 @@ entropy_source::impl::~impl() noexcept
 }
 
 
-unsigned char //gps
+entropy_source::result_type
 entropy_source::impl::next()
 {
     BREATH_ASSERT( is_open() ) ;
-
 
     std::vector< unsigned char >
                         buffer( 1 ) ; ///gps OK? {}?
