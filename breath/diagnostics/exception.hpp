@@ -21,8 +21,8 @@ public:
     exception() noexcept ;
     exception( std::string const & what_msg ) noexcept ;
 
-    exception( exception const & ) noexcept ; //gps C++11 =default?
-    exception & operator=( exception const & ) noexcept ;
+    exception( exception const & ) noexcept = default ;
+    exception & operator=( exception const & ) noexcept = default ;
 
     virtual ~exception() noexcept ;
 
