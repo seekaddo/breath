@@ -10,7 +10,7 @@ last_api_error::last_api_error( char const * p ) noexcept
 {
     int const           max_incipit_size = 1024;
     static_assert( max_incipit_size < (sizeof m_message / 32 ), "" ) ;
-    
+
     if ( p != nullptr ) {
         std::strncpy( m_message, p, max_incipit_size ) ;
     }
@@ -29,7 +29,7 @@ last_api_error::last_api_error( char const * p ) noexcept
         m_last_error,
         0,
         m_message + offset,
-        static_cast< DWORD>( sizeof m_message - offset ),
+        static_cast< DWORD >( sizeof m_message - offset ),
         nullptr
         ) ;
     if( dw == 0 ) {
@@ -66,7 +66,7 @@ last_api_error::what() const noexcept
 std::ostream &
 operator<<( std::ostream & dest, last_api_error const & last )
 {
-    return dest << last.m_message << " [code: " << last.code() << "]";
+    return dest << last.m_message << " [code: " << last.code() << "]" ;
 }
 
 }
