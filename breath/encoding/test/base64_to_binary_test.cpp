@@ -85,6 +85,14 @@ check_invalid()
                                                   invalid2.cend(),
                                                  std::back_inserter( out ) ) ) ;
 
+    // This is composed of NULs
+    //
+    std::string         invalid3 ;
+    invalid3.push_back( '\x0' );
+    invalid3.push_back( '\x0' );
+    BREATH_CHECK_THROW( breath::base64_to_binary( invalid3.cbegin(),
+                                                  invalid3.cend(),
+                                                 std::back_inserter( out ) ) ) ;
 
 }
 
