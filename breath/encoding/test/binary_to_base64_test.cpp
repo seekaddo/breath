@@ -63,6 +63,16 @@ check()
     }
 }
 
+void
+check_string_of_nuls()
+{
+    std::string const   s = { '\x0', '\x0' } ;
+    std::string         out ;
+    breath::binary_to_base64( s.cbegin(), s.cend(),
+                              std::back_inserter( out ) ) ;
+    BREATH_CHECK( out == "AAA=" ); // this one checked with base64 under Cygwin
+}
+
 int
 main()
 {
@@ -71,7 +81,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_runner::instance().run( { check } ) ;
+    test_runner::instance().run( { check, check_string_of_nuls } ) ;
 }
 
 // Local Variables:
