@@ -41,7 +41,7 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
                && ( std::is_same< typename InputIter::value_type, char >::value
       || std::is_same< typename InputIter::value_type, unsigned char>::value ),
                    "" ) ;
-    char constexpr      error_message[] = "invalid input to base64_to_binary" ;
+    char constexpr      error_message[] = "invalid input to base64_to_binary()" ;
     int const           not_to_be_translated = -1 ;
     unsigned            block = 0 ;
     std::size_t         num_bits = 0 ;
