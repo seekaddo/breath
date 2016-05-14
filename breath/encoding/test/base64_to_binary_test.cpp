@@ -18,7 +18,7 @@ check_valid()
 {
     //  The following array of vectors is almost identical to the one
     //  in
-    //      binary_to_base64_test
+    //      binary_to_base64_test.cpp
     //  I have not put the code in common for two reasons:
     //  first the vectors here contain some newlines too, in order
     //  to check that the decoding function ignores them; and second
