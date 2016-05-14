@@ -70,7 +70,8 @@ check_string_of_nuls()
     std::string         out ;
     breath::binary_to_base64( s.cbegin(), s.cend(),
                               std::back_inserter( out ) ) ;
-    BREATH_CHECK( out == "AAA=" ); // this one checked with base64 under Cygwin
+    // this one checked with base64 8.25 under Cygwin
+    BREATH_CHECK( out == "AAA=" );
 }
 
 int
