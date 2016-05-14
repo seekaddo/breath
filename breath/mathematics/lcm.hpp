@@ -28,7 +28,7 @@ namespace breath {
 //!     returns the least common multiple of |m| and |n|.
 // ---------------------------------------------------------------------
 template< typename M, typename N >
-std::common_type_t< M, N > //constexpr
+std::common_type_t< M, N > constexpr
                     lcm( M m, N n ) noexcept ;
 
 
