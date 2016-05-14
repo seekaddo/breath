@@ -22,7 +22,6 @@ lcm( M a, N b ) noexcept
         : abs( a ) / g * abs( b ) ;
 }
 
-
 }
 
 // Local Variables:
