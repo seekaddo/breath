@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/mathematics/gcd.hpp"
-#include <algorithm>
+#include <cmath>
 
 namespace breath {
 
