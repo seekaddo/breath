@@ -21,10 +21,10 @@ do_check()
         int b ;
         int lcm ;
     } constexpr         table[] = {
-         0,  0, 0,
-        -1,  0, 0,
-        -3,  0, 0,
-        18, 24, 72
+        {  0,  0,  0 },
+        { -1,  0,  0 },
+        { -3,  0,  0 },
+        { 18, 24, 72 }
     } ;
 
     for ( auto const & t : table ) {
