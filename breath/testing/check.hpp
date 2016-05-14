@@ -10,6 +10,7 @@
 #define BREATH_GUARD_EFlfreUFA16SG5tXxNJpWtUHWTCfIjaD
 
 #include "breath/testing/test_exception.hpp"
+#include "breath/diagnostics/assert.hpp"
 
 #define BREATH_CHECK( condition )                                           \
             do {                                                            \
@@ -22,7 +23,7 @@
             do {                                                            \
                 try {                                                       \
                     expression ;                                            \
-                    BREATH_CHECK( false ) ;                                 \
+                    BREATH_ASSERT( false && "BREATH_CHECK_THROW failed" ) ; \
                 } catch ( ... ) {                                           \
                 }                                                           \
             } while ( false )                                            /**/
