@@ -61,7 +61,7 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
         if ( x == '=' ) {
             equals_seen = true ;
         }
-        if ( x != '=' && equals_seen ) {
+        if ( x != '=' && x != '\n' && equals_seen ) {
             throw exception( error_message ) ;
         }
         if ( value == not_to_be_translated ) {

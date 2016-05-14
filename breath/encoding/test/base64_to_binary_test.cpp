@@ -38,7 +38,7 @@ check_valid()
         { "ABC", "QUJD" },
         { "Hello", "SGVsbG8=" },
         { "Hello, world",  "SGVs\nbG8s\nIHdv\ncmxk" },
-        { "Hello, world!", "SGVsb\nG8sIH\ndvcmx\nkIQ==" },
+        { "Hello, world!", "SGVsb\nG8sIH\ndvcmx\nkIQ=\n=" },
         { "\x14\xfb\x9c\x03\xd9\x7e", "FPucA9l+" },// this example from RFC 3548
         { "\x14\xfb\x9c\x03\xd9",     "FPucA9k=" },//   "     "      "  RFC 3548
         { "\x14\xfb\x9c\x03",         "FPucAw==" },//   "     "      "  RFC 3548
