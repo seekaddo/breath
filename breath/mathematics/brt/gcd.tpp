@@ -12,24 +12,24 @@ namespace breath {
 
 template< typename M, typename N >
 std::common_type_t< M, N > constexpr
-gcd( M m, N n ) noexcept
+gcd( M a, N b ) noexcept
 {
     static_assert( std::is_integral< M >::value
                 && std::is_integral< N >::value, "M && N must be integral" ) ;
 
-    m = std::abs( m ) ;
-    n = std::abs( n ) ;
+    a = std::abs( a ) ;
+    b = std::abs( b ) ;
     while ( true ) {
 
-        if ( m == 0 ) {
-            return n ;
+        if ( a == 0 ) {
+            return b ;
         }
-        n %= m ;
+        b %= a ;
 
-        if ( n == 0 ) {
-            return m ;
+        if ( b == 0 ) {
+            return a ;
         }
-        m %= n ;
+        a %= b ;
     }
 }
 
