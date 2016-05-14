@@ -68,7 +68,7 @@ binary_to_base64( InputIter begin, InputIter end, OutputIter out )
     }
 
     for ( int i = 0 ; i < ( group_size - count ) % group_size ; ++ i ) {
-        *out++ = '=';
+        *out++ = '=' ;
     }
 }
 
