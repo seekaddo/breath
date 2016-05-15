@@ -6,10 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#include "breath/diagnostics/assert.hpp"
-#include "breath/meta/is_twos_complement.hpp"
+#include "private/check_common_gcd_lcm_preconditions.hpp"
 #include <cmath>
-#include <limits>
 
 namespace breath {
 
@@ -17,13 +15,7 @@ template< typename M, typename N >
 std::common_type_t< M, N > constexpr
 gcd( M a, N b ) noexcept
 {
-    static_assert( std::is_integral< M >::value
-                && std::is_integral< N >::value, "M && N must be integral" ) ;
-
-    BREATH_ASSERT( ( ! meta::is_twos_complement< M >()
-        || a != std::numeric_limits< M >::min() )
-        &&         ( ! meta::is_twos_complement< N >()
-        || b != std::numeric_limits< N >::min() ) ) ;
+    gcd_lcm_private::check_common_gcd_lcm_preconditions( a, b ) ;
 
     a = std::abs( a ) ;
     b = std::abs( b ) ;
