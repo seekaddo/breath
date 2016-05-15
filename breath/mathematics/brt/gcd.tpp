@@ -22,7 +22,7 @@ gcd( M a, N b ) noexcept
 
     BREATH_ASSERT( ( !meta::is_twos_complement< M >()
         || a != std::numeric_limits< M >::min() )
-        &&         ( !meta::is_twos_complement< M >()
+        &&         ( !meta::is_twos_complement< N >()
         || b != std::numeric_limits< N >::min() ) ) ;
 
     a = std::abs( a ) ;
