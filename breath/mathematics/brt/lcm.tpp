@@ -21,9 +21,9 @@ lcm( M a, N b ) noexcept
     static_assert( std::is_integral< M >::value
                 && std::is_integral< N >::value, "M && N must be integral" ) ;
 
-    BREATH_ASSERT( ( !meta::is_twos_complement< M >()
+    BREATH_ASSERT( ( ! meta::is_twos_complement< M >()
         || a != std::numeric_limits< M >::min() )
-        &&         ( !meta::is_twos_complement< N >()
+        &&         ( ! meta::is_twos_complement< N >()
         || b != std::numeric_limits< N >::min() ) ) ;
 
     std::common_type_t< M, N > const
