@@ -7,7 +7,10 @@
 // _________________________________________________________________________
 
 #include "breath/mathematics/gcd.hpp"
+#include "breath/diagnostics/assert.hpp"
 #include <cmath>
+#include <limits>
+#include <type_traits>
 
 namespace breath {
 
@@ -15,6 +18,14 @@ template< typename M, typename N >
 std::common_type_t< M, N > constexpr
 lcm( M a, N b ) noexcept
 {
+    static_assert( std::is_integral< M >::value
+                && std::is_integral< N >::value, "M && N must be integral" ) ;
+
+    BREATH_ASSERT( ( !meta::is_twos_complement< M >()
+        || a != std::numeric_limits< M >::min() )
+        &&         ( !meta::is_twos_complement< M >()
+        || b != std::numeric_limits< N >::min() ) ) ;
+
     std::common_type_t< M, N > const
                         g = gcd( a, b ) ;
     return g == 0
