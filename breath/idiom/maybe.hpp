@@ -73,11 +73,11 @@ namespace breath {
 //!     As shown above, in these cases you have to explicitly invoke
 //!     value().
 //!
-//!     Curiously enough, B&N's book introduce Fallible<> as an example
+//!     Curiously enough, B&N's book introduces Fallible<> as an example
 //!     of using conversions "to add a binary state" --valid or invalid--
 //!     and checking to objects. The conversion itself, however, isn't
 //!     part of the concept: it just makes the checking more
-//!     "transparent" (at the well-known cost that implicit conversion
+//!     "transparent" (at the well-known cost that implicit conversions
 //!     generally bring).
 // ---------------------------------------------------------------------------
 template< typename T >
@@ -90,7 +90,7 @@ private:
 
 public:
 
-                        maybe() noexcept; // POST: ! is_valid()
+                        maybe() noexcept ; // POST: ! is_valid()
                         maybe( maybe const & ) ;
     explicit            maybe( T const & ) ;
                         ~maybe() noexcept ;
