@@ -83,23 +83,28 @@ struct pod_with_same_align
 
 }
 
-
-// Note that this has a different interface from TR1's or C++0x's analogous:
-// both of the latter take one or two numeric arguments (size and alignment);
-// this one takes just a type (the type that we want the same alignment of).
-// Among other things, the C++0x scheme allows for storing arrays:
+//      aligned_buffer_for
+//      ==================
 //
-//   aligned_storage< n * sizeof( T ), alignof( T ) > // gps
-//
-// What's more, C++0x has support for declaring an aligned buffer directly in
-// core language:
-//
-//     <TODO: add example>
-//
-// So: this facility exists basically for C++03, and all of the alternatives
-// (this one, TR1's one and the library-based C++0x's one) will be made
-// superflous by C++0x's core support.
-//
+//!     A byte buffer suitably sized and aligned for the type \c T.
+//!
+//!     Note that this has a different interface from TR1's or C++11's
+//!     analogous: both of the latter take one or two numeric arguments
+//!     (size and alignment); this one takes just a type (the type that
+//!     we want the same alignment of). Among other things, the C++11
+//!     scheme allows for storing arrays:
+//!
+//!       aligned_storage< n * sizeof( T ), alignof( T ) >
+//!
+//!     What's more, C++11 has support for declaring an aligned buffer
+//!     directly in core language:
+//!
+//!        <TODO: add example>
+//!
+//!     So: this facility exists basically for C++03, and all of the
+//!     alternatives (this one, TR1's one and the library-based C++11's
+//!     one) will be made superflous by C++11's core support.
+// ---------------------------------------------------------------------
 template< typename T >
 class aligned_buffer_for
 {
