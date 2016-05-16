@@ -33,7 +33,7 @@ max_power2_less_than_p( int p, int n = start_at )
 }
 
 int constexpr
-integer_log2_impl( std::uintmax_t x, int n )
+integer_log2_implementation( std::uintmax_t x, int n )
 {
     int                 result = 0 ;
     while ( x !=  1 ) {
@@ -58,7 +58,7 @@ integer_log2( std::uintmax_t x )
     int constexpr       n = max_power2_less_than_p(
             std::numeric_limits< std::uintmax_t >::digits
         ) ;
-    return integer_log2_impl( x, n ) ;
+    return integer_log2_implementation( x, n ) ;
 }
 
 }
