@@ -16,7 +16,7 @@ namespace breath {
 //      suffix --gps
 // ---------------------------------------------------------------------------
 __extension__ typedef long long           long_long_type ;
-__extension__ typedef unsigned long long  u_long_long_type ;
+__extension__ typedef unsigned long long  unsigned_long_long_type ;
 
 }
 
