@@ -13,7 +13,7 @@
 
 namespace breath {
 
-bool constexpr      is_power_of_two( std::uintmax_t x ) ;
+bool constexpr      is_power_of_two( std::uintmax_t x ) noexcept ;
 
 }
 

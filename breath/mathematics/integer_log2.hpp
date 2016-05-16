@@ -13,7 +13,7 @@
 
 namespace breath {
 
-int constexpr       integer_log2( std::uintmax_t x ) ;
+int constexpr       integer_log2( std::uintmax_t x ) noexcept ;
 
 }
 
