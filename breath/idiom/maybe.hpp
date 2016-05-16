@@ -26,11 +26,11 @@ namespace breath {
 //!         ISBN 0-201-53393-6.
 //!
 //!     which calls it "Fallible".
-//!     Basically: maybe< T > is used as return type for functions
-//!     that logically return a T or fail (thus, it is an intrusive,
-//!     although lightweight, solution). The maybe< T > object
+//!     Basically: \c maybe< T > is used as return type for functions
+//!     that logically return a \c T or fail (thus, it is an intrusive,
+//!     although lightweight, solution). The \c maybe< T > object
 //!     keeps track of its validity state, and any attempt to retrieve
-//!     the T object when it is marked as invalid will cause an
+//!     the \c T object when it is marked as invalid will cause an
 //!     assertion failure.
 //!
 //!     Note that the original Barton and Nackman solution did throw
@@ -85,7 +85,7 @@ class maybe
 {
 private:
     aligned_buffer_for< T >
-			m_buffer ;
+			            m_buffer ;
     bool                m_is_valid ;
 
 public:
@@ -94,7 +94,7 @@ public:
                         maybe( maybe const & ) ;
     explicit            maybe( T const & ) ;
                         ~maybe() noexcept ;
-
+    maybe &             operator=( maybe const & ) ;
     maybe &             operator=( T const & ) ;
 
     bool                is_valid() const noexcept ;
@@ -104,7 +104,7 @@ public:
 
 private:
     void                construct( T const & source ) ;
-    void                destroy() noexcept ; // PRE: there is an object
+    void                destroy() noexcept ;
 } ;
 
 }

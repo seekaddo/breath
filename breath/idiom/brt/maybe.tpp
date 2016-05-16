@@ -47,12 +47,29 @@ maybe< T >::~maybe() noexcept
 
 template< typename T >
 maybe< T > &
-maybe< T >::operator=( T const & rhs ) // gps strong guarantee???
+maybe< T >::operator=( maybe< T > const & other )
+{
+    if ( other.is_valid() ) {
+        if ( is_valid() ) {
+            *static_cast< T * >( m_buffer.address() ) = other.value() ;
+        } else {
+            construct( other.value() ) ;
+            m_is_valid = true ;
+        }
+    } else if ( is_valid() ) {
+        destroy() ;
+        m_is_valid = false ;
+    }
+}
+
+//      Note that T's assignment operator exception guarantee reflects
+//      that of this operator=().
+// ---------------------------------------------------------------------
+template< typename T >
+maybe< T > &
+maybe< T >::operator=( T const & rhs )
 {
     if ( is_valid() ) {
-        // Note how we set m_is_valid to false until we are sure
-        // that the subsequent operator=() on T does not throw
-        m_is_valid = false ;
         *static_cast< T * >( m_buffer.address() ) = rhs ;
         // m_is_valid = true ;
     } else {
