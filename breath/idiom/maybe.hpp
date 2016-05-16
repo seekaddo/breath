@@ -85,7 +85,7 @@ class maybe
 {
 private:
     aligned_buffer_for< T >
-			            m_buffer ;
+                        m_buffer ;
     bool                m_is_valid ;
 
 public:
@@ -99,7 +99,7 @@ public:
 
     bool                is_valid() const noexcept ;
 
-    T const &		    value() const noexcept ;
+    T const &           value() const noexcept ;
     T const &           default_to( T const & t ) const noexcept ;
 
 private:
