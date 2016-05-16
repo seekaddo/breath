@@ -12,7 +12,7 @@
 namespace breath {
 
 template< typename T >
-maybe< T >::maybe()
+maybe< T >::maybe() noexcept
     :   m_buffer(),
         m_is_valid( false )
 {
@@ -30,7 +30,7 @@ maybe< T >::maybe( maybe const & source )
 }
 
 
-template< typename T > // gps explicit on the definition?
+template< typename T >
 maybe< T >::maybe( T const & t )
 {
     construct( t ) ;
@@ -64,14 +64,14 @@ maybe< T >::operator=( T const & rhs ) // gps strong guarantee???
 
 template< typename T >
 bool
-maybe< T >::is_valid() const
+maybe< T >::is_valid() const noexcept
 {
     return m_is_valid ;
 }
 
 template< typename T >
 T const &
-maybe< T >::value() const
+maybe< T >::value() const noexcept
 {
     BREATH_ASSERT( is_valid() ) ;
     return *static_cast< T const * >( m_buffer.address() ) ;
@@ -79,7 +79,7 @@ maybe< T >::value() const
 
 template< typename T >
 T const &
-maybe< T >::default_to( T const & t ) const
+maybe< T >::default_to( T const & t ) const noexcept
 {
     return is_valid()
         ? value()
@@ -90,15 +90,16 @@ template< typename T >
 void
 maybe< T >::construct( T const & source )
 {
+    BREATH_ASSERT( ! is_valid() ) ;
     :: /*gps OK??? */ new( m_buffer.address() ) T( source ) ; // may throw
 }
 
 template< typename T >
 void
-maybe< T >::destroy()
+maybe< T >::destroy() noexcept
 {
     BREATH_ASSERT( is_valid() ) ;
-    static_cast< T * >( m_buffer.address() )->T::~T() ;    // OK????
+    static_cast< T * >( m_buffer.address() )->T::~T() ;
 
 }
 
