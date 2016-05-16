@@ -59,7 +59,7 @@ bool const
 choose_initial_n< n >::c ;
 
 template< result_type n >
-result_type
+result_type const
 choose_initial_n< n >::value ;
 
 template <>
