@@ -7,7 +7,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 //
-//		A singleton class to manage the program's exit status.
+//      A singleton class to manage the program's exit status.
 
 #ifndef BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
 #define BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
@@ -98,7 +98,7 @@ public:
     //
 
     //std::ostream &      warning() ;
-    //std::ostream &	error() ;
+    //std::ostream &      error() ;
     //std::ostream &      fatal() ;
 
 private:

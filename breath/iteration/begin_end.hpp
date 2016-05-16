@@ -24,18 +24,18 @@
         to a built-in array. See also count.hpp.
 
 
-	[C++0x], [Future]:
-	C++11 should have a version of these, using the auto
-	type-specifier and decltype().
+    [C++0x], [Future]:
+    C++11 should have a version of these, using the auto
+    type-specifier and decltype().
 
-	So perhaps my version will just go with time.
+    So perhaps my version will just go with time.
 
-	Last checked in:
+    Last checked in:
 
-	  n3242, 28 Feb. 2011 -- 24.6.5 [iterator.range]
+      n3242, 28 Feb. 2011 -- 24.6.5 [iterator.range]
 
-	(there seems to be an editorial issue: 24.6 is about stream
-	iterators, and 24.6.5 is a sub-paragraph of it.)
+    (there seems to be an editorial issue: 24.6 is about stream
+    iterators, and 24.6.5 is a sub-paragraph of it.)
 
 */
 
