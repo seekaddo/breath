@@ -1,0 +1,71 @@
+// =========================================================================
+//                       Copyright 2016 Gennaro Prota
+//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
+
+#include "breath/mathematics/is_power_of_two.hpp"
+#include "breath/diagnostics/assert.hpp"
+#include <limits>
+
+namespace breath {
+namespace integer_log2_private {
+
+//      This constant is 4 because it must be a power of two less than
+//      the width of uintmax_t. Since the minimum width for an
+//      unsigned type (width of unsigned char) is 8, we start from 4.
+//      We could actually start from 32, because uintmax_t must have
+//      at least 64 value bits.
+// ---------------------------------------------------------------------
+int constexpr       start_at = 4 ;
+
+int constexpr
+max_power2_less_than_p( int p, int n = start_at )
+{
+    BREATH_ASSERT( breath::is_power_of_two( n ) ) ;
+    return 2*n < p
+        ? max_power2_less_than_p( p, 2*n )
+        : n
+        ;
+
+}
+
+int constexpr
+integer_log2_impl( std::uintmax_t x, int n )
+{
+    int                 result = 0 ;
+    while ( x !=  1 ) {
+        std::uintmax_t const
+                            t = x >> n ;
+        if ( t != 0 ) {
+            result += n ;
+            x = t ;
+        }
+        n /= 2 ;
+    }
+    return result ;
+}
+
+}
+
+int constexpr
+integer_log2( std::uintmax_t x )
+{
+    using namespace integer_log2_private ;
+
+    int constexpr       n = max_power2_less_than_p(
+            std::numeric_limits< std::uintmax_t >::digits
+        ) ;
+    return integer_log2_impl( x, n ) ;
+}
+
+}
+
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:
