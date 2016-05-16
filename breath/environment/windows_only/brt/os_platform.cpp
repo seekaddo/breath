@@ -23,7 +23,7 @@ os_platform::is_equal( const os_platform & other ) const
     return m_id == other.m_id;
 }
 
-const os_platform
+os_platform const
     os_platform::windows_nt( VER_PLATFORM_WIN32_NT ),
     os_platform::windows_9x( VER_PLATFORM_WIN32_WINDOWS ),
     os_platform::win32s(     VER_PLATFORM_WIN32s )
