@@ -60,6 +60,7 @@ maybe< T >::operator=( maybe< T > const & other )
         destroy() ;
         m_is_valid = false ;
     }
+    return *this ;
 }
 
 //      Note that T's assignment operator exception guarantee reflects
