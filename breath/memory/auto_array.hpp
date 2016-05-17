@@ -19,17 +19,17 @@ class auto_array
     BREATH_DECLARE_NON_COPYABLE( auto_array )
 
 public:
-                        auto_array() ;
-    explicit            auto_array( T * ) ;
+                        auto_array() noexcept ;
+    explicit            auto_array( T * ) noexcept ;
                         ~auto_array() noexcept ;
 
-    T *                 get() ;
-    T const *           get() const ;
-    void                reset( T * ) ;
+    T *                 get() noexcept ;
+    T const *           get() const noexcept ;
+    void                reset( T * ) noexcept ;
 
 private:
     T *                 m_ptr ;
-    void                do_delete() ;
+    void                do_delete() noexcept;
 } ;
 
 }

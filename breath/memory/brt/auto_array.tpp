@@ -12,13 +12,13 @@
 namespace breath {
 
 template< typename T >
-auto_array< T >::auto_array()
+auto_array< T >::auto_array() noexcept
     :   m_ptr( nullptr )
 {
 }
 
 template< typename T >
-auto_array< T >::auto_array( T * p )
+auto_array< T >::auto_array( T * p ) noexcept
     :   m_ptr( p )
 {
 }
@@ -31,21 +31,21 @@ auto_array< T >::~auto_array() noexcept
 
 template< typename T >
 T *
-auto_array< T >::get()
+auto_array< T >::get() noexcept
 {
     return m_ptr ;
 }
 
 template< typename T >
 T const *
-auto_array< T >::get() const
+auto_array< T >::get() const noexcept
 {
     return m_ptr ;
 }
 
 template< typename T >
 void
-auto_array< T >::reset( T * p )
+auto_array< T >::reset( T * p ) noexcept
 {
     if ( p == m_ptr ) {
         return ;
@@ -56,7 +56,7 @@ auto_array< T >::reset( T * p )
 
 template< typename T >
 void
-auto_array< T >::do_delete()
+auto_array< T >::do_delete() noexcept
 {
     check_type_completeness< T >() ;
     delete[] m_ptr;
