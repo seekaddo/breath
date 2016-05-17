@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/diagnostics/check_type_completeness.hpp"
-#include <algorithm>
+#include <utility>
 
 namespace breath {
 
