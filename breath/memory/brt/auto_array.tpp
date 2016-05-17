@@ -37,7 +37,7 @@ auto_array< T >::~auto_array() noexcept
 }
 
 template< typename T >
-T &
+auto_array< T > &
 auto_array< T >::operator=( auto_array && rhs ) noexcept
 {
     std::swap( m_ptr, rhs.m_ptr ) ;
