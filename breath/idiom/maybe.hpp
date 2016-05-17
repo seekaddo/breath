@@ -17,8 +17,8 @@ namespace breath {
 //      ===========
 //
 //!     A class template to represent "possible" values. The idea was
-//!     signaled by James in some illo-tempore conversation, and comes
-//!     from
+//!     signaled by James Kanze in some illo-tempore conversation, and
+//!     comes from
 //!
 //!         John J. Barton, Lee R. Nackman (1994).
 //!         Scientific and Engineering C++: An Introduction with
@@ -34,7 +34,7 @@ namespace breath {
 //!     assertion failure.
 //!
 //!     Note that the original Barton and Nackman solution did throw
-//!      an exception, instead.
+//!     an exception, instead.
 //!
 //!     There are some important differences compared to the version
 //!     provided by Barton and Nackman, many of which can be traced
