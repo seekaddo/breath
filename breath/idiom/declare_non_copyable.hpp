@@ -9,11 +9,15 @@
 #ifndef BREATH_GUARD_BssKAsCiqQzBgpiZdcF0pqcl37YyLxoi
 #define BREATH_GUARD_BssKAsCiqQzBgpiZdcF0pqcl37YyLxoi
 
-#define BREATH_DECLARE_NON_COPYABLE( class_name )               \
-                                                                \
-                        class_name( class_name & ) = delete ;   \
-    void                operator=( class_name & )  = delete ;   \
-                                                             /**/
+//!     Handy macro to declare a class non-copyable.
+//!     It is better invoked in a public section of the class declaration
+//!     (gives better error messages).
+// ----------------------------------------------------------------------------
+#define BREATH_DECLARE_NON_COPYABLE( class_name )                       \
+                                                                        \
+                        class_name( class_name const & ) = delete ;     \
+    void                operator=( class_name const & )  = delete ;     \
+                                                                     /**/
 
 #endif
 
