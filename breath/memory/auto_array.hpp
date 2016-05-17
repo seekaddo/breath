@@ -13,9 +13,21 @@
 
 namespace breath {
 
-template< typename T >
-class auto_array
-{
+//      auto_array< T >
+//      ===============
+//!
+//!     A smart pointer that retains sole ownership of an array through
+//!     a pointer. This template is similar to
+//!
+//!       template < typename T,
+//!                  typename Deleter
+//!                > class unique_ptr< T[], Deleter > ;
+//!     but was written way before C++11.
+//!
+//!     Like for unique_ptr, instances of this template satisfy the
+//!     requirements of MoveConstructible and MoveAssignable, but not
+//!     the requirements of either CopyConstructible or CopyAssignable.
+// ---------------------------------------------------------------------
 public:
     BREATH_DECLARE_NON_COPYABLE( auto_array )
 
