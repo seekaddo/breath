@@ -16,13 +16,15 @@ namespace breath {
 template< typename T >
 class auto_array
 {
+public:
     BREATH_DECLARE_NON_COPYABLE( auto_array )
 
-public:
                         auto_array() noexcept ;
     explicit            auto_array( T * ) noexcept ;
+                        auto_array( auto_array && ) noexcept ;
                         ~auto_array() noexcept ;
 
+    T &                 operator=( auto_array && ) noexcept ;
     T *                 get() noexcept ;
     T const *           get() const noexcept ;
     void                reset( T * ) noexcept ;

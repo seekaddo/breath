@@ -6,8 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
 #include "breath/diagnostics/check_type_completeness.hpp"
+#include <algorithm>
 
 namespace breath {
 
@@ -24,9 +24,24 @@ auto_array< T >::auto_array( T * p ) noexcept
 }
 
 template< typename T >
+auto_array< T >::auto_array( auto_array && other ) noexcept
+    :   m_ptr( other.m_ptr )
+{
+    other.m_ptr = nullptr ;
+}
+
+template< typename T >
 auto_array< T >::~auto_array() noexcept
 {
     do_delete() ;
+}
+
+template< typename T >
+T &
+auto_array< T >::operator=( auto_array && rhs ) noexcept
+{
+    std::swap( m_ptr, rhs.m_ptr ) ;
+    return *this ;
 }
 
 template< typename T >
