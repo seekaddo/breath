@@ -96,7 +96,7 @@ namespace {
         montecarlo_test() : m_count( 0 )
         {}
 
-        int get_count()
+        int get_count() const
         {
             return m_count;
         }
