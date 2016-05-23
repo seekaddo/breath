@@ -41,7 +41,7 @@ private:
                         operator<<( std::ostream &, last_api_error const & ) ;
 
     unsigned long       m_last_error ;
-    char                m_message[ 64 * 1024 - 1 ] ;
+    char                m_message[ 10 * 1024 - 1 ] ;
 } ;
 
 }
