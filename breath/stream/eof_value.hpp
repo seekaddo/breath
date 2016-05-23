@@ -1,11 +1,10 @@
-// ===========================================================================
-//                        Copyright 2011 Gennaro Prota
+// =========================================================================
+//                       Copyright 2011 Gennaro Prota
 //
-//                 Licensed under the Simplified BSD License.//gps
-//            (See accompanying file SIMPLIFIED_BSD_LICENSE.txt or
-//              <http://opensource.org/licenses/bsd-license.php>)
-// ___________________________________________________________________________
-//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
 //
 //      A convenience source file to separate out the crazy #includes
 //      required for using EOF or char_traits<...>::eof():
@@ -29,11 +28,10 @@
 //            Also, it seems natural to add an is_eof_value(), too,
 //            since using eq_int_type would still require #including
 //            the <string> header.
-//
 // ---------------------------------------------------------------------------
 
-#ifndef BREATH_EOF_VALUE_HPP_2011313OldFV9EUJ3nWdeEF4AQeSB3e
-#define BREATH_EOF_VALUE_HPP_2011313OldFV9EUJ3nWdeEF4AQeSB3e
+#ifndef BREATH_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0
+#define BREATH_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0
 
 #include <string>
 
@@ -54,15 +52,9 @@ is_eof_value( IntType x )
             StreamBuf::traits_type::eof() ) ;
 }
 
-
-
-
-
-
 }
 
 #endif
-
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil
