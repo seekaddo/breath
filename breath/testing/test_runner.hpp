@@ -50,6 +50,8 @@ test_runner::run( TestDescriptorIterator begin, TestDescriptorIterator end )
             m_reporter->on_test_passed( test_number ) ;
         } catch ( test_exception const & ex ) {
             m_reporter->on_test_failed( test_number, ex ) ;
+        } catch( std::exception const & ex ) {
+            m_reporter->on_unexpected_exception( test_number, ex ) ;
         } catch ( ... ) {
             m_reporter->on_unexpected_exception( test_number ) ;
         }

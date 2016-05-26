@@ -11,6 +11,7 @@
 #include "breath/testing/test_exception.hpp"
 #include <ostream>
 #include <iostream>
+#include <typeinfo>
 
 namespace breath {
 
@@ -48,6 +49,7 @@ console_reporter::on_test_passed( std::size_t )
     m_stream << "P]" ;
     ++ m_passed ;
 }
+
 void
 console_reporter::on_test_failed( std::size_t, test_exception const & ex )
 {
@@ -56,12 +58,19 @@ console_reporter::on_test_failed( std::size_t, test_exception const & ex )
 }
 
 void
-console_reporter::on_unexpected_exception( std::size_t )
+console_reporter::on_unexpected_exception( std::size_t test_number )
 {
-    m_stream << "X]" ;
+    m_stream << "X (#" << test_number << ")]" ;
     ++ m_unexpected_exceptions ;
 }
 
+void
+console_reporter::on_unexpected_exception( std::size_t test_number, std::exception const & ex )
+{
+    m_stream << "X (#" << test_number << " - "
+             << typeid( ex ).name() << ":" << ex.what() << ")]" ;
+    ++ m_unexpected_exceptions ;
+}
 }
 
 // Local Variables:

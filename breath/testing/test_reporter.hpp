@@ -10,6 +10,7 @@
 #define BREATH_GUARD_I2oO3QRDodQiGPSBaYNHr4wsSe5AloUX
 
 #include <cstddef>
+#include <exception>
 
 namespace breath {
 
@@ -24,6 +25,7 @@ public:
     virtual void        on_test_passed( std::size_t test_number ) = 0 ;
     virtual void        on_test_failed( std::size_t test_number, test_exception const & ) = 0 ;
     virtual void        on_unexpected_exception( std::size_t test_number ) = 0 ;
+    virtual void        on_unexpected_exception( std::size_t test_number, std::exception const & ) = 0 ;
 
     virtual             ~test_reporter() noexcept {}
 } ;
