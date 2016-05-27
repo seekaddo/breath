@@ -60,15 +60,15 @@ console_reporter::on_test_failed( std::size_t, test_exception const & ex )
 void
 console_reporter::on_unexpected_exception( std::size_t test_number )
 {
-    m_stream << "X (#" << test_number << ")]" ;
+    m_stream << "X]" ;
     ++ m_unexpected_exceptions ;
 }
 
 void
-console_reporter::on_unexpected_exception( std::size_t test_number, std::exception const & ex )
+console_reporter::on_unexpected_exception( std::size_t test_number,
+                                           std::exception const & ex )
 {
-    m_stream << "X (#" << test_number << " - "
-             << typeid( ex ).name() << ":" << ex.what() << ")]" ;
+    m_stream << "X (" << typeid( ex ).name() << ":" << ex.what() << ")]" ;
     ++ m_unexpected_exceptions ;
 }
 }
