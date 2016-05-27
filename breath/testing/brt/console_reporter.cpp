@@ -71,6 +71,7 @@ console_reporter::on_unexpected_exception( std::size_t test_number,
     m_stream << "X (" << typeid( ex ).name() << ":" << ex.what() << ")]" ;
     ++ m_unexpected_exceptions ;
 }
+
 }
 
 // Local Variables:
