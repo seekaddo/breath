@@ -57,14 +57,14 @@ console_reporter::on_test_failed( std::size_t, test_exception const & ex )
 }
 
 void
-console_reporter::on_unexpected_exception( std::size_t test_number )
+console_reporter::on_unexpected_exception( std::size_t )
 {
     m_stream << "X]" ;
     ++ m_unexpected_exceptions ;
 }
 
 void
-console_reporter::on_unexpected_exception( std::size_t test_number,
+console_reporter::on_unexpected_exception( std::size_t,
                                            std::exception const & ex )
 {
     m_stream << "X (" << typeid( ex ).name() << ": " << ex.what() << ")]" ;
