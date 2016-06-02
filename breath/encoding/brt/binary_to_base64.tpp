@@ -31,9 +31,12 @@ binary_to_base64( InputIter begin, InputIter end,
     int                 count( 0 ) ;
     std::size_t         column( 0 ) ;
 
-    auto                do_wrap = [ & ]()
-    { ++ column ;
-      if ( wrap_column != 0 && column == wrap_column ) {
+    auto                do_output = [ & ]( char c )
+    {
+      *out = c ;
+      ++ out ;
+      ++ column ;
+      if ( column == wrap_column ) {
         *out = '\n' ;
         ++ out ;
         column = 0 ;
@@ -45,48 +48,36 @@ binary_to_base64( InputIter begin, InputIter end,
     //  of the range at each increment.
     //  ------------------------------------------------------------------
     while ( curr != end ) {
-        *out = alphabet[ static_cast< unsigned char>( *curr ) >> 2 ] ;
+        do_output( alphabet[ static_cast< unsigned char>( *curr ) >> 2 ] ) ;
         ++ count ;
-        ++ out ;
-        do_wrap() ;
         auto                tmp = ( static_cast< unsigned char >( *curr )
                                                              & 0x03 ) << 4 ;
         
         if ( ++curr != end ) {
             ++ count ;
             tmp |= ( static_cast< unsigned char >( *curr ) & 0xf0 ) >> 4 ;
-            *out = alphabet[ tmp ] ;
-            ++ out ;
-            do_wrap() ;
+            do_output( alphabet[ tmp ] ) ;
 
             auto            tmp2 = ( static_cast< unsigned char >( *curr )
                                                                 & 0x0f ) << 2 ;
             if ( ++curr != end ) {
                 ++ count ;
                 tmp2 |= static_cast< unsigned char >( *curr ) >> 6 ;
-                *out = alphabet[ tmp2 ] ; 
-                ++ out ;
-                do_wrap() ;
-                *out = alphabet[ static_cast< unsigned char >( *curr ) & 0x3f ] ;
-                ++ out ;
-                do_wrap() ;
+                do_output( alphabet[ tmp2 ] ) ; 
+                do_output( alphabet[ static_cast< unsigned char >(
+                                                            *curr ) & 0x3f ] ) ;
                 ++ curr ;
             } else {
-                *out = alphabet[ tmp2 ] ;
-                ++ out ;
-                do_wrap() ;
+                do_output( alphabet[ tmp2 ] ) ;
             }
         } else {
-            *out = alphabet[ tmp ] ;
-            ++ out ;
-            do_wrap() ;
+            do_output( alphabet[ tmp ] ) ;
         }
         count %= group_size ;
     }
 
     for ( int i = 0 ; i < ( group_size - count ) % group_size ; ++ i ) {
-        *out++ = '=' ;
-        do_wrap() ;
+        do_output( '=' );
     }
 }
 
