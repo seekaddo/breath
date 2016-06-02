@@ -93,7 +93,7 @@ check_line_wrap()
           "Ma poi ch'i' fui al piè d'un colle giunto,"
         "là dove terminava quella valle"
         "che m'avea di paura il cor compunto,"
-          "guardai in alto, e vidi le sue spalle"
+        "guardai in alto, e vidi le sue spalle"
         "vestite già de' raggi del pianeta"
         "che mena dritto altrui per ogne calle."
           "Allor fu la paura un poco queta"
