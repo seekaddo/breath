@@ -78,26 +78,26 @@ void
 check_line_wrap()
 {
     std::string const   s = 
-        "Nel mezzo del cammin di nostra vita"
-        "mi ritrovai per una selva oscura"
-        "che' la diritta via era smarrita."
-          "Ahi quanto a dir qual era e' cosa dura"
-        "esta selva selvaggia e aspra e forte"
-        "che nel pensier rinova la paura!"
-          "Tant'e' amara che poco e' piu' morte;"
-        "ma per trattar del ben ch'i' vi trovai,"
-        "diro' de l'altre cose ch'i' v'ho scorte."
-        "Io non so ben ridir com'i' v'intrai,"
-        "tant'era pien di sonno a quel punto"
-        "che la verace via abbandonai."
-          "Ma poi ch'i' fui al pie' d'un colle giunto,"
-        "la' dove terminava quella valle"
-        "che m'avea di paura il cor compunto,"
-        "guardai in alto, e vidi le sue spalle"
-        "vestite gia' de' raggi del pianeta"
-        "che mena dritto altrui per ogne calle."
-          "Allor fu la paura un poco queta"
-        "che nel lago del cor m'era durata"
+        "Nel mezzo del cammin di nostra vita "
+        "mi ritrovai per una selva oscura "
+        "che' la diritta via era smarrita. "
+          "Ahi quanto a dir qual era e' cosa dura "
+        "esta selva selvaggia e aspra e forte "
+        "che nel pensier rinova la paura! "
+          "Tant'e' amara che poco e' piu' morte; "
+        "ma per trattar del ben ch'i' vi trovai, "
+        "diro' de l'altre cose ch'i' v'ho scorte. "
+        "Io non so ben ridir com'i' v'intrai, "
+        "tant'era pien di sonno a quel punto "
+        "che la verace via abbandonai. "
+          "Ma poi ch'i' fui al pie' d'un colle giunto, "
+        "la' dove terminava quella valle "
+        "che m'avea di paura il cor compunto, "
+        "guardai in alto, e vidi le sue spalle "
+        "vestite gia' de' raggi del pianeta "
+        "che mena dritto altrui per ogne calle. "
+          "Allor fu la paura un poco queta "
+        "che nel lago del cor m'era durata "
         "la notte ch'i' passai con tanta pieta." ;
 
     std::string         out ;
@@ -107,20 +107,21 @@ check_line_wrap()
     // This one self-verified
     //
     BREATH_CHECK( out ==
-    "TmVsIG1lenpvIGRlbCBjYW1taW4gZGkgbm9zdHJhIHZpdGFtaSByaXRyb3ZhaSBwZXIgdW5h\n"
-    "IHNlbHZhIG9zY3VyYWNoZScgbGEgZGlyaXR0YSB2aWEgZXJhIHNtYXJyaXRhLkFoaSBxdWFu\n"
-    "dG8gYSBkaXIgcXVhbCBlcmEgZScgY29zYSBkdXJhZXN0YSBzZWx2YSBzZWx2YWdnaWEgZSBh\n"
-    "c3ByYSBlIGZvcnRlY2hlIG5lbCBwZW5zaWVyIHJpbm92YSBsYSBwYXVyYSFUYW50J2UnIGFt\n"
-    "YXJhIGNoZSBwb2NvIGUnIHBpdScgbW9ydGU7bWEgcGVyIHRyYXR0YXIgZGVsIGJlbiBjaCdp\n"
-    "JyB2aSB0cm92YWksZGlybycgZGUgbCdhbHRyZSBjb3NlIGNoJ2knIHYnaG8gc2NvcnRlLklv\n"
-    "IG5vbiBzbyBiZW4gcmlkaXIgY29tJ2knIHYnaW50cmFpLHRhbnQnZXJhIHBpZW4gZGkgc29u\n"
-    "bm8gYSBxdWVsIHB1bnRvY2hlIGxhIHZlcmFjZSB2aWEgYWJiYW5kb25haS5NYSBwb2kgY2gn\n"
-    "aScgZnVpIGFsIHBpZScgZCd1biBjb2xsZSBnaXVudG8sbGEnIGRvdmUgdGVybWluYXZhIHF1\n"
-    "ZWxsYSB2YWxsZWNoZSBtJ2F2ZWEgZGkgcGF1cmEgaWwgY29yIGNvbXB1bnRvLGd1YXJkYWkg\n"
-    "aW4gYWx0bywgZSB2aWRpIGxlIHN1ZSBzcGFsbGV2ZXN0aXRlIGdpYScgZGUnIHJhZ2dpIGRl\n"
-    "bCBwaWFuZXRhY2hlIG1lbmEgZHJpdHRvIGFsdHJ1aSBwZXIgb2duZSBjYWxsZS5BbGxvciBm\n"
-    "dSBsYSBwYXVyYSB1biBwb2NvIHF1ZXRhY2hlIG5lbCBsYWdvIGRlbCBjb3IgbSdlcmEgZHVy\n"
-    "YXRhbGEgbm90dGUgY2gnaScgcGFzc2FpIGNvbiB0YW50YSBwaWV0YS4=" ) ;
+    "TmVsIG1lenpvIGRlbCBjYW1taW4gZGkgbm9zdHJhIHZpdGEgbWkgcml0cm92YWkgcGVyIHVu\n"
+    "YSBzZWx2YSBvc2N1cmEgY2hlJyBsYSBkaXJpdHRhIHZpYSBlcmEgc21hcnJpdGEuIEFoaSBx\n"
+    "dWFudG8gYSBkaXIgcXVhbCBlcmEgZScgY29zYSBkdXJhIGVzdGEgc2VsdmEgc2VsdmFnZ2lh\n"
+    "IGUgYXNwcmEgZSBmb3J0ZSBjaGUgbmVsIHBlbnNpZXIgcmlub3ZhIGxhIHBhdXJhISBUYW50\n"
+    "J2UnIGFtYXJhIGNoZSBwb2NvIGUnIHBpdScgbW9ydGU7IG1hIHBlciB0cmF0dGFyIGRlbCBi\n"
+    "ZW4gY2gnaScgdmkgdHJvdmFpLCBkaXJvJyBkZSBsJ2FsdHJlIGNvc2UgY2gnaScgdidobyBz\n"
+    "Y29ydGUuIElvIG5vbiBzbyBiZW4gcmlkaXIgY29tJ2knIHYnaW50cmFpLCB0YW50J2VyYSBw\n"
+    "aWVuIGRpIHNvbm5vIGEgcXVlbCBwdW50byBjaGUgbGEgdmVyYWNlIHZpYSBhYmJhbmRvbmFp\n"
+    "LiBNYSBwb2kgY2gnaScgZnVpIGFsIHBpZScgZCd1biBjb2xsZSBnaXVudG8sIGxhJyBkb3Zl\n"
+    "IHRlcm1pbmF2YSBxdWVsbGEgdmFsbGUgY2hlIG0nYXZlYSBkaSBwYXVyYSBpbCBjb3IgY29t\n"
+    "cHVudG8sIGd1YXJkYWkgaW4gYWx0bywgZSB2aWRpIGxlIHN1ZSBzcGFsbGUgdmVzdGl0ZSBn\n"
+    "aWEnIGRlJyByYWdnaSBkZWwgcGlhbmV0YSBjaGUgbWVuYSBkcml0dG8gYWx0cnVpIHBlciBv\n"
+    "Z25lIGNhbGxlLiBBbGxvciBmdSBsYSBwYXVyYSB1biBwb2NvIHF1ZXRhIGNoZSBuZWwgbGFn\n"
+    "byBkZWwgY29yIG0nZXJhIGR1cmF0YSBsYSBub3R0ZSBjaCdpJyBwYXNzYWkgY29uIHRhbnRh\n"
+    "IHBpZXRhLg==" ) ;
 }
 
 int
