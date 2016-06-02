@@ -6,17 +6,22 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 //
-//      Base64 encoding, conforming to RFC 3548.
+//      Base64 encoding, conforming to RFC 3548. In addition to the
+//      provisions of RFC 3548, this function template allows line
+//      wrapping on the generated output (wrap_column != 0).
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_m83AHFwUQlZBwnHisbdZpcYHaazyL2sn
 #define BREATH_GUARD_m83AHFwUQlZBwnHisbdZpcYHaazyL2sn
 
+#include <cstddef>
+
 namespace breath {
 
 template< typename InputIter, typename OutputIter >
 void                binary_to_base64( InputIter begin, InputIter end,
-                                      OutputIter out ) ;
+                                      OutputIter out,
+                                      std::size_t wrap_column = 0 ) ;
 
 }
 

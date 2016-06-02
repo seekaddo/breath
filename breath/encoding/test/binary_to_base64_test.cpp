@@ -74,6 +74,55 @@ check_string_of_nuls()
     BREATH_CHECK( out == "AAA=" );
 }
 
+void
+check_line_wrap()
+{
+    std::string const   s = 
+        "Nel mezzo del cammin di nostra vita"
+        "mi ritrovai per una selva oscura"
+        "ché la diritta via era smarrita."
+          "Ahi quanto a dir qual era è cosa dura"
+        "esta selva selvaggia e aspra e forte"
+        "che nel pensier rinova la paura!"
+          "Tant'è amara che poco è più morte;"
+        "ma per trattar del ben ch'i' vi trovai,"
+        "dirò de l'altre cose ch'i' v'ho scorte."
+        "Io non so ben ridir com'i' v'intrai,"
+        "tant'era pien di sonno a quel punto"
+        "che la verace via abbandonai."
+          "Ma poi ch'i' fui al piè d'un colle giunto,"
+        "là dove terminava quella valle"
+        "che m'avea di paura il cor compunto,"
+          "guardai in alto, e vidi le sue spalle"
+        "vestite già de' raggi del pianeta"
+        "che mena dritto altrui per ogne calle."
+          "Allor fu la paura un poco queta"
+        "che nel lago del cor m'era durata"
+        "la notte ch'i' passai con tanta pieta." ;
+
+    std::string         out ;
+    int const           wrap_column = 72 ;
+    breath::binary_to_base64( s.cbegin(), s.cend(),
+                              std::back_inserter( out ), wrap_column ) ;
+    // This one self-verified
+    //
+    BREATH_CHECK( out ==
+    "TmVsIG1lenpvIGRlbCBjYW1taW4gZGkgbm9zdHJhIHZpdGFtaSByaXRyb3ZhaSBwZXIgdW5h\n"
+    "IHNlbHZhIG9zY3VyYWNo6SBsYSBkaXJpdHRhIHZpYSBlcmEgc21hcnJpdGEuQWhpIHF1YW50\n"
+    "byBhIGRpciBxdWFsIGVyYSDoIGNvc2EgZHVyYWVzdGEgc2VsdmEgc2VsdmFnZ2lhIGUgYXNw\n"
+    "cmEgZSBmb3J0ZWNoZSBuZWwgcGVuc2llciByaW5vdmEgbGEgcGF1cmEhVGFudCfoIGFtYXJh\n"
+    "IGNoZSBwb2NvIOggcGn5IG1vcnRlO21hIHBlciB0cmF0dGFyIGRlbCBiZW4gY2gnaScgdmkg\n"
+    "dHJvdmFpLGRpcvIgZGUgbCdhbHRyZSBjb3NlIGNoJ2knIHYnaG8gc2NvcnRlLklvIG5vbiBz\n"
+    "byBiZW4gcmlkaXIgY29tJ2knIHYnaW50cmFpLHRhbnQnZXJhIHBpZW4gZGkgc29ubm8gYSBx\n"
+    "dWVsIHB1bnRvY2hlIGxhIHZlcmFjZSB2aWEgYWJiYW5kb25haS5NYSBwb2kgY2gnaScgZnVp\n"
+    "IGFsIHBp6CBkJ3VuIGNvbGxlIGdpdW50byxs4CBkb3ZlIHRlcm1pbmF2YSBxdWVsbGEgdmFs\n"
+    "bGVjaGUgbSdhdmVhIGRpIHBhdXJhIGlsIGNvciBjb21wdW50byxndWFyZGFpIGluIGFsdG8s\n"
+    "IGUgdmlkaSBsZSBzdWUgc3BhbGxldmVzdGl0ZSBnaeAgZGUnIHJhZ2dpIGRlbCBwaWFuZXRh\n"
+    "Y2hlIG1lbmEgZHJpdHRvIGFsdHJ1aSBwZXIgb2duZSBjYWxsZS5BbGxvciBmdSBsYSBwYXVy\n"
+    "YSB1biBwb2NvIHF1ZXRhY2hlIG5lbCBsYWdvIGRlbCBjb3IgbSdlcmEgZHVyYXRhbGEgbm90\n"
+    "dGUgY2gnaScgcGFzc2FpIGNvbiB0YW50YSBwaWV0YS4=" ) ;
+}
+
 int
 main()
 {
@@ -82,7 +131,9 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_runner::instance().run( { check, check_string_of_nuls } ) ;
+    test_runner::instance().run( { check,
+                                   check_string_of_nuls,
+                                   check_line_wrap } ) ;
 }
 
 // Local Variables:
