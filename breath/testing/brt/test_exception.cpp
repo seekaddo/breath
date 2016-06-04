@@ -38,7 +38,7 @@ test_exception::line() const noexcept
 std::ostream &
 operator <<(std::ostream & os, test_exception const & ex )
 {
-    return os << ex.what() << " : " << ex.filename() << " , " << ex.line() ;
+    return os << ex.what() << " : " << ex.filename() << ", " << ex.line() ;
 }
 
 
