@@ -6,9 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
-#ifndef BREATH_EXCEPTION_jdfhh54l32lk1
-#define BREATH_EXCEPTION_jdfhh54l32lk1
+#ifndef BREATH_GUARD_11RKjChIvO8xKP1XEZcLxvq7vDyKvcUr
+#define BREATH_GUARD_11RKjChIvO8xKP1XEZcLxvq7vDyKvcUr
 
 #include <exception>
 #include <string>
