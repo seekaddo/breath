@@ -17,8 +17,6 @@
 #ifndef BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4
 #define BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4
 
-#include <algorithm>
-
 namespace breath {
 
 //      clamp():

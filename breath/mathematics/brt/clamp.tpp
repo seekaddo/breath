@@ -6,6 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
+#include <functional>
+
 namespace breath {
 
 template< typename T >
