@@ -16,7 +16,7 @@ namespace breath {
 std::intmax_t
 next_multiple( std::intmax_t a, std::intmax_t b ) noexcept
 {
-    BREATH_ASSERT( a <= (std::numeric_limits< std::intmax_t>::max() - b) ) ;
+    BREATH_ASSERT( a <= (std::numeric_limits< std::intmax_t >::max() - b) ) ;
     return ( a/b + 1 ) * b ;
 }
 
