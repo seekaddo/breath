@@ -7,7 +7,10 @@
 // _________________________________________________________________________
 //
 //  An implementation of the proposed clamp() templates.
-//  See <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4536.html>.
+//  See <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4536.html>,
+//    <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0025r1.html>
+//  and
+//    <http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-active.html#2688>.
 // --------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_iVIpJl3Xhjhnj23ACP0NU6ffWo7q8kd4
@@ -21,46 +24,39 @@ namespace breath {
 //      ========
 //
 //!     Requires:
-//!      1. T is LessThanComparable
-//!      2. comp( high, low ) == false
+//!      1. T shall be LessThanComparable
+//!      2. high shall be no lower than low
 //!     Returns:
 //!         \c low if value is less than \c low, \c high if \c value is higher
 //!         than \high, otherwise \c value
 //!     Complexity:
-//!         One or two applications of the Compare predicate.
+//!         One or two comparisons.
 //!     Remarks:
-//!         Returns a reference to \c value when \c value is equivalent to
-//!         one of the boundary arguments.
+//!         The function template returns a reference to \c value when \c value
+//!         is equivalent to one (or both) of the boundary arguments.
 // --------------------------------------------------------------------------
-template < typename T, typename Compare = std::less<> >
+template< typename T >
+constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
+
+//      clamp():
+//      ========
+//
+//!     Requires:
+//!         comp( high, low ) == false
+//!     Returns:
+//!         \c low if value is less than \c low, \c high if \c value is higher
+//!         than \high, otherwise \c value
+//!     Complexity:
+//!         One or two comparisons.
+//!     Remarks:
+//!         The function template returns a reference to \c value when \c value
+//!         is equivalent to one (or both) of the boundary arguments.
+// --------------------------------------------------------------------------
+template < typename T, typename Compare  >
 constexpr T const & clamp( T const & value,
                            T const & low,
                            T const & high,
-                           Compare comp = Compare() ) ;
-
-//      clamp_range():
-//      ==============
-//
-//!     Requires:
-//!      1. iterator_traits< InputIterator >::value_type is LessThanComparable
-//!         and CopyAssignable
-//!      2. comp( high, low ) == false
-//!     Returns:
-//!         result + ( last - first )
-//!     Complexity:
-//!         Exactly last-first applications of \c clamp() with the corresponding
-//!         predicate
-//!     Remarks:
-//!         \c result may be equal to \c first
-// --------------------------------------------------------------------------
-template< typename InputIterator, typename OutputIterator,
-          typename Compare = std::less<> >
-OutputIterator clamp_range( InputIterator first,
-                            InputIterator last,
-                            OutputIterator result,
-           typename std::iterator_traits< InputIterator >::value_type const& low,
-           typename std::iterator_traits< InputIterator >::value_type const& high,
-           Compare comp = Compare() ) ;
+                           Compare comp ) ;
 
 }
 

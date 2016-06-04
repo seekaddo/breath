@@ -59,17 +59,6 @@ check2()
     BREATH_CHECK( & breath::clamp( a2, low, high) == & a2 ) ;
 }
 
-void
-check_clamp_range()
-{
-    std::vector< int >  v { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } ;
-    breath::clamp_range( v.cbegin(), v.cend(), v.begin(), 5, 8 ) ;
-    std::vector< int >  result { 5, 5, 5, 5, 5, 6, 7, 8, 8, 8 } ;
-    for ( std::size_t i = 0; i < v.size() ; ++ i ) {
-        BREATH_CHECK( v[ i ] == result[ i ] );
-    }
-}
-
 }
 
 int
@@ -80,7 +69,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_runner::instance().run( { check, check2, check_clamp_range } ) ;
+    test_runner::instance().run( { check, check2 } ) ;
 }
 
 // Local Variables:

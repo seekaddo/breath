@@ -6,9 +6,14 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#include <iterator>
-
 namespace breath {
+
+template< typename T >
+constexpr T const &
+clamp( T const & value, T const & low, T const & high )
+{
+    return clamp( value, low, high, std::less<>() ) ;
+}
 
 template < typename T, typename Compare >
 constexpr T const &
@@ -27,19 +32,6 @@ clamp( T const & value,
                 ? high
                 : value
             ;
-}
-
-template< typename InputIterator, typename OutputIterator, typename Compare >
-OutputIterator clamp_range( InputIterator first,
-                            InputIterator last,
-                            OutputIterator result,
-        typename std::iterator_traits< InputIterator >::value_type const & low,
-        typename std::iterator_traits< InputIterator >::value_type const & high,
-        Compare comp )
-{
-    using value_type = decltype( low ) ;
-    return std::transform( first, last, result, [ & ]( value_type val )
-                                 { return clamp( val, low, high, comp ) ; } ) ;
 }
 
 }
