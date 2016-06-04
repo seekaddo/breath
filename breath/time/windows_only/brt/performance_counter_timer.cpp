@@ -15,6 +15,9 @@ namespace breath {
 
 performance_counter_timer::performance_counter_timer()
 {
+    // Note that restart() is not called here. It will be called by
+    // elapsed_timer<>, if needed.
+    //
     LARGE_INTEGER       f;
     if( QueryPerformanceFrequency( &f ) == 0 ) {
         throw last_api_error( "QueryPerformanceFrequency failed" ) ;
