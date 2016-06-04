@@ -30,7 +30,7 @@ private:
     unsigned long       m_line ;
 } ;
 
-std::ostream &      operator <<( std::ostream & os, test_exception const & ) ;
+std::ostream &      operator <<( std::ostream &, test_exception const & ) ;
 
 
 
