@@ -15,6 +15,7 @@ namespace breath {
 namespace {
     char const      incipit[] = "Breath library base exception" ;
 }
+
 exception::exception() noexcept
 {
     strcpy( m_what_message, incipit ) ;
