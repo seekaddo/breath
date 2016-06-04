@@ -43,6 +43,9 @@
 *.iobj
 .vs/
 
+# Visual Studio Code
+.vscode/
+
 # =========================
 # Operating System Files
 # =========================
