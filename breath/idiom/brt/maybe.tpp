@@ -20,18 +20,18 @@ maybe< T >::maybe() noexcept
 
 template< typename T >
 maybe< T >::maybe( maybe const & source )
+    :   m_is_valid( false )
 {
     if ( source.is_valid() ) {
         construct( source.value() ) ;
         m_is_valid = true ;
-    } else {
-        m_is_valid = false ;
     }
 }
 
 
 template< typename T >
 maybe< T >::maybe( T const & t )
+    :   m_is_valid( false )
 {
     construct( t ) ;
     m_is_valid = true ;
