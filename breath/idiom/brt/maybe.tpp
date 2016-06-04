@@ -109,7 +109,7 @@ void
 maybe< T >::construct( T const & source )
 {
     BREATH_ASSERT( ! is_valid() ) ;
-    :: /*gps OK??? */ new( m_buffer.address() ) T( source ) ; // may throw
+    new( m_buffer.address() ) T( source ) ; // may throw
 }
 
 template< typename T >
