@@ -62,12 +62,12 @@ process::start( std::string const & app_name,
     int const           ret = CreateProcessA(
                                 app_name.c_str(),
                                 &args[ 0 ],
-                                NULL,
-                                NULL,
+                                nullptr,
+                                nullptr,
                                 FALSE,
                                 creation_flags,
-                                NULL,
-                                NULL,
+                                nullptr,
+                                nullptr,
                                 &si,
                                 &m_impl->m_info
                                 ) ;
@@ -120,10 +120,10 @@ process::terminate()
         unsigned            dummy = 0 ;
         process_private::handle const
                             h( CreateRemoteThread(
-                                    m_impl->m_info.hProcess, NULL, 0,
+                                    m_impl->m_info.hProcess, nullptr, 0,
                                      reinterpret_cast< LPTHREAD_START_ROUTINE >(
                                                                      exit_proc),
-                                     &dummy, 0, NULL ) ) ;
+                                     &dummy, 0, nullptr ) ) ;
         if ( h.get() == NULL ) {
             throw last_api_error( "CreateRemoteThread failed" ) ;
         }

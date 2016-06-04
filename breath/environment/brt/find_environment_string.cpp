@@ -20,7 +20,7 @@ find_environment_string( string_argument const & name )
 
     char const * const  p( std::getenv( name.value().c_str() ) );
 
-    return p == NULL
+    return p == nullptr
         ? maybe_type()
         : maybe_type( std::string( p ) )
         ;

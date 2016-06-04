@@ -36,12 +36,12 @@ find_executable_in_path( std::string const & name,
     for( auto it = e.begin() ; it != e.end() ; ++it ) {
         if( SearchPathA( path.is_valid()
                             ? path.value().c_str()
-                            : NULL,
+                            : nullptr,
                          name.c_str(),
                          it->c_str(),
                          sizeof fullpath,
                          &fullpath[ 0 ],
-                         NULL
+                         nullptr
                     ) != 0 ) {
             found = true;
             break ;
