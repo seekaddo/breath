@@ -32,19 +32,7 @@ private:
 
 std::ostream &      operator <<( std::ostream &, test_exception const & ) ;
 
-
-
-
-
-
-
-
-
-
-
 }
-
-
 
 #endif
 
