@@ -12,7 +12,6 @@
 #include "breath/process/private/process_id_type.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/idiom/maybe.hpp"
-#include <cstddef>
 #include <string>
 
 namespace breath {
@@ -30,8 +29,8 @@ public:
 
     void                start( std::string const & app_name,
                                std::string const & arguments,
-                               maybe<std::size_t> timeout_in_ms =
-                                                    maybe<std::size_t>() ) ;
+                               maybe< unsigned long > timeout_in_ms =
+                                            maybe< unsigned long >() ) ;
     void                kill() ;
     void                terminate() ;
 

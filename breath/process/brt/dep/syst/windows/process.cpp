@@ -49,7 +49,7 @@ process::id() const
 void
 process::start( std::string const & app_name,
                 std::string const & arguments,
-                maybe< std::size_t > timeout_in_ms )
+                maybe< unsigned long > timeout_in_ms )
 {
     std::vector< char > args( arguments.begin(), arguments.end() ) ;
     args.resize( args.size() + 1 ) ;
@@ -78,8 +78,7 @@ process::start( std::string const & app_name,
     if ( timeout_in_ms.is_valid() ) {
         BREATH_ASSERT( timeout_in_ms.value() > 0 ) ;
         if( WaitForSingleObject( m_impl->m_info.hProcess, 
-                                static_cast< DWORD >(timeout_in_ms.value()) ) ==
-                                                                WAIT_FAILED ) {
+                                 timeout_in_ms.value() ) == WAIT_FAILED ) {
             throw last_api_error( "WaitForSingleObject failed" ) ;
         }
         try {
