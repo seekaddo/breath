@@ -24,10 +24,6 @@ exception::exception( std::string const & what_msg ) noexcept
         what_message_max_size - (curr - &m_what_message[0] ) ) ;
 }
 
-exception::~exception() noexcept
-{
-}
-
 char const *
 exception::what() const noexcept
 {

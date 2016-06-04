@@ -24,7 +24,7 @@ public:
     exception( exception const & ) noexcept = default ;
     exception & operator=( exception const & ) noexcept = default ;
 
-    virtual ~exception() noexcept ;
+    virtual ~exception() noexcept = default ;
 
     virtual char const * what() const noexcept ;
 
