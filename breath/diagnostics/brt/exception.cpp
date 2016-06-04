@@ -8,7 +8,7 @@
 
 #include "breath/diagnostics/exception.hpp"
 #include "breath/counting/count.hpp"
-#include <string.h>
+#include <cstring>
 
 namespace breath {
 
@@ -18,18 +18,18 @@ namespace {
 
 exception::exception() noexcept
 {
-    strcpy( m_what_message, incipit ) ;
+    std::strcpy( m_what_message, incipit ) ;
 }
 
 exception::exception( std::string const & what_msg ) noexcept
 {
     char *              curr = &m_what_message[ 0 ] ;
-    strcpy( curr, incipit ) ;
+    std::strcpy( curr, incipit ) ;
     curr += ( count(incipit) - 1 ) ;
     char const          sep[] = ": " ;
-    strcpy( curr, sep ) ;
+    std::strcpy( curr, sep ) ;
     curr += ( count(sep) - 1 ) ;
-    strncpy( curr, what_msg.c_str(),
+    std::strncpy( curr, what_msg.c_str(),
         what_message_max_size - (curr - &m_what_message[0] ) ) ;
 }
 
