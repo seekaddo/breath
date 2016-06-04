@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //  An implementation of the proposed clamp() templates.
-//  See <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4536.html>,
+//  See:
+//    <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4536.html>,
 //    <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0025r1.html>
 //  and
 //    <http://www.open-std.org/jtc1/sc22/wg21/docs/lwg-active.html#2688>.
