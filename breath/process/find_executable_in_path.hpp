@@ -18,7 +18,7 @@ maybe< std::string >
                     find_executable_in_path(
                         std::string const & name,
                         maybe< std::string > const & path =
-                                                maybe<std::string>() ) ;
+                                                maybe< std::string >() ) ;
 
 }
 
