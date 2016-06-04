@@ -1,19 +1,47 @@
-//gps boilerplate
+// =========================================================================
+//                       Copyright 2016 Gennaro Prota
+//
+//                 Licensed under the BSD 3-Clause License.
+//            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+//              <https://opensource.org/licenses/BSD-3-Clause>)
+// _________________________________________________________________________
+
 #include "breath/mathematics/next_multiple.hpp"
+#include "breath/testing/testing.hpp"
 #include <climits>
+#include <ostream>
+#include <iostream>
 
-////
-#include "breath/diagnostics/assert.hpp"
-#define DO_TEST(x) BREATH_ASSERT(x)
-//////////
-
-int
-main()
+void
+check()
 {
     using               breath::next_multiple ;
 
     {
-        DO_TEST( next_multiple( 8, 3 ) == 9 ) ;
-        DO_TEST( next_multiple( 9, 3 ) == 12 ) ;
+        BREATH_CHECK( next_multiple( 8, 3 ) == 9 ) ;
+        BREATH_CHECK( next_multiple( 9, 3 ) == 12 ) ;
+        BREATH_CHECK( next_multiple(-8, 3 ) == -3 ) ;
     }
 }
+
+int
+main()
+{
+    using namespace breath;
+
+    console_reporter    cr( std::cout ) ;
+    test_runner::instance().attach_reporter( cr ) ;
+
+    test_runner::instance().run( { check } ) ;
+}
+
+
+
+
+
+// Local Variables:
+// mode: c++
+// indent-tabs-mode: nil
+// c-basic-offset: 4
+// End:
+// vim: set ft=cpp et sts=4 sw=4:
