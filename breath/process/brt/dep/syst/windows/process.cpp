@@ -49,7 +49,7 @@ process::id() const
 void
 process::start( std::string const & app_name,
                 std::string const & arguments,
-                maybe<std::size_t> timeout_in_ms )
+                maybe< std::size_t > timeout_in_ms )
 {
     std::vector< char > args( arguments.begin(), arguments.end() ) ;
     args.resize( args.size() + 1 ) ;
