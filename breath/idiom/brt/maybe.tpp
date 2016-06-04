@@ -118,7 +118,6 @@ maybe< T >::destroy() noexcept
 {
     BREATH_ASSERT( is_valid() ) ;
     static_cast< T * >( m_buffer.address() )->T::~T() ;
-
 }
 
 }
