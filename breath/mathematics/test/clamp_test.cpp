@@ -13,6 +13,8 @@
 #include <climits>
 #include <vector>
 #include <cstddef>
+#include <utility>
+#include <string>
 
 namespace {
 
@@ -59,6 +61,22 @@ check2()
     BREATH_CHECK( & breath::clamp( a2, low, high) == & a2 ) ;
 }
 
+void
+check3()
+{
+    // An example taken from
+    //   <https://github.com/sean-parent/sean-parent.github.io/wiki/presentations/2016-05-16-better-code/2016-05-16-better-code.pdf#page=27>
+    //
+    using pair = std::pair< int, std::string > ;
+    pair a = { 1, "OK" } ;
+    pair lo = { 1, "FAIL: LO" } ;
+    pair hi = { 2, "FAIL: HI" } ;
+    a = breath::clamp( a, lo, hi, []( const auto & a, const auto & b ) {
+                            return a.first < b.first ;
+                        } );
+    BREATH_CHECK( a.second == "OK" ) ;
+}
+
 }
 
 int
@@ -69,7 +87,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_runner::instance().run( { check, check2 } ) ;
+    test_runner::instance().run( { check, check2, check3 } ) ;
 }
 
 // Local Variables:
