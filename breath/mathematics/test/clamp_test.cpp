@@ -59,6 +59,14 @@ check2()
     int const           a2 = 10 ;
 
     BREATH_CHECK( & breath::clamp( a2, low, high) == & a2 ) ;
+
+    // Check that a reference to the first argument is returned when the
+    // first argument is equivalent to *both* bounds.
+    //
+    int const           b = 5 ;
+    int const           low2 = 5 ;
+    int const           high2 = 5 ;
+    BREATH_CHECK( & breath::clamp( b, low2, high2 ) == & b ) ;
 }
 
 void
