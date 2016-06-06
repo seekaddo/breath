@@ -17,7 +17,7 @@ namespace meta {
 //!     if the type \c T uses a two's complement representation.
 // ---------------------------------------------------------------------
 template< typename T >
-bool constexpr      is_twos_complement() noexcept ;
+constexpr bool      is_twos_complement() noexcept ;
     
     
 }

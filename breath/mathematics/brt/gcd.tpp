@@ -12,7 +12,7 @@
 namespace breath {
 
 template< typename M, typename N >
-std::common_type_t< M, N > constexpr
+constexpr std::common_type_t< M, N >
 gcd( M a, N b ) noexcept
 {
     gcd_lcm_private::check_common_gcd_lcm_preconditions( a, b ) ;

@@ -147,7 +147,7 @@
 namespace breath {
 namespace        {
 
-unsigned constexpr
+constexpr unsigned
 win_version( int major, int minor )
 {
     return major * 256u + minor ;

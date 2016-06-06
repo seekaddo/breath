@@ -19,9 +19,9 @@ namespace integer_log2_private {
 //      We could actually start from 32, because uintmax_t must have
 //      at least 64 value bits.
 // ---------------------------------------------------------------------
-int constexpr       start_at = 4 ;
+constexpr int       start_at = 4 ;
 
-int constexpr
+constexpr int
 max_power2_less_than_p( int p, int n = start_at ) noexcept
 {
     BREATH_ASSERT( breath::is_power_of_two( n ) ) ;
@@ -32,7 +32,7 @@ max_power2_less_than_p( int p, int n = start_at ) noexcept
 
 }
 
-int constexpr
+constexpr int
 integer_log2_implementation( std::uintmax_t x, int n ) noexcept
 {
     int                 result = 0 ;
@@ -50,13 +50,13 @@ integer_log2_implementation( std::uintmax_t x, int n ) noexcept
 
 }
 
-int constexpr
+constexpr int
 integer_log2( std::uintmax_t x ) noexcept
 {
     BREATH_ASSERT( x > 0 ) ;
     using namespace integer_log2_private ;
 
-    int constexpr       n = max_power2_less_than_p(
+    constexpr int       n = max_power2_less_than_p(
             std::numeric_limits< std::uintmax_t >::digits
         ) ;
     return integer_log2_implementation( x, n ) ;

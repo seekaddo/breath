@@ -23,7 +23,7 @@ namespace breath {
 //!            v14) because it does not yet implement constexpr
 //!            functions in all their power.
 // --------------------------------------------------------------------
-int constexpr       integer_log2( std::uintmax_t x ) noexcept ;
+constexpr int       integer_log2( std::uintmax_t x ) noexcept ;
 
 }
 

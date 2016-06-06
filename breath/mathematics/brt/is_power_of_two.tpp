@@ -8,7 +8,7 @@
 
 namespace breath {
 
-bool constexpr
+constexpr bool
 is_power_of_two(std::uintmax_t x) noexcept
 {
     return x != 0 && ( x & ( x-1 ) ) == 0 ;

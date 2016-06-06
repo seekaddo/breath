@@ -15,12 +15,12 @@ namespace {
 void
 do_check()
 {
-    struct
+    constexpr struct
     {
         int a ;
         int b ;
         int lcm ;
-    } constexpr         table[] = {
+    }                   table[] = {
         {  0,  0,  0 },
         { -1,  0,  0 },
         { -3,  0,  0 },

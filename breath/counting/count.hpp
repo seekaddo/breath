@@ -37,7 +37,7 @@ namespace breath {
 //      (obviously, n).
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
-std::size_t constexpr
+constexpr std::size_t
 count( T const ( & )[ n ] ) noexcept
 {
     return n ;
@@ -49,7 +49,7 @@ count( T const ( & )[ n ] ) noexcept
 //      Same as t.size(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename T >
-typename T::size_type constexpr
+constexpr typename T::size_type
 count( T const & t ) noexcept( noexcept( t.size() ) )
 {
     return t.size() ;

@@ -22,11 +22,11 @@ binary_to_base64( InputIter begin, InputIter end,
       || std::is_same< typename InputIter::value_type, unsigned char >::value ),
                    "" ) ;
 
-    static char constexpr
+    static constexpr char
                         alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                      "abcdefghijklmnopqrstuvwxyz"
                                      "0123456789+/" ;
-    int constexpr       group_size( 3 ) ;
+    constexpr int       group_size( 3 ) ;
     auto                curr( begin ) ;
     int                 count( 0 ) ;
     std::size_t         column( 0 ) ;

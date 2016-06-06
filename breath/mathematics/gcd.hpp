@@ -27,7 +27,7 @@ namespace breath {
 //!     returns the greatest common divisor of |m| and |n|.
 // ---------------------------------------------------------------------
 template< typename M, typename N >
-std::common_type_t< M, N > constexpr
+constexpr std::common_type_t< M, N >
                     gcd( M m, N n ) noexcept ;
 
 }

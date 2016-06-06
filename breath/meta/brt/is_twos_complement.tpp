@@ -13,7 +13,7 @@ namespace breath {
 namespace meta {
 
 template< typename T >
-bool constexpr
+constexpr bool
 is_twos_complement() noexcept
 {
     static_assert( std::is_integral< T >::value, "T must be an integral type" ) ;
