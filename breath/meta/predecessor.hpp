@@ -9,21 +9,19 @@
 #ifndef BREATH_GUARD_UdGvvEgZV1WGbMzbsiKOg7UnnY910Qsa
 #define BREATH_GUARD_UdGvvEgZV1WGbMzbsiKOg7UnnY910Qsa
 
-
 namespace breath {
 namespace meta {
 
-    template< typename T >
-    class predecessor : public constant <
-                                  typename T::value_type
-                                  ,        T::value - 1
-                              >
-    {
-    };
+template< typename T >
+class predecessor : public constant<
+                                typename T::value_type
+                                ,        T::value - 1
+                            >
+{
+} ;
 
-}}
-
-
+}
+}
 
 #endif
 // Local Variables:

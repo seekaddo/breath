@@ -6,10 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
 #ifndef BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 #define BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
-
 
 /*! \file
     \brief
@@ -28,7 +26,6 @@
 #include "breath/meta/select.hpp"
 #include "breath/meta/successor.hpp"
 
-
 #include <cstddef>
 
 namespace breath {
@@ -36,18 +33,18 @@ namespace meta {
 
 template< typename T >
 class width
-    : public select < has_sign< T >,
-                      successor< precision < T > >,
-                      precision < T >
-                    >::type
+    : public select< has_sign< T >,
+                     successor< precision < T > >,
+                     precision < T >
+                   >::type
 {
-};
+} ;
 
 template< typename T, std::size_t n >
 class width< T[ n ] >
     : public constant< std::size_t, n * width< T >::value >
 {
-};
+} ;
 
 }
 }

@@ -6,10 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
 #ifndef BREATH_GUARD_DjUmH0WQBIis1gQMNQWYhB7KQHMzHYQQ
 #define BREATH_GUARD_DjUmH0WQBIis1gQMNQWYhB7KQHMzHYQQ
-
 
 /*! \file   successor.hpp
     \brief
@@ -24,16 +22,15 @@ namespace breath {
 namespace meta {
 
     template< typename T >
-    class successor : public constant <
+    class successor : public constant<
                                   typename T::value_type
                                   ,        T::value + 1
                               >
     {
-    };
+    } ;
 
-}}
-
-
+}
+}
 
 #endif
 

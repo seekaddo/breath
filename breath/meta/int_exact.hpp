@@ -89,9 +89,7 @@ class uint_exact
 {
 } ;
 
-
 }
-
 
 #endif
 

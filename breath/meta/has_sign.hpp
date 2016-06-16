@@ -23,7 +23,7 @@ template< typename T >
 class has_sign
     : public constant< bool, ! ( T( -1 ) > 0 ) >
 {
-};
+} ;
 
 // specialization here is logically unnecessary
 // but silences compiler warnings
@@ -31,12 +31,10 @@ template<>
 class has_sign< bool >
     : public constant< bool, false >
 {
-};
+} ;
 
 }
 }
-
-
 
 #endif
 

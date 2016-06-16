@@ -13,7 +13,6 @@
 namespace breath {
 namespace meta {
 
-
 template< bool condition, typename T, typename U >
 class select_
 {

@@ -63,7 +63,7 @@ result_type const
 choose_initial_n< n >::value ;
 
 template <>
-struct choose_initial_n<0> {
+struct choose_initial_n< 0 > {
     static result_type const value = 0 ;
 };
 

@@ -33,28 +33,28 @@ template< typename T >
 class unqualify
 {
 public:
-    typedef T type;
+    typedef T type ;
 } ;
 
 template< typename T >
 class unqualify< T const >
 {
 public:
-    typedef T type;
+    typedef T type ;
 } ;
 
 template< typename T >
 class unqualify< T volatile >
 {
 public:
-    typedef T type;
+    typedef T type ;
 } ;
 
 template< typename T >
 class unqualify< T volatile const >
 {
 public:
-    typedef T type;
+    typedef T type ;
 } ;
 
 }
