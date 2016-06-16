@@ -7,17 +7,17 @@
 // _________________________________________________________________________
 
 #include "breath/meta/integer_log2.hpp"
-
 #include <limits>
 
-//  The argument x must be a power of two. This then makes a recursive check
-//  up to x==2 (included), where each step verifies x, x + 1 and x - 1. IOWs,
-//  it checks "across" powers of two.
+//      The argument x must be a power of two. This then makes a
+//      recursive check up to x==2 (included), where each step
+//      verifies x, x + 1 and x - 1. IOWs, it checks "across" powers
+//      of two.
 //
-//  The specialization for < 1, 0 > just terminates the recursion.
+//      The specialization for < 1, 0 > just terminates the recursion.
 //
-//  Of course this will be initially invoked with 2 ** (w - 1), where w is
-//  the width of static_log2's argument type.
+//      Of course this will be initially invoked with 2 ** (w - 1),
+//      where w is the width of static_log2's argument type.
 //  =========================================================================
 
 using breath::meta::integer_log2 ;
@@ -41,9 +41,6 @@ struct log2_checker< 1, 0 >
 } ;
 
 
-// temp stuff
-#include <iostream> // togli prima questo, cosi vedi subito i std::cout superflui
-/////////////////////////
 int
 main()
 {
@@ -72,11 +69,6 @@ main()
     const int dummy = log2_checker< recursion_start, width - 1 >::dummy;
 
     static_cast< void >( dummy );
-
-    std::cout << "Width: " << std::numeric_limits< arg_type >::digits << std::endl ;
-    std::cout << "start = " << recursion_start + 0 << std::endl;
-    std::cout << "calculated initial_n: " << breath::integer_log2_private::initial_n << std::endl ;
-    //std::cout << "result = " << result << std::endl;
 
 }
 // Local Variables:
