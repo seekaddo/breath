@@ -19,10 +19,10 @@ public:
                         counter() ;
     //  PRE: n >= 0
     explicit            counter( IntegralType n ) ;
-    counter &           operator ++() ;
-    counter             operator ++( int ) ;
-    counter &           operator --() ;
-    counter             operator --( int ) ;
+    counter &           operator ++() & ;
+    counter             operator ++( int ) & ;
+    counter &           operator --() & ;
+    counter             operator --( int ) & ;
 
     IntegralType        value() const ;
     bool                is_equal( counter const & other ) const ;

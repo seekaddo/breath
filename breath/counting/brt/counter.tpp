@@ -26,7 +26,7 @@ counter< Int >::counter( Int n )
 
 template< typename Int >
 counter< Int > &
-counter< Int >::operator++()
+counter< Int >::operator++() &
 {
     BREATH_ASSERT( m_count < (std::numeric_limits< 
                                 Int >::max BREATH_PREVENT_MACRO_EXPANSION) () ) ;
@@ -36,7 +36,7 @@ counter< Int >::operator++()
 
 template< typename Int >
 counter< Int >
-counter< Int >::operator++( int )
+counter< Int >::operator++( int ) &
 {
     auto const          temp( *this ) ;
     ++ *this ;
@@ -45,7 +45,7 @@ counter< Int >::operator++( int )
 
 template< typename Int >
 counter< Int > &
-counter< Int >::operator--()
+counter< Int >::operator--() &
 {
     BREATH_ASSERT( m_count > 0 ) ;
     -- m_count ;
@@ -54,7 +54,7 @@ counter< Int >::operator--()
 
 template< typename Int >
 counter< Int >
-counter< Int >::operator--( int )
+counter< Int >::operator--( int ) &
 {
     auto const          temp( *this ) ;
     -- *this ;
