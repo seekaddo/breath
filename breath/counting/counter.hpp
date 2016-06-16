@@ -13,7 +13,7 @@ namespace breath {
 
 template< typename IntegralType >
 class counter
-    :   private comparison< counter< IntegralType> >
+    :   private comparison< counter< IntegralType > >
 {
 public:
                         counter() ;
