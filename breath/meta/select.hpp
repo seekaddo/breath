@@ -14,28 +14,28 @@ namespace breath {
 namespace meta {
 
 
-    template< bool condition, typename T, typename U >
-    class select_
-    {
-    public:
-        typedef T type;
-        typedef select_< !condition, T, U > opposite;
-    };
+template< bool condition, typename T, typename U >
+class select_
+{
+public:
+    typedef T type;
+    typedef select_< !condition, T, U > opposite;
+} ;
 
-    template< typename T, typename U >
-    class select_< false, T, U >
-    {
-    public:
-        typedef U type;
-        typedef select_< true, T, U > opposite;
-    };
+template< typename T, typename U >
+class select_< false, T, U >
+{
+public:
+    typedef U type;
+    typedef select_< true, T, U > opposite;
+} ;
 
-    template< typename Cond, typename T, typename U >
-    class select
-    {
-    public:
-        typedef typename select_< Cond::value, T, U >::type type;
-    };
+template< typename Cond, typename T, typename U >
+class select
+{
+public:
+    typedef typename select_< Cond::value, T, U >::type type;
+} ;
 
 }
 }
