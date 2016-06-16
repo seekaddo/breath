@@ -108,9 +108,11 @@ struct pod_with_same_align
 template< typename T >
 class aligned_buffer_for
 {
-    BREATH_DECLARE_NON_COPYABLE( aligned_buffer_for )
 public:
+    BREATH_DECLARE_NON_COPYABLE( aligned_buffer_for )
+
     aligned_buffer_for() {}
+
 private:
     union
     {
