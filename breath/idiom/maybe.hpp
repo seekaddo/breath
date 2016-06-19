@@ -86,7 +86,7 @@ class maybe
 private:
     aligned_buffer_for< T >
                         m_buffer ;
-    bool                m_is_valid ;
+    bool                m_is_valid = false ;
 
 public:
 

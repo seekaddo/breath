@@ -13,14 +13,12 @@ namespace breath {
 
 template< typename T >
 maybe< T >::maybe() noexcept
-    :   m_buffer(),
-        m_is_valid( false )
+    :   m_buffer()
 {
 }
 
 template< typename T >
 maybe< T >::maybe( maybe const & source )
-    :   m_is_valid( false )
 {
     if ( source.is_valid() ) {
         construct( source.value() ) ;
@@ -28,10 +26,8 @@ maybe< T >::maybe( maybe const & source )
     }
 }
 
-
 template< typename T >
 maybe< T >::maybe( T const & t )
-    :   m_is_valid( false )
 {
     construct( t ) ;
     m_is_valid = true ;
@@ -39,7 +35,6 @@ maybe< T >::maybe( T const & t )
 
 template< typename T >
 maybe< T >::maybe( T && t )
-    :   m_is_valid( false )
 {
     construct( std::move( t ) ) ;
     m_is_valid = true ;
@@ -47,7 +42,6 @@ maybe< T >::maybe( T && t )
 
 template< typename T >
 maybe< T >::maybe( maybe && source )
-    :   m_is_valid( false )
 {
     if ( source.is_valid() ) {
         construct( std::move( source.non_const_value() ) ) ;
