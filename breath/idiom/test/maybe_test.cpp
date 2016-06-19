@@ -25,10 +25,10 @@ check_constructors()
     
     // ordinary constructor
     {
-        std::string const   s("Hello");
+        std::string const   s( "Hello" ) ;
         maybe< std::string >
-                            m( s );
-        BREATH_CHECK( m.is_valid() && m.value() == "Hello" );
+                            m( s ) ;
+        BREATH_CHECK( m.is_valid() && m.value() == "Hello" ) ;
     }
 
     // copy constructor
