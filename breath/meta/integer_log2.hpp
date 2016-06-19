@@ -130,7 +130,7 @@ public:
 
 
 template <>
-struct integer_log2< 0 > { } ;
+class integer_log2< 0 > { } ;
 
 template< integer_log2_argument_type x >
 integer_log2_result_type const
