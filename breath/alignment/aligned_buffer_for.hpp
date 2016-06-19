@@ -99,9 +99,9 @@ struct pod_with_same_align
 //!     What's more, C++11 has support for declaring an aligned buffer
 //!     directly in core language:
 //!
-//!        <TODO: add example>
+//!        alignas( T ) unsigned char arr[ sizeof( T ) ] ;
 //!
-//!     So: this facility exists basically for C++03, and all of the
+//!     So: this facility exists basically for C++03; and all of the
 //!     alternatives (this one, TR1's one and the library-based C++11's
 //!     one) will be made superflous by C++11's core support.
 // ---------------------------------------------------------------------
