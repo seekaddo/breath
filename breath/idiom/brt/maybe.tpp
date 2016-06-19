@@ -6,8 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
 #include "breath/diagnostics/assert.hpp"
+#include <utility>
 
 namespace breath {
 
@@ -38,6 +38,24 @@ maybe< T >::maybe( T const & t )
 }
 
 template< typename T >
+maybe< T >::maybe( T && t )
+    :   m_is_valid( false )
+{
+    construct( std::move( t ) ) ;
+    m_is_valid = true ;
+}
+
+template< typename T >
+maybe< T >::maybe( maybe && source )
+    :   m_is_valid( false )
+{
+    if ( source.is_valid() ) {
+        construct( std::move( source.non_const_value() ) ) ;
+        m_is_valid = true ;
+    }
+}
+
+template< typename T >
 maybe< T >::~maybe() noexcept
 {
     if ( is_valid() ) {
@@ -63,6 +81,25 @@ maybe< T >::operator=( maybe< T > const & other )
     return *this ;
 }
 
+template< typename T >
+maybe< T > &
+maybe< T >::operator=( maybe && other )
+{
+    if ( other.is_valid() ) {
+        if ( is_valid() ) {
+            *static_cast< T * >( m_buffer.address() )
+                                       = std::move( other.non_const_value() ) ;
+        } else {
+            construct( std::move( other.non_const_value() ) ) ;
+            m_is_valid = true ;
+        }
+    } else if ( is_valid() ) {
+        destroy() ;
+        m_is_valid = false ;
+    }
+    return *this ;
+}
+
 //      Note that T's assignment operator exception guarantee reflects
 //      that of this operator=().
 // ---------------------------------------------------------------------
@@ -75,6 +112,19 @@ maybe< T >::operator=( T const & rhs )
         // m_is_valid = true ;
     } else {
         construct( rhs ) ;
+    }
+    m_is_valid = true ;
+    return *this ;
+}
+
+template< typename T >
+maybe< T > &
+maybe< T >::operator=( T && t )
+{
+    if ( is_valid() ) {
+        *static_cast< T * >( m_buffer.address() ) = std::move( t ) ;
+    } else {
+        construct( std::move( t ) ) ;
     }
     m_is_valid = true ;
     return *this ;
@@ -114,10 +164,26 @@ maybe< T >::construct( T const & source )
 
 template< typename T >
 void
+maybe< T >::construct( T && source )
+{
+    BREATH_ASSERT( ! is_valid() ) ;
+    new( m_buffer.address() ) T( std::move( source ) ) ; // may throw
+}
+
+template< typename T >
+void
 maybe< T >::destroy() noexcept
 {
     BREATH_ASSERT( is_valid() ) ;
     static_cast< T * >( m_buffer.address() )->T::~T() ;
+}
+
+template< typename T >
+T &
+maybe< T >::non_const_value() noexcept
+{
+    BREATH_ASSERT( is_valid() ) ;
+    return *static_cast< T * >( m_buffer.address() ) ;
 }
 
 }

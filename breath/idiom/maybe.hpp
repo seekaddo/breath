@@ -93,9 +93,13 @@ public:
                         maybe() noexcept ; // POST: ! is_valid()
                         maybe( maybe const & ) ;
     explicit            maybe( T const & ) ;
+                        maybe( maybe && ) ;
+    explicit            maybe( T && ) ;
                         ~maybe() noexcept ;
     maybe &             operator=( maybe const & ) ;
     maybe &             operator=( T const & ) ;
+    maybe &             operator=( maybe && ) ;
+    maybe &             operator=( T && ) ;
 
     bool                is_valid() const noexcept ;
 
@@ -103,8 +107,13 @@ public:
     T const &           default_to( T const & t ) const noexcept ;
 
 private:
+    void                construct( T && source ) ;
     void                construct( T const & source ) ;
     void                destroy() noexcept ;
+
+    //      used in moving functions only
+    //
+    T &                 non_const_value() noexcept ;
 } ;
 
 }
