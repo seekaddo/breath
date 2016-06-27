@@ -19,8 +19,8 @@ check()
 
     {
         BREATH_CHECK( next_multiple( 8, 3 ) == 9 ) ;
-        BREATH_CHECK( next_multiple( 9, 3 ) == 12 ) ;
-        BREATH_CHECK( next_multiple(-8, 3 ) == -3 ) ;
+        BREATH_CHECK( next_multiple( 9, 3 ) == 9 ) ;
+        BREATH_CHECK( next_multiple(-8, 3 ) == -6 ) ;
     }
 }
 
