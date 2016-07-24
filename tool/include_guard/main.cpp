@@ -40,7 +40,7 @@ main( int argc, char * argv[] )
 
         std::cout << "#ifndef " << name   << std::endl
                   << "#define " << name   << std::endl    ;
-        if (std::cin.peek() != EOF ){
+        if ( std::cin.peek() != EOF ){
             std::cout << std::cin.rdbuf() << std::endl    ;
         }
         std::cout << "#endif"             << std::endl    ;
