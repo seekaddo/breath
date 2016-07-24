@@ -14,9 +14,6 @@
 //
 // NB: does NOT support min < 0 !!!
 
-#include "breath/random/subrange_max.hpp"
-#include "breath/diagnostics/assert.hpp"
-
 namespace breath {
 
 template< typename Engine >
@@ -32,32 +29,15 @@ private:
     void operator=(subrange_adaptor const & ) ; //gps get away with VC++'s C4512, for now
 
 public:
-                        subrange_adaptor( Engine & e, result_type new_max ) : m_engine( e ), m_max( new_max ) {
-                                BREATH_ASSERT( m_max <= m_engine.max() ) ;
-                            } ///gps move to .cpp
-
-
-    result_type         next()
-    {
-        if ( m_engine.max() == m_max ) {
-            return m_engine.next() ; // subrange coincides with full range
-        }
-
-        auto                n ( m_engine.next() ) ;
-        unsigned long const sub_max =
-                        breath::subrange_max( m_max, m_engine.max() ) ;
-        while ( n > sub_max ) {
-            n = m_engine.next() ;
-        }
-        return n % ( m_max + 1 ) ;
-    }
-
+                        subrange_adaptor( Engine & e, result_type new_max ) ;
+    result_type         next() ;
 } ;
 
 
 
 }
 
+#include "brt/subrange_adaptor.tpp"
 #endif
 
 // Local Variables:
