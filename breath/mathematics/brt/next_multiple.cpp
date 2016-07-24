@@ -10,6 +10,7 @@
 #include "breath/diagnostics/assert.hpp"
 
 #include <cmath>
+
 namespace breath {
 
 std::intmax_t
