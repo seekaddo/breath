@@ -8,9 +8,9 @@
 
 #include "breath/cryptography/sha384_hasher.hpp"
 #include "breath/cryptography/digest.hpp"
-
 #include "breath/text/to_string.hpp"
 #include "breath/testing/testing.hpp"
+
 #include <iostream>
 #include <ostream>
 #include <string>
