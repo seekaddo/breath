@@ -8,7 +8,6 @@
 
 #include "breath/text/from_string.hpp"
 #include "breath/testing/testing.hpp"
-#include "breath/iteration/begin_end.hpp"
 #include <iostream>
 #include <ostream>
 
@@ -32,12 +31,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_descriptor     desc[] =
-    {
-        do_tests
-    };
-
-    test_runner::instance().run( begin( desc ), end( desc ) ) ;
+    test_runner::instance().run( { do_tests } );
 
 }
 
