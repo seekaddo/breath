@@ -18,7 +18,7 @@ to_string( OutputStreamable const & object )
     std::ostringstream  ss ;
     ss << object ;
     if ( ss.fail() ) {
-        throw breath::exception( "error in to_string" ) ;
+        throw breath::exception( "error in to_string()" ) ;
     }
     return ss.str() ;
 }
