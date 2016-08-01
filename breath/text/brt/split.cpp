@@ -16,8 +16,8 @@ split( std::string const & s, char c )
     std::vector< std::string >
                         result ;
 
-    for ( auto it = s.begin() ; it != s.end() ; ) {
-        auto                curr =  it;
+    for ( auto it = s.cbegin() ; it != s.cend() ; ) {
+        auto const          curr =  it;
         while ( it != s.end() && *it != c ) {
             ++ it ;
         }
