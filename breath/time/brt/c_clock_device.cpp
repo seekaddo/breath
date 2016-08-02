@@ -16,7 +16,7 @@ std::clock_t
 c_clock_device::retrieve()
 {
     std::clock_t const  ret( std::clock() );
-    return ret != ( static_cast< clock_t >( -1 ) )
+    return ret != ( static_cast< std::clock_t >( -1 ) )
         ? ret
         : throw breath::exception( "could not retrieve std::clock()" ) ;
 }
