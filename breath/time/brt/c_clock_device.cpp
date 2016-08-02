@@ -43,7 +43,7 @@ c_clock_device::elapsed() const
 
     //! gps - we should throw if elapsed < 0
     //!       and probably when elapsed == 0 too
-    double const        elapsed_seconds( elapsed_ticks / CLOCKS_PER_SEC);
+    double const        elapsed_seconds( elapsed_ticks / CLOCKS_PER_SEC) ;
 
     return 1000 * elapsed_seconds ;
 }
@@ -52,14 +52,14 @@ c_clock_device::elapsed() const
 c_clock_device::duration_type
 c_clock_device::resolution() const
 {
-    std::clock_t start;
-    std::clock_t end;
+    std::clock_t        start ;
+    std::clock_t        end ;
 
     std::clock_t const  s( retrieve() ) ;
     while( s     == ( start = retrieve() ) ) { }
     while( start == (   end = retrieve() ) ) { }
 
-    return 1000.0 * ( end - start ) / CLOCKS_PER_SEC;
+    return 1000.0 * ( end - start ) / CLOCKS_PER_SEC ;
 }
 
 }
