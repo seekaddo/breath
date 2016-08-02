@@ -5,7 +5,7 @@ Breath Library License
     reproduced below for your convenience.
 
     Note: this license is also known as "BSD New" (as documented at the site of
-    the Open Source Initiative: <http://opensource.org/licenses/BSD-3-Clause>)
+    the Open Source Initiative: <http://opensource.org/licenses/BSD-3-Clause>).
 
 
 NOTES:
@@ -29,8 +29,7 @@ For more info see:
 The BSD 3-Clause License:
 =========================
 
-
-© Copyright 2006-2016 Gennaro Prota
+Â© Copyright 2006-2016 Gennaro Prota
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
