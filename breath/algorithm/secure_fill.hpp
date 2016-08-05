@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////
+// =========================================================================
 //                     Copyright 2006-2008 Gennaro Prota
 //
 //                 Licensed under the BSD 3-Clause License.
@@ -9,9 +9,9 @@
 #ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 #define BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 
-/*! \file   secure_fill.hpp
+/*! \file
     \brief
-        A security-aware fill algorithm
+        A security-aware fill algorithm.
 
         This is completely analogous to the \c std::fill algorithm, except
         that, due to the \c volatile qualification, it guarantees that the
@@ -23,7 +23,7 @@
         Note that a convenience overload for built-in arrays is provided.
 
         Many thanks go to David R Tribble and Douglas A. Gwyn who clarified
-        my doubts in the comp.std.c; see the thread starting with
+        my doubts on comp.std.c; see the thread starting with
 
           message-id: <38i6r2d5uksv7eovk0os7506k9bbshgl2j@4ax.com>
 */
@@ -79,7 +79,7 @@ secure_fill( ForwardIterator begin, ForwardIterator end, T const & value )
 
 }
 
-#endif // include guard
+#endif
 
 // Local Variables:
 // mode: c++
