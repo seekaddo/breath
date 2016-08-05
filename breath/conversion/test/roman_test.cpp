@@ -32,10 +32,10 @@ check()
     }
 
     int const           max_roman = 3999 ;
-    int                 n = 0 ;
+    int                 n ;
     do  {
         is >> n ;
-        char equal_sign ;
+        char                equal_sign ;
         is >> equal_sign ;
         std::string         rep ;
         is >> rep ;
