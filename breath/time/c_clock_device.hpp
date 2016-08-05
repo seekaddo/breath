@@ -13,9 +13,9 @@
 
 namespace breath {
 
-// ===========================================================================
-//      c_clock_device class
-//      ====================
+
+//      c_clock_device
+//      ==============
 //
 //!     A clock device based on std::clock()
 //!
@@ -27,23 +27,22 @@ namespace breath {
 class c_clock_device
 {
 public:
-    typedef double      duration_type;
+    typedef double      duration_type ;
 
-                        c_clock_device();
+                        c_clock_device() ;
 
-    //!
-    void                restart();
-    duration_type       elapsed() const;
+    void                restart() ;
+    duration_type       elapsed() const ;
 
     //! Returns an estimate of the timer resolution, in ms.
     //! May return slightly different values from call to call.
-    duration_type       resolution() const;
+    duration_type       resolution() const ;
         
 private:
-    static std::clock_t retrieve();
+    static std::clock_t retrieve() ;
         
 private:
-    std::clock_t        m_start_tick;
+    std::clock_t        m_start_tick ;
 } ;
 
 }
