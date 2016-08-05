@@ -28,6 +28,9 @@ namespace breath {
 //!     requirements of MoveConstructible and MoveAssignable, but not
 //!     the requirements of either CopyConstructible or CopyAssignable.
 // ---------------------------------------------------------------------
+template< typename T >
+class auto_array
+{
 public:
     BREATH_DECLARE_NON_COPYABLE( auto_array )
 
