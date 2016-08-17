@@ -51,7 +51,7 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //!         The function template returns a reference to \c value when \c value
 //!         is equivalent to one (or both) of the boundary arguments.
 // --------------------------------------------------------------------------
-template < typename T, typename Compare  >
+template< typename T, typename Compare  >
 constexpr T const & clamp( T const & value,
                            T const & low,
                            T const & high,
