@@ -333,7 +333,7 @@ windows_version_info::suite_mask() const
 }
 
 bool
-windows_version_info::is_64_bit() const
+windows_version_info::is_64_bit()
 {
     SYSTEM_INFO         si ;
     GetNativeSystemInfo( &si ) ;

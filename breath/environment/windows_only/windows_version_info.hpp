@@ -41,7 +41,7 @@ public:
 
     int                 suite_mask() const ;
 
-    bool                is_64_bit() const ;
+    static bool         is_64_bit() ;
     bool                is_workstation() const ;
     bool                is_suite_wh_server() const ;
     bool                is_suite_storage_server() const ;
