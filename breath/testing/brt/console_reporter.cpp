@@ -15,7 +15,10 @@
 namespace breath {
 
 console_reporter::console_reporter( std::ostream & os )
-    :   m_stream( os )
+    :   m_stream( os ),
+        m_passed( 0 ),
+        m_failed( 0 ),
+        m_unexpected_exceptions( 0 )
 {
 }
 
@@ -23,9 +26,6 @@ void
 console_reporter::on_all_tests_begin()
 {
     m_stream << "Unit tests:" << std::endl;
-    m_passed = 0;
-    m_failed = 0;
-    m_unexpected_exceptions = 0;
 }
 
 void

@@ -18,7 +18,7 @@ namespace breath {
 class console_reporter : public test_reporter
 {
 public:
-                        console_reporter( std::ostream & os ) ;
+    explicit            console_reporter( std::ostream & os ) ;
 
     virtual void        on_all_tests_begin() override ;
     virtual void        on_all_tests_end() override ;
