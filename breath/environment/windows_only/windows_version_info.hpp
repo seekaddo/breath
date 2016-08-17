@@ -8,6 +8,7 @@
 
 #include <ostream>
 // gps aggiungere, in ANNOUNCE.txt, cosa facciamo con i platform headers
+#undef UNICODE
 #include <windows.h>
 
 
