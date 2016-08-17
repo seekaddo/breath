@@ -39,6 +39,9 @@ cpp_basic_options = /Zc:forScope        \
                     /Zc:wchar_t         \
                     /Zc:auto            \
                     /Zc:trigraphs       \
+					/Zc:rvalueCast		\
+					/Zc:strictStrings	\
+					/Zc:inline			\
                                         \
                     /EHs    \
                     /W4     \

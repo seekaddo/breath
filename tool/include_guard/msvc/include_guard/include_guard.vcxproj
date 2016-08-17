@@ -92,6 +92,7 @@
       <AdditionalIncludeDirectories>%BREATH_ROOT%</AdditionalIncludeDirectories>
       <TreatWarningAsError>Yes</TreatWarningAsError>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalOptions>/Zc:rvalueCast /Zc:strictStrings /Zc:inline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,6 +110,7 @@
       <TreatWarningAsError>Yes</TreatWarningAsError>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>%BREATH_ROOT%</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zc:rvalueCast /Zc:strictStrings /Zc:inline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,6 +130,7 @@
       <AdditionalIncludeDirectories>%BREATH_ROOT%</AdditionalIncludeDirectories>
       <TreatWarningAsError>Yes</TreatWarningAsError>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalOptions>/Zc:rvalueCast /Zc:strictStrings /Zc:inline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,6 +152,7 @@
       <TreatWarningAsError>Yes</TreatWarningAsError>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>%BREATH_ROOT%</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zc:rvalueCast /Zc:strictStrings /Zc:inline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
