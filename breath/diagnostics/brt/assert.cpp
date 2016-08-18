@@ -18,7 +18,8 @@ namespace assert_private {
 //      Sends a message to std:cerr and aborts.
 // -----------------------------------------------------------------------
 void
-fire( char const * message, char const * file_name, unsigned long line_number )
+fire( char const * message,
+      char const * file_name, unsigned long line_number ) noexcept
 {
     std::cerr << "Assertion failed: "
               << message
