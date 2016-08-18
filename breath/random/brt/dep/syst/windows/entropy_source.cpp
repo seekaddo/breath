@@ -120,7 +120,7 @@ entropy_source::impl::to_buffer( unsigned char * buffer, std::size_t count )
 entropy_source::result_type
 entropy_source::impl::next()
 {
-    BREATH_ASSERT( ! is_done() ) ; //gps
+    BREATH_ASSERT( ! is_done() ) ;
 
     unsigned char       c ;
     to_buffer( &c, sizeof c ) ;
