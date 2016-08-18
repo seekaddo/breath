@@ -14,7 +14,7 @@
 
 //----------------------
 
-#include "breath/random/entropy.hpp"
+#include "breath/random/entropy_source.hpp"
 
 int
 main()
