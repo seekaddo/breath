@@ -18,7 +18,6 @@
 #include <limits>
 #include <string>
 #include <vector>
-#include <cstddef>
 
 namespace breath {
 
@@ -42,7 +41,7 @@ public:
 private:
     bool                acquire( DWORD flags = 0 ) ;
     bool                is_done() const noexcept ;          // true == can no longer use this object (gps BETTER name?)
-    void                to_buffer( unsigned char * buffer, std::size_t count ) ;
+    void                to_buffer( unsigned char * buffer, DWORD count ) ;
 } ;
 
 
@@ -109,7 +108,7 @@ release() noexcept
 }
 
 void
-entropy_source::impl::to_buffer( unsigned char * buffer, std::size_t count )
+entropy_source::impl::to_buffer( unsigned char * buffer, DWORD count )
 {
     int const       r = ::CryptGenRandom( m_provider_handle, count, buffer ) ;
     if ( r == 0 ) {
