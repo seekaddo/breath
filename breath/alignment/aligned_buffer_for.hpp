@@ -6,6 +6,9 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
+#ifndef BREATH_GUARD_ilYRG2ibsfCoQd4vz7X5Cik5Q8E0z1pO
+#define BREATH_GUARD_ilYRG2ibsfCoQd4vz7X5Cik5Q8E0z1pO
+
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/meta/select.hpp"
 #include <cstddef>
@@ -128,6 +131,8 @@ public:
 } ;
 
 }
+
+#endif
 
 // Local Variables:
 // mode: c++
