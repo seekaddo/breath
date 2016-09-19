@@ -9,7 +9,6 @@
 #include "breath/conversion/roman.hpp"
 #include "breath/environment/find_environment_string.hpp"
 #include "breath/testing/testing.hpp"
-#include "breath/iteration/begin_end.hpp"
 
 #include <fstream>
 #include <string>
@@ -54,13 +53,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_descriptor     desc[] =
-    {
-        check
-    } ;
-
-    test_runner::instance().run( begin( desc ) , end( desc ) ) ;
-
+    test_runner::instance().run( { check } ) ;
 }
 
 // Local Variables:
