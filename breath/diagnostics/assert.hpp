@@ -14,6 +14,7 @@
 #define BREATH_GUARD_k8gjtzbloTDgF7FRM6AWORSGsE1IHkXq
 
 namespace breath {
+//! \cond
 namespace assert_private {
 
 void fire( char const * message,
@@ -21,6 +22,7 @@ void fire( char const * message,
            unsigned long line_number ) noexcept ;
 
 }
+//! \endcond
 }
 
 
