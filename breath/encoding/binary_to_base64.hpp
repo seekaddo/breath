@@ -6,9 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 //
-//      Base64 encoding, conforming to RFC 3548. In addition to the
-//      provisions of RFC 3548, this function template allows line
-//      wrapping on the generated output (wrap_column != 0).
+//!     \file
+//!     \brief Base64 encoding.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_m83AHFwUQlZBwnHisbdZpcYHaazyL2sn
@@ -18,6 +17,19 @@
 
 namespace breath {
 
+//!     Converts a binary sequence to base64. Conforms to RFC 3548,
+//!     except that it allows to line-wrap the generated base64 output
+//!     (\c wrap_column != 0).
+//
+//!     \param[in]  begin Iterator to the first element of the binary
+//!                 sequence
+//!     \param[in]  end   One-past-the-end iterator in the binary
+//!                 sequence
+//!     \param[out] out   Iterator to the first element of the base64
+//!                 output
+//!     \param[in]  wrap_column Column where line-wrapping must happen
+//!                 in the generated output (0 means "no wrapping")
+// -------------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
 void                binary_to_base64( InputIter begin, InputIter end,
                                       OutputIter out,
