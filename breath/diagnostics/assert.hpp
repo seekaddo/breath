@@ -28,6 +28,8 @@ void fire( char const * message,
 //      BREATH_ASSERT:
 //      --------------
 //
+//!     \hideinitializer
+//!
 //!     BREATH_ASSERT() is the simplest runtime assertion facility in the Breath
 //!     collection. Differently from the standard \c assert() it is always
 //!     defined and has always the same expansion (regardless of \c NDEBUG).
