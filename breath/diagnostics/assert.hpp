@@ -36,19 +36,13 @@ void fire( char const * message,
 //!
 //!     The code
 //!
-//!         BREATH_ASSERT( expression)
+//!         BREATH_ASSERT( expr )
 //!
-//!     expands to an expression. The statement
-//!
-//!         BREATH_ASSERT( expression) ;
-//!
-//!     has the following effect:
-//!
-//!     first, if expression is not implicitly convertible to
-//!     bool the program is ill-formed; otherwise, when the statement
-//!     is executed, an assertion is triggered \e iif the result of
-//!     such a conversion is \c false. If the result is true, the
-//!     statement has no effect.
+//!     expands to an expression. When that expression is evaluated:
+//!     first, if \c expr is not implicitly convertible to
+//!     bool the program is ill-formed; otherwise, an assertion is
+//!     triggered \e iif the result of such a conversion is \c false.
+//!     If the result is true, the evaluation has no effect.
 //!
 //!     In this context, "triggering an assertion" means writing
 //!     information related to the specific macro invocation (e.g.
