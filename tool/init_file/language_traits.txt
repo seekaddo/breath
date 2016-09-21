@@ -42,21 +42,18 @@
 # filename extension  comment  comment   line
 # (extended regexp)    start     end    comment    language
 # --------------------------------------------------------------------
-awk                     no       no       #          AWK
-[cht]pp                 /*       */       //         C++
 asm                     /*       */       #          Asm
-html                    <!--     -->      no         HTML
-xhtml                   <!--     -->      no         XHTML
-xslt                    <!--     -->      no         XSLT
+awk                     no       no       #          AWK
+bat                     no       no       REM        Batch
+[cht]pp                 /*       */       //         C++
 css                     /*       */       no         CSS
+el                      no       no       ;;         Emacs-Lisp
+html                    <!--     -->      no         HTML
 mk                      no       no       #          Make
 (sh|shc)                no       no       #          Shell
-
 vim                     no       no       "          Vim
-el                      no       no       ;;         Emacs-Lisp
-
-bat                     no       no       REM        Batch
-
+xhtml                   <!--     -->      no         XHTML
+xslt                    <!--     -->      no         XSLT
 # --------------------------------------------------------------------
 txt                     no       no       #          Text
 
