@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A byte buffer to host an object of type \c T.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ilYRG2ibsfCoQd4vz7X5Cik5Q8E0z1pO
 #define BREATH_GUARD_ilYRG2ibsfCoQd4vz7X5Cik5Q8E0z1pO
@@ -22,7 +26,7 @@ class               aligned_buffer_for ;
 template< typename T, std::size_t n >
 class               aligned_buffer_for< T[ n ] > { /* disabled for arrays */ } ;
 
-
+//! \cond
 namespace aligned_buffer_private {
 
 
@@ -83,13 +87,14 @@ struct pod_with_same_align
                         type ;
 } ;
 
-
 }
+//! \endcond
 
 //      aligned_buffer_for
 //      ==================
 //
-//!     A byte buffer suitably sized and aligned for the type \c T.
+//!     An object that contains a byte buffer suitably sized and aligned
+//!     for the type \c T.
 //!
 //!     Note that this has a different interface from TR1's or C++11's
 //!     analogous: both of the latter take one or two numeric arguments
@@ -97,12 +102,16 @@ struct pod_with_same_align
 //!     we want the same alignment of). Among other things, the C++11
 //!     scheme allows for storing arrays:
 //!
+//!     <code>
 //!       aligned_storage< n * sizeof( T ), alignof( T ) >
+//!     </code>
 //!
 //!     What's more, C++11 has support for declaring an aligned buffer
 //!     directly in core language:
 //!
+//!     <code>
 //!        alignas( T ) unsigned char arr[ sizeof( T ) ] ;
+//!     </code>
 //!
 //!     So: this facility exists basically for C++03; and all of the
 //!     alternatives (this one, TR1's one and the library-based C++11's
@@ -117,15 +126,23 @@ public:
     aligned_buffer_for() {}
 
 private:
+//! \cond
     union
     {
         unsigned char   m_raw_buffer[ sizeof( T ) ] ;
         typename aligned_buffer_private::pod_with_same_align< T >::type
                         dummy_for_alignment ;
     } ;
-
+//! \endcond
 public:
+        //!     \return The address of the internal (aligned) buffer, as a \c
+        //!     void \c *.
+        //-------------------------------------------------------------------
         void *          address()       { return m_raw_buffer ; }
+
+        //!     \return The address of the internal (aligned) buffer, as a \c
+        //!     void \c *.
+        //-------------------------------------------------------------------
         void const *    address() const { return m_raw_buffer ; }
 
 } ;
