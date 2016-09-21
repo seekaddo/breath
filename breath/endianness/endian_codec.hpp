@@ -5,26 +5,13 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
-
+//
+//!     \file
+//!     \brief Converter from/to byte sequences representations.
+// -------------------------------------------------------------------------
+//
 #ifndef BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
 #define BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
-
-/*! \file   endian_codec.hpp
-    \brief
-        Converts generic values to/from (byte-)sequence representations
-
-        In general, \c endian_codec can read and store a representation
-        of a value as a sequence of smaller units, regardless of their
-        widths. It is mostly useful to read and write values independently
-        of the endianness they are stored in, as long as the endianness
-        type is known.
-
-        It is only designed for reads and writes in memory.
-
-    \warning
-        Given its generality it might be a good idea to rename this to
-        something like "order_codec" or similar; feedback is welcome.
-*/
 
 #include "breath/meta/width.hpp"
 #include <iterator>
@@ -95,20 +82,35 @@ public:
     }
 } ;
 
+//!     Converts generic values to/from (byte-)sequence representations.
+//!
+//!     In general, \c endian_codec can read and store a representation
+//!     of a value as a sequence of smaller units, regardless of their
+//!     widths. It is mostly useful to read and write values independently
+//!     of the endianness they are stored in, as long as the endianness
+//!     type is known.
+//!
+//!     It is only designed for reads and writes in memory.
+//!
 //! \typereq
-//!     \c T and \c Byte shall be unsigned integral types
-//!     There's no requirement that Byte have a smaller
+//!     \c T and \c Byte shall be unsigned integral types.
+//!     There's no requirement that \c Byte have a smaller
 //!     \em width than \c T
 //!
-//! \todo: check this; is it true for user-policies?
-//
-// NOTE:
-//
-// For purposes other than memory read/writes, different arrangements
-// than a sequence are theoretically conceivable but no need has so far
-// arisen for such a generalization. This only deals with a linear
-// sequence of "Bytes", representing a T value according to a given
-// convention.
+//! \warning
+//!     Given its generality it might be a good idea to rename this to
+//!     something like "order_codec" or similar; feedback is welcome.
+//!
+//! \todo Check this; is it true for user-policies?
+//!
+//! NOTE:
+//!
+//! For purposes other than memory read/writes, different arrangements
+//! than a sequence are theoretically conceivable but no need has so far
+//! arisen for such a generalization. This only deals with a linear
+//! sequence of "Bytes", representing a \c T value according to a given
+//! convention.
+// --------------------------------------------------------------------------
 template<
     typename EndianPolicy,
     typename T,
