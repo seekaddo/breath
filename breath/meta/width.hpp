@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Metafunction yielding the \i width of a type.
+//!     \brief Metafunction yielding the \e width of a type.
 // -------------------------------------------------------------------------
 //
 #ifndef BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
