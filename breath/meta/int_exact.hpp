@@ -5,15 +5,16 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A generic version of C99's exact-width integer types (intN_t).
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
 #define BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
 
-/*! \file   int_exact.hpp
-    \brief
-        A generic version of C99's exact-width integer types (intN_t).
-
-        As for their C99 counterparts, there's no guarantee that they
+/*!
+        As for their C99 counterparts, there's no guarantee that the types
         are provided for any given value of N.
 */
 

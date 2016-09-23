@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A \c std::string trimmer.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_rws4wbvfhp1gTSnTPzZEhVe9JHM0Cwgk
 #define BREATH_GUARD_rws4wbvfhp1gTSnTPzZEhVe9JHM0Cwgk

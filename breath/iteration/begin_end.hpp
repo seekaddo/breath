@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Namespace-scope \c begin() and \c end().
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD
 #define BREATH_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD

@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Universally unique identifiers.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG
 #define BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG

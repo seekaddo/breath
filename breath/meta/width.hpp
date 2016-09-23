@@ -5,19 +5,20 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
-
+//
+//!     \file
+//!     \brief Metafunction yielding the \i width of a type.
+// -------------------------------------------------------------------------
+//
 #ifndef BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 #define BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 
-/*! \file
-    \brief
-        Metafunction yielding the \c width of a type.
-
+/*!
         A \c meta::constant<> whose \c value_type is T and whose value is the \c
         width of \p T (the number of bits it uses to represent values, including
         any sign but excluding any padding bits).
     \typereq
-    See \c meta::precision<>
+    See \c meta::precision<>.
 */
 
 #include "breath/meta/constant.hpp"

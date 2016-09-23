@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Represents the process of the calling code.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_cTwXYy0xHxVtUgvI0o8Sme94ALCfx0R9
 #define BREATH_GUARD_cTwXYy0xHxVtUgvI0o8Sme94ALCfx0R9

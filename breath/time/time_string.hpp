@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A thin wrapper around \c std::strftime().
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_wR9yYhDtICLHOJ6c2LmBkhMWoYoaeVkS
 #define BREATH_GUARD_wR9yYhDtICLHOJ6c2LmBkhMWoYoaeVkS
@@ -29,13 +33,11 @@ public:
 //      time_string
 //      -----------
 //
-//      A thin wrapper around std::strftime().
-//
-//      This is a simple tool for simple and quick formatting needs.
-//      You should use a more complete solution for more complex needs
-//      (but don't underestimate the good old strftime() ;-)).
-//
-//      NOTE: document reentrancy issues (see C99, 7.23.3)
+//!     This is a simple tool for simple and quick formatting needs.
+//!     You should use a more complete solution for more complex needs
+//!     (but don't underestimate the good old strftime() ;-)).
+//!
+//!     NOTE: document reentrancy issues (see C99, 7.23.3)
 // ---------------------------------------------------------------------------
 breath::maybe< std::string >
                     time_string( std::string const & format,

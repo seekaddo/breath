@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief The greatest common divisor of two integers.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_7TolwuFfch2xrqOdKkP8IrjIejdJYQxs
 #define BREATH_GUARD_7TolwuFfch2xrqOdKkP8IrjIejdJYQxs
@@ -13,7 +17,6 @@
 
 namespace breath {
 
-//!     The greatest common divisor of two integers.
 //!     This function follows the C++ Library Fundamental TS v2, as of
 //!     May 14, 2016. (It adds, as allowed, a noexcept specification.)
 //!

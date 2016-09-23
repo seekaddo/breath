@@ -6,17 +6,12 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 //
-//      exit_code.hpp:
-//      ==============
-//
-//!     Provides named constants for process termination codes.
-//
-// ---------------------------------------------------------------------------
+//!     \file
+//!     \brief Named constants for program termination codes.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
 #define BREATH_GUARD_jUGeAMeGfcMWbQ12OyJckoIpy0CYCBq0
-
-//!     \file
 
 namespace breath {
 

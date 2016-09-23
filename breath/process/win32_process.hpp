@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Represents a Win32 process.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_R609ymqmTeLeF2v3mTEcOyW8AqCEibGg
 #define BREATH_GUARD_R609ymqmTeLeF2v3mTEcOyW8AqCEibGg

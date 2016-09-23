@@ -5,15 +5,16 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Metafunction yielding the \c precision of a type.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
 #define BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
 
-/*! \file   precision.hpp
-    \brief
-        Metafunction yielding the \c precision of a type.
-
-        \todo document!
+/*!
+    \todo document!
 
     The library provides specializations for all integer types and \e built-in
     arrays thereof (including multidimensional arrays).

@@ -5,14 +5,13 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
-
+//
+//!     \file
+//!     \brief Wrapper for (integral) constant expressions.
+// -------------------------------------------------------------------------
+//
 #ifndef BREATH_GUARD_agSZ9lxbOGpOtPA3Qy3JqLm28BJW8oRr
 #define BREATH_GUARD_agSZ9lxbOGpOtPA3Qy3JqLm28BJW8oRr
-
-/*! \file   constant.hpp
-    \brief
-        Wrapper for (integral) constant expressions
-*/
 
 #include "breath/meta/unqualify.hpp"
 

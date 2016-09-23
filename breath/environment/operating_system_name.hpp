@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A description of the operating system.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS
 #define BREATH_GUARD_vUmfBUe7uRgM2lw3OI5BLE0BSMMDnzDS

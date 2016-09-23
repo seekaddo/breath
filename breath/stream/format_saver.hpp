@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A stream formatting info saver/restorer.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Z4DMqDrKXOIFeJ4e9o0vyecTiAF4rmvr
 #define BREATH_GUARD_Z4DMqDrKXOIFeJ4e9o0vyecTiAF4rmvr

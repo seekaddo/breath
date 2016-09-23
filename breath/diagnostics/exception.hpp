@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Base class for all Breath's exceptions.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_11RKjChIvO8xKP1XEZcLxvq7vDyKvcUr
 #define BREATH_GUARD_11RKjChIvO8xKP1XEZcLxvq7vDyKvcUr

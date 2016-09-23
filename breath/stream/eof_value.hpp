@@ -6,24 +6,28 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 //
-//      A convenience source file to separate out the crazy #includes
-//      required for using EOF or char_traits<...>::eof():
+//!     \file
+//!     \brief A replacement for \c EOF and \c char_traits<>::eof().
+// -------------------------------------------------------------------------
 //
-//        1. the former would require including <stdio.h> or <cstdio>
-//        2. the latter would require <string>
-//
-//      Both choices are IMHO particularly annoying for maintenance
-//      and code review: any reader of the code would probably wonder,
-//      for (1), why you include <cstdio> if you are using C++ streams
-//      (and not stdio); and, for (2), why you include <string> even
-//      where there's no usage of std::string.
-//
-//      The root of the issue is the poor header partitioning of the
-//      standard library but we can't do anything about that. We can,
-//      however, separate things out so that the relevant #includes
-//      are insulated. Which is the only real purpose of this
-//      facility.
-//
+//!     A convenience source file to separate out the crazy #includes
+//!     required for using EOF or char_traits<...>::eof():
+//!
+//!       1. the former would require including <stdio.h> or <cstdio>
+//!       2. the latter would require <string>
+//!
+//!     Both choices are IMHO particularly annoying for maintenance
+//!     and code review: any reader of the code would probably wonder,
+//!     for (1), why you include <cstdio> if you are using C++ streams
+//!     (and not stdio); and, for (2), why you include <string> even
+//!     where there's no usage of std::string.
+//!
+//!     The root of the issue is the poor header partitioning of the
+//!     standard library but we can't do anything about that. We can,
+//!     however, separate things out so that the relevant #includes
+//!     are insulated. Which is the only real purpose of this
+//!      facility.
+//!
 //      NOTE: there's no .tpp file, here; it seemed just overkill.
 //            Also, it seems natural to add an is_eof_value(), too,
 //            since using eq_int_type would still require #including

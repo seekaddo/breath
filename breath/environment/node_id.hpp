@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief The primary MAC address.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_JaU2rvd68IroPxPXXroTc2bew3AipiVP
 #define BREATH_GUARD_JaU2rvd68IroPxPXXroTc2bew3AipiVP

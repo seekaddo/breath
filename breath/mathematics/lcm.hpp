@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief The least common multiple of two integers.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_OFEP2tStNzXnzGYEV6JdW1XUXcS6lA7p
 #define BREATH_GUARD_OFEP2tStNzXnzGYEV6JdW1XUXcS6lA7p
@@ -13,7 +17,6 @@
 
 namespace breath {
 
-//!     The least common multiple of two integers.
 //!     This function follows the C++ Library Fundamental TS v2, as of
 //!     May 14, 2016. (It adds, as allowed, a noexcept specification.)
 //!

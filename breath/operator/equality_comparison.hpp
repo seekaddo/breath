@@ -5,11 +5,15 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Base class to provide equality comparisons.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
 #define BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
 
-/*
+/*!
         Automatically provides a definition for operator==() and operator!=()
         in terms of a user-declared member function %is_equal().
 */
@@ -17,22 +21,22 @@
 namespace breath {
 namespace adl_shield {
 
-//! The class template equality_comparison<> provides operator==
-//! and operator!= as namespace scope functions whose name is associated
-//! "on demand" (i.e. at instantiation) to class T, via ADL.
+//!     The class template \c equality_comparison<> provides \c operator==
+//!     and \c operator!= as namespace scope functions whose name is associated
+//!     "on demand" (i.e. at instantiation) to class \c T, via ADL.
 //!
-//! Usage:
-//! ======
+//!     Usage:
+//!     ======
 //!
-//!  - Provide an %is_equal() function for your class \c C.
+//!      - Provide an %is_equal() function for your class \c C.
 //!
-//!  - Add <code>equality_comparison< C ></code> as a private base
-//|    class of \c C.
+//!      - Add <code>equality_comparison< C ></code> as a private base
+//|        class of \c C.
 //!
-//! As a result, \c== and \c != will be available too for class \c C
-//! and defined in terms of is_equal.
+//!     As a result, \c== and \c != will be available too for class \c C
+//!     and defined in terms of is_equal.
 //!
-//! ADL protection:
+//!     ADL protection:
 //!
 //!     Even though this uses the Barton-Nackman idiom and relies on
 //!     its standard-conforming, ADL-based, mechanics (no friend

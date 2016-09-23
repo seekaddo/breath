@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Microsoft Windows version information.
+// -------------------------------------------------------------------------
 
 #include <ostream>
 // gps aggiungere, in ANNOUNCE.txt, cosa facciamo con i platform headers

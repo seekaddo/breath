@@ -5,6 +5,11 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Represents a <code>char const</code> * or \c std::string
+//!            function argument.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_SCVOL7tEoh41fMb4HRZ21yR1tALwho7n
 #define BREATH_GUARD_SCVOL7tEoh41fMb4HRZ21yR1tALwho7n

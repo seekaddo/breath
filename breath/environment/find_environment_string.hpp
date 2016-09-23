@@ -5,12 +5,16 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Thin wrapper around \c std::getenv().
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_DJJ43p6UR3Ib7dPq3Qi3OoGCOlpQ0iRV
 #define BREATH_GUARD_DJJ43p6UR3Ib7dPq3Qi3OoGCOlpQ0iRV
 
 
-/*
+/*!
         Thin wrapper around the getenv() standard function
 
         Overcomes three usability issues of getenv():

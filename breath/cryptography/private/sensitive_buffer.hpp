@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief  A buffer for sensitive data.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_cYIOKCI73iMumaonvDavBYvSD0UPrlq4
 #define BREATH_GUARD_cYIOKCI73iMumaonvDavBYvSD0UPrlq4

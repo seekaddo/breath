@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Returns the filename part of a path.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
 #define BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR

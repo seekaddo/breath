@@ -5,15 +5,16 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Metafunction to get the corresponding unqualified type of
+//!            its argument.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_y2qhOILUvLqZ79ED32KSdlOabmhuefgQ
 #define BREATH_GUARD_y2qhOILUvLqZ79ED32KSdlOabmhuefgQ
 
-/*! \file   unqualify.hpp
-    \brief
-        Metafunction to get the corresponding unqualified type of
-        its argument.
-
+/*!
         Example: unqualify< char const >::type = char
 */
 

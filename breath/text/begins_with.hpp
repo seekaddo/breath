@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Returns whether a string begins with another one.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_pjj1lvDnitxdxtZbFZ64jGnnUhPhHABq
 #define BREATH_GUARD_pjj1lvDnitxdxtZbFZ64jGnnUhPhHABq

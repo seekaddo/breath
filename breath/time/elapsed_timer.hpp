@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A policy based timer class (class template).
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Jr0D8xlNtWxnToeomoet20V4lz0qIYDd
 #define BREATH_GUARD_Jr0D8xlNtWxnToeomoet20V4lz0qIYDd
@@ -31,6 +35,7 @@ namespace breath {
 //!      and the typedef
 //!
 //!         * duration_type
+// -------------------------------------------------------------------------
 template< class Device >
 class elapsed_timer
 {

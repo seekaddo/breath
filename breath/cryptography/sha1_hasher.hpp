@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief  SHA-1 function.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_lTc6ZJg4kodcuFjtlYBwwj0hqDplySkG
 #define BREATH_GUARD_lTc6ZJg4kodcuFjtlYBwwj0hqDplySkG

@@ -5,6 +5,11 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A typedef for the <code>long long </code >type and its
+//!            unsigned counterpart.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_2VvT07Ym4gtHrCrFcYH7Czm3yaRMinaM
 #define BREATH_GUARD_2VvT07Ym4gtHrCrFcYH7Czm3yaRMinaM

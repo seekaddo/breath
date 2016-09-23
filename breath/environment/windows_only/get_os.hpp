@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Determines the running operating system.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_lc9dZp5eUrNd9dbNZHDcvW36RGyTlJ77
 #define BREATH_GUARD_lc9dZp5eUrNd9dbNZHDcvW36RGyTlJ77

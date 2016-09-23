@@ -5,32 +5,34 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // ___________________________________________________________________________
+//
+//!     \file
+//!     \brief A generalized version of \c std::accumulate.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_AIxamIWyjxqb3pPGHU23CYP8v7Zo1TTt
 #define BREATH_GUARD_AIxamIWyjxqb3pPGHU23CYP8v7Zo1TTt
 
 //      accumulate():
 //      =============
-//
-//      A generalized version of std::accumulate().
-//
-//      Traits
-//      ------
-//
-//      breath::accumulate() uses accumulate_traits<> as a point of
-//      customization: see below.
-//
-//      The default traits template performs a summation of the
-//      elements in the range [begin, end) via operator+= (which is
-//      searched via ADL).
-//
-//      Any accumulate_traits<> shall provide the following accessible
-//      members:
-//
-//          - init_type
-//          - result_type
-//          - first()
-//          - compute()
+//!
+//!     Traits
+//!     ------
+//!
+//!     breath::accumulate() uses accumulate_traits<> as a point of
+//!     customization: see below.
+//!
+//!     The default traits template performs a summation of the
+//!     elements in the range [begin, end) via operator+= (which is
+//!     searched via ADL).
+//!
+//!     Any accumulate_traits<> shall provide the following accessible
+//!     members:
+//!
+//!         - init_type
+//!         - result_type
+//!         - first()
+//!         - compute()
 // ---------------------------------------------------------------------------
 
 namespace breath {

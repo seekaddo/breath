@@ -5,14 +5,13 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief  A Merkle-Damgard machine.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_fZUJ99c94EAQyLGNzV2BUxw0nzawpWpw
 #define BREATH_GUARD_fZUJ99c94EAQyLGNzV2BUxw0nzawpWpw
-
-/*! \file   merkle_damgard_hasher.hpp
-    \brief
-        Merkle Damgard hasher
-*/
 
 #include <iterator> // for iterator_traits (dispatching)
 #include <cstddef> // for std::size_t

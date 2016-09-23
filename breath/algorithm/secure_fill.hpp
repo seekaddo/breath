@@ -5,14 +5,15 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 //  _________________________________________________________________________
+//
+//!     \file
+//!     \brief A security-aware fill algorithm.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 #define BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 
-/*! \file
-    \brief
-        A security-aware fill algorithm.
-
+/*!
         This is completely analogous to the \c std::fill algorithm, except
         that, due to the \c volatile qualification, it guarantees that the
         sequence is written to, even if it is never touched after the

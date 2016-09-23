@@ -5,7 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
-
+//
+//!     \file
+//!     \brief Returns whether a type accepts negative values.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_hGv2WKy8LgUcETfMmcRpTRLRUQlhUJSH
 #define BREATH_GUARD_hGv2WKy8LgUcETfMmcRpTRLRUQlhUJSH

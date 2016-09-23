@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Returns the allowed path separators in the running system.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_bvA1h6sHG51DDAzrkOaJBHIxlZBpgVnA
 #define BREATH_GUARD_bvA1h6sHG51DDAzrkOaJBHIxlZBpgVnA

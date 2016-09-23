@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A token concatenation macro.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_TtY9fvceSS7uDBmVi38DjzXQQYbGSOLw
 #define BREATH_GUARD_TtY9fvceSS7uDBmVi38DjzXQQYbGSOLw

@@ -5,12 +5,16 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A token concatenation macro.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FQYU7dF1crCo42cp2n1PRVbw1ctMjDqe
 #define BREATH_GUARD_FQYU7dF1crCo42cp2n1PRVbw1ctMjDqe
 
-/*
-        Facilities for concatenation of preprocessing tokens
+/*!
+        A facility for concatenation of preprocessing tokens.
 
         Concatenates the two preprocessing tokens which end the
         argument x and start the argument y, respectively. The

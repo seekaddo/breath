@@ -5,7 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
-
+//
+//!     \file
+//!     \brief A counter providing only operations meaningful for a counter.
+// -------------------------------------------------------------------------
 
 #include "breath/operator/comparison.hpp"
 

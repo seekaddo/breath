@@ -5,14 +5,13 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief MD5 templates.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_vePXQ5mxXBYih5DCVW1zUWqL52bOdtiX
 #define BREATH_GUARD_vePXQ5mxXBYih5DCVW1zUWqL52bOdtiX
-
-/*! \file   md5_hasher.hpp
-    \brief
-        MD5 templates
-*/
 
 #include "breath/cryptography/merkle_damgard_engine.hpp"
 #include "breath/cryptography/merkle_damgard_hasher.hpp"

@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Constructs an object from its textual representation.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
 #define BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob

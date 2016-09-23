@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Displays an expression to \c std::cout.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_v4ifHvyokFutGDGkksKs5kPv6rpDcUGv
 #define BREATH_GUARD_v4ifHvyokFutGDGkksKs5kPv6rpDcUGv

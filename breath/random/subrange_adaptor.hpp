@@ -5,17 +5,22 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Random or pseudo-random number generator adaptor.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_fuCxVYYJ2LdcmZesVYlZ9PyrSKmKj97I
 #define BREATH_GUARD_fuCxVYYJ2LdcmZesVYlZ9PyrSKmKj97I
 
-// Adapts a random or pseudorandom number generator to emit numbers in
-// a subrange of its original range (see the subrange_max facility).
-//
-// NB: does NOT support min < 0 !!!
-
 namespace breath {
 
+//!     Adapts a random or pseudorandom number generator to emit
+//!     numbers in a subrange of its original range (see the
+//!     subrange_max facility).
+//
+//!     NB: does NOT support min < 0 !!!
+//
 template< typename Engine >
 class subrange_adaptor
 {

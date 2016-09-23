@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Cryptographic hash digest object.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_HJb5zsPZzS9ztbt5GdVJMPv00mZUAnQI
 #define BREATH_GUARD_HJb5zsPZzS9ztbt5GdVJMPv00mZUAnQI

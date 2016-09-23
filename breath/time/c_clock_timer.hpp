@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A timer based on \c std::clock().
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_u43dOQ8kSA0wS32RQRLI7UM66PBoXLSA
 #define BREATH_GUARD_u43dOQ8kSA0wS32RQRLI7UM66PBoXLSA

@@ -5,15 +5,15 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Metafunction yielding the successor of another constant.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_DjUmH0WQBIis1gQMNQWYhB7KQHMzHYQQ
 #define BREATH_GUARD_DjUmH0WQBIis1gQMNQWYhB7KQHMzHYQQ
 
-/*! \file   successor.hpp
-    \brief
-        Meta \c constant yielding the successor of its argument T
-
-        \todo: document behavior in case of overflow
+/*! \todo: document behavior in case of overflow
 */
 
 #include "breath/meta/constant.hpp"

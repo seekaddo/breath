@@ -5,15 +5,14 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief  Base template class to ease the definition of policies
+//!             for the \c merkle_damgard_hasher<> template..
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
 #define BREATH_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
-
-/*! \file   merkle_damgard_engine.hpp
-    \brief
-        Base template class to ease the definition of policies
-        for the merkle_damgard_hasher<> template.
-*/
 
 #include "breath/cryptography/hashing_count.hpp"
 #include "breath/meta/int_exact.hpp"

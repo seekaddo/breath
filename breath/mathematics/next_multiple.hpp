@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief The next multiple of \c b after \c a.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ZWLALqJqAeSrZspxwlLFAu7IpcCwiAob
 #define BREATH_GUARD_ZWLALqJqAeSrZspxwlLFAu7IpcCwiAob

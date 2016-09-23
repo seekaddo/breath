@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A clock device based on \c std::clock().
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
 #define BREATH_GUARD_s9RhTgkTQviSRQ89lVvZRW16hRqlr1OA
@@ -17,13 +21,9 @@ namespace breath {
 //      c_clock_device
 //      ==============
 //
-//!     A clock device based on std::clock()
-//!
 //!     Note that on some (non-conforming) implementations
 //!     std::clock() will actually measure wall-clock time.
 //
-
-
 class c_clock_device
 {
 public:

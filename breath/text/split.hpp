@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Splits a \c std::string into a \c std::vector of strings.
+// -------------------------------------------------------------------------
 
 #include<string>
 #include <vector>
