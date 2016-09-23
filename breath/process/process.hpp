@@ -22,8 +22,9 @@ namespace breath {
 
 class process
 {
-    BREATH_DECLARE_NON_COPYABLE( process ) ;
 public:
+    BREATH_DECLARE_NON_COPYABLE( process )
+
     typedef process_id_type
                         id_type ;
 
