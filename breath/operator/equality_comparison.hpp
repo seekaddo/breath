@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Base class to provide equality comparisons.
+//!     \brief Base class to provide equality comparison operators.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI

@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief A stream formatting info saver/restorer.
+//!     \brief A saver/restorer for stream formatting info.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Z4DMqDrKXOIFeJ4e9o0vyecTiAF4rmvr

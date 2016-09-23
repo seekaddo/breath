@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief An implementation of the proposed \c clamp() templates.
+//!     \brief An implementation of the clamp() templates proposed for
+//!            C++17.
 // -------------------------------------------------------------------------
 //  See:
 //    <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4536.html>,

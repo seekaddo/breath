@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Metafunction yielding the \c precision of a type.
+//!     \brief Metafunction yielding the \e precision of a type.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz

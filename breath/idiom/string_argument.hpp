@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Represents a <code>char const</code> * or \c std::string
+//!     \brief Represents a <code>char const *</code> or \c std::string
 //!            function argument.
 // -------------------------------------------------------------------------
 

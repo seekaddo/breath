@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief A typedef for the <code>long long </code >type and its
+//!     \brief A typedef for the <code>long long</code > type and its
 //!            unsigned counterpart.
 // -------------------------------------------------------------------------
 

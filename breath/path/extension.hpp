@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns the filaname extension from a given path.
+//!     \brief Returns the filename extension from a given path.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_BtNGaSvg9IBya5J9FQZmayMQRBx2oBwo
