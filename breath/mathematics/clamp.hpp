@@ -26,13 +26,16 @@ namespace breath {
 //      ========
 //
 //!     Requires:
-//!      1. T shall be LessThanComparable
-//!      2. high shall be no lower than low
-//!     Returns:
+//!      1. \c T shall be \c LessThanComparable
+//!      2. \c high shall be no lower than \c low
+//!
+//!     \return
 //!         \c low if value is less than \c low, \c high if \c value is higher
 //!         than \high, otherwise \c value
+//!
 //!     Complexity:
 //!         One or two comparisons.
+//!
 //!     Remarks:
 //!         The function template returns a reference to \c value when \c value
 //!         is equivalent to one (or both) of the boundary arguments.
@@ -44,12 +47,15 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //      ========
 //
 //!     Requires:
-//!         comp( high, low ) == false
-//!     Returns:
+//!         <code>comp( high, low ) == false</code>
+//!
+//!     \return:
 //!         \c low if value is less than \c low, \c high if \c value is higher
 //!         than \high, otherwise \c value
+//!
 //!     Complexity:
 //!         One or two comparisons.
+//!
 //!     Remarks:
 //!         The function template returns a reference to \c value when \c value
 //!         is equivalent to one (or both) of the boundary arguments.
