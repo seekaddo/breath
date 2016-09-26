@@ -12,7 +12,7 @@ REM     Windows.
 
 REM     The only important thing that this does is putting /usr/bin
 REM     at the *end* of %PATH%, so that Cygwin's `link' isn't found
-REM     before the homonyms Microsoft linker.
+REM     before the homonym Microsoft linker.
 REM
 REM     Usage:
 REM         1. invoke the Visual Studio Command Prompt of your choice
