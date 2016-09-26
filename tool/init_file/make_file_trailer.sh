@@ -202,6 +202,15 @@ VimModeline: set ft=xslt et sts=$sts sw=$sw:
 VimModeline: set fenc=utf-8 nobomb:
 XSLT
 
+:   <<Batch
+EmacsVariablesList:
+mode: bat
+indent-tabs-mode: nil
+batch-indent-level: 4
+End:
+VimModeline: set ft=dosbatch et sts=$sts sw=$sw:
+Batch
+
 # Local Variables:
 # mode: shell-script
 # indent-tabs-mode: nil

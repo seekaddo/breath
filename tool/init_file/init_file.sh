@@ -29,6 +29,9 @@ make_opening_line()
     AWK)
         printf '%s\n' '#! /bin/awk -f'
         ;;
+    Batch)
+        printf '%s\n' '@echo off'
+        ;;
     CSS)
         printf '%s\n' '@charset "UTF-8";'
         ;;
