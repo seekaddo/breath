@@ -27,3 +27,10 @@ set CYGWIN_ROOT=C:\cygwin64
 %CYGWIN_ROOT%\bin\mintty.exe -i /Cygwin-Terminal.ico --exec "./append_to_path.sh"
 
 endlocal
+
+REM Local Variables:
+REM mode: bat
+REM indent-tabs-mode: nil
+REM batch-indent-level: 4
+REM End:
+REM vim: set ft=dosbatch et sts=4 sw=4:
