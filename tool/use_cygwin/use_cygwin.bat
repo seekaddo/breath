@@ -10,7 +10,7 @@ REM
 REM     A quick tool to invoke before compiling with Cygwin, on
 REM     Windows.
 
-REM     The only important thing that this does is putting C:\Cygwin\bin
+REM     The only important thing that this does is putting /usr/bin
 REM     at the *end* of %PATH%, so that Cygwin's `link' isn't found
 REM     before the homonyms Microsoft linker.
 REM
