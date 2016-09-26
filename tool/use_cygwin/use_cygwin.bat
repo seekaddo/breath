@@ -7,8 +7,8 @@ REM            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 REM              <https://opensource.org/licenses/BSD-3-Clause>)
 REM _________________________________________________________________________
 REM
-REM     A quick tool to invoke before compiling with the Cygwin tools,
-REM     on Windows.
+REM     A quick tool to invoke before compiling with Cygwin, on
+REM     Windows.
 
 REM     The only important thing that this does is putting C:\Cygwin\bin
 REM     at the *end* of %PATH%, so that Cygwin's `link' isn't found
