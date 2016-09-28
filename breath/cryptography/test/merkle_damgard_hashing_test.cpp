@@ -176,7 +176,7 @@ void check_known_digests()
     typedef std::string string_type;
     typedef test_vectors< Hasher > known;
 
-    for ( std::size_t i( 0 ); i < breath::count( known::entries ); ++i ) {
+    for ( std::size_t i = 0 ; i < breath::count( known::entries ); ++i ) {
 
         using breath::digest;
 

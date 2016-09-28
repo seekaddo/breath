@@ -54,7 +54,7 @@ template< typename T, std::size_t n >
 void
 secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
 {
-    for ( std::size_t i( 0 ) ; i < n ; ++ i ) {
+    for ( std::size_t i = 0 ; i < n ; ++ i ) {
         arr[ i ] = value ;
     }
 }
