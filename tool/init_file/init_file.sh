@@ -86,6 +86,11 @@ dump()
 
 #       Main
 # ============================================================================
+if [ -z "$BREATH_ROOT" ] || [ -z "$BREATH_CONTRIBUTOR" ]
+then
+    quit_script 'Define both $BREATH_ROOT and $BREATH_CONTRIBUTOR'
+fi
+
 full_path="$1"
 base_name=` get_base_name "$full_path" `
 name_extension=` get_extension "$full_path" `
