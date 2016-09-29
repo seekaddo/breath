@@ -88,7 +88,7 @@ dump()
 # ============================================================================
 if [ -z "$BREATH_ROOT" ] || [ -z "$BREATH_CONTRIBUTOR" ]
 then
-    quit_script '$BREATH_ROOT or $BREATH_CONTRIBUTOR not defined'
+    quit_script '$BREATH_ROOT or $BREATH_CONTRIBUTOR not defined or empty'
 fi
 
 full_path="$1"
