@@ -11,7 +11,7 @@
 #
 include $(root)/build/gcc.mk
 
-cpp_basic_options = -std=c++11       \
+cpp_basic_options = -std=c++14       \
                     -Wall            \
                     -Wextra          \
                     -Werror          \
