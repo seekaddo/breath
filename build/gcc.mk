@@ -24,7 +24,7 @@
 #           the makefiles, as a form of pre-check?   --gps
 #
 #           If it wasn't for this reason I wouldn't use the option at
-#           all (even if this was C++98 and not C++11), because I don't
+#           all (even if this was C++98 and not C++14), because I don't
 #           like using the name "ansi" when in fact the standard is from
 #           ISO. (I could have attempted to use it on affected systems
 #           only, but it doesn't do any harm for the others (it seems),
