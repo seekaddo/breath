@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/path/base_filename.hpp"
-#include "breath/environment/allowed_path_separators.hpp"
+#include "breath/path/allowed_path_separators.hpp"
 #include <string>
 
 namespace breath {
