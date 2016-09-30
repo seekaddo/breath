@@ -6,14 +6,14 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#include "breath/environment/allowed_path_separators.hpp"
+#include "breath/path/allowed_path_separators.hpp"
 
 namespace breath {
 
 char const *
 allowed_path_separators()
 {
-    return "\\/" ;
+    return "/" ;
 }
 
 }
