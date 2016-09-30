@@ -25,7 +25,7 @@ last_api_error::last_api_error() noexcept
 }
 
 last_api_error::last_api_error( last_api_error const & other ) noexcept
-    :   m_errno( other.m_errno )
+    :   exception(), m_errno( other.m_errno )
 {
     strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
 }
