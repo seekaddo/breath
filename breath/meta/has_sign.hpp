@@ -18,17 +18,20 @@
 namespace breath {
 namespace meta {
 
-// gps The natural form here would be "T( -1 ) < 0"; but
-// gcc, and possibly other compilers, would warn when instantiating
-// the template with T being an unsigned type. Of course it also
-// warns if using "!( T( -1 ) >= 0 )"
+//!     A \c meta::constant<> yielding whether a type allows negative
+//!     values.
+// -------------------------------------------------------------------------
 template< typename T >
 class has_sign
+    // The natural form here would be "T( -1 ) < 0"; but gcc, and
+    // possibly other compilers, would warn when instantiating the
+    // template with T being an unsigned type. Of course it also
+    // warns if using "!( T( -1 ) >= 0 )"
     : public constant< bool, ! ( T( -1 ) > 0 ) >
 {
 } ;
 
-// specialization here is logically unnecessary
+// the specialization here is logically unnecessary
 // but silences compiler warnings
 template<>
 class has_sign< bool >

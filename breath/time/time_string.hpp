@@ -18,6 +18,9 @@
 
 namespace breath {
 
+//!     The type of timezone (UTC/local) in which the time
+//!     must be returned.
+// -------------------------------------------------------------------------
 class time_string_zone
 {
 public:

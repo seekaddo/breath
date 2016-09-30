@@ -50,7 +50,7 @@ namespace breath {
 //      begin:
 //      ------
 //
-//      Same as c.begin(), for any standard container.
+//!     Same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
 typename C::iterator
@@ -59,6 +59,11 @@ begin( C & c ) noexcept( noexcept( c.begin() ) )
     return c.begin() ;
 }
 
+//      begin:
+//      ------
+//
+//!     Same as c.begin(), for any standard container.
+// -----------------------------------------------------------------------
 template< typename C >
 typename C::const_iterator
 begin( C const & c ) noexcept( noexcept( c.begin() ) )
@@ -66,6 +71,11 @@ begin( C const & c ) noexcept( noexcept( c.begin() ) )
     return c.begin() ;
 }
 
+//      cbegin:
+//      -------
+//
+//!     Same as c.begin(), for any standard container.
+// -----------------------------------------------------------------------
 template< typename C >
 typename C::const_iterator
 cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
@@ -77,7 +87,7 @@ cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
 //      end:
 //      ----
 //
-//      Same as c.end(), for any standard container.
+//!     Same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
 typename C::iterator
@@ -86,6 +96,11 @@ end( C & c ) noexcept( noexcept( c.end() ) )
     return c.end() ;
 }
 
+//      end:
+//      ----
+//
+//!     Same as c.end(), for any standard container.
+// -----------------------------------------------------------------------
 template< typename C >
 typename C::const_iterator
 end( C const & c ) noexcept( noexcept( c.end() ) )
@@ -93,18 +108,24 @@ end( C const & c ) noexcept( noexcept( c.end() ) )
     return c.end() ;
 }
 
+//      cend:
+//      -----
+//
+//!     Same as c.end(), for any standard container.
+// -----------------------------------------------------------------------
 template< typename C >
 typename C::const_iterator
 cend( C const & c ) noexcept( noexcept( c.end() ) )
 {
     return c.end() ;
 }
+
 //      begin:
 //      ------
 //
-//      Like container::begin, but for a built-in array.
-//
-//      (Note that there's no need for a "T const overload")
+//!     Like container::begin, but for a built-in array.
+//!
+//!     (Note that there's no need for a "T const overload")
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 T *
@@ -113,19 +134,25 @@ begin( T ( &a )[ n ] ) noexcept
     return a ;
 }
 
+//      cbegin:
+//      -------
+//
+//!     Like container::begin, but for a built-in array.
+// -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 T const *
 cbegin( T const ( &a )[ n ] ) noexcept
 {
     return a ;
 }
+
 //      end:
 //      ----
 //
-//      Like container::end, but for a built-in array.
+//!     Like container::end, but for a built-in array.
 //
-//      (The remark about begin() and overloading on const applies
-//      here as well)
+//!     (The remark about begin() and overloading on const applies
+//!     here as well)
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 T *
@@ -134,6 +161,11 @@ end( T ( &a )[ n ] ) noexcept
     return a + n ;
 }
 
+//      cend:
+//      -----
+//
+//!     Like container::end, but for a built-in array.
+// -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 T const *
 cend( T const (&a)[ n ] ) noexcept

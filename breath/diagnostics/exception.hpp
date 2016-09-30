@@ -18,17 +18,39 @@
 
 namespace breath {
 
+//      exception:
+//      ----------
+//
+//!     Base class for all Breath's exception types. Derives virtually
+//!     from std::exception.
+// -------------------------------------------------------------------------
 class exception : public virtual std::exception
 {
 public:
+    //!     Constructs an object giving a default what() message.
+    // ---------------------------------------------------------------------
     exception() noexcept ;
+
+    //!     Constructs an object whose what() function returns a
+    //!     pointer to a string equal to what_msg, possibly
+    //!     truncated.
+    // ---------------------------------------------------------------------    
     exception( std::string const & what_msg ) noexcept ;
 
+    //!     Compiler-generated copy constructor.
+    // ---------------------------------------------------------------------
     exception( exception const & ) noexcept = default ;
+
+    //!     Compiler-generated copy-assignment operator.
+    // ---------------------------------------------------------------------
     exception & operator=( exception const & ) noexcept = default ;
 
+    //!     Compiler-generated destructor
+    // ---------------------------------------------------------------------
     virtual ~exception() noexcept = default ;
 
+    //!     Returns a description of the exception object.
+    // ---------------------------------------------------------------------
     virtual char const * what() const noexcept ;
 
 private:

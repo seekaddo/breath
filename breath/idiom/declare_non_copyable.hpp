@@ -13,7 +13,7 @@
 #ifndef BREATH_GUARD_BssKAsCiqQzBgpiZdcF0pqcl37YyLxoi
 #define BREATH_GUARD_BssKAsCiqQzBgpiZdcF0pqcl37YyLxoi
 
-//!     Handy macro to declare a class non-copyable.
+//!     Handy macro to declare a class as non-copyable.
 //!     It is better invoked in a public section of the class declaration
 //!     (gives better error messages).
 // ----------------------------------------------------------------------------

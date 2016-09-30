@@ -18,13 +18,15 @@ namespace breath {
 //!     Adapts a random or pseudorandom number generator to emit
 //!     numbers in a subrange of its original range (see the
 //!     subrange_max facility).
-//
+//!
 //!     NB: does NOT support min < 0 !!!
 //
 template< typename Engine >
 class subrange_adaptor
 {
 public:
+    //!     The same as the Engine's result type.
+    // -------------------------------------------------------------------------
     typedef typename Engine::result_type
                         result_type ;
 private:
@@ -34,11 +36,15 @@ private:
     void operator=(subrange_adaptor const & ) = delete; //gps get away with VC++'s C4512, for now
 
 public:
+    //!     Constructs a subrange adaptor from a given Engine and a new max
+    //!     value.
+    // -------------------------------------------------------------------------
                         subrange_adaptor( Engine & e, result_type new_max ) ;
+
+    //!     Returns a new random value in the adaptor's subrange.
+    // -------------------------------------------------------------------------
     result_type         next() ;
 } ;
-
-
 
 }
 
