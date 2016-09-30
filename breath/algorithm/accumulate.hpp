@@ -40,8 +40,8 @@ namespace breath {
 //      accumulate_traits<>:
 //      --------------------
 //
-//      Traits template for breath::accumulate<>().
-//      (gps should we use the term "policy" in place of "traits"?)
+//!     Traits template for breath::accumulate<>().
+//!     (gps should we use the term "policy" in place of "traits"?)
 // ---------------------------------------------------------------------------
 template< typename T >
 class accumulate_traits
@@ -59,11 +59,11 @@ public:
 //      accumulate():
 //      -------------
 //
-//      Generalized version of std::accumulate().
+//!     Generalized version of std::accumulate().
 //
-//      breath::accumulate_traits<> is a customization point: you are
-//      allowed to specialize it, in namespace breath, for your own
-//      types.
+//!     \c breath::accumulate_traits<> is a customization point: you are
+//!     allowed to specialize it, in namespace breath, for your own
+//!     types.
 // ---------------------------------------------------------------------------
 template< typename InputIterator, typename T >
 typename accumulate_traits< T >::result_type
