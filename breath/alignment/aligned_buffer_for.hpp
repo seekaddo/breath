@@ -135,13 +135,13 @@ private:
     } ;
 //! \endcond
 public:
-        //!     \return The address of the internal (aligned) buffer, as a \c
-        //!     void \c *.
+        //!     \return The address of the internal (aligned) buffer, as a
+        //!     <code>void *</code>.
         //-------------------------------------------------------------------
         void *          address()       { return m_raw_buffer ; }
 
-        //!     \return The address of the internal (aligned) buffer, as a \c
-        //!     void \c *.
+        //!     \return The address of the internal (aligned) buffer, as a
+        //!     <code>void const *</code>.
         //-------------------------------------------------------------------
         void const *    address() const { return m_raw_buffer ; }
 
