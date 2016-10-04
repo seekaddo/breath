@@ -69,8 +69,7 @@ public:
 }
 
 
-//!
-//! \typereq
+//! Type requirements:
 //!     \p T shall be either \c signed \c int or \c unsigned \c int
 //!
 template< std::size_t width, typename T /* gps temp = signed */ >
