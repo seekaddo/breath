@@ -17,46 +17,84 @@
 #include <iostream>
 #include <ostream> // not necessary in C++11
 #include <sstream>
+#include <streambuf>
+
+namespace {
+
+//      "Captures" the output of 'os' to the streambuf pointed to by 'buf'.
+//      Restores 'os' in the destructor. Used to "capture" the output to
+//      std::cout into a stringstream.
+// ---------------------------------------------------------------------------
+class stream_guard
+{
+public:
+    explicit        stream_guard( std::ostream & os, std::streambuf * buf )
+                        :   m_os( os ), m_oldbuf( os.rdbuf( buf ) )
+                    {
+                    }
+
+                    ~stream_guard()
+                    {
+                        m_os.rdbuf( m_oldbuf ) ;
+                    }
+private:
+    std::ostream &  m_os ;
+    std::streambuf * m_oldbuf ;
+
+};
+
+void
+clear_stringstream( std::ostringstream & ss )
+{
+    ss.str( "" ) ;
+}
+
+}
 
 int
 main()
 {
-    // TEST 1)
-    // TODO TODO
-    // io volevo "catturare" l'output di std::cout in uno stringstream,
-    // ma non ci sono riuscito. Devo controllare poi nella guida RogueWave (gps
-    //  cos'è ora? Apache?).
-    //
-    // L'idea era di controllare ad es. che 1<<3 esce come 8 e non come "1" seguito
-    // da "3"; ed eventualmente altri controlli.
-    //
+    std::ostringstream  oss ;
+    stream_guard const  guard( std::cout, oss.rdbuf() ) ;
 
+    // TEST 1)
+    // check that 1 << 3 is output as "1 << 3", first, and not directly as "8"
     BREATH_DUMP_EXPRESSION( 1 << 3 ) ;
+    DO_TEST( oss.str() == "1 << 3 = 8\n" ) ;
+    clear_stringstream( oss ) ;
 
     // TEST 2)
     // now check with some strings (gps ricordati di portare questo test nei
     // test di BREATH_STRINGIZE (e controllare cosa dice lo standard)!)
     BREATH_DUMP_EXPRESSION( "test" ) ;
+    DO_TEST( oss.str() == "\"test\" = test\n" ) ;
+    clear_stringstream( oss ) ;
 
     // TEST 3)
     // check that macros are expanded (the replacement lists here are
     // intentionally not parenthesized, although we already have a
-    // separate parenthesis-test in place).
+    // separate parenthesis-test in place)
 #   define OBJECT_LIKE_DUMMY        1 << 3 * 2
 #   define FUNCTION_LIKE_DUMMY()    1 << 3 * 4
 
     BREATH_DUMP_EXPRESSION( OBJECT_LIKE_DUMMY ) ;
-    BREATH_DUMP_EXPRESSION( FUNCTION_LIKE_DUMMY() ) ;
+    DO_TEST( oss.str() == "1 << 3 * 2 = 64 [from: OBJECT_LIKE_DUMMY]\n" ) ;
+    clear_stringstream( oss ) ;
 
+    BREATH_DUMP_EXPRESSION( FUNCTION_LIKE_DUMMY() ) ;
+    DO_TEST( oss.str() == "1 << 3 * 4 = 4096 [from: FUNCTION_LIKE_DUMMY()]\n" ) ;
+    clear_stringstream( oss ) ;
 
     // TEST 4)
-    // The one case that the macro doesn't detect: a macro that is object-like
+    // the one case that the macro doesn't detect: a macro that is object-like
     // and expands to its own name (of course it's not important, but it's good
-    // to have a test here, in case I manage to detect it).
+    // to have a test here, in case I manage to detect it)
     int                             BREATH_dummy = 1 ;
 #   define BREATH_dummy             BREATH_dummy
 
     BREATH_DUMP_EXPRESSION( BREATH_dummy ) ;
+    DO_TEST( oss.str() == "BREATH_dummy = 1\n" ) ;
+    clear_stringstream( oss ) ;
 
 }
 // Local Variables:
