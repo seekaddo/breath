@@ -38,7 +38,7 @@
                 std::cout << " [from " << #expr << "]" ;                      \
             }                                                                 \
             std::cout << std::endl ;                                          \
-        } while ( false )                                                 /**/
+        } while ( false )                                                  /**/
 
 #endif
 
