@@ -137,6 +137,7 @@ merkle_damgard_engine< bits_per_digest,
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

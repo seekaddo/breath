@@ -18,6 +18,7 @@
 #define BREATH_STRINGIZE_DELAYED( x )   BREATH_STRINGIZE( x )
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

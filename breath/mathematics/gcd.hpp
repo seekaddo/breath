@@ -37,6 +37,7 @@ constexpr std::common_type_t< M, N >
 
 #include "brt/gcd.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

@@ -18,6 +18,7 @@
 #include BREATH_DEPENDENT_CODE( compiler, long_long.hpp )
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

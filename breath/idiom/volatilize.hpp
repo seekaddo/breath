@@ -33,6 +33,7 @@ volatilize( T & ref )
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

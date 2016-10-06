@@ -18,6 +18,7 @@
 #define BREATH_TOKEN_PASTE_DELAYED( s1, s2 )    BREATH_TOKEN_PASTE( s1, s2 )
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

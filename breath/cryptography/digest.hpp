@@ -82,6 +82,7 @@ digest< Hasher > make_digest( Hasher const & h ) ;
 
 #include "brt/digest.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

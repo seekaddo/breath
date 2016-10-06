@@ -39,6 +39,7 @@ constexpr std::common_type_t< M, N >
 
 #include "brt/lcm.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

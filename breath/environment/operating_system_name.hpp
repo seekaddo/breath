@@ -38,6 +38,7 @@ std::ostream &      operator<<( std::ostream &, operating_system_name const & ) 
 
 }
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

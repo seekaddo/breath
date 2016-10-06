@@ -54,6 +54,7 @@ ror( T x )
 
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

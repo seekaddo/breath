@@ -76,6 +76,7 @@ void fire( char const * message,
 
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

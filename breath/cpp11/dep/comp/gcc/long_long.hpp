@@ -21,6 +21,7 @@ __extension__ typedef unsigned long long  unsigned_long_long_type ;
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

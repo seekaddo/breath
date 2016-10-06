@@ -124,6 +124,7 @@ private:
 
 #include "brt/maybe.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

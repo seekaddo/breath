@@ -167,8 +167,10 @@ then
     then
         if [ -x "$exe_root/include_guard" ] ##gps check with POSIX!!
         then
+            new_line 1
             (printf '\nnamespace breath {'; new_line "$blank_lines"; printf '}\n') |
                 "$exe_root/include_guard"
+            new_line 1
         else
             printf '%s\n' "Cannot find the include_guard tool. Did you build it?"
         fi

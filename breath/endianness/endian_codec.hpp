@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Converter from/to byte sequences representations.
 // -------------------------------------------------------------------------
-//
+
 #ifndef BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
 #define BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
 
@@ -200,6 +200,7 @@ endian_load( ByteRandomIter it )
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

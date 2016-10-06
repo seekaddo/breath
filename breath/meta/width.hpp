@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Metafunction yielding the \e width of a type.
 // -------------------------------------------------------------------------
-//
+
 #ifndef BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 #define BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 

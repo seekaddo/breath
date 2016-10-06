@@ -24,6 +24,7 @@ std::string         extension( std::string const & path ) ;
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

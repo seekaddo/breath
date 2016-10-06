@@ -25,6 +25,7 @@ constexpr bool      is_power_of_two( std::uintmax_t x ) noexcept ;
 
 #include "brt/is_power_of_two.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

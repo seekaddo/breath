@@ -9,7 +9,7 @@
 //!     \file
 //!     \brief Wrapper for (integral) constant expressions.
 // -------------------------------------------------------------------------
-//
+
 #ifndef BREATH_GUARD_agSZ9lxbOGpOtPA3Qy3JqLm28BJW8oRr
 #define BREATH_GUARD_agSZ9lxbOGpOtPA3Qy3JqLm28BJW8oRr
 

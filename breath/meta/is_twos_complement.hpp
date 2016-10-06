@@ -29,6 +29,7 @@ constexpr bool      is_twos_complement() noexcept ;
 
 #include "brt/is_twos_complement.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

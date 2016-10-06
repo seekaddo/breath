@@ -27,6 +27,7 @@ namespace breath {
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

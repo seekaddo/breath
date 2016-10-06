@@ -38,6 +38,7 @@ check_common_gcd_lcm_preconditions( M a, N b )
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

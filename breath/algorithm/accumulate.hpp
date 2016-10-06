@@ -85,6 +85,7 @@ accumulate( InputIterator begin,
 
 #include "brt/accumulate.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

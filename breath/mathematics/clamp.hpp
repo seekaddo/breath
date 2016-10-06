@@ -70,6 +70,7 @@ constexpr T const & clamp( T const & value,
 
 #include "brt/clamp.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

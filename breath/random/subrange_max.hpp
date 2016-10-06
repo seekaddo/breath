@@ -9,6 +9,7 @@
 //!     \file
 //!     \brief Max for subrange adaptation.
 // -------------------------------------------------------------------------
+
 #ifndef BREATH_GUARD_Z7sZqZ1T5DzTJ6V6zdst2zbGcymbnLM7
 #define BREATH_GUARD_Z7sZqZ1T5DzTJ6V6zdst2zbGcymbnLM7
 

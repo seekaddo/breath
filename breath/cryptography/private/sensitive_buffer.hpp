@@ -67,6 +67,7 @@ private:
 
 #include "sensitive_buffer.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

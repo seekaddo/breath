@@ -44,6 +44,7 @@ check_type_completeness()
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

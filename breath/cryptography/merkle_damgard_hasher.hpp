@@ -149,6 +149,7 @@ namespace breath {
 
 #include "brt/merkle_damgard_hasher.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

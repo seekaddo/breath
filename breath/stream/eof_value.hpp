@@ -59,6 +59,7 @@ is_eof_value( typename Stream::int_type x, Stream const & )
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

@@ -22,6 +22,7 @@ std::intmax_t       next_multiple( std::intmax_t a, std::intmax_t b ) noexcept ;
 }
 
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

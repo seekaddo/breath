@@ -33,6 +33,7 @@ constexpr int       integer_log2( std::uintmax_t x ) noexcept ;
 
 #include "brt/integer_log2.tpp"
 #endif
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil
