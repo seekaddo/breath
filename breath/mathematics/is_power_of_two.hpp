@@ -17,6 +17,8 @@
 
 namespace breath {
 
+//! \return \c true if an only if \c x is a power of two.
+// -------------------------------------------------------------------------
 constexpr bool      is_power_of_two( std::uintmax_t x ) noexcept ;
 
 }

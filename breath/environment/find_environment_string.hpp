@@ -44,8 +44,8 @@ namespace breath {
 //!
 //!     We emphasize that the 'as if' above is part of this
 //!     function's contract; thus it is subject to the same
-//!     limitations as getenv() for what concerns e.g. calling
-//!     it before main() is entered and others.
+//!     limitations as \c getenv() for what concerns e.g.
+//!     calling it before \c main() is entered and others.
 //!
 //! Warning:
 //!     The behavior on passing an empty string for the name

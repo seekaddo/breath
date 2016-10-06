@@ -26,7 +26,7 @@
 //!     standard library but we can't do anything about that. We can,
 //!     however, separate things out so that the relevant #includes
 //!     are insulated. Which is the only real purpose of this
-//!      facility.
+//!     facility.
 //!
 //      NOTE: there's no .tpp file, here; it seemed just overkill.
 //            Also, it seems natural to add an is_eof_value(), too,

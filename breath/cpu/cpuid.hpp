@@ -13,34 +13,36 @@
 //      cpuid.hpp:
 //      ==========
 //
-//      Interface to the CPUID instruction available on x86 and Intel 64
-//      architectures.
-//
-//      NOTE: unusually for our code base, this file uses extern "C";
-//      that's because the actual routines are written in assembly and
-//      it is just easier to write portable assembly that way (no name
-//      mangling differences, for example). The fact that the routines
-//      are written in assembly however is an implementation detail
-//      (which I'm mentioning just to provide the rationale for extern
-//      "C").
-//
-//      Once you use extern "C", then, you're better off not using a
-//      namespace (because it would be ignored by the linker anyway).
-//      So, the names here are *global*.
-//
-//      Finally, note that all the values (either in input and output)
-//      are 32-bit. This is not by mistake: the CPUID instruction still
-//      uses 32-bit values even in 64-bit mode.
-//
-//      It's intended that these functions are the lowest level before
-//      dealing with assembly. And that higher level interfaces be
-//      defined upper in the library/application logic.
+//!     Interface to the CPUID instruction available on x86 and Intel 64
+//!     architectures.
+//!
+//!     NOTE: unusually for our code base, this file uses extern "C";
+//!     that's because the actual routines are written in assembly and
+//!     it is just easier to write portable assembly that way (no name
+//!     mangling differences, for example). The fact that the routines
+//!     are written in assembly however is an implementation detail
+//!     (which I'm mentioning just to provide the rationale for extern
+//!     "C").
+//!
+//!     Once you use extern "C", then, you're better off not using a
+//!     namespace (because it would be ignored by the linker anyway).
+//!     So, the names here are *global*.
+//!
+//!     Finally, note that all the values (either in input and output)
+//!     are 32-bit. This is not by mistake: the CPUID instruction still
+//!     uses 32-bit values even in 64-bit mode.
+//!
+//!     It's intended that these functions are the lowest level before
+//!     dealing with assembly. And that higher level interfaces be
+//!     defined upper in the library/application logic.
 // ---------------------------------------------------------------------------
 
 #include <stdint.h>
 
 extern "C" {
 
+//! Represents the result of the CPUID instruction.
+// ---------------------------------------------------------------------------
 struct cpuid_result
 {
     uint32_t        eax ;
@@ -52,10 +54,10 @@ struct cpuid_result
 //      is_cpuid_supported():
 //      ---------------------
 //
-//      Namespace: global (see above)
-//
-//      Returns:
-//              true if and only if the executing CPU supports the CPUID
+//!     Namespace: global (see above)
+//!
+//!     \return:
+//              \c true if and only if the executing CPU supports the CPUID
 //              machine instruction.
 // ---------------------------------------------------------------------------
 bool                is_cpuid_supported() ;
@@ -63,18 +65,18 @@ bool                is_cpuid_supported() ;
 //      get_cpuid_info:
 //      ---------------
 //
-//      Namespace: global (see above)
-//
-//      Executes the CPUID instruction with the provided values in EAX
-//      and ECX.
-//
-//      Precondition:
-//              the CPUID instruction is supported (see
-//              is_cpuid_supported())
-//
-//      Returns:
-//              a struct with the values of EAX, EBX, ECX, EDX returned
-//              by the CPUID instruction itself.
+//!     Namespace: global (see above)
+//!
+//!     Executes the CPUID instruction with the provided values in \c EAX
+//!     and \c ECX.
+//!
+//!     Precondition:
+//!             the CPUID instruction is supported (see
+//!             is_cpuid_supported())
+//!
+//!     \return:
+//!             a struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
+//!             returned by the CPUID instruction itself.
 // ---------------------------------------------------------------------------
 cpuid_result        get_cpuid_info( uint32_t eax, uint32_t ecx ) ;
 

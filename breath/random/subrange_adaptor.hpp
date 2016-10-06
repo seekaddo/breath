@@ -19,7 +19,7 @@ namespace breath {
 //!     numbers in a subrange of its original range (see the
 //!     subrange_max facility).
 //!
-//!     NB: does NOT support min < 0 !!!
+//!     NB: does NOT support min != 0 !!!
 //
 template< typename Engine >
 class subrange_adaptor

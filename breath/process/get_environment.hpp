@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Gets a map with all the environment variables.
+//!     \brief Gets a map with all the environment variables and their
+//!            values.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_U4BCWO9huCRrS51C9yYWQld0Ixzmwe5L
@@ -18,6 +19,9 @@
 
 namespace breath {
 
+//!\return A map with all name-value pairs corresponding to the defined
+//!        environment variables.
+// -------------------------------------------------------------------------
 std::map< std::string, std::string >
                     get_environment() ;
 

@@ -41,13 +41,13 @@ public:
     explicit            digest( Hasher hasher_copy ) ;
     //!\}
 
-    //! Copy and destruction
-    //! compiler-generated copy ctor, copy assignment operator and dtor
+    //! Copy and destruction.
+    //! Compiler-generated copy ctor, copy assignment operator and dtor.
     // -------------------------------------------------------------------
 
     //!
-    //! Equality comparison (both \c == and \c != are provided)
-    //!
+    //! Equality comparison (both \c == and \c != are provided).
+    // -------------------------------------------------------------------
     bool                is_equal( digest< Hasher > const & ) const ;
 
     //!\name Byte-based iteration (read-only)
@@ -63,25 +63,19 @@ private:
 } ;
 
 
-// -----------------------------------------------------------------------
-
-//!
 //! digests are output-streamable
-//!
+// -----------------------------------------------------------------------
 template< typename Ch, typename Tr, typename Hasher >
 std::basic_ostream< Ch, Tr > &
 operator<<( std::basic_ostream< Ch, Tr >   & os,
             breath::digest< Hasher > const & d ) ;
-// -----------------------------------------------------------------------
 
-//!
 //! Convenience function (can use type deduction)
 //!     \return
 //!         digest< Hasher >( h )
-//!
+// -----------------------------------------------------------------------
 template< typename Hasher >
 digest< Hasher > make_digest( Hasher const & h ) ;
-// -----------------------------------------------------------------------
 
 }
 

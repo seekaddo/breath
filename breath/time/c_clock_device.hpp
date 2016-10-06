@@ -23,7 +23,7 @@ namespace breath {
 //
 //!     Note that on some (non-conforming) implementations
 //!     std::clock() will actually measure wall-clock time.
-//
+// ---------------------------------------------------------------------------
 class c_clock_device
 {
 public:
@@ -36,11 +36,12 @@ public:
 
     //! Returns an estimate of the timer resolution, in ms.
     //! May return slightly different values from call to call.
+    // -----------------------------------------------------------------------
     duration_type       resolution() const ;
-        
+
 private:
     static std::clock_t retrieve() ;
-        
+
 private:
     std::clock_t        m_start_tick ;
 } ;

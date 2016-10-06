@@ -92,7 +92,7 @@ public:
 //!
 //!     It is only designed for reads and writes in memory.
 //!
-//! \typereq
+//! Type requirements.
 //!     \c T and \c Byte shall be unsigned integral types.
 //!     There's no requirement that \c Byte have a smaller
 //!     \em width than \c T

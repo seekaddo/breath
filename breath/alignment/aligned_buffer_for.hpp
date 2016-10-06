@@ -23,8 +23,11 @@ namespace breath {
 template< typename T >
 class               aligned_buffer_for ;
 
+//! "Empty" specialization to disable usage of the template for arrays.
+// ---------------------------------------------------------------------
 template< typename T, std::size_t n >
-class               aligned_buffer_for< T[ n ] > { /* disabled for arrays */ } ;
+class               aligned_buffer_for< T[ n ] >
+{ /* disabled for arrays */ } ;
 
 //! \cond
 namespace aligned_buffer_private {

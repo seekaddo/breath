@@ -18,17 +18,17 @@
 #include <ostream> // not necessary in C++11
 #include <cstring>
 
-//      A simple macro for quickly displaying a variable to std::cout.
-//      It was born as "DUMP_VARIABLE()" but then I immediately found
-//      a [gps "an"?] usage where I wanted to display something like
-//      `i + j', so I've renamed it to "DUMP_EXPRESSION".
-//
-//      It's intended that you use this just for quick and dirty
-//      checks, and that you *remove* it after that!
-//
-//      NOTE: the #includes are not part of the interface.
-//
-//      NOTE2: macros within the argument `expr' are expanded
+//!     A simple macro for quickly displaying a variable to \c std::cout.
+//!     It was born as "DUMP_VARIABLE()" but then I immediately found
+//!     a [gps "an"?] usage where I wanted to display something like
+//!     `i + j', so I've renamed it to "DUMP_EXPRESSION".
+//!
+//!     It's intended that you use this just for quick and dirty
+//!     checks, and that you *remove* it after that!
+//!
+//!     NOTE: the #includes are not part of the interface.
+//!
+//!     NOTE2: macros within the argument `expr' are expanded
 // ---------------------------------------------------------------------------
 #define BREATH_DUMP_EXPRESSION( expr )                                        \
         do {                                                                  \

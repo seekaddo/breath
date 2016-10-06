@@ -40,18 +40,28 @@ namespace breath {
 //      accumulate_traits<>:
 //      --------------------
 //
-//!     Traits template for breath::accumulate<>().
+//!     Traits template for \c breath::accumulate<>().
 //!     (gps should we use the term "policy" in place of "traits"?)
 // ---------------------------------------------------------------------------
 template< typename T >
 class accumulate_traits
 {
 public:
+    //! Type of the default init value for \c std::accumulate.
+    // -----------------------------------------------------------------------
     typedef T           init_type ;
+
+    //! Type of the result of \c std::accumulate.
+    // -----------------------------------------------------------------------
     typedef T           result_type ;
 
+    //!\return The default init value for \c std::accumulate.
+    // -----------------------------------------------------------------------
     static init_type    first() ;
 
+    //! Computes the result of \c std::accumulate in <code>[begin, end)
+    //! </code> with initial value \c value.
+    // -----------------------------------------------------------------------
     template< typename It >
     static result_type  compute( It begin, It end, init_type & value ) ;
 } ;
@@ -60,9 +70,9 @@ public:
 //      -------------
 //
 //!     Generalized version of std::accumulate().
-//
+//!
 //!     \c breath::accumulate_traits<> is a customization point: you are
-//!     allowed to specialize it, in namespace breath, for your own
+//!     allowed to specialize it, in namespace \c breath, for your own
 //!     types.
 // ---------------------------------------------------------------------------
 template< typename InputIterator, typename T >

@@ -16,6 +16,7 @@
 #include "breath/cpp11/long_long.hpp"
 
 namespace breath {
+//! \cond
 namespace  integer_log2_private {
 
 //      choose_initial_n<>
@@ -114,6 +115,7 @@ result_type const
 integer_log2_impl< arg, res >::value ;
 
 }
+//! \endcond
 
 namespace meta {
 
