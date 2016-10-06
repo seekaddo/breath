@@ -370,6 +370,7 @@ windows_version_info::service_pack_string() const
 }
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

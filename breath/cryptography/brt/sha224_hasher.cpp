@@ -32,6 +32,7 @@ sha224_engine::process_block( state_type & state, block_type const & block )
 }
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

@@ -83,7 +83,6 @@ function            s:InitPhaseTwo()
     endif
 endfunction
 
-
 " Local Variables:
 " indent-tabs-mode: nil
 " End:

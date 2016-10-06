@@ -146,6 +146,7 @@ operator<<( std::ostream & dest, const os_id & id )
 }
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

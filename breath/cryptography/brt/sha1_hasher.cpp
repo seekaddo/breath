@@ -154,6 +154,7 @@ void sha1_engine::process_block( state_type & state
 
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

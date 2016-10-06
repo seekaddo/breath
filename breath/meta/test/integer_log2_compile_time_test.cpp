@@ -71,6 +71,7 @@ main()
     static_cast< void >( dummy );
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

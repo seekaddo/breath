@@ -28,6 +28,7 @@ string_argument::value() const
 }
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

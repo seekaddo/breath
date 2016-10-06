@@ -49,8 +49,6 @@ main()
     test_runner::instance().run( { do_check } ) ;
 }
 
-
-
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

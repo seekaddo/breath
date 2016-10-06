@@ -20,6 +20,7 @@ int const           exit_success( 0 ) ;
 int const           exit_failure( EXIT_FAILURE ) ;
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

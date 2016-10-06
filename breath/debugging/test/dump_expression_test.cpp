@@ -97,6 +97,7 @@ main()
     clear_stringstream( oss ) ;
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

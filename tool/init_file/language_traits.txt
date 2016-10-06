@@ -57,7 +57,6 @@ xslt                    <!--     -->      no         XSLT
 # --------------------------------------------------------------------
 txt                     no       no       #          Text
 
-
 # Local Variables:
 # mode: text
 # indent-tabs-mode: nil

@@ -9,7 +9,6 @@
 #include "breath/porting/dependent_code.hpp"
 #include BREATH_DEPENDENT_CODE( system, node_id.cpp )
 
-
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

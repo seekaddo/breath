@@ -46,6 +46,7 @@ operator <<( std::ostream & dest, operating_system_name const &)
 }
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

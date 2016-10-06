@@ -35,7 +35,6 @@ quit_script()
     exit 2
 }
 
-
 # Local Variables:
 # mode: shell-script
 # indent-tabs-mode: nil

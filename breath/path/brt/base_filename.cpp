@@ -26,6 +26,7 @@ base_filename( string_argument const & full_path )
 }
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

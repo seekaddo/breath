@@ -34,8 +34,6 @@ main()
     test_runner::instance().run( { test_copy } ) ;
 }
 
-
-
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil

@@ -23,6 +23,7 @@ extension( std::string const & path )
 
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil
