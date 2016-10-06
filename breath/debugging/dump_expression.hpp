@@ -18,13 +18,17 @@
 #include <ostream> // not necessary in C++11
 #include <cstring>
 
-//!     A simple macro for quickly displaying a variable to \c std::cout.
+//!     A simple macro for quickly dumping a variable to \c std::cout.
 //!     It was born as "DUMP_VARIABLE()" but then I immediately found
-//!     a [gps "an"?] usage where I wanted to display something like
-//!     `i + j', so I've renamed it to "DUMP_EXPRESSION".
+//!     a usage where I wanted to display something like `i + j', so I've
+//!     renamed it to "DUMP_EXPRESSION".
 //!
 //!     It's intended that you use this just for quick and dirty
 //!     checks, and that you *remove* it after that!
+//!
+//!     The expression is shown in the form <expression> = value. If
+//!     expression contains macro invocations, the unexpanded form
+//!     is displayed, too.
 //!
 //!     NOTE: the #includes are not part of the interface.
 //!
