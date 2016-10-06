@@ -32,7 +32,7 @@
 //!
 //!     NOTE: the #includes are not part of the interface.
 //!
-//!     NOTE2: macros within the argument `expr' are expanded
+//!     NOTE2: macros within the argument `expr' are expanded.
 // ---------------------------------------------------------------------------
 #define BREATH_DUMP_EXPRESSION( expr )                                        \
         do {                                                                  \
