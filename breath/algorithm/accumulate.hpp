@@ -59,7 +59,7 @@ public:
     // -----------------------------------------------------------------------
     static init_type    first() ;
 
-    //! Computes the result of \c std::accumulate in <code>[begin, end)
+    //! Computes the result of \c breath::accumulate in <code>[begin, end)
     //! </code> with initial value \c value.
     // -----------------------------------------------------------------------
     template< typename It >
