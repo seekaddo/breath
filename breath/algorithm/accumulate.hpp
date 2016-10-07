@@ -47,20 +47,21 @@ template< typename T >
 class accumulate_traits
 {
 public:
-    //! Type of the default init value for \c std::accumulate.
+    //! Type of the default init value for \c breath::accumulate.
     // -----------------------------------------------------------------------
     typedef T           init_type ;
 
-    //! Type of the result of \c std::accumulate.
+    //! Type of the result of \c breath::accumulate.
     // -----------------------------------------------------------------------
     typedef T           result_type ;
 
-    //!\return The default init value for \c std::accumulate.
+    //!\return The default init value for \c breath::accumulate.
     // -----------------------------------------------------------------------
     static init_type    first() ;
 
-    //! Computes the result of \c breath::accumulate in <code>[begin, end)
-    //! </code> with initial value \c value.
+    //! Performs a summation of the elements in the range <code>[begin, end)
+    //! </code> via <code>operator+=</code> (which is searched via ADL). Can
+    //! have a different implementation in a user specialization.
     // -----------------------------------------------------------------------
     template< typename It >
     static result_type  compute( It begin, It end, init_type & value ) ;
