@@ -36,7 +36,9 @@
 #   Note:
 #       The css mode for Emacs seems to have been introduced starting
 #       from version 22.1 (!) What happens for unrecognized modes?
-
+#
+#   Note 2:
+#       Keep in sync with $BREATH_ROOT/.gitattributes
 
 
 # filename extension  comment  comment   line
