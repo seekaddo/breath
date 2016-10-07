@@ -35,7 +35,7 @@ public:
     //!     pointer to a string equal to what_msg, possibly
     //!     truncated.
     // ---------------------------------------------------------------------    
-    exception( std::string const & what_msg ) noexcept ;
+    explicit exception( std::string const & what_msg ) noexcept ;
 
     //!     Compiler-generated copy constructor.
     // ---------------------------------------------------------------------
