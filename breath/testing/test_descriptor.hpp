@@ -17,7 +17,7 @@ class test_descriptor
 {
 public:
                         test_descriptor( void( & )(), char const * name = "" ) noexcept ;
-    typedef         void( &test_function )() ;
+    typedef      void( &test_function )() ;
 
 public:
     test_function       function() const noexcept ;
