@@ -23,7 +23,7 @@ class os_platform;
 class windows_version_info
 {
 private:
-    typedef OSVERSIONINFOEX 
+    typedef OSVERSIONINFOEX
                         extended_type ;
     typedef OSVERSIONINFO
                         simple_type ;
