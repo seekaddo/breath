@@ -34,22 +34,61 @@ private:
     bool                retrieve() ;
 
 public:
+    //! Construct a \c windows_version_info object.
+    // -----------------------------------------------------------------------
                         windows_version_info() ;
-    // compiler-generated copy
 
+    //! Compiler-generated copy members.
+    // -----------------------------------------------------------------------
+                        windows_version_info( windows_version_info const & ) =
+                                                                    default ;
+    windows_version_info &
+                        operator=( windows_version_info const & ) = default ;
+
+    //! \return The major version number of the operating system.
+    // -----------------------------------------------------------------------
     int                 major_version() const ;
+
+    //! \return The minor version number of the operating system.
+    // -----------------------------------------------------------------------
     int                 minor_version() const ;
+
+    //! \return The build number of the operating system.
+    // -----------------------------------------------------------------------
     int                 build_number() const ;
+
+    //! \return A (possibly empty) string with the edition of the operating
+    //!         system.
+    // -----------------------------------------------------------------------
     char const *        edition() const ;
+
+    //! \return The platform of the operating system.
+    // -----------------------------------------------------------------------
     os_platform         platform() const ;
 
+    //! \return The member \c wSuiteMask of \c OSVERSIONINFOEX.
     int                 suite_mask() const ;
 
+    //! \return Whether the OS is 64-bit.
+    // -----------------------------------------------------------------------
     static bool         is_64_bit() ;
+
+    //! \return Whether the system is of workstation type (Windows Vista,
+    //!         XP Professional, etc.).
+    // -----------------------------------------------------------------------
     bool                is_workstation() const ;
+
+    //! \return Whether the bit VER_SUITE_WH_SERVER is enabled in wSuiteMask.
+    // -----------------------------------------------------------------------
     bool                is_suite_wh_server() const ;
+
+    //! \return Whether the bit VER_SUITE_STORAGE_SERVER is enabled in
+    //!         wSuiteMask.
+    // -----------------------------------------------------------------------
     bool                is_suite_storage_server() const ;
 
+    //! \return A string with the service pack of the operating system.
+    // -----------------------------------------------------------------------
     char const *        service_pack_string() const ;
 } ;
 

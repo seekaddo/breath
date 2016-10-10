@@ -41,7 +41,7 @@ namespace meta {
 //!     to eventually accommodate, for instance, floating point types
 //!     as well, if ever allowed by the standard
 //!
-//! \credit
+//! Credit:
 //!     The basic idea of this class template was suggested by
 //!     Paul Mensonides as <code>map_integral<></code>.
 // -------------------------------------------------------------------------

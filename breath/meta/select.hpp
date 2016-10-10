@@ -47,6 +47,8 @@ template< typename Cond, typename T, typename U >
 class select
 {
 public:
+    //! The result of the meta-function.
+    // -----------------------------------------------------------------------
     typedef typename select_< Cond::value, T, U >::type type;
 } ;
 

@@ -24,6 +24,7 @@
 #include <cstddef>
 
 namespace breath {
+//! \cond
 namespace int_exact_private {
 
 // FUTURE
@@ -67,7 +68,7 @@ public:
 } ;
 
 }
-
+//! \endcond
 
 //! Type requirements:
 //!     \p T shall be either \c signed \c int or \c unsigned \c int

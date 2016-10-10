@@ -23,9 +23,17 @@ class this_process
 {
 public:
 
+    //! Gets the current directory of the current process.
+    // -----------------------------------------------------------------------
     static std::string  current_directory() ;
-    static void         set_current_directory( std::string const & ) ;
 
+    //! Sets the current directory of the current process; 'dir' must be
+    //! a valid directory path.
+    // -----------------------------------------------------------------------
+    static void         set_current_directory( std::string const & dir ) ;
+
+    //! Waits for a process to exit.
+    // -----------------------------------------------------------------------
     void                wait( process const & ) ;
 } ;
 

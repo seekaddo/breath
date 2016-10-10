@@ -18,6 +18,7 @@
 #include <cstddef>
 
 namespace breath {
+//! \cond
 namespace endian_codec_private {
 
 template< typename T, typename Byte >
@@ -35,7 +36,7 @@ std::size_t const
 width_ratio< T, Byte >::value ;
 
 }
-
+//! \endcond
 
 // NOTE
 // ====
