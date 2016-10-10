@@ -22,7 +22,7 @@ operating_system_name_error::operating_system_name_error( std::string const & s 
 }
 
 char const *
-operating_system_name_error::exception::what() const noexcept
+operating_system_name_error::what() const noexcept
 {
     return m_what_str ;
 }
@@ -31,18 +31,17 @@ operating_system_name_error::exception::what() const noexcept
 std::ostream &
 operator <<( std::ostream & dest, operating_system_name const &)
 {
-    uts_name            un  ;
-    int const           ret = uname( un ) ;
+    utsname             un  ;
+    int const           ret = uname( &un ) ;
 
     if ( ret == -1 ) {
         throw breath::operating_system_name_error( strerror(errno) ) ;
     }
 
-    dest << un.sysname
-                + un.nodename
-                + un.release
-                + un.version
-                + un.machine ;
+    return dest << un.sysname
+                << ' ' << un.release
+                << ' ' << un.version
+                << ' ' << un.machine ;
 }
 
 }
