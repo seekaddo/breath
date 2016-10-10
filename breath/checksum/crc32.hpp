@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief CRC-32 As used by Ethernet, Serial ATA, PKZIP, Gzip, Bzip2,
+//!     \brief CRC-32, as used by Ethernet, Serial ATA, PKZIP, Gzip, Bzip2,
 //!            PNG.
 // -------------------------------------------------------------------------
 
