@@ -19,7 +19,7 @@
 namespace breath {
 
 template< typename InputIterator >
-std::uint_fast32_t  crc32( InputIterator begin, InputIterator end) ;
+std::uint_fast32_t  crc32( InputIterator begin, InputIterator end ) ;
 
 }
 
