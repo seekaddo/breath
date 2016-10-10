@@ -16,6 +16,9 @@
 namespace breath {
 namespace meta {
 
+//! A meta::constant with the same \c value_type as \c T and \c value
+//! equal to <code>T::value - 1</code>.
+// ---------------------------------------------------------------------------
 template< typename T >
 class predecessor : public constant<
                                 typename T::value_type

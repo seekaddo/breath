@@ -29,7 +29,7 @@ namespace meta {
 //!           singleton, mapping every pair (type, value) to unique
 //!           storage
 //!
-//! \typereq
+//! Type requirements:
 //!     \a T must be a type suitable for declaring an integral constant
 //!     expression or a cv-qualified version of such a type (e.g. <code>
 //!     int volatile const </code>)

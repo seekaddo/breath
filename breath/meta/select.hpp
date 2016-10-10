@@ -20,7 +20,12 @@ template< bool condition, typename T, typename U >
 class select_
 {
 public:
+    //! A typedef for the type \c T.
+    // -----------------------------------------------------------------------
     typedef T type;
+
+    //! A typedef for <code>select_< !condition, T, U ></code>.
+    // -----------------------------------------------------------------------
     typedef select_< !condition, T, U > opposite;
 } ;
 
@@ -28,10 +33,16 @@ template< typename T, typename U >
 class select_< false, T, U >
 {
 public:
+    //! A typedef for the type \c U.
+    // -----------------------------------------------------------------------
     typedef U type;
+
+    //! A typedef for <code>select_< true, T, U ></code>
     typedef select_< true, T, U > opposite;
 } ;
 
+//! The truly polymorphic select template.
+// ---------------------------------------------------------------------------
 template< typename Cond, typename T, typename U >
 class select
 {
