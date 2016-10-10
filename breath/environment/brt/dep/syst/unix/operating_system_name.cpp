@@ -6,9 +6,10 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
+#include "breath/diagnostics/last_api_error.hpp"
 #include <cerrno>
 #include <ostream>
-#include <string.h> // for strerror(), strncpy
+#include <string.h> // for strncpy
 #include <sys/utsname.h>
 
 namespace breath {
@@ -32,7 +33,9 @@ operator <<( std::ostream & dest, operating_system_name const &)
     int const           ret = uname( &un ) ;
 
     if ( ret == -1 ) {
-        throw breath::operating_system_name_error( strerror( errno ) ) ;
+        last_api_error const
+                            err ;
+        throw breath::operating_system_name_error( err.what() ) ;
     }
 
     return dest << un.sysname
