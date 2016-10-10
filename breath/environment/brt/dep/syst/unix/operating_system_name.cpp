@@ -35,7 +35,7 @@ operator <<( std::ostream & dest, operating_system_name const &)
     int const           ret = uname( &un ) ;
 
     if ( ret == -1 ) {
-        throw breath::operating_system_name_error( strerror(errno) ) ;
+        throw breath::operating_system_name_error( strerror( errno ) ) ;
     }
 
     return dest << un.sysname
