@@ -30,8 +30,10 @@ check_known()
         { "The quick brown fox jumps over the lazy dog", 0x414FA339 },
         { "123456789",                                   0xCBF43926 },
         { "breath",                                      0x3A3B4FE3 },
+        { " ",                                           0xE96CCF45 },
         { "A",                                           0xD3D99E8B },
-        { "ABC",                                         0xA3830348 }
+        { "ABC",                                         0xA3830348 },
+        { "Nel mezzo del cammin di nostra vita",         0x5BFBCBF8 }
       } ;
 
     for ( auto it = breath::cbegin( known ) ; it != breath::cend( known ) ; ++ it ) {
