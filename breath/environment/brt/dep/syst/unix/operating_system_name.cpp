@@ -7,7 +7,6 @@
 // _________________________________________________________________________
 
 #include "breath/diagnostics/assert.hpp"
-#include "breath/diagnostics/exception.hpp"
 
 #include <cerrno>
 #include <ostream>
