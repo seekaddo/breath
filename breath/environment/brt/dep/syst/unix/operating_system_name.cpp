@@ -6,8 +6,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#include "breath/diagnostics/assert.hpp"
-
 #include <cerrno>
 #include <ostream>
 #include <string.h> // for strerror(), strncpy
