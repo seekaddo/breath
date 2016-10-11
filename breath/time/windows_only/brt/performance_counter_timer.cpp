@@ -16,7 +16,8 @@ namespace breath {
 performance_counter_timer::performance_counter_timer()
 {
     // Note that restart() is not called here. It will be called by
-    // elapsed_timer<>, if needed.
+    // elapsed_timer<>, if needed. Note that this cause the member
+    // m_start to be left uninitialized.
     //
     LARGE_INTEGER       f;
     if( QueryPerformanceFrequency( &f ) == 0 ) {

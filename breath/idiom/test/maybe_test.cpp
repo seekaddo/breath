@@ -74,6 +74,7 @@ check_assignments()
         BREATH_CHECK( m.is_valid() && m.value() == 1 ) ;
         m = invalid ;
         BREATH_CHECK( ! m.is_valid() ) ;
+        // The following double assignment is intentional
         m = valid ;
         m = valid ;
         BREATH_CHECK( m.is_valid() && m.value() == 1 ) ;
@@ -104,6 +105,7 @@ check_assignments()
         BREATH_CHECK( ! m.is_valid() ) ;
         maybe< std::string > m5( "mondo" ) ;
         maybe< std::string > m6( "!" ) ;
+        // The following double assignment is intentional
         m = m5 ;
         m = std::move( m6 ) ; // valid -> valid
         BREATH_CHECK( m.is_valid() && m.value() == "!" ) ;
