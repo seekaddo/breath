@@ -34,9 +34,9 @@ public:
     unsigned long       code() const noexcept ;
     char const *        what() const noexcept ;
 
-private:
-    void                operator=( last_api_error const & ) ; // not defined
+    void                operator=( last_api_error const & ) = delete ;
 
+private:
     friend std::ostream &
                         operator<<( std::ostream &, last_api_error const & ) ;
 

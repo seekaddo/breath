@@ -21,11 +21,9 @@ public:
                         ~last_api_error() noexcept ;
     int                 code() const noexcept ;
     char const *        what() const noexcept ;
+    void                operator=( last_api_error const & ) = delete ;
+
 private:
-
-
-    void                operator=( last_api_error const & ) ; // not defined
-
     friend std::ostream &
                         operator<<( std::ostream &, last_api_error const & ) ;
 
