@@ -55,7 +55,7 @@ main()
         os << "0x" << std::hex << std::setw( 8 ) << std::setfill( '0' )
                    << table[ i ] ;
         if ( i != ( size - 1 ) ) {
-            os << "," ;
+            os << ',' ;
         }
         if ( (i+1) % numbers_per_line == 0 ) {
             std::cout << "\n" << indent ;
