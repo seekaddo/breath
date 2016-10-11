@@ -52,7 +52,8 @@ cpp_basic_options = -ansi       		\
                     -Wextra     		\
                     -pedantic   		\
                     -Werror			\
-		    -D_POSIX_C_SOURCE=200112L
+		    -D_POSIX_C_SOURCE=200112L	\
+                    -U_GNU_SOURCE
 
 cpp_basic_options += -Wabi      \
                      -fabi-version=6    #newest as of august 2013
