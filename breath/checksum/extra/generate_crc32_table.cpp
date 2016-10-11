@@ -50,15 +50,17 @@ main()
 
     std::ostream &      os = std::cout ;
 
-    os << "static constexpr std::uint_fast32_t table[] = \n{\n" << indent ;
+    os << "static constexpr std::uint_fast32_t table[] =\n{\n" << indent ;
     for ( int i = 0 ; i < size ; ++ i ) {
         os << "0x" << std::hex << std::setw( 8 ) << std::setfill( '0' )
                    << table[ i ] ;
         if ( i != ( size - 1 ) ) {
-            os << ", " ;
+            os << "," ;
         }
         if ( (i+1) % numbers_per_line == 0 ) {
             std::cout << "\n" << indent ;
+        } else if ( i != ( size - 1 ) ) {
+            std::cout << ' ' ;
         }
     }
     os << "\n} ;" << std::endl ;
