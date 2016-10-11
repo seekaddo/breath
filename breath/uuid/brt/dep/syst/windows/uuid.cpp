@@ -23,7 +23,8 @@ namespace breath {
 
 uuid::uuid( uuid::variant var, uuid::version ver )
 {
-    BREATH_ASSERT( var == rfc_4122 && ver == time_based ) ; // other variants/versions not implemented
+    // other variants/versions not implemented
+    BREATH_ASSERT( var == rfc_4122 && ver == time_based ) ;
 
     // NT keeps time in FILETIME format which is 100ns ticks since
     // Jan 1, 1601.  UUIDs use time in 100ns ticks since Oct 15, 1582.
