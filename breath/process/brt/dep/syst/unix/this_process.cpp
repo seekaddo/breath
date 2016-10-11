@@ -7,34 +7,40 @@
 // _________________________________________________________________________
 
 #include "breath/diagnostics/assert.hpp"
+#include "breath/diagnostics/last_api_error.hpp"
 #include "breath/memory/auto_array.hpp"
 #include <unistd.h>
 #include <errno.h>
+#include <string>
 
 namespace breath {
+
+this_process::this_process()
+{
+}
 
 this_process &
 this_process::instance()
 {
     static this_process * inst ;
     if ( inst == nullptr ) {
-        inst = new this_process( getpid() ) ;
+        inst = new this_process() ;
     }
     return *inst ;
 
 }
 
 std::string
-this_process::current_directory() const
+this_process::current_directory()
 {
-    std::size_t sz = 512 ;
-    auto_array< char > aa ;
+    std::size_t         sz = 512 ;
+    auto_array< char >  aa ;
 
+    char const *        p = nullptr ;
     do {
         sz *= 2 ;
         aa.reset( new char[ sz ] ) ;
-        char const * const
-                        p = getcwd( aa.get(), sz ) ;
+        p = getcwd( aa.get(), sz ) ;
     } while ( p == nullptr && errno == ERANGE  ) ;
 
     if ( p == nullptr ) {
@@ -44,7 +50,7 @@ this_process::current_directory() const
 }
 
 void
-this_process::set_current_directory( std::string const & dir )
+this_process::set_current_directory( std::string const & /*dir*/ )
 {
     BREATH_ASSERT( false && "not implementable?" );
 }

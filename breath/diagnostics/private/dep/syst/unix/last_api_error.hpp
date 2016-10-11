@@ -16,6 +16,7 @@ class last_api_error
 {
 public:
                         last_api_error() noexcept ;
+                        last_api_error( char const * ) noexcept ;
                         last_api_error( last_api_error const & other ) noexcept ;
                         ~last_api_error() noexcept ;
     int                 code() const noexcept ;

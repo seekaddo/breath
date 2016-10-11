@@ -21,7 +21,14 @@ namespace breath {
 class this_process
     :   public process
 {
+private:
+
+    explicit            this_process() ;
+
 public:
+
+    this_process &      instance() ;
+
 
     //! Gets the current directory of the current process.
     // -----------------------------------------------------------------------
