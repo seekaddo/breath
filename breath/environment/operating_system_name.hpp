@@ -27,7 +27,7 @@ class operating_system_name_error
     : public exception
 {
 public:
-                        operating_system_name_error( std::string const & ) noexcept ;
+    explicit            operating_system_name_error( std::string const & ) noexcept ;
     virtual char const *
                         what() const noexcept ;
 private:
