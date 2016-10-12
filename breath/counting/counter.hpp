@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief A counter providing only operations meaningful for a counter.
+//!     \brief A counter providing only operations meaningful for a
+//!            counter, plus overflow checking.
 // -------------------------------------------------------------------------
 
 #include "breath/operator/comparison.hpp"
