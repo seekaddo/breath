@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A generalized version of \c std::accumulate.
-// -------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_AIxamIWyjxqb3pPGHU23CYP8v7Zo1TTt
 #define BREATH_GUARD_AIxamIWyjxqb3pPGHU23CYP8v7Zo1TTt
@@ -47,21 +47,22 @@ template< typename T >
 class accumulate_traits
 {
 public:
-    //! Type of the default init value for \c breath::accumulate.
+    //!     Type of the default init value for \c breath::accumulate.
     // -----------------------------------------------------------------------
     typedef T           init_type ;
 
-    //! Type of the result of \c breath::accumulate.
+    //!     Type of the result of \c breath::accumulate.
     // -----------------------------------------------------------------------
     typedef T           result_type ;
 
-    //!\return The default init value for \c breath::accumulate.
+    //!     \return The default init value for \c breath::accumulate.
     // -----------------------------------------------------------------------
     static init_type    first() ;
 
-    //! Performs a summation of the elements in the range <code>[begin, end)
-    //! </code> via <code>operator+=</code> (which is searched via ADL). Can
-    //! have a different implementation in a user specialization.
+    //!     Performs a summation of the elements in the range <code>
+    //!     [begin, end)</code> via <code>operator+=</code> (which is
+    //!     searched via ADL). Can have a different implementation in
+    //!     a user specialization.
     // -----------------------------------------------------------------------
     template< typename It >
     static result_type  compute( It begin, It end, init_type & value ) ;
@@ -72,9 +73,9 @@ public:
 //
 //!     Generalized version of std::accumulate().
 //!
-//!     \c breath::accumulate_traits<> is a customization point: you are
-//!     allowed to specialize it, in namespace \c breath, for your own
-//!     types.
+//!     \c breath::accumulate_traits<> is a customization point: you
+//!     are allowed to specialize it, in namespace \c breath, for your
+//!     own types.
 // ---------------------------------------------------------------------------
 template< typename InputIterator, typename T >
 typename accumulate_traits< T >::result_type
