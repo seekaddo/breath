@@ -24,16 +24,16 @@ class node_id
 {
 public:
     //!     Copy constructor and copy-assignment operator deleted.
-    // -----------------------------------------------------------------------
+    // ---------------------------------------------------------------------
     BREATH_DECLARE_NON_COPYABLE( node_id )
 
                         node_id() ;
     //!     \return The one and only instance of \c node_id.
-    // -----------------------------------------------------------------------
+    // ---------------------------------------------------------------------
     static node_id const &
                         instance() ;
     //!     \return The \c n-th byte of the MAC address.
-    // -----------------------------------------------------------------------
+    // ---------------------------------------------------------------------
     uint8_t             operator[]( int n ) const ;
 
 private:
