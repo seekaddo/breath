@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Macro for a single check within a unit test.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_EFlfreUFA16SG5tXxNJpWtUHWTCfIjaD
 #define BREATH_GUARD_EFlfreUFA16SG5tXxNJpWtUHWTCfIjaD
@@ -27,6 +31,7 @@
                 } catch ( ... ) {                                           \
                 }                                                           \
             } while ( false )                                            /**/
+
 #endif
 
 // Local Variables:

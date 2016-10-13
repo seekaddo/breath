@@ -8,7 +8,7 @@
 //
 //!     \file
 //!     \brief A security-aware fill algorithm.
-// -------------------------------------------------------------------------
+// --------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 #define BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
@@ -35,21 +35,24 @@
 namespace breath {
 
 
-// Note how this is intentionally implemented with a hand-coded loop. It's
-// not crystal clear whether we could use std::fill or std::fill_n (which
-// would bring the advantage of debugging mode and everything the underlying
-// standard library implementation might provide). On a relaxed reading of
-// the standard, it seems that, for instance
+//      Note how this is intentionally implemented with a hand-coded
+//      loop. It's not crystal clear whether we could use std::fill
+//      or std::fill_n (which would bring the advantage of debugging
+//      mode and everything the underlying standard library
+//      implementation might provide). On a relaxed reading of the
+//      standard, it seems that, for instance
 //
-//      std::fill( arr, arr + n, value );
+//        std::fill( arr, arr + n, value );
 //
-// should work as expected, since we pass regular pointers as iterators and
-// std::iterator_traits< T * >::value is required to be T, which in our case
-// is volatile qualified. It all depends, however, on how the expression
-// "assigns 'value' through all the iterators in the range [first ,last )",
-// in [alg.fill], is to be interpreted. Does it allow anything different
-// from the obvious *first = value, *first++ = value and similar?
-//
+//      should work as expected, since we pass regular pointers as
+//      iterators and std::iterator_traits< T * >::value is required
+//      to be T, which in our case is volatile qualified. It all
+//      depends, however, on how the expression "assigns 'value'
+//      through all the iterators in the range [first ,last )", in
+//      [alg.fill], is to be interpreted. Does it allow anything
+//      different from the obvious *first = value, *first ++ = value
+//      and similar?
+// --------------------------------------------------------------------------
 template< typename T, std::size_t n >
 void
 secure_fill( T volatile ( &arr )[ n ], T const & value = T() )

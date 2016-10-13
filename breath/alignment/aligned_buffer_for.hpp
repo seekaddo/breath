@@ -23,8 +23,9 @@ namespace breath {
 template< typename T >
 class               aligned_buffer_for ;
 
-//! "Empty" specialization to disable usage of the template for arrays.
-// ---------------------------------------------------------------------
+//!     "Empty" specialization to disable usage of the template for
+//!     arrays.
+// -------------------------------------------------------------------------
 template< typename T, std::size_t n >
 class               aligned_buffer_for< T[ n ] >
 { /* disabled for arrays */ } ;
@@ -96,14 +97,14 @@ struct pod_with_same_align
 //      aligned_buffer_for
 //      ==================
 //
-//!     An object that contains a byte buffer suitably sized and aligned
-//!     for the type \c T.
+//!     An object that contains a byte buffer suitably sized and
+//!     aligned for the type \c T.
 //!
 //!     Note that this has a different interface from TR1's or C++11's
-//!     analogous: both of the latter take one or two numeric arguments
-//!     (size and alignment); this one takes just a type (the type that
-//!     we want the same alignment of). Among other things, the C++11
-//!     scheme allows for storing arrays:
+//!     analogous: both of the latter take one or two numeric
+//!     arguments (size and alignment); this one takes just a type
+//!     (the type that we want the same alignment of). Among other
+//!     things, the C++11 scheme allows for storing arrays:
 //!
 //!     <code>
 //!       aligned_storage< n * sizeof( T ), alignof( T ) >
@@ -117,9 +118,9 @@ struct pod_with_same_align
 //!     </code>
 //!
 //!     So: this facility exists basically for C++03; and all of the
-//!     alternatives (this one, TR1's one and the library-based C++11's
-//!     one) will be made superflous by C++11's core support.
-// ---------------------------------------------------------------------
+//!     alternatives (this one, TR1's one and the library-based
+//!     C++11's one) will be made superflous by C++11's core support.
+// -------------------------------------------------------------------------
 template< typename T >
 class aligned_buffer_for
 {

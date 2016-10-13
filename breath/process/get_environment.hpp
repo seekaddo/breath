@@ -19,8 +19,8 @@
 
 namespace breath {
 
-//!\return A map with all name-value pairs corresponding to the defined
-//!        environment variables.
+//! \return A map with all name-value pairs corresponding to the
+//!         defined environment variables.
 // -------------------------------------------------------------------------
 std::map< std::string, std::string >
                     get_environment() ;

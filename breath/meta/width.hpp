@@ -14,11 +14,13 @@
 #define BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 
 /*!
-        A \c meta::constant<> whose \c value_type is T and whose value is the \c
-        width of \p T (the number of bits it uses to represent values, including
-        any sign but excluding any padding bits).
-    \typereq
-    See \c meta::precision<>.
+        A \c meta::constant<> whose \c value_type is T and whose value
+        is the \c width of \p T (the number of bits it uses to
+        represent values, including any sign but excluding any padding
+        bits).
+
+        Type requirements:
+            see \c meta::precision<>.
 */
 
 #include "breath/meta/constant.hpp"

@@ -59,12 +59,13 @@ namespace breath {
 //!
 //!          gps add std::cout << example
 //!
-//!      - when we want to invoke a member function on the "real" object:
+//!      - when we want to invoke a member function on the "real"
+//!        object:
 //!
 //!          maybe< std::string > my_function();
 //!          my_function().size();        // error
 //!          my_function().value().size() // OK
-//! 
+//!
 //!        (but, of course, the latter is stylistically rare: one would
 //!        usually assign the function return value first)
 //!

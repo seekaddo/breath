@@ -26,14 +26,14 @@ public:
     // -------------------------------------------------------------------------
                         string_argument( std::string const & ) ;
 
-    //!     Constructs a <code>string_argument</code> from a <code>char const
-    //!     *</code>. Intentionally not <code>explicit</code>. Asserts if
-    //!     the argument equals <code>nullptr</code>.
+    //!     Constructs a <code>string_argument</code> from a <code>
+    //!     char const *</code>. Intentionally not <code>explicit</code>.
+    //!     Asserts if the argument equals <code>nullptr</code>.
     // -------------------------------------------------------------------------
                         string_argument( char const * ) ;
 
-    //!     Returns the value in this <code>string_argument</code> as a <code>
-    //!     std::string</code>.
+    //!     Returns the value in this <code>string_argument</code> as
+    //!     a <code>std::string</code>.
     // -------------------------------------------------------------------------
     std::string         value() const ;
 

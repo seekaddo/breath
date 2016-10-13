@@ -28,7 +28,7 @@ namespace breath {
 //!                      sequence
 //!     \param[out] out  Iterator to the first element of the output
 //!                      sequence (binary)
-// ---------------------------------------------------------------------
+// -------------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
 void                base64_to_binary( InputIter begin, InputIter end,
                                       OutputIter out ) ;

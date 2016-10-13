@@ -33,7 +33,7 @@ public:
                         set_of_chars( FwdIterator begin, FwdIterator end ) ;
 
     //      A special value used by some constructors.
-    // -----------------------------------------------------------------------
+    // ---------------------------------------------------------------------
     enum except_for { except } ;
 
                         set_of_chars( except_for, char ) ;
@@ -70,7 +70,7 @@ public:
     friend class        iterator ;
 
     //      Read-only iterators for the standard library.
-    // -----------------------------------------------------------------------
+    // ---------------------------------------------------------------------
     iterator            begin() const ;
     iterator            end() const ;
 
@@ -87,15 +87,15 @@ public:
     //      =========
     //
     //      An iterator for the set.
-    //     
+    //
     //      Iterates over all of the characters in the set.  It is a
     //      forward iterator.
-    // -----------------------------------------------------------------------
+    // ---------------------------------------------------------------------
     class               iterator
     {
     public:
-        // Typedefs for the Standard Library
-        // -------------------------------------------------------------------
+        //  Typedefs for the Standard Library
+        // -----------------------------------------------------------------
         typedef std::forward_iterator_tag
                             iterator_category  ;
         typedef char        value_type         ;

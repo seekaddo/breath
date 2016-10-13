@@ -13,8 +13,8 @@
 //      cpuid.hpp:
 //      ==========
 //
-//!     Interface to the CPUID instruction available on x86 and Intel 64
-//!     architectures.
+//!     Interface to the CPUID instruction available on x86 and Intel
+//!     64 architectures.
 //!
 //!     NOTE: unusually for our code base, this file uses extern "C";
 //!     that's because the actual routines are written in assembly and
@@ -41,7 +41,7 @@
 
 extern "C" {
 
-//! Represents the result of the CPUID instruction.
+//!     Represents the result of the CPUID instruction.
 // ---------------------------------------------------------------------------
 struct cpuid_result
 {
@@ -56,9 +56,9 @@ struct cpuid_result
 //
 //!     Namespace: global (see above)
 //!
-//!     \return:
-//              \c true if and only if the executing CPU supports the CPUID
-//              machine instruction.
+//!     \return
+//              \c true if and only if the executing CPU supports the
+//              CPUID machine instruction.
 // ---------------------------------------------------------------------------
 bool                is_cpuid_supported() ;
 
@@ -67,16 +67,16 @@ bool                is_cpuid_supported() ;
 //
 //!     Namespace: global (see above)
 //!
-//!     Executes the CPUID instruction with the provided values in \c EAX
-//!     and \c ECX.
+//!     Executes the CPUID instruction with the provided values in \c
+//!     EAX and \c ECX.
 //!
 //!     Precondition:
 //!             the CPUID instruction is supported (see
 //!             is_cpuid_supported())
 //!
-//!     \return:
-//!             a struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
-//!             returned by the CPUID instruction itself.
+//!     \return
+//!             a struct with the values of \c EAX, \c EBX, \c ECX,
+//!             \c EDX returned by the CPUID instruction itself.
 // ---------------------------------------------------------------------------
 cpuid_result        get_cpuid_info( uint32_t eax, uint32_t ecx ) ;
 

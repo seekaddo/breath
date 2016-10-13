@@ -26,34 +26,35 @@ namespace breath {
 
 
     //
-    //! This template models a simple state machine for Merkle-Damgard's
-    //! construction of unkeyed hash functions.
+    //!     This template models a simple state machine for
+    //!     Merkle-Damgard's construction of unkeyed hash functions.
     //!
-    //! Many popular hash functions (including MD5 and all the SHA variants)
-    //! follow this scheme and can thus be implemented easily by means of
-    //! this class template.
+    //!     Many popular hash functions (including MD5 and all the SHA
+    //!     variants) follow this scheme and can thus be implemented
+    //!     easily by means of this class template.
     //!
     //!
-    //! \p Engine, which is the algorithm-specific policy, must provide the two
-    //! static member functions described below:
+    //!     \p Engine, which is the algorithm-specific policy, must
+    //!     provide the two static member functions described below:
     //!
-    //!   - init_state( state_type & state )
-    //!     \c state_type is either a built-in array or an array-like type
-    //!        which provides const and non-const operator[] functions; the
-    //!        machine guarantees that data stored in the \p state parameter
-    //!        are wiped automatically when \c init_state() returns to the
-    //!        caller (for obvious security reasons)
+    //!     - init_state( state_type & state )
+    //!        \c state_type is either a built-in array or an
+    //!        array-like type which provides const and non-const
+    //!        operator[] functions; the machine guarantees that data
+    //!        stored in the \p state parameter are wiped automatically
+    //!        when \c init_state() returns to the caller (for obvious
+    //!        security reasons)
     //!
-    //!   process_block()
-    //   
+    //!     - process_block()
     //
-    //!\warning
+    //
+    //!     \warning
     //!         Hash algorithms depend on exact bit-patterns,
     //!         thus the byte/char representation (e.g. ASCII
     //!         vs. EBCDIC) of the input matters. You might need
     //!         a conversion to a common format before hashing.
     //!
-    //!\warning
+    //!     \warning
     //!         The current interface only supports hashing messages
     //!         whose length is a multiple of the \c byte_width.
     //!         In the future, bit iterators could be integrated here
@@ -61,7 +62,7 @@ namespace breath {
     //          (Note that internally we already keep the *bit* count
     //          of the input, not the byte count, so extending it
     //          should be fairly straightforward - gps )
-    //
+    // ---------------------------------------------------------------------
     template< typename Engine >
     class merkle_damgard_machine
     {
@@ -156,4 +157,3 @@ namespace breath {
 // c-basic-offset: 4
 // End:
 // vim: set ft=cpp et sts=4 sw=4:
-

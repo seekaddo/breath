@@ -32,7 +32,7 @@
 //            Also, it seems natural to add an is_eof_value(), too,
 //            since using eq_int_type would still require #including
 //            the <string> header.
-// ---------------------------------------------------------------------------
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0
 #define BREATH_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0

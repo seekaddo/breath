@@ -14,8 +14,8 @@
 #define BREATH_GUARD_BssKAsCiqQzBgpiZdcF0pqcl37YyLxoi
 
 //!     Handy macro to declare a class as non-copyable.
-//!     It is better invoked in a public section of the class declaration
-//!     (gives better error messages).
+//!     It is better invoked in a public section of the class
+//!     declaration (gives better error messages).
 // ----------------------------------------------------------------------------
 #define BREATH_DECLARE_NON_COPYABLE( class_name )                       \
                                                                         \

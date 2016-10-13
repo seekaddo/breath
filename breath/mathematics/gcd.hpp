@@ -28,7 +28,7 @@ namespace breath {
 //!     \returns
 //!     If both \c m and \c n are zero, returns zero. Otherwise it
 //!     returns the greatest common divisor of |m| and |n|.
-// ---------------------------------------------------------------------
+// -------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >
                     gcd( M m, N n ) noexcept ;

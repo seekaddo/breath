@@ -20,7 +20,7 @@ namespace breath {
 //!     Converts a binary sequence to base64. Conforms to RFC 3548,
 //!     except that it allows to line-wrap the generated base64 output
 //!     (\c wrap_column != 0).
-//
+//!
 //!     \param[in]  begin Iterator to the first element of the binary
 //!                 sequence
 //!     \param[in]  end   One-past-the-end iterator in the binary

@@ -21,18 +21,17 @@ namespace  integer_log2_private {
 
 //      choose_initial_n<>
 //
-//      Recursively doubles its integer argument n, until 2*n
-//      becomes >= of the "width" (C99, 6.2.6.2p6) of
-//      integer_log2's argument_type.
+//      Recursively doubles its integer argument n, until 2*n becomes
+//      >= of the "width" (C99, 6.2.6.2p6) of integer_log2's
+//      argument_type.
 //
-//      Used to get the maximum power of two smaller than the
-//      width.
+//      Used to get the maximum power of two smaller than the width.
 //
-//      Example: if on your platform integer_log2_argument_type
-//               has 48 value bits this yields n=32.
+//      Example: if on your platform integer_log2_argument_type has
+//               48 value bits this yields n=32.
 //
-//      It's easy to prove that, starting from such a value of n
-//      the core algorithm works correctly for any width of
+//      It's easy to prove that, starting from such a value of n the
+//      core algorithm works correctly for any width of
 //      integer_log2_argument_type and that recursion always
 //      terminates with x = 1 and n = 0 (see the algorithm's
 //      invariant).
@@ -92,7 +91,7 @@ const result_type initial_n = choose_initial_n<n_zero>::value ;
 //      value bits. (Note: If larger types will be standardized -e.g.
 //      unsigned long long- then the argument_type typedef can be
 //      changed without affecting the rest of the code.)
-// ---------------------------------------------------------------------
+// -------------------------------------------------------------------------
 template < argument_type x, result_type n = initial_n >
 struct integer_log2_impl {
 

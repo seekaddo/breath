@@ -32,8 +32,8 @@ class has_sign
 {
 } ;
 
-// The specialization here is logically unnecessary but silences
-// compiler warnings.
+//      The specialization here is logically unnecessary but silences
+//      compiler warnings.
 // -------------------------------------------------------------------------
 template<>
 class has_sign< bool >

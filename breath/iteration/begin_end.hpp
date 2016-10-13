@@ -13,17 +13,17 @@
 #ifndef BREATH_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD
 #define BREATH_GUARD_Ve2uzZNiUDgCTZXgV1iB3bUD5U0n1kKD
 
-/*
+/*!
         Syntax adaptors to extend the usage of begin() and end() to
         C-style arrays. Also defines cbegin() and cend(), with the
         same extent.
 
         All of the function templates are non-members, and the
         syntax is, uniformly
-
+          <code>
             breath::begin( a ) ;
             breath::end( a ) ;
-
+          </code>
         regardless of whether a refers to a standard container or
         to a built-in array. See also count.hpp.
 

@@ -41,14 +41,16 @@ width_ratio< T, Byte >::value ;
 // NOTE
 // ====
 //
-// There's no general guarantee that we can infer the load/store order
-// via a single Endianness template parameter: the ordering also depends
-// on the types T and Byte.
+//      There's no general guarantee that we can infer the load/store
+//      order via a single Endianness template parameter: the ordering
+//      also depends on the types T and Byte.
 //
-// Fortunately, dependency on all of the three variables is not common.
-// Thus, our default policies, defined below, take the endianness type only
-// into account. Your will need to provide your own policy for more exotic
-// cases (e.g. if you are dealing with PDP-11 endianness)
+//      Fortunately, dependency on all of the three variables is not
+//      common. Thus, our default policies, defined below, take the
+//      endianness type only into account. Your will need to provide
+//      your own policy for more exotic cases (e.g. if you are dealing
+//      with PDP-11 endianness)
+// -------------------------------------------------------------------------
 class little_endian_policy
 {
 public:
@@ -83,34 +85,36 @@ public:
     }
 } ;
 
-//!     Converts generic values to/from (byte-)sequence representations.
+//!     Converts generic values to/from (byte-)sequence
+//!     representations.
 //!
-//!     In general, \c endian_codec can read and store a representation
-//!     of a value as a sequence of smaller units, regardless of their
-//!     widths. It is mostly useful to read and write values independently
-//!     of the endianness they are stored in, as long as the endianness
-//!     type is known.
+//!     In general, \c endian_codec can read and store a
+//!     representation of a value as a sequence of smaller units,
+//!     regardless of their widths. It is mostly useful to read and
+//!     write values independently of the endianness they are stored
+//!     in, as long as the endianness type is known.
 //!
 //!     It is only designed for reads and writes in memory.
 //!
-//! Type requirements.
-//!     \c T and \c Byte shall be unsigned integral types.
-//!     There's no requirement that \c Byte have a smaller
-//!     \em width than \c T
+//!     Type requirements.
+//!         \c T and \c Byte shall be unsigned integral types.
+//!         There's no requirement that \c Byte have a smaller
+//!         \em width than \c T
 //!
-//! \warning
-//!     Given its generality it might be a good idea to rename this to
-//!     something like "order_codec" or similar; feedback is welcome.
+//!     \warning
+//!         Given its generality it might be a good idea to rename
+//!         this to something like "order_codec" or similar; feedback
+//!         is welcome.
 //!
-//! \todo Check this; is it true for user-policies?
+//!     \todo Check this; is it true for user-policies?
 //!
 //! NOTE:
 //!
-//! For purposes other than memory read/writes, different arrangements
-//! than a sequence are theoretically conceivable but no need has so far
-//! arisen for such a generalization. This only deals with a linear
-//! sequence of "Bytes", representing a \c T value according to a given
-//! convention.
+//!     For purposes other than memory read/writes, different
+//!     arrangements than a sequence are theoretically conceivable but
+//!     no need has so far arisen for such a generalization. This only
+//!     deals with a linear sequence of "Bytes", representing a \c
+//!     T value according to a given convention.
 // --------------------------------------------------------------------------
 template<
     typename EndianPolicy,

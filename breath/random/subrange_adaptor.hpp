@@ -26,7 +26,7 @@ class subrange_adaptor
 {
 public:
     //!     The same as the Engine's result type.
-    // -------------------------------------------------------------------------
+    // ---------------------------------------------------------------------
     typedef typename Engine::result_type
                         result_type ;
 private:
@@ -38,11 +38,11 @@ private:
 public:
     //!     Constructs a subrange adaptor from a given Engine and a new max
     //!     value.
-    // -------------------------------------------------------------------------
+    // ---------------------------------------------------------------------
                         subrange_adaptor( Engine & e, result_type new_max ) ;
 
     //!     Returns a new random value in the adaptor's subrange.
-    // -------------------------------------------------------------------------
+    // ---------------------------------------------------------------------
     result_type         next() ;
 } ;
 

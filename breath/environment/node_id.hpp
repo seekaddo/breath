@@ -22,17 +22,17 @@ namespace breath {
 
 class node_id
 {
-    //! Copy constructor and copy-assignment operator deleted.
+    //!     Copy constructor and copy-assignment operator deleted.
     // -----------------------------------------------------------------------
     BREATH_DECLARE_NON_COPYABLE( node_id )
 private:
                         node_id() ;
 public:
-    //! \return The one and only instance of \c node_id.
+    //!     \return The one and only instance of \c node_id.
     // -----------------------------------------------------------------------
     static node_id const &
                         instance() ;
-    //! \return The \c n-th byte of the MAC address.
+    //!     \return The \c n-th byte of the MAC address.
     // -----------------------------------------------------------------------
     uint8_t             operator[]( int n ) const ;
 
@@ -40,7 +40,8 @@ private:
     std::array< uint8_t, 6 >
                         m_address ; // MAC Address
 
-    //! Outputs a textual representation of \c id to the stream \c s.
+    //!     Outputs a textual representation of \c id to the stream
+    //!     \c s.
     // -----------------------------------------------------------------------
     friend std::ostream & operator <<( std::ostream & s, node_id const & id ) ;
 } ;

@@ -5,6 +5,11 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief An object to report unit tests errors to a \c
+//!            std::ostream.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_XgKxFi9sRq7YDgySOH2206PWX2ZxQrtB
 #define BREATH_GUARD_XgKxFi9sRq7YDgySOH2206PWX2ZxQrtB

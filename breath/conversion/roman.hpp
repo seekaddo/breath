@@ -21,20 +21,22 @@ namespace breath {
 class roman
 {
 public:
-    //! Constructs a roman number object corresponding to number \c n.
+    //!     Constructs a roman number object corresponding to number
+    //!     \c n.
     // ---------------------------------------------------------------------
     explicit            roman( int n ) ;
 
 private:
-    // The implementation here is different from usual: rathen than
-    // doing the conversion to roman numerals in the stream inserter,
-    // we do it in the constructor and store the resulting representation
-    // in a std::string object. Consider this implementation detail somewhat
-    // experimental.
+    //      The implementation here is different from usual: rathen
+    //      than doing the conversion to roman numerals in the stream
+    //      inserter, we do it in the constructor and store the
+    //      resulting representation in a std::string object. Consider
+    //      this implementation detail somewhat experimental.
     // ---------------------------------------------------------------------
     std::string         m_representation ;
 
-    //! Stream output operator: outputs the number in roman numerals.
+    //!     Stream output operator: outputs the number in roman
+    //!     numerals.
     // ---------------------------------------------------------------------
     friend std::ostream &
         operator<<( std::ostream &, roman const & ) ;

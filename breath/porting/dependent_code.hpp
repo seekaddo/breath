@@ -14,7 +14,7 @@
 //      configuration variables (system, compiler, etc.). Note that it
 //      only relies on the preprocessing facilities, which, in turn,
 //      don't need any configuration.
-// ---------------------------------------------------------------------------
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_LJrbr2rF89IS3w34IDEgr8K9ZUsCl9Ll
 #define BREATH_GUARD_LJrbr2rF89IS3w34IDEgr8K9ZUsCl9Ll

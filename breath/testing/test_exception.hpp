@@ -5,6 +5,10 @@
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief A test exception.
+// -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_8msuVkqs5IBc3s7j1mDOtGC97uqTUGg0
 #define BREATH_GUARD_8msuVkqs5IBc3s7j1mDOtGC97uqTUGg0

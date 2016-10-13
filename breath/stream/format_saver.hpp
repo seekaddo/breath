@@ -22,11 +22,12 @@ namespace breath {
 //      format_saver:
 //      =============
 //
-//!     RAII-based "guard" (saver/restorer) of a stream object's formatting
-//!     info.
+//!     RAII-based "guard" (saver/restorer) of a stream object's
+//!     formatting info.
 //!
 //!     An instance of this class saves the formatting state of a
-//!     stream object in its constructor and restores it in its destructor.
+//!     stream object in its constructor and restores it in its
+//!     destructor.
 //!
 //!     Note: do not confuse what we call here the "formatting info"
 //!     or "formatting state" (the set of all info which affect
@@ -88,7 +89,7 @@ namespace breath {
 //!     suggest using copyfmt, in order to save the additional stream
 //!     info. James also gave, as usual, excellent feedback on various
 //!     design issues, in particular about locales and imbue.
-// ---------------------------------------------------------------------------
+// -------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_format_saver
 {

@@ -20,41 +20,45 @@ class counter
     :   private comparison< counter< IntegralType > >
 {
 public:
-    //! Constructs a cointer having internal value \c IntegralType( 0 ).
+    //!     Constructs a cointer having internal value \c
+    //!     IntegralType( 0 ).
     // ----------------------------------------------------------------------
                         counter() ;
 
-    //! Construct a counter with internal value \c n. Precondition: \c
-    //! n >= 0.
+    //!     Constructs a counter with internal value \c n.
+    //!     Precondition: \c n >= 0.
     // ----------------------------------------------------------------------
     explicit            counter( IntegralType n ) ;
 
-    //! Pre-increments the counter. Can only be called on lvalues.
+    //!     Pre-increments the counter. Can only be called on lvalues.
     // ----------------------------------------------------------------------
     counter &           operator ++() & ;
 
-    //! Post-increments the counter. Can only be called on lvalues.
+    //!     Post-increments the counter. Can only be called on
+    //!     lvalues.
     // ----------------------------------------------------------------------
     counter             operator ++( int ) & ;
 
-    //! Pre-decrements the counter. Can only be called on lvalues.
+    //!     Pre-decrements the counter. Can only be called on lvalues.
     // ----------------------------------------------------------------------
     counter &           operator --() & ;
 
-    //! Post-decrements the counter. Can only be called on lvalues.
+    //!     Post-decrements the counter. Can only be called on
+    //!     lvalues.
     // ----------------------------------------------------------------------
     counter             operator --( int ) & ;
 
-    //! \return The internal value of the counter.
+    //!     \return The internal value of the counter.
     // ----------------------------------------------------------------------
     IntegralType        value() const ;
 
-    //! \return \c true if an only if \c *this and \c other compare equal (
-    //! same internal value). Used by the base class.
+    //!     \return \c true if an only if \c *this and \c other
+    //!     compare equal (same internal value). Used by the base
+    //!     class.
     //! ---------------------------------------------------------------------
     bool                is_equal( counter const & other ) const ;
 
-    //! Three-way comparison for counters. Used by the base class.
+    //!     Three-way comparison for counters. Used by the base class.
     // ----------------------------------------------------------------------
     int                 compare(  counter const & other ) const ;
 

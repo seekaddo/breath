@@ -30,8 +30,9 @@ namespace breath {
 //!
 //!     Like for unique_ptr, instances of this template satisfy the
 //!     requirements of MoveConstructible and MoveAssignable, but not
-//!     the requirements of either CopyConstructible or CopyAssignable.
-// ---------------------------------------------------------------------
+//!     the requirements of either CopyConstructible or
+//!     CopyAssignable.
+// -------------------------------------------------------------------------
 template< typename T >
 class auto_array
 {

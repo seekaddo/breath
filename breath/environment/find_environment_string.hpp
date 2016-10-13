@@ -19,15 +19,16 @@
 
         Overcomes three usability issues of getenv():
 
-        - const unsafety: getenv() returns a pointer to (non const) char
-          (which the program shall not modify)
+        - const unsafety: getenv() returns a pointer to (non const)
+          char (which the program shall not modify)
 
-        - subsequent calls to getenv() may overwrite the pointed to string
+        - subsequent calls to getenv() may overwrite the pointed to
+          string
 
-        - if the searched to string is not found getenv() returns a null
-          pointer; that can easily lead to undefined behavior, typically by
-          passing that value to one of the constructors of \c std::string which
-          take a const char *.
+        - if the searched to string is not found getenv() returns a
+          null pointer; that can easily lead to undefined behavior,
+          typically by passing that value to one of the constructors
+          of \c std::string which take a const char *.
 */
 
 #include "breath/idiom/string_argument.hpp"
@@ -38,19 +39,18 @@ namespace breath {
 //      find_environment_string:
 //      ------------------------
 //
-//!     Searches an implementation-defined list, as if by
-//!     calling std::getenv(), for a string that matches
-//!     name.
+//!     Searches an implementation-defined list, as if by calling
+//!     std::getenv(), for a string that matches name.
 //!
-//!     We emphasize that the 'as if' above is part of this
-//!     function's contract; thus it is subject to the same
-//!     limitations as \c getenv() for what concerns e.g.
-//!     calling it before \c main() is entered and others.
+//!     We emphasize that the 'as if' above is part of this function's
+//!     contract; thus the function is subject to the same limitations
+//!     as \c getenv() for what concerns e.g. calling it before \c
+//!     main() is entered and others.
 //!
 //! Warning:
-//!     The behavior on passing an empty string for the name
-//!     parameter is implementation-defined: please check the
-//!     documentation provided with your C++ implementation.
+//!     The behavior on passing an empty string for the name parameter
+//!     is implementation-defined: please check the documentation
+//!     provided with your C++ implementation.
 // -----------------------------------------------------------------------
 maybe< std::string >
                     find_environment_string( string_argument const & name );

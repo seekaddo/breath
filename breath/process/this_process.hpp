@@ -30,17 +30,17 @@ public:
     this_process &      instance() ;
 
 
-    //! Gets the current directory of the current process.
-    // -----------------------------------------------------------------------
+    //!     Gets the current directory of the current process.
+    // ---------------------------------------------------------------------
     static std::string  current_directory() ;
 
-    //! Sets the current directory of the current process; 'dir' must be
-    //! a valid directory path.
-    // -----------------------------------------------------------------------
+    //!     Sets the current directory of the current process; 'dir'
+    //!     must be a valid directory path.
+    // ---------------------------------------------------------------------
     static void         set_current_directory( std::string const & dir ) ;
 
-    //! Waits for a process to exit.
-    // -----------------------------------------------------------------------
+    //!     Waits for a process to exit.
+    // ---------------------------------------------------------------------
     void                wait( process const & ) ;
 } ;
 
