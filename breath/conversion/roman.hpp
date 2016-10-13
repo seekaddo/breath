@@ -27,7 +27,7 @@ public:
     explicit            roman( int n ) ;
 
 private:
-    //      The implementation here is different from usual: rathen
+    //      The implementation here is different from usual: rather
     //      than doing the conversion to roman numerals in the stream
     //      inserter, we do it in the constructor and store the
     //      resulting representation in a std::string object. Consider
