@@ -22,12 +22,12 @@ namespace breath {
 
 class node_id
 {
+public:
     //!     Copy constructor and copy-assignment operator deleted.
     // -----------------------------------------------------------------------
     BREATH_DECLARE_NON_COPYABLE( node_id )
-private:
+
                         node_id() ;
-public:
     //!     \return The one and only instance of \c node_id.
     // -----------------------------------------------------------------------
     static node_id const &
