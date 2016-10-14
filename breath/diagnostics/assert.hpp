@@ -45,7 +45,7 @@ void fire( char const * message,
 //!     first, if \c expr is not implicitly convertible to \c bool the
 //!     program is ill-formed; otherwise, an assertion is triggered
 //!     \e iif the result of such a conversion is \c false. If the
-//!     result is true, the evaluation has no effect besides the
+//!     result is \c true, the evaluation has no effect besides the
 //!     conversion to \c bool itself.
 //!
 //!     In this context, "triggering an assertion" means writing
