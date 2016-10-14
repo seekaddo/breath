@@ -42,10 +42,11 @@ void fire( char const * message,
 //!         BREATH_ASSERT( expr )
 //!
 //!     expands to an expression. When that expression is evaluated:
-//!     first, if \c expr is not implicitly convertible to bool the
+//!     first, if \c expr is not implicitly convertible to \c bool the
 //!     program is ill-formed; otherwise, an assertion is triggered
 //!     \e iif the result of such a conversion is \c false. If the
-//!     result is true, the evaluation has no effect.
+//!     result is true, the evaluation has no effect besides the
+//!     conversion to \c bool itself.
 //!
 //!     In this context, "triggering an assertion" means writing
 //!     information related to the specific macro invocation (e.g.
