@@ -50,7 +50,7 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //!     Requires:
 //!         <code>comp( high, low ) == false</code>
 //!
-//!     \return:
+//!     \return
 //!         \c low if value is less than \c low, \c high if \c value
 //!         is higher than \c high, otherwise \c value.
 //!
