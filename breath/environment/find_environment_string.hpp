@@ -40,7 +40,7 @@ namespace breath {
 //      ------------------------
 //
 //!     Searches an implementation-defined list, as if by calling
-//!     std::getenv(), for a string that matches name.
+//!     \c std::getenv(), for a string that matches name.
 //!
 //!     We emphasize that the 'as if' above is part of this function's
 //!     contract; thus the function is subject to the same limitations
