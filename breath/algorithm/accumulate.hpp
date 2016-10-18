@@ -52,16 +52,16 @@ public:
 //!     Traits
 //!     ------
 //!
-//!     \c breath::accumulate() uses accumulate_traits<> as a point of
-//!     customization: you are allowed to specialize it, in namespace
-//!     \c breath, for your own types.
+//!     \c breath::accumulate() uses \c accumulate_traits<> as a point
+//!     of customization: you are allowed to specialize it, in
+//!     namespace \c breath, for your own types.
 //!
 //!     The default traits template performs a summation of the
-//!     elements in the range [begin, end) via operator+= (which is
-//!     searched via ADL).
+//!     elements in the range <code>[begin, end)</code> via
+//!     \c operator+= (which is searched via ADL).
 //!
-//!     Any accumulate_traits<> shall provide the following accessible
-//!     members:
+//!     Any \c accumulate_traits<> shall provide the following
+//!     accessible members:
 //!
 //!         - init_type
 //!         - result_type
