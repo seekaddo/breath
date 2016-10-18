@@ -16,7 +16,7 @@
 /*!
         Automatically provides a definition for \c operator==() and
         \c operator!=() in terms of a user-declared member function
-        %is_equal().
+        \c %is_equal().
 */
 
 namespace breath {
