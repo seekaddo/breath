@@ -30,8 +30,8 @@ namespace breath {
 //!      2. \c high shall be no lower than \c low
 //!
 //!     \return
-//!         \c low if value is less than \c low, \c high if \c value
-//!         is higher than \c high, otherwise \c value
+//!         \c low if \c value is less than \c low, \c high if \c
+//!         value is higher than \c high, otherwise \c value
 //!
 //!     Complexity:
 //!         One or two comparisons.
