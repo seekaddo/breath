@@ -11,16 +11,17 @@
 // -------------------------------------------------------------------------
 //
 //!     A convenience source file to separate out the crazy #includes
-//!     required for using EOF or char_traits<...>::eof():
+//!     required for using \c EOF or \c char_traits<...>::eof():
 //!
-//!       1. the former would require including <stdio.h> or <cstdio>
-//!       2. the latter would require <string>
+//!       1. the former would require including \c <stdio.h> or \c
+//!          <cstdio>
+//!       2. the latter would require \c <string>
 //!
 //!     Both choices are IMHO particularly annoying for maintenance
 //!     and code review: any reader of the code would probably wonder,
-//!     for (1), why you include <cstdio> if you are using C++ streams
-//!     (and not stdio); and, for (2), why you include <string> even
-//!     where there's no usage of std::string.
+//!     for (1), why you include \c <cstdio> if you are using C++
+//!     streams (and not stdio); and, for (2), why you include \c
+//!     <string> even where there's no usage of \c std::string.
 //!
 //!     The root of the issue is the poor header partitioning of the
 //!     standard library but we can't do anything about that. We can,
@@ -29,9 +30,9 @@
 //!     facility.
 //!
 //      NOTE: there's no .tpp file, here; it seemed just overkill.
-//            Also, it seems natural to add an is_eof_value(), too,
-//            since using eq_int_type would still require #including
-//            the <string> header.
+//            Also, it seemed natural to add an is_eof_value(), since
+//            using eq_int_type would still require #including the
+//            <string> header.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_9qsz7UnvkOIvyedOe6ND5qSGfNeCMIU0
