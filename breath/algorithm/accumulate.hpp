@@ -13,28 +13,6 @@
 #ifndef BREATH_GUARD_AIxamIWyjxqb3pPGHU23CYP8v7Zo1TTt
 #define BREATH_GUARD_AIxamIWyjxqb3pPGHU23CYP8v7Zo1TTt
 
-//      accumulate():
-//      =============
-//!
-//!     Traits
-//!     ------
-//!
-//!     breath::accumulate() uses accumulate_traits<> as a point of
-//!     customization: see below.
-//!
-//!     The default traits template performs a summation of the
-//!     elements in the range [begin, end) via operator+= (which is
-//!     searched via ADL).
-//!
-//!     Any accumulate_traits<> shall provide the following accessible
-//!     members:
-//!
-//!         - init_type
-//!         - result_type
-//!         - first()
-//!         - compute()
-// ---------------------------------------------------------------------------
-
 namespace breath {
 
 //      accumulate_traits<>:
@@ -69,13 +47,26 @@ public:
 } ;
 
 //      accumulate():
-//      -------------
-//
-//!     Generalized version of std::accumulate().
+//      =============
 //!
-//!     \c breath::accumulate_traits<> is a customization point: you
-//!     are allowed to specialize it, in namespace \c breath, for your
-//!     own types.
+//!     Traits
+//!     ------
+//!
+//!     \c breath::accumulate() uses accumulate_traits<> as a point of
+//!     customization: you are allowed to specialize it, in namespace
+//!     \c breath, for your own types.
+//!
+//!     The default traits template performs a summation of the
+//!     elements in the range [begin, end) via operator+= (which is
+//!     searched via ADL).
+//!
+//!     Any accumulate_traits<> shall provide the following accessible
+//!     members:
+//!
+//!         - init_type
+//!         - result_type
+//!         - first()
+//!         - compute()
 // ---------------------------------------------------------------------------
 template< typename InputIterator, typename T >
 typename accumulate_traits< T >::result_type
