@@ -10,7 +10,7 @@
 //!     \brief A replacement for \c EOF and \c char_traits<>::eof().
 // -------------------------------------------------------------------------
 //
-//!     A convenience source file to separate out the crazy #includes
+//!     A convenience source file to separate out the crazy \#includes
 //!     required for using \c EOF or \c char_traits<...>::eof():
 //!
 //!       1. the former would require including \c <stdio.h> or \c
