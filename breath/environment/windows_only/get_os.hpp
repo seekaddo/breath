@@ -13,15 +13,14 @@
 #ifndef BREATH_GUARD_lc9dZp5eUrNd9dbNZHDcvW36RGyTlJ77
 #define BREATH_GUARD_lc9dZp5eUrNd9dbNZHDcvW36RGyTlJ77
 
-// gps add notices
-
-
 #include "breath/environment/windows_only/os_id.hpp"
 
 namespace breath {
 
-    // note that this "determines" the running OS based on the information
-    // returned by Windows itself: as such, it might be not the "true" OS. --gps
+    //      Note that this "determines" the running OS based on the
+    //      information returned by Windows itself: as such, it might
+    //      be not the "true" OS.
+    // ---------------------------------------------------------------------
     os_id get_os();
 
 }
