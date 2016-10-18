@@ -51,8 +51,8 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //!         <code>comp( high, low ) == false</code>
 //!
 //!     \return
-//!         \c low if value is less than \c low, \c high if \c value
-//!         is higher than \c high, otherwise \c value.
+//!         \c low if \c value is less than \c low, \c high if \c
+//!         value is higher than \c high, otherwise \c value.
 //!
 //!     Complexity:
 //!         One or two comparisons.
