@@ -40,7 +40,7 @@ namespace breath {
 //      ------------------------
 //
 //!     Searches an implementation-defined list, as if by calling
-//!     \c std::getenv(), for a string that matches name.
+//!     \c std::getenv(), for a string that matches \c name.
 //!
 //!     We emphasize that the 'as if' above is part of this function's
 //!     contract; thus the function is subject to the same limitations
@@ -48,9 +48,9 @@ namespace breath {
 //!     main() is entered and others.
 //!
 //! Warning:
-//!     The behavior on passing an empty string for the name parameter
-//!     is implementation-defined: please check the documentation
-//!     provided with your C++ implementation.
+//!     The behavior on passing an empty string for the \c name
+//!     parameter is implementation-defined: please check the
+//!     documentation provided with your C++ implementation.
 // -----------------------------------------------------------------------
 maybe< std::string >
                     find_environment_string( string_argument const & name );
