@@ -162,7 +162,7 @@ is_server_2003_r2()
     return 0 != ::GetSystemMetrics( sm_serverr2 ) ;
 }
 
-// PRE:  never call this for Windows NT 3.5 or earlier (see MS docs)
+// Precondition:  never call this for Windows NT 3.5 or earlier (see MS docs)
 bool
 is_x64()
 {

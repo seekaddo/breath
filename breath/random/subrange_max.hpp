@@ -44,8 +44,8 @@ namespace breath {
 //!         For true random numbers it avoids needlessy discarding
 //!         numbers and thus consuming precious entropy.
 //!
-//!     PRE: 0 <= x <= m   (i.e. destination range not wider than
-//!                         source one)
+//!     Precondition: 0 <= x <= m   (i.e. destination range not wider
+//!                                  than source one)
 // -------------------------------------------------------------------------
 unsigned long       subrange_max( unsigned long x, unsigned long m ) ;
 
