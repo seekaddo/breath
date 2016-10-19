@@ -123,7 +123,7 @@ operator<<( std::ostream & dest, const os_id & id )
     // OSR2.5 (how to do that, if possible at all, is
     // undocumented in the SDK).
     // ---------------------------------------------------------
-    if ( id == os_id::windows_95 || id == os_id::windows_me
+    if ( ( id == os_id::windows_95 || id == os_id::windows_me )
         && ( std::strcmp(sps, " C" ) == 0 || std::strcmp(sps, " B" ) ) ) {
         dest << " OSR2" ;
     } else if (id == os_id::windows_98 && std::strcmp( sps, " A" ) == 0 ) {
