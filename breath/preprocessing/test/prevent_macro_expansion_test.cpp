@@ -11,7 +11,7 @@
 #define foo( a )    unexisting_function
 
 void
-(foo)( int n )
+(foo)( int )
 {
 }
 
