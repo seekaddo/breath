@@ -7,6 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/text/trim_tail.hpp"
+#include "breath/text/set_of_chars.hpp"
 
 #include <string>
 
