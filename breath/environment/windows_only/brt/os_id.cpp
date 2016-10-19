@@ -124,7 +124,7 @@ operator<<( std::ostream & dest, const os_id & id )
     // undocumented in the SDK).
     // ---------------------------------------------------------
     if ( ( id == os_id::windows_95 || id == os_id::windows_me )
-        && ( std::strcmp(sps, " C" ) == 0 || std::strcmp(sps, " B" ) ) ) {
+        && ( std::strcmp(sps, " C" ) == 0 || std::strcmp(sps, " B" ) == 0 ) ) {
         dest << " OSR2" ;
     } else if (id == os_id::windows_98 && std::strcmp( sps, " A" ) == 0 ) {
         dest << " Second Edition";
