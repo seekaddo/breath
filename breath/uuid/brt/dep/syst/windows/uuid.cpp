@@ -48,7 +48,7 @@ uuid::uuid( uuid::variant var, uuid::version ver )
     m_clock_seq = ( ( rnd >> 4 ) & 0x3fff ) | 0x8000 ;
 
     for (std::size_t i = 0 ; i < breath::count( m_node ) ; ++ i ) {
-        m_node[i] = node_id::instance()[ i ] ;
+        m_node[i] = node_id::instance()[ static_cast< int >( i ) ] ;
     }
 }
 
