@@ -21,7 +21,7 @@ has_processor_brand_string()
         return false ;
     }
 
-    unsigned const      mask = 0x80000000 ;
+    unsigned const      mask = 0x8000'0000 ;
     cpuid_result const  r = get_cpuid_info( mask, 0 ) ;
 
     return (r.eax & mask) != 0 &&
