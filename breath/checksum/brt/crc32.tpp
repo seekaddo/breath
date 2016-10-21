@@ -63,7 +63,8 @@ crc32( InputIterator begin, InputIterator end )
         0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d
     } ;
 
-    std::uint_fast32_t const all_ones = 0xFFFF'FFFFuL;
+    std::uint_fast32_t const
+                        all_ones = 0xFFFF'FFFFuL;
     return all_ones &
            ~ std::accumulate( begin, end,
                               all_ones,
