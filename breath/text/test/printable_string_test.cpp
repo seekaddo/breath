@@ -19,21 +19,21 @@ main()
     using breath::printable_string ;
 
     {
-        printable_string    p = nullptr ;
+        printable_string    p( nullptr );
         std::ostringstream  ss ;
         ss << p ;
         DO_TEST( ss.str() == "(null)" ) ;
     }
 
     {
-        printable_string    p = "\'\"\?\\\a\b\f\n\r\t\v\x1\xA0\xFF" ;
+        printable_string    p( "\'\"\?\\\a\b\f\n\r\t\v\x1\xA0\xFF" ) ;
         std::ostringstream  ss ;
         ss << p ;
         DO_TEST( ss.str() == "\"'\\\"\\?\\\\\\a\\b\\f\\n\\r\\t\\v\\x01\\xa0\\xff\"") ;
     }
 
     {
-        printable_string    no_trigraph = "\?\?!" ;
+        printable_string    no_trigraph( "\?\?!" ) ;
         std::ostringstream  ss ;
         ss << no_trigraph ;
         DO_TEST( ss.str() == "\"\\?\\?!\"" ) ;
