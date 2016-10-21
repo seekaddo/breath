@@ -16,7 +16,7 @@ namespace breath {
 std::string
 this_process::current_directory()
 {
-    std::size_t const   required = GetCurrentDirectoryA( 0, nullptr ) ;
+    DWORD const         required = GetCurrentDirectoryA( 0, nullptr ) ;
     if ( required == 0 ) {
         throw last_api_error( "GetCurrentDirectoryA( 0, nullptr ) failed" ) ;
     }
