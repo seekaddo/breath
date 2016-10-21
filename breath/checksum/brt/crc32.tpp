@@ -63,10 +63,10 @@ crc32( InputIterator begin, InputIterator end )
         0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d
     } ;
 
-    return static_cast< std::uint_fast32_t >(0xFFFFFFFFuL) &
-            ~ std::accumulate( begin, end,
-                               ~ std::uint_fast32_t( 0 ) &
-                               std::uint_fast32_t( 0xFFFFFFFFuL ),
+    std::uint_fast32_t const all_ones = 0xFFFF'FFFFuL;
+    return all_ones &
+           ~ std::accumulate( begin, end,
+                              all_ones,
             []( std::uint_fast32_t checksum, std::uint_fast8_t value )
             {
                 return table[ ( checksum ^ value ) & 0xFF ] ^ ( checksum >> 8 );
