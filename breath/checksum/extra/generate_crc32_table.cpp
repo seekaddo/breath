@@ -28,7 +28,8 @@ main()
     public:
         fast32_type operator()() noexcept
         {
-            uint_fast32_t       reversed_polynomial{ 0xEDB88320uL } ;
+            constexpr uint_fast32_t
+                                reversed_polynomial{ 0xEDB88320uL } ;
             constexpr int       char_bit = 8 ;
             auto checksum = static_cast< fast32_type >( m_n ) ;
             ++ m_n ;
