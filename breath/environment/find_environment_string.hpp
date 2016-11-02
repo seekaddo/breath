@@ -53,7 +53,7 @@ namespace breath {
 //!     documentation provided with your C++ implementation.
 // -----------------------------------------------------------------------
 maybe< std::string >
-                    find_environment_string( string_argument const & name );
+                    find_environment_string( string_argument const & name ) ;
 
 }
 
