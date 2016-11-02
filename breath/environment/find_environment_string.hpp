@@ -28,7 +28,7 @@
         - if the searched to string is not found \c getenv() returns a
           null pointer; that can easily lead to undefined behavior,
           typically by passing that value to one of the constructors
-          of \c std::string which take a const char *.
+          of \c std::string which take a <code>const char *</code>.
 */
 
 #include "breath/idiom/string_argument.hpp"
