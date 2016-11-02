@@ -11,6 +11,9 @@
 //!            counter, plus overflow checking.
 // -------------------------------------------------------------------------
 
+#ifndef BREATH_GUARD_igDqQSfWTOavMKrliVx0QKSbOMZ1k4kD
+#define BREATH_GUARD_igDqQSfWTOavMKrliVx0QKSbOMZ1k4kD
+
 #include "breath/operator/comparison.hpp"
 
 namespace breath {
@@ -69,6 +72,7 @@ private:
 }
 
 #include "brt/counter.tpp"
+#endif
 
 // Local Variables:
 // mode: c++
