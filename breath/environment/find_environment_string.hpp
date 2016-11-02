@@ -15,17 +15,17 @@
 
 
 /*!
-        Thin wrapper around the getenv() standard function
+        Thin wrapper around the \c getenv() standard function
 
-        Overcomes three usability issues of getenv():
+        Overcomes three usability issues of \c getenv():
 
-        - const unsafety: getenv() returns a pointer to (non const)
+        - const unsafety: \c getenv() returns a pointer to (non const)
           char (which the program shall not modify)
 
-        - subsequent calls to getenv() may overwrite the pointed to
+        - subsequent calls to \c getenv() may overwrite the pointed to
           string
 
-        - if the searched to string is not found getenv() returns a
+        - if the searched to string is not found \c getenv() returns a
           null pointer; that can easily lead to undefined behavior,
           typically by passing that value to one of the constructors
           of \c std::string which take a const char *.
