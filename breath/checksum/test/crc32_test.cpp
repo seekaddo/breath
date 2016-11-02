@@ -21,7 +21,7 @@ check_known()
     struct
     {
         std::string text ;
-        unsigned long long crc32 ;
+        unsigned long crc32 ;
     } const             known[] =
     {
         // Test vectors verified with:
