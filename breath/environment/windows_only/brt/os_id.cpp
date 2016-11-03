@@ -136,7 +136,7 @@ operator<<( std::ostream & dest, const os_id & id )
         if ( sps[ 0 ] != '\0' ) {
             dest << " " << sps ;
         }
-        if ( info.is_64_bit() ) {
+        if ( windows_version_info::is_64_bit() ) {
             dest << ", 64-bit" ;
         }
     }
