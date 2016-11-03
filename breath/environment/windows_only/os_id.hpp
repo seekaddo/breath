@@ -78,7 +78,10 @@ public:
         windows_vista,
         windows_server_2008,
         windows_server_2008_r2,
-        windows_7
+        windows_7,
+        windows_8,
+        windows_8_1,
+        windows_10
     ;
 
 } ;

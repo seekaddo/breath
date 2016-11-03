@@ -40,7 +40,10 @@ static char const * const
     "Windows Vista",
     "Windows Server 2008",
     "Windows Server 2008 R2",
-    "Windows 7"
+    "Windows 7",
+    "Windows 8",
+    "Windows 8.1",
+    "Windows 10"
 
     // gps remove this, no? "Unidentified Windows version (not yet supported)"
     
@@ -90,7 +93,10 @@ const os_id
         os_id::windows_vista                      ( 13 ),
         os_id::windows_server_2008                ( 14 ),
         os_id::windows_server_2008_r2             ( 15 ),
-        os_id::windows_7                          ( 16 )
+        os_id::windows_7                          ( 16 ),
+        os_id::windows_8                          ( 17 ),
+        os_id::windows_8_1                        ( 18 ),
+        os_id::windows_10                         ( 19 )
     ;
 
 

@@ -183,6 +183,16 @@ identify_nt( windows_version_info const & info )
 
     switch( version )
     {
+    case win_version( 10, 0 ):
+        id = os_id::windows_10 ;
+        break ;
+    case win_version( 6, 3 ):
+        id = os_id::windows_8_1 ;
+        break ;
+    case win_version( 6, 2 ):
+        id = os_id::windows_8 ;
+        break ;
+
     case win_version( 6, 1 ):
         if ( info.is_workstation() ) {
             id = os_id::windows_7 ;
