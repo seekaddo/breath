@@ -28,7 +28,7 @@ test_runner::attach_reporter( test_reporter & rep )
 }
 
 void
-test_runner::run(std::initializer_list< test_descriptor > list)
+test_runner::run( std::initializer_list< test_descriptor > list )
 {
     run( list.begin(), list.end() ) ;
 }
