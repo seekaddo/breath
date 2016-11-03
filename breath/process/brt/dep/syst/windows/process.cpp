@@ -114,9 +114,16 @@ process::terminate()
         throw last_api_error( "GetExitCodeProcess failed" ) ;
     }
     if ( exit_code == STILL_ACTIVE ) {
-        FARPROC             exit_proc = GetProcAddress(
-                             GetModuleHandleA("kernel32.dll"), "ExitProcess" ) ;
+        HMODULE             kernel = GetModuleHandleA( "kernel32.dll" ) ;
+        if ( kernel == NULL ) {
+            throw last_api_error( "GetModuleHandleA failed" ) ;
+        }
 
+        FARPROC             exit_proc = GetProcAddress( kernel,
+                                                        "ExitProcess" ) ;
+        if ( exit_proc == NULL ) {
+            throw last_api_error( "GetProcAddress failed" ) ;
+        }
         unsigned            dummy = 0 ;
         process_private::handle const
                             h( CreateRemoteThread(
