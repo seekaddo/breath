@@ -186,9 +186,11 @@ identify_nt( windows_version_info const & info )
     case win_version( 10, 0 ):
         id = os_id::windows_10 ;
         break ;
+
     case win_version( 6, 3 ):
         id = os_id::windows_8_1 ;
         break ;
+
     case win_version( 6, 2 ):
         id = os_id::windows_8 ;
         break ;
@@ -200,6 +202,7 @@ identify_nt( windows_version_info const & info )
             id = os_id::windows_server_2008_r2 ;
         }
         break ;
+
     case win_version( 6, 0 ):
         if( info.is_workstation() ) {
             id = os_id::windows_vista ;
