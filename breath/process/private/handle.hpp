@@ -20,7 +20,7 @@ class handle
     BREATH_DECLARE_NON_COPYABLE( handle )
 
 public:
-    explicit            handle( HANDLE h) : m_handle( h )
+    explicit            handle( HANDLE h ) : m_handle( h )
                         {}
                         ~handle() noexcept
                         {
