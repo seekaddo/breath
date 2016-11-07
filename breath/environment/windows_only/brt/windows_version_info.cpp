@@ -328,6 +328,9 @@ windows_version_info::is_64_bit()
 bool
 windows_version_info::is_client() const
 {
+    // It has no real impact on us, however this function is
+    // documented to return a BOOL but declared to return a bool in
+    // the corresponding header [last checked: November 2016].
     return IsWindowsServer() == 0 ;
 }
 
