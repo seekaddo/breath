@@ -47,9 +47,6 @@ static char const * const
     "Windows Server 2012 R2",
     "Windows 10",
     "Windows Server 2016"
-
-    // gps remove this, no? "Unidentified Windows version (not yet supported)"
-    
 } ;
 
 }
