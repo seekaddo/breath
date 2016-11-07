@@ -66,7 +66,7 @@ public:
 
     //! \return Whether the system is a Windows client version.
     // -----------------------------------------------------------------------
-    bool                is_client() const ;
+    static bool         is_client() ;
 
     //! \return A string with the service pack of the operating system.
     // -----------------------------------------------------------------------

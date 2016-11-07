@@ -192,7 +192,7 @@ identify_nt( windows_version_info const & info )
     unsigned const      version(
                   win_version( info.major_version(), info.minor_version() ) ) ;
 
-    if ( info.is_client() ) {
+    if ( windows_version_info::is_client() ) {
         switch( version )
         {
         case win_version( 10, 0 ):

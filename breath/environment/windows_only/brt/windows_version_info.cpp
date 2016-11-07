@@ -326,7 +326,7 @@ windows_version_info::is_64_bit()
 }
 
 bool
-windows_version_info::is_client() const
+windows_version_info::is_client()
 {
     // It has no real impact on us, however this function is
     // documented to return a BOOL but declared to return a bool in
