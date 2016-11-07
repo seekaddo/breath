@@ -150,7 +150,6 @@
 
 #include "breath/environment/windows_only/get_os.hpp"
 
-#include "breath/diagnostics/assert.hpp"
 #include "breath/environment/windows_only/windows_version_info.hpp"
 #include "breath/environment/windows_only/os_id.hpp"
 
