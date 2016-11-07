@@ -30,7 +30,7 @@ namespace breath {
 //   comparisons:
 //
 //     // windows 2000 or "later"?
-//     if( id > os_id::windows_2000 )
+//     if( id >= os_id::windows_2000 )
 //
 //   But...
 //   not only this might not make sense for other systems; at the time of
