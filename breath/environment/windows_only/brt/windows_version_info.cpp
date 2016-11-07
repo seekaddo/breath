@@ -7,84 +7,76 @@
 // _________________________________________________________________________
 
 #include "breath/environment/windows_only/windows_version_info.hpp"
-#include "breath/environment/windows_only/os_platform.hpp"
+#include "breath/text/from_string.hpp"
+#include "breath/text/to_string.hpp"
 
+#include <VersionHelpers.h>
 #include <stdexcept>
+#include <string>
 
 namespace breath {
 
-// using a bool for failure/success isn't stellar software engineering, and
-// wouldn't be acceptable in a public component, but given that this is an
-// implementation detail, and that it gives some conciseness...
-template< typename ApiStruct >
-bool
-windows_version_info::retrieve()
-{
-    int const           failure( 0 ) ;
-
-    m_api_info.dwOSVersionInfoSize = sizeof( ApiStruct ) ;
-    return failure != ::GetVersionEx(
-                        reinterpret_cast< simple_type * >( &m_api_info )
-                        ) ;
-}
-
 windows_version_info::windows_version_info()
-    : m_api_info()
 {
-    if ( !retrieve< extended_type >() && !retrieve< simple_type >() ) {
-            // gps we'll probably have something more specific here
+    constexpr int       level = 100 ;
+    NET_API_STATUS const
+                        status = NetWkstaGetInfo( nullptr, level,
+                                     reinterpret_cast< BYTE ** >( &m_info ) ) ;
+    if ( status != NERR_Success ) {
+        // gps we'll probably have something more specific here
         throw std::runtime_error( "cannot retrieve Windows version info" ) ;
     }
+}
+
+windows_version_info::~windows_version_info()
+{
+    // Ignoring the return value (success or failure).
+    NetApiBufferFree( m_info ) ;
 }
 
 int
 windows_version_info::major_version() const
 {
-    return m_api_info.dwMajorVersion ;
+    return m_info->wki100_ver_major ;
 }
 
 int
 windows_version_info::minor_version() const
 {
-    return m_api_info.dwMinorVersion ;
+    return m_info->wki100_ver_minor ;
 }
 
 int
 windows_version_info::build_number() const
 {
-    // This is a bit tricky: the documentation of OSVERSIONINFO
-    // says that
-    //
-    // a) for Me/98/95 we have to consider the low-order word only
-    //
-    // b) For other systems, or when we are not using the old
-    //    OSVERSIONINFO structure, we have to consider the whole
-    //    dword (so, there could theoretically be build numbers
-    //    higher than 65535)
-    //
-    // Now, some experiment on Windows XP, with the exe in Win95,
-    // 98, Me compatibility-mode, showed that even if the system
-    // reports to be, say, Windows 98, it still allows to use
-    // OSVERSIONINFOEX. But, since we can be sure that on any of
-    // Me/98/95 the build number is all contained in the low-order
-    // word, we can simply omit to test whether we used
-    // OSVERSIONINFO or a newer structure.
-    //
-    // As further annotation: we use platform == windows_9x as a
-    // shortcut for "is in { Me, 98, 95 }". Strictly speaking we
-    // should do the latter test, but that requires get_os(); in
-    // practice the shortcut is safe as it's very unlikely that
-    // new Windows versions will be introduced which belong to the
-    // Win9x family.
-    //
-    // gps cast DWORD -> int Ok? :-/
+    //      Take the Windows build number from the registry.
+    //      In my registry there are both CurrentBuild and
+    //      CurrentBuildNumber. Using the latter as it has a more
+    //      explicit name. [gps]
     // -------------------------------------------------------------------
-
-    DWORD const n( m_api_info.dwBuildNumber );
-    return platform() == os_platform::windows_9x
-        ? LOWORD( n )
-        : n
-        ;
+    HKEY                key = NULL;
+    LONG const          ret = RegOpenKeyEx( HKEY_LOCAL_MACHINE,
+                              "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion",
+                              0,
+                              KEY_QUERY_VALUE | KEY_WOW64_32KEY,
+                              &key ) ;
+    if ( ret != ERROR_SUCCESS ) {
+        // gps we'll probably have something more specific here
+        throw std::runtime_error( "cannot open the CurrentVersion"
+                                  " registry key" ) ;
+    }
+    constexpr int       size = 256;
+    DWORD               dw_size = size ;
+    char                buffer[ size ] = {} ;
+    int                 ret2 = RegGetValue( key, "", "CurrentBuildNumber",
+                                 RRF_RT_ANY, nullptr,
+                                 &buffer, &dw_size ) ;
+    if ( ret2 != ERROR_SUCCESS ) {
+        // gps we'll probably have something more specific here
+        throw std::runtime_error( "cannot query the CurrentBuildNumber value"
+                                  " from registry" ) ;
+    }
+    return breath::from_string< int >(std::string( buffer ) ) ;
 }
 
 char const *
@@ -96,7 +88,10 @@ windows_version_info::edition() const
     }
 
     DWORD               dw ;
-    GetProductInfo( major_version(), minor_version(), 0, 0, &dw ) ;
+    int const           failure = 0 ;
+    if ( GetProductInfo( major_version(), minor_version(), 0, 0, &dw ) == failure ) {
+        return "" ;
+    }
 
     switch( dw ) {
         case PRODUCT_UNDEFINED:
@@ -126,7 +121,7 @@ windows_version_info::edition() const
         case PRODUCT_DATACENTER_SERVER:
             return "Datacenter Edition" ;
             break ;
-       case PRODUCT_SMALLBUSINESS_SERVER:
+        case PRODUCT_SMALLBUSINESS_SERVER:
             return "Small Business Server" ;
             break ;
         case PRODUCT_ENTERPRISE_SERVER:
@@ -157,7 +152,7 @@ windows_version_info::edition() const
             return "HPC Edition" ;
             break ;
         case PRODUCT_HOME_SERVER:
-            return "Home Server" ; // gps undocumented in my SDK
+            return "Storage Server 2008 R2 Essentials" ;
             break ;
         case PRODUCT_STORAGE_EXPRESS_SERVER:
             return "Storage Server Express" ;
@@ -174,7 +169,7 @@ windows_version_info::edition() const
         case PRODUCT_SERVER_FOR_SMALLBUSINESS:
             return "for Windows Essential Server Solutions" ;
             break ;
-        case PRODUCT_SMALLBUSINESS_SERVER_PREMIUM: // gps undocumented in my SDK
+        case PRODUCT_SMALLBUSINESS_SERVER_PREMIUM:
             return "Small Business Server Premium" ;
             break ;
         case PRODUCT_HOME_PREMIUM_N:
@@ -201,8 +196,8 @@ windows_version_info::edition() const
         case PRODUCT_SERVER_FOUNDATION:
             return "Server Foundation" ;
             break ;
-        case PRODUCT_HOME_PREMIUM_SERVER: // gps undocumented in my SDK
-            return "Home Premium Server" ;
+        case PRODUCT_HOME_PREMIUM_SERVER:
+            return "Home Server 2011" ;
             break ;
         case PRODUCT_SERVER_FOR_SMALLBUSINESS_V:
             return "without Hyper-V for Windows Essential Server Solutions" ;
@@ -227,15 +222,16 @@ windows_version_info::edition() const
         case PRODUCT_HYPERV:
             return "Microsoft Hyper-V Server" ;
             break ;
-        case PRODUCT_STORAGE_EXPRESS_SERVER_CORE: // gps undocumented in my SDK
+        case PRODUCT_STORAGE_EXPRESS_SERVER_CORE:
             return "Storage Server Express (core installation)" ;
             break ;
-        case PRODUCT_STORAGE_STANDARD_SERVER_CORE: // gps undocumented in my SDK
+        case PRODUCT_STORAGE_STANDARD_SERVER_CORE:
             return "Storage Server Standard (core installation)" ;
             break ;
-        case PRODUCT_STORAGE_WORKGROUP_SERVER_CORE: // gps undocumented in my SDK
+        case PRODUCT_STORAGE_WORKGROUP_SERVER_CORE:
             return "Storage Server Workgroup (core installation)" ;
-        case PRODUCT_STORAGE_ENTERPRISE_SERVER_CORE: // gps undocumented in my SDK
+            break ;
+        case PRODUCT_STORAGE_ENTERPRISE_SERVER_CORE:
             return "Storage Server Enterprise (core installation)" ;
             break ;
         case PRODUCT_STARTER_N:
@@ -248,46 +244,46 @@ windows_version_info::edition() const
             return "Professional N" ;
             break ;
         case PRODUCT_SB_SOLUTION_SERVER:
-            return "undocumented [PRODUCT_SB_SOLUTION_SERVER]" ; //gps [FUTURE]
+            return "Small Business Server 2011 Essentials" ;
             break ;
-        case PRODUCT_SERVER_FOR_SB_SOLUTIONS: //gps undocumented in my SDK
-            return "for Windows Essential Server Solutions" ;
+        case PRODUCT_SERVER_FOR_SB_SOLUTIONS:
+            return "Server For SB Solutions" ;
             break ;
         case PRODUCT_STANDARD_SERVER_SOLUTIONS:
-            return "undocumented [PRODUCT_STANDARD_SERVER_SOLUTIONS]" ; // gps
+            return "Server Solutions Premium " ;
             break ;
         case PRODUCT_STANDARD_SERVER_SOLUTIONS_CORE:
-            return "undocumented [PRODUCT_STANDARD_SERVER_SOLUTIONS_CORE]" ; // gps
+            return "Server Solutions Premium (core installation)" ;
             break ;
         case PRODUCT_SB_SOLUTION_SERVER_EM:
-            return "undocumented [PRODUCT_SB_SOLUTION_SERVER_EM]" ; // gps
+            return "Server For SB Solutions EM" ;
             break ;
         case PRODUCT_SERVER_FOR_SB_SOLUTIONS_EM:
-            return "undocumented [PRODUCT_SERVER_FOR_SB_SOLUTIONS_EM]" ; // gps
+            return "Server For SB Solutions EM" ;
             break ;
         case PRODUCT_SOLUTION_EMBEDDEDSERVER:
-            return "undocumented [PRODUCT_SOLUTION_EMBEDDEDSERVER]" ; // gps
+            return "MultiPoint Server" ;
             break ;
         case PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE:
             return "undocumented [PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE]" ; // gps
             break ;
         case PRODUCT_SMALLBUSINESS_SERVER_PREMIUM_CORE:
-            return "undocumented [PRODUCT_SMALLBUSINESS_SERVER_PREMIUM_CORE]" ; //gps
+            return "Small Business Server Premium (core installation)" ;
             break ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMT:
-            return "undocumented [PRODUCT_ESSENTIALBUSINESS_SERVER_MGMT]" ; //gps
+            return "Essential Server Solution Management" ;
             break ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDL:
-            return "undocumented [PRODUCT_ESSENTIALBUSINESS_SERVER_ADDL]" ; //gps
+            return "Essential Server Solution Additional" ;
             break ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMTSVC:
-            return "undocumented [PRODUCT_ESSENTIALBUSINESS_SERVER_MGMTSVC]" ; // gps
+            return "Essential Server Solution Management SVC" ;
             break ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDLSVC:
-            return "undocumented [PRODUCT_ESSENTIALBUSINESS_SERVER_ADDLSVC]" ; // gps
+            return " Essential Server Solution Additional SVC" ;
             break ;
         case PRODUCT_CLUSTER_SERVER_V:
-            return "undocumented [PRODUCT_CLUSTER_SERVER_V]" ; // gps
+            return "Server Hyper Core V" ;
             break ;
         case PRODUCT_EMBEDDED:
             return "undocumented [PRODUCT_EMBEDDED]" ; //gps
@@ -320,18 +316,6 @@ windows_version_info::edition() const
     }
 }
 
-os_platform
-windows_version_info::platform() const
-{
-    return os_platform( m_api_info.dwPlatformId ) ;
-}
-
-int
-windows_version_info::suite_mask() const
-{
-    return m_api_info.wSuiteMask ;
-}
-
 bool
 windows_version_info::is_64_bit()
 {
@@ -342,31 +326,41 @@ windows_version_info::is_64_bit()
 }
 
 bool
-windows_version_info::is_workstation() const
+windows_version_info::is_client() const
 {
-    // note that this will return false when OSVERSIONINFOEX
-    // is not available (VER_NT_WORKSTATION is different from 0)
-    return m_api_info.wProductType == VER_NT_WORKSTATION ;
+    return IsWindowsServer() == 0 ;
 }
 
-bool
-windows_version_info::is_suite_wh_server() const
-{
-    // note that this will return false when OSVERSIONINFOEX
-    // is not available (VER_SUITE_WH_SERVER is different from 0)
-    return ( m_api_info.wSuiteMask & VER_SUITE_WH_SERVER ) != 0 ;
-}
-
-bool
-windows_version_info::is_suite_storage_server() const
-{
-    return ( m_api_info.wSuiteMask & VER_SUITE_STORAGE_SERVER ) != 0 ;
-}
-
-char const *
+std::string
 windows_version_info::service_pack_string() const
 {
-    return m_api_info.szCSDVersion ;
+    HKEY                key = NULL;
+    LONG const          ret = RegOpenKeyEx( HKEY_LOCAL_MACHINE,
+                              "SYSTEM\\CurrentControlSet\\Control\\Windows",
+                              0,
+                              KEY_QUERY_VALUE | KEY_WOW64_32KEY,
+                              &key ) ;
+    if ( ret != ERROR_SUCCESS ) {
+        // gps we'll probably have something more specific here
+        throw std::runtime_error( "cannot open the Control\\Windows"
+                                  " registry key" ) ;
+    }
+    DWORD               value ;
+    DWORD               dw_size = sizeof value ;
+    int                 ret2 = RegGetValue( key, "", "CSDVersion",
+                                 RRF_RT_ANY, nullptr,
+                                 &value, &dw_size ) ;
+    if ( ret2 != ERROR_SUCCESS ) {
+        // gps we'll probably have something more specific here
+        throw std::runtime_error( "cannot query the CSDVersion value"
+                                  " from registry" ) ;
+    }
+
+    int const           sp = value / 256 ;
+    return sp == 0
+        ? ""
+        : "Service Pack " + breath::to_string( sp )
+        ;
 }
 
 }

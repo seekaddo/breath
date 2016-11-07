@@ -15,6 +15,18 @@
 //      Necessary background:
 //      ---------------------
 //
+//      November 2016 note:
+//      -------------------
+//
+//      what follows is the analysis done when the implementation used
+//      GetVersionEx(). However that API has changed semantics in
+//      Windows 8.1 and can no longer be used to identify the running
+//      system.
+//      The current implementation uses the NetWkstaGetInfo() API, so
+//      the following has just historical value.
+//      Also the minimum supported Windows version is now Windows 2000.
+//      ---------------------------------------------------------------------
+//
 //      The bizzarre design and "evolution" of the Windows API makes
 //      the whole task of getting the running OS version a fastidious
 //      programming puzzle, and an accurate analysis is in order
@@ -140,7 +152,6 @@
 
 #include "breath/diagnostics/assert.hpp"
 #include "breath/environment/windows_only/windows_version_info.hpp"
-#include "breath/environment/windows_only/os_platform.hpp"
 #include "breath/environment/windows_only/os_id.hpp"
 
 
@@ -177,105 +188,99 @@ is_x64()
 os_id
 identify_nt( windows_version_info const & info )
 {
-    os_id           id( os_id::windows_unknown ) ;
-    unsigned const version(
-             win_version( info.major_version(), info.minor_version() ) ) ;
+    os_id               id( os_id::windows_unknown ) ;
+    unsigned const      version(
+                  win_version( info.major_version(), info.minor_version() ) ) ;
 
-    switch( version )
-    {
-    case win_version( 10, 0 ):
-        id = os_id::windows_10 ;
-        break ;
+    if ( info.is_client() ) {
+        switch( version )
+        {
+        case win_version( 10, 0 ):
+            id = os_id::windows_10 ;
+            break ;
 
-    case win_version( 6, 3 ):
-        id = os_id::windows_8_1 ;
-        break ;
+        case win_version( 6, 3 ):
+            id = os_id::windows_8_1 ;
+            break ;
 
-    case win_version( 6, 2 ):
-        id = os_id::windows_8 ;
-        break ;
+        case win_version( 6, 2 ):
+            id = os_id::windows_8 ;
+            break ;
 
-    case win_version( 6, 1 ):
-        if ( info.is_workstation() ) {
-            id = os_id::windows_7 ;
-        } else {
-            id = os_id::windows_server_2008_r2 ;
-        }
-        break ;
+        case win_version( 6, 1 ):
+                id = os_id::windows_7 ;
+            break ;
 
-    case win_version( 6, 0 ):
-        if( info.is_workstation() ) {
-            id = os_id::windows_vista ;
-        } else {
-            id = os_id::windows_server_2008 ;
-        }
-        break ;
+        case win_version( 6, 0 ):
+                id = os_id::windows_vista ;
+            break ;
 
-    case win_version( 5, 2 ):
-        if( is_server_2003_r2() ) {
-            id = os_id::windows_server_2003_r2 ;
-        }
-        else if( info.is_workstation() ) {
-            if( is_x64() ) {
-                id = os_id::windows_xp_professional_x64_edition ;
+        case win_version( 5, 2 ):
+            if ( is_x64() ) {
+                id = os_id::windows_xp_professional_x64_edition;
             }
+            break ;
+
+        case win_version( 5, 1 ):
+            id = os_id::windows_xp ;
+            break ;
+
+        case win_version( 5, 0 ):
+            id = os_id::windows_2000 ;
+            break ;
+
+        default:
+            // hmm... new version on the shelves?
+            id = os_id::windows_unknown ;
+            break ;
         }
-        if ( info.is_suite_wh_server() ) {
-            id = os_id::windows_home_server ;
-        } else if ( info.is_suite_storage_server() ) {
-            id = os_id::windows_storage_server_2003 ;
-        } else {
-            id = os_id::windows_server_2003 ;
+    } else {
+    
+        switch( version )
+        {
+        case win_version( 10, 0 ):
+            id = os_id::windows_server_2016 ;
+            break ;
+
+        case win_version( 6, 3 ):
+            id = os_id::windows_server_2012_r2 ;
+            break ;
+
+        case win_version( 6, 2 ):
+            id = os_id::windows_server_2012 ;
+            break ;
+
+        case win_version( 6, 1 ):
+                id = os_id::windows_server_2008_r2 ;
+            break ;
+
+        case win_version( 6, 0 ):
+                id = os_id::windows_server_2008 ;
+            break ;
+
+        case win_version( 5, 2 ):
+            // gps TODO: how to distinguish Windows Storage Server 2003?
+                id = is_server_2003_r2()
+                    ? os_id::windows_server_2003_r2
+                    : os_id::windows_server_2003
+                    ;
+            break ;
+
+        case win_version( 5, 0 ):
+            id = os_id::windows_2000 ;
+            break ;
+
+        default:
+            // hmm... new version on the shelves?
+            id = os_id::windows_unknown ;
+            break ;
         }
-        break ;
-
-    case win_version( 5, 1 ):
-        id = os_id::windows_xp ;
-        break ;
-
-    case win_version( 5, 0 ):
-        id = os_id::windows_2000 ;
-        break ;
-
-    case win_version( 4, 0 ):
-        id = os_id::windows_nt ;
-        break ;
-
-    default:
-        // hmm... new version on the shelves?
-        id = os_id::windows_unknown ;
-        break ;
+    
     }
 
     return id ;
 }
 
-os_id
-identify_9x( windows_version_info const & info )
-{
-    unsigned const version(
-        win_version( info.major_version(), info.minor_version() ) ) ;
-
-    switch( version )
-    {
-        case win_version( 4, 90 ):
-            return os_id::windows_me ;
-            break ;
-
-        case win_version( 4, 10 ):
-            return os_id::windows_98 ;
-            break ;
-
-        case win_version( 4, 0 ):
-            return os_id::windows_95 ;
-            break ;
-    }
-
-    // shouldn't happen; they didn't produce a new OS in the 9x family, did
-    // they?
-    BREATH_ASSERT( false ) ;
-    return os_id::windows_unknown ;
-}
 }
 
 os_id
@@ -283,16 +288,11 @@ get_os()
 {
     windows_version_info const
                         info ;
-    os_platform const & platform( info.platform() ) ;
-
-    if(      platform == os_platform::windows_nt )
-        return identify_nt( info ) ;
-    else if( platform == os_platform::windows_9x )
-        return identify_9x( info ) ;
-    else if( platform == os_platform::win32s )
-        return os_id::win32s ;
-    else
-        return os_id::windows_unknown ;
+    // When Windows 9x was supported as well, the function identify_nt()
+    // was accompanied by a corresponding identify_9x. Now that the
+    // latter has disappeared, identify_nt could be conglobated directly
+    // into get_os().
+    return identify_nt( info ) ;
 }
 
 }

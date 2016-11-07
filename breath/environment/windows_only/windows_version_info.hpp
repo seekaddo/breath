@@ -11,9 +11,11 @@
 // -------------------------------------------------------------------------
 
 #include <ostream>
+#include <string>
 // gps aggiungere, in ANNOUNCE.txt, cosa facciamo con i platform headers
 #undef UNICODE
 #include <windows.h>
+#include <lm.h>
 
 
 namespace breath {
@@ -23,27 +25,23 @@ class os_platform;
 class windows_version_info
 {
 private:
-    typedef OSVERSIONINFOEX
-                        extended_type ;
-    typedef OSVERSIONINFO
-                        simple_type ;
-
-    extended_type       m_api_info ;
-
-    template< typename APIStruct >
-    bool                retrieve() ;
+    WKSTA_INFO_100 *    m_info = nullptr ;
 
 public:
-    //! Construct a \c windows_version_info object.
+    //! Constructs a \c windows_version_info object.
     // -----------------------------------------------------------------------
                         windows_version_info() ;
 
-    //! Compiler-generated copy members.
+	//! Destroys a \c windows_version_info object.
+    // -----------------------------------------------------------------------
+                        ~windows_version_info() ;
+
+    //! Deleted copy members.
     // -----------------------------------------------------------------------
                         windows_version_info( windows_version_info const & ) =
-                                                                    default ;
+                                                                    delete ;
     windows_version_info &
-                        operator=( windows_version_info const & ) = default ;
+                        operator=( windows_version_info const & ) = delete ;
 
     //! \return The major version number of the operating system.
     // -----------------------------------------------------------------------
@@ -62,34 +60,17 @@ public:
     // -----------------------------------------------------------------------
     char const *        edition() const ;
 
-    //! \return The platform of the operating system.
-    // -----------------------------------------------------------------------
-    os_platform         platform() const ;
-
-    //! \return The member \c wSuiteMask of \c OSVERSIONINFOEX.
-    int                 suite_mask() const ;
-
     //! \return Whether the OS is 64-bit.
     // -----------------------------------------------------------------------
     static bool         is_64_bit() ;
 
-    //! \return Whether the system is of workstation type (Windows Vista,
-    //!         XP Professional, etc.).
+    //! \return Whether the system is a Windows client version.
     // -----------------------------------------------------------------------
-    bool                is_workstation() const ;
-
-    //! \return Whether the bit VER_SUITE_WH_SERVER is enabled in wSuiteMask.
-    // -----------------------------------------------------------------------
-    bool                is_suite_wh_server() const ;
-
-    //! \return Whether the bit VER_SUITE_STORAGE_SERVER is enabled in
-    //!         wSuiteMask.
-    // -----------------------------------------------------------------------
-    bool                is_suite_storage_server() const ;
+    bool                is_client() const ;
 
     //! \return A string with the service pack of the operating system.
     // -----------------------------------------------------------------------
-    char const *        service_pack_string() const ;
+    std::string         service_pack_string() const ;
 } ;
 
 }

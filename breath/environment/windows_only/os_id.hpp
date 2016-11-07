@@ -61,13 +61,6 @@ public:
     static const os_id
         windows_unknown,
 
-        win32s,
-
-        windows_95,
-        windows_98,
-        windows_me,
-
-        windows_nt, // unknown/3.51?? gps
         windows_2000,
         windows_xp,
         windows_server_2003,
@@ -80,8 +73,11 @@ public:
         windows_server_2008_r2,
         windows_7,
         windows_8,
+        windows_server_2012,
         windows_8_1,
-        windows_10
+        windows_server_2012_r2,
+        windows_10,
+        windows_server_2016
     ;
 
 } ;

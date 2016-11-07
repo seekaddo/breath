@@ -42,8 +42,11 @@ static char const * const
     "Windows Server 2008 R2",
     "Windows 7",
     "Windows 8",
+    "Windows Server 2012",
     "Windows 8.1",
-    "Windows 10"
+    "Windows Server 2012 R2",
+    "Windows 10",
+    "Windows Server 2016"
 
     // gps remove this, no? "Unidentified Windows version (not yet supported)"
     
@@ -78,11 +81,12 @@ static char const * const
 //
 const os_id
         os_id::windows_unknown                    ( 0 ),
-        os_id::win32s                             ( 1 ), // gps??
-        os_id::windows_95                         ( 2 ),
-        os_id::windows_98                         ( 3 ),
-        os_id::windows_me                         ( 4 ),
-        os_id::windows_nt                         ( 5 ), // unknown/3.51?? gps
+        //
+        // The numbers 1 to 5 were used by Win32s, Win95,
+        // Win98, Win Me and Win NT which are no longer
+        // supported. Do not eliminate them or the
+        // corresponding array of strings will not work.
+        //
         os_id::windows_2000                       ( 6 ),
         os_id::windows_xp                         ( 7 ),
         os_id::windows_server_2003                ( 8 ),
@@ -95,8 +99,11 @@ const os_id
         os_id::windows_server_2008_r2             ( 15 ),
         os_id::windows_7                          ( 16 ),
         os_id::windows_8                          ( 17 ),
-        os_id::windows_8_1                        ( 18 ),
-        os_id::windows_10                         ( 19 )
+        os_id::windows_server_2012                ( 18 ),
+        os_id::windows_8_1                        ( 19 ),
+        os_id::windows_server_2012_r2             ( 20 ),
+        os_id::windows_10                         ( 21 ),
+        os_id::windows_server_2016                ( 22 )
     ;
 
 
@@ -119,34 +126,22 @@ operator<<( std::ostream & dest, const os_id & id )
                         info ;
     
     dest << breath::names[ id.m_id ] ;
-    char const * const  sps = info.service_pack_string() ;
+    std::string const   sps = info.service_pack_string() ;
 
-    // Use C strings and strcmp here to workaround MSVC10
-    // which chokes on == comparisons of std::string's;
-    // don't use operator?:, for the same reason.
-    //
-    // We make no attempt to distinguish OSR2 vs. OSR2.1 vs.
-    // OSR2.5 (how to do that, if possible at all, is
-    // undocumented in the SDK).
-    // ---------------------------------------------------------
-    if ( ( id == os_id::windows_95 || id == os_id::windows_me )
-        && ( std::strcmp(sps, " C" ) == 0 || std::strcmp(sps, " B" ) == 0 ) ) {
-        dest << " OSR2" ;
-    } else if (id == os_id::windows_98 && std::strcmp( sps, " A" ) == 0 ) {
-        dest << " Second Edition";
-    } else {
-        char const * const  edition = info.edition() ;
-        if ( edition[0] != '\0' ) {
-            dest << " " << edition ;
-        }
-        if ( sps[ 0 ] != '\0' ) {
-            dest << " " << sps ;
-        }
-        if ( windows_version_info::is_64_bit() ) {
-            dest << ", 64-bit" ;
-        }
+    char const * const  edition = info.edition() ;
+    if ( edition[ 0 ] != '\0' ) {
+        dest << " " << edition ;
     }
-    
+
+    if ( ! sps.empty() ) {
+        dest << " " << sps ;
+    }
+
+    if ( windows_version_info::is_64_bit() ) {
+        dest << ", 64-bit" ;
+    }
+
+
     return dest << " (" << info.major_version() << '.' << info.minor_version()
                 << ", build " << info.build_number() << ")" ;
 }
