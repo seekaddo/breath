@@ -335,7 +335,7 @@ windows_version_info::is_client() const
 }
 
 std::string
-windows_version_info::service_pack_string() const
+windows_version_info::service_pack_string()
 {
     HKEY                key = NULL;
     LONG const          ret = RegOpenKeyEx( HKEY_LOCAL_MACHINE,

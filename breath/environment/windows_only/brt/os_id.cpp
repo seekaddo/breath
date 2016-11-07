@@ -122,12 +122,11 @@ os_id::is_equal( const os_id & other ) const
 std::ostream &
 operator<<( std::ostream & dest, const os_id & id )
 {
+    dest << breath::names[ id.m_id ] ;
+    std::string const   sps = windows_version_info::service_pack_string() ;
+
     windows_version_info const
                         info ;
-
-    dest << breath::names[ id.m_id ] ;
-    std::string const   sps = info.service_pack_string() ;
-
     char const * const  edition = info.edition() ;
     if ( edition[ 0 ] != '\0' ) {
         dest << " " << edition ;

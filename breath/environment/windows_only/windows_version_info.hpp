@@ -70,7 +70,7 @@ public:
 
     //! \return A string with the service pack of the operating system.
     // -----------------------------------------------------------------------
-    std::string         service_pack_string() const ;
+    static std::string  service_pack_string() ;
 } ;
 
 }
