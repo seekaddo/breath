@@ -119,7 +119,6 @@ std::ostream &
 operator<<( std::ostream & dest, const os_id & id )
 {
     dest << breath::names[ id.m_id ] ;
-    std::string const   sps = windows_version_info::service_pack_string() ;
 
     windows_version_info const
                         info ;
@@ -128,6 +127,7 @@ operator<<( std::ostream & dest, const os_id & id )
         dest << " " << edition ;
     }
 
+    std::string const   sps = windows_version_info::service_pack_string() ;
     if ( ! sps.empty() ) {
         dest << " " << sps ;
     }
