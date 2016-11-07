@@ -9,23 +9,23 @@
 //      get_os()
 //      ========
 //
-//      Windows-specific implementation
-//
-//
-//      Necessary background:
-//      ---------------------
+//      Windows-specific implementation.
 //
 //      November 2016 note:
 //      -------------------
 //
-//      what follows is the analysis done when the implementation used
-//      GetVersionEx(). However that API has changed semantics in
-//      Windows 8.1 and can no longer be used to identify the running
-//      system.
-//      The current implementation uses the NetWkstaGetInfo() API, so
-//      the following has just historical value.
-//      Also the minimum supported Windows version is now Windows 2000.
+//      what follows in the "Necessary background" section is the
+//      analysis done when the implementation used GetVersionEx().
+//      However that API has changed semantics in Windows 8.1 and
+//      can no longer be used to identify the running system.
+//      The current implementation uses the NetWkstaGetInfo() API,
+//      so the following has just historical value.
+//      Also the minimum supported Windows version is now Windows
+//      2000.
 //      ---------------------------------------------------------------------
+//
+//      Necessary background:
+//      ---------------------
 //
 //      The bizzarre design and "evolution" of the Windows API makes
 //      the whole task of getting the running OS version a fastidious
