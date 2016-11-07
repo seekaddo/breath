@@ -17,9 +17,12 @@
 
 namespace breath {
 
-    //      Note that this "determines" the running OS based on the
-    //      information returned by Windows itself: as such, it might
-    //      be not the "true" OS.
+    //      This "determines" the running OS based on information
+    //      returned by Windows itself: initially the implementation
+    //      used GetVersionEx(), which "lies" when the executable runs
+    //      in compatibility mode; now it uses an API which doesn't
+    //      appear to be affected by the compatibility settings, so we
+    //      should detect the "true" OS, anyway.
     // ---------------------------------------------------------------------
     os_id get_os();
 
