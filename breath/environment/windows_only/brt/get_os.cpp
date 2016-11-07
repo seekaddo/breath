@@ -235,7 +235,6 @@ identify_nt( windows_version_info const & info )
             break ;
         }
     } else {
-    
         switch( version )
         {
         case win_version( 10, 0 ):
