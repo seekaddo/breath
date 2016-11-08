@@ -262,7 +262,7 @@ void tests()
     // report results
     //
     std::cout << "\n\nTotal:  " << total  << " (of which "
-              << montecarlo_harness.get_count() << " pseudorandom) " << '\n'
+              << montecarlo_harness.get_count() << " pseudorandom)" << '\n'
               <<     "Failed: " << failed << std::endl;
 
 }
