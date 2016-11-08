@@ -32,7 +32,7 @@ public:
     // -----------------------------------------------------------------------
                         windows_version_info() ;
 
-	//! Destroys a \c windows_version_info object.
+    //! Destroys a \c windows_version_info object.
     // -----------------------------------------------------------------------
                         ~windows_version_info() ;
 
