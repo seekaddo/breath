@@ -59,12 +59,12 @@
 //      OSVERSIONINFOEX documentation:
 //
 // major              4                        5                      6
-//             /    /    \    \            /   |   \
+//             /    /    \    \            /   |   \                  |
 // minor      0    10    90    \          0    1    2                 0
 //           .   Win98  WinMe  ...       ...  XP   XP Pro x64       Vista
 //                                                 or 2003 R2    or "Longhorn"
 //           |\                                    or 2003
-// Platf.    | \
+// Platf.    | \                          -
 //  Id      WIN NT                      PLAT_NT
 //          |   |
 //          95  NT 4.0                  2000 ??????? po' esse NT??? (gps)
