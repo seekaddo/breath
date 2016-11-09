@@ -20,8 +20,6 @@
 
 namespace breath {
 
-class os_platform;
-
 class windows_version_info
 {
 private:
