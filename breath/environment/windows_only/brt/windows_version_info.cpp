@@ -177,7 +177,7 @@ windows_version_info::edition() const
         case PRODUCT_STANDARD_SERVER_CORE_V:
             return "" ;
         case PRODUCT_ENTERPRISE_SERVER_CORE_V:
-            return"Server Enterprise without Hyper-V (core installation)" ;
+            return "Server Enterprise without Hyper-V (core installation)" ;
         case PRODUCT_HYPERV:
             return "Microsoft Hyper-V Server" ;
         case PRODUCT_STORAGE_EXPRESS_SERVER_CORE:
@@ -219,7 +219,7 @@ windows_version_info::edition() const
         case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMTSVC:
             return "Essential Server Solution Management SVC" ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDLSVC:
-            return " Essential Server Solution Additional SVC" ;
+            return "Essential Server Solution Additional SVC" ;
         case PRODUCT_CLUSTER_SERVER_V:
             return "Server Hyper Core V" ;
         case PRODUCT_EMBEDDED:
