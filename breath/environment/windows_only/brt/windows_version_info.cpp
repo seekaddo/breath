@@ -231,7 +231,7 @@ windows_version_info::edition() const
         case PRODUCT_HOME_PREMIUM_E:
             return "Home Premium E" ;
         case PRODUCT_PROFESSIONAL_E:
-            return "Professional E  " ;
+            return "Professional E" ;
         case PRODUCT_ENTERPRISE_E:
             return "Enterprise E" ;
         case PRODUCT_ULTIMATE_E:
