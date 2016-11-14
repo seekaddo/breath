@@ -121,8 +121,8 @@ operator<<( std::ostream & dest, const os_id & id )
 
     windows_version_info const
                         info ;
-    char const * const  edition = info.edition() ;
-    if ( edition[ 0 ] != '\0' ) {
+    std::string const   edition = info.edition() ;
+    if ( ! edition.empty() ) {
         dest << " " << edition ;
     }
 

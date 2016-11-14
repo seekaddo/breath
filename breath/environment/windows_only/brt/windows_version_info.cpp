@@ -79,7 +79,7 @@ windows_version_info::build_number() const
     return breath::from_string< int >( std::string( buffer ) ) ;
 }
 
-char const *
+std::string
 windows_version_info::edition() const
 {
     // GetProductInfo() works only when major_version() >= 6.
@@ -212,6 +212,8 @@ windows_version_info::edition() const
             return "undocumented [PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE]" ; // gps
         case PRODUCT_SMALLBUSINESS_SERVER_PREMIUM_CORE:
             return "Small Business Server Premium (core installation)" ;
+        case PRODUCT_PROFESSIONAL_EMBEDDED:
+            return "undocumented [PRODUCT_PROFESSIONAL_EMBEDDED]" ; // gps
         case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMT:
             return "Essential Server Solution Management" ;
         case PRODUCT_ESSENTIALBUSINESS_SERVER_ADDL:
@@ -238,9 +240,11 @@ windows_version_info::edition() const
             return "Ultimate E" ;
         case PRODUCT_UNLICENSED:
             return "*unlicensed*" ;
+        case PRODUCT_CORE_COUNTRYSPECIFIC:
+            return "Home China" ;
 
         default:
-            return "<unknown edition>" ;
+            return "<unknown edition: " + to_string( dw ) + ">" ;
     }
 }
 
