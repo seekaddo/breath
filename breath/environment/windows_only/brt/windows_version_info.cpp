@@ -76,7 +76,7 @@ windows_version_info::build_number() const
         throw std::runtime_error( "cannot query the CurrentBuildNumber value"
                                   " from registry" ) ;
     }
-    return breath::from_string< int >(std::string( buffer ) ) ;
+    return breath::from_string< int >( std::string( buffer ) ) ;
 }
 
 char const *
