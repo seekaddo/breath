@@ -175,7 +175,7 @@ windows_version_info::edition() const
         case PRODUCT_DATACENTER_SERVER_CORE_V:
             return "Server Datacenter without Hyper-V (core installation)" ;
         case PRODUCT_STANDARD_SERVER_CORE_V:
-            return "" ;
+            return "Server Standard without Hyper-V (core installation)" ;
         case PRODUCT_ENTERPRISE_SERVER_CORE_V:
             return "Server Enterprise without Hyper-V (core installation)" ;
         case PRODUCT_HYPERV:
