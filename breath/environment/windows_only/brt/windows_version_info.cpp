@@ -302,4 +302,3 @@ windows_version_info::service_pack_string()
 // c-basic-offset: 4
 // End:
 // vim: set ft=cpp et sts=4 sw=4:
-
