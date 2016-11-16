@@ -16,8 +16,7 @@
 namespace breath {
 namespace        {
 
-static constexpr int
-                    table[] = { 0, 2, 4, 6, 8, 1, 3, 5, 7, 9 } ;
+constexpr int       table[] = { 0, 2, 4, 6, 8, 1, 3, 5, 7, 9 } ;
 constexpr std::size_t
                     base = breath::count( table ) ;
 
