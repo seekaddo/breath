@@ -49,7 +49,7 @@ has_luhn_sum( std::string const & s )
 }
 
 char
-luhn_validation_digit( std::string const & s )
+luhn_check_digit( std::string const & s )
 {
     int const           sum = luhn_sum( s + '0' ) ;
     return '0' + ( ( base - sum ) % base ) ;

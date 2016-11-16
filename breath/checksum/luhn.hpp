@@ -33,7 +33,7 @@ bool                has_luhn_sum( std::string const & s ) ;
 //!     a \c breath::exception if any of the characters in \c s is not
 //!     a decimal digit.
 // -------------------------------------------------------------------------
-char                luhn_validation_digit( std::string const & s ) ;
+char                luhn_check_digit( std::string const & s ) ;
 
 }
 
