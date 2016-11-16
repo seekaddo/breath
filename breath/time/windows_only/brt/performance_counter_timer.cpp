@@ -44,12 +44,13 @@ performance_counter_timer::elapsed() const
     if ( QueryPerformanceCounter( &li ) == 0 ) {
         throw last_api_error( "QueryPerformanceCounter failed" ) ;
     }
-    return ( li.QuadPart - m_start ) / m_frequency * 1000.0;
+    return ( li.QuadPart - m_start ) * resolution() ;
 }
 
 performance_counter_timer::duration_type
 performance_counter_timer::resolution() const
 {
+    // resolution is in milliseconds
     return 1000.0 / m_frequency;
 }
 
