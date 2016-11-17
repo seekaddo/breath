@@ -17,9 +17,9 @@ namespace breath {
 //! \cond
 namespace assert_private {
 
-void fire( char const * message,
-           char const * file_name,
-           unsigned long line_number ) noexcept ;
+[[ noreturn ]] void fire( char const * message,
+                          char const * file_name,
+                          unsigned long line_number ) noexcept ;
 
 }
 //! \endcond
