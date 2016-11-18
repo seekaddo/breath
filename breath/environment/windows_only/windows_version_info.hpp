@@ -12,7 +12,6 @@
 
 #include <string>
 
-
 namespace breath {
 
 class windows_version_info
