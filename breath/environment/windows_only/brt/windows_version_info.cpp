@@ -13,7 +13,7 @@
 #include "breath/text/to_string.hpp"
 
 #undef UNICODE
-#include <windows.h>
+#include <Windows.h>
 #include <lm.h>
 #include <VersionHelpers.h>
 
