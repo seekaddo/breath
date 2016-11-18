@@ -178,8 +178,8 @@ bool
 is_x64()
 {
     // despite the "AMD64" in the macro name, this actually tests for x64
-    // (AMD or Intel); --also, as perplexing as it may be, the docs make
-    // no mention of any possible failure of GetSystemInfo...
+    // (AMD or Intel); also, as perplexing as it may be, the docs make no
+    // mention of any possible failure of GetSystemInfo...
     SYSTEM_INFO si = {} ;
     ::GetSystemInfo( &si ) ;
     return si.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64 ;
