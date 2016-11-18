@@ -16,7 +16,8 @@ namespace breath {
 maybe< std::string >
 find_environment_string( string_argument const & name )
 {
-    typedef maybe< std::string > maybe_type;
+    typedef maybe< std::string >
+                        maybe_type;
 
     char const * const  p( std::getenv( name.value().c_str() ) );
 
