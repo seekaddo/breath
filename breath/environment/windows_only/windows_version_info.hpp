@@ -60,7 +60,9 @@ public:
     // -----------------------------------------------------------------------
     static bool         is_client() ;
 
-    //! \return A string with the service pack of the operating system.
+    //! \return A (possibly empty) string with the service pack of the
+    //!         operating system. This could use <code>maybe< std::string >
+    //!         </code> as well.
     // -----------------------------------------------------------------------
     static std::string  service_pack_string() ;
 
