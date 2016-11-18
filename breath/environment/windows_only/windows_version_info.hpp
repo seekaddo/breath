@@ -54,7 +54,7 @@ public:
     int                 build_number() const ;
 
     //! \return A (possibly empty) string with the edition of the operating
-    //!         system. The return type could be <code>maybe< std::string>
+    //!         system. The return type could be <code>maybe< std::string >
     //!         </code> but I didn't want to introduce another dependency.
     // -----------------------------------------------------------------------
     std::string         edition() const ;
@@ -63,7 +63,7 @@ public:
     // -----------------------------------------------------------------------
     static bool         is_64_bit() ;
 
-    //! \return Whether the system is a Windows client version.
+    //! \return Whether the OS is a Windows client version.
     // -----------------------------------------------------------------------
     static bool         is_client() ;
 
