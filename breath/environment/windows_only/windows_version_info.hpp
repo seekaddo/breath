@@ -12,19 +12,12 @@
 
 #include <ostream>
 #include <string>
-// gps aggiungere, in ANNOUNCE.txt, cosa facciamo con i platform headers
-#undef UNICODE
-#include <windows.h>
-#include <lm.h>
 
 
 namespace breath {
 
 class windows_version_info
 {
-private:
-    WKSTA_INFO_100 *    m_info = nullptr ;
-
 public:
     //! Constructs a \c windows_version_info object.
     // -----------------------------------------------------------------------
@@ -70,6 +63,12 @@ public:
     //! \return A string with the service pack of the operating system.
     // -----------------------------------------------------------------------
     static std::string  service_pack_string() ;
+
+private:
+    // This uses the pimpl idiom to avoid including <Windows.h> from here.
+    //
+    class               impl ;
+    impl * const        m_impl ;
 } ;
 
 }

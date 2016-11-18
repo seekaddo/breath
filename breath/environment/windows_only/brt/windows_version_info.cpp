@@ -11,12 +11,25 @@
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
 
+#undef UNICODE
+#include <windows.h>
+#include <lm.h>
 #include <VersionHelpers.h>
+
 #include <string>
 
 namespace breath {
 
-windows_version_info::windows_version_info()
+class windows_version_info::impl
+{
+public:
+                    impl();
+                    ~impl();
+
+    WKSTA_INFO_100 *    m_info = nullptr ;
+} ;
+
+windows_version_info::impl::impl()
 {
     constexpr int       level = 100 ;
     NET_API_STATUS const
@@ -27,22 +40,32 @@ windows_version_info::windows_version_info()
     }
 }
 
-windows_version_info::~windows_version_info()
+windows_version_info::impl::~impl()
 {
     // Ignoring the return value (success or failure).
     NetApiBufferFree( m_info ) ;
 }
 
+windows_version_info::windows_version_info()
+    :   m_impl( new windows_version_info::impl )
+{
+}
+
+windows_version_info::~windows_version_info()
+{
+    delete m_impl ;
+}
+
 int
 windows_version_info::major_version() const
 {
-    return m_info->wki100_ver_major ;
+    return m_impl->m_info->wki100_ver_major ;
 }
 
 int
 windows_version_info::minor_version() const
 {
-    return m_info->wki100_ver_minor ;
+    return m_impl->m_info->wki100_ver_minor ;
 }
 
 int
