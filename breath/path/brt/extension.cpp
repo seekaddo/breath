@@ -6,7 +6,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
 #include "breath/path/extension.hpp"
 
 namespace breath {
