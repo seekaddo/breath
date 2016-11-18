@@ -29,7 +29,8 @@ public:
                     impl();
                     ~impl() noexcept;
 
-    WKSTA_INFO_100 *    m_info = nullptr ;
+    WKSTA_INFO_100 *
+                    m_info = nullptr ;
 } ;
 
 windows_version_info::impl::impl()
