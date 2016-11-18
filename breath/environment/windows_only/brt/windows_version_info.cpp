@@ -8,6 +8,7 @@
 
 #include "breath/environment/windows_only/windows_version_info.hpp"
 #include "breath/diagnostics/exception.hpp"
+#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
 
@@ -23,6 +24,8 @@ namespace breath {
 class windows_version_info::impl
 {
 public:
+    BREATH_DECLARE_NON_COPYABLE( impl )
+
                     impl();
                     ~impl() noexcept;
 

@@ -10,6 +10,7 @@
 //!     \brief Microsoft Windows version information.
 // -------------------------------------------------------------------------
 
+#include "breath/idiom/declare_non_copyable.hpp"
 #include <string>
 
 namespace breath {
@@ -27,10 +28,7 @@ public:
 
     //! Deleted copy members.
     // -----------------------------------------------------------------------
-                        windows_version_info( windows_version_info const & ) =
-                                                                    delete ;
-    windows_version_info &
-                        operator=( windows_version_info const & ) = delete ;
+    BREATH_DECLARE_NON_COPYABLE( windows_version_info )
 
     //! \return The major version number of the operating system.
     // -----------------------------------------------------------------------
