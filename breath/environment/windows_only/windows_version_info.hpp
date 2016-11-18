@@ -10,7 +10,6 @@
 //!     \brief Microsoft Windows version information.
 // -------------------------------------------------------------------------
 
-#include <ostream>
 #include <string>
 
 
