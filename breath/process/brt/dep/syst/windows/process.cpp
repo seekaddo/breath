@@ -12,7 +12,7 @@
 #include "breath/process/private/handle.hpp"
 
 #include <vector>
-#include <windows.h>
+#include <Windows.h>
 
 namespace breath {
 

@@ -17,7 +17,7 @@
 #include <climits>
 #include <cstddef>
 #include <ostream>
-#include <windows.h>
+#include <Windows.h>
 
 namespace breath {
 

@@ -14,7 +14,7 @@
 
 #undef UNICODE
 #include <Windows.h>
-#include <lm.h>
+#include <Lm.h>
 #include <VersionHelpers.h>
 
 #include <string>
