@@ -21,9 +21,9 @@
 namespace breath {
 
 //!     NOTE: this class is designed to be usable with random_shuffle
-//!           and shuffle. (This is, BTW, why it has members named
-//!           "min" and "max", which I generally avoid, given how many
-//!           sources define them as macro names.)
+//!           and shuffle. (This is, BTW, why it has members with the
+//!           names "min" and "max", which I generally avoid, given
+//!           how many sources define them as macro names.)
 //!
 //!     It satisfies the requirements of a "uniform random number
 //!     generator".
