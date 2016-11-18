@@ -24,7 +24,7 @@ class windows_version_info::impl
 {
 public:
                     impl();
-                    ~impl();
+                    ~impl() noexcept;
 
     WKSTA_INFO_100 *    m_info = nullptr ;
 } ;
@@ -40,7 +40,7 @@ windows_version_info::impl::impl()
     }
 }
 
-windows_version_info::impl::~impl()
+windows_version_info::impl::~impl() noexcept
 {
     // Ignoring the return value (success or failure).
     NetApiBufferFree( m_info ) ;
@@ -51,7 +51,7 @@ windows_version_info::windows_version_info()
 {
 }
 
-windows_version_info::~windows_version_info()
+windows_version_info::~windows_version_info() noexcept
 {
     delete m_impl ;
 }

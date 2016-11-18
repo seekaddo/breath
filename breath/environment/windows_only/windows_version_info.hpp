@@ -23,7 +23,7 @@ public:
 
     //! Destroys a \c windows_version_info object.
     // -----------------------------------------------------------------------
-                        ~windows_version_info() ;
+                        ~windows_version_info() noexcept ;
 
     //! Deleted copy members.
     // -----------------------------------------------------------------------
