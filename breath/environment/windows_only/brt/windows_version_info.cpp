@@ -7,11 +7,11 @@
 // _________________________________________________________________________
 
 #include "breath/environment/windows_only/windows_version_info.hpp"
+#include "breath/diagnostics/exception.hpp"
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
 
 #include <VersionHelpers.h>
-#include <stdexcept>
 #include <string>
 
 namespace breath {
@@ -23,8 +23,7 @@ windows_version_info::windows_version_info()
                         status = NetWkstaGetInfo( nullptr, level,
                                      reinterpret_cast< BYTE ** >( &m_info ) ) ;
     if ( status != NERR_Success ) {
-        // gps we'll probably have something more specific here
-        throw std::runtime_error( "cannot retrieve Windows version info" ) ;
+        throw exception( "cannot retrieve Windows version info" ) ;
     }
 }
 
@@ -61,9 +60,7 @@ windows_version_info::build_number() const
                               KEY_QUERY_VALUE | KEY_WOW64_32KEY,
                               &key ) ;
     if ( ret != ERROR_SUCCESS ) {
-        // gps we'll probably have something more specific here
-        throw std::runtime_error( "cannot open the CurrentVersion"
-                                  " registry key" ) ;
+        throw exception( "cannot open the CurrentVersion registry key" ) ;
     }
     constexpr int       size = 256;
     DWORD               dw_size = size ;
@@ -72,9 +69,8 @@ windows_version_info::build_number() const
                                  RRF_RT_ANY, nullptr,
                                  &buffer, &dw_size ) ;
     if ( ret2 != ERROR_SUCCESS ) {
-        // gps we'll probably have something more specific here
-        throw std::runtime_error( "cannot query the CurrentBuildNumber value"
-                                  " from registry" ) ;
+        throw exception( "cannot query the CurrentBuildNumber value"
+                                                    " from registry" ) ;
     }
     return breath::from_string< int >( std::string( buffer ) ) ;
 }
@@ -276,9 +272,7 @@ windows_version_info::service_pack_string()
                               KEY_QUERY_VALUE | KEY_WOW64_32KEY,
                               &key ) ;
     if ( ret != ERROR_SUCCESS ) {
-        // gps we'll probably have something more specific here
-        throw std::runtime_error( "cannot open the Control\\Windows"
-                                  " registry key" ) ;
+        throw exception( "cannot open the Control\\Windows registry key" ) ;
     }
     DWORD               value ;
     DWORD               dw_size = sizeof value ;
@@ -286,9 +280,7 @@ windows_version_info::service_pack_string()
                                  RRF_RT_ANY, nullptr,
                                  &value, &dw_size ) ;
     if ( ret2 != ERROR_SUCCESS ) {
-        // gps we'll probably have something more specific here
-        throw std::runtime_error( "cannot query the CSDVersion value"
-                                  " from registry" ) ;
+        throw exception( "cannot query the CSDVersion value from registry" ) ;
     }
 
     int const           sp = value / 256 ;
