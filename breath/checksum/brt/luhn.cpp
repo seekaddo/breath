@@ -10,7 +10,6 @@
 #include "breath/counting/count.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include <cctype>
-#include <cstddef>
 #include <numeric>
 
 namespace breath {
