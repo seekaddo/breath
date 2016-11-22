@@ -6,10 +6,8 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
 #include "breath/random/subrange_max.hpp"
 #include "breath/diagnostics/assert.hpp"
-
 
 //      Implementation:
 //      ---------------
