@@ -44,7 +44,7 @@
     <ClCompile Include="..\..\..\..\breath\path\brt\base_filename.cpp">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\breath\environment\brt\allowed_path_separators.cpp">
+    <ClCompile Include="..\..\..\..\breath\path\brt\allowed_path_separators.cpp">
       <Filter>Library</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\breath\process\brt\exit_code.cpp">
