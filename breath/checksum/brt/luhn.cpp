@@ -26,7 +26,7 @@ luhn_sum( std::string const & s )
     bool                from_table = false ;
     auto lambda = [ & ]( int s, char c )
     {
-        if ( ! std::isdigit( c ) ) {
+        if ( ! std::isdigit( static_cast< unsigned char >( c ) ) ) {
             throw exception( "non-digit char in Luhn string" ) ;
         }
         int const           value = c - '0' ;
