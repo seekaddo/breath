@@ -24,7 +24,7 @@
 #       /Za [not used]:
 #
 #           ideally I'd use this option everywhere, except for the
-#           translation units including <windows.h> (or other Windows
+#           translation units including <Windows.h> (or other Windows
 #           headers that need the Microsoft extensions).
 #
 #           BUT: can we assume that object files generated with /Za can

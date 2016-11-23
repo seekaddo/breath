@@ -12,8 +12,8 @@
 #include "breath/stream/format_saver.hpp"
 #include <iomanip>
 #include <ostream>
-#include <windows.h>
-#include <iphlpapi.h>
+#include <Windows.h>
+#include <Iphlpapi.h>
 
 namespace breath {
 
