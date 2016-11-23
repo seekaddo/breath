@@ -7,6 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/text/remove_from_end.hpp"
+#include "breath/text/ends_with.hpp"
 
 namespace breath {
 
@@ -14,7 +15,7 @@ std::string
 remove_from_end( std::string const & str, std::string const & to_be_removed )
 {
     auto                copy( str ) ;
-    if ( str.length() >= to_be_removed.length() )
+    if ( breath::ends_with( copy, to_be_removed) )
         copy.erase( copy.end() - to_be_removed.length(), copy.end() ) ;
     return copy ;
 }
