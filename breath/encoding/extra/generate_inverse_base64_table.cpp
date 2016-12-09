@@ -22,6 +22,7 @@ main()
                                      "0123456789+/" ;
 
     constexpr int       size = 256 ;
+    constexpr int       entries_per_row = 16 ;
     constexpr int       invalid = -1 ;
     std::vector< int >  table( size, invalid );
     for ( std::size_t i = 0 ; i < std::size( alphabet ) - 1 ; ++ i ) {
@@ -36,7 +37,7 @@ main()
         if ( i != ( size - 1 ) ) {
             os << ", " ;
         }
-        if ( (i+1) % 16 == 0 ) {
+        if ( (i+1) % entries_per_row == 0 ) {
             std::cout << "\n    " ;
         }
     }
