@@ -82,7 +82,7 @@ void sha1_engine::process_block( state_type & state
     const int sz( 80 ) ;
     typedef word_type schedule_type[ sz ] ;
     sensitive_buffer< schedule_type > sched(
-        breath::begin( block ), breath::end( block ) ) ;
+        breath::cbegin( block ), breath::cend( block ) ) ;
     for ( int i( 16 ) ; i < sz ; ++ i )
         sched[ i ] =
             rotate_left< 1 >( sched[ i - 3  ] ^ sched[ i - 8  ]
