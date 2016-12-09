@@ -193,7 +193,7 @@ merkle_damgard_machine< Engine >::append( Iter begin, Iter end )
 //
 // NOTE: the padding method described above is by far the most
 //       commonly used; in principle, there could be variations
-//       on this scheme, but no hash function that I know of use
+//       on this scheme, but no hash function that I know of uses
 //       them. [gps]
 //
 // NOTE2: I'm not convinced this interface is good for security
