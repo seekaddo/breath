@@ -6,7 +6,7 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-#include <vector>
+#include <array>
 #include <iostream>
 #include <ostream>
 #include <iterator>
@@ -24,7 +24,9 @@ main()
     constexpr int       size = 256 ;
     constexpr int       entries_per_row = 16 ;
     constexpr int       invalid = -1 ;
-    std::vector< int >  table( size, invalid );
+    std::array< int, size >
+                        table ;
+    table.assign( invalid ) ;
     for ( std::size_t i = 0 ; i < std::size( alphabet ) - 1 ; ++ i ) {
         table[ alphabet[ i ] ] = static_cast< int >( i ) ;
     }
