@@ -259,7 +259,7 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
         m_bit_count[ i ] = w ;
     }
 
-    // a carry here means that the input message for longer than we
+    // a carry here means that the input message was longer than we
     // can represent; now, either the specific hashing algorithm
     // prescribes wrapping (MD5, for instance, does so) or we have to
     // give up: in the latter case on_length_exhausted will throw an
