@@ -10,7 +10,6 @@
 #include "breath/cryptography/sha_common.hpp"
 
 #include "breath/idiom/volatilize.hpp"
-  // gps    should this go somehow in merkle_damgard_engine?
 #include "breath/iteration/begin_end.hpp"
 #include "breath/cryptography/private/sensitive_buffer.hpp"
 
