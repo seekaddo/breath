@@ -38,7 +38,7 @@ main()
             os << ", " ;
         }
         if ( (i+1) % entries_per_row == 0 ) {
-            std::cout << "\n    " ;
+            os << "\n    " ;
         }
     }
     os << "\n} ;" << std::endl ;
