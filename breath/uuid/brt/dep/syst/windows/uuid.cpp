@@ -58,7 +58,7 @@ output_as_hex( std::ostream & os, T t )
 {
     static_assert( CHAR_BIT == 8, "" ) ;
     os << std::hex << std::nouppercase ;
-    for ( int shift_amount = sizeof t * CHAR_BIT ; shift_amount > 0 ;
+    for ( std::size_t shift_amount = sizeof t * CHAR_BIT ; shift_amount > 0 ;
                                             shift_amount -= CHAR_BIT ) {
         uint8_t const       byte = t >> ( shift_amount - CHAR_BIT ) & 0xFF ;
         os << ( byte >> ( CHAR_BIT / 2 ) ) ;
