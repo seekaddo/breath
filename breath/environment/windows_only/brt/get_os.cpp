@@ -27,13 +27,13 @@
 //      Necessary background:
 //      ---------------------
 //
-//      The bizzarre design and "evolution" of the Windows API makes
+//      The bizarre design and "evolution" of the Windows API makes
 //      the whole task of getting the running OS version a fastidious
 //      programming puzzle, and an accurate analysis is in order
 //      before attempting a reusable implementation. First, two API
 //      functions exist for the purpose: GetVersion() and
 //      GetVersionEx(), with the latter being available (as of April
-//      2007, and presumably ever) on all Windows flavours except NT
+//      2007, and presumably ever) on all Windows flavors except NT
 //      3.1. Given the current low diffusion of this latter Windows we
 //      give up its support and always use GetVersionEx().
 //
