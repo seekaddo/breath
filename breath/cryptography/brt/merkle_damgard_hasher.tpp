@@ -10,6 +10,7 @@
 #include "breath/endianness/endian_codec.hpp"
 #include "breath/algorithm/secure_fill.hpp"
 
+#include <iterator>
 #include <algorithm>
 
 
