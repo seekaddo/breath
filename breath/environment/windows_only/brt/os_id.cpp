@@ -6,7 +6,6 @@
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
-
 #include "breath/environment/windows_only/os_id.hpp"
 #include "breath/environment/windows_only/windows_version_info.hpp"
 
