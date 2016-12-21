@@ -136,7 +136,7 @@ operator<<( std::ostream & dest, const os_id & id )
 
 
     return dest << " (" << info.major_version() << '.' << info.minor_version()
-                << ", build " << info.build_number() << ")" ;
+                << ", build " << info.build_number() << ')' ;
 }
 
 }
