@@ -36,14 +36,14 @@ operator<<( std::ostream & dest, printable_string const & ps )
         return dest << "(null)" ;
     }
 
-    format_saver        saver( dest );
+    format_saver const  saver( dest );
     dest.setf( std::ios::hex, std::ios::basefield ) ;
     dest.fill( '0' ) ;
 
     dest << '\"' ;
     std::string const & s = ps.m_value.value() ;
-    for ( auto it = s.cbegin() ; it != s.cend() ; ++ it ) {
-        switch ( *it ) {
+    for ( char const c : s ) {
+        switch ( c ) {
         case '\\':
             dest << "\\\\" ;
             break ;
@@ -85,15 +85,15 @@ operator<<( std::ostream & dest, printable_string const & ps )
             break ;
 
         default:
-            if ( std::isprint( static_cast< unsigned char>( *it ) ) ) {
-                dest << *it ;
+            if ( std::isprint( static_cast< unsigned char>( c ) ) ) {
+                dest << c ;
             }  else {
                 static_assert( CHAR_BIT == 8, "please, adjust the setw()" 
                                                                     " below") ;
                 dest << "\\x"
                      << std::setw(2)
                      << static_cast< unsigned int >(
-                         static_cast< unsigned char>( *it ) ) ;
+                         static_cast< unsigned char>( c ) ) ;
             }
             break;
         }
