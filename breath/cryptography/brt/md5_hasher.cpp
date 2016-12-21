@@ -87,12 +87,8 @@ core_fn( word_type &    a,
     a = b + md5_rotate_left< shift >(
                        a + aux_f< round >::f( b, c, d ) + input ) ;
 }
-    
 
-} // unnamed/private namespace
-
-// -------------------------------------------------------------------------- //
-
+}
 
 void
 md5_engine::init_state( state_type & state )
