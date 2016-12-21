@@ -51,7 +51,7 @@ static char const * const
 // [note 1] Attention: keep in sync with the array declaration above
 //
 //     * windows_xp_professional_x64_edition is the only case where the
-//       word "edition" appears directly as part os the OS name, rather
+//       word "edition" appears directly as a part of the OS name, rather
 //       than in the edition name (as in "Web Edition", "Home Edition",
 //       etc.) -- what should we do? leave "edition" or not?
 //
