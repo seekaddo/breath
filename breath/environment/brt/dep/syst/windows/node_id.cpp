@@ -20,7 +20,7 @@ namespace breath {
 node_id::node_id()
 {
     //  The MSDN says:
-    //      " On Windows XP and later : Use the GetAdaptersAddresses function
+    //      "On Windows XP and later : Use the GetAdaptersAddresses function
     //       instead of GetAdaptersInfo"
     //  but in my headers there's no declaration of GetAdaptersAddresses.
     //  ----------------------------------------------------------------------
