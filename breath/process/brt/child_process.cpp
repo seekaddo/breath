@@ -1,3 +1,5 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 // =========================================================================
 //                       Copyright 2015 Gennaro Prota
 //
@@ -8,7 +10,7 @@
 
 #include "breath/process/child_process.hpp"
 #include "breath/porting/dependent_code.hpp"
-#include BREATH_DEPENDENT_CODE( system, child_process.cpp)
+#include BREATH_DEPENDENT_CODE( system, child_process.cpp )
 
 // Local Variables:
 // mode: c++
