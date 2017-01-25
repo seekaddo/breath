@@ -34,7 +34,7 @@ public:
 
     void                start( std::string const & app_name,
                                std::string const & arguments,
-                               maybe< unsigned long > timeout_in_ms =
+                               maybe< unsigned long > const & timeout_in_ms =
                                             maybe< unsigned long >() ) ;
     void                kill() ;
     void                terminate() ;
