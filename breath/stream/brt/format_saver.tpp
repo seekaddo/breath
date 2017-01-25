@@ -95,7 +95,7 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
 {
     // We prepare m_store for the data (besides those that copyfmt
     // won't copy anyway) we don't want to restore: tie, locale,
-    // exception mask
+    // exception mask.
 
     // [tie]
     // I'm not sure whether the intent is for copyfmt to copy the tie
