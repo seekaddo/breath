@@ -33,7 +33,7 @@ uuid::uuid( uuid::variant var, uuid::version ver )
     //
     FILETIME            ft ;
     ::GetSystemTimeAsFileTime( &ft ) ;
-    uint64_t const      time_stamp = reinterpret_cast< uint64_t& >( ft ) +=
+    uint64_t const      time_stamp = reinterpret_cast< uint64_t & >( ft ) +
                                      uint64_t( 1000 * 1000 * 10 )
                                    * uint64_t( 60 * 60 * 24 )
                                    * uint64_t( 17 + 30 + 31 + 365 * 18 + 5 ) ;
