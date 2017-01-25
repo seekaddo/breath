@@ -31,10 +31,9 @@ uuid::uuid( uuid::variant var, uuid::version ver )
     // The difference is 17 Days in Oct + 30 (Nov) + 31 (Dec)
     // + 18 years and 5 leap days.
     //
-    uint64_t            time_stamp ;
     FILETIME            ft ;
     ::GetSystemTimeAsFileTime( &ft ) ;
-    time_stamp = reinterpret_cast< uint64_t& >( ft ) +=
+    uint64_t const      time_stamp = reinterpret_cast< uint64_t& >( ft ) +=
                                      uint64_t( 1000 * 1000 * 10 )
                                    * uint64_t( 60 * 60 * 24 )
                                    * uint64_t( 17 + 30 + 31 + 365 * 18 + 5 ) ;
