@@ -39,7 +39,7 @@ uuid::uuid( uuid::variant var, uuid::version ver )
                                    * uint64_t( 60 * 60 * 24 )
                                    * uint64_t( 17 + 30 + 31 + 365 * 18 + 5 ) ;
 
-    m_time_low = time_stamp & 0xFFFFFFFF ;
+    m_time_low = time_stamp & 0xFFFF'FFFF ;
     m_time_mid = (time_stamp >> 32) & 0xFFFF ;
     m_time_hi_and_version = ( (time_stamp >> 48) & 0x0FFF ) + ( 1 << 12 ) ;
     entropy_source      es ;
