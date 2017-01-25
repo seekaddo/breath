@@ -277,7 +277,7 @@ windows_version_info::edition() const
             return "Home China" ;
 
         default:
-            return "<unknown edition: " + to_string( dw ) + ">" ;
+            return "<unknown edition: " + breath::to_string( dw ) + ">" ;
     }
 }
 
