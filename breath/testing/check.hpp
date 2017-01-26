@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Macro for a single check within a unit test.
+//!     \brief Macros for a single check within a unit test.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_EFlfreUFA16SG5tXxNJpWtUHWTCfIjaD
