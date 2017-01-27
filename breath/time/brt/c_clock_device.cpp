@@ -11,7 +11,6 @@
 
 namespace breath {
 
- 
 std::clock_t
 c_clock_device::retrieve()
 {
