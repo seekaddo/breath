@@ -58,7 +58,7 @@ public:
     //!     \return \c true if an only if \c *this and \c other
     //!     compare equal (same internal value). Used by the base
     //!     class.
-    //! ---------------------------------------------------------------------
+    // ----------------------------------------------------------------------
     bool                is_equal( counter const & other ) const ;
 
     //!     Three-way comparison for counters. Used by the base class.
