@@ -53,7 +53,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_runner::instance().run( { check } ) ;
+    return test_runner::instance().run( { check } ) ;
 }
 
 // Local Variables:

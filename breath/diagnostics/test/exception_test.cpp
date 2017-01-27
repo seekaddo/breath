@@ -31,7 +31,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_runner::instance().run( { test_copy } ) ;
+    return test_runner::instance().run( { test_copy } ) ;
 }
 
 // Local Variables:

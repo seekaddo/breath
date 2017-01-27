@@ -14,6 +14,7 @@
 #define BREATH_GUARD_ljsq7ok4MwSNNxMyfe6xf8RevjbF8jrE
 
 #include "breath/idiom/declare_non_copyable.hpp"
+#include "breath/process/exit_code.hpp"
 #include "breath/testing/test_reporter.hpp"
 #include "breath/testing/test_descriptor.hpp"
 #include "breath/testing/test_exception.hpp"
@@ -34,17 +35,18 @@ public:
                     instance() ;
     void            attach_reporter( test_reporter & ) ;
     template< typename TestDescriptorIterator >
-    void            run( TestDescriptorIterator begin, TestDescriptorIterator end ) ;
-    void            run( std::initializer_list< test_descriptor > list ) ;
+    int             run( TestDescriptorIterator begin, TestDescriptorIterator end ) ;
+    int             run( std::initializer_list< test_descriptor > list ) ;
 private:
     test_reporter * m_reporter ;
 } ;
 
 
 template< typename TestDescriptorIterator >
-void
+int
 test_runner::run( TestDescriptorIterator begin, TestDescriptorIterator end )
 {
+    int                 exit_code = breath::exit_failure ;
     std::size_t test_number = 1 ;
     m_reporter->on_all_tests_begin() ;
     for ( ; begin != end ; ++ begin, ++ test_number ) {
@@ -52,6 +54,7 @@ test_runner::run( TestDescriptorIterator begin, TestDescriptorIterator end )
             m_reporter->on_test_begin( test_number ) ;
             (begin->function())() ;
             m_reporter->on_test_passed( test_number ) ;
+            exit_code = breath::exit_success ;
         } catch ( test_exception const & ex ) {
             m_reporter->on_test_failed( test_number, ex ) ;
         } catch( std::exception const & ex ) {
@@ -61,6 +64,7 @@ test_runner::run( TestDescriptorIterator begin, TestDescriptorIterator end )
         }
     }
     m_reporter->on_all_tests_end() ;
+    return exit_code ;
 }
 
 }

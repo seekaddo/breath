@@ -132,9 +132,9 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_runner::instance().run( { check,
-                                   check_string_of_nuls,
-                                   check_line_wrap } ) ;
+    return test_runner::instance().run( { check,
+                                          check_string_of_nuls,
+                                          check_line_wrap } ) ;
 }
 
 // Local Variables:

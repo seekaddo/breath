@@ -21,16 +21,17 @@ test_runner::instance()
     static test_runner  runner ;
     return runner ;
 }
+
 void
 test_runner::attach_reporter( test_reporter & rep )
 {
     m_reporter = &rep ;
 }
 
-void
+int
 test_runner::run( std::initializer_list< test_descriptor > list )
 {
-    run( list.begin(), list.end() ) ;
+    return run( list.begin(), list.end() ) ;
 }
 
 }

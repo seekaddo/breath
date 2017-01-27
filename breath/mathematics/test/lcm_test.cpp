@@ -46,7 +46,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_runner::instance().run( { do_check } ) ;
+    return test_runner::instance().run( { do_check } ) ;
 }
 
 // Local Variables:

@@ -217,7 +217,7 @@ int main()
         check_known_digests< breath::sha512_hasher >
     } ;
 
-    test_runner::instance().run( begin( desc ), end( desc) ) ;
+    return test_runner::instance().run( begin( desc ), end( desc) ) ;
 
 }
 

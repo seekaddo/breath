@@ -129,7 +129,8 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_runner::instance().run( { check_constructors, check_assignments } ) ;
+    return test_runner::instance().run( { check_constructors,
+                                          check_assignments } ) ;
 }
 
 // Local Variables:
