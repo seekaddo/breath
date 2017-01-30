@@ -24,7 +24,9 @@ check_known()
         unsigned long crc32 ;
     } const             known[] =
     {
-        // Test vectors verified with:
+        { "",                                            0x0        },
+
+        // Following test vectors verified with:
         //   <https://www.lammertbies.nl/comm/info/crc-calculation.html>
         //
         { "The quick brown fox jumps over the lazy dog", 0x414FA339 },
