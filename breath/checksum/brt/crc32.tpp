@@ -65,13 +65,13 @@ crc32( InputIterator begin, InputIterator end )
     } ;
 
 
-    constexpr auto      initial_crc = static_cast< std::uint_fast32_t >( -1 );
+    constexpr auto      initial_value = static_cast< std::uint_fast32_t >( -1 );
     constexpr auto      table_size = static_cast< int >( breath::count( table ) ) ;
 
     static_assert( table_size == 256, "wrong table size" ) ;
 
     return ~ std::accumulate( begin, end,
-                              initial_crc,
+                              initial_value,
             [ = ]( std::uint_fast32_t checksum, std::uint_fast8_t value )
             {
                 return table[ ( checksum ^ value ) & ( table_size - 1 ) ]
