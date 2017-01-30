@@ -1,11 +1,12 @@
 // =========================================================================
-//                       Copyright 2016 Gennaro Prota
+//                    Copyright 2016-2017 Gennaro Prota
 //
 //                 Licensed under the BSD 3-Clause License.
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
 //              <https://opensource.org/licenses/BSD-3-Clause>)
 // _________________________________________________________________________
 
+#include "breath/counting/count.hpp"
 #include <numeric>
 
 namespace breath {
@@ -63,13 +64,18 @@ crc32( InputIterator begin, InputIterator end )
         0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d
     } ;
 
-    std::uint_fast32_t const
-                        all_ones = 0xFFFF'FFFF;
+
+    constexpr auto      all_ones = static_cast< std::uint_fast32_t >( -1 );
+    constexpr auto      table_size = static_cast< int >( breath::count( table ) ) ;
+
+    static_assert( table_size == 256, "wrong table size" ) ;
+
     return ~ std::accumulate( begin, end,
                               all_ones,
-            []( std::uint_fast32_t checksum, std::uint_fast8_t value )
+            [ = ]( std::uint_fast32_t checksum, std::uint_fast8_t value )
             {
-                return table[ ( checksum ^ value ) & 0xFF ] ^ ( checksum >> 8 );
+                return table[ ( checksum ^ value ) & ( table_size - 1 ) ]
+                            ^ ( checksum / table_size ) ;
             }
 
             ) ;
