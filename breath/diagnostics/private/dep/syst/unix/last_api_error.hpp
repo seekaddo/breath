@@ -21,11 +21,11 @@ public:
                         ~last_api_error() noexcept ;
     int                 code() const noexcept ;
     char const *        what() const noexcept ;
-    void                operator=( last_api_error const & ) = delete ;
+    void                operator =( last_api_error const & ) = delete ;
 
 private:
     friend std::ostream &
-                        operator<<( std::ostream &, last_api_error const & ) ;
+                        operator <<( std::ostream &, last_api_error const & ) ;
 
     int                 m_errno ;
     char                m_message[ 64 * 1024 ] ;

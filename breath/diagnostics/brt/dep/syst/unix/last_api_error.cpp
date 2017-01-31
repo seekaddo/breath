@@ -79,7 +79,7 @@ last_api_error::what() const noexcept
 }
 
 std::ostream &
-operator<<( std::ostream & dest, last_api_error const & last)
+operator <<( std::ostream & dest, last_api_error const & last )
 {
     return dest << last.m_message << "[code: " << last.code() << "]" ;
 }
