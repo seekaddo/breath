@@ -76,7 +76,7 @@ public:
     // ---------------------------------------------------------------------
     result_type         max() noexcept ;
 
-    //!     TODO:
+    //!     \todo:
     //!         define entropy()??? It should be 8 for /dev/random...
     //!         what about the CryptoAPI?
     // ---------------------------------------------------------------------
