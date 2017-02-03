@@ -66,14 +66,16 @@ cpp_basic_options += -pipe
 #
 cpp_basic_options += -Wundef            \
                      -Wunused-macros
-		     
+
 cpp_basic_options += -Wshadow           \
                      -Wfloat-equal      \
                      -Wredundant-decls  \
                                         \
                      -Wdouble-promotion \
                                         \
-                     -Wsync-nand
+                     -Wsync-nand        \
+                     -Wold-style-cast   \
+                     -Wuseless-cast
 
 # more about cleanliness (???) of the working dir
 
