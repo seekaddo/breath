@@ -67,15 +67,23 @@ cpp_basic_options += -pipe
 cpp_basic_options += -Wundef            \
                      -Wunused-macros
 
-cpp_basic_options += -Wshadow           \
-                     -Wfloat-equal      \
-                     -Wredundant-decls  \
-                                        \
-                     -Wdouble-promotion \
-                                        \
-                     -Wsync-nand        \
-                     -Wold-style-cast   \
-                     -Wuseless-cast
+# More preprocessing warnings (that are not enabled by -Wall, nor on by
+# default)
+#
+cpp_basic_options += -Wshadow               \
+                     -Wfloat-equal          \
+                     -Wredundant-decls      \
+                                            \
+                     -Wdouble-promotion     \
+                                            \
+                     -Wsync-nand            \
+                     -Wold-style-cast       \
+                     -Wuseless-cast         \
+                                            \
+                     -Wnoexcept             \
+                     -Wnon-virtual-dtor     \
+                     -Wstrict-null-sentinel \
+                     -Woverloaded-virtual
 
 # more about cleanliness (???) of the working dir
 
