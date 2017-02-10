@@ -51,7 +51,7 @@ private:
     explicit        os_id( id_type ) ;
 
     friend std::ostream &
-                    operator<<( std::ostream &, os_id const & ) ;
+                    operator <<( std::ostream &, os_id const & ) ;
 
 public:
     // compiler-generated copy and destructor
@@ -83,7 +83,7 @@ public:
 } ;
 
 // gps controlla se mettiamo una dichiarazione anche prima (vedi crypto/)
-std::ostream & operator<<( std::ostream & dest, os_id const & id ) ;
+std::ostream & operator <<( std::ostream & dest, os_id const & id ) ;
 }
 
 #endif

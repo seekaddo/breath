@@ -80,7 +80,7 @@ check_assignments()
         BREATH_CHECK( m.is_valid() && m.value() == 1 ) ;
     }
 
-    // operator=( T const & )
+    // operator =( T const & )
     {
         std::string          s = "Hello" ;
         std::string          t = "world" ;

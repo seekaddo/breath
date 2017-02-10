@@ -43,7 +43,7 @@ public:
 
     //!     Compiler-generated copy-assignment operator.
     // ---------------------------------------------------------------------
-    exception & operator=( exception const & ) noexcept = default ;
+    exception & operator =( exception const & ) noexcept = default ;
 
     //!     Compiler-generated destructor
     // ---------------------------------------------------------------------

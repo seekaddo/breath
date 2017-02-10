@@ -34,11 +34,11 @@ public:
     unsigned long       code() const noexcept ;
     char const *        what() const noexcept ;
 
-    void                operator=( last_api_error const & ) = delete ;
+    void                operator =( last_api_error const & ) = delete ;
 
 private:
     friend std::ostream &
-                        operator<<( std::ostream &, last_api_error const & ) ;
+                        operator <<( std::ostream &, last_api_error const & ) ;
 
     unsigned long       m_last_error ;
     char                m_message[ 10 * 1024 - 1 ] ;

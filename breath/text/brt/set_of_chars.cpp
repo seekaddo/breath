@@ -63,14 +63,14 @@ set_of_chars::set_of_chars( set_of_chars const & other )
 }
 
 set_of_chars &
-set_of_chars::operator=( set_of_chars const & other )
+set_of_chars::operator =( set_of_chars const & other )
 {
     m_bits = other.m_bits ;
     return *this ;
 }
 
 bool
-set_of_chars::operator==( set_of_chars const & other ) const
+set_of_chars::operator ==( set_of_chars const & other ) const
 {
     return m_bits == other.m_bits ;
 }
@@ -220,8 +220,8 @@ set_of_chars::iterator::operator ++()
 set_of_chars::iterator
 set_of_chars::iterator::operator ++( int )
 {
-    auto                    tmp( *this );
-    operator ++();
+    auto                    tmp( *this ) ;
+    operator ++() ;
     return tmp ;
 }
 

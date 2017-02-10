@@ -78,14 +78,14 @@ sensitive_buffer< T[ n ] >::end() const
 
 template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::reference
-sensitive_buffer< T[ n ] >::operator[]( size_type index )
+sensitive_buffer< T[ n ] >::operator []( size_type index )
 {
     return m_data[ index ] ;
 }
 
 template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::const_reference
-sensitive_buffer< T[ n ] >::operator[]( size_type index ) const
+sensitive_buffer< T[ n ] >::operator []( size_type index ) const
 {
     return m_data[ index ] ;
 }

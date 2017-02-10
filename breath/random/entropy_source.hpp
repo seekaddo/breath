@@ -84,11 +84,11 @@ public:
 
     //!     Returns a new random value: the same as next().
     // ---------------------------------------------------------------------
-    result_type         operator()() ;
+    result_type         operator ()() ;
 
     //!     Returns a new random value in the range [min(), maximum].
     // ---------------------------------------------------------------------
-    result_type         operator()( result_type maximum ) ;
+    result_type         operator ()( result_type maximum ) ;
 
 
     //!     Releases the system resource(s) associated with this

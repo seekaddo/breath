@@ -34,7 +34,7 @@ public:
                         instance() ;
     //!     \return The \c n-th byte of the MAC address.
     // ---------------------------------------------------------------------
-    uint8_t             operator[]( int n ) const ;
+    uint8_t             operator []( int n ) const ;
 
 private:
     std::array< uint8_t, 6 >

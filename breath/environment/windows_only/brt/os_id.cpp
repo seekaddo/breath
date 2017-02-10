@@ -114,7 +114,7 @@ os_id::is_equal( const os_id & other ) const
 }
 
 std::ostream &
-operator<<( std::ostream & dest, const os_id & id )
+operator <<( std::ostream & dest, const os_id & id )
 {
     dest << breath::names[ id.m_id ] ;
 

@@ -42,7 +42,7 @@ roman::roman( int n )
 }
 
 std::ostream &
-operator<<( std::ostream & os, roman const & r )
+operator <<( std::ostream & os, roman const & r )
 {
     return os << r.m_representation ;
 }

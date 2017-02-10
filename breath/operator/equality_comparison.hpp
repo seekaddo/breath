@@ -14,18 +14,18 @@
 #define BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
 
 /*!
-        Automatically provides a definition for \c operator==() and
-        \c operator!=() in terms of a user-declared member function
+        Automatically provides a definition for \c operator ==() and
+        \c operator !=() in terms of a user-declared member function
         \c %is_equal().
 */
 
 namespace breath {
 namespace adl_shield {
 
-//!     The class template \c equality_comparison<> provides \c
-//!     operator== and \c operator!= as namespace scope functions
-//!     whose name is associated "on demand" (i.e. at instantiation)
-//!     to class \c T, via ADL.
+//!     The class template \c equality_comparison<> provides <code>
+//!     operator ==</code> and <code>operator != </code> as namespace
+//!     scope functions whose name is associated "on demand" (i.e. at
+//!     instantiation) to class \c T, via ADL.
 //!
 //!     Usage:
 //!     ======
@@ -62,11 +62,11 @@ namespace adl_shield {
 template< typename T >
 class equality_comparison
 {
-    friend bool         operator==( T const & lhs, T const & rhs)
+    friend bool         operator ==( T const & lhs, T const & rhs)
     {
         return lhs.is_equal( rhs );
     }
-    friend bool         operator!=( T const & lhs, T const & rhs )
+    friend bool         operator !=( T const & lhs, T const & rhs )
     {
         return !( lhs == rhs ) ;
     }

@@ -74,8 +74,8 @@ digest< Hasher >::is_equal( digest< Hasher > const & other ) const
 // -----------------------------------------------------------------------
 template< typename Ch, typename Tr, typename Hasher >
 std::basic_ostream< Ch, Tr > &
-operator<<( std::basic_ostream< Ch, Tr >   & os,
-            breath::digest< Hasher > const & d )
+operator <<( std::basic_ostream< Ch, Tr >   & os,
+             breath::digest< Hasher > const & d )
 {
     enum
     {

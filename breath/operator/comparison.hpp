@@ -24,19 +24,19 @@ template< typename T >
 class comparison
     :   private equality_comparison< T >
 {
-    friend bool         operator<( T const & lhs, T const & rhs )
+    friend bool         operator <( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) < 0 ;
     }
-    friend bool         operator<=( T const & lhs, T const & rhs )
+    friend bool         operator <=( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) <= 0 ;
     }
-    friend bool         operator>( T const & lhs, T const & rhs )
+    friend bool         operator >( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) > 0 ;
     }
-    friend bool         operator>=( T const & lhs, T const & rhs )
+    friend bool         operator >=( T const & lhs, T const & rhs )
     {
         return lhs.compare( rhs ) >= 0 ;
     }

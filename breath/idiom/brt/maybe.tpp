@@ -59,7 +59,7 @@ maybe< T >::~maybe() noexcept
 
 template< typename T >
 maybe< T > &
-maybe< T >::operator=( maybe< T > const & other )
+maybe< T >::operator =( maybe< T > const & other )
 {
     if ( other.is_valid() ) {
         if ( is_valid() ) {
@@ -77,7 +77,7 @@ maybe< T >::operator=( maybe< T > const & other )
 
 template< typename T >
 maybe< T > &
-maybe< T >::operator=( maybe && other )
+maybe< T >::operator =( maybe && other )
 {
     if ( other.is_valid() ) {
         if ( is_valid() ) {
@@ -95,11 +95,11 @@ maybe< T >::operator=( maybe && other )
 }
 
 //      Note that T's assignment operator exception guarantee reflects
-//      that of this operator=().
+//      that of this operator =().
 // ---------------------------------------------------------------------
 template< typename T >
 maybe< T > &
-maybe< T >::operator=( T const & rhs )
+maybe< T >::operator =( T const & rhs )
 {
     if ( is_valid() ) {
         *static_cast< T * >( m_buffer.address() ) = rhs ;
@@ -113,7 +113,7 @@ maybe< T >::operator=( T const & rhs )
 
 template< typename T >
 maybe< T > &
-maybe< T >::operator=( T && t )
+maybe< T >::operator =( T && t )
 {
     if ( is_valid() ) {
         *static_cast< T * >( m_buffer.address() ) = std::move( t ) ;

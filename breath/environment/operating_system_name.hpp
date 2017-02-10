@@ -35,7 +35,7 @@ private:
     char                m_what_str[ what_string_max_size ];
 } ;
 
-std::ostream &      operator<<( std::ostream &, operating_system_name const & ) ;
+std::ostream &      operator <<( std::ostream &, operating_system_name const & ) ;
 
 }
 

@@ -44,7 +44,7 @@ private:
     uint16_t            m_clock_seq ;
     uint8_t             m_node[ 6 ] ;
 
-    friend std::ostream & operator<<( std::ostream &, uuid const & ) ;
+    friend std::ostream & operator <<( std::ostream &, uuid const & ) ;
 } ;
 
 }

@@ -37,7 +37,7 @@ namespace {
         std::ifstream m_stream;
 
         template< typename T >
-        friend nist_file & operator>>( nist_file &, T & t );
+        friend nist_file & operator >>( nist_file &, T & t );
 
     public:
         explicit nist_file( const char * filename );
@@ -80,7 +80,7 @@ namespace {
     }
 
     template< typename T >
-    nist_file & operator>>( nist_file & f, T & t )
+    nist_file & operator >>( nist_file & f, T & t )
     {
         f.m_stream >> t;
         return f;

@@ -101,10 +101,10 @@ public:
                         maybe( maybe && ) ;
     explicit            maybe( T && ) ;
                         ~maybe() noexcept ;
-    maybe &             operator=( maybe const & ) ;
-    maybe &             operator=( T const & ) ;
-    maybe &             operator=( maybe && ) ;
-    maybe &             operator=( T && ) ;
+    maybe &             operator =( maybe const & ) ;
+    maybe &             operator =( T const & ) ;
+    maybe &             operator =( maybe && ) ;
+    maybe &             operator =( T && ) ;
 
     bool                is_valid() const noexcept ;
 

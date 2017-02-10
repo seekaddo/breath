@@ -61,7 +61,7 @@ node_id::instance()
 }
 
 uint8_t
-node_id::operator[]( int n ) const
+node_id::operator []( int n ) const
 {
     return m_address[ n ] ;
 }

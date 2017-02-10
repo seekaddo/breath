@@ -33,7 +33,7 @@ private:
     Engine &            m_engine ; ///gps A reference, until I'll work out copyability issues
     result_type const   m_max    ;
 
-    void operator=(subrange_adaptor const & ) = delete; //gps get away with VC++'s C4512, for now
+    void operator =(subrange_adaptor const & ) = delete; //gps get away with VC++'s C4512, for now
 
 public:
     //!     Constructs a subrange adaptor from a given Engine and a new max

@@ -30,7 +30,7 @@ printable_string::printable_string( std::string const & s )
 }
 
 std::ostream &
-operator<<( std::ostream & dest, printable_string const & ps )
+operator <<( std::ostream & dest, printable_string const & ps )
 {
     if ( ! ps.m_value.is_valid() ) {
         return dest << "(null)" ;

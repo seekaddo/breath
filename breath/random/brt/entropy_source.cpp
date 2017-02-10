@@ -52,13 +52,13 @@ entropy_source::max BREATH_PREVENT_MACRO_EXPANSION () noexcept
 }
 
 entropy_source::result_type
-entropy_source::operator()()
+entropy_source::operator ()()
 {
     return next() ;
 }
 
 entropy_source::result_type
-entropy_source::operator()( result_type maximum )
+entropy_source::operator ()( result_type maximum )
 {
     subrange_adaptor< entropy_source >
                         adaptor( *this, maximum ) ;

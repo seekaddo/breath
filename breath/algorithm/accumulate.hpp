@@ -38,7 +38,7 @@ public:
     static init_type    first() ;
 
     //!     Performs a summation of the elements in the range <code>
-    //!     [begin, end)</code> via <code>operator+=</code> (which is
+    //!     [begin, end)</code> via <code>operator +=</code> (which is
     //!     searched via ADL). Can have a different implementation in
     //!     a user specialization.
     // -----------------------------------------------------------------------

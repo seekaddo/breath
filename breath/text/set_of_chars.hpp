@@ -41,11 +41,11 @@ public:
                         set_of_chars( except_for, std::string const & ) ;
 
                         set_of_chars( set_of_chars const & ) ;
-    set_of_chars &      operator=( set_of_chars const & ) ;
+    set_of_chars &      operator =( set_of_chars const & ) ;
 
                         ~set_of_chars() noexcept ;
 
-    bool                operator==( set_of_chars const & ) const ;
+    bool                operator ==( set_of_chars const & ) const ;
     bool                contains( char c ) const ;
 
     set_of_chars &      add( char c ) ;

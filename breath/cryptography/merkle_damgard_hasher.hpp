@@ -39,7 +39,7 @@ namespace breath {
     //!     - init_state( state_type & state )
     //!        \c state_type is either a built-in array or an
     //!        array-like type which provides const and non-const
-    //!        operator[] functions; the machine guarantees that data
+    //!        operator [] functions; the machine guarantees that data
     //!        stored in the \p state parameter are wiped automatically
     //!        when \c init_state() returns to the caller (for obvious
     //!        security reasons)
