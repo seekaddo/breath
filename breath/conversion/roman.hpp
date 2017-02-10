@@ -39,7 +39,7 @@ private:
     //!     numerals.
     // ---------------------------------------------------------------------
     friend std::ostream &
-        operator<<( std::ostream &, roman const & ) ;
+                    operator<<( std::ostream &, roman const & ) ;
 } ;
 
 }
