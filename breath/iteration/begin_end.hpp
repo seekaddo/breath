@@ -24,7 +24,7 @@
             breath::begin( a ) ;
             breath::end( a ) ;
           </code>
-        regardless of whether a refers to a standard container or
+        regardless of whether \c a refers to a standard container or
         to a built-in array. See also count.hpp.
 
 
