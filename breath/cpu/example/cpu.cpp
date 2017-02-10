@@ -34,8 +34,8 @@ processor_brand_string()
 {
     // Reference: Intel Manual, 3-176, Vol. 2A
     //
-    unsigned const      from = 0x80000002 ;
-    unsigned const      to   = 0x80000004 ;
+    unsigned const      from = 0x8000'0002 ;
+    unsigned const      to   = 0x8000'0004 ;
 
     std::size_t const   len = 16 * ( to - from + 1 ) ;
     char                s[ len ] ;
