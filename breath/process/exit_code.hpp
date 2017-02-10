@@ -20,7 +20,7 @@ extern int const    exit_failure ;
 
 //      Maintenance note:
 //
-//      keep the in sync with *all* the .cpp files of the various code
+//      keep in sync with *all* the .cpp files of the various code
 //      variants (brt/dep/ subdirectory).
 //   -----------------------------------------------------------------------
 extern int const    exit_warning ;
