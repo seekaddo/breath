@@ -74,7 +74,7 @@ void
 auto_array< T >::do_delete() noexcept
 {
     check_type_completeness< T >() ;
-    delete[] m_ptr;
+    delete [] m_ptr ;
 }
 
 }
