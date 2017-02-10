@@ -40,7 +40,7 @@
             os << BREATH_STRINGIZE_DELAYED( expr ) " = " << ( expr ) ;        \
             if ( std::strcmp( #expr,                                          \
                               BREATH_STRINGIZE_DELAYED( expr ) ) != 0 ) {     \
-                os << " [from: " << #expr << "]" ;                            \
+                os << " [from: " << #expr << ']' ;                            \
             }                                                                 \
             os << std::endl ;                                                 \
         } while ( false )                                                  /**/
