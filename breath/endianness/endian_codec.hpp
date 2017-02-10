@@ -96,10 +96,10 @@ public:
 //!
 //!     It is only designed for reads and writes in memory.
 //!
-//!     Type requirements.
+//!     Type requirements:
 //!         \c T and \c Byte shall be unsigned integral types.
 //!         There's no requirement that \c Byte have a smaller
-//!         \em width than \c T
+//!         \em width than \c T.
 //!
 //!     \warning
 //!         Given its generality it might be a good idea to rename
