@@ -25,7 +25,7 @@ public:
 
 private:
     friend std::ostream &
-                        operator <<( std::ostream &, last_api_error const & ) ;
+                    operator <<( std::ostream &, last_api_error const & ) ;
 
     int                 m_errno ;
     char                m_message[ 64 * 1024 ] ;
