@@ -27,7 +27,7 @@ namespace breath {
 //!                 sequence
 //!     \param[out] out   Iterator to the first element of the base64
 //!                 output
-//!     \param[in]  wrap_column Column where line-wrapping must happen
+//!     \param[in]  wrap_column Column where line-wrapping must occur
 //!                 in the generated output (0 means "no wrapping")
 // -------------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
