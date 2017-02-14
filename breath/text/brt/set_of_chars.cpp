@@ -147,17 +147,10 @@ set_of_chars::as_string() const
     return std::string( begin(), end() ) ;
 }
 
-// note: in C++17 we could forward to std::count() [gps]
 std::size_t
 set_of_chars::count() const
 {
-    std::size_t         counter = 0 ;
-    for( auto curr = m_bits.begin() ; curr != m_bits.end(); ++ curr ) {
-        if ( *curr ) {
-            ++ counter ;
-        }
-    }
-    return counter ;
+    return std::count( m_bits.begin(), m_bits.end(), true ) ;
 }
 
 bool
