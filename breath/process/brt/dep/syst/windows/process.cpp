@@ -114,7 +114,7 @@ process::terminate()
         throw last_api_error( "GetExitCodeProcess failed" ) ;
     }
     if ( exit_code == STILL_ACTIVE ) {
-        HMODULE             kernel = GetModuleHandleA( "kernel32.dll" ) ;
+        HMODULE const       kernel = GetModuleHandleA( "kernel32.dll" ) ;
         if ( kernel == NULL ) {
             throw last_api_error( "GetModuleHandleA failed" ) ;
         }
