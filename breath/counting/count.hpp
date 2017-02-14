@@ -23,7 +23,7 @@
 
         regardless of the actual type of a. See also begin_end.hpp.
 
-        These functions are made obsolete in C++14 by the namespace
+        These functions are made obsolete in C++17 by the namespace
         scope std::size()'s. However our version uses, for containers,
         a conditional noexcept that the standard version is not
         required to have.
