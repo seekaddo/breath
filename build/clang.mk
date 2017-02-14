@@ -16,7 +16,7 @@ cpp_basic_options = -std=c++14       \
                     -Wextra          \
                     -Werror          \
                     -pedantic-errors \
-		    -D_POSIX_C_SOURCE=200112L
+            -D_POSIX_C_SOURCE=200112L
 
 cpp_extra_options = -pipe	\
 # gps queste vanno nel debug:
