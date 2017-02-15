@@ -23,6 +23,26 @@ namespace breath {
 
 namespace        {
 
+//      RAII class to automatically close a registry key handle.
+//
+class key_handle_manager
+{
+public:
+    explicit key_handle_manager( HKEY key ) noexcept
+        :   m_key( key )
+    {
+    }
+
+    ~key_handle_manager() noexcept
+    {
+        // NOTE: the return value is ignored.
+        RegCloseKey( m_key ) ;
+    }
+
+private:
+    HKEY            m_key ;
+} ;
+
 [[ noreturn ]] void
 raise_exception( char const * msg )
 {
@@ -99,6 +119,8 @@ windows_version_info::build_number() const
     if ( ret != ERROR_SUCCESS ) {
         raise_exception( "cannot open the CurrentVersion registry key" ) ;
     }
+    key_handle_manager const
+                        manager( key ) ;
     constexpr int       size = 256;
     DWORD               dw_size = size ;
     char                buffer[ size ] = {} ;
