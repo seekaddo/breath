@@ -124,7 +124,7 @@ windows_version_info::build_number() const
     constexpr int       size = 256;
     DWORD               dw_size = size ;
     char                buffer[ size ] = {} ;
-    int                 ret2 = RegGetValue( key, "", "CurrentBuildNumber",
+    int const           ret2 = RegGetValue( key, "", "CurrentBuildNumber",
                                  RRF_RT_ANY, nullptr,
                                  &buffer, &dw_size ) ;
     if ( ret2 != ERROR_SUCCESS ) {
