@@ -333,6 +333,8 @@ windows_version_info::service_pack_string()
     if ( ret != ERROR_SUCCESS ) {
         raise_exception( "cannot open the Control\\Windows registry key" ) ;
     }
+    key_handle_manager const
+                        manager( key ) ;
     DWORD               value ;
     DWORD               dw_size = sizeof value ;
     int                 ret2 = RegGetValue( key, "", "CSDVersion",
