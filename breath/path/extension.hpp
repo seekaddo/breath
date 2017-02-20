@@ -18,8 +18,8 @@
 namespace breath {
 
 //!     \return The filename extension from \c path. It includes the
-//!             dot. If there is no dot, the result is an empty
-//!             string.
+//!             dot, if any. If there is no dot, the result is an
+//!             empty string.
 // -------------------------------------------------------------------------
 std::string         extension( std::string const & path ) ;
 
