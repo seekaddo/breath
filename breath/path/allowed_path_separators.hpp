@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2015 Gennaro Prota
+//                    Copyright 2015-2017 Gennaro Prota
 //
 //                 Licensed under the BSD 3-Clause License.
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
@@ -13,11 +13,15 @@
 #ifndef BREATH_GUARD_bvA1h6sHG51DDAzrkOaJBHIxlZBpgVnA
 #define BREATH_GUARD_bvA1h6sHG51DDAzrkOaJBHIxlZBpgVnA
 
-// note that the separators are returned with the "preferred" one first
-//
 namespace breath {
 
-char const *        allowed_path_separators() ;//gps constexpr?
+//!     Note that the separators are returned with the "preferred" one
+//!     first.
+//!
+//!     Visual Studio fails to link if I declare this function as
+//!     constexpr, so I avoid that for now.
+// -------------------------------------------------------------------------
+char const *        allowed_path_separators() ; //gps constexpr?
 
 }
 #endif
