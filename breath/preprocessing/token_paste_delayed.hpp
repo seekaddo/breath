@@ -15,7 +15,7 @@
 
 #include "breath/preprocessing/token_paste.hpp"
 
-#define BREATH_TOKEN_PASTE_DELAYED( s1, s2 )    BREATH_TOKEN_PASTE( s1, s2 )
+#define BREATH_TOKEN_PASTE_DELAYED( x, y )    BREATH_TOKEN_PASTE( x, y )
 
 #endif
 
