@@ -23,7 +23,7 @@ class this_process
 {
 private:
 
-    explicit            this_process() ;
+                        this_process() ;
 
 public:
 
