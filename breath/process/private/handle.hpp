@@ -15,16 +15,20 @@
 namespace breath {
 namespace process_private {
 
+//      RAII class to automatically close a process handle.
+//
 class handle
 {
     BREATH_DECLARE_NON_COPYABLE( handle )
 
 public:
-    explicit            handle( HANDLE h ) : m_handle( h )
+    explicit            handle( HANDLE h ) noexcept
+                            :   m_handle( h )
                         {}
                         ~handle() noexcept
                         {
                             if ( m_handle != NULL ) {
+                                // NOTE: the return value is ignored.
                                 CloseHandle( m_handle ) ;
                             }
                         }

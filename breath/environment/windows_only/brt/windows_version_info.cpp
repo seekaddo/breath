@@ -28,6 +28,8 @@ namespace        {
 class key_handle_manager
 {
 public:
+    BREATH_DECLARE_NON_COPYABLE( key_handle_manager )
+
     explicit key_handle_manager( HKEY key ) noexcept
         :   m_key( key )
     {
