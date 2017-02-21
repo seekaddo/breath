@@ -11,7 +11,7 @@
 namespace breath {
 
 char const *
-allowed_path_separators()
+allowed_path_separators() noexcept
 {
     return "\\/" ;
 }

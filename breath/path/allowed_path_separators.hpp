@@ -21,7 +21,7 @@ namespace breath {
 //!     Visual Studio fails to link if I declare this function as
 //!     constexpr, so I avoid that for now.
 // -------------------------------------------------------------------------
-char const *        allowed_path_separators() ; //gps constexpr?
+char const *        allowed_path_separators() noexcept ; //gps constexpr?
 
 }
 #endif
