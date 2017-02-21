@@ -41,7 +41,7 @@ get_environment()
 
     result_type         result ;
     try {
-        auto                curr = start ;
+        char const *        curr = start ;
         while ( *curr != '\0' ) {
             std::string const   single = curr ;
             auto const          pos = single.find( '=' ) ;
