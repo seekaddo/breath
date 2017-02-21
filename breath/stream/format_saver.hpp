@@ -93,9 +93,9 @@ namespace breath {
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_format_saver
 {
+public:
     BREATH_DECLARE_NON_COPYABLE( basic_format_saver )
 
-public:
     explicit            basic_format_saver( std::basic_ios< Ch, Traits > & ) ;
                         ~basic_format_saver() noexcept ;
 
