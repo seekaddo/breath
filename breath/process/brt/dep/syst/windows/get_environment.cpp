@@ -56,7 +56,7 @@ get_environment()
             }
             curr += ( single.length() + 1 ) ;
         }
-    } catch( ... ) {
+    } catch ( ... ) {
         do_free( start ) ;
         throw ;
     }
