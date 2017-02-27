@@ -184,7 +184,7 @@ windows_version_info::edition() const
         case PRODUCT_EMBEDDED:
             return "undocumented [PRODUCT_EMBEDDED]" ; //gps
         case PRODUCT_ENTERPRISE:
-            return "Enterprise Edition" ;
+            return "Enterprise" ;
         case PRODUCT_ENTERPRISE_E:
             return "Enterprise E" ;
         case PRODUCT_ENTERPRISE_EVALUATION:
