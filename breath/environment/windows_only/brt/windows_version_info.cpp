@@ -159,8 +159,16 @@ windows_version_info::edition() const
             return "HPC Edition" ;
         case PRODUCT_CLUSTER_SERVER_V:
             return "Server Hyper Core V" ;
+        case PRODUCT_CORE:
+            return "Home" ;
         case PRODUCT_CORE_COUNTRYSPECIFIC:
             return "Home China" ;
+        case PRODUCT_CORE_N:
+            return "Home N" ;
+        case PRODUCT_CORE_SINGLELANGUAGE:
+            return "Home Single Language" ;
+        case PRODUCT_DATACENTER_EVALUATION_SERVER:
+            return "Server Datacenter (evaluation installation)" ;
         case PRODUCT_DATACENTER_SERVER:
             return "Datacenter Edition" ;
         case PRODUCT_DATACENTER_SERVER_CORE:
@@ -169,14 +177,30 @@ windows_version_info::edition() const
             return "Server Datacenter without Hyper-V (core installation)" ;
         case PRODUCT_DATACENTER_SERVER_V:
             return "Server Datacenter without Hyper-V (full installation)" ;
+        //case PRODUCT_EDUCATION:
+        //    return "Education" ;
+        //case PRODUCT_EDUCATION_N:
+        //    return "Education N" ;
         case PRODUCT_EMBEDDED:
             return "undocumented [PRODUCT_EMBEDDED]" ; //gps
         case PRODUCT_ENTERPRISE:
             return "Enterprise Edition" ;
         case PRODUCT_ENTERPRISE_E:
             return "Enterprise E" ;
+        case PRODUCT_ENTERPRISE_EVALUATION:
+            return "PRODUCT_ENTERPRISE_EVALUATION" ;
         case PRODUCT_ENTERPRISE_N:
             return "Enterprise N" ;
+        case PRODUCT_ENTERPRISE_N_EVALUATION:
+            return "Enterprise N Evaluation" ;
+        //case PRODUCT_ENTERPRISE_S:
+        //    return "Enterprise 2015 LTSB" ;
+        //case PRODUCT_ENTERPRISE_S_EVALUATION:
+        //    return "Enterprise 2015 LTSB Evaluation" ;
+        //case PRODUCT_ENTERPRISE_S_N:
+        //    return "Enterprise 2015 LTSB N" ;
+        //case PRODUCT_ENTERPRISE_S_N_EVALUATION:
+        //    return "Enterprise 2015 LTSB N Evaluation" ;
         case PRODUCT_ENTERPRISE_SERVER:
             return "Server Enterprise (full installation)" ;
         case PRODUCT_ENTERPRISE_SERVER_CORE:
@@ -213,12 +237,24 @@ windows_version_info::edition() const
             return "Storage Server 2008 R2 Essentials" ;
         case PRODUCT_HYPERV:
             return "Microsoft Hyper-V Server" ;
+        //case PRODUCT_IOTUAP:
+        //    return "IoT Core" ;
+        //case PRODUCT_IOTUAPCOMMERCIAL:
+        //    return "IoT Core Commercial" ;
         case PRODUCT_MEDIUMBUSINESS_SERVER_MANAGEMENT:
             return "Essential Business Server Management Server" ;
         case PRODUCT_MEDIUMBUSINESS_SERVER_MESSAGING:
             return "Essential Business Server Messaging Server" ;
         case PRODUCT_MEDIUMBUSINESS_SERVER_SECURITY:
             return "Essential Business Server Security Server" ;
+        case PRODUCT_MOBILE_CORE:
+            return "Mobile" ;
+        //case PRODUCT_MOBILE_ENTERPRISE:
+        //    return "Mobile Enterprise" ;
+        case PRODUCT_MULTIPOINT_PREMIUM_SERVER:
+            return "MultiPoint Server Premium (full installation)" ;
+        case PRODUCT_MULTIPOINT_STANDARD_SERVER:
+            return "MultiPoint Server Standard (full installation)" ;
         case PRODUCT_PROFESSIONAL:
             return "Professional" ;
         case PRODUCT_PROFESSIONAL_E:
@@ -227,6 +263,8 @@ windows_version_info::edition() const
             return "undocumented [PRODUCT_PROFESSIONAL_EMBEDDED]" ; // gps
         case PRODUCT_PROFESSIONAL_N:
             return "Professional N" ;
+        case PRODUCT_PROFESSIONAL_WMC:
+            return "Professional with Media Center" ;
         case PRODUCT_SB_SOLUTION_SERVER:
             return "Small Business Server 2011 Essentials" ;
         case PRODUCT_SB_SOLUTION_SERVER_EM:
@@ -277,10 +315,14 @@ windows_version_info::edition() const
             return "Storage Server Express" ;
         case PRODUCT_STORAGE_EXPRESS_SERVER_CORE:
             return "Storage Server Express (core installation)" ;
+        case PRODUCT_STORAGE_STANDARD_EVALUATION_SERVER:
+            return "Storage Server Standard (evaluation installation)" ;
         case PRODUCT_STORAGE_STANDARD_SERVER:
             return "Storage Server Standard" ;
         case PRODUCT_STORAGE_STANDARD_SERVER_CORE:
             return "Storage Server Standard (core installation)" ;
+        case PRODUCT_STORAGE_WORKGROUP_EVALUATION_SERVER:
+            return "Storage Server Workgroup (evaluation installation)" ;
         case PRODUCT_STORAGE_WORKGROUP_SERVER:
             return "Storage Server Workgroup" ;
         case PRODUCT_STORAGE_WORKGROUP_SERVER_CORE:
