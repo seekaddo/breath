@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Array element counter.
+//!     \brief Arrays and containers element counter.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
