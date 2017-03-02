@@ -15,7 +15,7 @@
 
 namespace breath {
 
-std::vector< std::string>
+std::vector< std::string >
                     split( std::string const & s, char delim ) ;
 
 }
