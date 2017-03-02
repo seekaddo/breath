@@ -37,7 +37,7 @@ namespace breath {
 //      ------
 //
 //!     Returns the number of elements of the array argument
-//!     (obviously, n).
+//!     (obviously, \c n).
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr std::size_t
@@ -49,7 +49,7 @@ count( T const ( & )[ n ] ) noexcept
 //      count:
 //      ------
 //
-//!     Same as t.size(), for any standard container.
+//!     Same as \c t.size(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename T >
 constexpr typename T::size_type
