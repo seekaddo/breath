@@ -38,7 +38,7 @@ public:
 public:
 
     // construction
-    sensitive_buffer() ;
+                        sensitive_buffer() ;
 
     template< typename InputIter >
                         sensitive_buffer( InputIter begin, InputIter end ) ;
