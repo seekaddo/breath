@@ -48,7 +48,7 @@ make_string()
 #                                       case we'd need to filter out
 #                                       the cases of par being '*' or
 #                                       '@' (unspecified result), and
-#                                       perhaps null string as well.
+#                                       perhaps null string as well
 #
 #           expr "$1" : '.*'            obvious problems with some
 #                                       strings, e.g. '+' or '('

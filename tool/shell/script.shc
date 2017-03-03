@@ -11,7 +11,7 @@
 #       --------------
 #
 #       Returns (outputs to standard output) the non-directory portion
-#       of the running script's name
+#       of the running script's name.
 # ----------------------------------------------------------------------------
 script_name()
 {
