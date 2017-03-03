@@ -39,8 +39,8 @@
 #           member of the UCC but not the Berne Convention
 #
 #
-#       What is not clear to me is what "country" is a work being
-#       first published in when it is actually first published on the
+#       What is not clear to me is what "country" is a work first
+#       published in when it is actually first published on the
 #       Internet. To this Arnoud Engelfriet replied:
 #
 #           "I don't think I've ever seen that addressed in court.
@@ -62,11 +62,11 @@
 #       Arguments:
 #
 #       The first argument is a string to be used as the designation
-#       of the copyright owner
+#       of the copyright owner.
 # ----------------------------------------------------------------------------
 make_copyright_notice()
 {
-    #gps use "-u" for date command??
+    #gps use "-u" for the date command??
     printf '%s\n' "Copyright ` date +\"%Y\" ` $1"
 }
 
