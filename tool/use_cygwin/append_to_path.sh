@@ -8,7 +8,7 @@
 # _________________________________________________________________________
 #
 #   NOTE: this isn't meant to be used on its own; it's just invoked by
-#         useCygwin.bat, in this same directory.
+#         use_cygwin.bat, in this same directory.
 
 
 export PATH=$PATH:/usr/local/bin:/usr/bin
