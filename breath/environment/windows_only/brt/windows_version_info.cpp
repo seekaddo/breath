@@ -150,7 +150,7 @@ windows_version_info::edition() const
         return "" ;
     }
 
-    switch( dw ) {
+    switch ( dw ) {
         case PRODUCT_BUSINESS:
             return "Business Edition" ;
         case PRODUCT_BUSINESS_N:
