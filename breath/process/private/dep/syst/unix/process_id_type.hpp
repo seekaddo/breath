@@ -3,7 +3,7 @@
 //
 //                 Licensed under the BSD 3-Clause License.
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
-//              <https://opensource.org/licenses/BSD-3-Clause>)
+//             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
 #ifndef BREATH_GUARD_NzYsen4i2ZQBD4qHyyKsOpkUxpwSzWSP

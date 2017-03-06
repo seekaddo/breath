@@ -4,7 +4,7 @@ REM                       Copyright 2013 Gennaro Prota
 REM
 REM                 Licensed under the BSD 3-Clause License.
 REM            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
-REM              <https://opensource.org/licenses/BSD-3-Clause>)
+REM             <https://opensource.org/licenses/BSD-3-Clause>.)
 REM _________________________________________________________________________
 REM
 REM     A quick tool to invoke before compiling with Cygwin, on

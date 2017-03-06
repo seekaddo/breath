@@ -5,7 +5,7 @@
 //
 //                 Licensed under the BSD 3-Clause License.
 //            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
-//              <https://opensource.org/licenses/BSD-3-Clause>)
+//             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
 #include "breath/process/child_process.hpp"
