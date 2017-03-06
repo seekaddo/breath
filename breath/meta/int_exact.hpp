@@ -70,8 +70,8 @@ public:
 }
 //! \endcond
 
-//!     Type requirements:
-//!         \p T shall be either \c signed \c int or \c unsigned \c int
+//!     \par Type requirements
+//!         \p T shall be either \c signed \c int or \c unsigned \c int.
 //!
 template< std::size_t width, typename T /* gps temp = signed */ >
 class int_exact

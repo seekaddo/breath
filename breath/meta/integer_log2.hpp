@@ -80,12 +80,12 @@ const result_type initial_n = choose_initial_n<n_zero>::value ;
 
 //      integer_log2_impl<>
 //
-//      * Invariant:
+//      Invariant:
 //                     2n
 //      1 <= x && x < 2    at the start of each recursion
 //                         (see also choose_initial_n<>)
 //
-//      * Type requirements:
+//      Type requirements:
 //
 //      argument_type may be any unsigned type with at least n_zero + 1
 //      value bits. (Note: If larger types will be standardized -e.g.

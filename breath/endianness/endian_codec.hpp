@@ -49,7 +49,7 @@ width_ratio< T, Byte >::value ;
 //      common. Thus, our default policies, defined below, take the
 //      endianness type only into account. Your will need to provide
 //      your own policy for more exotic cases (e.g. if you are dealing
-//      with PDP-11 endianness)
+//      with PDP-11 endianness).
 // -------------------------------------------------------------------------
 class little_endian_policy
 {
@@ -96,7 +96,7 @@ public:
 //!
 //!     It is only designed for reads and writes in memory.
 //!
-//!     Type requirements:
+//!     \par Type requirements
 //!         \c T and \c Byte shall be unsigned integral types.
 //!         There's no requirement that \c Byte have a smaller
 //!         \em width than \c T.
@@ -109,7 +109,6 @@ public:
 //!     \todo Check this; is it true for user-policies?
 //!
 //! NOTE:
-//!
 //!     For purposes other than memory read/writes, different
 //!     arrangements than a sequence are theoretically conceivable but
 //!     no need has so far arisen for such a generalization. This only

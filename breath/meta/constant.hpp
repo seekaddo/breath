@@ -30,20 +30,20 @@ namespace meta {
 //!           singleton, mapping every pair (type, value) to unique
 //!           storage
 //!
-//!     Type requirements:
+//!     \par Type requirements
 //!         \a T must be a type suitable for declaring an integral
 //!         constant expression or a cv-qualified version of such a
-//!         type (e.g. <code>int volatile const </code>)
+//!         type (e.g. <code>int volatile const</code>).
 //!
 //!     \par Naming rationale
-//!         though at the time of writing (September 2006) only
+//!         Though at the time of writing (September 2006) only
 //!         constants of integral and enumeration type are allowed in
 //!         C++, we chose a name which doesn't mention either families
 //!         of types, in order to eventually accommodate, for instance,
 //!         floating point types as well, if ever allowed by the
 //!         standard.
 //!
-//!     Credit:
+//!     \par Credit
 //!         The basic idea of this class template was suggested by
 //!         Paul Mensonides as <code>map_integral<></code>.
 // -------------------------------------------------------------------------
