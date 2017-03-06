@@ -22,7 +22,7 @@ check_constructors()
         maybe< int >    m ;
         BREATH_CHECK( ! m.is_valid() ) ;
     }
-    
+
     // ordinary constructor
     {
         std::string const   s( "Hello" ) ;

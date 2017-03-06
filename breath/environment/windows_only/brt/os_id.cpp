@@ -17,7 +17,7 @@ namespace breath {
 namespace {
 
 // Attention: keep in sync with the declaration in [note 1]
-static char const * const   
+static char const * const
                     names[] =
 {
     "Unknown Windows variant",
@@ -63,7 +63,7 @@ static char const * const
 //        if( info.id() >= os_id::windows_2000 )
 //
 //    And the constants, in fact, appear in oldest-to-newest order.
-//    But... 
+//    But...
 //    I don't like too much the idea of having something which only
 //    makes sense for one of the supported OSes, and perhaps not even
 //    for it, in the future: right now, Windows

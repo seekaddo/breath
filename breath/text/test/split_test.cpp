@@ -28,7 +28,7 @@ main()
         DO_TEST( v.size() == 1 ) ;
         DO_TEST( v[ 0 ] == "abcde" ) ;
     }
-    
+
     {
         std::string         s( "string1" ) ;
         s.push_back( '\0' );
@@ -67,8 +67,8 @@ main()
         DO_TEST( v.size() == 3 ) ;
         DO_TEST( v[ 0 ] == "string1" ) ;
         DO_TEST( v[ 1 ] == "" ) ;
-        DO_TEST( v[ 2 ] == "string3" ) ;    
-    
+        DO_TEST( v[ 2 ] == "string3" ) ;
+
     }
 
 }

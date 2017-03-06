@@ -116,7 +116,7 @@ public:
         enum { infinity = size } ;
         bits_type const *   m_owner ;
         index_type          m_index ;
-    } ;   
+    } ;
 } ;
 
 template< typename FwdIterator>

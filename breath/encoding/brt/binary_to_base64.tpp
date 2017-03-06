@@ -52,7 +52,7 @@ binary_to_base64( InputIter begin, InputIter end,
         ++ count ;
         auto                tmp = ( static_cast< unsigned char >( *curr )
                                                              & 0x03 ) << 4 ;
-        
+
         if ( ++curr != end ) {
             ++ count ;
             tmp |= ( static_cast< unsigned char >( *curr ) & 0xf0 ) >> 4 ;
@@ -63,7 +63,7 @@ binary_to_base64( InputIter begin, InputIter end,
             if ( ++curr != end ) {
                 ++ count ;
                 tmp2 |= static_cast< unsigned char >( *curr ) >> 6 ;
-                do_output( alphabet[ tmp2 ] ) ; 
+                do_output( alphabet[ tmp2 ] ) ;
                 do_output( alphabet[ static_cast< unsigned char >(
                                                             *curr ) & 0x3f ] ) ;
                 ++ curr ;

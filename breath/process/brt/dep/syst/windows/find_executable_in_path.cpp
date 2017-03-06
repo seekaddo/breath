@@ -45,7 +45,7 @@ find_executable_in_path( std::string const & name,
                     ) != 0 ) {
             found = true;
             break ;
-        
+
         }
     }
     return found

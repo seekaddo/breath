@@ -58,7 +58,7 @@ process::start( std::string const & app_name,
     DWORD const         creation_flags = ( GetConsoleWindow()
                                               ? 0
                                               : CREATE_NO_WINDOW ) ;
-    
+
     int const           ret = CreateProcessA(
                                 app_name.c_str(),
                                 &args[ 0 ],
@@ -77,7 +77,7 @@ process::start( std::string const & app_name,
 
     if ( timeout_in_ms.is_valid() ) {
         BREATH_ASSERT( timeout_in_ms.value() > 0 ) ;
-        if( WaitForSingleObject( m_impl->m_info.hProcess, 
+        if( WaitForSingleObject( m_impl->m_info.hProcess,
                                  timeout_in_ms.value() ) == WAIT_FAILED ) {
             throw last_api_error( "WaitForSingleObject failed" ) ;
         }

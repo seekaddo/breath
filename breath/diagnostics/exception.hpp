@@ -34,7 +34,7 @@ public:
     //!     Constructs an object whose what() function returns a
     //!     pointer to a string equal to what_msg, possibly
     //!     truncated.
-    // ---------------------------------------------------------------------    
+    // ---------------------------------------------------------------------
     explicit exception( std::string const & what_msg ) noexcept ;
 
     //!     Compiler-generated copy constructor.

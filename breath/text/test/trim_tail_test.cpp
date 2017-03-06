@@ -31,7 +31,7 @@ main()
     DO_TEST( trim_tail( "abc  " ) == "abc" ) ;
     DO_TEST( trim_tail( "abc \t" ) == "abc" ) ;
     DO_TEST( trim_tail( "abc a" ) == "abc a" ) ;
-    
+
     DO_TEST( trim_tail( "abcd", breath::set_of_chars( "db" ) ) == "abc" ) ;
     DO_TEST( trim_tail( "abcd", breath::set_of_chars( "badc" ) ) == "" ) ;
     DO_TEST( trim_tail( "a", breath::set_of_chars( "bcde" ) ) == "a" ) ;

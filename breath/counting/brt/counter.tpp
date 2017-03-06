@@ -28,7 +28,7 @@ template< typename Int >
 counter< Int > &
 counter< Int >::operator ++() &
 {
-    BREATH_ASSERT( m_count < (std::numeric_limits< 
+    BREATH_ASSERT( m_count < (std::numeric_limits<
                                 Int >::max BREATH_PREVENT_MACRO_EXPANSION) () ) ;
     ++ m_count ;
     return *this ;

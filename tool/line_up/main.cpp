@@ -85,8 +85,8 @@ main()
 
         std::cout << *it << ( it ==( lines.end()-1 )
                                 ? last_line_terminator
-                                : marker ) << std::endl ; 
-         
+                                : marker ) << std::endl ;
+
     }
 }
 

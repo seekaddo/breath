@@ -77,7 +77,7 @@ check_string_of_nuls()
 void
 check_line_wrap()
 {
-    std::string const   s = 
+    std::string const   s =
         "Nel mezzo del cammin di nostra vita\n"
         "mi ritrovai per una selva oscura\n"
         "che' la diritta via era smarrita.\n"

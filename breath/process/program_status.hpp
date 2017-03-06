@@ -8,7 +8,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief A singleton class to manage the overall program status. 
+//!     \brief A singleton class to manage the overall program status.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b

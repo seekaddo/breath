@@ -89,7 +89,7 @@ main()
         set_of_chars        sc( s.cbegin(), s.cend() ) ;
         sc.complement() ;
         for ( int c = CHAR_MIN ; c <= CHAR_MAX ; ++ c ) {
-            DO_TEST( sc.contains( static_cast< char >( c ) ) == 
+            DO_TEST( sc.contains( static_cast< char >( c ) ) ==
                 ( s.find( static_cast< char>( c ) ) == std::string::npos ) ) ;
         }
     }
@@ -114,7 +114,7 @@ main()
         DO_TEST( sc.count() == 6 ) ;
         sc.remove( "64253" ) ;
         DO_TEST( sc.count() == 1 && sc.contains( '1' ) ) ;
-    
+
     }
     // is_empty
     {

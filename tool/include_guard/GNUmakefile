@@ -6,7 +6,7 @@ include ../../build/start.mk
 # DESIGN GOALS:
 #
 #   - you specify the sources only (and the target, of course)
-#   
+#
 #     Le dipendenze dagli include sono calcolate con -MM. Ma iniziamo prima
 #     con qualcosa di "manuale".
 
@@ -29,7 +29,7 @@ macro_name$(object_file_suffix): macro_name.cpp \
  $(root)/breath/random/subrange_adaptor.hpp \
  $(root)/breath/random/subrange_max.hpp
 
- 
+
 main$(object_file_suffix): main.cpp $(root)/breath/random/entropy_source.hpp \
  $(root)/breath/diagnostics/exception.hpp \
  $(root)/tool/include_guard/macro_name.hpp

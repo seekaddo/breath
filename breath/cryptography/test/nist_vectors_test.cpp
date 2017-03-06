@@ -48,7 +48,7 @@ namespace {
 
     nist_file::nist_file( const char * filename )
     {
-        std::string const 
+        std::string const
                         breath_root( breath::find_environment_string( "BREATH_ROOT" ).value() ) ;
         std::string const
                         subdir( breath_root + "/breath/cryptography/test/nist_vectors/" );
@@ -62,7 +62,7 @@ namespace {
 
         if ( m_stream.rdstate() & ( std::ios::failbit | std::ios::eofbit ) )
             throw std::ios::failure( "cannot construct nist_file object" );
-        
+
     }
 
     bool nist_file::good() const
@@ -129,7 +129,7 @@ namespace {
             ++m_count;
             return result;
         }
-    
+
     };
 
 
@@ -211,10 +211,10 @@ void tests()
             if ( montecarlo_section )
             {
                 if ( montecarlo_harness.get_count() == 0 ) {
-                    
+
                     msg = read_compact_string( messages, z );
                     BREATH_ASSERT( 8 * msg.length() == 416 );
-                    
+
                     //----------
                     //msg = "8BFD162CB9D3B04DCB7E54B4DDB2B5D8D9C899F8"; // gps temp
                     //--------------------

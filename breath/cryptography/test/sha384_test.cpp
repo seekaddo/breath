@@ -45,7 +45,7 @@ check()
     {
         //      16,777,216 repetitions of `piece' ( [2] )
         //
-        std::string const   piece = 
+        std::string const   piece =
             "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmno" ;
         std::string         s ;
         for ( std::size_t i = 0 ; i < 16'777'216 ; ++ i ) {

@@ -274,7 +274,7 @@ identify_nt( windows_version_info const & info )
             id = os_id::windows_unknown ;
             break ;
         }
-    
+
     }
 
     return id ;

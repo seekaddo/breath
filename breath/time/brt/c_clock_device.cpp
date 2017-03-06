@@ -19,7 +19,7 @@ c_clock_device::retrieve()
         ? ret
         : throw breath::exception( "could not retrieve std::clock()" ) ;
 }
- 
+
 
 c_clock_device::c_clock_device()
     : m_start_tick() // just to remove compiler warnings

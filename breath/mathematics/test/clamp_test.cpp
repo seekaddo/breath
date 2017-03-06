@@ -53,7 +53,7 @@ check2()
     int const           a = 5 ;
     int const           low = 5 ;
     int const           high = 10 ;
-    
+
     BREATH_CHECK( & breath::clamp( a, low, high ) == & a ) ;
 
     int const           a2 = 10 ;

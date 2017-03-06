@@ -170,7 +170,7 @@ set_of_chars::is_empty() const
 set_of_chars::iterator::iterator()
     : m_owner( nullptr ),
       m_index( infinity )
-    
+
 {
 }
 

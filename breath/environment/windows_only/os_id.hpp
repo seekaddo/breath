@@ -42,7 +42,7 @@ namespace breath {
 //   future Windows variants of which neither is "higher" or "lower" than
 //   the other one
 class os_id
-    : private equality_comparison< os_id > 
+    : private equality_comparison< os_id >
 {
 private:
     typedef int     id_type ;
