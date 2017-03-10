@@ -48,11 +48,11 @@ get_environment()
             std::string const   name = single.substr( 0, pos ) ;
             // On my system the string pointed to by p begins with "=::=::\",
             // hence the test on empty.
-            if ( ! name.empty() ){
+            if ( ! name.empty() ) {
                 result.insert( result_type::value_type(
                                     name,
                                     single.substr( pos + 1 )
-                                )) ;
+                                ) ) ;
             }
             curr += ( single.length() + 1 ) ;
         }
