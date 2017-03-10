@@ -27,6 +27,7 @@ do_free( char * p )
 }
 
 }
+
 namespace breath {
 
 std::map< std::string, std::string >
