@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/process/get_environment.hpp"
-#include "breath/diagnostics/last_api_error.hpp"
+#include "breath/diagnostics/exception.hpp"
 #include <unistd.h>
 
 namespace breath {
@@ -18,14 +18,15 @@ get_environment()
     typedef std::map< std::string, std::string >
                         result_type ;
     if ( environ == nullptr ) {
-        throw last_api_error( "environ is a null pointer" ) ;
+        // Can this really happen?
+        throw exception( "environ is a null pointer" ) ;
     }
 
     result_type         result ;
 
     char const * const *
                         curr = environ ;
-    while ( *curr != '\0' ) {
+    while ( *curr != nullptr ) {
         std::string const   single = *curr ;
         auto const          pos = single.find( '=' ) ;
         std::string const   name = single.substr( 0, pos ) ;
