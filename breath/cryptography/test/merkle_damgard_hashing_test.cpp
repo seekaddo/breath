@@ -36,7 +36,7 @@ namespace {
         {
             std::string source;
             std::string expected;
-            std::size_t repetitions;
+            std::size_t repetitions = 0;
         };
 
         static test_entry const entries[];
