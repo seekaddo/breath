@@ -35,8 +35,7 @@ get_environment()
                             name,
                             single.substr( pos + 1 )
                         ) ) ;
-
-        ++ curr;
+        ++ curr ;
     }
     return result ;
 }
