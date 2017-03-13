@@ -16,9 +16,9 @@
 #include "breath/cryptography/sha224_hasher.hpp"
 #include "breath/cryptography/sha512_hasher.hpp"
 #include "breath/iteration/begin_end.hpp"
+#include "breath/text/to_string.hpp"
 
 #include <string>
-#include <sstream>
 #include <cstddef>
 #include <ostream>
 #include <iostream>
@@ -191,10 +191,7 @@ void check_known_digests()
         }
 
         const digest< Hasher > d( hasher );
-        std::stringstream stream;
-        stream << d;
-        std::string result;
-        stream >> result;
+        const std::string result = breath::to_string( d );
         BREATH_CHECK( result /*== GPS CHANGEd TEMPrarly*/ == entry.expected );
 
     }
