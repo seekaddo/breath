@@ -105,7 +105,7 @@ namespace {
         { one_million_a,
           "34aa973cd4c4daa4f61eeb2bdbad27316534016f" },
 
-        // the usual "crazy cog" :-)
+        // the usual "lazy cog" :-)
         { "The quick brown fox jumps over the lazy cog",
           "de9f2c7fd25e1b3afad3e85a0bd17d9b100db4b3" }
     };
