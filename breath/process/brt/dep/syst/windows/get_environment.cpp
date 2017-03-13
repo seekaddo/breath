@@ -50,8 +50,8 @@ get_environment()
             std::string const   single = curr ;
             auto const          pos = single.find( '=' ) ;
             std::string const   name = single.substr( 0, pos ) ;
-            // On my system the string pointed to by p begins with "=::=::\",
-            // hence the test on empty.
+            // On my system the string pointed to by start begins with
+            // "=::=::\", hence the test on empty.
             if ( ! name.empty() ) {
                 result.insert( result_type::value_type(
                                     name,
