@@ -21,7 +21,7 @@ constexpr int       base = static_cast< int >( breath::count( table ) ) ;
 }
 
 int
-luhn_sum( std::string const & s )
+luhn_sum( std::string const & str )
 {
     bool                from_table = false ;
     auto lambda = [ & ]( int s, char c )
@@ -37,7 +37,7 @@ luhn_sum( std::string const & s )
         return sum % base ;
     } ;
 
-    return std::accumulate( s.crbegin(), s.crend(), 0, lambda ) ;
+    return std::accumulate( str.crbegin(), str.crend(), 0, lambda ) ;
 }
 
 bool
