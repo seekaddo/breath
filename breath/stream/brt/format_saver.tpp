@@ -126,7 +126,7 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     {
         // so that the locale is NOT restored
         // (but what about callbacks? -gps)
-        m_store.ios_base::imbue( m_user_stream.getloc() ) ;
+        m_store.std::ios_base::imbue( m_user_stream.getloc() ) ;
     }
 
     // [exception mask]
