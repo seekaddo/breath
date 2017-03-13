@@ -39,7 +39,7 @@ check_known()
       } ;
 
     for ( auto it = breath::cbegin( known ) ; it != breath::cend( known ) ; ++ it ) {
-        BREATH_CHECK( breath::crc32( it->text.begin(), it->text.end() ) == it->crc32 ) ;
+        BREATH_CHECK( breath::crc32( it->text.cbegin(), it->text.cend() ) == it->crc32 ) ;
     }
 }
 
