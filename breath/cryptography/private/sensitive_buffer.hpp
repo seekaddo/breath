@@ -49,17 +49,17 @@ public:
                         ~sensitive_buffer() noexcept ;
 
     // iteration and access
-    iterator            begin() ;
-    iterator            end() ;
+    iterator            begin() noexcept ;
+    iterator            end() noexcept ;
 
-    const_iterator      begin() const ;
-    const_iterator      end()   const ;
+    const_iterator      begin() const noexcept ;
+    const_iterator      end()   const noexcept ;
 
     reference           operator []( size_type index ) ;
     const_reference     operator []( size_type index ) const ;
 
 private:
-    void                wipe() ;
+    void                wipe() noexcept ;
 } ;
 
 

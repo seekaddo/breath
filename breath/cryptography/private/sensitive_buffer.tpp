@@ -14,7 +14,7 @@ namespace breath {
 
 template< typename T, std::size_t n >
 void
-sensitive_buffer< T[ n ] >::wipe()
+sensitive_buffer< T[ n ] >::wipe() noexcept
 {
     breath::secure_fill( m_data ) ;
 }
@@ -50,28 +50,28 @@ sensitive_buffer< T[ n ] >::~sensitive_buffer() noexcept
 
 template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::iterator
-sensitive_buffer< T[ n ] >::begin()
+sensitive_buffer< T[ n ] >::begin() noexcept
 {
     return m_data ;
 }
 
 template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::iterator
-sensitive_buffer< T[ n ] >::end()
+sensitive_buffer< T[ n ] >::end() noexcept
 {
     return m_data + n ;
 }
 
 template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::const_iterator
-sensitive_buffer< T[ n ] >::begin() const
+sensitive_buffer< T[ n ] >::begin() const noexcept
 {
     return m_data ;
 }
 
 template< typename T, std::size_t n >
 typename sensitive_buffer< T[ n ] >::const_iterator
-sensitive_buffer< T[ n ] >::end() const
+sensitive_buffer< T[ n ] >::end() const noexcept
 {
     return m_data + n ;
 }
