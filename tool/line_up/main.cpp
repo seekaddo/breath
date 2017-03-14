@@ -83,7 +83,7 @@ main()
             || ( use_indent_width && ( it->length() % indent_width != 0 ) ) ) ;
 
 
-        std::cout << *it << ( it ==( lines.end()-1 )
+        std::cout << *it << ( it == ( lines.end()-1 )
                                 ? last_line_terminator
                                 : marker ) << std::endl ;
 
