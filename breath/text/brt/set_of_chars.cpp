@@ -101,7 +101,7 @@ set_of_chars::add( char const * s )
 set_of_chars &
 set_of_chars::add( std::string const & s )
 {
-    for( auto curr = s.begin() ; curr != s.end() ; ++ curr ) {
+    for( auto curr = s.cbegin() ; curr != s.cend() ; ++ curr ) {
         add( *curr ) ;
     }
     return *this ;
@@ -127,7 +127,7 @@ set_of_chars::remove( char const * s )
 set_of_chars &
 set_of_chars::remove( std::string const & s )
 {
-    for ( auto curr = s.begin() ; curr != s.end() ; ++ curr ) {
+    for ( auto curr = s.cbegin() ; curr != s.cend() ; ++ curr ) {
         remove( *curr ) ;
     }
     return *this ;
@@ -150,13 +150,13 @@ set_of_chars::as_string() const
 std::size_t
 set_of_chars::count() const
 {
-    return std::count( m_bits.begin(), m_bits.end(), true ) ;
+    return std::count( m_bits.cbegin(), m_bits.cend(), true ) ;
 }
 
 bool
 set_of_chars::is_empty() const
 {
-    for( auto curr = m_bits.begin() ; curr != m_bits.end() ; ++ curr ) {
+    for( auto curr = m_bits.cbegin() ; curr != m_bits.cend() ; ++ curr ) {
         if ( *curr ) {
             return false ;
         }

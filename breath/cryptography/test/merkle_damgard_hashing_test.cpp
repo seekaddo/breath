@@ -183,11 +183,11 @@ void check_known_digests()
         const typename known::test_entry & entry( known::entries[ i ] );
         const string_type & src( entry.source );
 
-        Hasher hasher( src.begin(), src.end() );
+        Hasher hasher( src.cbegin(), src.cend() );
 
         // repetitions?
         for ( std::size_t r( 0 ); r < entry.repetitions; ++r ) {
-            hasher.append( src.begin(), src.end() );
+            hasher.append( src.cbegin(), src.cend() );
         }
 
         const digest< Hasher > d( hasher );
@@ -214,7 +214,7 @@ int main()
         check_known_digests< breath::sha512_hasher >
     } ;
 
-    return test_runner::instance().run( begin( desc ), end( desc) ) ;
+    return test_runner::instance().run( cbegin( desc ), cend( desc) ) ;
 
 }
 

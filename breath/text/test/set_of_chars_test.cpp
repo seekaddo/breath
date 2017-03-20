@@ -36,7 +36,7 @@ main()
         DO_TEST( sc3.contains( '\0' ) && sc3.count() == 1 ) ;
 
         str.push_back( 'x' );
-        set_of_chars const sc4( str.begin(), str.end() ) ;
+        set_of_chars const sc4( str.cbegin(), str.cend() ) ;
         DO_TEST( sc4.contains( '\0' ) && sc4.contains( 'x')
                                         && sc4.count() == 2 ) ;
 

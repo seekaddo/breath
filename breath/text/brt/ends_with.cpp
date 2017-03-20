@@ -18,7 +18,7 @@ ends_with( std::string const & str, std::string const & with )
 {
     auto const          sz( with.size() ) ;
     return str.size() >= sz
-        && std::equal( with.begin(), with.end(), str.end() - sz ) ;
+        && std::equal( with.cbegin(), with.cend(), str.cend() - sz ) ;
 }
 
 }

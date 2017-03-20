@@ -216,10 +216,10 @@ merkle_damgard_machine< Engine >::final()
               ? 1 : 2 ) * block_length - ( filled + r ) ) ;
 
     static byte_type const padding[ block_length ] = { 0x80 } ;
-    append( breath::begin( padding ), breath::begin( padding ) + pad_len ) ;
+    append( breath::cbegin( padding ), breath::cbegin( padding ) + pad_len ) ;
 
     // append byte-based representation of the unpadded bit-length
-    append( breath::begin( message_len ), breath::end( message_len ) ) ;
+    append( breath::cbegin( message_len ), breath::cend( message_len ) ) ;
 }
 
 template< typename Engine >

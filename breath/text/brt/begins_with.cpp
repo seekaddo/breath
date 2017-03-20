@@ -16,7 +16,7 @@ bool
 begins_with( std::string const & str, std::string const & with )
 {
     return str.size() >= with.size()
-        && std::equal( with.begin(), with.end(), str.begin() ) ;
+        && std::equal( with.cbegin(), with.cend(), str.cbegin() ) ;
 }
 
 
