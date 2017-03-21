@@ -63,7 +63,7 @@ main()
         }
         if ( (i+1) % numbers_per_line == 0 ) {
             std::cout << '\n' << indent ;
-        } else if ( i != ( size - 1 ) ) {
+        } else if ( i != (size-1) ) {
             std::cout << ' ' ;
         }
     }
