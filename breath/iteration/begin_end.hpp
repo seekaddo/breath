@@ -125,7 +125,7 @@ cend( C const & c ) noexcept( noexcept( c.end() ) )
 //
 //!     Like container::begin, but for a built-in array.
 //!
-//!     (Note that there's no need for a "T const overload")
+//!     (Note that there's no need for a "T const overload".)
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 T *
@@ -152,7 +152,7 @@ cbegin( T const ( &a )[ n ] ) noexcept
 //!     Like container::end, but for a built-in array.
 //
 //!     (The remark about begin() and overloading on const applies
-//!     here as well)
+//!     here as well.)
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 T *
