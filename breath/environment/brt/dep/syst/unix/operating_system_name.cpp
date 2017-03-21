@@ -27,7 +27,7 @@ operating_system_name_error::what() const noexcept
 
 
 std::ostream &
-operator <<( std::ostream & dest, operating_system_name const &)
+operator <<( std::ostream & dest, operating_system_name const & )
 {
     utsname             un  ;
     int const           ret = uname( &un ) ;
