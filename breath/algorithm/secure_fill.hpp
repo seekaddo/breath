@@ -17,7 +17,7 @@
         This is completely analogous to the \c std::fill algorithm, except
         that, due to a \c volatile qualification, it guarantees that the
         sequence is written to, even if it is never touched after the
-        secure_fill() call (in other words: it ensures that the compiler
+        \c secure_fill() call (in other words: it ensures that the compiler
         will not optimize the function out); useful to zeroize passwords
         and other sensitive data.
 
