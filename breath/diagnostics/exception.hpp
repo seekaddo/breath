@@ -22,7 +22,7 @@ namespace breath {
 //      ----------
 //
 //!     Base class for all Breath's exception types. Derives virtually
-//!     from std::exception.
+//!     from \c std::exception.
 // -------------------------------------------------------------------------
 class exception : public virtual std::exception
 {
@@ -32,7 +32,7 @@ public:
     exception() noexcept ;
 
     //!     Constructs an object whose what() function returns a
-    //!     pointer to a string equal to what_msg, possibly
+    //!     pointer to a string equal to \c what_msg, possibly
     //!     truncated.
     // ---------------------------------------------------------------------
     explicit exception( std::string const & what_msg ) noexcept ;
