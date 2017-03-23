@@ -29,7 +29,7 @@ class operating_system_name_error
 public:
     explicit            operating_system_name_error( std::string const & ) noexcept ;
     virtual char const *
-                        what() const noexcept ;
+                        what() const noexcept override ;
 private:
     enum { what_string_max_size = 256 } ;
     char                m_what_str[ what_string_max_size ];

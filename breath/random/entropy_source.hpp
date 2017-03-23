@@ -123,7 +123,7 @@ public:
     // ---------------------------------------------------------------------
     explicit            exception( std::string const & msg ) noexcept ;
     virtual char const *
-                        what() const noexcept ;
+                        what() const noexcept override ;
 private:
     enum { max_length = 4 * 1024 } ;
     char                m_message[ max_length ] ;

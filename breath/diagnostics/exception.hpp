@@ -51,7 +51,7 @@ public:
 
     //!     Returns a description of the exception object.
     // ---------------------------------------------------------------------
-    virtual char const * what() const noexcept ;
+    virtual char const * what() const noexcept override ;
 
 private:
     enum { what_message_max_size = 1023 } ;

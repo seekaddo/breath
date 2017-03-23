@@ -20,7 +20,8 @@ public:
                         last_api_error( last_api_error const & other ) noexcept ;
                         ~last_api_error() noexcept ;
     int                 code() const noexcept ;
-    char const *        what() const noexcept ;
+    virtual char const *
+                        what() const noexcept override ;
     void                operator =( last_api_error const & ) = delete ;
 
 private:
