@@ -2,8 +2,8 @@
 REM =========================================================================
 REM                       Copyright 2013 Gennaro Prota
 REM
-REM                 Licensed under the BSD 3-Clause License.
-REM            (See accompanying file BSD_3_CLAUSE_LICENSE.txt or
+REM                 Licensed under the 3-Clause BSD License.
+REM            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 REM             <https://opensource.org/licenses/BSD-3-Clause>.)
 REM _________________________________________________________________________
 REM

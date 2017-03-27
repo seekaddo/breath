@@ -1,7 +1,7 @@
 Breath Library License
 ======================
 
-    The Breath library is made available subject to the terms of the BSD 3-Clause
+    The Breath library is made available subject to the terms of the 3-Clause BSD
     License, reproduced below for your convenience.
 
     Note: this license is also known as "BSD New" (as documented at the site of
@@ -26,7 +26,7 @@ For more info see:
 
 
 
-The BSD 3-Clause License:
+The 3-Clause BSD License:
 =========================
 
 © Copyright 2006-2017 Gennaro Prota
