@@ -63,6 +63,9 @@ public:
     static std::string  service_pack_string() ;
 
 private:
+
+    static bool         is_wow64_process() ;
+
     // This uses the pimpl idiom to avoid including <Windows.h> from here.
     //
     class               impl ;

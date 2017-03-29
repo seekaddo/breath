@@ -16,8 +16,10 @@
 #include <Windows.h>
 #include <Lm.h>
 #include <VersionHelpers.h>
+#include <Wow64apiset.h>
 
 #include <string>
+#include <climits>
 
 namespace breath {
 
@@ -348,12 +350,38 @@ windows_version_info::edition() const
 }
 
 bool
+windows_version_info::is_wow64_process()
+{
+    HMODULE const       module = GetModuleHandle( "kernel32" ) ;
+    if ( module == NULL ) {
+        throw breath::exception( "Cannot get a handle to kernel32.dll" ) ;
+    }
+
+    typedef BOOL ( WINAPI * is_wow64_process_type )( HANDLE, PBOOL ) ;
+
+    BOOL                is_wow64 = 0;
+    is_wow64_process_type const
+                        is_wow64_process = reinterpret_cast< is_wow64_process_type >(
+                            GetProcAddress( module, "IsWow64Process" ) ) ;
+    if ( is_wow64_process != nullptr ) {
+        if ( is_wow64_process( GetCurrentProcess(), &is_wow64 ) == 0 )
+        {
+            throw breath::exception( "IsWow64Process() failed" ) ;
+        }
+    }
+    return is_wow64 != 0 ;
+}
+
+bool
 windows_version_info::is_64_bit()
 {
-    SYSTEM_INFO         si ;
-    GetNativeSystemInfo( &si ) ;
-    return si.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64
-        || si.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_IA64 ;
+    // If the process is 64-bit and it runs at all, then it runs
+    // on a 64-bit Windows version. Otherwise, it is a 32-bit process,
+    // and the system is 64-bit if and only if the process runs under
+    // WOW64.
+    //
+    return ( sizeof ( void * ) * CHAR_BIT == 64 )
+        || is_wow64_process() ;
 }
 
 bool

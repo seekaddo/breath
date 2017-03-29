@@ -173,18 +173,6 @@ is_server_2003_r2()
     return 0 != ::GetSystemMetrics( sm_serverr2 ) ;
 }
 
-// Precondition:  never call this for Windows NT 3.5 or earlier (see MS docs)
-bool
-is_x64()
-{
-    // despite the "AMD64" in the macro name, this actually tests for x64
-    // (AMD or Intel); also, as perplexing as it may be, the docs make no
-    // mention of any possible failure of GetSystemInfo...
-    SYSTEM_INFO si = {} ;
-    ::GetSystemInfo( &si ) ;
-    return si.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64 ;
-}
-
 os_id
 identify_nt( windows_version_info const & info )
 {
@@ -216,7 +204,7 @@ identify_nt( windows_version_info const & info )
             break ;
 
         case win_version( 5, 2 ):
-            if ( is_x64() ) {
+            if ( windows_version_info::is_64_bit() ) {
                 id = os_id::windows_xp_professional_x64_edition;
             }
             break ;
