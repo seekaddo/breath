@@ -1,11 +1,8 @@
-Breath Library License
-======================
+The Breath library is made available subject to the terms of the 3-Clause BSD
+License, reproduced below for your convenience.
 
-    The Breath library is made available subject to the terms of the 3-Clause BSD
-    License, reproduced below for your convenience.
-
-    Note: this license is also known as "BSD New" (as documented at the site of
-    the Open Source Initiative: <http://opensource.org/licenses/BSD-3-Clause>).
+Note: this license is also known as "New BSD License" (as documented at the site
+of the Open Source Initiative: <http://opensource.org/licenses/BSD-3-Clause>).
 
 
 NOTES:
@@ -17,12 +14,7 @@ NOTES:
   -- a copyright symbol has been added for the copyright notice; there is no
      comma after the years
 
-------------------------------------------------------------------
-For more info see:
-
-  -- http://www.netbsd.org/about/redistribution.html
-
-------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 
