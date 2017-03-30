@@ -133,7 +133,7 @@ windows_version_info::build_number() const
                                  &buffer, &dw_size ) ;
     if ( ret2 != ERROR_SUCCESS ) {
         raise_exception( "cannot query the CurrentBuildNumber value"
-                                                    " from registry" ) ;
+                                                " from the registry" ) ;
     }
     return breath::from_string< int >( std::string( buffer ) ) ;
 }
@@ -413,7 +413,8 @@ windows_version_info::service_pack_string()
                                  RRF_RT_ANY, nullptr,
                                  &value, &dw_size ) ;
     if ( ret2 != ERROR_SUCCESS ) {
-        raise_exception( "cannot query the CSDVersion value from registry" ) ;
+        raise_exception( "cannot query the CSDVersion value from"
+                                                            " the registry" ) ;
     }
 
     int const           sp = value / 256 ;
