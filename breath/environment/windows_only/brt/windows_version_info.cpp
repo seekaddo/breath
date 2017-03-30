@@ -148,7 +148,8 @@ windows_version_info::edition() const
 
     DWORD               dw ;
     int const           failure = 0 ;
-    if ( GetProductInfo( major_version(), minor_version(), 0, 0, &dw ) == failure ) {
+    if ( GetProductInfo( major_version(), minor_version(), 0, 0, &dw )
+                                                                == failure ) {
         return "" ;
     }
 
@@ -290,7 +291,7 @@ windows_version_info::edition() const
         case PRODUCT_SOLUTION_EMBEDDEDSERVER:
             return "MultiPoint Server" ;
         case PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE:
-            return "undocumented [PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE]" ; // gps
+            return "undocumented [PRODUCT_SOLUTION_EMBEDDEDSERVER_CORE]" ;// gps
         case PRODUCT_STANDARD_SERVER:
             return "Standard Edition" ;
         case PRODUCT_STANDARD_SERVER_CORE:
@@ -357,11 +358,10 @@ windows_version_info::is_wow64_process()
         throw breath::exception( "Cannot get a handle to kernel32.dll" ) ;
     }
 
-    typedef BOOL ( WINAPI * is_wow64_process_type )( HANDLE, PBOOL ) ;
+    typedef BOOL ( WINAPI * fn_ptr_type )( HANDLE, PBOOL ) ;
 
     BOOL                is_wow64 = 0;
-    is_wow64_process_type const
-                        is_wow64_process = reinterpret_cast< is_wow64_process_type >(
+    fn_ptr_type const   is_wow64_process = reinterpret_cast< fn_ptr_type >(
                             GetProcAddress( module, "IsWow64Process" ) ) ;
     if ( is_wow64_process != nullptr ) {
         if ( is_wow64_process( GetCurrentProcess(), &is_wow64 ) == 0 )
