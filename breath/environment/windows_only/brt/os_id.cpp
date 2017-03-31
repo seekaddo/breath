@@ -122,12 +122,12 @@ operator <<( std::ostream & dest, const os_id & id )
                         info ;
     std::string const   edition = info.edition() ;
     if ( ! edition.empty() ) {
-        dest << " " << edition ;
+        dest << ' ' << edition ;
     }
 
     std::string const   sps = windows_version_info::service_pack_string() ;
     if ( ! sps.empty() ) {
-        dest << " " << sps ;
+        dest << ' ' << sps ;
     }
 
     if ( windows_version_info::is_64_bit() ) {
