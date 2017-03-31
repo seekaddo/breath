@@ -6,7 +6,7 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include "breath/process/get_environment.hpp"
+#include "breath/environment/get_environment_map.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/process/program_status.hpp"
@@ -34,7 +34,7 @@ do_free( char * p ) noexcept
 namespace breath {
 
 std::map< std::string, std::string >
-get_environment()
+get_environment_map()
 {
     typedef std::map< std::string, std::string >
                         result_type ;

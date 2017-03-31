@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/porting/dependent_code.hpp"
-#include BREATH_DEPENDENT_CODE( system, get_environment.cpp )
+#include BREATH_DEPENDENT_CODE( system, get_environment_map.cpp )
 
 // Local Variables:
 // mode: c++

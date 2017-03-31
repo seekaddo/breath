@@ -23,7 +23,7 @@ namespace breath {
 //!         defined environment variables.
 // -------------------------------------------------------------------------
 std::map< std::string, std::string >
-                    get_environment() ;
+                    get_environment_map() ;
 
 }
 
