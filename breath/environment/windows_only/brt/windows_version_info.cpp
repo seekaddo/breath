@@ -223,13 +223,13 @@ windows_version_info::edition() const
         case PRODUCT_ESSENTIALBUSINESS_SERVER_MGMTSVC:
             return "Essential Server Solution Management SVC" ;
         case PRODUCT_HOME_BASIC:
-            return "Home Basic Edition" ;
+            return "Home Basic" ;
         case PRODUCT_HOME_BASIC_E:
             return "Home Basic E" ;
         case PRODUCT_HOME_BASIC_N:
             return "Home Basic N" ;
         case PRODUCT_HOME_PREMIUM:
-            return "Home Premium Edition" ;
+            return "Home Premium" ;
         case PRODUCT_HOME_PREMIUM_E:
             return "Home Premium E" ;
         case PRODUCT_HOME_PREMIUM_N:
@@ -331,7 +331,7 @@ windows_version_info::edition() const
         case PRODUCT_STORAGE_WORKGROUP_SERVER_CORE:
             return "Storage Server Workgroup (core installation)" ;
         case PRODUCT_ULTIMATE:
-            return "Ultimate Edition" ;
+            return "Ultimate" ;
         case PRODUCT_ULTIMATE_E:
             return "Ultimate E" ;
         case PRODUCT_ULTIMATE_N:
