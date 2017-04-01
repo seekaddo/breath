@@ -114,13 +114,7 @@
     <ClCompile Include="breath\environment\windows_only\brt\windows_version_info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="breath\idiom\brt\string_argument.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="breath\idiom\test\maybe_test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="breath\idiom\test\string_argument_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="breath\mathematics\brt\next_multiple.cpp">
@@ -439,9 +433,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="breath\idiom\maybe.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="breath\idiom\string_argument.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="breath\idiom\volatilize.hpp">

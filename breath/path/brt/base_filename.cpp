@@ -13,15 +13,14 @@
 namespace breath {
 
 std::string
-base_filename( string_argument const & full_path )
+base_filename( std:: string const & full_path)
 {
-    std::string const   s( full_path.value() ) ;
     std::string::size_type const
-                        pos = s.find_last_of(
+                        pos = full_path.find_last_of(
                                 breath::allowed_path_separators() ) ;
     return pos == std::string::npos
-                    ? s
-                    : s.substr( pos + 1 )
+                    ? full_path
+                    : full_path.substr( pos + 1 )
                     ;
 }
 

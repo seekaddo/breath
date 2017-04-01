@@ -262,14 +262,7 @@
     <ClCompile Include="breath\environment\windows_only\brt\get_os.cpp" />
     <ClCompile Include="breath\environment\windows_only\brt\os_id.cpp" />
     <ClCompile Include="breath\environment\windows_only\brt\windows_version_info.cpp" />
-    <ClCompile Include="breath\idiom\brt\string_argument.cpp" />
     <ClCompile Include="breath\idiom\test\maybe_test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="breath\idiom\test\string_argument_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -499,7 +492,6 @@
     <ClInclude Include="breath\environment\windows_only\windows_version_info.hpp" />
     <ClInclude Include="breath\idiom\declare_non_copyable.hpp" />
     <ClInclude Include="breath\idiom\maybe.hpp" />
-    <ClInclude Include="breath\idiom\string_argument.hpp" />
     <ClInclude Include="breath\idiom\volatilize.hpp" />
     <ClInclude Include="breath\iteration\begin_end.hpp" />
     <ClInclude Include="breath\mathematics\brt\private\check_common_gcd_lcm_preconditions.hpp" />

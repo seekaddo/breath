@@ -31,8 +31,8 @@
           \c std::string which take a <code>char const *</code>
 */
 
-#include "breath/idiom/string_argument.hpp"
 #include "breath/idiom/maybe.hpp"
+#include <string>
 
 namespace breath {
 
@@ -53,7 +53,7 @@ namespace breath {
 //!     documentation provided with your C++ implementation.
 // -----------------------------------------------------------------------
 maybe< std::string >
-                    find_environment_string( string_argument const & name ) ;
+                    find_environment_string( std::string const & name ) ;
 
 }
 

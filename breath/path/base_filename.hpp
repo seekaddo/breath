@@ -13,7 +13,6 @@
 #ifndef BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
 #define BREATH_GUARD_t4h0OWeS8sua5gWE50YSmGUx15Kw2wrR
 
-#include "breath/idiom/string_argument.hpp"
 #include <string>
 
 namespace breath {
@@ -21,7 +20,7 @@ namespace breath {
 //!         Returns the filename part of a path. Assumes that the path
 //!         is well-formed.
 // -------------------------------------------------------------------------
-std::string         base_filename( string_argument const & full_path ) ;
+std::string         base_filename( std::string const & full_path ) ;
 
 }
 
