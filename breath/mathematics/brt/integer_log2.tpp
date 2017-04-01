@@ -29,7 +29,6 @@ max_power2_less_than_p( int p, int n = start_at ) noexcept
         ? max_power2_less_than_p( p, 2*n )
         : n
         ;
-
 }
 
 constexpr int
