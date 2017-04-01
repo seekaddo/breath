@@ -13,7 +13,7 @@
 namespace breath {
 
 namespace {
-    char const      incipit[] = "Breath library base exception" ;
+char const          incipit[] = "Breath library base exception" ;
 }
 
 exception::exception() noexcept
