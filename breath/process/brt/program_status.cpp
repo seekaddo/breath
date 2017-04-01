@@ -21,7 +21,7 @@ program_status &
 program_status::instance()
 {
     static program_status *
-                        the_instance ; // gps is no init ok?
+                        the_instance = nullptr ;
     if ( the_instance == nullptr ) {
         the_instance = new program_status ;
     }
