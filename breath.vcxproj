@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{7C0EB57B-B7DE-4D4D-B743-84D1326ADA5C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>%BREATH_ROOT%</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>Iphlpapi.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>%BREATH_ROOT%</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>Iphlpapi.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%BREATH_ROOT%</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+      <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>iphlpapi.lib;netapi32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%BREATH_ROOT%</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+      <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>iphlpapi.lib;netapi32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="breath\checksum\brt\luhn.cpp" />
+    <ClCompile Include="breath\checksum\extra\generate_crc32_table.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\checksum\test\crc32_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\checksum\test\luhn_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\conversion\brt\roman.cpp" />
+    <ClCompile Include="breath\conversion\test\roman_test.cpp" />
+    <ClCompile Include="breath\cpu\example\cpu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\cryptography\brt\hashing_count.cpp" />
+    <ClCompile Include="breath\cryptography\brt\md5_hasher.cpp" />
+    <ClCompile Include="breath\cryptography\brt\sha1_hasher.cpp" />
+    <ClCompile Include="breath\cryptography\brt\sha224_hasher.cpp" />
+    <ClCompile Include="breath\cryptography\brt\sha256_hasher.cpp" />
+    <ClCompile Include="breath\cryptography\brt\sha384_hasher.cpp" />
+    <ClCompile Include="breath\cryptography\brt\sha512_hasher.cpp" />
+    <ClCompile Include="breath\cryptography\test\merkle_damgard_hashing_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\cryptography\test\nist_vectors_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\cryptography\test\sha384_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\debugging\test\dump_expression_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\diagnostics\brt\assert.cpp" />
+    <ClCompile Include="breath\diagnostics\brt\exception.cpp" />
+    <ClCompile Include="breath\diagnostics\brt\last_api_error.cpp" />
+    <ClCompile Include="breath\diagnostics\test\exception_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\encoding\extra\generate_inverse_base64_table.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\encoding\test\base64_to_binary_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\encoding\test\binary_to_base64_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\environment\brt\find_environment_string.cpp" />
+    <ClCompile Include="breath\environment\brt\get_environment_map.cpp" />
+    <ClCompile Include="breath\environment\brt\node_id.cpp" />
+    <ClCompile Include="breath\environment\brt\operating_system_name.cpp" />
+    <ClCompile Include="breath\environment\test\find_environment_string_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\environment\windows_only\brt\get_os.cpp" />
+    <ClCompile Include="breath\environment\windows_only\brt\os_id.cpp" />
+    <ClCompile Include="breath\environment\windows_only\brt\windows_version_info.cpp" />
+    <ClCompile Include="breath\idiom\brt\string_argument.cpp" />
+    <ClCompile Include="breath\idiom\test\maybe_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\idiom\test\string_argument_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\mathematics\brt\next_multiple.cpp" />
+    <ClCompile Include="breath\mathematics\test\clamp_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\mathematics\test\gcd_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\mathematics\test\lcm_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\mathematics\test\next_multiple_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\memory\test\auto_array_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\meta\test\integer_log2_compile_time_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\path\brt\allowed_path_separators.cpp" />
+    <ClCompile Include="breath\path\brt\base_filename.cpp" />
+    <ClCompile Include="breath\path\brt\extension.cpp" />
+    <ClCompile Include="breath\path\test\base_filename_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\path\test\extension_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\preprocessing\test\prevent_macro_expansion_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\process\brt\child_process.cpp" />
+    <ClCompile Include="breath\process\brt\dep\syst\windows\win32_process.cpp" />
+    <ClCompile Include="breath\process\brt\exit_code.cpp" />
+    <ClCompile Include="breath\process\brt\find_executable_in_path.cpp" />
+    <ClCompile Include="breath\process\brt\process.cpp" />
+    <ClCompile Include="breath\process\brt\program_status.cpp" />
+    <ClCompile Include="breath\process\brt\this_process.cpp" />
+    <ClCompile Include="breath\random\brt\entropy_source.cpp" />
+    <ClCompile Include="breath\random\brt\subrange_max.cpp" />
+    <ClCompile Include="breath\random\test\entropy_source_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\stream\test\format_saver_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\testing\brt\console_reporter.cpp" />
+    <ClCompile Include="breath\testing\brt\test_descriptor.cpp" />
+    <ClCompile Include="breath\testing\brt\test_exception.cpp" />
+    <ClCompile Include="breath\testing\brt\test_runner.cpp" />
+    <ClCompile Include="breath\text\brt\begins_with.cpp" />
+    <ClCompile Include="breath\text\brt\ends_with.cpp" />
+    <ClCompile Include="breath\text\brt\printable_string.cpp" />
+    <ClCompile Include="breath\text\brt\remove_from_end.cpp" />
+    <ClCompile Include="breath\text\brt\set_of_chars.cpp" />
+    <ClCompile Include="breath\text\brt\split.cpp" />
+    <ClCompile Include="breath\text\brt\trim.cpp" />
+    <ClCompile Include="breath\text\brt\trim_head.cpp" />
+    <ClCompile Include="breath\text\brt\trim_tail.cpp" />
+    <ClCompile Include="breath\text\test\begins_with_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\text\test\ends_with_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\text\test\from_string_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\text\test\printable_string_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\text\test\set_of_chars_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\text\test\split_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\text\test\to_string_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\text\test\trim_head_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\text\test\trim_tail_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="breath\time\brt\c_clock_device.cpp" />
+    <ClCompile Include="breath\time\brt\time_string.cpp" />
+    <ClCompile Include="breath\time\windows_only\brt\performance_counter_timer.cpp" />
+    <ClCompile Include="breath\uuid\brt\uuid.cpp" />
+    <ClCompile Include="tool\include_guard\macro_name.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="breath\algorithm\brt\accumulate.tpp" />
+    <None Include="breath\checksum\brt\crc32.tpp" />
+    <None Include="breath\counting\brt\counter.tpp" />
+    <None Include="breath\cpu\get_cpuid_info.asm" />
+    <None Include="breath\cpu\is_cpuid_supported.asm" />
+    <None Include="breath\cryptography\brt\digest.tpp" />
+    <None Include="breath\cryptography\brt\merkle_damgard_hasher.tpp" />
+    <None Include="breath\cryptography\private\sensitive_buffer.tpp" />
+    <None Include="breath\encoding\brt\base64_to_binary.tpp" />
+    <None Include="breath\encoding\brt\binary_to_base64.tpp" />
+    <None Include="breath\idiom\brt\maybe.tpp" />
+    <None Include="breath\mathematics\brt\clamp.tpp" />
+    <None Include="breath\mathematics\brt\gcd.tpp" />
+    <None Include="breath\mathematics\brt\integer_log2.tpp" />
+    <None Include="breath\mathematics\brt\is_power_of_two.tpp" />
+    <None Include="breath\mathematics\brt\lcm.tpp" />
+    <None Include="breath\memory\brt\auto_array.tpp" />
+    <None Include="breath\meta\brt\is_twos_complement.tpp" />
+    <None Include="breath\random\brt\subrange_adaptor.tpp" />
+    <None Include="breath\stream\brt\format_saver.tpp" />
+    <None Include="breath\text\brt\from_string.tpp" />
+    <None Include="breath\text\brt\to_string.tpp" />
+    <None Include="breath\time\brt\elapsed_timer.tpp" />
+    <None Include="doc\source\doxygen_footer.html" />
+    <None Include="doc\source\doxygen_header.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="breath\algorithm\accumulate.hpp" />
+    <ClInclude Include="breath\algorithm\secure_fill.hpp" />
+    <ClInclude Include="breath\alignment\aligned_buffer_for.hpp" />
+    <ClInclude Include="breath\checksum\crc32.hpp" />
+    <ClInclude Include="breath\checksum\luhn.hpp" />
+    <ClInclude Include="breath\conversion\roman.hpp" />
+    <ClInclude Include="breath\counting\count.hpp" />
+    <ClInclude Include="breath\counting\counter.hpp" />
+    <ClInclude Include="breath\cpp11\dep\comp\gcc\long_long.hpp" />
+    <ClInclude Include="breath\cpp11\dep\comp\msvc\long_long.hpp" />
+    <ClInclude Include="breath\cpp11\long_long.hpp" />
+    <ClInclude Include="breath\cpu\cpuid.hpp" />
+    <ClInclude Include="breath\cryptography\digest.hpp" />
+    <ClInclude Include="breath\cryptography\hashing_count.hpp" />
+    <ClInclude Include="breath\cryptography\md5_hasher.hpp" />
+    <ClInclude Include="breath\cryptography\merkle_damgard_engine.hpp" />
+    <ClInclude Include="breath\cryptography\merkle_damgard_hasher.hpp" />
+    <ClInclude Include="breath\cryptography\private\sensitive_buffer.hpp" />
+    <ClInclude Include="breath\cryptography\sha1_hasher.hpp" />
+    <ClInclude Include="breath\cryptography\sha224_hasher.hpp" />
+    <ClInclude Include="breath\cryptography\sha256_hasher.hpp" />
+    <ClInclude Include="breath\cryptography\sha384_hasher.hpp" />
+    <ClInclude Include="breath\cryptography\sha512_hasher.hpp" />
+    <ClInclude Include="breath\cryptography\sha_common.hpp" />
+    <ClInclude Include="breath\debugging\dump_expression.hpp" />
+    <ClInclude Include="breath\diagnostics\assert.hpp" />
+    <ClInclude Include="breath\diagnostics\check_type_completeness.hpp" />
+    <ClInclude Include="breath\diagnostics\exception.hpp" />
+    <ClInclude Include="breath\diagnostics\last_api_error.hpp" />
+    <ClInclude Include="breath\diagnostics\private\dep\syst\unix\last_api_error.hpp" />
+    <ClInclude Include="breath\diagnostics\private\dep\syst\windows\last_api_error.hpp" />
+    <ClInclude Include="breath\diagnostics\private\last_api_error.hpp" />
+    <ClInclude Include="breath\encoding\base64_to_binary.hpp" />
+    <ClInclude Include="breath\encoding\binary_to_base64.hpp" />
+    <ClInclude Include="breath\endianness\endian_codec.hpp" />
+    <ClInclude Include="breath\environment\find_environment_string.hpp" />
+    <ClInclude Include="breath\environment\get_environment_map.hpp" />
+    <ClInclude Include="breath\environment\node_id.hpp" />
+    <ClInclude Include="breath\environment\operating_system_name.hpp" />
+    <ClInclude Include="breath\environment\windows_only\get_os.hpp" />
+    <ClInclude Include="breath\environment\windows_only\os_id.hpp" />
+    <ClInclude Include="breath\environment\windows_only\windows_version_info.hpp" />
+    <ClInclude Include="breath\idiom\declare_non_copyable.hpp" />
+    <ClInclude Include="breath\idiom\maybe.hpp" />
+    <ClInclude Include="breath\idiom\string_argument.hpp" />
+    <ClInclude Include="breath\idiom\volatilize.hpp" />
+    <ClInclude Include="breath\iteration\begin_end.hpp" />
+    <ClInclude Include="breath\mathematics\brt\private\check_common_gcd_lcm_preconditions.hpp" />
+    <ClInclude Include="breath\mathematics\clamp.hpp" />
+    <ClInclude Include="breath\mathematics\gcd.hpp" />
+    <ClInclude Include="breath\mathematics\integer_log2.hpp" />
+    <ClInclude Include="breath\mathematics\is_power_of_two.hpp" />
+    <ClInclude Include="breath\mathematics\lcm.hpp" />
+    <ClInclude Include="breath\mathematics\next_multiple.hpp" />
+    <ClInclude Include="breath\memory\auto_array.hpp" />
+    <ClInclude Include="breath\meta\constant.hpp" />
+    <ClInclude Include="breath\meta\has_sign.hpp" />
+    <ClInclude Include="breath\meta\integer_log2.hpp" />
+    <ClInclude Include="breath\meta\int_exact.hpp" />
+    <ClInclude Include="breath\meta\is_twos_complement.hpp" />
+    <ClInclude Include="breath\meta\precision.hpp" />
+    <ClInclude Include="breath\meta\predecessor.hpp" />
+    <ClInclude Include="breath\meta\select.hpp" />
+    <ClInclude Include="breath\meta\successor.hpp" />
+    <ClInclude Include="breath\meta\unqualify.hpp" />
+    <ClInclude Include="breath\meta\width.hpp" />
+    <ClInclude Include="breath\operator\comparison.hpp" />
+    <ClInclude Include="breath\operator\equality_comparison.hpp" />
+    <ClInclude Include="breath\path\allowed_path_separators.hpp" />
+    <ClInclude Include="breath\path\base_filename.hpp" />
+    <ClInclude Include="breath\path\extension.hpp" />
+    <ClInclude Include="breath\porting\dependent_code.hpp" />
+    <ClInclude Include="breath\preprocessing\prevent_macro_expansion.hpp" />
+    <ClInclude Include="breath\preprocessing\stringize.hpp" />
+    <ClInclude Include="breath\preprocessing\stringize_delayed.hpp" />
+    <ClInclude Include="breath\preprocessing\token_paste.hpp" />
+    <ClInclude Include="breath\preprocessing\token_paste_delayed.hpp" />
+    <ClInclude Include="breath\process\child_process.hpp" />
+    <ClInclude Include="breath\process\exit_code.hpp" />
+    <ClInclude Include="breath\process\find_executable_in_path.hpp" />
+    <ClInclude Include="breath\process\private\dep\syst\unix\process_id_type.hpp" />
+    <ClInclude Include="breath\process\private\dep\syst\windows\process_id_type.hpp" />
+    <ClInclude Include="breath\process\private\handle.hpp" />
+    <ClInclude Include="breath\process\private\process_id_type.hpp" />
+    <ClInclude Include="breath\process\process.hpp" />
+    <ClInclude Include="breath\process\program_status.hpp" />
+    <ClInclude Include="breath\process\this_process.hpp" />
+    <ClInclude Include="breath\process\win32_process.hpp" />
+    <ClInclude Include="breath\random\entropy_source.hpp" />
+    <ClInclude Include="breath\random\subrange_adaptor.hpp" />
+    <ClInclude Include="breath\random\subrange_max.hpp" />
+    <ClInclude Include="breath\stream\eof_value.hpp" />
+    <ClInclude Include="breath\stream\format_saver.hpp" />
+    <ClInclude Include="breath\testing\check.hpp" />
+    <ClInclude Include="breath\testing\console_reporter.hpp" />
+    <ClInclude Include="breath\testing\testing.hpp" />
+    <ClInclude Include="breath\testing\test_descriptor.hpp" />
+    <ClInclude Include="breath\testing\test_exception.hpp" />
+    <ClInclude Include="breath\testing\test_reporter.hpp" />
+    <ClInclude Include="breath\testing\test_runner.hpp" />
+    <ClInclude Include="breath\text\begins_with.hpp" />
+    <ClInclude Include="breath\text\ends_with.hpp" />
+    <ClInclude Include="breath\text\from_string.hpp" />
+    <ClInclude Include="breath\text\printable_string.hpp" />
+    <ClInclude Include="breath\text\remove_from_end.hpp" />
+    <ClInclude Include="breath\text\set_of_chars.hpp" />
+    <ClInclude Include="breath\text\split.hpp" />
+    <ClInclude Include="breath\text\to_string.hpp" />
+    <ClInclude Include="breath\text\trim.hpp" />
+    <ClInclude Include="breath\text\trim_head.hpp" />
+    <ClInclude Include="breath\text\trim_tail.hpp" />
+    <ClInclude Include="breath\time\c_clock_device.hpp" />
+    <ClInclude Include="breath\time\c_clock_timer.hpp" />
+    <ClInclude Include="breath\time\elapsed_timer.hpp" />
+    <ClInclude Include="breath\time\time_string.hpp" />
+    <ClInclude Include="breath\time\windows_only\performance_counter_timer.hpp" />
+    <ClInclude Include="breath\uuid\uuid.hpp" />
+    <ClInclude Include="tool\include_guard\macro_name.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
