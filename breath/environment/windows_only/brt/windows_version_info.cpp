@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/environment/windows_only/windows_version_info.hpp"
-#include "breath/diagnostics/exception.hpp"
+#include "breath/diagnostics/last_api_error.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
@@ -366,7 +366,7 @@ windows_version_info::is_wow64_process()
     if ( is_wow64_process != nullptr ) {
         if ( is_wow64_process( GetCurrentProcess(), &is_wow64 ) == 0 )
         {
-            throw breath::exception( "IsWow64Process failed" ) ;
+            throw last_api_error( "IsWow64Process failed" ) ;
         }
     }
     return is_wow64 != 0 ;
