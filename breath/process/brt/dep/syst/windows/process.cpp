@@ -51,7 +51,7 @@ process::start( std::string const & app_name,
                 std::string const & arguments,
                 maybe< unsigned long > const & timeout_in_ms )
 {
-    std::vector< char > args( arguments.begin(), arguments.end() ) ;
+    std::vector< char > args( arguments.cbegin(), arguments.cend() ) ;
     args.resize( args.size() + 1 ) ;
 
     STARTUPINFOA        si = { sizeof si };
