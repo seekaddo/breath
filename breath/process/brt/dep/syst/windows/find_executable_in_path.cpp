@@ -26,7 +26,7 @@ find_executable_in_path( std::string const & name,
 
     std::string         extensions = breath::extension( name ) ;
     if ( extensions.empty() ) {
-        extensions = find_environment_string( "PATHEXT" ).value() ;
+        extensions = find_environment_string( "PATHEXT" ).default_to( ".exe" ) ;
     }
 
     std::vector< std::string > const &
