@@ -18,6 +18,17 @@
 
 namespace breath {
 
+//!     Finds an executable file. If \c path.is_valid(), then the
+//!     executable is searched in \c path.value(). Otherwise, it
+//!     is searched in a system dependent list (\c PATH environment
+//!     variable) and in the current working directory. It is
+//!     unspecified whether the current working directory is searched
+//!     before or after the directories in \c PATH.
+//!
+//! \return
+//!     A \c maybe< std::string > that is invalid (for failure) or
+//!     contains the full path of the found executable.
+// -------------------------------------------------------------------------
 maybe< std::string >
                     find_executable_in_path(
                         std::string const & name,
