@@ -21,7 +21,7 @@
 //         m+1 = q(x+1) + r
 //
 //      but *programmatically* we can't do that directly, because m+1
-//      may overflow. However, substracting x+1 from both members
+//      may overflow. However, subtracting x+1 from both members
 //      (which is fine....)
 //
 //         m-x = (q-1)(x+1) + r
