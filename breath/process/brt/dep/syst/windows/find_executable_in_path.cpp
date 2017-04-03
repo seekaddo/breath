@@ -7,6 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/process/find_executable_in_path.hpp"
+#include "breath/counting/count.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/environment/find_environment_string.hpp"
 #include "breath/path/extension.hpp"
@@ -39,7 +40,7 @@ find_executable_in_path( std::string const & name,
                             : nullptr,
                          name.c_str(),
                          it->c_str(),
-                         sizeof fullpath,
+                         breath::count( fullpath ),
                          &fullpath[ 0 ],
                          nullptr
                     ) != 0 ) {
