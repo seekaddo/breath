@@ -33,15 +33,15 @@ find_executable_in_path( std::string const & name,
     std::vector< std::string > const &
                         e = breath::split( extensions, ';' ) ;
     bool                found = false ;
-    char                fullpath[ MAX_PATH + 1 ] ;
+    char                full_path[ MAX_PATH + 1 ] ;
     for ( auto it = e.cbegin() ; it != e.cend() ; ++it ) {
         if ( SearchPathA( path.is_valid()
                             ? path.value().c_str()
                             : nullptr,
                          name.c_str(),
                          it->c_str(),
-                         breath::count( fullpath ),
-                         &fullpath[ 0 ],
+                         breath::count( full_path ),
+                         &full_path[ 0 ],
                          nullptr
                     ) != 0 ) {
             found = true;
@@ -49,7 +49,7 @@ find_executable_in_path( std::string const & name,
         }
     }
     return found
-            ? maybe< std::string >( std::string( fullpath ) )
+            ? maybe< std::string >( std::string( full_path ) )
             : maybe< std::string >()
             ;
 }
