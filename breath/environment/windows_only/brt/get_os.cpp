@@ -181,7 +181,7 @@ identify_nt( windows_version_info const & info )
                   win_version( info.major_version(), info.minor_version() ) ) ;
 
     if ( windows_version_info::is_client() ) {
-        switch( version )
+        switch ( version )
         {
         case win_version( 10, 0 ):
             id = os_id::windows_10 ;
@@ -223,7 +223,7 @@ identify_nt( windows_version_info const & info )
             break ;
         }
     } else {
-        switch( version )
+        switch ( version )
         {
         case win_version( 10, 0 ):
             id = os_id::windows_server_2016 ;
