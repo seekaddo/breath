@@ -43,7 +43,7 @@ win32_process::name() const
     char                process_name[ 1 + MAX_PATH ] ;
     if ( GetModuleBaseNameA( h.get(), main_module,
                             &process_name[ 0 ], sizeof process_name ) == 0 ) {
-        throw last_api_error( "GetModuleBaseNameA failed" ) ;
+        throw last_api_error( "GetModuleBaseName failed" ) ;
     }
 
     return process_name ;

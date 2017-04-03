@@ -18,12 +18,12 @@ this_process::current_directory()
 {
     DWORD const         required = GetCurrentDirectoryA( 0, nullptr ) ;
     if ( required == 0 ) {
-        throw last_api_error( "GetCurrentDirectoryA( 0, nullptr ) failed" ) ;
+        throw last_api_error( "GetCurrentDirectory( 0, nullptr ) failed" ) ;
     }
     // assumes contiguity of std::string, as required by C++11
     std::string         s( required, '\0' ) ;
     if ( GetCurrentDirectoryA( required, &s[ 0 ] ) == 0 ) {
-        throw last_api_error( "GetCurrentDirectoryA failed" ) ;
+        throw last_api_error( "GetCurrentDirectory failed" ) ;
     }
     s.resize( s.size() - 1 ) ; // remove trailing '\0'
     return s;
@@ -35,7 +35,7 @@ this_process::set_current_directory( std::string const & dir )
     BREATH_ASSERT( 0 < dir.length() && dir.length()  < MAX_PATH ) ;
     BREATH_ASSERT( dir.back() =='\\' || dir.length() <= (MAX_PATH-2) ) ;
     if( SetCurrentDirectoryA( dir.c_str() ) == 0 ) {
-        throw last_api_error( "SetCurrentDirectoryA failed" ) ;
+        throw last_api_error( "SetCurrentDirectory failed" ) ;
     }
 }
 

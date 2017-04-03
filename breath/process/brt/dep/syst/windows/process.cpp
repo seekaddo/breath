@@ -72,7 +72,7 @@ process::start( std::string const & app_name,
                                 &m_impl->m_info
                                 ) ;
     if( ret == 0 ) {
-        throw last_api_error( "CreateProcessA failed" ) ;
+        throw last_api_error( "CreateProcess failed" ) ;
     }
 
     if ( timeout_in_ms.is_valid() ) {
@@ -116,7 +116,7 @@ process::terminate()
     if ( exit_code == STILL_ACTIVE ) {
         HMODULE const       kernel = GetModuleHandleA( "kernel32.dll" ) ;
         if ( kernel == NULL ) {
-            throw last_api_error( "GetModuleHandleA failed" ) ;
+            throw last_api_error( "GetModuleHandle failed" ) ;
         }
 
         FARPROC             exit_proc = GetProcAddress( kernel,
