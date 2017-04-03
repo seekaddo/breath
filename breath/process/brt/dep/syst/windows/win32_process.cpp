@@ -40,7 +40,7 @@ win32_process::name() const
         throw last_api_error( "EnumProcessModulesEx failed" ) ;
     }
 
-    char                process_name[ 1 + MAX_PATH ] ;
+    char                process_name[ MAX_PATH + 1 ] ;
     if ( GetModuleBaseNameA( h.get(), main_module,
                             &process_name[ 0 ], sizeof process_name ) == 0 ) {
         throw last_api_error( "GetModuleBaseName failed" ) ;
