@@ -16,7 +16,7 @@ roman::roman( int n )
 {
     BREATH_ASSERT( 1 <= n && n <= 3999 ) ;
 
-    struct table
+    struct entry
     {
         int                 value ;
         char const *        repr ;
@@ -30,7 +30,7 @@ roman::roman( int n )
 
     int const           max_roman_length = 15 ;
     m_representation.reserve( max_roman_length ) ;
-    struct table const * p = &table[ 0 ] ;
+    entry const *       p = &table[ 0 ] ;
     for ( ; p->value != 0 ; ++ p ) {
         int                 value = n / p->value;
         n %= p->value;
