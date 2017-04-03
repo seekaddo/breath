@@ -22,13 +22,11 @@
 
 #include <algorithm>
 #include <string>
-
 #include <istream>
 #include <ostream>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-
 
 namespace {
 
@@ -132,8 +130,6 @@ namespace {
 
     };
 
-
-
     std::string read_compact_string( nist_file & messages, int z )
     {
         bool b;
@@ -164,7 +160,6 @@ namespace {
      }
 
 }
-
 
 void tests()
 {
