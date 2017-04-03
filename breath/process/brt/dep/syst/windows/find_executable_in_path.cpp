@@ -31,10 +31,10 @@ find_executable_in_path( std::string const & name,
 
     std::vector< std::string > const &
                         e = breath::split( extensions, ';' ) ;
-    bool                found = false;
+    bool                found = false ;
     char                fullpath[ MAX_PATH + 1 ] ;
-    for( auto it = e.cbegin() ; it != e.cend() ; ++it ) {
-        if( SearchPathA( path.is_valid()
+    for ( auto it = e.cbegin() ; it != e.cend() ; ++it ) {
+        if ( SearchPathA( path.is_valid()
                             ? path.value().c_str()
                             : nullptr,
                          name.c_str(),
