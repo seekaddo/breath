@@ -18,7 +18,7 @@
 namespace breath {
 
 template< typename T >
-T from_string( std::string const & s ) ;
+T                   from_string( std::string const & s ) ;
 
 }
 
