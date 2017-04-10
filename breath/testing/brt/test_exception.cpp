@@ -11,14 +11,14 @@
 namespace breath {
 
 test_exception::test_exception( char const * filename,
-                                unsigned long line) noexcept
+                                unsigned long line ) noexcept
     : exception(), m_filename( filename ), m_line( line )
 {
 }
 
 test_exception::test_exception( std::string const & str,
                                 char const * filename,
-                                unsigned long line) noexcept
+                                unsigned long line ) noexcept
     : exception( str ), m_filename( filename ), m_line( line )
 {
 }
@@ -40,7 +40,6 @@ operator <<(std::ostream & os, test_exception const & ex )
 {
     return os << ex.what() << " : " << ex.filename() << ", " << ex.line() ;
 }
-
 
 }
 
