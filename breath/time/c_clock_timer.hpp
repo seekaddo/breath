@@ -18,7 +18,8 @@
 
 namespace breath {
 
-    typedef elapsed_timer< c_clock_device > c_clock_timer;
+typedef elapsed_timer< c_clock_device >
+                    c_clock_timer;
 
 }
 
