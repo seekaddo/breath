@@ -42,7 +42,7 @@ namespace breath {
 //      implementation might provide). On a relaxed reading of the
 //      standard, it seems that, for instance
 //
-//        std::fill( arr, arr + n, value );
+//        std::fill( arr, arr + n, value ) ;
 //
 //      should work as expected, since we pass regular pointers as
 //      iterators and std::iterator_traits< T * >::value is required
