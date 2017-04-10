@@ -24,7 +24,7 @@ public:
     // ---------------------------------------------------------------------
     typedef T type;
 
-    //!     A typedef for <code>select_< !condition, T, U ></code>.
+    //!     A typedef for <code>select_< ! condition, T, U ></code>.
     // ---------------------------------------------------------------------
     typedef select_< !condition, T, U > opposite;
 } ;
