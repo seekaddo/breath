@@ -82,16 +82,14 @@ entropy_source::impl::acquire( DWORD flags )
 }
 
 bool
-entropy_source::impl::
-    is_done() const noexcept
+entropy_source::impl::is_done() const noexcept
 {
     return ! m_handle_is_valid ;
 }
 
 // gps this release could be attempted more than once? this is different from Unix!
 bool
-entropy_source::impl::
-release() noexcept
+entropy_source::impl::release() noexcept
 {
     bool            success = false ;
     if ( ! is_done() ) {
