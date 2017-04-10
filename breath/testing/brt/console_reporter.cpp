@@ -39,7 +39,7 @@ console_reporter::on_all_tests_end()
 void
 console_reporter::on_test_begin( std::size_t test_number, char const * )
 {
-    m_stream << "[" << test_number << "=" ;
+    m_stream << '[' << test_number << '=' ;
 }
 
 void
