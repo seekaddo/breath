@@ -93,29 +93,24 @@ core_fn( word_type &    a,
 void
 md5_engine::init_state( state_type & state )
 {
-
     state[ 0 ] = 0x67452301;
     state[ 1 ] = 0xefcdab89;
     state[ 2 ] = 0x98badcfe;
     state[ 3 ] = 0x10325476;
-
 }
 
 
 void md5_engine::process_block( state_type & state, block_type const & x )
 {
-
     enum { s11 = 7, s12 = 12, s13 = 17, s14 = 22,
            s21 = 5, s22 =  9, s23 = 14, s24 = 20,
            s31 = 4, s32 = 11, s33 = 16, s34 = 23,
            s41 = 6, s42 = 10, s43 = 15, s44 = 21 } ;
 
-
     word_type a( state[ 0 ] );
     word_type b( state[ 1 ] );
     word_type c( state[ 2 ] );
     word_type d( state[ 3 ] );
-
 
     // Round 1
     core_fn< 0, s11 >( a, b, c, d, x[  0 ] + 0xd76aa478 ); // 1
@@ -188,7 +183,6 @@ void md5_engine::process_block( state_type & state, block_type const & x )
     core_fn< 3, s42 >( d, a, b, c, x[ 11 ] + 0xbd3af235 );
     core_fn< 3, s43 >( c, d, a, b, x[  2 ] + 0x2ad7d2bb );
     core_fn< 3, s44 >( b, c, d, a, x[  9 ] + 0xeb86d391 ); // 64
-
 
     state[ 0 ] += a ;
     state[ 1 ] += b ;
