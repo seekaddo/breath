@@ -52,7 +52,7 @@ impl()
     // note: m_handle_is_valid intentionally not initialized here --see below
 {
     if ( ! acquire() ) {
-        entropy_source::exception::raise("cannot acquire the HCRYPTPROV handler") ;
+        entropy_source::exception::raise( "cannot acquire the HCRYPTPROV handler" ) ;
     }
     // note that this member is intentionally not initialized in the ctor
     // initializer list; in case of exceptions there is no way it could be used
