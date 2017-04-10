@@ -7,7 +7,6 @@
 // _________________________________________________________________________
 
 #include "breath/time/windows_only/performance_counter_timer.hpp"
-#include "breath/diagnostics/exception.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include <Windows.h>
 
