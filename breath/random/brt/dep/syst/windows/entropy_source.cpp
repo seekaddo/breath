@@ -47,8 +47,7 @@ private:
 } ;
 
 
-entropy_source::impl::
-impl()
+entropy_source::impl::impl()
     // note: m_handle_is_valid intentionally not initialized here --see below
 {
     if ( ! acquire() ) {
