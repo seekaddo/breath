@@ -58,7 +58,7 @@ public:
 //!
 //!     The default traits template performs a summation of the
 //!     elements in the range <code>[begin, end)</code> via
-//!     \c operator+= (which is searched via ADL).
+//!     <code>operator +=</code> (which is searched via ADL).
 //!
 //!     Any \c accumulate_traits<> shall provide the following
 //!     accessible members:
