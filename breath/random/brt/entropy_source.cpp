@@ -40,13 +40,13 @@ entropy_source::release() noexcept
 }
 
 entropy_source::result_type
-entropy_source::min BREATH_PREVENT_MACRO_EXPANSION () noexcept
+entropy_source::min BREATH_PREVENT_MACRO_EXPANSION () const noexcept
 {
     return m_impl->minimum() ;
 }
 
 entropy_source::result_type
-entropy_source::max BREATH_PREVENT_MACRO_EXPANSION () noexcept
+entropy_source::max BREATH_PREVENT_MACRO_EXPANSION () const noexcept
 {
     return m_impl->maximum() ;
 }

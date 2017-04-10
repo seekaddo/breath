@@ -70,11 +70,11 @@ public:
 
     //!     The minimum random number that can be emitted.
     // ---------------------------------------------------------------------
-    result_type         min() noexcept ;
+    result_type         min() const noexcept ;
 
     //!     The maximum random number that can be emitted.
     // ---------------------------------------------------------------------
-    result_type         max() noexcept ;
+    result_type         max() const noexcept ;
 
     //!     \todo:
     //!         define entropy()??? It should be 8 for /dev/random...
