@@ -133,7 +133,7 @@ entropy_source::impl::~impl() noexcept
     release() ;
 }
 
-void
+[[ noreturn ]] void
 entropy_source::exception::raise( std::string const & message )
 {
     std::string         what_msg = "Breath entropy_source: " +
