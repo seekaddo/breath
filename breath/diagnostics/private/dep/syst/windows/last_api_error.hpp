@@ -11,8 +11,8 @@
 
 namespace breath {
 
-//!     Represents the last error encountered in an API call. It corresponds
-//!     to GetLastError() in Windows and errno under Unix.
+//!     Represents the last error encountered in an API call. It
+//!     corresponds to GetLastError() in Windows and errno under Unix.
 //!
 //!     The idea is that after an unsuccessful API call you write:
 //!     <code>
