@@ -24,7 +24,7 @@
         -----------------
 
         Though both the C and the C++ standard use the term
-        "concatenate", and not "paste", with reference to what ## does
+        "concatenate", and not "paste", with reference to what ## does,
         it was deemed that the name BREATH_CONCATENATE_TOKEN was a tad
         too long, especially considering that this macro is often
         invoked within other macro invocations. "Token pasting" is a
