@@ -22,8 +22,8 @@ namespace breath {
 //!     and you're done with error handling.
 //!
 //!     The class is OutputStreamable, so you can also use
-//!     breath::as_string, which gives more information than the
-//!     member what(), but may throw.
+//!     \c breath::as_string, which gives more information than the
+//!     member \c what(), but may throw.
 // -------------------------------------------------------------------------
 class last_api_error
     :   public exception
