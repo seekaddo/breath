@@ -60,7 +60,6 @@ private:
 
 }
 
-
 #include "brt/elapsed_timer.tpp"
 #endif
 
