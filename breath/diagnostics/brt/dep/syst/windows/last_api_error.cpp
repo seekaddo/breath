@@ -40,7 +40,7 @@ last_api_error::last_api_error( char const * p ) noexcept
         static_cast< DWORD >( sizeof m_message - offset ),
         nullptr
         ) ;
-    if( dw == 0 ) {
+    if ( dw == 0 ) {
         strcpy( &m_message[ offset ], "FormatMessage failed: see error code") ;
     }
     // strip trailing \r\n
