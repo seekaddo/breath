@@ -46,7 +46,6 @@ private:
     void                to_buffer( unsigned char * buffer, DWORD count ) ;
 } ;
 
-
 entropy_source::impl::impl()
     // note: m_handle_is_valid intentionally not initialized here --see below
 {
@@ -72,8 +71,6 @@ entropy_source::impl::maximum() const
         ) ;
 }
 
-
-
 bool
 entropy_source::impl::acquire( DWORD flags )
 {
@@ -84,14 +81,12 @@ entropy_source::impl::acquire( DWORD flags )
                                   flags | CRYPT_VERIFYCONTEXT ) != 0 ;
 }
 
-
 bool
 entropy_source::impl::
     is_done() const noexcept
 {
     return ! m_handle_is_valid ;
 }
-
 
 // gps this release could be attempted more than once? this is different from Unix!
 bool
