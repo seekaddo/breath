@@ -38,13 +38,13 @@ namespace breath {
 //!
 //!     This class restores everything except:
 //!
-//!     - integrity state ( rdstate() )
+//!     - integrity state ( \c rdstate() )
 //!         since it represents errors; restoring would be a non-sense
 //!
-//!     - pointer to stream buffer ( rdbuf() )
+//!     - pointer to stream buffer ( \c rdbuf() )
 //!     - stream and stream buffer locale
 //!     - exception mask
-//!     - synchronized output stream ( tie() )
+//!     - synchronized output stream ( \c tie() )
 //!
 //!
 //!     Rationale:
@@ -65,14 +65,14 @@ namespace breath {
 //!
 //!     About locales:
 //!
-//!     Instances of the class ios_base contain a locale object.
-//!     Instances of basic_ios<> (which have an ios_base subobject)
-//!     hold a pointer the stream buffer, which has a locale too
-//!     (coding conversions).
+//!     Instances of the class \c ios_base contain a locale object.
+//!     Instances of \c basic_ios<> (which have an \c ios_base
+//!     subobject) hold a pointer the stream buffer, which has a
+//!     locale too (coding conversions).
 //!
-//!     basic_ios<>::copyfmt copies the stream locale (member of
-//!     ios_base), but not the stream-buffer one. Note, BTW, that it
-//!     does so without triggering the imbue_event.
+//!     \c basic_ios<>::copyfmt copies the stream locale (member of
+//!     \c ios_base), but not the stream-buffer one. Note, BTW, that
+//!     it does so without triggering the \c imbue_event.
 //!
 //!     I meditated at length what to do about locales, because they
 //!     also deal with non formatting-related stuff, such as ctype:
@@ -85,10 +85,10 @@ namespace breath {
 //!     --------
 //!
 //!     This class was born as a further elaboration of a class by
-//!     James Kanze, named IOSave. And it was a comment in his code to
-//!     suggest using copyfmt, in order to save the additional stream
-//!     info. James also gave, as usual, excellent feedback on various
-//!     design issues, in particular about locales and imbue.
+//!     James Kanze, named \c IOSave. And it was a comment in his code
+//!     to suggest using copyfmt, in order to save the additional
+//!     stream info. James also gave, as usual, excellent feedback on
+//!     various design issues, in particular about locales and imbue.
 // -------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_format_saver
