@@ -131,7 +131,7 @@ entropy_source::exception::raise( std::string const & message )
     std::string         what_msg = "Breath entropy_source: " +
                                         message + " - " ;
     last_api_error const
-                        err("") ;
+                        err( "" ) ;
 
     what_msg += err.what() ;
 
