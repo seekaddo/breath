@@ -10,6 +10,7 @@
 #include "breath/diagnostics/exception.hpp"
 #include "breath/memory/auto_array.hpp"
 #include "breath/stream/format_saver.hpp"
+#include <algorithm>
 #include <iomanip>
 #include <ostream>
 #include <Windows.h>
@@ -44,9 +45,7 @@ node_id::node_id()
                 && info->AddressLength == m_address.size() ) {
 
             found = true ;
-            for ( unsigned i = 0 ; i < m_address.size() ; ++ i ) {
-                m_address[ i ] = info->Address[ i ] ;
-            }
+            std::copy_n( &info->Address[ 0 ], m_address.size(), &m_address[ 0 ] ) ;
         }
         info = info->Next ;
     }
