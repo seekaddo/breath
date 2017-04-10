@@ -18,7 +18,7 @@
 
     The library provides specializations for all integer types and \e
     built-in arrays thereof (including multidimensional arrays).
-    The user can specialize it for UDTs. See also width< T >. // gps
+    The user can specialize it for UDTs. See also \c width< T >. // gps
 */
 
 #include "breath/meta/constant.hpp"
