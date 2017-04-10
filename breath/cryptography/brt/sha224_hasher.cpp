@@ -24,7 +24,6 @@ sha224_engine::init_state( state_type & state )
         state[ 7 ] = 0xbefa4fa4 ;
 }
 
-
 void
 sha224_engine::process_block( state_type & state, block_type const & block )
 {

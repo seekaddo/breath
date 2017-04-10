@@ -69,7 +69,6 @@ static word_type const k[] =
     0x5fcb6fab3ad6faecULL, 0x6c44198c4a475817ULL
 } ;
 
-
 word_type
 big_sigma0( word_type x )
 {
@@ -128,7 +127,6 @@ sha512_engine::process_block( state_type & state, block_type const & block )
         sched[ i ] = sigma1( sched[ i -  2 ] ) + sched[ i -  7 ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
 
-
     sensitive_buffer< word_type[ 8 ] > working( state ) ;
 
     // 0 1 2 3 4 5 6 7
@@ -152,7 +150,6 @@ sha512_engine::process_block( state_type & state, block_type const & block )
             working[ 2 ] = working[ 1 ] ;
             working[ 1 ] = working[ 0 ] ;
             working[ 0 ] = t[ 0 ] + t[ 1 ] ;
-
         }
     }
 

@@ -99,7 +99,6 @@ void sha256_engine::process_block( state_type & state,
         sched[ i ] = sigma1( sched[ i - 2  ] ) + sched[ i - 7  ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
 
-
    // 0 1 2 3 4 5 6 7
    // a b c d e f g h
    //
@@ -131,7 +130,6 @@ void sha256_engine::process_block( state_type & state,
                    std::plus< word_type >() ) ;
 
 }
-
 
 }
 

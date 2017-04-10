@@ -24,7 +24,6 @@ sha384_engine::init_state( state_type & state )
     state[ 7 ] = 0x47b5481dbefa4fa4 ;
 }
 
-
 void
 sha384_engine::process_block( state_type & state, block_type const & block )
 {
