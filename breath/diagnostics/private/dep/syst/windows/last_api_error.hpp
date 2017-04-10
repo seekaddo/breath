@@ -12,11 +12,12 @@
 namespace breath {
 
 //!     Represents the last error encountered in an API call. It
-//!     corresponds to GetLastError() in Windows and errno under Unix.
+//!     corresponds to GetLastError() under Windows and errno under
+//!     Unix.
 //!
 //!     The idea is that after an unsuccessful API call you write:
 //!     <code>
-//!         throw last_api_error( "<MyAPI> failed" ) ;
+//!         throw last_api_error( "<APIName> failed" ) ;
 //!     </code>
 //!     and you're done with error handling.
 //!
