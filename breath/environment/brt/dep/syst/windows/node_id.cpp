@@ -36,7 +36,7 @@ node_id::node_id()
     }
 
     if ( r != ERROR_SUCCESS ) {
-        throw exception( "cannot get adapters info" ) ;
+        throw exception( "cannot get network adapters info" ) ;
     }
     bool                found = false ;
     while ( info != nullptr && ! found ) {
@@ -49,6 +49,10 @@ node_id::node_id()
             }
         }
         info = info->Next ;
+    }
+
+    if ( ! found ) {
+        throw exception( "no suitable network adapter found" ) ;
     }
 }
 
