@@ -65,6 +65,7 @@ auto_array< T >::reset( T * p ) noexcept
     if ( p == m_ptr ) {
         return ;
     }
+
     do_delete() ;
     m_ptr = p ;
 }
