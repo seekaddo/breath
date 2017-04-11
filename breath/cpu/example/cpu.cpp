@@ -13,6 +13,8 @@
 #include <iostream>
 #include <cstring>
 
+namespace {
+
 bool
 has_processor_brand_string()
 {
@@ -59,6 +61,8 @@ cpu_vendor_id_string()
     *reinterpret_cast< int * >( id_string + 4 ) = r.edx ;
     *reinterpret_cast< int * >( id_string + 8 ) = r.ecx ;
     return std::string( id_string, len ) ;
+}
+
 }
 
 int
