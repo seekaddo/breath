@@ -13,7 +13,6 @@
 #include <iostream>
 #include <cstring>
 
-
 bool
 has_processor_brand_string()
 {
@@ -27,7 +26,6 @@ has_processor_brand_string()
     return (r.eax & mask) != 0 &&
         r.eax >= (mask + 4) ;
 }
-
 
 std::string
 processor_brand_string()
@@ -50,7 +48,6 @@ processor_brand_string()
     return std::string( s ) ;
 }
 
-
 std::string
 cpu_vendor_id_string()
 {
@@ -63,7 +60,6 @@ cpu_vendor_id_string()
     *reinterpret_cast< int * >( id_string + 8 ) = r.ecx ;
     return std::string( id_string, len ) ;
 }
-
 
 int
 main()
