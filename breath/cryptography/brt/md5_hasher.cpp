@@ -26,7 +26,6 @@ md5_rotate_left( word_type w )
     return ( w << amount ) | ( w >> ( md5_engine::word_width - amount ) ) ;
 }
 
-
 // Auxiliary functions described in 3.4 Step 4
 //
 // Except for the parity function there seems to be no significant name we can
@@ -55,13 +54,11 @@ aux_f< 0 >::f( word_type x, word_type y, word_type z )
     return (x & y ) + (~x & z) ;
 }
 
-
 template<>
 word_type aux_f< 1 >::f( word_type x, word_type y, word_type z )
 {
     return aux_f< 0 >::f( z, x, y ) ;
 }
-
 
 template<>
 word_type
@@ -69,7 +66,6 @@ aux_f< 2 >::f( word_type x, word_type y, word_type z )
 {
     return x ^ y ^ z;  // aka parity( x, y, z )
 }
-
 
 template<>
 word_type
@@ -98,7 +94,6 @@ md5_engine::init_state( state_type & state )
     state[ 2 ] = 0x98badcfe;
     state[ 3 ] = 0x10325476;
 }
-
 
 void md5_engine::process_block( state_type & state, block_type const & x )
 {
