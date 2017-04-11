@@ -57,8 +57,8 @@ struct cpuid_result
 //!     Namespace: global (see above)
 //!
 //!     \return
-//              \c true if and only if the executing CPU supports the
-//              CPUID machine instruction.
+//!             \c true if and only if the executing CPU supports the
+//!             CPUID machine instruction.
 // -------------------------------------------------------------------------
 bool                is_cpuid_supported() ;
 
