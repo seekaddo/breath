@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2016 Gennaro Prota
+//                    Copyright 2016-2017 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -10,41 +10,42 @@
 #include "breath/diagnostics/exception.hpp"
 #include "breath/memory/auto_array.hpp"
 #include <algorithm>
-#include <Windows.h>
+#include <Winsock2.h>
 #include <Iphlpapi.h>
+#include <Windows.h>
 
 namespace breath {
 
 node_id::node_id()
 {
-    //  The MSDN says:
-    //      "On Windows XP and later: Use the GetAdaptersAddresses function
-    //       instead of GetAdaptersInfo"
-    //  but in my headers there's no declaration of GetAdaptersAddresses.
-    //  ----------------------------------------------------------------------
     ULONG               size = 15 * 1024 ;
+    int                 attempts = 0 ;
+    int const           max_attempts = 3 ;
+    ULONG               r = 0 ;
     auto_array< unsigned char >
-                        array( new unsigned char[ size ] ) ;
-    auto                info = reinterpret_cast< PIP_ADAPTER_INFO >( array.get() ) ;
-    DWORD               r = ::GetAdaptersInfo( info, &size ) ;
-    if ( r == ERROR_BUFFER_OVERFLOW ) {
+                        array ;
+    IP_ADAPTER_ADDRESSES *
+                        addresses = nullptr ;
+    do {
+        ++ attempts ;
         array.reset( new unsigned char[ size ] ) ;
-        info = reinterpret_cast< PIP_ADAPTER_INFO >( array.get() ) ;
-        r = ::GetAdaptersInfo( info, &size ) ;
-    }
+        addresses = reinterpret_cast< IP_ADAPTER_ADDRESSES * >( array.get() ) ;
+        r = ::GetAdaptersAddresses( AF_UNSPEC, 0, nullptr, addresses, &size ) ;
+    } while ( r == ERROR_BUFFER_OVERFLOW && attempts <= max_attempts ) ;
 
     if ( r != ERROR_SUCCESS ) {
         throw exception( "cannot get network adapters info" ) ;
     }
     bool                found = false ;
-    while ( info != nullptr && ! found ) {
-        if ( info->Type == MIB_IF_TYPE_ETHERNET
-                && info->AddressLength == m_address.size() ) {
+    while ( addresses != nullptr && ! found ) {
+        if ( addresses->IfType == IF_TYPE_ETHERNET_CSMACD
+                && addresses->PhysicalAddressLength == m_address.size() ) {
 
             found = true ;
-            std::copy_n( &info->Address[ 0 ], m_address.size(), &m_address[ 0 ] ) ;
+            std::copy_n( &addresses->PhysicalAddress[ 0 ], m_address.size(),
+                                                            &m_address[ 0 ] ) ;
         }
-        info = info->Next ;
+        addresses = addresses->Next ;
     }
 
     if ( ! found ) {
