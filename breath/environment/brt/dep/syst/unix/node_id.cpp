@@ -38,7 +38,7 @@ node_id::node_id()
         throw exception( "ioctl failed" );
     }
 
-    ifreq *      it = ifc.ifc_req ;
+    ifreq const *       it = ifc.ifc_req ;
     ifreq const * const end = it + ( ifc.ifc_len / sizeof( ifreq ) ) ;
     bool                found = false ;
     while ( it != end && ! found ) {
