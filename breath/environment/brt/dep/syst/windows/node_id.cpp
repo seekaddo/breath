@@ -12,7 +12,6 @@
 #include <algorithm>
 #include <Winsock2.h>
 #include <Iphlpapi.h>
-#include <Windows.h>
 
 namespace breath {
 
