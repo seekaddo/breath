@@ -9,9 +9,11 @@
 #include "breath/environment/node_id.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include "breath/memory/auto_array.hpp"
-#include <algorithm>
+
 #include <Winsock2.h>
 #include <Iphlpapi.h>
+
+#include <algorithm>
 
 namespace breath {
 
