@@ -9,10 +9,7 @@
 #include "breath/environment/node_id.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include "breath/memory/auto_array.hpp"
-#include "breath/stream/format_saver.hpp"
 #include <algorithm>
-#include <iomanip>
-#include <ostream>
 #include <Windows.h>
 #include <Iphlpapi.h>
 
@@ -53,37 +50,6 @@ node_id::node_id()
     if ( ! found ) {
         throw exception( "no suitable network adapter found" ) ;
     }
-}
-
-node_id const &
-node_id::instance()
-{
-    static const node_id
-                        id ;
-    return id ;
-}
-
-uint8_t
-node_id::operator []( int n ) const
-{
-    return m_address[ n ] ;
-}
-
-std::ostream &
-operator <<( std::ostream & os, node_id const & id )
-{
-    format_saver const  saver( os ) ;
-
-    os.setf( std::ios_base::uppercase ) ;
-    os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
-
-    for ( auto it = id.m_address.cbegin(); it != id.m_address.cend() ; ++ it ) {
-        os << std::setw( 2 ) << static_cast< int >( *it ) ;
-        if ( it != ( id.m_address.cend() - 1 ) ) {
-            os << '-' ;
-        }
-    }
-    return os ;
 }
 
 }
