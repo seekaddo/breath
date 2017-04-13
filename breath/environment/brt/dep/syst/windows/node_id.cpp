@@ -31,7 +31,7 @@ node_id::node_id()
         ++ attempts ;
         array.reset( new unsigned char[ size ] ) ;
         addresses = reinterpret_cast< IP_ADAPTER_ADDRESSES * >( array.get() ) ;
-        r = ::GetAdaptersAddresses( AF_UNSPEC, 0, nullptr, addresses, &size ) ;
+        r = GetAdaptersAddresses( AF_UNSPEC, 0, nullptr, addresses, &size ) ;
     } while ( r == ERROR_BUFFER_OVERFLOW && attempts <= max_attempts ) ;
 
     if ( r != ERROR_SUCCESS ) {
