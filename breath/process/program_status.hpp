@@ -40,8 +40,6 @@ private:
     class               impl ;
     impl *              m_impl ;
 #endif
-private:
-
 
 public:
     enum gravity
