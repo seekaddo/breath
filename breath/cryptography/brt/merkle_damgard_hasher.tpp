@@ -54,13 +54,8 @@ merkle_damgard_machine< Engine >::merkle_damgard_machine( InputIter begin,
   // [gps] this will forward to the default ctor, in the future
   //       (see also our reinitialize() facility)
 {
-#if 0
-    breath::secure_fill( m_bit_count ) ;
-    Engine::init_state( m_state ) ;
-#else
     reset() ;
     append( begin, end ) ;
-#endif
 }
 
 template< typename Engine >
