@@ -366,7 +366,7 @@ windows_version_info::is_wow64_process()
     if ( is_wow64_process != nullptr ) {
         if ( is_wow64_process( GetCurrentProcess(), &is_wow64 ) == 0 )
         {
-            throw last_api_error( "IsWow64Process failed" ) ;
+            throw last_api_error( "IsWow64Process() failed" ) ;
         }
     }
     return is_wow64 != 0 ;

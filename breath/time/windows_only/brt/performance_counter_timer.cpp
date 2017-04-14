@@ -20,7 +20,7 @@ performance_counter_timer::performance_counter_timer()
     //
     LARGE_INTEGER       f;
     if( QueryPerformanceFrequency( &f ) == 0 ) {
-        throw last_api_error( "QueryPerformanceFrequency failed" ) ;
+        throw last_api_error( "QueryPerformanceFrequency() failed" ) ;
     }
     m_frequency = static_cast< duration_type >( f.QuadPart ) ;
 }
@@ -30,7 +30,7 @@ performance_counter_timer::restart()
 {
     LARGE_INTEGER       li ;
     if ( QueryPerformanceCounter( &li ) == 0 ) {
-        throw last_api_error( "QueryPerformanceCounter failed" ) ;
+        throw last_api_error( "QueryPerformanceCounter() failed" ) ;
     }
     m_start = static_cast< duration_type >( li.QuadPart ) ;
 
@@ -41,7 +41,7 @@ performance_counter_timer::elapsed() const
 {
     LARGE_INTEGER       li ;
     if ( QueryPerformanceCounter( &li ) == 0 ) {
-        throw last_api_error( "QueryPerformanceCounter failed" ) ;
+        throw last_api_error( "QueryPerformanceCounter() failed" ) ;
     }
     return ( li.QuadPart - m_start ) * resolution() ;
 }

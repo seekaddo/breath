@@ -42,7 +42,7 @@ get_environment_map()
     result_type         result ;
     char *              start = GetEnvironmentStrings() ;
     if ( start == nullptr ) {
-        throw last_api_error( "GetEnvironmentStrings failed" ) ;
+        throw last_api_error( "GetEnvironmentStrings() failed" ) ;
     }
 
     try {

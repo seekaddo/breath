@@ -35,7 +35,7 @@ node_id::node_id()
     ifc.ifc_buf = &buffer[ 0 ] ;
 
     if ( ioctl( sock, static_cast< int >( SIOCGIFCONF ), &ifc ) == failure ) {
-        throw exception( "ioctl failed" );
+        throw exception( "ioctl() failed" );
     }
 
     ifreq const *       it = ifc.ifc_req ;

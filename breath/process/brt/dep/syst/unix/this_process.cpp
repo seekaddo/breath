@@ -44,7 +44,7 @@ this_process::current_directory()
     } while ( p == nullptr && errno == ERANGE  ) ;
 
     if ( p == nullptr ) {
-        throw last_api_error( "getcwd failed" ) ;
+        throw last_api_error( "getcwd() failed" ) ;
     }
     return std::string( p );
 }

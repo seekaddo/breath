@@ -23,7 +23,7 @@ this_process::current_directory()
     // assumes contiguity of std::string, as required by C++11
     std::string         s( required, '\0' ) ;
     if ( GetCurrentDirectoryA( required, &s[ 0 ] ) == 0 ) {
-        throw last_api_error( "GetCurrentDirectory failed" ) ;
+        throw last_api_error( "GetCurrentDirectory() failed" ) ;
     }
     s.resize( s.size() - 1 ) ; // remove trailing '\0'
     return s;
@@ -35,7 +35,7 @@ this_process::set_current_directory( std::string const & dir )
     BREATH_ASSERT( 0 < dir.length() && dir.length()  < MAX_PATH ) ;
     BREATH_ASSERT( dir.back() =='\\' || dir.length() <= (MAX_PATH-2) ) ;
     if( SetCurrentDirectoryA( dir.c_str() ) == 0 ) {
-        throw last_api_error( "SetCurrentDirectory failed" ) ;
+        throw last_api_error( "SetCurrentDirectory() failed" ) ;
     }
 }
 
@@ -45,14 +45,14 @@ this_process::wait( process const & pr )
     HANDLE const        h = OpenProcess(
                 PROCESS_QUERY_INFORMATION | SYNCHRONIZE, FALSE, pr.id() ) ;
     if( h == NULL ) {
-        throw last_api_error( "OpenProcess failed" ) ;
+        throw last_api_error( "OpenProcess() failed" ) ;
     }
     if ( WaitForSingleObject( h, INFINITE ) == WAIT_FAILED ) {
         CloseHandle( h ) ;
-        throw last_api_error( "WaitForSingleObject failed" ) ;
+        throw last_api_error( "WaitForSingleObject() failed" ) ;
     }
     if ( CloseHandle( h ) == 0 ) {
-        throw last_api_error( "CloseHandle failed" ) ;
+        throw last_api_error( "CloseHandle() failed" ) ;
     }
 }
 

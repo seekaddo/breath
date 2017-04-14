@@ -24,7 +24,7 @@ win32_process::name() const
                                 id()
                             ) ) ;
     if ( h.get() == NULL ) {
-        throw last_api_error( "OpenProcess failed" ) ;
+        throw last_api_error( "OpenProcess() failed" ) ;
     }
 
     HMODULE             main_module ;
@@ -37,13 +37,13 @@ win32_process::name() const
                                     LIST_MODULES_ALL
                                  ) ;
     if ( ret == 0 ) {
-        throw last_api_error( "EnumProcessModulesEx failed" ) ;
+        throw last_api_error( "EnumProcessModulesEx() failed" ) ;
     }
 
     char                process_name[ MAX_PATH + 1 ] ;
     if ( GetModuleBaseNameA( h.get(), main_module,
                             &process_name[ 0 ], sizeof process_name ) == 0 ) {
-        throw last_api_error( "GetModuleBaseName failed" ) ;
+        throw last_api_error( "GetModuleBaseName() failed" ) ;
     }
 
     return process_name ;
@@ -59,7 +59,7 @@ win32_process::module_count() const
                                 id()
                             ) ) ;
     if ( h.get() == NULL ) {
-        throw last_api_error( "OpenProcess failed" ) ;
+        throw last_api_error( "OpenProcess() failed" ) ;
     }
 
     HMODULE             dummy ;
@@ -72,7 +72,7 @@ win32_process::module_count() const
                                     LIST_MODULES_ALL
                                  ) ;
     if ( ret == 0 ) {
-        throw last_api_error( "EnumProcessModulesEx failed" ) ;
+        throw last_api_error( "EnumProcessModulesEx() failed" ) ;
     }
     return bytes_needed / sizeof( HMODULE ) ;
 }

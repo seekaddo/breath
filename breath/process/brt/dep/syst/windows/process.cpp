@@ -72,14 +72,14 @@ process::start( std::string const & app_name,
                                 &m_impl->m_info
                                 ) ;
     if( ret == 0 ) {
-        throw last_api_error( "CreateProcess failed" ) ;
+        throw last_api_error( "CreateProcess() failed" ) ;
     }
 
     if ( timeout_in_ms.is_valid() ) {
         BREATH_ASSERT( timeout_in_ms.value() > 0 ) ;
         if( WaitForSingleObject( m_impl->m_info.hProcess,
                                  timeout_in_ms.value() ) == WAIT_FAILED ) {
-            throw last_api_error( "WaitForSingleObject failed" ) ;
+            throw last_api_error( "WaitForSingleObject() failed" ) ;
         }
         try {
             terminate() ;
@@ -95,14 +95,14 @@ process::kill()
 {
     HANDLE const        h = OpenProcess( PROCESS_TERMINATE, false, m_impl->m_info.dwProcessId ) ;
     if ( h == NULL ) {
-        throw last_api_error( "OpenProcess failed" ) ;
+        throw last_api_error( "OpenProcess() failed" ) ;
     }
     if ( TerminateProcess( h, exit_failure ) == 0 ) {
         CloseHandle( h ) ;
-        throw last_api_error( "TerminateProcess failed" ) ;
+        throw last_api_error( "TerminateProcess() failed" ) ;
     }
     if ( CloseHandle( h ) == 0 ) {
-        throw last_api_error( "CloseHandle failed" ) ;
+        throw last_api_error( "CloseHandle() failed" ) ;
     }
 }
 
@@ -111,18 +111,18 @@ process::terminate()
 {
     DWORD               exit_code ;
     if ( GetExitCodeProcess( m_impl->m_info.hProcess, &exit_code) == 0 ) {
-        throw last_api_error( "GetExitCodeProcess failed" ) ;
+        throw last_api_error( "GetExitCodeProcess() failed" ) ;
     }
     if ( exit_code == STILL_ACTIVE ) {
         HMODULE const       kernel = GetModuleHandleA( "kernel32.dll" ) ;
         if ( kernel == NULL ) {
-            throw last_api_error( "GetModuleHandle failed" ) ;
+            throw last_api_error( "GetModuleHandle() failed" ) ;
         }
 
         FARPROC             exit_proc = GetProcAddress( kernel,
                                                         "ExitProcess" ) ;
         if ( exit_proc == NULL ) {
-            throw last_api_error( "GetProcAddress failed" ) ;
+            throw last_api_error( "GetProcAddress() failed" ) ;
         }
         unsigned            dummy = 0 ;
         process_private::handle const
@@ -132,7 +132,7 @@ process::terminate()
                                                                      exit_proc),
                                      &dummy, 0, nullptr ) ) ;
         if ( h.get() == NULL ) {
-            throw last_api_error( "CreateRemoteThread failed" ) ;
+            throw last_api_error( "CreateRemoteThread() failed" ) ;
         }
     }
 }
