@@ -41,7 +41,7 @@ namespace breath {
 //!
 //!         For pseudorandom numbers this basically saves execution
 //!         time.
-//!         For true random numbers it avoids needlessy discarding
+//!         For true random numbers it avoids needlessly discarding
 //!         numbers and thus consuming precious entropy.
 //!
 //!     Precondition: 0 <= x <= m   (i.e. destination range not wider
