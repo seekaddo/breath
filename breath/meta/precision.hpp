@@ -31,11 +31,7 @@ namespace meta {
 
 template< typename T >
 class precision
-#if 0
-    : public successor< highest_bit_index< max< T > > >
-#else
     : public constant< T, std::numeric_limits< T >::digits >
-#endif
 {
 } ;
 
