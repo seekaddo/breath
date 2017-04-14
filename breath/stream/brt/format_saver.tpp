@@ -62,7 +62,7 @@ namespace breath {
 //          m_store( user_stream.rdbuf() )
 //      rather than
 //          m_store( nullptr )
-//      just to limit needlessy throwing: when a null stream buffer
+//      just to limit needlessly throwing: when a null stream buffer
 //      pointer is passed, m_store is constructed in bad state; in that
 //      case copyfmt'ing when the badbit exception is enabled in the
 //      source will cause an exception to be thrown and eaten. (For
