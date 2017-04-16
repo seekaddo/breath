@@ -40,7 +40,7 @@ find_executable_in_path( std::string const & name,
                             : nullptr,
                          name.c_str(),
                          it->c_str(),
-                         breath::count( full_path ),
+                         static_cast< DWORD >( breath::count( full_path ) ),
                          &full_path[ 0 ],
                          nullptr
                     ) != 0 ) {
