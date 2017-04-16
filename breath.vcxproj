@@ -456,8 +456,6 @@
     <ClInclude Include="breath\conversion\roman.hpp" />
     <ClInclude Include="breath\counting\count.hpp" />
     <ClInclude Include="breath\counting\counter.hpp" />
-    <ClInclude Include="breath\cpp11\dep\comp\gcc\long_long.hpp" />
-    <ClInclude Include="breath\cpp11\dep\comp\msvc\long_long.hpp" />
     <ClInclude Include="breath\cpp11\long_long.hpp" />
     <ClInclude Include="breath\cpu\cpuid.hpp" />
     <ClInclude Include="breath\cryptography\digest.hpp" />
@@ -477,8 +475,6 @@
     <ClInclude Include="breath\diagnostics\check_type_completeness.hpp" />
     <ClInclude Include="breath\diagnostics\exception.hpp" />
     <ClInclude Include="breath\diagnostics\last_api_error.hpp" />
-    <ClInclude Include="breath\diagnostics\private\dep\syst\unix\last_api_error.hpp" />
-    <ClInclude Include="breath\diagnostics\private\dep\syst\windows\last_api_error.hpp" />
     <ClInclude Include="breath\diagnostics\private\last_api_error.hpp" />
     <ClInclude Include="breath\encoding\base64_to_binary.hpp" />
     <ClInclude Include="breath\encoding\binary_to_base64.hpp" />
@@ -527,8 +523,6 @@
     <ClInclude Include="breath\process\child_process.hpp" />
     <ClInclude Include="breath\process\exit_code.hpp" />
     <ClInclude Include="breath\process\find_executable_in_path.hpp" />
-    <ClInclude Include="breath\process\private\dep\syst\unix\process_id_type.hpp" />
-    <ClInclude Include="breath\process\private\dep\syst\windows\process_id_type.hpp" />
     <ClInclude Include="breath\process\private\handle.hpp" />
     <ClInclude Include="breath\process\private\process_id_type.hpp" />
     <ClInclude Include="breath\process\process.hpp" />
