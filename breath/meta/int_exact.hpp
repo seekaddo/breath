@@ -18,7 +18,6 @@
         types are provided for any given value of N.
 */
 
-#include "breath/cpp11/long_long.hpp"
 #include "breath/meta/select.hpp"
 #include <limits>
 #include <cstddef>
@@ -46,7 +45,7 @@ template<> struct types< unsigned, 0 > { typedef unsigned char    type ; } ;
 template<> struct types< unsigned, 1 > { typedef unsigned short   type ; } ;
 template<> struct types< unsigned, 2 > { typedef unsigned int     type ; } ;
 template<> struct types< unsigned, 3 > { typedef unsigned long    type ; } ;
-template<> struct types< unsigned, 4 > { typedef unsigned_long_long_type type ; } ;
+template<> struct types< unsigned, 4 > { typedef unsigned long long type ; } ;
 
 
 template< std::size_t width,

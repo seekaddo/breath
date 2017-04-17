@@ -325,9 +325,6 @@
     <ClInclude Include="breath\counting\counter.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="breath\cpp11\long_long.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="breath\cpu\cpuid.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
