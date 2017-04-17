@@ -418,7 +418,6 @@
     <ClCompile Include="breath\time\brt\time_string.cpp" />
     <ClCompile Include="breath\time\windows_only\brt\performance_counter_timer.cpp" />
     <ClCompile Include="breath\uuid\brt\uuid.cpp" />
-    <ClCompile Include="tool\include_guard\macro_name.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="breath\algorithm\brt\accumulate.tpp" />

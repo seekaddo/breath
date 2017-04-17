@@ -267,9 +267,6 @@
     <ClCompile Include="breath\uuid\brt\uuid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tool\include_guard\macro_name.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="breath\cpu\get_cpuid_info.asm">
