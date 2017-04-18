@@ -57,6 +57,7 @@ program_status::exit_status() const
     if ( static_cast<unsigned int>( m_max_gravity ) >= breath::count( table ) ) {
        instance().declare_error( program_status::internal ) ;
        std::cerr << "impossible gravity seen in class program_status" ;
+       return exit_status() ;
     }
     std::cout.flush() ;
     return table[ m_max_gravity ] ;
