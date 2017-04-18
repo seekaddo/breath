@@ -20,7 +20,6 @@ remove_from_end( std::string const & str, std::string const & to_be_removed )
     return copy ;
 }
 
-
 }
 
 // Local Variables:
