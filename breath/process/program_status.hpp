@@ -55,9 +55,9 @@ public:
     static program_status &
                         instance() ;
 
-    // Returns an integer suitable for calling exit() --gps
-    // This is the "worst" error reported by user code to the program_status
-    // singleton. gps CONTROLLA QUESTO... in realta noi ora riportiamo un enum
+    // Returns an integer suitable for calling std::exit().
+    // This corresponds to the "worst" error reported by client code to the
+    // program_status singleton.
     //
     // 0 == OK; the greater, the worse
     //
