@@ -267,6 +267,9 @@
     <ClCompile Include="breath\uuid\brt\uuid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="breath\memory\brt\amount_of_physical_memory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="breath\cpu\get_cpuid_info.asm">
