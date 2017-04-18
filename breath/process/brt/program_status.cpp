@@ -56,6 +56,9 @@ program_status::exit_status() const
        return exit_status() ;
     }
     std::cout.flush() ;
+    if ( std::cout.fail() ) {
+        instance().declare_error( error ) ; // NOTE: we need an error message here -gps
+    }
     return table[ m_max_gravity ] ;
 }
 
