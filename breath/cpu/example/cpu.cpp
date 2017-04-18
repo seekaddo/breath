@@ -40,7 +40,7 @@ processor_brand_string()
     std::size_t const   len = 16 * ( to - from + 1 ) ;
     char                s[ len ] ;
     for ( unsigned i = from ; i <= to ; ++ i ) {
-        cpuid_result const info = get_cpuid_info( i, 0 ) ;
+        cpuid_result const  info = get_cpuid_info( i, 0 ) ;
         char * const        p = s + 16 * ( i - from ) ;
         std::memcpy( p,      &info.eax, sizeof( info.eax ) ) ;
         std::memcpy( p + 4,  &info.ebx, sizeof( info.ebx ) ) ;
@@ -53,7 +53,7 @@ processor_brand_string()
 std::string
 cpu_vendor_id_string()
 {
-    cpuid_result const r = get_cpuid_info( 0, 0 ) ;
+    cpuid_result const  r = get_cpuid_info( 0, 0 ) ;
 
     int const           len = 12 ;
     char                id_string[ len ] ;
