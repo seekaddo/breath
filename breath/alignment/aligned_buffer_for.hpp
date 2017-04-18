@@ -33,7 +33,6 @@ class               aligned_buffer_for< T[ n ] >
 //! \cond
 namespace aligned_buffer_private {
 
-
 template< typename T >
 class align_of
 {
