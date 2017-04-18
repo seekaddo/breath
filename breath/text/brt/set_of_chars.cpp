@@ -35,19 +35,19 @@ set_of_chars::set_of_chars( std::string const & s )
 }
 
 set_of_chars::set_of_chars( except_for, char c )
-    :   m_bits( set_of_chars::size, true)
+    :   m_bits( set_of_chars::size, true )
 {
     remove( c ) ;
 }
 
 set_of_chars::set_of_chars( except_for, char const * s )
-    :   m_bits( set_of_chars::size, true)
+    :   m_bits( set_of_chars::size, true )
 {
     remove( s ) ;
 }
 
 set_of_chars::set_of_chars( except_for, std::string const & s )
-    :   m_bits( set_of_chars::size, true)
+    :   m_bits( set_of_chars::size, true )
 {
     remove( s ) ;
 }
