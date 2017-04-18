@@ -39,17 +39,17 @@ main()
 
     // check that embedded NULs are handled correctly
     std::string         s ;
-    s.push_back( 'a' );
-    s.push_back( '\0' );
-    s.push_back( 'b' );
+    s.push_back( 'a' ) ;
+    s.push_back( '\0' ) ;
+    s.push_back( 'b' ) ;
 
     std::string         t ;
     t.push_back( '\0' ) ;
     DO_TEST( !ends_with( s, t) ) ;
     t.push_back( 'b' ) ;
-    DO_TEST( ends_with( s, t ) );
-    DO_TEST( ends_with( s, s ) );
-    DO_TEST( ends_with( s, t ) );
+    DO_TEST( ends_with( s, t ) ) ;
+    DO_TEST( ends_with( s, s ) ) ;
+    DO_TEST( ends_with( s, t ) ) ;
 
 }
 
