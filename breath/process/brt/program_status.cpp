@@ -67,15 +67,15 @@ void
 program_status::parse_command_line( int argc, char const * const *
                                 argv, std::string const & program_name )
 {
-        std::string const
-                        name = ! program_name.empty()
-                                   ? program_name
-                                   : argc > 0
-                                         ? argv[ 0 ]
-                                         : "<unknown program>"
-                                   ;
+    std::string const
+                    name = ! program_name.empty()
+                                ? program_name
+                                : argc > 0
+                                        ? argv[ 0 ]
+                                        : "<unknown program>"
+                                ;
 
-        m_program_name = breath::base_filename( name ) ;
+    m_program_name = breath::base_filename( name ) ;
 }
 
 void
