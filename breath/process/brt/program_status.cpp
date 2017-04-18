@@ -37,10 +37,6 @@ program_status::program_status()
     std::clog.exceptions( std::ios_base::badbit ) ;
 }
 
-program_status::~program_status() noexcept
-{
-}
-
 // gps controllare poi l'ordine con cui definiamo le member function
 int
 program_status::exit_status() const
