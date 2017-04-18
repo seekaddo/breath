@@ -92,7 +92,7 @@ public:
     //
     //      Usually the program is exited, with a
     //
-    //        return program_status...::status() ;
+    //        return program_status...::exit_status() ;
     //
     //      from main(), but this is not the only possible case
     //
