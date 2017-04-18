@@ -20,7 +20,6 @@
     <ClCompile Include="..\macro_name.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-
     <ClCompile Include="..\..\..\breath\path\brt\allowed_path_separators.cpp">
       <Filter>Library</Filter>
     </ClCompile>
@@ -43,9 +42,6 @@
       <Filter>Library</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breath\process\brt\program_status.cpp">
-      <Filter>Library</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\breath\idiom\brt\string_argument.cpp">
       <Filter>Library</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\breath\random\brt\subrange_max.cpp">
