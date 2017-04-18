@@ -26,8 +26,6 @@ std::string         trim( std::string const &  str,
 
 }
 
-
-
 #endif
 
 // Local Variables:
