@@ -23,12 +23,12 @@ amount_of_physical_memory()
     // --------------------------------------------------------------
     HMODULE const       module = GetModuleHandleA( "kernel32" ) ;
 
-    ULONGLONG           amount ;
     typedef BOOL ( WINAPI * fn_ptr_type )( ULONGLONG * ) ;
     fn_ptr_type const   get_physical_memory = module == NULL
                                 ? nullptr
                                 : reinterpret_cast< fn_ptr_type >(
              GetProcAddress( module, "GetPhysicallyInstalledSystemMemory" ) ) ;
+    ULONGLONG           amount ;
     if ( get_physical_memory == nullptr
         || get_physical_memory( &amount ) == 0 ) {
         MEMORYSTATUSEX      status ;
