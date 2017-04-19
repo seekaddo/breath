@@ -51,7 +51,7 @@ public:
 
 private:
     T *                 m_ptr ;
-    void                do_delete() noexcept;
+    void                do_delete() noexcept ;
 } ;
 
 }

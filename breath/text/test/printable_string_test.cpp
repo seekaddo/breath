@@ -19,7 +19,7 @@ main()
     using breath::printable_string ;
 
     {
-        printable_string    p( nullptr );
+        printable_string    p( nullptr ) ;
         std::ostringstream  ss ;
         ss << p ;
         DO_TEST( ss.str() == "(null)" ) ;

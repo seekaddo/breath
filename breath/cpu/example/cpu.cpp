@@ -72,7 +72,7 @@ main()
     std::cout << "Processor brand string: " << ( has_processor_brand_string()
                                                     ? processor_brand_string()
                                                     : "<not available>" )
-                                            << std::endl;
+                                            << std::endl ;
 }
 
 // Local Variables:

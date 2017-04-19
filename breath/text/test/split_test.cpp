@@ -31,9 +31,9 @@ main()
 
     {
         std::string         s( "string1" ) ;
-        s.push_back( '\0' );
+        s.push_back( '\0' ) ;
         s += "string2" ;
-        s.push_back( '\0' );
+        s.push_back( '\0' ) ;
         s += "string3" ;
         std::vector< std::string > v = split( s, '\0' ) ;
 
@@ -45,9 +45,9 @@ main()
 
     {
         std::string         s( "string1" ) ;
-        s.push_back( '\0' );
+        s.push_back( '\0' ) ;
         s += "string2" ;
-        s.push_back( '\0' );
+        s.push_back( '\0' ) ;
         s += "string3" ;
         s.push_back( '\0' ) ;
         std::vector< std::string > v = split( s, '\0' ) ;
@@ -60,8 +60,8 @@ main()
 
     {
         std::string         s( "string1" ) ;
-        s.push_back( '\0' );
-        s.push_back( '\0' );
+        s.push_back( '\0' ) ;
+        s.push_back( '\0' ) ;
         s += "string3" ;
         std::vector< std::string > v = split( s, '\0' ) ;
         DO_TEST( v.size() == 3 ) ;

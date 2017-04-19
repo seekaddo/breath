@@ -20,7 +20,7 @@ main()
 {
     constexpr int       size = 256 ;
     std::array< std::uint_fast32_t, size >
-                        table;
+                        table ;
     typedef std::uint_fast32_t
                         fast32_type ;
 

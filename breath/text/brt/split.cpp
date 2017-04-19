@@ -17,7 +17,7 @@ split( std::string const & s, char c )
                         result ;
 
     for ( auto it = s.cbegin() ; it != s.cend() ; ) {
-        auto const          curr =  it;
+        auto const          curr =  it ;
         while ( it != s.end() && *it != c ) {
             ++ it ;
         }

@@ -60,8 +60,8 @@ class windows_version_info::impl
 public:
     BREATH_DECLARE_NON_COPYABLE( impl )
 
-                    impl();
-                    ~impl() noexcept;
+                    impl() ;
+                    ~impl() noexcept ;
 
     WKSTA_INFO_100 *
                     m_info = nullptr ;
@@ -114,7 +114,7 @@ windows_version_info::build_number() const
     //      CurrentBuildNumber. Using the latter as it has a more
     //      explicit name. [gps]
     // -------------------------------------------------------------------
-    HKEY                key = NULL;
+    HKEY                key = NULL ;
     LONG const          ret = RegOpenKeyEx( HKEY_LOCAL_MACHINE,
                               "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion",
                               0,
@@ -125,7 +125,7 @@ windows_version_info::build_number() const
     }
     key_handle_manager const
                         manager( key ) ;
-    constexpr int       size = 256;
+    constexpr int       size = 256 ;
     DWORD               dw_size = size ;
     char                buffer[ size ] = {} ;
     int const           ret2 = RegGetValue( key, "", "CurrentBuildNumber",
@@ -360,7 +360,7 @@ windows_version_info::is_wow64_process()
 
     typedef BOOL ( WINAPI * fn_ptr_type )( HANDLE, PBOOL ) ;
 
-    BOOL                is_wow64 = 0;
+    BOOL                is_wow64 = 0 ;
     fn_ptr_type const   is_wow64_process = reinterpret_cast< fn_ptr_type >(
                             GetProcAddress( module, "IsWow64Process" ) ) ;
     if ( is_wow64_process != nullptr ) {
@@ -396,7 +396,7 @@ windows_version_info::is_client()
 std::string
 windows_version_info::service_pack_string()
 {
-    HKEY                key = NULL;
+    HKEY                key = NULL ;
     LONG const          ret = RegOpenKeyEx( HKEY_LOCAL_MACHINE,
                               "SYSTEM\\CurrentControlSet\\Control\\Windows",
                               0,

@@ -25,7 +25,7 @@ console_reporter::console_reporter( std::ostream & os )
 void
 console_reporter::on_all_tests_begin()
 {
-    m_stream << "Unit tests:" << std::endl;
+    m_stream << "Unit tests:" << std::endl ;
 }
 
 void

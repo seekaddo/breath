@@ -29,13 +29,13 @@ main()
         set_of_chars const  sc2( "a" ) ;
         DO_TEST( sc2.contains( 'a' ) && sc2.count() == 1 ) ;
 
-        std::string         str;
+        std::string         str ;
         str.push_back( '\0' ) ;
         str.push_back( '\0' ) ;
-        set_of_chars const  sc3( str );
+        set_of_chars const  sc3( str ) ;
         DO_TEST( sc3.contains( '\0' ) && sc3.count() == 1 ) ;
 
-        str.push_back( 'x' );
+        str.push_back( 'x' ) ;
         set_of_chars const sc4( str.cbegin(), str.cend() ) ;
         DO_TEST( sc4.contains( '\0' ) && sc4.contains( 'x')
                                         && sc4.count() == 2 ) ;
@@ -56,7 +56,7 @@ main()
         set_of_chars const t( s ) ;
 
         DO_TEST( t == s ) ;
-        DO_TEST( t.as_string() == "abcdefghijklmnopqrstuvwxyz" );
+        DO_TEST( t.as_string() == "abcdefghijklmnopqrstuvwxyz" ) ;
     }
 
     // contains
@@ -98,7 +98,7 @@ main()
     {
         std::string const   s =         "cage" ;
         std::string const   s_ordered = "aceg" ;
-        set_of_chars const  sc( s );
+        set_of_chars const  sc( s ) ;
 
         DO_TEST( sc.as_string() == s_ordered ) ;
     }

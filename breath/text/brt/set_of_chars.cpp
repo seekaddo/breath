@@ -136,7 +136,7 @@ set_of_chars::remove( std::string const & s )
 void
 set_of_chars::complement()
 {
-    for ( auto it = m_bits.begin(); it != m_bits.end() ; ++ it ) {
+    for ( auto it = m_bits.begin() ; it != m_bits.end() ; ++ it ) {
         *it = ! *it ;
     }
 }

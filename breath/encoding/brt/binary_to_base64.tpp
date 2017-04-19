@@ -77,7 +77,7 @@ binary_to_base64( InputIter begin, InputIter end,
     }
 
     for ( int i = 0 ; i < ( group_size - count ) % group_size ; ++ i ) {
-        do_output( '=' );
+        do_output( '=' ) ;
     }
 }
 

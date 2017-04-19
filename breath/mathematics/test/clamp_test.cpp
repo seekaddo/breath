@@ -81,7 +81,7 @@ check3()
     pair hi = { 2, "FAIL: HI" } ;
     a = breath::clamp( a, lo, hi, []( const auto & a, const auto & b ) {
                             return a.first < b.first ;
-                        } );
+                        } ) ;
     BREATH_CHECK( a.second == "OK" ) ;
 }
 
@@ -90,7 +90,7 @@ check3()
 int
 main()
 {
-    using namespace breath;
+    using namespace breath ;
 
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;

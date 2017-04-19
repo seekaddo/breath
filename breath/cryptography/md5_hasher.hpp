@@ -21,7 +21,7 @@ namespace breath {
 class md5_engine ;
 
 template< typename Hasher >
-class digest;
+class digest ;
 
 //
 //  Convenience typedef(s)
@@ -38,7 +38,7 @@ class md5_engine
                                     32, 128, hashing_count::wraps >
 {
 public:
-    static void         init_state( state_type & state );
+    static void         init_state( state_type & state ) ;
 
     static void         process_block( state_type & state,
                                        block_type const & block ) ;

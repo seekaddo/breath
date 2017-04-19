@@ -71,7 +71,7 @@ check_string_of_nuls()
     breath::binary_to_base64( s.cbegin(), s.cend(),
                               std::back_inserter( out ) ) ;
     // this one checked with base64 8.25 under Cygwin
-    BREATH_CHECK( out == "AAA=" );
+    BREATH_CHECK( out == "AAA=" ) ;
 }
 
 void
@@ -127,7 +127,7 @@ check_line_wrap()
 int
 main()
 {
-    using namespace breath;
+    using namespace breath ;
 
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;

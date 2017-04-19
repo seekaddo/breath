@@ -22,11 +22,11 @@ class select_
 public:
     //!     A typedef for the type \c T.
     // ---------------------------------------------------------------------
-    typedef T type;
+    typedef T type ;
 
     //!     A typedef for <code>select_< ! condition, T, U ></code>.
     // ---------------------------------------------------------------------
-    typedef select_< !condition, T, U > opposite;
+    typedef select_< !condition, T, U > opposite ;
 } ;
 
 template< typename T, typename U >
@@ -35,10 +35,10 @@ class select_< false, T, U >
 public:
     //!     A typedef for the type \c U.
     // ---------------------------------------------------------------------
-    typedef U type;
+    typedef U type ;
 
     //!     A typedef for <code>select_< true, T, U ></code>
-    typedef select_< true, T, U > opposite;
+    typedef select_< true, T, U > opposite ;
 } ;
 
 //!     The truly polymorphic select template.
@@ -49,7 +49,7 @@ class select
 public:
     //!     The result of the meta-function.
     // ---------------------------------------------------------------------
-    typedef typename select_< Cond::value, T, U >::type type;
+    typedef typename select_< Cond::value, T, U >::type type ;
 } ;
 
 }

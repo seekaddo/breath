@@ -32,8 +32,8 @@ roman::roman( int n )
     m_representation.reserve( max_roman_length ) ;
     entry const *       p = &table[ 0 ] ;
     for ( ; p->value != 0 ; ++ p ) {
-        int                 value = n / p->value;
-        n %= p->value;
+        int                 value = n / p->value ;
+        n %= p->value ;
         while ( value != 0 ) {
             m_representation += p->repr ;
             -- value ;

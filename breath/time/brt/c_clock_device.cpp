@@ -14,7 +14,7 @@ namespace breath {
 std::clock_t
 c_clock_device::retrieve()
 {
-    std::clock_t const  ret( std::clock() );
+    std::clock_t const  ret( std::clock() ) ;
     return ret != ( static_cast< std::clock_t >( -1 ) )
         ? ret
         : throw breath::exception( "could not retrieve std::clock()" ) ;
@@ -38,7 +38,7 @@ void c_clock_device::restart()
 c_clock_device::duration_type
 c_clock_device::elapsed() const
 {
-    double const        elapsed_ticks( retrieve() - m_start_tick );
+    double const        elapsed_ticks( retrieve() - m_start_tick ) ;
 
     //! gps - we should throw if elapsed < 0
     //!       and probably when elapsed == 0 too

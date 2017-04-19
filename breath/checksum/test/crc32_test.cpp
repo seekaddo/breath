@@ -46,7 +46,7 @@ check_known()
 int
 main()
 {
-    using namespace breath;
+    using namespace breath ;
 
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;

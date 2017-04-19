@@ -46,13 +46,13 @@ this_process::current_directory()
     if ( p == nullptr ) {
         throw last_api_error( "getcwd() failed" ) ;
     }
-    return std::string( p );
+    return std::string( p ) ;
 }
 
 void
 this_process::set_current_directory( std::string const & /*dir*/ )
 {
-    BREATH_ASSERT( false && "not implementable?" );
+    BREATH_ASSERT( false && "not implementable?" ) ;
 }
 
 }

@@ -24,7 +24,7 @@ namespace breath {
     //!     appear to be affected by the compatibility settings, so we
     //!     should detect the "true" OS, anyway.
     // ---------------------------------------------------------------------
-    os_id           get_os();
+    os_id           get_os() ;
 
 }
 

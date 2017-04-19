@@ -28,16 +28,16 @@ template< breath::meta::integer_log2_argument_type x,
 struct log2_checker
 {
     static_assert( integer_log2< x     >::value == expected,     "" ) ;
-    static_assert( integer_log2< x + 1 >::value == expected,     "" );
-    static_assert( integer_log2< x - 1 >::value == expected - 1, "" );
+    static_assert( integer_log2< x + 1 >::value == expected,     "" ) ;
+    static_assert( integer_log2< x - 1 >::value == expected - 1, "" ) ;
 
-    static int const dummy = log2_checker< x / 2, expected - 1 >::dummy;
-};
+    static int const dummy = log2_checker< x / 2, expected - 1 >::dummy ;
+} ;
 
 template<>
 struct log2_checker< 1, 0 >
 {
-    static int const dummy = 0;
+    static int const dummy = 0 ;
 } ;
 
 
@@ -45,9 +45,9 @@ int
 main()
 {
     typedef breath::meta::integer_log2_argument_type
-                        arg_type;
+                        arg_type ;
     typedef breath::meta::integer_log2_result_type
-                        result_type;
+                        result_type ;
 
     using               breath::meta::integer_log2 ;
 
@@ -56,19 +56,19 @@ main()
     static_assert(    arg_type( -1 ) > 0, "" ) ;
     static_assert( result_type( -1 ) < 0, "" ) ;
 
-    const result_type width = std::numeric_limits< arg_type >::digits;
+    const result_type width = std::numeric_limits< arg_type >::digits ;
 
     // check the maximum allowed argument...
     //
-    const arg_type maximum = arg_type( -1 );
-    static_assert( integer_log2< maximum >::value == width - 1, "" );
+    const arg_type maximum = arg_type( -1 ) ;
+    static_assert( integer_log2< maximum >::value == width - 1, "" ) ;
 
     // ... then go with the recursive check
     //
-    const arg_type recursion_start = maximum - ( maximum >> 1 );
-    const int dummy = log2_checker< recursion_start, width - 1 >::dummy;
+    const arg_type recursion_start = maximum - ( maximum >> 1 ) ;
+    const int dummy = log2_checker< recursion_start, width - 1 >::dummy ;
 
-    static_cast< void >( dummy );
+    static_cast< void >( dummy ) ;
 
 }
 

@@ -26,7 +26,7 @@ this_process::current_directory()
         throw last_api_error( "GetCurrentDirectory() failed" ) ;
     }
     s.resize( s.size() - 1 ) ; // remove trailing '\0'
-    return s;
+    return s ;
 }
 
 void

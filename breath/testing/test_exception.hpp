@@ -30,7 +30,7 @@ public:
     unsigned long       line()     const noexcept ;
 
 private:
-    char const *        m_filename;
+    char const *        m_filename ;
     unsigned long       m_line ;
 } ;
 

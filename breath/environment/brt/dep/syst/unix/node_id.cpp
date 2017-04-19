@@ -35,7 +35,7 @@ node_id::node_id()
     ifc.ifc_buf = &buffer[ 0 ] ;
 
     if ( ioctl( sock, static_cast< int >( SIOCGIFCONF ), &ifc ) == failure ) {
-        throw exception( "ioctl() failed" );
+        throw exception( "ioctl() failed" ) ;
     }
 
     ifreq const *       it = ifc.ifc_req ;
@@ -43,13 +43,13 @@ node_id::node_id()
     bool                found = false ;
     while ( it != end && ! found ) {
         ifreq               ifr ;
-        std::strcpy( ifr.ifr_name, it->ifr_name );
+        std::strcpy( ifr.ifr_name, it->ifr_name ) ;
         if ( ioctl( sock, static_cast< int >( SIOCGIFFLAGS ), &ifr )
                                                                 != failure ) {
             if ( ( ifr.ifr_flags & IFF_LOOPBACK ) == 0 ) {
                 if ( ioctl( sock, static_cast< int >( SIOCGIFHWADDR ), &ifr )
                                                                  != failure ) {
-                    found = true;
+                    found = true ;
                     std::copy_n( ifr.ifr_hwaddr.sa_data, m_address.size(),
                                                            &m_address[ 0 ] ) ;
                 }
@@ -59,7 +59,7 @@ node_id::node_id()
     }
 
     if ( ! found ) {
-        throw exception( "no suitable network adapter found" );
+        throw exception( "no suitable network adapter found" ) ;
     }
 }
 

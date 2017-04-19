@@ -205,7 +205,7 @@ identify_nt( windows_version_info const & info )
 
         case win_version( 5, 2 ):
             if ( windows_version_info::is_64_bit() ) {
-                id = os_id::windows_xp_professional_x64_edition;
+                id = os_id::windows_xp_professional_x64_edition ;
             }
             break ;
 

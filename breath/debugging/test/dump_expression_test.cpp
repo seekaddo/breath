@@ -41,7 +41,7 @@ private:
     std::ostream &  m_os ;
     std::streambuf * m_oldbuf ;
 
-};
+} ;
 
 void
 clear_stringstream( std::ostringstream & ss )

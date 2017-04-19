@@ -36,7 +36,7 @@ operator <<( std::ostream & dest, printable_string const & ps )
         return dest << "(null)" ;
     }
 
-    format_saver const  saver( dest );
+    format_saver const  saver( dest ) ;
     dest.setf( std::ios_base::hex, std::ios_base::basefield ) ;
     dest.fill( '0' ) ;
 
@@ -95,7 +95,7 @@ operator <<( std::ostream & dest, printable_string const & ps )
                      << static_cast< unsigned int >(
                          static_cast< unsigned char>( c ) ) ;
             }
-            break;
+            break ;
         }
     }
     dest << '\"' ;

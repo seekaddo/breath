@@ -26,7 +26,7 @@ public:
      //                   win32_process( process_id_type id ) ;
     std::string         name() const ;
     std::size_t         module_count() const ;
-};
+} ;
 
 }
 

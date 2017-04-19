@@ -55,7 +55,7 @@ struct choose_initial_n {
                 value = !c*n + choose_initial_n< 2*c*n >::value
         ;
 
-};
+} ;
 
 
 template< result_type n >
@@ -69,7 +69,7 @@ choose_initial_n< n >::value ;
 template <>
 struct choose_initial_n< 0 > {
     static result_type const value = 0 ;
-};
+} ;
 
 
 
@@ -101,13 +101,13 @@ struct integer_log2_impl {
                             + ( integer_log2_impl< ( x>>c*n ), n/2 >::value )
                     ;
 
-};
+} ;
 
 template <>
 struct integer_log2_impl< 1, 0 > {
     static result_type const
                         value = 0 ;
-};
+} ;
 
 template< argument_type arg, result_type res >
 result_type const

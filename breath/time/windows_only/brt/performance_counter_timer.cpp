@@ -18,7 +18,7 @@ performance_counter_timer::performance_counter_timer()
     // elapsed_timer<>, if needed. Note that this causes the member
     // m_start to be left uninitialized.
     //
-    LARGE_INTEGER       f;
+    LARGE_INTEGER       f ;
     if( QueryPerformanceFrequency( &f ) == 0 ) {
         throw last_api_error( "QueryPerformanceFrequency() failed" ) ;
     }
@@ -50,7 +50,7 @@ performance_counter_timer::duration_type
 performance_counter_timer::resolution() const
 {
     // resolution is in milliseconds
-    return 1000.0 / m_frequency;
+    return 1000.0 / m_frequency ;
 }
 
 }

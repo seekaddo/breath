@@ -110,7 +110,7 @@ os_id::os_id( os_id::id_type n )
 bool
 os_id::is_equal( const os_id & other ) const
 {
-    return m_id == other.m_id;
+    return m_id == other.m_id ;
 }
 
 std::ostream &

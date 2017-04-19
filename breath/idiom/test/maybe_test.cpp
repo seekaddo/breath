@@ -15,7 +15,7 @@
 void
 check_constructors()
 {
-    using breath::maybe;
+    using breath::maybe ;
 
     // default constructor
     {
@@ -124,7 +124,7 @@ check_assignments()
 int
 main()
 {
-    using namespace breath;
+    using namespace breath ;
 
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;

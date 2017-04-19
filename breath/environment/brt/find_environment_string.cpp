@@ -17,9 +17,9 @@ maybe< std::string >
 find_environment_string( std::string const & name )
 {
     typedef maybe< std::string >
-                        maybe_type;
+                        maybe_type ;
 
-    char const * const  p( std::getenv( name.c_str() ) );
+    char const * const  p( std::getenv( name.c_str() ) ) ;
 
     return p == nullptr
         ? maybe_type()

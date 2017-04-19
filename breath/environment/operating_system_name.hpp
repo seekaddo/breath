@@ -32,7 +32,7 @@ public:
                         what() const noexcept override ;
 private:
     enum { what_string_max_size = 256 } ;
-    char                m_what_str[ what_string_max_size ];
+    char                m_what_str[ what_string_max_size ] ;
 } ;
 
 std::ostream &      operator <<( std::ostream &, operating_system_name const & ) ;

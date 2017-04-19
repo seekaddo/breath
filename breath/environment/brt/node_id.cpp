@@ -39,7 +39,7 @@ operator <<( std::ostream & os, node_id const & id )
     os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
     os.fill( '0' ) ;
 
-    for ( auto it = id.m_address.cbegin(); it != id.m_address.cend() ; ++ it ) {
+    for ( auto it = id.m_address.cbegin() ; it != id.m_address.cend() ; ++ it ) {
         os << std::setw( 2 ) << static_cast< int >( *it ) ;
         if ( it != ( id.m_address.cend() - 1 ) ) {
             os << '-' ;

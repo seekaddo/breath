@@ -73,7 +73,7 @@ main()
     }
 
     max_length += std::max( last_line_terminator.length(),
-                            marker.length() );
+                            marker.length() ) ;
     for ( auto it = lines.begin() ; it != lines.end() ; ++ it ) {
 
         // gps perhaps do a calculation here

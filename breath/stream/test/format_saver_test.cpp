@@ -20,7 +20,7 @@ check()
     using breath::format_saver ;
     std::stringstream   str ;
     {
-        format_saver        saver( str );
+        format_saver        saver( str ) ;
         str.setf( std::ios::hex, std::ios::basefield ) ;
         str.fill( '0' ) ;
         str << std::setw( 2 ) << 15 ;
@@ -34,7 +34,7 @@ check()
 int
 main()
 {
-    using namespace breath;
+    using namespace breath ;
 
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
