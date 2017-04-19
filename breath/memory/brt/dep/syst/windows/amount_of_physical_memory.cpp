@@ -22,13 +22,12 @@ amount_of_physical_memory()
     //  only the first API gives an accurate value.
     // --------------------------------------------------------------
     HMODULE const       module = GetModuleHandleA( "kernel32" ) ;
-    if ( module == NULL ) {
-        throw last_api_error( "Cannot get a handle to kernel32.dll" ) ;
-    }
 
     ULONGLONG           amount ;
     typedef BOOL ( WINAPI * fn_ptr_type )( ULONGLONG * ) ;
-    fn_ptr_type const   get_physical_memory = reinterpret_cast< fn_ptr_type >(
+    fn_ptr_type const   get_physical_memory = module == NULL
+                                ? nullptr
+                                : reinterpret_cast< fn_ptr_type >(
              GetProcAddress( module, "GetPhysicallyInstalledSystemMemory" ) ) ;
     if ( get_physical_memory == nullptr
         || get_physical_memory( &amount ) == 0 ) {
