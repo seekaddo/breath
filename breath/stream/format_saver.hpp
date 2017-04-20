@@ -15,7 +15,6 @@
 
 #include "breath/idiom/declare_non_copyable.hpp"
 #include <ios>
-#include <string>
 
 namespace breath {
 
