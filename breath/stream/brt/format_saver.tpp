@@ -172,7 +172,6 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
         } catch ( ... ) {
         }
     }
-
 }
 
 }
