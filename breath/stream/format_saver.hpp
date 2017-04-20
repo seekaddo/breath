@@ -110,9 +110,9 @@ private:
 } ;
 
 typedef basic_format_saver< char >
-                        format_saver ;
+                    format_saver ;
 typedef basic_format_saver< wchar_t >
-                        wide_format_saver ;
+                    wide_format_saver ;
 
 }
 
