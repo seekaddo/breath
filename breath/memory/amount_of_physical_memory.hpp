@@ -21,6 +21,7 @@ namespace breath {
 unsigned long long  amount_of_physical_memory() ;
 
 }
+
 #endif
 
 // Local Variables:
