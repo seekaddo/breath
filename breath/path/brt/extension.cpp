@@ -20,7 +20,6 @@ extension( std::string const & path )
         ;
 }
 
-
 }
 
 // Local Variables:
