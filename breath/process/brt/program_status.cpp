@@ -27,7 +27,7 @@ program_status::instance()
 }
 
 program_status::program_status()
-    :   m_max_gravity() // gps or "success"?
+    :   m_max_gravity( comment )
 {
     std::cin.exceptions(  std::ios_base::badbit ) ;
     std::cout.exceptions( std::ios_base::badbit ) ;
