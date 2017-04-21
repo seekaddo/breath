@@ -22,6 +22,7 @@ namespace breath {
 
 class program_status
 {
+public:
     ///static int const    success = 0 ; // gps
     BREATH_DECLARE_NON_COPYABLE( program_status )
 
