@@ -20,12 +20,9 @@ namespace breath {
 program_status &
 program_status::instance()
 {
-    static program_status *
-                        the_instance = nullptr ;
-    if ( the_instance == nullptr ) {
-        the_instance = new program_status ;
-    }
-    return *the_instance ;
+    static program_status
+                        the_instance ;
+    return the_instance ;
 }
 
 program_status::program_status()
