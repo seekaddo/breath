@@ -270,14 +270,11 @@
     <ClCompile Include="breath\memory\brt\amount_of_physical_memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="breath\text\test\remove_from_end_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="breath\cpu\get_cpuid_info.asm">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="breath\cpu\is_cpuid_supported.asm">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="breath\algorithm\brt\accumulate.tpp" />
     <None Include="breath\checksum\brt\crc32.tpp" />
     <None Include="breath\counting\brt\counter.tpp" />
@@ -631,5 +628,13 @@
     <ClInclude Include="tool\include_guard\macro_name.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="breath\cpu\get_cpuid_info.asm">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="breath\cpu\is_cpuid_supported.asm">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>
