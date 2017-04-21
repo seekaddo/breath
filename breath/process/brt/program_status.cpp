@@ -8,6 +8,7 @@
 
 #include "breath/process/program_status.hpp"
 #include "breath/counting/count.hpp"
+#include "breath/diagnostics/assert.hpp"
 #include "breath/path/base_filename.hpp"
 #include "breath/process/exit_code.hpp"
 
@@ -66,6 +67,7 @@ void
 program_status::parse_command_line( int argc, char const * const *
                                 argv, std::string const & program_name )
 {
+    BREATH_ASSERT( m_program_name.empty() ) ;
     std::string const
                     name = ! program_name.empty()
                                 ? program_name
