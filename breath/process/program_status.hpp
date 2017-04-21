@@ -23,24 +23,11 @@ namespace breath {
 class program_status
 {
 public:
-    ///static int const    success = 0 ; // gps
     BREATH_DECLARE_NON_COPYABLE( program_status )
 
 private:
                         program_status() ;
                         ~program_status() noexcept = default ;
-
-#if 0
-    // Rationale for the pimpl idiom:
-    //
-    // I didn't want to introduce a physical dependency on our fallible<> from
-    // this include file (and fallible<> is handy for instance to manage the
-    // absence of program name). The first iteration of this class just used
-    // a supplementary bool data member, which in all honesty...
-    //
-    class               impl ;
-    impl *              m_impl ;
-#endif
 
 public:
     enum gravity
