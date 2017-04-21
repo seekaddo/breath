@@ -19,14 +19,6 @@
 
 namespace breath {
 
-program_status &
-program_status::instance()
-{
-    static program_status
-                        the_instance ;
-    return the_instance ;
-}
-
 program_status::program_status()
     :   m_max_gravity( comment )
 {
@@ -36,7 +28,14 @@ program_status::program_status()
     std::clog.exceptions( std::ios_base::badbit ) ;
 }
 
-// gps controllare poi l'ordine con cui definiamo le member function
+program_status &
+program_status::instance()
+{
+    static program_status
+                        the_instance ;
+    return the_instance ;
+}
+
 int
 program_status::exit_status() const
 {
