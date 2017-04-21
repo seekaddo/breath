@@ -17,7 +17,7 @@ template< typename T >
 T
 from_string( std::string const & s )
 {
-    T t ;
+    T                   t ;
     std::istringstream  ss( s ) ;
     if ( !( ss >> t ) || !( ss >> std::ws ).eof() ) {
         throw breath::exception( "error in from_string()" ) ;
