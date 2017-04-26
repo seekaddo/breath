@@ -33,7 +33,7 @@ void
 this_process::set_current_directory( std::string const & dir )
 {
     BREATH_ASSERT( 0 < dir.length() && dir.length()  < MAX_PATH ) ;
-    BREATH_ASSERT( dir.back() =='\\' || dir.length() <= (MAX_PATH-2) ) ;
+    BREATH_ASSERT( dir.back() == '\\' || dir.length() <= (MAX_PATH-2) ) ;
     if( SetCurrentDirectoryA( dir.c_str() ) == 0 ) {
         throw last_api_error( "SetCurrentDirectory() failed" ) ;
     }
