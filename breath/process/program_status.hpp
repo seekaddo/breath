@@ -30,6 +30,9 @@ private:
                         ~program_status() noexcept = default ;
 
 public:
+    // NOTE: keep the enumeration in sync with the array definition in
+    //       program_status::exit_status().
+    // ----------------------------------------------------------------------
     enum gravity
     {
         comment = 0, // equivalent to success
