@@ -25,6 +25,7 @@ namespace breath {
 
 class test_runner
 {
+public:
     BREATH_DECLARE_NON_COPYABLE( test_runner )
 
 private:
