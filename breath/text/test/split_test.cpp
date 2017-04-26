@@ -68,7 +68,6 @@ main()
         DO_TEST( v[ 0 ] == "string1" ) ;
         DO_TEST( v[ 1 ] == "" ) ;
         DO_TEST( v[ 2 ] == "string3" ) ;
-
     }
 
 }
