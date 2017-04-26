@@ -20,7 +20,7 @@ namespace breath {
 int const           exit_warning(  10 ) ;
 int const           exit_error(    20 ) ;
 int const           exit_fatal(    30 ) ;
-int const           exit_internal( 99 ) ;
+int const           exit_internal( 59 ) ;
 
 }
 
