@@ -47,7 +47,7 @@ int
 test_runner::run( TestDescriptorIterator begin, TestDescriptorIterator end )
 {
     int                 exit_code = breath::exit_failure ;
-    std::size_t test_number = 1 ;
+    std::size_t         test_number = 1 ;
     m_reporter->on_all_tests_begin() ;
     for ( ; begin != end ; ++ begin, ++ test_number ) {
         try {
