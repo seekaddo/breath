@@ -19,7 +19,7 @@ namespace breath {
 node_id const &
 node_id::instance()
 {
-    static const node_id
+    static node_id const
                         id ;
     return id ;
 }
