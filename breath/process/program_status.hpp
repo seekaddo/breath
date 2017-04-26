@@ -43,21 +43,34 @@ public:
     static program_status &
                         instance() ;
 
-    // Returns an integer suitable for calling std::exit().
-    // This corresponds to the "worst" error reported by client code to the
-    // program_status singleton.
-    //
-    // 0 == OK; the greater, the worse
-    //
+    //!     Returns an integer suitable for calling \c std::exit() or
+    //!     returning from \c main().
+    //!     This corresponds to the "worst" error reported by client
+    //!     code to the \c program_status singleton.
+    //!
+    //!     If the system supports it, the various gravities will be
+    //!     distinguished in the return code; if not, all you get is
+    //!     \c EXIT_SUCCESS or \c EXIT_FAILURE.
+    //!
+    //!     Important: this function also flushes \c std::cout, and
+    //!     generates an error if the flush fails.
+    // ----------------------------------------------------------------------
     int                 exit_status() const ;
 
-    // This is useful to "extract" the program name (if any) from the arguments
-    // to main(). It must be called at most once in the program execution. The
-    // advice is to call it in the first lines of main(), before threading
-    // starts.
-    //
+    //!     This is useful to "extract" the program name (if any) from
+    //!     the arguments to \c main(). It must be called at most once
+    //!     in the program execution. The advice is to call it in the
+    //!     first lines of \c main(), before threading starts.
+    //!
+    //!     If a non-empty \c program_name is supplied, it takes
+    //!     precedence over the arguments to \c main. Only the
+    //!     basename part of the program name is considered.
+    // ----------------------------------------------------------------------
     void                parse_command_line( int argc, char const * const *
                                 argv, std::string const & program_name = "" ) ;
+
+    //!     Declares a program error.
+    // ----------------------------------------------------------------------
     void                declare_error( gravity g ) ;
 
 
