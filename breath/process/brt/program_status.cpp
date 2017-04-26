@@ -48,17 +48,17 @@ program_status::exit_status() const
         exit_internal
     } ;
 
-    bool                internal = false ;
+    bool                is_internal = false ;
     if ( static_cast< unsigned int >( m_max_gravity ) >= breath::count( table ) ) {
         instance().declare_error( program_status::internal ) ;
-        internal = true ;
+        is_internal = true ;
         std::cerr << "impossible gravity seen in class program_status" ;
     }
     std::cout.flush() ;
     if ( std::cout.fail() ) {
         instance().declare_error( error ) ; // NOTE: we need an error message here -gps
     }
-    return internal
+    return is_internal
             ? exit_internal
             : table[ m_max_gravity ] ;
 }
