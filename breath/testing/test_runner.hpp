@@ -57,7 +57,7 @@ test_runner::run( TestDescriptorIterator begin, TestDescriptorIterator end )
             exit_code = breath::exit_success ;
         } catch ( test_exception const & ex ) {
             m_reporter->on_test_failed( test_number, ex ) ;
-        } catch( std::exception const & ex ) {
+        } catch ( std::exception const & ex ) {
             m_reporter->on_unexpected_exception( test_number, ex ) ;
         } catch ( ... ) {
             m_reporter->on_unexpected_exception( test_number ) ;
