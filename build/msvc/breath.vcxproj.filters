@@ -625,9 +625,6 @@
     <ClInclude Include="..\..\breath\uuid\uuid.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tool\include_guard\macro_name.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\breath\cpu\get_cpuid_info.asm">

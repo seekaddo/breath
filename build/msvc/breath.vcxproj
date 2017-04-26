@@ -582,7 +582,6 @@
     <ClInclude Include="..\..\breath\time\time_string.hpp" />
     <ClInclude Include="..\..\breath\time\windows_only\performance_counter_timer.hpp" />
     <ClInclude Include="..\..\breath\uuid\uuid.hpp" />
-    <ClInclude Include="tool\include_guard\macro_name.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\3_CLAUSE_BSD_LICENSE.txt" />
