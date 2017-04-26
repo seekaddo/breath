@@ -12,11 +12,6 @@
 subdirs = tool
 include $(BREATH_ROOT)/build/start.mk
 
-#.PHONY: clean
-#clean:
-#	rm -fr $(bin_dir)
-#	# fr??? gps
-
 # Local Variables:
 # mode: makefile
 # indent-tabs-mode: t
