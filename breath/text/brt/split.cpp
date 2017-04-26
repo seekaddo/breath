@@ -18,11 +18,11 @@ split( std::string const & s, char c )
 
     for ( auto it = s.cbegin() ; it != s.cend() ; ) {
         auto const          curr =  it ;
-        while ( it != s.end() && *it != c ) {
+        while ( it != s.cend() && *it != c ) {
             ++ it ;
         }
         result.push_back( std::string( curr, it ) ) ;
-        if ( it != s.end() && *it == c ) {
+        if ( it != s.cend() && *it == c ) {
             ++ it ;
         }
     }
