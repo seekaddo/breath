@@ -83,7 +83,7 @@ process::start( std::string const & app_name,
         }
         try {
             terminate() ;
-        } catch( ... ) {
+        } catch ( ... ) {
         }
     }
     //CloseHandle( pi.hThread ) ;
