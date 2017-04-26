@@ -17,9 +17,6 @@
 
 namespace {
 
-// Note that program_status::instance() may throw; if so, the program
-// is terminated. This is acceptable, because the program cannot run
-// without a chance to manage its status.
 void
 do_free( char * p ) noexcept
 {

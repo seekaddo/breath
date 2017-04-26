@@ -19,13 +19,22 @@
 
 namespace breath {
 
-program_status::program_status()
+program_status::program_status() noexcept
     :   m_max_gravity( comment )
 {
-    std::cin.exceptions(  std::ios_base::badbit ) ;
-    std::cout.exceptions( std::ios_base::badbit ) ;
-    std::cerr.exceptions( std::ios_base::badbit ) ;
-    std::clog.exceptions( std::ios_base::badbit ) ;
+    std::basic_ios< char > * arr[] = {
+        &std::cin,
+        &std::cout,
+        &std::cerr,
+        &std::clog
+    } ;
+    for ( auto stream : arr ) {
+        try {
+            stream->exceptions( std::ios_base::badbit ) ;
+        } catch ( std::ios_base::failure const & ) {
+            // nothing to do
+        }
+    }
 }
 
 program_status &

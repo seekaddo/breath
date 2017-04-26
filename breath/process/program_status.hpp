@@ -26,7 +26,7 @@ public:
     BREATH_DECLARE_NON_COPYABLE( program_status )
 
 private:
-                        program_status() ;
+                        program_status() noexcept ;
                         ~program_status() noexcept = default ;
 
 public:
