@@ -44,7 +44,7 @@ public:
 
 
     static program_status &
-                        instance() ;
+                        instance() noexcept ;
 
     //!     Returns an integer suitable for calling \c std::exit() or
     //!     returning from \c main().

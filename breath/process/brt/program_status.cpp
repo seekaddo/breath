@@ -38,7 +38,7 @@ program_status::program_status() noexcept
 }
 
 program_status &
-program_status::instance()
+program_status::instance() noexcept
 {
     static program_status
                         the_instance ;
