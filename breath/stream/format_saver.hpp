@@ -24,8 +24,8 @@ namespace breath {
 //!     RAII-based "guard" (saver/restorer) of a stream object's
 //!     formatting info.
 //!
-//!     An instance of this class saves the formatting state of a
-//!     stream object in its constructor and restores it in its
+//!     An instance of this template class saves the formatting state
+//!     of a stream object in its constructor and restores it in its
 //!     destructor.
 //!
 //!     Note: do not confuse what we call here the "formatting info"
@@ -35,7 +35,7 @@ namespace breath {
 //!     concern to this class.
 //!
 //!
-//!     This class restores everything except:
+//!     This facility restores everything except:
 //!
 //!     - integrity state ( \c rdstate() )
 //!         since it represents errors; restoring would be a non-sense
@@ -83,7 +83,7 @@ namespace breath {
 //!     Credits:
 //!     --------
 //!
-//!     This class was born as a further elaboration of a class by
+//!     This template was born as a further elaboration of a class by
 //!     James Kanze, named \c IOSave. And it was a comment in his code
 //!     to suggest using copyfmt, in order to save the additional
 //!     stream info. James also gave, as usual, excellent feedback on
