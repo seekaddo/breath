@@ -9,7 +9,6 @@
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include <Windows.h>
-#include <cstddef>
 
 namespace breath {
 
