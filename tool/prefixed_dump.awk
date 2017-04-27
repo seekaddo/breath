@@ -16,7 +16,8 @@
 #       * alignment
 #           One of 'align_right', 'align_center', 'align_left'  [gps]
 #       * prefix
-#           A string to be prefixed to every line of the input. Can be empty.
+#           A string to be prefixed to every line of the input; can be
+#           empty
 #       * min_prefix_pad
 #           A non-negative integer specifying the minimum character
 #           length of each line prefix: if the prefix is shorter
