@@ -273,6 +273,9 @@
     <ClCompile Include="..\..\breath\text\test\remove_from_end_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\stream\test\null_stream_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />
@@ -296,6 +299,7 @@
     <None Include="..\..\breath\text\brt\from_string.tpp" />
     <None Include="..\..\breath\text\brt\to_string.tpp" />
     <None Include="..\..\breath\time\brt\elapsed_timer.tpp" />
+    <None Include="..\..\breath\stream\brt\null_stream.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -623,6 +627,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\uuid\uuid.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\stream\null_stream.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
