@@ -40,8 +40,9 @@ public:
     //!     function).
     //!
     //!     Note that the system entropy source may work on a smaller
-    //!     type (typically unsigned char); but we don't use unsigned
-    //!     char on the interface because we don't want things such as
+    //!     type (typically <code>unsigned char</code>); but we don't
+    //!     use <code>unsigned char</code> on the interface because we
+    //!     don't want things such as
     //!     <code>
     //!         std::cout << rnd.next()
     //!     </code>
@@ -110,7 +111,7 @@ private:
     impl * const        m_impl ;
 } ;
 
-//!     \brief  The type of exceptions thrown by entropy_source's
+//!     \brief  The type of exceptions thrown by \c entropy_source's
 //!             members.
 // -------------------------------------------------------------------------
 class entropy_source::exception : public virtual breath::exception
@@ -120,8 +121,8 @@ public:
                         raise( std::string const & message ) ;
 
     //!     Constructs an entropy_source::exception with the given
-    //!     string as what() message. The string returned by what()
-    //!     could be truncated.
+    //!     string as \c what() message. The string returned by \c
+    //!     what() could be truncated.
     // ---------------------------------------------------------------------
     explicit            exception( std::string const & msg ) noexcept ;
 } ;
