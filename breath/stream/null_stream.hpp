@@ -47,7 +47,7 @@ private:
 //!     output, the stream never signals failbit. On input it is
 //!     always on EOF. The behavior is similar to a file stream
 //!     opened on /dev/null under Unix, but is portable and doesn't
-//!     do system calls.
+//!     make system calls.
 // -------------------------------------------------------------------------
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_null_stream
