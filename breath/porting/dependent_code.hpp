@@ -134,9 +134,6 @@
 //
 //      #define INCFILE(n) vers ## n
 //
-//      #define glue(a, b) a ## b
-//      #define xglue(a, b) glue(a, b)
-//
 //      #include xstr(INCFILE(2).h)
 //
 //      results in
