@@ -56,6 +56,7 @@ std::ostream &
 output_as_hex( std::ostream & os, T t )
 {
     static_assert( CHAR_BIT == 8, "" ) ;
+
     os << std::hex << std::nouppercase ;
     for ( std::size_t shift_amount = sizeof t * CHAR_BIT ; shift_amount > 0 ;
                                             shift_amount -= CHAR_BIT ) {
@@ -68,6 +69,7 @@ output_as_hex( std::ostream & os, T t )
 std::ostream & operator <<( std::ostream & os, uuid const & uu )
 {
     format_saver const  saver( os ) ;
+
     output_as_hex( os, uu.m_time_low ) << '-' ;
     output_as_hex( os, uu.m_time_mid ) << '-' ;
     output_as_hex( os, uu.m_time_hi_and_version ) << '-' ;
