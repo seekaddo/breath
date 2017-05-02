@@ -110,8 +110,8 @@ private:
     impl * const        m_impl ;
 } ;
 
-//! \brief  The type of exceptions thrown by entropy_source's
-//!         members.
+//!     \brief  The type of exceptions thrown by entropy_source's
+//!             members.
 // -------------------------------------------------------------------------
 class entropy_source::exception : public virtual breath::exception
 {
