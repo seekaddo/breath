@@ -29,7 +29,7 @@ basic_null_stream_buffer< Ch, Traits >::overflow( int_type c )
 
 template< typename Ch, typename Traits >
 typename basic_null_stream_buffer< Ch, Traits >::int_type
-basic_null_stream_buffer< Ch, Traits>::underflow()
+basic_null_stream_buffer< Ch, Traits >::underflow()
 {
     return Traits::eof() ;
 }
