@@ -93,7 +93,7 @@ public:
 
 
     //!     Releases the system resource(s) associated with this
-    //!     object (usually a file or a handle)
+    //!     object (usually a file or a handle).
     //!
     //!     Returns true <=> the resource(s) were successfully
     //!     released.
