@@ -15,6 +15,8 @@
 #ifndef BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 #define BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 
+#include <istream>
+#include <ostream>
 #include <streambuf>
 
 namespace breath {
