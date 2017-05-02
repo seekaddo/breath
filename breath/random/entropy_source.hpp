@@ -83,7 +83,7 @@ public:
     // ---------------------------------------------------------------------
 
 
-    //!     Returns a new random value: the same as next().
+    //!     Returns a new random value: the same as \c next().
     // ---------------------------------------------------------------------
     result_type         operator ()() ;
 
