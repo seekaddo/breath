@@ -147,7 +147,6 @@
 //      example exists in C90, C99, C++98, C++03 and C++0x.
 // ---------------------------------------------------------------------------
 
-
 #define BREATH_DEPENDENT_CODE( variant, filename )                          \
     BREATH_TOKEN_PASTE( BREATH_DEPENDENT_CODE_, variant )( filename )    /**/
 
