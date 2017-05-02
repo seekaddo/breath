@@ -12,9 +12,9 @@
 //      Implementation:
 //      ---------------
 //
-//      We want to have a range [0, p] such as p+1 (the number of
-//      values that it contains) is a multiple of x+1 (the number of
-//      values in [0, x]).
+//      We want to have a range [0, p] such that p+1 (the number of
+//      integer values that it contains) is a multiple of x+1 (the
+//      number of integer values in [0, x]).
 //
 //      Mathematically:
 //
@@ -22,7 +22,7 @@
 //
 //      but *programmatically* we can't do that directly, because m+1
 //      may overflow. However, subtracting x+1 from both members
-//      (which is fine....)
+//      (which is fine...)
 //
 //         m-x = (q-1)(x+1) + r
 //
