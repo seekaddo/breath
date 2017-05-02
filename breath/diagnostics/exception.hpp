@@ -29,29 +29,29 @@ class exception : public virtual std::exception
 public:
     //!     Constructs an object giving a default what() message.
     // ---------------------------------------------------------------------
-    exception() noexcept ;
+                        exception() noexcept ;
 
     //!     Constructs an object whose what() function returns a
     //!     pointer to a string equal to \c what_msg, possibly
     //!     truncated.
     // ---------------------------------------------------------------------
-    explicit exception( std::string const & what_msg ) noexcept ;
+    explicit            exception( std::string const & what_msg ) noexcept ;
 
     //!     Compiler-generated copy constructor.
     // ---------------------------------------------------------------------
-    exception( exception const & ) noexcept = default ;
+                        exception( exception const & ) noexcept = default ;
 
     //!     Compiler-generated copy-assignment operator.
     // ---------------------------------------------------------------------
-    exception & operator =( exception const & ) noexcept = default ;
+    exception &         operator =( exception const & ) noexcept = default ;
 
     //!     Compiler-generated destructor
     // ---------------------------------------------------------------------
-    virtual ~exception() noexcept = default ;
+    virtual             ~exception() noexcept = default ;
 
     //!     Returns a description of the exception object.
     // ---------------------------------------------------------------------
-    virtual char const * what() const noexcept override ;
+    virtual char const *what() const noexcept override ;
 
 private:
     enum { what_message_max_size = 1023 } ;
