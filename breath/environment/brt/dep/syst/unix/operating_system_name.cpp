@@ -9,14 +9,14 @@
 #include "breath/diagnostics/last_api_error.hpp"
 #include <cerrno>
 #include <ostream>
-#include <string.h> // for strncpy
+#include <cstring>
 #include <sys/utsname.h>
 
 namespace breath {
 
 operating_system_name_error::operating_system_name_error( std::string const & s ) noexcept
 {
-    strncpy( m_what_str, s.c_str(), what_string_max_size ) ;
+    std::strncpy( m_what_str, s.c_str(), what_string_max_size ) ;
 }
 
 char const *
