@@ -31,11 +31,11 @@ namespace breath {
 //!     What about the complexity of g()? [gps]
 //!
 // -------------------------------------------------------------------------
-class entropy_source {
-
+class entropy_source
+{
+public:
     BREATH_DECLARE_NON_COPYABLE( entropy_source )
 
-public:
     //!     The type of the random numbers returned (\c next()
     //!     function).
     //!
@@ -49,8 +49,9 @@ public:
     // ---------------------------------------------------------------------
     typedef unsigned int
                         result_type ;
+
     class               exception ;
-public:
+
     //!     Acquires the resource(s) necessary to generate random
     //!     numbers. May throw an \c entropy_source::exception or a
     //!     \c std::bad_alloc.
