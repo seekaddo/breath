@@ -9,7 +9,7 @@
 
 .intel_syntax noprefix
 
-.global              _get_cpuid_info
+.global             _get_cpuid_info
 
 .text
 
