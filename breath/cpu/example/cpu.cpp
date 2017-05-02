@@ -10,10 +10,10 @@
 #include "breath/diagnostics/assert.hpp"
 
 #include <cstdlib>
-#include <string>
-#include <ostream>
-#include <iostream>
 #include <cstring>
+#include <iostream>
+#include <ostream>
+#include <string>
 
 namespace {
 
