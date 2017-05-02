@@ -8,7 +8,7 @@
 
 .intel_syntax noprefix
 
-.global              _is_cpuid_supported
+.global             _is_cpuid_supported
 
 .text
 
