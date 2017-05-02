@@ -36,7 +36,8 @@ public:
                     instance() ;
     void            attach_reporter( test_reporter & ) ;
     template< typename TestDescriptorIterator >
-    int             run( TestDescriptorIterator begin, TestDescriptorIterator end ) ;
+    int             run( TestDescriptorIterator begin, TestDescriptorIterator
+                                                                        end ) ;
     int             run( std::initializer_list< test_descriptor > list ) ;
 
 private:
