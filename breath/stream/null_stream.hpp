@@ -47,7 +47,7 @@ private:
 //!     opened on /dev/null under Unix, but is portable and doesn't
 //!     do system calls.
 // -------------------------------------------------------------------------
-template< typename Ch, typename Traits = std::char_traits< Ch> >
+template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_null_stream
     : private basic_null_stream_buffer< Ch, Traits >,
       public  std::basic_ostream< Ch, Traits >,
