@@ -11,7 +11,6 @@
 //!            characters in input.
 // -------------------------------------------------------------------------
 
-
 #ifndef BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 #define BREATH_GUARD_CnvhAthmCrzPoNDMrZPUfBrAGrgy3Xe0
 
