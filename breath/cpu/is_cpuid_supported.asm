@@ -34,8 +34,6 @@
 ;
 ;       [TODO: what about Virtual Machines?]
 ;
-;       Written/by: September 2013 by Gennaro Prota
-;
 ;       References:
 ;       -----------
 ;
