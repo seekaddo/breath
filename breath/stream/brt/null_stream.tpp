@@ -16,7 +16,7 @@ basic_null_stream_buffer< Ch, Traits >::overflow( int_type c )
 {
     this->setp( breath::begin( m_dummy_buffer ),
                 breath::end(   m_dummy_buffer ) ) ;
-    return ( Traits::eq_int_type( c, Traits::eof() ) )
+    return Traits::eq_int_type( c, Traits::eof() )
                 ? '\0'
                 : c
                 ;
