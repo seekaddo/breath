@@ -83,9 +83,9 @@
 ;       CPUID instruction. Otherwise 0.
 ;
 ;           [gps a processor executes the whole function?]
-
-
+; ----------------------------------------------------------------------------
 */
+
 _is_cpuid_supported:
 
 .equ id_bit_pos, 21
