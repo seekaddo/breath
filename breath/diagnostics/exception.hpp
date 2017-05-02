@@ -31,7 +31,7 @@ public:
     // ---------------------------------------------------------------------
                         exception() noexcept ;
 
-    //!     Constructs an object whose what() function returns a
+    //!     Constructs an object whose \c what() function returns a
     //!     pointer to a string equal to \c what_msg, possibly
     //!     truncated.
     // ---------------------------------------------------------------------
