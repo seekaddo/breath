@@ -14,18 +14,6 @@
 
 namespace breath {
 
-operating_system_name_error::operating_system_name_error( std::string const & s ) noexcept
-{
-    std::strncpy( m_what_str, s.c_str(), what_string_max_size ) ;
-}
-
-char const *
-operating_system_name_error::what() const noexcept
-{
-    return m_what_str ;
-}
-
-
 std::ostream &
 operator <<( std::ostream & dest, operating_system_name const & )
 {
@@ -33,9 +21,7 @@ operator <<( std::ostream & dest, operating_system_name const & )
     int const           ret = uname( &un ) ;
 
     if ( ret == -1 ) {
-        last_api_error const
-                            err ;
-        throw breath::operating_system_name_error( err.what() ) ;
+        throw last_api_error( "uname() failed" ) ;
     }
 
     return dest << un.sysname
