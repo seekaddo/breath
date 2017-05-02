@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/diagnostics/last_api_error.hpp"
-#include <cerrno>
+
 #include <ostream>
 #include <cstring>
 #include <sys/utsname.h>
