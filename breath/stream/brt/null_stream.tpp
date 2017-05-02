@@ -11,11 +11,16 @@
 namespace breath {
 
 template< typename Ch, typename Traits >
+basic_null_stream_buffer< Ch, Traits >::basic_null_stream_buffer()
+{
+    set_buffer() ;
+}
+
+template< typename Ch, typename Traits >
 typename basic_null_stream_buffer< Ch, Traits >::int_type
 basic_null_stream_buffer< Ch, Traits >::overflow( int_type c )
 {
-    this->setp( breath::begin( m_dummy_buffer ),
-                breath::end(   m_dummy_buffer ) ) ;
+    set_buffer() ;
     return Traits::eq_int_type( c, Traits::eof() )
                 ? '\0'
                 : c
@@ -27,6 +32,14 @@ typename basic_null_stream_buffer< Ch, Traits >::int_type
 basic_null_stream_buffer< Ch, Traits>::underflow()
 {
     return Traits::eof() ;
+}
+
+template< typename Ch, typename Traits >
+void
+basic_null_stream_buffer< Ch, Traits >::set_buffer()
+{
+    this->setp( breath::begin( m_dummy_buffer ),
+                breath::end(   m_dummy_buffer ) ) ;
 }
 
 template< typename Ch, typename Traits >

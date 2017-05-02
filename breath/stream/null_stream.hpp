@@ -29,11 +29,16 @@ public:
                         base_type ;
     typedef typename base_type::int_type
                         int_type ;
+
+                        basic_null_stream_buffer() ;
+
 protected:
     virtual int_type    overflow( int_type c ) override ;
     virtual int_type    underflow() override ;
 
 private:
+    void                set_buffer() ;
+
     //  Having a buffer avoids some virtual function calls.
     // ---------------------------------------------------------------------
     Ch                  m_dummy_buffer[ 64 ] ;
