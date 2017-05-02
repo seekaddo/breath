@@ -38,6 +38,7 @@ public:
     template< typename TestDescriptorIterator >
     int             run( TestDescriptorIterator begin, TestDescriptorIterator end ) ;
     int             run( std::initializer_list< test_descriptor > list ) ;
+
 private:
     test_reporter * m_reporter ;
 } ;
