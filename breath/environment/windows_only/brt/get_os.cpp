@@ -169,7 +169,7 @@ is_server_2003_r2()
 {
     // define the sm_* constant ourselves, for now, to avoid requiring
     // the latest SDK headers [FUTURE]
-    int const sm_serverr2( 89 ) ;
+    int const           sm_serverr2( 89 ) ;
     return 0 != ::GetSystemMetrics( sm_serverr2 ) ;
 }
 
