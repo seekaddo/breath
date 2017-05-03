@@ -6,8 +6,8 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include <array>
 #include <algorithm>
+#include <array>
 #include <cstdint>
 #include <iomanip>
 #include <ios>
