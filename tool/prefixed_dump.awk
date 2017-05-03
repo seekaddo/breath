@@ -85,3 +85,10 @@ length() == 0 {
         print text
     }
 }
+
+# Local Variables:
+# mode: awk
+# indent-tabs-mode: nil
+# c-basic-offset: 4
+# End:
+# vim: set ft=awk et sts=4 sw=4:
