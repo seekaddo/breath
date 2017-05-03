@@ -21,7 +21,6 @@
 #include <string.h> // for POSIX' strerror
 #include <stdio.h>
 
-
 namespace breath {
 
 class entropy_source::impl
@@ -51,7 +50,6 @@ entropy_source::impl::impl()
         entropy_source::exception::raise( "cannot open /dev/random" ) ;
     }
 
-
     // Attempt to turn off the library-level buffering. If that fails
     // we ignore the failure.
     //
@@ -66,7 +64,6 @@ entropy_source::impl::~impl() noexcept
 {
     release() ;
 }
-
 
 entropy_source::result_type
 entropy_source::impl::next()
