@@ -33,7 +33,7 @@ make_random_alnum( int length, breath::entropy_source & source )
         result.reserve( length ) ;
 
         int                 count = length ;
-        auto                m = static_cast< unsigned >( alnum.length() - 1 ) ;
+        auto const          m = static_cast< unsigned >( alnum.length() - 1 ) ;
         while ( count > 0 ) {
             result.push_back( alnum[ source( m ) ] ) ;
             -- count ;
