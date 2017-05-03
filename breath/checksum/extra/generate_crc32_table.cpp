@@ -61,9 +61,9 @@ main()
         if ( i != ( size - 1 ) ) {
             os << ',' ;
         }
-        if ( (i+1) % numbers_per_line == 0 ) {
+        if ( ( i + 1 ) % numbers_per_line == 0 ) {
             os << '\n' << indent ;
-        } else if ( i != (size-1) ) {
+        } else if ( i != ( size - 1 ) ) {
             os << ' ' ;
         }
     }
