@@ -12,7 +12,8 @@
 
 language="$1"
 
-# the value we use for most (not all) source file types
+# The value we use for most (not all) source file types
+# ----------------------------------------------------------------------------
 usual_offset=4
 indent_offset="$usual_offset"
 tab_key_offset="$usual_offset"
