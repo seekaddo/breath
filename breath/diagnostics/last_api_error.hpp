@@ -8,6 +8,7 @@
 //
 //!     \file
 //!     \brief The last error from the OS API.
+// -------------------------------------------------------------------------
 //!
 //!     An exception class representing the last error encountered
 //!     in an OS API call. It corresponds to GetLastError() under

@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Checks that a type is complete at the point of instantiation.
+//!     \brief Checks that a type is complete at the point of
+//!            instantiation.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_zosglTB4b62CILKxpxWmmQwQ28EfOH6T
@@ -15,7 +16,8 @@
 
 namespace breath {
 
-//      check_type_completeness()
+//      check_type_completeness():
+//      --------------------------
 //
 //
 //!     To be used to check that \c T is a complete type at the point
