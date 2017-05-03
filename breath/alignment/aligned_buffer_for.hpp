@@ -124,6 +124,8 @@ template< typename T >
 class aligned_buffer_for
 {
 public:
+    //!     Copy constructor and copy-assignment operator deleted.
+    // ----------------------------------------------------------------------
     BREATH_DECLARE_NON_COPYABLE( aligned_buffer_for )
 
     //!     Constructs an uninitialized buffer.
