@@ -78,7 +78,6 @@ namespace assert_private {
           : breath::assert_private::fire( #expression, __FILE__, __LINE__ )  \
     )                                                                     /**/
 
-
 #endif
 
 // Local Variables:
