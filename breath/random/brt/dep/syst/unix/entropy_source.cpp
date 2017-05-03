@@ -111,7 +111,7 @@ entropy_source::impl::to_buffer( unsigned char /*gps*/ * buffer, std::size_t cou
 bool
 entropy_source::impl::release() noexcept
 {
-    // Close is attempted ONCE. Postcondition: is_open() == false, regardless
+    // Close is attempted ONCE. Postcondition: is_open() == false, regardless.
 
     bool            success = false ;
     if ( is_open() ) {
