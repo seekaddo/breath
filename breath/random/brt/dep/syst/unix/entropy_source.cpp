@@ -10,6 +10,7 @@
 // -------------------------------------------------------------------------
 
 #include "breath/random/entropy_source.hpp"
+#include "breath/counting/count.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/random/subrange_max.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
@@ -18,7 +19,6 @@
 #include <cerrno>
 #include <limits>
 #include <string.h> // for POSIX' strerror
-#include <vector>
 #include <stdio.h>
 
 
@@ -73,9 +73,8 @@ entropy_source::impl::next()
 {
     BREATH_ASSERT( is_open() ) ;
 
-    std::vector< unsigned char >
-                        buffer( 1 ) ; ///gps OK? {}?
-    to_buffer( &buffer[ 0 ], buffer.size() ) ;
+    unsigned char       buffer[ 1 ] ;
+    to_buffer( &buffer[ 0 ], breath::count( buffer ) ) ;
     return buffer[ 0 ] ;
 }
 
