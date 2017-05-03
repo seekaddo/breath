@@ -6,7 +6,7 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include "breath/text/ends_with.hpp"
+#include "breath/text/remove_from_end.hpp"
 #include "breath/text/trim_tail.hpp"
 
 #include <algorithm>
@@ -54,9 +54,7 @@ main()
             // remove <spaces><marker><spaces>
             //
             line = breath::trim_tail( line ) ;
-            if ( breath::ends_with( line, marker ) ) {
-                line.erase( line.end() - marker.length(), line.end() ) ;
-            }
+            line = breath::remove_from_end( line, marker ) ;
             line = breath::trim_tail( line ) ;
 
             lines.push_back( line ) ;
