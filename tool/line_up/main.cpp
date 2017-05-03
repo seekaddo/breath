@@ -63,7 +63,7 @@ main()
                 max_length = line.length() ;
             }
             line.clear() ;
-        } else if( ch== '\t' && expand_tabs ) {
+        } else if ( ch== '\t' && expand_tabs ) {
                 line += std::string( indent_width, ' ' ) ;
         } else {
             line += ch ;
