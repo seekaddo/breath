@@ -69,7 +69,6 @@ main()
         DO_TEST( v[ 1 ] == "" ) ;
         DO_TEST( v[ 2 ] == "string3" ) ;
     }
-
 }
 
 // Local Variables:

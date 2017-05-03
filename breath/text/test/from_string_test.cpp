@@ -34,7 +34,6 @@ main()
     test_runner::instance().attach_reporter( cr ) ;
 
     return test_runner::instance().run( { do_tests } ) ;
-
 }
 
 // Local Variables:

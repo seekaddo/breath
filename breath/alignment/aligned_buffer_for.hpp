@@ -19,7 +19,6 @@
 
 namespace breath {
 
-
 template< typename T >
 class               aligned_buffer_for ;
 
