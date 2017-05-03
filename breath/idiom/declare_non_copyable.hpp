@@ -20,7 +20,7 @@
 #define BREATH_DECLARE_NON_COPYABLE( class_name )                       \
                                                                         \
                         class_name( class_name const & ) = delete ;     \
-    void                operator =( class_name const & )  = delete ;    \
+    void                operator =( class_name const & ) = delete ;     \
                                                                      /**/
 
 #endif
