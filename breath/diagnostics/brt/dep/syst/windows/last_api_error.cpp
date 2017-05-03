@@ -44,7 +44,8 @@ last_api_error::last_api_error( char const * p ) noexcept
         strcpy( &m_message[ offset ], "FormatMessage failed: see error code") ;
     }
     // strip trailing \r\n
-    if ( dw > 2 && m_message[ offset + dw - 2 ] == '\r' && m_message[ offset + dw - 1 ] == '\n' ) {
+    if ( dw > 2 && m_message[ offset + dw - 2 ] == '\r' &&
+                   m_message[ offset + dw - 1 ] == '\n' ) {
         m_message[ offset + dw - 2 ] = '\0' ;
     }
 }
