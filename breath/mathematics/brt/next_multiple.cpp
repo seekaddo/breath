@@ -17,6 +17,7 @@ std::intmax_t
 next_multiple( std::intmax_t a, std::intmax_t b ) noexcept
 {
     BREATH_ASSERT( b > 0 ) ;
+
     intmax_t const      abs_a = std::abs( a ) ;
     intmax_t const      r = abs_a % b ;
     return r == 0
