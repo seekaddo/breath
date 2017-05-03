@@ -32,7 +32,7 @@ main()
             constexpr fast32_type
                                 reversed_polynomial( 0xEDB88320uL ) ;
             constexpr int       char_bit( 8 ) ;
-            auto checksum = static_cast< fast32_type >( m_n ) ;
+            auto                checksum = static_cast< fast32_type >( m_n ) ;
             ++ m_n ;
 
             for ( int i = 0 ; i < char_bit ; ++ i ) {
