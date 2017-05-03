@@ -25,6 +25,7 @@ constexpr int
 max_power2_less_than_p( int p, int n = start_at ) noexcept
 {
     BREATH_ASSERT( breath::is_power_of_two( n ) ) ;
+
     return 2*n < p
         ? max_power2_less_than_p( p, 2*n )
         : n
@@ -53,6 +54,7 @@ constexpr int
 integer_log2( std::uintmax_t x ) noexcept
 {
     BREATH_ASSERT( x > 0 ) ;
+
     using namespace integer_log2_private ;
 
     constexpr int       n = max_power2_less_than_p(
