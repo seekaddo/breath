@@ -196,7 +196,7 @@ void check_known_digests()
 
         const digest< Hasher > d( hasher ) ;
         const std::string result = breath::to_string( d ) ;
-        BREATH_CHECK( result /*== GPS CHANGEd TEMPrarly*/ == entry.expected );
+        BREATH_CHECK( result == entry.expected );
     }
 }
 
