@@ -13,11 +13,6 @@
 #ifndef BREATH_GUARD_wCcpHSPgQuuMlLcoiraq0109Dj5dIMnV
 #define BREATH_GUARD_wCcpHSPgQuuMlLcoiraq0109Dj5dIMnV
 
-/*! \file   sha512_hasher.hpp
-    \brief
-        SHA-512 templates
-*/
-
 #include "breath/cryptography/merkle_damgard_engine.hpp"
 #include "breath/cryptography/merkle_damgard_hasher.hpp"
 
