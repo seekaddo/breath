@@ -52,7 +52,6 @@ rotate_left( word_type w )
     return ( w << amount ) | ( w >> ( sha1_engine::word_width - amount ) ) ;
 }
 
-
 }
 
 void sha1_engine::init_state( state_type & state )
@@ -78,22 +77,24 @@ void sha1_engine::process_block( state_type & state
 
 
     // expand the message-block to an 80-word "schedule"
-    const int sz( 80 ) ;
-    typedef word_type schedule_type[ sz ] ;
+    int const           sz( 80 ) ;
+    typedef word_type   schedule_type[ sz ] ;
     sensitive_buffer< schedule_type > sched(
         breath::cbegin( block ), breath::cend( block ) ) ;
-    for ( int i( 16 ) ; i < sz ; ++ i )
+    for ( int i = 16 ; i < sz ; ++ i ) {
         sched[ i ] =
             rotate_left< 1 >( sched[ i - 3  ] ^ sched[ i - 8  ]
                             ^ sched[ i - 14 ] ^ sched[ i - 16 ] ) ;
+    }
 
 
     // letter mapping to ease review against the FIPS standard:
     //         a b c d e
     //     [   0 1 2 3 4   ]
     //
-    const int state_count( 5 ) ;
-    sensitive_buffer< word_type[ state_count ] > working( state ) ;
+    int const           state_count( 5 ) ;
+    sensitive_buffer< word_type[ state_count ] >
+                        working( state ) ;
     //
     // NOTE: analogously to the MD5 case, we repeat this code four times;
     //       forming an array of pointers to ch, parity and maj prevents
@@ -101,7 +102,7 @@ void sha1_engine::process_block( state_type & state
     //       there are (non macro-based) other beneficial solutions
     //       (FUTURE [gps])
     //
-    word_type t( 0 ) ;
+    word_type           t( 0 ) ;
     for ( int i = 0 ; i < 20 ; ++ i ) {
         t = rotate_left< 5 >( working[ 0 ] )
           + ch( working[ 1 ], working[ 2 ], working[ 3 ] )

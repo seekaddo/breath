@@ -18,10 +18,12 @@
 namespace breath {
 namespace        {
 
-typedef sha512_engine::word_type word_type ;
+typedef sha512_engine::word_type
+                    word_type ;
 using sha_common_private::ror ;
 
-static word_type const k[] =
+static word_type const
+                    k[] =
 {
     // These words represent the first sixty-four bits of the
     // fractional parts of the cube roots of the first eighty
@@ -115,15 +117,15 @@ sha512_engine::init_state( state_type & state )
 void
 sha512_engine::process_block( state_type & state, block_type const & block )
 {
-
     using sha_common_private::ch ;
     using sha_common_private::maj ;
 
     // create an 80-word "schedule" from the message block
-    typedef word_type schedule_type[ 80 ] ;
-    sensitive_buffer< schedule_type > sched(
-        breath::cbegin( block ), breath::cend( block ) ) ;
-    for ( int i( 16 ) ; i < 80 ; ++ i )
+    typedef word_type   schedule_type[ 80 ] ;
+    sensitive_buffer< schedule_type >
+                        sched(
+                            breath::cbegin( block ), breath::cend( block ) ) ;
+    for ( int i = 16 ; i < 80 ; ++ i )
         sched[ i ] = sigma1( sched[ i -  2 ] ) + sched[ i -  7 ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
 
@@ -133,7 +135,8 @@ sha512_engine::process_block( state_type & state, block_type const & block )
     // a b c d e f g h
     //
     {
-        sensitive_buffer< word_type [ 2 ] > t ;
+        sensitive_buffer< word_type [ 2 ] >
+                            t ;
         for ( int i = 0 ; i < 80 ; ++ i ) {
 
             t[ 0 ] = working[ 7 ] + big_sigma1( working[ 4 ] )

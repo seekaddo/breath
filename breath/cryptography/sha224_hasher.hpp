@@ -18,21 +18,23 @@
 
 namespace breath {
 
-class sha224_engine ;
+class               sha224_engine ;
 
 template< typename Hasher >
-class digest ;
+class               digest ;
 
-typedef merkle_damgard_machine< sha224_engine > sha224_hasher ;
-typedef digest< sha224_hasher >                 sha224_digest ;
+typedef merkle_damgard_machine< sha224_engine >
+                    sha224_hasher ;
+typedef digest< sha224_hasher >
+                    sha224_digest ;
 
 class sha224_engine
     : public merkle_damgard_engine< 224, 512, big_endian_policy, 32, 256 >
 {
 public:
-    static void init_state( state_type & state ) ;
-    static void process_block( state_type & state,
-                               block_type const & block ) ;
+    static void         init_state( state_type & state ) ;
+    static void         process_block( state_type & state,
+                                       block_type const & block ) ;
 } ;
 
 }

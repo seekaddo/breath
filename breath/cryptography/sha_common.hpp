@@ -18,9 +18,8 @@
 namespace breath {
 namespace sha_common_private {
 
-
-//      the "choice" function - for each bit position p it acts as a
-//      conditional: "if x(p) then y(p) else z(p)"
+//      The "choice" function - for each bit position p it acts as a
+//      conditional: "if x(p) then y(p) else z(p)".
 // -------------------------------------------------------------------------
 template< typename T >
 T
@@ -29,8 +28,8 @@ ch( T x, T y, T z )
     return ( x & y ) | ( ~x & z ) ;
 }
 
-//      "majority" function - for each bit position the result is 1 if
-//      and only if at least two of the three bits are 1
+//      "Majority" function - for each bit position the result is 1 if
+//      and only if at least two of the three bits are 1.
 // -------------------------------------------------------------------------
 template< typename T >
 T
@@ -39,7 +38,7 @@ maj( T x, T y, T z )
     return ( x & y ) | ( x & z ) | ( y & z ) ;
 }
 
-//      rotate right - usual constraints on amount apply
+//      Rotate right - usual constraints on amount apply.
 // -------------------------------------------------------------------------
 template< int amount, typename T >
 T
@@ -49,8 +48,8 @@ ror( T x )
          | ( x << ( std::numeric_limits< T >::digits - amount ) ) ;
 }
 
-
-}}
+}
+}
 
 
 #endif

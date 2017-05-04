@@ -18,11 +18,13 @@
 namespace breath {
 namespace        {
 
-typedef sha256_engine::word_type word_type ;
+typedef sha256_engine::word_type
+                    word_type ;
 
 using sha_common_private::ror ;
 
-static word_type const k[] =
+static word_type const
+                    k[] =
 {
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5,
     0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
@@ -66,7 +68,7 @@ big_sigma1( word_type x )
     return ror< 6 >( x ) ^ ror< 11 >( x ) ^ ror< 25 >( x ) ;
 }
 
-} // unnamed
+}
 
 
 void sha256_engine::init_state( state_type & state )
@@ -91,22 +93,25 @@ void sha256_engine::process_block( state_type & state,
     using sha_common_private::maj ;
 
     // expand the message-block to a 64-word "schedule"
-    const int sz( 64 ) ;
-    typedef word_type schedule_type[ sz ] ;
-    sensitive_buffer< schedule_type > sched(
-        breath::cbegin( block ), breath::cend( block ) ) ;
-    for ( int i( 16 ) ; i < sz ; ++ i )
+    int const           sz( 64 ) ;
+    typedef word_type   schedule_type[ sz ] ;
+    sensitive_buffer< schedule_type >
+                        sched(
+                            breath::cbegin( block ), breath::cend( block ) ) ;
+    for ( int i = 16 ; i < sz ; ++ i )
         sched[ i ] = sigma1( sched[ i - 2  ] ) + sched[ i - 7  ]
                    + sigma0( sched[ i - 15 ] ) + sched[ i - 16 ] ;
 
    // 0 1 2 3 4 5 6 7
    // a b c d e f g h
    //
-   const int state_count( 8 ) ;
-   sensitive_buffer< word_type[ state_count ] > working( state ) ;
+   int const            state_count( 8 ) ;
+   sensitive_buffer< word_type[ state_count ] >
+                        working( state ) ;
    {
-       sensitive_buffer< word_type [ 2 ] > t ;
-       for ( int i( 0 ) ; i < 64 ; ++ i ) {
+       sensitive_buffer< word_type [ 2 ] >
+                            t ;
+       for ( int i = 0 ; i < 64 ; ++ i ) {
 
            t[ 0 ] = working[ 7 ] + big_sigma1( working[ 4 ] )
                   + ch( working[ 4 ], working[ 5 ], working[ 6 ] )

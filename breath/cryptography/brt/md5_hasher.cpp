@@ -55,7 +55,8 @@ aux_f< 0 >::f( word_type x, word_type y, word_type z )
 }
 
 template<>
-word_type aux_f< 1 >::f( word_type x, word_type y, word_type z )
+word_type
+aux_f< 1 >::f( word_type x, word_type y, word_type z )
 {
     return aux_f< 0 >::f( z, x, y ) ;
 }
@@ -76,9 +77,7 @@ aux_f< 3 >::f( word_type x, word_type y, word_type z )
 
 template< int round, int shift >
 void
-core_fn( word_type &    a,
-         word_type      b, word_type c, word_type d,
-         word_type      input )
+core_fn( word_type & a, word_type b, word_type c, word_type d, word_type input )
 {
     a = b + md5_rotate_left< shift >(
                        a + aux_f< round >::f( b, c, d ) + input ) ;
@@ -102,10 +101,10 @@ void md5_engine::process_block( state_type & state, block_type const & x )
            s31 = 4, s32 = 11, s33 = 16, s34 = 23,
            s41 = 6, s42 = 10, s43 = 15, s44 = 21 } ;
 
-    word_type a( state[ 0 ] ) ;
-    word_type b( state[ 1 ] ) ;
-    word_type c( state[ 2 ] ) ;
-    word_type d( state[ 3 ] ) ;
+    word_type           a( state[ 0 ] ) ;
+    word_type           b( state[ 1 ] ) ;
+    word_type           c( state[ 2 ] ) ;
+    word_type           d( state[ 3 ] ) ;
 
     // Round 1
     core_fn< 0, s11 >( a, b, c, d, x[  0 ] + 0xd76aa478 ) ; // 1

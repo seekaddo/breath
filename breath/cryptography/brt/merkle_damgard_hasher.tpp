@@ -13,7 +13,6 @@
 #include <iterator>
 #include <algorithm>
 
-
 namespace breath {
 
 //!
@@ -22,14 +21,17 @@ namespace breath {
 template< typename Engine >
 class accumulate_traits< merkle_damgard_machine< Engine > >
 {
-    typedef merkle_damgard_machine< Engine > machine_type ;
+    typedef merkle_damgard_machine< Engine >
+                        machine_type ;
 
 public:
-    typedef machine_type init_type ;
-    typedef machine_type result_type ;
+    typedef machine_type
+                        init_type ;
+    typedef machine_type
+                        result_type ;
 
     template< typename It >
-    static result_type compute( It begin, It end, init_type & v )
+    static result_type  compute( It begin, It end, init_type & v )
     {
         return v.append( begin, end ) ;
     }
@@ -62,7 +64,7 @@ template< typename Engine >
 void
 merkle_damgard_machine< Engine>::push_back( byte_type b )
 {
-    std::size_t const index( input_index() ) ;
+    std::size_t const   index( input_index() ) ;
     m_input_buffer[ index ] = b ;
     increase_count( byte_width ) ;
 
@@ -93,10 +95,10 @@ merkle_damgard_machine< Engine >::compress()
     // We always clear potentially sensitive data (i.e.:
     // m_input_buffer and m_input_in_words).
     //
-    std::size_t const sz = ( block_length / word_length ) ;
-    word_type input_in_words[ sz ] ;
+    std::size_t const   sz = ( block_length / word_length ) ;
+    word_type           input_in_words[ sz ] ;
 
-    for ( std::size_t i( 0 ) ; i < sz ; ++ i ) {
+    for ( std::size_t i = 0 ; i < sz ; ++ i ) {
         input_in_words[ i ] = Engine::decode_word(
                        breath::begin( m_input_buffer ) + i * word_length ) ;
     }
@@ -141,13 +143,12 @@ merkle_damgard_machine< Engine >::do_append( RandomIter begin,
                                      std::random_access_iterator_tag const * )
 {
 
-    typedef
-        typename std::iterator_traits< RandomIter >::difference_type
-        difference_type ;
+    typedef typename std::iterator_traits< RandomIter >::difference_type
+                        difference_type ;
 
     // bufferize/compress as many times as possible
-    std::size_t index( input_index() ) ;
-    RandomIter curr( begin ) ;
+    std::size_t         index( input_index() ) ;
+    RandomIter          curr( begin ) ;
 
     for ( difference_type avail( block_length - index ) ;
          (end - curr) >= avail ; curr += avail, avail = block_length ) {
@@ -178,14 +179,15 @@ merkle_damgard_machine< Engine >::append( Iter begin, Iter end )
 }
 
 
-// Padding:
+//      Padding:
 //
-// append a single 1-bit, always; then append as few (possibly
-// zero) 0-bits as needed to get a message whose last block has
-// room exactly for length_count words (that's the room to store
-// the bitlength of the unpadded message).
+//      append a single 1-bit, always; then append as few (possibly
+//      zero) 0-bits as needed to get a message whose last block has
+//      room exactly for length_count words (that's the room to store
+//      the bitlength of the unpadded message).
 //
-// In all, at least one bit and at most an entire block is appended.
+//      In all, at least one bit and at most an entire block is
+//      appended.
 //
 // NOTE: the padding method described above is by far the most
 //       commonly used; in principle, there could be variations
@@ -194,6 +196,7 @@ merkle_damgard_machine< Engine >::append( Iter begin, Iter end )
 //
 // NOTE2: I'm not convinced this interface is good for security
 //        Perhaps we should force the user to take the digest?
+// ---------------------------------------------------------------------------
 template< typename Engine >
 void
 merkle_damgard_machine< Engine >::final()
@@ -210,7 +213,8 @@ merkle_damgard_machine< Engine >::final()
             ( filled + r < block_length
               ? 1 : 2 ) * block_length - ( filled + r ) ) ;
 
-    static byte_type const padding[ block_length ] = { 0x80 } ;
+    static byte_type const
+                        padding[ block_length ] = { 0x80 } ;
     append( breath::cbegin( padding ), breath::cbegin( padding ) + pad_len ) ;
 
     // append byte-based representation of the unpadded bit-length
@@ -223,8 +227,8 @@ merkle_damgard_machine< Engine >::create_digest( raw_digest_type & raw )
 {
     final() ;
     for ( int i( 0 ) ; i < digest_width / word_width ; ++ i ) {
-        Engine::encode_word( m_state[ i ]
-                           , raw + i * word_length ) ;
+        Engine::encode_word( m_state[ i ],
+                             raw + i * word_length ) ;
     }
 
     reset() ; // gps -- OK to reinitialize with the magic constants?
@@ -235,9 +239,9 @@ void
 merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
 {
     typedef std::size_t size_type ;
-    typedef breath::endian_codec< breath::big_endian_policy
-                                , size_type
-                                , length_unit_type
+    typedef breath::endian_codec< breath::big_endian_policy,
+                                  size_type,
+                                  length_unit_type
                                 > codec ;
 
     static_assert( codec::required_count <= length_count, "" ) ;
@@ -245,17 +249,17 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
     // encode a base-n representation of amount (n=32, 64, etc.)
     // (note that we *need* to zero out repr[], as it is typically
     // larger than the type of the amount parameter)
-    length_unit_type repr[ length_count ] = {} ;
+    length_unit_type    repr[ length_count ] = {} ;
     codec::encode( amount, breath::begin( repr ) ) ;
 
-    int carry( 0 ) ;
-    for ( std::size_t i( 0 ) ; i < length_count ; ++ i ) {
+    int                 carry( 0 ) ;
+    for ( std::size_t i = 0 ; i < length_count ; ++ i ) {
         length_unit_type const w( m_bit_count[ i ] + repr[ i ] + carry ) ;
         carry = w < repr[ i ] ? 1 : 0 ;
         m_bit_count[ i ] = w ;
     }
 
-    // a carry here means that the input message was longer than we
+    // A carry here means that the input message was longer than we
     // can represent; now, either the specific hashing algorithm
     // prescribes wrapping (MD5, for instance, does so) or we have to
     // give up: in the latter case on_length_exhausted will throw an

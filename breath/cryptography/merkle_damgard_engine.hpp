@@ -75,11 +75,11 @@ private:
                         word_codec ;
 
 public:
-    static word_type encode_word( word_type w, byte_type * dest )
+    static word_type    encode_word( word_type w, byte_type * dest )
     {
         return word_codec::encode( w, dest ) ;
     }
-    static word_type decode_word( byte_type const * src )
+    static word_type    decode_word( byte_type const * src )
     {
         return word_codec::decode( src ) ;
     }
@@ -94,7 +94,8 @@ public:
     static void encode_length( word_type( &len )[ max_words ],
                                byte_type * dest )
     {
-        typedef word_type len_type[ max_words ] ; // gps typeof( len )
+        typedef word_type
+                        len_type[ max_words ] ; // gps typeof( len )
 
         // Note: a) len[ 0 ] is always the *less* significant word
         //       b) the order in which the words are "copied" into
@@ -104,12 +105,12 @@ public:
         std::size_t const step( word_width / byte_width ) ;
         for ( std::size_t i( 0 ) ; i < max_words ; ++ i ) {
 
-            std::size_t const index(
+            std::size_t const
+                            index(
                 step * EndianPolicy::template index< len_type
                                                    , word_type >( i ) ) ;
             breath::endian_store< EndianPolicy >(
                 len[ max_words - 1 - i ], dest + index ) ;
-
         }
     }
 } ;

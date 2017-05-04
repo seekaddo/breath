@@ -16,31 +16,32 @@
 #include "breath/cryptography/merkle_damgard_engine.hpp"
 #include "breath/cryptography/merkle_damgard_hasher.hpp"
 
-
 namespace breath {
 
-class sha1_engine ;
+class               sha1_engine ;
 
 template< typename Hasher >
-class digest ;
+class               digest ;
 
 //!
 //! convenience typedefs
 //!
-typedef merkle_damgard_machine< sha1_engine > sha1_hasher ;
-typedef digest< sha1_hasher >                 sha1_digest ;
+typedef merkle_damgard_machine< sha1_engine >
+                    sha1_hasher ;
+typedef digest< sha1_hasher >
+                    sha1_digest ;
 
 
 //!
-//! SHA-1 policy class for Merkle Damgard machine
+//! SHA-1 policy class for Merkle Damgard machine.
 //!
 class sha1_engine
     : public merkle_damgard_engine< 160, 512, big_endian_policy >
 {
 public:
-    static void     init_state( state_type & state ) ;
-    static void     process_block( state_type & state,
-                                    block_type const & block ) ;
+    static void         init_state( state_type & state ) ;
+    static void         process_block( state_type & state,
+                                       block_type const & block ) ;
 
 } ;
 
