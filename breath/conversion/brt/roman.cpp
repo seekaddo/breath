@@ -16,7 +16,7 @@ roman::roman( int n )
 {
     BREATH_ASSERT( 1 <= n && n <= 3999 ) ;
 
-    struct entry
+    static struct entry
     {
         int                 value ;
         char const *        repr ;
