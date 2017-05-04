@@ -178,7 +178,6 @@ merkle_damgard_machine< Engine >::append( Iter begin, Iter end )
     return do_append( begin, end, static_cast< cat * >( 0 ) ) ;
 }
 
-
 //      Padding:
 //
 //      append a single 1-bit, always; then append as few (possibly

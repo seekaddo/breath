@@ -75,7 +75,6 @@ void sha1_engine::process_block( state_type & state
     using sha_common_private::ch ;
     using sha_common_private::maj ;
 
-
     // expand the message-block to an 80-word "schedule"
     int const           sz( 80 ) ;
     typedef word_type   schedule_type[ sz ] ;
@@ -86,7 +85,6 @@ void sha1_engine::process_block( state_type & state
             rotate_left< 1 >( sched[ i - 3  ] ^ sched[ i - 8  ]
                             ^ sched[ i - 14 ] ^ sched[ i - 16 ] ) ;
     }
-
 
     // letter mapping to ease review against the FIPS standard:
     //         a b c d e
@@ -149,9 +147,7 @@ void sha1_engine::process_block( state_type & state
     std::transform( breath::cbegin( state ), breath::cend( state ),
                     breath::cbegin( working ), breath::begin( state ),
                     std::plus< word_type >() ) ;
-
 }
-
 
 }
 

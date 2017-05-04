@@ -78,9 +78,7 @@ check()
         BREATH_CHECK( breath::to_string( breath::sha384_digest( hasher ) )
             == "09330c33f71147e83d192fc782cd1b4753111b173b3b05d2"
                "2fa08086e3b0f712fcc7c71a557e2db966c3e9fa91746039" ) ;
-
     }
-
 }
 
 int
