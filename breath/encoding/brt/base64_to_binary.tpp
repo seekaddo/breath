@@ -70,7 +70,6 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
                 throw exception( error_message ) ;
             }
         } else {
-
             block = block << block_length | value ;
             num_bits += block_length ;
             if ( num_bits >= char_bit ) {
