@@ -47,8 +47,7 @@ nist_file::nist_file( char const * filename )
 {
     std::string const   breath_root( breath::find_environment_string(
                                                     "BREATH_ROOT" ).value() ) ;
-    std::string const
-                        subdir( breath_root +
+    std::string const   subdir( breath_root +
                                     "/breath/cryptography/test/nist_vectors/" ) ;
     m_stream.open( ( subdir + filename ).c_str() ) ;
     if ( m_stream ) {
