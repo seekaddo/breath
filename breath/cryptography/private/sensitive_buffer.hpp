@@ -62,7 +62,6 @@ private:
     void                wipe() noexcept ;
 } ;
 
-
 }
 
 #include "sensitive_buffer.tpp"
