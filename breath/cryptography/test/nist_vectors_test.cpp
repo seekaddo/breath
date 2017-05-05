@@ -10,20 +10,20 @@
 //      described at <http://www.nsrl.nist.gov/testdata/>.
 //
 
-#include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/cryptography/digest.hpp"
+#include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/environment/find_environment_string.hpp"
 #include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
 
 #include <algorithm>
-#include <string>
-#include <istream>
-#include <ostream>
 #include <fstream>
 #include <iostream>
+#include <istream>
+#include <ostream>
 #include <sstream>
+#include <string>
 
 namespace {
 
