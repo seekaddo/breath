@@ -154,7 +154,7 @@ read_compact_string( nist_file & messages, int z )
                 msg += curr, curr = 0, mask = 128 ;
         }
 
-        b = !b ;
+        b = ! b ;
     }
 
     return msg ;
