@@ -91,9 +91,7 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
                     , "wrong bits_per_digit and/or bits_per_byte" ) ;
 
     typedef typename breath::digest< Hasher >::const_iterator it_type ;
-    for ( it_type it( d.begin() ) ;
-            it != d.end() ;
-            ++ it ) {
+    for ( it_type it( d.begin() ) ; it != d.end() ; ++ it ) {
         for ( int t( bits_per_byte - bits_per_digit ) ;
                 t >= 0 ;
                 t -= bits_per_digit ) {
