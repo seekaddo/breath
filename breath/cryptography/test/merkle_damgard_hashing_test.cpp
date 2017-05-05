@@ -218,7 +218,6 @@ main()
     } ;
 
     return test_runner::instance().run( cbegin( desc ), cend( desc) ) ;
-
 }
 
 // Local Variables:
