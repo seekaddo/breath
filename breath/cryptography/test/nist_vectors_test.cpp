@@ -37,7 +37,7 @@ class nist_file
     friend nist_file &  operator >>( nist_file &, T & t ) ;
 
 public:
-    explicit            nist_file( const char * filename ) ;
+    explicit            nist_file( char const * filename ) ;
     bool                good() const ;
     bool                new_section() ;
 } ;
@@ -50,15 +50,15 @@ nist_file::nist_file( char const * filename )
                         subdir( breath_root +
                                     "/breath/cryptography/test/nist_vectors/" ) ;
     m_stream.open( ( subdir + filename ).c_str() ) ;
-    if ( m_stream )
-    {
+    if ( m_stream ) {
         for ( std::string s ; s != "D>" ; ) {
             m_stream >> s;
         }
     }
 
-    if ( m_stream.rdstate() & ( std::ios::failbit | std::ios::eofbit ) )
+    if ( m_stream.rdstate() & ( std::ios::failbit | std::ios::eofbit ) ) {
         throw std::ios::failure( "cannot construct nist_file object" ) ;
+    }
 }
 
 bool
@@ -103,7 +103,7 @@ public:
         return m_count ;
     }
 
-    void                init( const std::string & seed ) // gps come la chiamo (vedi rnd)
+    void                init( std::string const & seed ) // gps come la chiamo (vedi rnd)
     {
         m.append( seed.cbegin(), seed.cend() ) ;
     }
@@ -111,7 +111,7 @@ public:
     breath::sha1_digest next()
     {
         breath::sha1_digest result( m /* bogus argument */ ) ;
-        const word_type     tot( 50 * 1000 ) ;
+        word_type const     tot( 50 * 1000 ) ;
         for ( word_type i = 1 ; i <= tot ; ++ i )
         {
             for ( byte_type a( 1 ) ; a <= m_count / 4 + 3 ; ++ a )
@@ -146,12 +146,14 @@ read_compact_string( nist_file & messages, int z )
         messages >> n ;
 
         while( n-- > 0 ) {
-            if ( b )
+            if ( b ) {
                 curr |= mask ;
+            }
 
             mask /= 2 ;
-            if ( mask == 0 )
+            if ( mask == 0 ) {
                 msg += curr, curr = 0, mask = 128 ;
+            }
         }
 
         b = ! b ;
@@ -191,15 +193,13 @@ tests()
 
     for ( std::size_t sn = 0 ; sn < sections && hashes.good() ; /*++sn*/ )
     {
-        bool                montecarlo_section( section_types[ sn ].pseudorandom ) ;
-        if ( /*!montecarlo_section ||*/ montecarlo_harness.get_count() == 0 )
-        {
+        bool                montecarlo_section = section_types[ sn ].pseudorandom ;
+        if ( /*!montecarlo_section ||*/ montecarlo_harness.get_count() == 0 ) {
             // terminator found?
             //
             std::string         s ;
             messages >> s ;
-            if ( s == "<D" )
-            {
+            if ( s == "<D" ) {
                 messages.new_section() ;
                 hashes.new_section() ;
                 ++ sn ;
@@ -208,8 +208,7 @@ tests()
 
             int                 z( from_string< int >( s ) ) ;
 
-            if ( montecarlo_section )
-            {
+            if ( montecarlo_section ) {
                 if ( montecarlo_harness.get_count() == 0 ) {
 
                     msg = read_compact_string( messages, z ) ;
@@ -217,9 +216,7 @@ tests()
 
                     montecarlo_harness.init( msg ) ;
                 }
-            }
-            else
-            {
+            } else {
                 msg = read_compact_string( messages, z ) ;
             }
 
@@ -229,14 +226,16 @@ tests()
 
         std::string     expected ;
         hashes >> expected ;
-        if ( expected == "<D" )
+        if ( expected == "<D" ) {
             break ; // done!
+        }
 
         std::string     unused ;
         hashes >> unused ; // terminator
 
-        if ( hashes.good() )
+        if ( hashes.good() ) {
             ++ total ;
+        }
 
         calculated = to_string(
             montecarlo_section
@@ -244,9 +243,8 @@ tests()
               : make_digest( sha1_hasher( msg.begin(), msg.end() ) )
             ) ;
 
-        if ( calculated != expected )
-        {
-            ++failed;
+        if ( calculated != expected ) {
+            ++ failed ;
             std::clog << "Failure on test vector # " << total << std::endl ;
             std::clog << "\tCalculated: " << calculated << std::endl ;
             std::clog << "\tExpected:   " << expected   << std::endl ;
