@@ -25,9 +25,9 @@
 
 namespace {
 
-const std::string::size_type
+std::string::size_type const
                     million( 1000 * 1000 );
-const std::string   one_million_a( million, 'a' );
+std::string const   one_million_a( million, 'a' );
 
 template< typename Hasher >
 class test_vectors
@@ -47,7 +47,7 @@ public:
 // MD5 test vectors ---------------------------------------------------- //
 
 template<>
-const test_vectors< breath::md5_hasher >::test_entry
+test_vectors< breath::md5_hasher >::test_entry const
     test_vectors< breath::md5_hasher >::entries[] =
 {
     // test cases from RFC 1321
@@ -95,7 +95,7 @@ const test_vectors< breath::md5_hasher >::test_entry
 // SHA-1 test vectors -------------------------------------------------- //
 
 template<>
-const test_vectors< breath::sha1_hasher >::test_entry
+test_vectors< breath::sha1_hasher >::test_entry const
     test_vectors< breath::sha1_hasher >::entries[] =
 {
     // test cases from FIPS 180-2 with change notice
@@ -114,7 +114,7 @@ const test_vectors< breath::sha1_hasher >::test_entry
 // SHA-256 test vectors ------------------------------------------------ //
 
 template<>
-const test_vectors< breath::sha256_hasher >::test_entry
+test_vectors< breath::sha256_hasher >::test_entry const
     test_vectors< breath::sha256_hasher >::entries[] =
 {
     // test cases from FIPS
@@ -136,7 +136,7 @@ const test_vectors< breath::sha256_hasher >::test_entry
 // SHA-224 test vectors ------------------------------------------------ //
 
 template<>
-const test_vectors< breath::sha224_hasher >::test_entry
+test_vectors< breath::sha224_hasher >::test_entry const
     test_vectors< breath::sha224_hasher >::entries[] =
 {
     // from FIPS
@@ -147,7 +147,7 @@ const test_vectors< breath::sha224_hasher >::test_entry
 
 // SHA-512 test vectors ------------------------------------------------ //
 template<>
-const test_vectors< breath::sha512_hasher >::test_entry
+test_vectors< breath::sha512_hasher >::test_entry const
     test_vectors< breath::sha512_hasher >::entries[] =
 {
     // from FIPS
@@ -178,29 +178,30 @@ void check_known_digests()
     typedef test_vectors< Hasher >
                         known;
 
-    for ( std::size_t i = 0 ; i < breath::count( known::entries ); ++ i ) {
+    for ( std::size_t i = 0 ; i < breath::count( known::entries ) ; ++ i ) {
 
         using breath::digest;
 
         typename known::test_entry const &
-                        entry( known::entries[ i ] );
-        const string_type &
-                        src( entry.source );
+                            entry( known::entries[ i ] );
+        string_type const & src( entry.source );
 
-        Hasher          hasher( src.cbegin(), src.cend() );
+        Hasher              hasher( src.cbegin(), src.cend() );
 
         // repetitions?
         for ( std::size_t r = 0 ; r < entry.repetitions; ++ r ) {
             hasher.append( src.cbegin(), src.cend() ) ;
         }
 
-        const digest< Hasher > d( hasher ) ;
-        const std::string result = breath::to_string( d ) ;
+        digest< Hasher > const
+                            d( hasher ) ;
+        std::string const   result = breath::to_string( d ) ;
         BREATH_CHECK( result == entry.expected );
     }
 }
 
-int main()
+int
+main()
 {
     using namespace breath ;
 
