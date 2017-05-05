@@ -269,7 +269,7 @@ try
 }
 catch( std::exception const & ex )
 {
-    std::cout << "Error: '" << ex.what() << '\'' << std::endl ;
+    std::cerr << "Error: '" << ex.what() << '\'' << std::endl ;
 }
 
 // Local Variables:
