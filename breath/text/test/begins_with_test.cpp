@@ -51,7 +51,6 @@ main()
     DO_TEST( begins_with( s, t ) ) ;
     DO_TEST( begins_with( s, s ) ) ;
     DO_TEST( begins_with( t, t ) ) ;
-
 }
 
 // Local Variables:
