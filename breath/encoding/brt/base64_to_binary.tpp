@@ -69,8 +69,7 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
             if ( x != '\n' && x != '=' ) {
                 throw exception( error_message ) ;
             }
-        }
-        else {
+        } else {
 
             block = block << block_length | value ;
             num_bits += block_length ;
