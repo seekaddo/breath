@@ -6,8 +6,8 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 //
-//      Tests the SHA-1 implementation with the test vectors
-//      described at <http://www.nsrl.nist.gov/testdata/>.
+//      Tests the SHA-1 implementation with the test vectors described
+//      at <http://www.nsrl.nist.gov/testdata/>.
 // -------------------------------------------------------------------------
 
 #include "breath/counting/count.hpp"
