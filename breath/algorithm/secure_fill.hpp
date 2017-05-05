@@ -72,6 +72,7 @@ secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
 //    >
 //    void secure_fill( ForwardIterator begin, ForwardIterator end,
 //                      T const & value = T() )
+// --------------------------------------------------------------------------
 template< typename ForwardIterator, typename T >
 void
 secure_fill( ForwardIterator begin, ForwardIterator end, T const & value )
