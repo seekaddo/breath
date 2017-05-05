@@ -202,7 +202,7 @@ tests()
             {
                 messages.new_section() ;
                 hashes.new_section() ;
-                ++sn ;
+                ++ sn ;
                 continue ;
             }
 
