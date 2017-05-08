@@ -77,10 +77,10 @@ public:
 private:
     enum { size = CHAR_MAX - CHAR_MIN + 1 } ;
     typedef std::deque< bool >
-                            bits_type ;
+                        bits_type ;
     typedef bits_type::size_type
-                            index_type ;
-    bits_type               m_bits ;
+                        index_type ;
+    bits_type           m_bits ;
 
 public:
     //      iterator:
