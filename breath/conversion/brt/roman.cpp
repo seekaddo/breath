@@ -46,6 +46,7 @@ operator <<( std::ostream & os, roman const & r )
 {
     return os << r.m_representation ;
 }
+
 }
 
 // Local Variables:
