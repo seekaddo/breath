@@ -22,7 +22,6 @@ T                   from_string( std::string const & s ) ;
 
 }
 
-
 #include "brt/from_string.tpp"
 #endif
 
