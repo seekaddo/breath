@@ -16,9 +16,7 @@
 #include "breath/idiom/declare_non_copyable.hpp"
 
 #include <cstddef>
-#include <cerrno>
 #include <limits>
-#include <string.h> // for POSIX' strerror
 #include <stdio.h>
 
 namespace breath {
@@ -121,10 +119,7 @@ entropy_source::impl::release() noexcept
 void
 entropy_source::exception::raise( std::string const & message )
 {
-    throw entropy_source::exception( "Breath entropy_source: "
-                                        + message + " - "
-                                        + strerror( errno )
-                                        ) ;
+    throw entropy_source::exception( "Breath entropy_source: " + message ) ;
 }
 
 }
