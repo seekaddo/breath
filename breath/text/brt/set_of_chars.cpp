@@ -231,7 +231,6 @@ set_of_chars::iterator::operator !=( iterator const & other ) const
     return ! ( *this == other ) ;
 }
 
-
 }
 
 // Local Variables:
