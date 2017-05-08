@@ -21,8 +21,8 @@
 
 namespace breath {
 
-//  A set of chars.
-//
+//!     A set of chars.
+// -------------------------------------------------------------------------
 class set_of_chars
 {
 public:
@@ -32,7 +32,7 @@ public:
     template< typename FwdIterator>
                         set_of_chars( FwdIterator begin, FwdIterator end ) ;
 
-    //      A special value used by some constructors.
+    //!     A special value used by some constructors.
     // ---------------------------------------------------------------------
     enum except_for { except } ;
 
@@ -69,7 +69,7 @@ public:
     class               iterator ;
     friend class        iterator ;
 
-    //      Read-only iterators for the standard library.
+    //!     Read-only iterators for the standard library.
     // ---------------------------------------------------------------------
     iterator            begin() const ;
     iterator            end() const ;
@@ -86,15 +86,15 @@ public:
     //      iterator:
     //      =========
     //
-    //      An iterator for the set.
+    //!     An iterator for the set.
     //
-    //      Iterates over all of the characters in the set.  It is a
-    //      forward iterator.
+    //!     Iterates over all of the characters in the set.  It is a
+    //!     forward iterator.
     // ---------------------------------------------------------------------
     class               iterator
     {
     public:
-        //  Typedefs for the Standard Library
+        //!     Typedefs for the Standard Library
         // -----------------------------------------------------------------
         typedef std::forward_iterator_tag
                             iterator_category  ;
