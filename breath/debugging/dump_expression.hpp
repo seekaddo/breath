@@ -36,11 +36,10 @@
 // ---------------------------------------------------------------------------
 #define BREATH_DUMP_EXPRESSION( expr )                                        \
         do {                                                                  \
-            std::ostream &          os = std::cout ;                          \
             char const              expanded[] =                              \
                                           BREATH_STRINGIZE_DELAYED( expr )  ; \
             char const              unexpanded[] = #expr ;                    \
-                                                                              \
+            std::ostream &          os = std::cout ;                          \
             os << expanded << " = " << ( expr ) ;                             \
             if ( std::strcmp( expanded, unexpanded ) != 0 ) {                 \
                 os << " [from: " << unexpanded << ']' ;                       \
