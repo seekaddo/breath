@@ -31,8 +31,7 @@ void c_clock_device::restart()
 {
     // synchronize our start
     std::clock_t const  s( retrieve() ) ;
-    while( s == ( m_start_tick = retrieve() ) )
-    {}
+    while ( s == ( m_start_tick = retrieve() ) ) { }
 }
 
 c_clock_device::duration_type
@@ -55,8 +54,8 @@ c_clock_device::resolution() const
     std::clock_t        end ;
 
     std::clock_t const  s( retrieve() ) ;
-    while( s     == ( start = retrieve() ) ) { }
-    while( start == (   end = retrieve() ) ) { }
+    while ( s     == ( start = retrieve() ) ) { }
+    while ( start == (   end = retrieve() ) ) { }
 
     return 1000.0 * ( end - start ) / CLOCKS_PER_SEC ;
 }

@@ -145,7 +145,7 @@ read_compact_string( nist_file & messages, int z )
         unsigned            n ;
         messages >> n ;
 
-        while( n-- > 0 ) {
+        while ( n-- > 0 ) {
             if ( b ) {
                 curr |= mask ;
             }
