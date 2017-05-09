@@ -12,8 +12,8 @@
 #include "breath/random/entropy_source.hpp"
 #include "breath/counting/count.hpp"
 #include "breath/diagnostics/assert.hpp"
-#include "breath/random/subrange_max.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
+#include "breath/random/subrange_max.hpp"
 
 #include <cstddef>
 #include <limits>

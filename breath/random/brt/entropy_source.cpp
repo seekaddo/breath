@@ -8,10 +8,10 @@
 
 
 #include "breath/random/entropy_source.hpp"
-#include "breath/random/subrange_adaptor.hpp"
 #include "breath/porting/dependent_code.hpp"
 #include BREATH_DEPENDENT_CODE( system, entropy_source.cpp )
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
+#include "breath/random/subrange_adaptor.hpp"
 
 namespace breath {
 
