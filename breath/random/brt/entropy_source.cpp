@@ -13,8 +13,6 @@
 #include BREATH_DEPENDENT_CODE( system, entropy_source.cpp )
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 
-#include <cstring>
-
 namespace breath {
 
 entropy_source::entropy_source()
