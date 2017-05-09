@@ -264,7 +264,7 @@ try
 {
     tests() ;
 }
-catch( std::exception const & ex )
+catch ( std::exception const & ex )
 {
     std::cerr << "Error: '" << ex.what() << '\'' << std::endl ;
 }
