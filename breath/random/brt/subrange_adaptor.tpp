@@ -7,6 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/diagnostics/assert.hpp"
+#include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include "breath/random/subrange_max.hpp"
 
 namespace breath {
@@ -15,20 +16,23 @@ template< typename Engine >
 subrange_adaptor< Engine >::subrange_adaptor( Engine & e, result_type new_max)
     :   m_engine( e ), m_max( new_max )
 {
-    BREATH_ASSERT( m_max <= m_engine.max() ) ;
+    //      Parenthesizing the expression m_engine.max, as Visual
+    //      Studio 2017 has problems with BREATH_PREVENT_MACRO_EXPANSION.
+    // --------------------------------------------------------------
+    BREATH_ASSERT( m_max <= (m_engine.max)() ) ;
 }
 
 template< typename Engine >
 typename subrange_adaptor< Engine >::result_type
 subrange_adaptor< Engine >::next()
 {
-    if ( m_engine.max() == m_max ) {
+    if ( m_engine.max BREATH_PREVENT_MACRO_EXPANSION () == m_max ) {
         return m_engine.next() ; // subrange coincides with full range
     }
 
     auto                n ( m_engine.next() ) ;
     unsigned long const sub_max =
-                    breath::subrange_max( m_max, m_engine.max() ) ;
+                    breath::subrange_max( m_max, m_engine.max BREATH_PREVENT_MACRO_EXPANSION () ) ;
     while ( n > sub_max ) {
         n = m_engine.next() ;
     }
