@@ -37,10 +37,13 @@
 #define BREATH_DUMP_EXPRESSION( expr )                                        \
         do {                                                                  \
             std::ostream &          os = std::cout ;                          \
-            os << BREATH_STRINGIZE_DELAYED( expr ) " = " << ( expr ) ;        \
-            if ( std::strcmp( #expr,                                          \
-                              BREATH_STRINGIZE_DELAYED( expr ) ) != 0 ) {     \
-                os << " [from: " #expr << ']' ;                               \
+            char const              expanded[] =                              \
+                                          BREATH_STRINGIZE_DELAYED( expr )  ; \
+            char const              unexpanded[] = #expr ;                    \
+                                                                              \
+            os << expanded << " = " << ( expr ) ;                             \
+            if ( std::strcmp( expanded, unexpanded ) != 0 ) {                 \
+                os << " [from: " << unexpanded << ']' ;                       \
             }                                                                 \
             os << std::endl ;                                                 \
         } while ( false )                                                  /**/
