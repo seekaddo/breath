@@ -60,7 +60,7 @@ static char const * const
 //    my intent to support inequality comparisons:
 //
 //        // windows 2000 or later?
-//        if( info.id() >= os_id::windows_2000 )
+//        if ( info.id() >= os_id::windows_2000 )
 //
 //    And the constants, in fact, appear in oldest-to-newest order.
 //    But...

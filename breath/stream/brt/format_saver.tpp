@@ -111,7 +111,7 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     //
     // To avoid needless invocations of callbacks I had an if here:
     //
-    //      if( m_store.ios_base::getloc() != m_user_stream.getloc() )
+    //      if ( m_store.ios_base::getloc() != m_user_stream.getloc() )
     //
     // which I've removed due to what I think is a bug in VC8's Dinkum
     // lib:

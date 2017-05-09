@@ -19,7 +19,7 @@ performance_counter_timer::performance_counter_timer()
     // m_start to be left uninitialized.
     //
     LARGE_INTEGER       f ;
-    if( QueryPerformanceFrequency( &f ) == 0 ) {
+    if ( QueryPerformanceFrequency( &f ) == 0 ) {
         throw last_api_error( "QueryPerformanceFrequency() failed" ) ;
     }
     m_frequency = static_cast< duration_type >( f.QuadPart ) ;

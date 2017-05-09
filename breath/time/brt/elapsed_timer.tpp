@@ -12,7 +12,7 @@ template< class Device >
 elapsed_timer< Device >::elapsed_timer( start_mode mode )
     : m_device()
 {
-    if( mode == auto_start) {
+    if ( mode == auto_start) {
         restart() ;
     }
 }

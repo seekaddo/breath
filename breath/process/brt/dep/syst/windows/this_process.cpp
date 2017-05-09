@@ -33,7 +33,7 @@ this_process::set_current_directory( std::string const & dir )
 {
     BREATH_ASSERT( 0 < dir.length() && dir.length()  < MAX_PATH ) ;
     BREATH_ASSERT( dir.back() == '\\' || dir.length() <= (MAX_PATH-2) ) ;
-    if( SetCurrentDirectoryA( dir.c_str() ) == 0 ) {
+    if ( SetCurrentDirectoryA( dir.c_str() ) == 0 ) {
         throw last_api_error( "SetCurrentDirectory() failed" ) ;
     }
 }
@@ -43,7 +43,7 @@ this_process::wait( process const & pr )
 {
     HANDLE const        h = OpenProcess(
                 PROCESS_QUERY_INFORMATION | SYNCHRONIZE, FALSE, pr.id() ) ;
-    if( h == NULL ) {
+    if ( h == NULL ) {
         throw last_api_error( "OpenProcess() failed" ) ;
     }
     if ( WaitForSingleObject( h, INFINITE ) == WAIT_FAILED ) {

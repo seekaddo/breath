@@ -142,7 +142,7 @@ std::string
 windows_version_info::edition() const
 {
     // GetProductInfo() works only when major_version() >= 6.
-    if( major_version() < 6 ) {
+    if ( major_version() < 6 ) {
         return "" ;
     }
 

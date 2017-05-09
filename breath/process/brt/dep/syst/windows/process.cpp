@@ -71,13 +71,13 @@ process::start( std::string const & app_name,
                                 &si,
                                 &m_impl->m_info
                                 ) ;
-    if( ret == 0 ) {
+    if ( ret == 0 ) {
         throw last_api_error( "CreateProcess() failed" ) ;
     }
 
     if ( timeout_in_ms.is_valid() ) {
         BREATH_ASSERT( timeout_in_ms.value() > 0 ) ;
-        if( WaitForSingleObject( m_impl->m_info.hProcess,
+        if ( WaitForSingleObject( m_impl->m_info.hProcess,
                                  timeout_in_ms.value() ) == WAIT_FAILED ) {
             throw last_api_error( "WaitForSingleObject() failed" ) ;
         }
