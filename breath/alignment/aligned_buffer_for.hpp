@@ -27,7 +27,8 @@ class               aligned_buffer_for ;
 // -------------------------------------------------------------------------
 template< typename T, std::size_t n >
 class               aligned_buffer_for< T[ n ] >
-{ /* disabled for arrays */ } ;
+{
+} ;
 
 //! \cond
 namespace aligned_buffer_private {
