@@ -25,12 +25,12 @@ exception::exception( std::string const & what_msg ) noexcept
 {
     char *              curr = &m_what_message[ 0 ] ;
     std::strcpy( curr, incipit ) ;
-    curr += ( count(incipit) - 1 ) ;
+    curr += ( count( incipit ) - 1 ) ;
     char const          sep[] = ": " ;
     std::strcpy( curr, sep ) ;
-    curr += ( count(sep) - 1 ) ;
+    curr += ( count( sep ) - 1 ) ;
     std::strncpy( curr, what_msg.c_str(),
-        what_message_max_size - (curr - &m_what_message[0] ) ) ;
+        what_message_max_size - (curr - &m_what_message[ 0 ] ) ) ;
 }
 
 char const *
