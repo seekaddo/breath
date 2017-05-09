@@ -14,9 +14,9 @@
 #define BREATH_GUARD_v4ifHvyokFutGDGkksKs5kPv6rpDcUGv
 
 #include "breath/preprocessing/stringize_delayed.hpp"
+#include <cstring>
 #include <iostream>
 #include <ostream> // not necessary in C++11
-#include <cstring>
 
 //!     A simple macro for quickly dumping a variable to \c std::cout.
 //!     It was born as "DUMP_VARIABLE()" but then I immediately found
