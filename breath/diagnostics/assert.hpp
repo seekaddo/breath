@@ -25,8 +25,6 @@ namespace assert_private {
 //! \endcond
 }
 
-
-
 //      BREATH_ASSERT:
 //      --------------
 //
