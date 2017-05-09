@@ -151,7 +151,6 @@ public:
     //!     <code>void const *</code>.
     // ----------------------------------------------------------------------
     void const *        address() const noexcept { return m_raw_buffer ; }
-
 } ;
 
 }
