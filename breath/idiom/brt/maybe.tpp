@@ -181,6 +181,7 @@ maybe< T >::non_const_value() noexcept
 }
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil
