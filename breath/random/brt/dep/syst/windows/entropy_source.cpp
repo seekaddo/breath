@@ -52,8 +52,10 @@ entropy_source::impl::impl()
     if ( ! acquire() ) {
         entropy_source::exception::raise( "cannot acquire the HCRYPTPROV handle" ) ;
     }
-    // note that this member is intentionally not initialized in the ctor
-    // initializer list; in case of exceptions there is no way it could be used
+    //      Note that this member is intentionally not initialized in
+    //      the ctor initializer list; in case of exceptions there is
+    //      no way it could be used
+    // ---------------------------------------------------------------------------
     m_handle_is_valid = true ;
 }
 
@@ -87,7 +89,9 @@ entropy_source::impl::is_done() const noexcept
     return ! m_handle_is_valid ;
 }
 
-// gps this release could be attempted more than once? this is different from Unix!
+//      This release could be attempted more than once? This is
+//      different from Unix! --gps
+// ---------------------------------------------------------------------------
 bool
 entropy_source::impl::release() noexcept
 {
