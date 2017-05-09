@@ -91,7 +91,7 @@ entropy_source::impl::is_done() const noexcept
 bool
 entropy_source::impl::release() noexcept
 {
-    bool            success = false ;
+    bool                success = false ;
     if ( ! is_done() ) {
         success = ::CryptReleaseContext( m_provider_handle,
                                          0 // this is reserved (future use) and must be zero
@@ -104,7 +104,8 @@ entropy_source::impl::release() noexcept
 void
 entropy_source::impl::to_buffer( unsigned char * buffer, DWORD count )
 {
-    int const       r = ::CryptGenRandom( m_provider_handle, count, buffer ) ;
+    int const           r = ::CryptGenRandom( m_provider_handle, count,
+                                                buffer ) ;
     if ( r == 0 ) {
         entropy_source::exception::raise( "cannot generate random number" ) ;
     }
