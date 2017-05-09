@@ -116,7 +116,7 @@ entropy_source::impl::release() noexcept
     return success ;
 }
 
-void
+[[ noreturn ]] void
 entropy_source::exception::raise( std::string const & message )
 {
     throw entropy_source::exception( "Breath entropy_source: " + message ) ;
