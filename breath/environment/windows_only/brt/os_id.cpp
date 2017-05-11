@@ -54,26 +54,7 @@ static char const * const
 //      word "edition" appears directly as a part of the OS name,
 //      rather than in the edition name (as in "Web Edition", "Home
 //      Edition" etc.) -- what should we do? leave "edition" or not?
-//
-// ordering:
-//    initially, and at least for the Windows implementation, it was
-//    my intent to support inequality comparisons:
-//
-//        // windows 2000 or later?
-//        if ( info.id() >= os_id::windows_2000 )
-//
-//    And the constants, in fact, appear in oldest-to-newest order.
-//    But...
-//    I don't like too much the idea of having something which only
-//    makes sense for one of the supported OSes, and perhaps not even
-//    for it, in the future: right now, Windows versions seem to have
-//    an established total ordering, but what about the future? MS
-//    seems on the way of "parallelizing" their OS products over a
-//    "client line" (Windows XP etc.) and a "server line" (Windows
-//    Server 2003 etc.); in the future it seems to me they could well
-//    release two Windows variants of which neither is < or > than the
-//    other.
-//
+// --------------------------------------------------------------------------
 const os_id
         os_id::windows_unknown                    ( 0 ),
         //

@@ -22,25 +22,28 @@ namespace breath {
 
 //      A thin wrapper around an int: we assign distinct integral
 //      numbers to the different Windows versions.
-//      ===============================================================
+//      ---------------------------------------------------------
 //
-// Comparison operators rationale:
+//      Rationale for the absence of comparison operators:
 //
-//   In my first idea of this class, it was my intent to support inequality
-//   comparisons:
+//      in my first idea of this class, it was my intent to support
+//      inequality comparisons:
 //
-//     // windows 2000 or "later"?
-//     if ( id >= os_id::windows_2000 )
+//        // windows 2000 or "later"?
+//        if ( id >= os_id::windows_2000 )
 //
-//   But...
-//   not only this might not make sense for other systems; at the time of
-//   writing (April 2007) Windows versions seem to have an "official" total
-//   ordering (see the various requires clauses in the SDK docs), but what
-//   about the future? MS seems on the way of "parallelizing" their OS
-//   products in a "client line" (Windows XP etc.) and a "server line"
-//   (Windows Server 2003 etc.); this makes me think that we could have two
-//   future Windows variants of which neither is "higher" or "lower" than
-//   the other one
+//      And the constants, in fact, appear in oldest-to-newest order.
+//      But...
+//      I don't like too much the idea of having something which only
+//      makes sense for one of the supported OSes, and perhaps not
+//      even for it, in the future: right now, Windows versions seem
+//      to have an established total ordering, but what about the
+//      future? Microsoft seems on the way of "parallelizing" their
+//      OS products over a "client line" (Windows XP etc.) and a
+//      "server line" (Windows Server 2003 etc.); in the future it
+//      seems to me they could well release two Windows variants of
+//      which neither is "higher" or "lower" than the other.
+// --------------------------------------------------------------------------
 class os_id
     : private equality_comparison< os_id >
 {
