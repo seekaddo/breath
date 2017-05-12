@@ -285,6 +285,12 @@
     <ClCompile Include="..\..\breath\metric\test\levenshtein_distance_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\metric\brt\damerau_levenshtein_distance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\breath\metric\test\damerau_levenshtein_distance_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />
