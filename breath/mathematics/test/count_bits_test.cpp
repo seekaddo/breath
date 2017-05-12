@@ -36,7 +36,7 @@ void check()
 
 void check2()
 {
-    unsigned long       n = 0b010'110'011'011;
+    unsigned long       n = 0b010'110'011'011 ;
     BREATH_CHECK( breath::count_bits( n ) == 7 ) ;
 
     n = 0b11'010'110'011'011 ;
