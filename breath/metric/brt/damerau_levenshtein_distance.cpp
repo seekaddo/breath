@@ -7,6 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/metric/damerau_levenshtein_distance.hpp"
+#include "breath/idiom/declare_non_copyable.hpp"
 #include <algorithm>
 #include <cstddef>
 
@@ -16,6 +17,8 @@ namespace        {
 class matrix
 {
 public:
+    BREATH_DECLARE_NON_COPYABLE( matrix )
+
     typedef std::size_t T ;
                         matrix( std::size_t rows, std::size_t columns )
                             :   m_columns( columns ),
