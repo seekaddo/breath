@@ -55,11 +55,11 @@ check2()
     int const           low = 5 ;
     int const           high = 10 ;
 
-    BREATH_CHECK( & breath::clamp( a, low, high ) == & a ) ;
+    BREATH_CHECK( &breath::clamp( a, low, high ) == &a ) ;
 
     int const           a2 = 10 ;
 
-    BREATH_CHECK( & breath::clamp( a2, low, high) == & a2 ) ;
+    BREATH_CHECK( &breath::clamp( a2, low, high) == &a2 ) ;
 
     //      Check that a reference to the first argument is returned
     //      when the first argument is equivalent to *both* bounds.
@@ -67,7 +67,7 @@ check2()
     int const           b = 5 ;
     int const           low2 = 5 ;
     int const           high2 = 5 ;
-    BREATH_CHECK( & breath::clamp( b, low2, high2 ) == & b ) ;
+    BREATH_CHECK( &breath::clamp( b, low2, high2 ) == &b ) ;
 }
 
 void
@@ -76,10 +76,10 @@ check3()
     //      An example taken from
     //        <https://github.com/sean-parent/sean-parent.github.io/wiki/presentations/2016-05-16-better-code/2016-05-16-better-code.pdf#page=27>
     // ---------------------------------------------------------------------
-    using pair = std::pair< int, std::string > ;
-    pair a = { 1, "OK" } ;
-    pair lo = { 1, "FAIL: LO" } ;
-    pair hi = { 2, "FAIL: HI" } ;
+    using               pair = std::pair< int, std::string > ;
+    pair                a = { 1, "OK" } ;
+    pair                lo = { 1, "FAIL: LO" } ;
+    pair                hi = { 2, "FAIL: HI" } ;
     a = breath::clamp( a, lo, hi, []( const auto & a, const auto & b ) {
                             return a.first < b.first ;
                         } ) ;
