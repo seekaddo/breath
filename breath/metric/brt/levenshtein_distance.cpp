@@ -32,7 +32,7 @@ levenshtein_distance( std::string const & first, std::string const & second )
                                ? corner
                                : 1 + std::min( { upper, corner, costs[ j ] } )
                                ;
-            corner = upper;
+            corner = upper ;
         }
     }
 
