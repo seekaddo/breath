@@ -47,8 +47,8 @@ main()
                         m_n = 0 ;
     } ;
     std::generate( table.begin(), table.end(), byte_checksum{} ) ;
-    int constexpr       numbers_per_line = 6 ;
-    int constexpr       indent_size = 4 ;
+    constexpr int       numbers_per_line = 6 ;
+    constexpr int       indent_size = 4 ;
     std::string const   indent( indent_size, ' ' ) ;
 
     std::ostream &      os = std::cout ;
