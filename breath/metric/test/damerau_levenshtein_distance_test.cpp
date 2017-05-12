@@ -41,6 +41,7 @@ check()
     single_check( "abcde", "acbed", 2 ) ;
     single_check( "abcde", "baced", 2 ) ;
     single_check( "abcde", "baecd", 3 ) ;
+    single_check( "Smith", "Stitch", 2 ) ;
 }
 
 }
