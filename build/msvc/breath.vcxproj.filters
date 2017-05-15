@@ -321,6 +321,7 @@
     <None Include="..\..\breath\text\brt\to_string.tpp" />
     <None Include="..\..\breath\time\brt\elapsed_timer.tpp" />
     <None Include="..\..\breath\stream\brt\null_stream.tpp" />
+    <None Include="..\..\breath\mathematics\brt\count_bits.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -651,6 +652,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\stream\null_stream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\metric\damerau_levenshtein_distance.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\metric\levenshtein_distance.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\mathematics\count_bits.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

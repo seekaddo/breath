@@ -498,6 +498,7 @@
     <None Include="..\..\breath\encoding\brt\binary_to_base64.tpp" />
     <None Include="..\..\breath\idiom\brt\maybe.tpp" />
     <None Include="..\..\breath\mathematics\brt\clamp.tpp" />
+    <None Include="..\..\breath\mathematics\brt\count_bits.tpp" />
     <None Include="..\..\breath\mathematics\brt\gcd.tpp" />
     <None Include="..\..\breath\mathematics\brt\integer_log2.tpp" />
     <None Include="..\..\breath\mathematics\brt\is_power_of_two.tpp" />
@@ -555,6 +556,7 @@
     <ClInclude Include="..\..\breath\iteration\begin_end.hpp" />
     <ClInclude Include="..\..\breath\mathematics\brt\private\check_common_gcd_lcm_preconditions.hpp" />
     <ClInclude Include="..\..\breath\mathematics\clamp.hpp" />
+    <ClInclude Include="..\..\breath\mathematics\count_bits.hpp" />
     <ClInclude Include="..\..\breath\mathematics\gcd.hpp" />
     <ClInclude Include="..\..\breath\mathematics\integer_log2.hpp" />
     <ClInclude Include="..\..\breath\mathematics\is_power_of_two.hpp" />
@@ -572,6 +574,8 @@
     <ClInclude Include="..\..\breath\meta\successor.hpp" />
     <ClInclude Include="..\..\breath\meta\unqualify.hpp" />
     <ClInclude Include="..\..\breath\meta\width.hpp" />
+    <ClInclude Include="..\..\breath\metric\damerau_levenshtein_distance.hpp" />
+    <ClInclude Include="..\..\breath\metric\levenshtein_distance.hpp" />
     <ClInclude Include="..\..\breath\operator\comparison.hpp" />
     <ClInclude Include="..\..\breath\operator\equality_comparison.hpp" />
     <ClInclude Include="..\..\breath\path\allowed_path_separators.hpp" />
