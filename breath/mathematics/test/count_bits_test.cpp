@@ -29,6 +29,8 @@ trivially_count_bits( T t )
 
 void check()
 {
+    BREATH_CHECK( breath::count_bits( false ) == 0 ) ;
+    BREATH_CHECK( breath::count_bits( true ) == 1 ) ;
     for ( unsigned i = 0 ; i <= UCHAR_MAX ; ++ i ) {
         BREATH_CHECK( breath::count_bits( i ) == trivially_count_bits( i ) ) ;
     }

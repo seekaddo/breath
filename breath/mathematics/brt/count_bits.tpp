@@ -63,6 +63,15 @@ count_bits( T t ) noexcept
     return count ;
 }
 
+constexpr std::size_t
+count_bits( bool b ) noexcept
+{
+    return b 
+        ? 1
+        : 0
+        ;
+}
+
 }
 
 // Local Variables:
