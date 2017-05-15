@@ -15,7 +15,7 @@ int
 main()
 {
     constexpr int       size = 256 ;
-    std::array< std::uint_fast32_t, size >
+    std::array< int, size >
                         table ;
 
     class               bit_count
