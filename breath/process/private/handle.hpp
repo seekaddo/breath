@@ -32,7 +32,7 @@ public:
                                 CloseHandle( m_handle ) ;
                             }
                         }
-    HANDLE              get() const
+    HANDLE              get() const noexcept
                         {
                             return m_handle ;
                         }
