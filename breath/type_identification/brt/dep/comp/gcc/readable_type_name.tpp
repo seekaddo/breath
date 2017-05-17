@@ -22,7 +22,7 @@ std::string
 readable_type_name()
 {
     int                 status ;
-    char *              p = abi::__cxa_demangle( typeid( T ).name(),
+    char * const        p = abi::__cxa_demangle( typeid( T ).name(),
                                                  nullptr,
                                                  0,
                                                  &status ) ;
