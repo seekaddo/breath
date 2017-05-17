@@ -9,12 +9,11 @@
 #ifndef BREATH_GUARD_dasfhoivP3llC1qsCdA1wksQXzwXW8vD
 #define BREATH_GUARD_dasfhoivP3llC1qsCdA1wksQXzwXW8vD
 
-
-// avoid using "DWORD", because we have a policy to not include Windows
-// headers from include files
+//      Avoid using "DWORD", because we have a policy to not include
+//      Windows headers from include files.
+// -------------------------------------------------------------------------
 typedef unsigned long
                     process_id_type ;
-
 
 #endif
 
