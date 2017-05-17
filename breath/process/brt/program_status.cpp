@@ -78,6 +78,7 @@ program_status::parse_command_line( int argc, char const * const *
                                 argv, std::string const & program_name )
 {
     BREATH_ASSERT( m_program_name.empty() ) ;
+
     std::string const
                     name = ! program_name.empty()
                                 ? program_name
@@ -85,7 +86,6 @@ program_status::parse_command_line( int argc, char const * const *
                                         ? argv[ 0 ]
                                         : "<unknown program>"
                                 ;
-
     m_program_name = breath::base_filename( name ) ;
 }
 
