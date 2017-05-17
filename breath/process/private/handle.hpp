@@ -19,9 +19,9 @@ namespace process_private {
 //
 class handle
 {
+public:
     BREATH_DECLARE_NON_COPYABLE( handle )
 
-public:
     explicit            handle( HANDLE h ) noexcept
                             :   m_handle( h )
                         {}
