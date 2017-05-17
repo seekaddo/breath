@@ -297,6 +297,9 @@
     <ClCompile Include="..\..\breath\mathematics\test\count_bits_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\type_identification\test\readable_type_name_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />
@@ -322,6 +325,7 @@
     <None Include="..\..\breath\time\brt\elapsed_timer.tpp" />
     <None Include="..\..\breath\stream\brt\null_stream.tpp" />
     <None Include="..\..\breath\mathematics\brt\count_bits.tpp" />
+    <None Include="..\..\breath\type_identification\brt\readable_type_name.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -661,6 +665,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\mathematics\count_bits.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\type_identification\readable_type_name.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

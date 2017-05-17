@@ -467,6 +467,12 @@
     <ClCompile Include="..\..\breath\time\brt\c_clock_device.cpp" />
     <ClCompile Include="..\..\breath\time\brt\time_string.cpp" />
     <ClCompile Include="..\..\breath\time\windows_only\brt\performance_counter_timer.cpp" />
+    <ClCompile Include="..\..\breath\type_identification\test\readable_type_name_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\breath\uuid\brt\uuid.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -511,6 +517,7 @@
     <None Include="..\..\breath\text\brt\from_string.tpp" />
     <None Include="..\..\breath\text\brt\to_string.tpp" />
     <None Include="..\..\breath\time\brt\elapsed_timer.tpp" />
+    <None Include="..\..\breath\type_identification\brt\readable_type_name.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp" />
@@ -625,6 +632,7 @@
     <ClInclude Include="..\..\breath\time\elapsed_timer.hpp" />
     <ClInclude Include="..\..\breath\time\time_string.hpp" />
     <ClInclude Include="..\..\breath\time\windows_only\performance_counter_timer.hpp" />
+    <ClInclude Include="..\..\breath\type_identification\readable_type_name.hpp" />
     <ClInclude Include="..\..\breath\uuid\uuid.hpp" />
   </ItemGroup>
   <ItemGroup>
