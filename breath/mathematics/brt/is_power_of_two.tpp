@@ -8,8 +8,10 @@
 
 namespace breath {
 
-constexpr bool
-is_power_of_two( std::uintmax_t x ) noexcept
+template< typename T >
+constexpr typename std::enable_if< ! std::numeric_limits< T >::is_signed,
+                                   bool >::type
+                    is_power_of_two( T x ) noexcept
 {
     return x > 0 && ( x & ( x-1 ) ) == 0 ;
 }
