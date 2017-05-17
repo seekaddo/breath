@@ -18,7 +18,8 @@ namespace {
 void do_tests()
 {
     BREATH_CHECK( breath::readable_type_name< int >() == "int" ) ;
-    BREATH_CHECK( breath::readable_type_name< unsigned long >() == "unsigned long" ) ;
+    BREATH_CHECK( breath::readable_type_name< unsigned long >() ==
+                                                             "unsigned long" ) ;
 }
 
 }
