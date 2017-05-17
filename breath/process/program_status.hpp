@@ -72,6 +72,12 @@ public:
     void                parse_command_line( int argc, char const * const *
                                 argv, std::string const & program_name = "" ) ;
 
+    //!     \return The program name set by \c parse_command_line().
+    //!     An assertion is triggered if \c parse_command_line() had
+    //!     not been called before.
+    // ----------------------------------------------------------------------
+    std::string         program_name() const ;
+
     //!     Declares a program error.
     // ----------------------------------------------------------------------
     void                declare_error( gravity g ) ;

@@ -89,6 +89,14 @@ program_status::parse_command_line( int argc, char const * const *
     m_program_name = breath::base_filename( name ) ;
 }
 
+std::string
+program_status::program_name() const
+{
+    BREATH_ASSERT( ! m_program_name.empty() ) ;
+
+    return m_program_name ;
+}
+
 void
 program_status::declare_error( program_status::gravity g ) // gps nome OK?
 {
