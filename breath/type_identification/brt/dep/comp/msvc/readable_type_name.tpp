@@ -21,7 +21,7 @@ readable_type_name()
 }
 
 template<>
-std::string
+inline std::string
 readable_type_name< std::string >()
 {
     return "string" ;
