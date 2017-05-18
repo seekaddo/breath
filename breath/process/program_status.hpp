@@ -82,35 +82,6 @@ public:
     // ----------------------------------------------------------------------
     void                declare_error( gravity g ) ;
 
-
-    //      set_warning(), set_fatal(), etc.:
-    //      ---------------------------------
-    //
-    //      Each of these functions returns a reference to
-    //      std::cerr [gps OK? or clog?], so that
-    //      the caller can "chain", and format, the corresponding error
-    //      message.
-    //
-    //      The message is output immediately; the error status is
-    //      updated.
-    //
-    //
-    //
-    //      Example:
-    //
-    //        set_fatal() << "an error occurred." << std::endl ;
-    //
-    //      Usually the program is exited, with a
-    //
-    //        return program_status...::exit_status() ;
-    //
-    //      from main(), but this is not the only possible case
-    //
-
-    //std::ostream &      warning() ;
-    //std::ostream &      error() ;
-    //std::ostream &      fatal() ;
-
 private:
      gravity            m_max_gravity ;
      std::string        m_program_name ;
