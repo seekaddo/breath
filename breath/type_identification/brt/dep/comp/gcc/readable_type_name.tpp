@@ -21,6 +21,21 @@ template< typename T >
 std::string
 readable_type_name()
 {
+    class deallocator
+    {
+    public:
+        explicit deallocator( char * p )
+            : m_p( p )
+        {
+        }
+        ~deallocator()
+        {
+            std::free( m_p ) ;
+        }
+    private:
+        char * const    m_p ;
+    } ;
+
     int                 status ;
     char * const        p = abi::__cxa_demangle( typeid( T ).name(),
                                                  nullptr,
@@ -30,18 +45,9 @@ readable_type_name()
         throw breath::exception( "__cxa_demangle() failed" ) ;
     }
 
-    std::string         ret ;
+    deallocator const   dlc( p ) ;
 
-    try {
-        ret = p ;
-    } catch ( ... ) {
-        std::free( p ) ;
-        throw ;
-    }
-
-    std::free( p ) ;
-    return ret ;
-
+    return std::string( p ) ;
 }
 
 template<>
