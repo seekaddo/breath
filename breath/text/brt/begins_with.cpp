@@ -19,7 +19,6 @@ begins_with( std::string const & str, std::string const & with )
         && std::equal( with.cbegin(), with.cend(), str.cbegin() ) ;
 }
 
-
 }
 
 // Local Variables:
