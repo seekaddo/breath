@@ -48,7 +48,8 @@ public:
     //!     Returns an integer suitable for calling \c std::exit() or
     //!     returning from \c main().
     //!     This corresponds to the "worst" error reported by client
-    //!     code to the \c program_status singleton.
+    //!     code to the \c program_status singleton through the \c
+    //!     declare_error() member function.
     //!
     //!     If the system supports it, the various gravities will be
     //!     distinguished in the return code; if not, all you get is
@@ -65,7 +66,9 @@ public:
     //!     first lines of \c main(), before threading starts.
     //!
     //!     If a non-empty \c program_name is supplied, it takes
-    //!     precedence over the arguments to \c main. Only the
+    //!     precedence over the arguments to \c main (in that case you
+    //!     can also pass \c 0 and \c nullptr for the \c argc and \c
+    //!     argv parameters, respectively). In any case, only the
     //!     basename part of the program name is considered.
     // ----------------------------------------------------------------------
     void                parse_command_line( int argc, char const * const *
