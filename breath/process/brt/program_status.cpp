@@ -22,7 +22,8 @@ namespace breath {
 program_status::program_status() noexcept
     :   m_max_gravity( comment )
 {
-    std::basic_ios< char > * arr[] = {
+    std::basic_ios< char > *
+                        arr[] = {
         &std::cin,
         &std::cout,
         &std::cerr,
