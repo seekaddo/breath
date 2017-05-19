@@ -42,7 +42,6 @@ public:
         internal
     } ;
 
-
     static program_status &
                         instance() noexcept ;
 
