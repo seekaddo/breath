@@ -45,7 +45,7 @@ main()
 
     std::string         t ;
     t.push_back( '\0' ) ;
-    DO_TEST( !ends_with( s, t) ) ;
+    DO_TEST( ! ends_with( s, t) ) ;
     t.push_back( 'b' ) ;
     DO_TEST( ends_with( s, t ) ) ;
     DO_TEST( ends_with( s, s ) ) ;

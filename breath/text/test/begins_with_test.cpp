@@ -45,7 +45,7 @@ main()
 
     std::string         t ;
     t.push_back( '\0' ) ;
-    DO_TEST( !begins_with( s, t) ) ;
+    DO_TEST( ! begins_with( s, t) ) ;
     t = "a" ;
     t.push_back( '\0' ) ;
     DO_TEST( begins_with( s, t ) ) ;
