@@ -17,6 +17,7 @@ void do_tests()
 {
     BREATH_CHECK( breath::to_string( 12 ) == "12" ) ;
     BREATH_CHECK( breath::to_string( " hello, world " ) == " hello, world " ) ;
+    BREATH_CHECK( breath::to_string( "" ) == "" ) ;
 }
 
 }
