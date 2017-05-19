@@ -22,7 +22,6 @@ main( int argc, char * argv[] )
     using               breath::program_status ;
 
     try {
-
         program_status::instance().parse_command_line( argc, argv/*, "include_guard"*/ ) ;
         std::string const   prefix = "BREATH_GUARD_" ;
         int const           random_part_length = 32 ;
@@ -52,7 +51,6 @@ main( int argc, char * argv[] )
         program_status::instance().declare_error( program_status::fatal ) ;
     }
     return program_status::instance().exit_code() ;
-
 }
 
 // Local Variables:
