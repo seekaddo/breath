@@ -54,8 +54,6 @@ find_executable_in_path( std::string const & name,
             ;
 }
 
-
-
 }
 
 // Local Variables:
