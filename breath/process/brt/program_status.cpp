@@ -46,7 +46,7 @@ program_status::instance() noexcept
 }
 
 int
-program_status::exit_status() const
+program_status::exit_code() const
 {
     // NOTE: gps this code is very fragile; how to avoid this dependency?
     // NOTE: keep in sync with the enumeration definition in the .hpp file.

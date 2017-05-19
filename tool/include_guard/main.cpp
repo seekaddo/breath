@@ -51,7 +51,7 @@ main( int argc, char * argv[] )
     } catch ( ... ) {
         program_status::instance().declare_error( program_status::fatal ) ;
     }
-    return program_status::instance().exit_status() ;
+    return program_status::instance().exit_code() ;
 
 }
 

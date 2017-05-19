@@ -58,7 +58,7 @@ public:
     //!     Important: this function also flushes \c std::cout, and
     //!     generates an error if the flush fails.
     // ----------------------------------------------------------------------
-    int                 exit_status() const ;
+    int                 exit_code() const ;
 
     //!     This is useful to "extract" the program name (if any) from
     //!     the arguments to \c main(). It must be called at most once
