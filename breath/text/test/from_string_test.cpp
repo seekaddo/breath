@@ -24,7 +24,8 @@ void do_tests()
     BREATH_CHECK_THROW( breath::from_string< char >( "ab" ) ) ;
     BREATH_CHECK( breath::from_string< double >( "1.2" ) == 1.2 ) ;
 
-    BREATH_CHECK( breath::from_string< std::string >( " test " ) == "test" ) ;
+    BREATH_CHECK( breath::from_string< std::string >( " test " ) == " test " ) ;
+    BREATH_CHECK( breath::from_string< std::string >( "" ) == "" ) ;
 }
 
 }

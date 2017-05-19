@@ -25,6 +25,13 @@ from_string( std::string const & s )
     return t ;
 }
 
+template<>
+inline std::string
+from_string< std::string >( std::string const & s )
+{
+    return s ;
+}
+
 }
 
 // Local Variables:
