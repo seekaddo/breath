@@ -22,11 +22,9 @@ class this_process
     :   public process
 {
 private:
-
                         this_process() ;
 
 public:
-
     this_process &      instance() ;
 
 
