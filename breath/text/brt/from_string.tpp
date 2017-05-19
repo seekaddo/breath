@@ -19,7 +19,7 @@ from_string( std::string const & s )
 {
     T                   t ;
     std::istringstream  ss( s ) ;
-    if ( !( ss >> t ) || !( ss >> std::ws ).eof() ) {
+    if ( ! ( ss >> t ) || ! ( ss >> std::ws ).eof() ) {
         throw breath::exception( "error in from_string()" ) ;
     }
     return t ;
