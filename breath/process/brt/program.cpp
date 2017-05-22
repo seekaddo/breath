@@ -67,7 +67,8 @@ program::exit_code() const
     }
     std::cout.flush() ;
     if ( std::cout.fail() ) {
-        instance().declare_error( error ) ; // NOTE: we need an error message here -gps
+        instance().declare_error( program::error ) ; // NOTE: we need an error
+                                                     // message here -gps
     }
     return is_internal
             ? exit_internal
