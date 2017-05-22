@@ -44,7 +44,7 @@ public:
                         auto_array( auto_array && ) noexcept ;
                         ~auto_array() noexcept ;
 
-    auto_array< T > &   operator =( auto_array && ) noexcept ;
+    auto_array &        operator =( auto_array && ) noexcept ;
     T *                 get() noexcept ;
     T const *           get() const noexcept ;
     void                reset( T * ) noexcept ;
