@@ -8,10 +8,10 @@
 
 namespace breath {
 
-int const           exit_warning(  110 ) ;
-int const           exit_error(    120 ) ;
-int const           exit_fatal(    130 ) ;
-int const           exit_internal( 199 ) ;
+int const           exit_warning  = 110 ;
+int const           exit_error    = 120 ;
+int const           exit_fatal    = 130 ;
+int const           exit_internal = 199 ;
 
 }
 
