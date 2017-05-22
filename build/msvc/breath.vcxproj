@@ -363,7 +363,7 @@
     <ClCompile Include="..\..\breath\process\brt\exit_code.cpp" />
     <ClCompile Include="..\..\breath\process\brt\find_executable_in_path.cpp" />
     <ClCompile Include="..\..\breath\process\brt\process.cpp" />
-    <ClCompile Include="..\..\breath\process\brt\program_status.cpp" />
+    <ClCompile Include="..\..\breath\process\brt\program.cpp" />
     <ClCompile Include="..\..\breath\process\brt\this_process.cpp" />
     <ClCompile Include="..\..\breath\random\brt\entropy_source.cpp" />
     <ClCompile Include="..\..\breath\random\brt\subrange_max.cpp" />
@@ -600,7 +600,7 @@
     <ClInclude Include="..\..\breath\process\private\handle.hpp" />
     <ClInclude Include="..\..\breath\process\private\process_id_type.hpp" />
     <ClInclude Include="..\..\breath\process\process.hpp" />
-    <ClInclude Include="..\..\breath\process\program_status.hpp" />
+    <ClInclude Include="..\..\breath\process\program.hpp" />
     <ClInclude Include="..\..\breath\process\this_process.hpp" />
     <ClInclude Include="..\..\breath\process\win32_process.hpp" />
     <ClInclude Include="..\..\breath\random\entropy_source.hpp" />

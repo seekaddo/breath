@@ -7,7 +7,7 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include "breath/process/program_status.hpp"
+#include "breath/process/program.hpp"
 #include "breath/counting/count.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include "breath/path/base_filename.hpp"
@@ -19,7 +19,7 @@
 
 namespace breath {
 
-program_status::program_status() noexcept
+program::program() noexcept
     :   m_max_gravity( comment )
 {
     std::basic_ios< char > * const
@@ -38,16 +38,16 @@ program_status::program_status() noexcept
     }
 }
 
-program_status &
-program_status::instance() noexcept
+program &
+program::instance() noexcept
 {
-    static program_status
-                        the_instance ;
+    static program      the_instance ;
+
     return the_instance ;
 }
 
 int
-program_status::exit_code() const
+program::exit_code() const
 {
     // NOTE: gps this code is very fragile; how to avoid this dependency?
     // NOTE: keep in sync with the enumeration definition in the .hpp file.
@@ -61,9 +61,9 @@ program_status::exit_code() const
 
     bool                is_internal = false ;
     if ( static_cast< unsigned int >( m_max_gravity ) >= breath::count( table ) ) {
-        instance().declare_error( program_status::internal ) ;
+        instance().declare_error( program::internal ) ;
         is_internal = true ;
-        std::cerr << "impossible gravity seen in class program_status" ;
+        std::cerr << "impossible gravity seen in class program" ;
     }
     std::cout.flush() ;
     if ( std::cout.fail() ) {
@@ -75,8 +75,8 @@ program_status::exit_code() const
 }
 
 void
-program_status::parse_command_line( int argc, char const * const *
-                                argv, std::string const & program_name )
+program::parse_command_line( int argc, char const * const * argv,
+                             std::string const & program_name )
 {
     BREATH_ASSERT( m_program_name.empty() ) ;
 
@@ -91,7 +91,7 @@ program_status::parse_command_line( int argc, char const * const *
 }
 
 std::string
-program_status::program_name() const
+program::name() const
 {
     BREATH_ASSERT( ! m_program_name.empty() ) ;
 
@@ -99,7 +99,7 @@ program_status::program_name() const
 }
 
 void
-program_status::declare_error( program_status::gravity g ) // gps nome OK?
+program::declare_error( program::gravity g ) // gps nome OK?
 {
     if ( g > m_max_gravity ) {
         m_max_gravity = g ;

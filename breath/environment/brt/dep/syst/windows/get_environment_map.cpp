@@ -9,7 +9,7 @@
 #include "breath/environment/get_environment_map.hpp"
 #include "breath/diagnostics/exception.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
-#include "breath/process/program_status.hpp"
+#include "breath/process/program.hpp"
 #undef UNICODE          // it seems impossible to directly call
                         // GetEnvironmentStringsA, so undefine UNICODE
 #include <Windows.h>    // and use the normal name
@@ -20,9 +20,9 @@ namespace {
 void
 do_free( char * p ) noexcept
 {
-    using               breath::program_status ;
+    using               breath::program ;
     if ( FreeEnvironmentStrings( p ) == 0 ) {
-        program_status::instance().declare_error( program_status::warning ) ; //gps
+        program::instance().declare_error( program::warning ) ; //gps
     }
 }
 

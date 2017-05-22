@@ -41,10 +41,10 @@
     <ClCompile Include="..\..\..\breath\diagnostics\brt\last_api_error.cpp">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\process\brt\program_status.cpp">
+    <ClCompile Include="..\..\..\breath\random\brt\subrange_max.cpp">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\breath\random\brt\subrange_max.cpp">
+    <ClCompile Include="..\..\..\breath\process\brt\program.cpp">
       <Filter>Library</Filter>
     </ClCompile>
   </ItemGroup>

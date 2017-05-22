@@ -20,18 +20,18 @@
 
 namespace breath {
 
-class program_status
+class program
 {
 public:
-    BREATH_DECLARE_NON_COPYABLE( program_status )
+    BREATH_DECLARE_NON_COPYABLE( program )
 
 private:
-                        program_status() noexcept ;
-                        ~program_status() noexcept = default ;
+                        program() noexcept ;
+                        ~program() noexcept = default ;
 
 public:
     // NOTE: keep the enumeration in sync with the array definition in
-    //       program_status::exit_status().
+    //       program::exit_status().
     // ----------------------------------------------------------------------
     enum gravity
     {
@@ -42,13 +42,12 @@ public:
         internal
     } ;
 
-    static program_status &
-                        instance() noexcept ;
+    static program &    instance() noexcept ;
 
     //!     Returns an integer suitable for calling \c std::exit() or
     //!     returning from \c main().
     //!     This corresponds to the "worst" error reported by client
-    //!     code to the \c program_status singleton through the \c
+    //!     code to the \c program class through the \c
     //!     declare_error() member function.
     //!
     //!     If the system supports it, the various gravities will be
@@ -78,7 +77,7 @@ public:
     //!     An assertion is triggered if \c parse_command_line() had
     //!     not been called before.
     // ----------------------------------------------------------------------
-    std::string         program_name() const ;
+    std::string         name() const ;
 
     //!     Declares a program error.
     // ----------------------------------------------------------------------
