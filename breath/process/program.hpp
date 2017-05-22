@@ -31,7 +31,7 @@ private:
 
 public:
     // NOTE: keep the enumeration in sync with the array definition in
-    //       program::exit_status().
+    //       program::exit_code().
     // ----------------------------------------------------------------------
     enum gravity
     {
