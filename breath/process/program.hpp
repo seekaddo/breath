@@ -14,8 +14,8 @@
 #ifndef BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
 #define BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
 
-#include "breath/process/exit_code.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
+#include "breath/process/exit_code.hpp"
 #include <string>
 
 namespace breath {
