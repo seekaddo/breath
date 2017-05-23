@@ -125,9 +125,11 @@ template<
 >
 class endian_codec
 {
-    typedef EndianPolicy policy ;
-    typedef endian_codec< policy, T, Byte, n - 1 > next ;
-    enum { shift = meta::width< Byte >::value } ;
+    typedef EndianPolicy
+                        policy ;
+    typedef endian_codec< policy, T, Byte, n - 1 >
+                        next ;
+    enum {              shift = meta::width< Byte >::value } ;
 
 public:
     static std::size_t const
