@@ -53,8 +53,7 @@ template< typename Engine >
 template< typename InputIter >
 merkle_damgard_machine< Engine >::merkle_damgard_machine( InputIter begin,
                                                           InputIter end )
-  // [gps] this will forward to the default ctor, in the future
-  //       (see also our reinitialize() facility)
+// [gps] this will forward to the default ctor, in the future
 {
     reset() ;
     append( begin, end ) ;
