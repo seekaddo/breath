@@ -27,7 +27,7 @@ public:
     virtual T           operator()( std::string const & s ) const = 0 ;
 } ;
 
-template <class T>
+template < typename T >
 struct default_reader : public option_reader< T >
 {
   T                     operator()( std::string const & str ) const
