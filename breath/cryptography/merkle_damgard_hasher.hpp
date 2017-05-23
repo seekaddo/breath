@@ -65,9 +65,8 @@ class               digest ;
 template< typename Engine >
 class merkle_damgard_machine
 {
-    //
-    // These are basically the algorithm (<=> the Engine's) "traits"
-    //
+    //      These are basically the algorithm (<=> the Engine's) "traits"
+    // -----------------------------------------------------------------
 public:
     enum
     {
@@ -79,7 +78,8 @@ public:
 private:
     enum
     {
-        // lengths
+        // Lengths
+        // -------------------------------------------------------------
         block_length = Engine::block_width / byte_width,
         state_length = Engine::state_width / byte_width,
         word_length  = word_width / byte_width,
@@ -98,26 +98,26 @@ private:
                         block_type ;// gps see above
 
 public:
-    //!\name Initialization.
-    //!\{
+    //!     \name Initialization.
+    //!     \{
     // -------------------------------------------------------------------
                         merkle_damgard_machine() ;
 
-    //!    Constructs from an input range.
+    //!     Constructs from an input range.
     // -------------------------------------------------------------------
     template< typename InputIter >
                         merkle_damgard_machine( InputIter begin, InputIter end ) ;
-    //!\}
+    //!     \}
 
-    //!\name Operations: "appending" one or more bytes
-    //!\{
+    //!     \name Operations: "appending" one or more bytes
+    //!     \{
     // -------------------------------------------------------------------
     void                push_back( byte_type b ) ;
 
     template< typename InputIter >
     merkle_damgard_machine &
                         append( InputIter begin, InputIter end ) ;
-    //!\}
+    //!     \}
 
 private:
     friend class digest< merkle_damgard_machine > ;

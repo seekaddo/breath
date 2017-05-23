@@ -23,18 +23,16 @@ class               sha1_engine ;
 template< typename Hasher >
 class               digest ;
 
-//!
-//! convenience typedefs
-//!
+//!     Convenience typedefs
+// -------------------------------------------------------------------------
 typedef merkle_damgard_machine< sha1_engine >
                     sha1_hasher ;
 typedef digest< sha1_hasher >
                     sha1_digest ;
 
 
-//!
-//! SHA-1 policy class for Merkle Damgard machine.
-//!
+//!     SHA-1 policy class for Merkle Damgard machine.
+// -------------------------------------------------------------------------
 class sha1_engine
     : public merkle_damgard_engine< 160, 512, big_endian_policy >
 {

@@ -79,6 +79,7 @@ public:
     {
         return word_codec::encode( w, dest ) ;
     }
+
     static word_type    decode_word( byte_type const * src )
     {
         return word_codec::decode( src ) ;

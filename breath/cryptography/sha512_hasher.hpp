@@ -23,9 +23,8 @@ class               sha512_engine ;
 template< typename Hasher >
 class               digest ;
 
-//!
-//! convenience typedefs
-//!
+//!     Convenience typedefs
+// -------------------------------------------------------------------------
 typedef merkle_damgard_machine< sha512_engine >
                     sha512_hasher ;
 typedef digest< sha512_hasher >
