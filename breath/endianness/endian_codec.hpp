@@ -25,6 +25,7 @@ template< typename T, typename Byte >
 class width_ratio
 {
     enum { q = meta::width< T >::value / meta::width< Byte >::value } ;
+
 public:
     // how many Bytes do we need to store a T?
     static std::size_t const
@@ -129,7 +130,6 @@ class endian_codec
     enum { shift = meta::width< Byte >::value } ;
 
 public:
-
     static std::size_t const
                         required_count = n ; // gps experimental
 
@@ -157,7 +157,6 @@ template< typename EndianPolicy, typename T, typename Byte >
 class endian_codec< EndianPolicy, T, Byte, 0 >
 {
 public:
-
     template< typename ByteIter >
     static T encode( T const & value, ByteIter )
     {
