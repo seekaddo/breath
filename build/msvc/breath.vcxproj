@@ -359,11 +359,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\breath\process\brt\child_process.cpp" />
+    <ClCompile Include="..\..\breath\process\brt\command_line.cpp" />
     <ClCompile Include="..\..\breath\process\brt\dep\syst\windows\win32_process.cpp" />
     <ClCompile Include="..\..\breath\process\brt\exit_code.cpp" />
     <ClCompile Include="..\..\breath\process\brt\find_executable_in_path.cpp" />
     <ClCompile Include="..\..\breath\process\brt\process.cpp" />
     <ClCompile Include="..\..\breath\process\brt\program.cpp" />
+    <ClCompile Include="..\..\breath\process\brt\program_option.cpp" />
     <ClCompile Include="..\..\breath\process\brt\this_process.cpp" />
     <ClCompile Include="..\..\breath\random\brt\entropy_source.cpp" />
     <ClCompile Include="..\..\breath\random\brt\subrange_max.cpp" />
@@ -511,6 +513,8 @@
     <None Include="..\..\breath\mathematics\brt\lcm.tpp" />
     <None Include="..\..\breath\memory\brt\auto_array.tpp" />
     <None Include="..\..\breath\meta\brt\is_twos_complement.tpp" />
+    <None Include="..\..\breath\process\brt\command_line.tpp" />
+    <None Include="..\..\breath\process\brt\program_option.tpp" />
     <None Include="..\..\breath\random\brt\subrange_adaptor.tpp" />
     <None Include="..\..\breath\stream\brt\format_saver.tpp" />
     <None Include="..\..\breath\stream\brt\null_stream.tpp" />
@@ -595,12 +599,14 @@
     <ClInclude Include="..\..\breath\preprocessing\token_paste.hpp" />
     <ClInclude Include="..\..\breath\preprocessing\token_paste_delayed.hpp" />
     <ClInclude Include="..\..\breath\process\child_process.hpp" />
+    <ClInclude Include="..\..\breath\process\command_line.hpp" />
     <ClInclude Include="..\..\breath\process\exit_code.hpp" />
     <ClInclude Include="..\..\breath\process\find_executable_in_path.hpp" />
     <ClInclude Include="..\..\breath\process\private\handle.hpp" />
     <ClInclude Include="..\..\breath\process\private\process_id_type.hpp" />
     <ClInclude Include="..\..\breath\process\process.hpp" />
     <ClInclude Include="..\..\breath\process\program.hpp" />
+    <ClInclude Include="..\..\breath\process\program_option.hpp" />
     <ClInclude Include="..\..\breath\process\this_process.hpp" />
     <ClInclude Include="..\..\breath\process\win32_process.hpp" />
     <ClInclude Include="..\..\breath\random\entropy_source.hpp" />

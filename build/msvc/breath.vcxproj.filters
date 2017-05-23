@@ -300,6 +300,12 @@
     <ClCompile Include="..\..\breath\process\brt\program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\process\brt\command_line.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\breath\process\brt\program_option.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />
@@ -326,6 +332,8 @@
     <None Include="..\..\breath\stream\brt\null_stream.tpp" />
     <None Include="..\..\breath\mathematics\brt\count_bits.tpp" />
     <None Include="..\..\breath\type_identification\brt\readable_type_name.tpp" />
+    <None Include="..\..\breath\process\brt\command_line.tpp" />
+    <None Include="..\..\breath\process\brt\program_option.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -668,6 +676,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\process\program.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\process\program_option.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\process\command_line.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
