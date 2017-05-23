@@ -250,7 +250,10 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
     int                 carry( 0 ) ;
     for ( std::size_t i = 0 ; i < length_count ; ++ i ) {
         length_unit_type const w( m_bit_count[ i ] + repr[ i ] + carry ) ;
-        carry = w < repr[ i ] ? 1 : 0 ;
+        carry = w < repr[ i ]
+                    ? 1
+                    : 0
+                    ;
         m_bit_count[ i ] = w ;
     }
 
