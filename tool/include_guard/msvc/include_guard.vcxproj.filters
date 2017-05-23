@@ -47,6 +47,15 @@
     <ClCompile Include="..\..\..\breath\process\brt\program.cpp">
       <Filter>Library</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\breath\process\brt\command_line.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\breath\text\brt\begins_with.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\breath\process\brt\program_option.cpp">
+      <Filter>Library</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\macro_name.hpp">

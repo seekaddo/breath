@@ -8,7 +8,9 @@
 
 #include "tool/include_guard/macro_name.hpp"
 #include "breath/diagnostics/exception.hpp"
+#include "breath/process/command_line.hpp"
 #include "breath/process/program.hpp"
+#include "breath/process/program_option.hpp"
 
 #include <cstdio> // for EOF
 #include <iostream>
@@ -16,14 +18,24 @@
 #include <ostream>
 #include <string>
 
+namespace {
+
+breath::default_reader< std::string >
+                    option_reader ;
+breath::program_option_with_value< std::string >
+                    prefix_option( "prefix", 'p', false, "BREATH_GUARD_", "macro prefix", option_reader ) ;
+
+}
+
 int
 main( int argc, char * argv[] )
 {
+    using               breath::command_line ;
     using               breath::program ;
 
     try {
-        program::instance().parse_command_line( argc, argv/*, "include_guard"*/ ) ;
-        std::string const   prefix = "BREATH_GUARD_" ;
+        command_line::instance().parse_check( argc, argv ) ;
+        std::string const   prefix = prefix_option.get() ;
         int const           random_part_length = 32 ;
 
         macro_name_creation::exit_status
