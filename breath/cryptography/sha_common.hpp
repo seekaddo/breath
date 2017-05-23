@@ -51,7 +51,6 @@ ror( T x )
 }
 }
 
-
 #endif
 
 // Local Variables:
