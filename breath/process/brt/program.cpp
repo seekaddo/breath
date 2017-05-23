@@ -81,10 +81,9 @@ program::parse_command_line( int argc, char const * const * argv,
 {
     BREATH_ASSERT( m_program_name.empty() ) ;
 
-    std::string const
-                    name = ! program_name.empty()
-                                ? program_name
-                                : argc > 0
+    std::string const   name = ! program_name.empty()
+                                    ? program_name
+                                    : argc > 0
                                         ? argv[ 0 ]
                                         : "<unknown program>"
                                 ;
