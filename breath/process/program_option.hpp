@@ -24,7 +24,7 @@ template< typename T >
 class option_reader
 {
 public:
-    virtual T           operator()( std::string const & s) const = 0 ;
+    virtual T           operator()( std::string const & s ) const = 0 ;
 } ;
 
 template <class T>
