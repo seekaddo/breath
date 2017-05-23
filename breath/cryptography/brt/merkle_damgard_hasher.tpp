@@ -221,7 +221,7 @@ void
 merkle_damgard_machine< Engine >::create_digest( raw_digest_type & raw )
 {
     final() ;
-    for ( int i( 0 ) ; i < digest_width / word_width ; ++ i ) {
+    for ( int i = 0 ; i < digest_width / word_width ; ++ i ) {
         Engine::encode_word( m_state[ i ],
                              raw + i * word_length ) ;
     }
