@@ -15,9 +15,8 @@
 
 namespace breath {
 
-//!
-//! support for \c breath::accumulate()
-//
+//!     Support for \c breath::accumulate().
+// -------------------------------------------------------------------------
 template< typename Engine >
 class accumulate_traits< merkle_damgard_machine< Engine > >
 {
@@ -40,8 +39,6 @@ public:
 // FUTURE: template typedef (using) for
 //           accumulator< Hasher, merkle_damgard_accumulation_policy >
 // [gps]
-
-// -----------------------------------------
 
 template< typename Engine >
 merkle_damgard_machine< Engine >::merkle_damgard_machine()
