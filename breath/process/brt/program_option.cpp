@@ -12,7 +12,7 @@
 namespace breath {
 
 program_option_without_value
-                    help( "help", '?', "prints this message" ) ;
+                    help_option( "help", '?', "prints this message" ) ;
 
 program_option_without_value::program_option_without_value(
                             std::string const & name,

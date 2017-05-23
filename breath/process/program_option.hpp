@@ -308,7 +308,7 @@ private:
 } ;
 
 extern program_option_without_value
-                    help ;
+                    help_option ;
 
 }
 

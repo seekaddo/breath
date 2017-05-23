@@ -155,7 +155,7 @@ void
 command_line::parse_check( int argc, char const * const * argv )
 {
     if ( ! m_options.count( "help" ) ) {
-        add( help ) ;
+        add( help_option ) ;
     }
     check( argc, parse( argc, argv ) ) ;
 }
@@ -163,7 +163,7 @@ command_line::parse_check( int argc, char const * const * argv )
 void
 command_line::check( int argc, bool ok )
 {
-    if ( ( argc == 1 && ! ok ) || help.is_set() /*exists( "help" )*/ )
+    if ( ( argc == 1 && ! ok ) || help_option.is_set() /*exists( "help" )*/ )
     {
         std::cerr << usage() ;
         std::exit( program::instance().exit_code() ) ;
