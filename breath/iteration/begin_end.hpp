@@ -74,7 +74,6 @@ cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
     return c.begin() ;
 }
 
-
 //      end:
 //      ----
 //
