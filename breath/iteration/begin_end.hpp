@@ -168,7 +168,7 @@ end( T ( &a )[ n ] ) noexcept
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr T const *
-cend( T const (&a)[ n ] ) noexcept
+cend( T const ( &a )[ n ] ) noexcept
 {
     return a + n ;
 }
