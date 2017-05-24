@@ -9,7 +9,6 @@
 #include "breath/testing/console_reporter.hpp"
 #include "breath/testing/test_exception.hpp"
 #include <ostream>
-#include <iostream>
 #include <typeinfo>
 
 namespace breath {
