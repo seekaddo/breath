@@ -1,5 +1,5 @@
 // =========================================================================
-//                    Copyright 2006-2015 Gennaro Prota
+//                    Copyright 2006-2017 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -27,20 +27,11 @@
         regardless of whether \c a refers to a standard container or
         to a built-in array. See also count.hpp.
 
-
-    [C++0x], [Future]:
-    C++11 should have a version of these, using the auto
-    type-specifier and decltype().
-
-    So perhaps my version will just go with time.
-
-    Last checked in:
-
-      n3242, 28 Feb. 2011 -- 24.6.5 [iterator.range]
-
-    (there seems to be an editorial issue: 24.6 is about stream
-    iterators, and 24.6.5 is a sub-paragraph of it.)
-
+        NOTE: C++11 introduced templates like these and C++17 makes
+        them almost equivalent to ours. New code should use the
+        standard versions and ours should just go with time. The only
+        reason these are still around is that I haven't had time
+        to update the code that uses them.
 */
 
 #include <cstddef>
