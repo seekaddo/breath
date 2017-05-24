@@ -79,7 +79,7 @@ command_line::parse( int argc,  char const * const * argv )
     for ( int i = 1 ; i < argc ; ++ i ) {
         char const          dashdash[] = "--" ;
         if ( begins_with( argv[i], dashdash ) ) {
-            char const *        p = std::strchr( argv[ i ] +
+            char const * const      p= std::strchr( argv[ i ] +
                                             ( breath::count( dashdash ) - 1 ), '=' ) ;
             if ( p != nullptr ) {
                 std::string const       name( argv[ i ] + ( breath::count(dashdash) - 1 ), p ) ;
