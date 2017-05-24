@@ -240,9 +240,10 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
 
     static_assert( codec::required_count <= length_count, "" ) ;
 
-    // encode a base-n representation of amount (n=32, 64, etc.)
-    // (note that we *need* to zero out repr[], as it is typically
-    // larger than the type of the amount parameter)
+    //      Encode a base-n representation of amount (n=32, 64, etc.)
+    //      (note that we *need* to zero out repr[], as it is
+    //      typically larger than the type of the amount parameter)
+    // ---------------------------------------------------------------------
     length_unit_type    repr[ length_count ] = {} ;
     codec::encode( amount, breath::begin( repr ) ) ;
 
@@ -256,12 +257,14 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
         m_bit_count[ i ] = w ;
     }
 
-    // A carry here means that the input message was longer than we
-    // can represent; now, either the specific hashing algorithm
-    // prescribes wrapping (MD5, for instance, does so) or we have to
-    // give up: in the latter case on_length_exhausted will throw an
-    // exception. With numbers such as 2**64 and bigger, this is of
-    // course a very unlikely case.
+    //      A carry here means that the input message was longer than
+    //      we can represent; now, either the specific hashing
+    //      algorithm prescribes wrapping (MD5, for instance, does so)
+    //      or we have to give up: in the latter case
+    //      on_length_exhausted will throw an exception. With numbers
+    //      such as 2**64 and bigger, this is of course a very
+    //      unlikely case.
+    // ---------------------------------------------------------------------
     if ( carry != 0 ) {
         hashing_count::on_length_exhausted( Engine::count_mode ) ;
     }
