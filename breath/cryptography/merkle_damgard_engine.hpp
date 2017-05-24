@@ -29,7 +29,7 @@ namespace breath {
 //      more either "wraps" or results in an exception, as established
 //      by the parameter count_type (in theory there's no guarantee
 //      that the maximum length, if any, is of the form 2**e - 1, but
-//      that's what all one-way hash functions I know of do)
+//      that's what all one-way hash functions I know of do).
 // ------------------------------------------------------------------------
 template< std::size_t         bits_per_digest,
           std::size_t         bits_per_block,
