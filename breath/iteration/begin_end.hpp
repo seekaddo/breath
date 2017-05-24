@@ -53,7 +53,7 @@ namespace breath {
 //!     Same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
-typename C::iterator
+constexpr typename C::iterator
 begin( C & c ) noexcept( noexcept( c.begin() ) )
 {
     return c.begin() ;
@@ -65,7 +65,7 @@ begin( C & c ) noexcept( noexcept( c.begin() ) )
 //!     Same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
-typename C::const_iterator
+constexpr typename C::const_iterator
 begin( C const & c ) noexcept( noexcept( c.begin() ) )
 {
     return c.begin() ;
@@ -77,7 +77,7 @@ begin( C const & c ) noexcept( noexcept( c.begin() ) )
 //!     Same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
-typename C::const_iterator
+constexpr typename C::const_iterator
 cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
 {
     return c.begin() ;
@@ -90,7 +90,7 @@ cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
 //!     Same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
-typename C::iterator
+constexpr typename C::iterator
 end( C & c ) noexcept( noexcept( c.end() ) )
 {
     return c.end() ;
@@ -102,7 +102,7 @@ end( C & c ) noexcept( noexcept( c.end() ) )
 //!     Same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
-typename C::const_iterator
+constexpr typename C::const_iterator
 end( C const & c ) noexcept( noexcept( c.end() ) )
 {
     return c.end() ;
@@ -114,7 +114,7 @@ end( C const & c ) noexcept( noexcept( c.end() ) )
 //!     Same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
-typename C::const_iterator
+constexpr typename C::const_iterator
 cend( C const & c ) noexcept( noexcept( c.end() ) )
 {
     return c.end() ;
@@ -128,7 +128,7 @@ cend( C const & c ) noexcept( noexcept( c.end() ) )
 //!     (Note that there's no need for a "T const overload".)
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
-T *
+constexpr T *
 begin( T ( &a )[ n ] ) noexcept
 {
     return a ;
@@ -140,7 +140,7 @@ begin( T ( &a )[ n ] ) noexcept
 //!     Like container::begin, but for a built-in array.
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
-T const *
+constexpr T const *
 cbegin( T const ( &a )[ n ] ) noexcept
 {
     return a ;
@@ -155,7 +155,7 @@ cbegin( T const ( &a )[ n ] ) noexcept
 //!     here as well.)
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
-T *
+constexpr T *
 end( T ( &a )[ n ] ) noexcept
 {
     return a + n ;
@@ -167,7 +167,7 @@ end( T ( &a )[ n ] ) noexcept
 //!     Like container::end, but for a built-in array.
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
-T const *
+constexpr T const *
 cend( T const (&a)[ n ] ) noexcept
 {
     return a + n ;
