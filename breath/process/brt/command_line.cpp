@@ -60,7 +60,7 @@ command_line::parse( int argc,  char const * const * argv )
     std::map< char, std::string > lookup ;
     for (std::map< std::string, option_base * >::const_iterator it = 
                                                 m_options.cbegin() ;
-                                                it !=m_options.cend() ; ++ it ) {
+                                                it != m_options.cend() ; ++ it ) {
         if ( it->first.length() == 0 ) {
             continue ;
         }
