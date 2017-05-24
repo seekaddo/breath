@@ -79,11 +79,11 @@ command_line::parse( int argc,  char const * const * argv )
     for ( int i = 1 ; i < argc ; ++ i ) {
         char const          dashdash[] = "--" ;
         if ( begins_with( argv[i], dashdash ) ) {
-            char const * const      p= std::strchr( argv[ i ] +
+            char const * const  p = std::strchr( argv[ i ] +
                                             ( breath::count( dashdash ) - 1 ), '=' ) ;
             if ( p != nullptr ) {
-                std::string const       name( argv[ i ] + ( breath::count(dashdash) - 1 ), p ) ;
-                std::string const       value( p + 1 ) ;
+                std::string const   name( argv[ i ] + ( breath::count(dashdash) - 1 ), p ) ;
+                std::string const   value( p + 1 ) ;
                 set_option( name, value ) ;
             } else {
                 std::string name( argv[ i ] + ( breath::count( dashdash ) - 1 ) ) ;
