@@ -46,6 +46,9 @@
 # Visual Studio Code
 .vscode/
 
+# PVS-Studio files
+*.PVS-Studio.*
+
 # =========================
 # Operating system files
 # =========================
