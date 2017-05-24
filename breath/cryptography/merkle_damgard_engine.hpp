@@ -97,7 +97,7 @@ public:
     {
         typedef word_type   len_type[ max_words ] ; // gps typeof( len )
 
-        // Note: a) len[ 0 ] is always the *less* significant word
+        // Note: a) len[ 0 ] is always the *least* significant word
         //       b) the order in which the words are "copied" into
         //          dest, and the order of the bytes within each word,
         //          follow EndianPolicy
