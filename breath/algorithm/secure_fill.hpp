@@ -62,16 +62,16 @@ secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
     }
 }
 
-// FUTURE [gps]:
-// As a result of core issue 226, C++11 is likely to allow
-// default template arguments for function templates; so
-// one day we can change this to
+//      FUTURE [gps]:
+//      As a result of core issue 226, C++11 is likely to allow
+//      default template arguments for function templates; so one day
+//      we can change this to
 //
-//    template< typename ForwardIterator, typename T
-//               = std::iterator_traits< ForwardIterator >::value_type
-//    >
-//    void secure_fill( ForwardIterator begin, ForwardIterator end,
-//                      T const & value = T() )
+//        template< typename ForwardIterator, typename T
+//             = std::iterator_traits< ForwardIterator >::value_type
+//        >
+//        void secure_fill( ForwardIterator begin, ForwardIterator end,
+//                          T const & value = T() )
 // --------------------------------------------------------------------------
 template< typename ForwardIterator, typename T >
 void
