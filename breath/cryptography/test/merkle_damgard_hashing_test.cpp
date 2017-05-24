@@ -7,21 +7,20 @@
 // _________________________________________________________________________
 
 #include "breath/counting/count.hpp"
-#include "breath/testing/testing.hpp"
-
 #include "breath/cryptography/digest.hpp"
 #include "breath/cryptography/md5_hasher.hpp"
 #include "breath/cryptography/sha1_hasher.hpp"
-#include "breath/cryptography/sha256_hasher.hpp"
 #include "breath/cryptography/sha224_hasher.hpp"
+#include "breath/cryptography/sha256_hasher.hpp"
 #include "breath/cryptography/sha512_hasher.hpp"
 #include "breath/iteration/begin_end.hpp"
+#include "breath/testing/testing.hpp"
 #include "breath/text/to_string.hpp"
 
-#include <string>
 #include <cstddef>
-#include <ostream>
 #include <iostream>
+#include <ostream>
+#include <string>
 
 namespace {
 
