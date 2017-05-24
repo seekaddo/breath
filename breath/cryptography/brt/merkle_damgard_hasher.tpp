@@ -83,15 +83,14 @@ template< typename Engine >
 void
 merkle_damgard_machine< Engine >::compress()
 {
-    // Decode the input buffer to a buffer of words, according
-    // to the algorithm endianness (note: direct-init syntax
-    // confuses g++ 3.4.4 in the line initializing sz [gps]),
-    // then forward the actual work to the engine.
+    //      Decode the input buffer to a buffer of words, according
+    //      to the algorithm endianness, then forward the actual work
+    //      to the engine.
     //
-    // We always clear potentially sensitive data (i.e.:
-    // m_input_buffer and m_input_in_words).
-    //
-    std::size_t const   sz = ( block_length / word_length ) ;
+    //      We always clear potentially sensitive data (i.e.:
+    //      m_input_buffer and m_input_in_words).
+    // ---------------------------------------------------------------------
+    std::size_t const   sz = block_length / word_length ;
     word_type           input_in_words[ sz ] ;
 
     for ( std::size_t i = 0 ; i < sz ; ++ i ) {
