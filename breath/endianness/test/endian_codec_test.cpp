@@ -44,7 +44,6 @@ void check()
                                                         &array[ 0 ]
                                                         ) ;
     BREATH_CHECK( u2 == 0x01020304 ) ;
-
 }
 
 }
