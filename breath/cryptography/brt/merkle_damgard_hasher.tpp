@@ -188,7 +188,7 @@ merkle_damgard_machine< Engine >::append( Iter begin, Iter end )
 //       on this scheme, but no hash function that I know of uses
 //       them. [gps]
 //
-// NOTE2: I'm not convinced this interface is good for security
+// NOTE2: I'm not convinced this interface is good for security.
 //        Perhaps we should force the user to take the digest?
 // ---------------------------------------------------------------------------
 template< typename Engine >
