@@ -103,7 +103,7 @@ public:
         //          follow EndianPolicy
         //
         std::size_t const   step( word_width / byte_width ) ;
-        for ( std::size_t i( 0 ) ; i < max_words ; ++ i ) {
+        for ( std::size_t i = 0 ; i < max_words ; ++ i ) {
 
             std::size_t const
                             index(
