@@ -198,7 +198,7 @@ merkle_damgard_machine< Engine >::final()
 {
     enum { r = word_length * length_count } ; // room to append bit-length
 
-    // save a representation in bytes or the unpadded bit-length
+    // save a representation in bytes of the unpadded bit-length
     byte_type message_len[ r ] ;
     Engine::encode_length( m_bit_count, breath::begin( message_len ) ) ;
 
