@@ -14,8 +14,8 @@
 #define BREATH_GUARD_KF72jjCHTZHZqOBTMYHp95Fij2ZyYgaS
 
 #include "breath/meta/width.hpp"
-#include <iterator>
 #include <cstddef>
+#include <iterator>
 
 namespace breath {
 //! \cond
