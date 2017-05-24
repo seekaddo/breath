@@ -95,21 +95,20 @@ public:
     static void encode_length( word_type( &len )[ max_words ],
                                byte_type * dest )
     {
-        typedef word_type
-                        len_type[ max_words ] ; // gps typeof( len )
+        typedef word_type   len_type[ max_words ] ; // gps typeof( len )
 
         // Note: a) len[ 0 ] is always the *less* significant word
         //       b) the order in which the words are "copied" into
         //          dest, and the order of the bytes within each word,
         //          follow EndianPolicy
         //
-        std::size_t const step( word_width / byte_width ) ;
+        std::size_t const   step( word_width / byte_width ) ;
         for ( std::size_t i( 0 ) ; i < max_words ; ++ i ) {
 
             std::size_t const
                             index(
-                step * EndianPolicy::template index< len_type
-                                                   , word_type >( i ) ) ;
+                step * EndianPolicy::template index< len_type,
+                                                     word_type >( i ) ) ;
             breath::endian_store< EndianPolicy >(
                 len[ max_words - 1 - i ], dest + index ) ;
         }
