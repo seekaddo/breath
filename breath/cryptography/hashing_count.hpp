@@ -13,7 +13,7 @@
 #ifndef BREATH_GUARD_TFkXJUZ0hYDDlcmPKYMI9GfC5n42i9kF
 #define BREATH_GUARD_TFkXJUZ0hYDDlcmPKYMI9GfC5n42i9kF
 
-#include <stdexcept>
+#include "breath/diagnostics/exception.hpp"
 
 namespace breath {
 
@@ -31,9 +31,8 @@ public:
     static void         on_length_exhausted( type t ) ;
 } ;
 
-// Intentionally we do not derive from std::length_error
 class hashing_count::exception
-    : public virtual std::logic_error
+    : public virtual breath::exception
 {
 public:
     explicit            exception( char const * what_message ) ;

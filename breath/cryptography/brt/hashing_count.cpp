@@ -11,7 +11,7 @@
 namespace breath {
 
 hashing_count::exception::exception( char const * message )
-    : std::logic_error( message )
+    : breath::exception( message )
 {
 }
 
