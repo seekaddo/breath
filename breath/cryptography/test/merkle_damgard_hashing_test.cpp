@@ -145,6 +145,7 @@ test_vectors< breath::sha224_hasher >::test_entry const
 
 
 // SHA-512 test vectors ------------------------------------------------ //
+
 template<>
 test_vectors< breath::sha512_hasher >::test_entry const
     test_vectors< breath::sha512_hasher >::entries[] =
@@ -168,8 +169,8 @@ test_vectors< breath::sha512_hasher >::test_entry const
 }
 
 
-// Smoke test - Check against a list of known digests
-//
+//      Smoke test - Check against a list of known digests.
+// -------------------------------------------------------------------------
 template< typename Hasher >
 void check_known_digests()
 {
