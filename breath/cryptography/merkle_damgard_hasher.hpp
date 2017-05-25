@@ -82,7 +82,7 @@ public:
 private:
     enum
     {
-        // Lengths
+        //      Lengths
         // -------------------------------------------------------------
         block_length = Engine::block_width / byte_width,
         state_length = Engine::state_width / byte_width,
