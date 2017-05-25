@@ -198,7 +198,7 @@ merkle_damgard_machine< Engine >::final()
     enum { r = word_length * length_count } ; // room to append bit-length
 
     // save a representation in bytes of the unpadded bit-length
-    byte_type message_len[ r ] ;
+    byte_type           message_len[ r ] ;
     Engine::encode_length( m_bit_count, breath::begin( message_len ) ) ;
 
     // append padding
@@ -236,7 +236,7 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
     typedef breath::endian_codec< breath::big_endian_policy,
                                   size_type,
                                   length_unit_type
-                                > codec ;
+                      > codec ;
 
     static_assert( codec::required_count <= length_count, "" ) ;
 
@@ -249,7 +249,8 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
 
     int                 carry( 0 ) ;
     for ( std::size_t i = 0 ; i < length_count ; ++ i ) {
-        length_unit_type const w( m_bit_count[ i ] + repr[ i ] + carry ) ;
+        length_unit_type const
+                            w( m_bit_count[ i ] + repr[ i ] + carry ) ;
         carry = w < repr[ i ]
                     ? 1
                     : 0
