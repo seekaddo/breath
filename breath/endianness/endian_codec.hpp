@@ -86,6 +86,9 @@ public:
     }
 } ;
 
+//      endian_codec<>:
+//      ---------------
+//
 //!     Converts generic values to/from (byte-)sequence
 //!     representations.
 //!
