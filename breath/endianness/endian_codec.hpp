@@ -143,8 +143,8 @@ public:
             ] = static_cast< Byte >( value ) ;
         return next::encode(
                    // '* (n > 1)' silences spurious warnings
-                   n > 1 ? ( value >> shift * (n > 1) ) : 0
-                 , dest ) ;
+                   n > 1 ? ( value >> shift * (n > 1) ) : 0,
+                   dest ) ;
     }
 
     template< typename ByteRandomIter >
