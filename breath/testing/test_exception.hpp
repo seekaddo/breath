@@ -18,7 +18,8 @@
 
 namespace breath {
 
-class test_exception : public virtual exception
+class test_exception
+    : public virtual exception
 {
 public:
                         test_exception( char const * filename,
