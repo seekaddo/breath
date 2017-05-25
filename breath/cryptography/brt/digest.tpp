@@ -87,12 +87,13 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
 
     static_assert(
                     0 < bits_per_digit && bits_per_digit < bits_per_byte
-                    && sizeof digits == ( 2 + mask )
-                    , "wrong bits_per_digit and/or bits_per_byte" ) ;
+                      && sizeof digits == ( 2 + mask ),
+                    "wrong bits_per_digit and/or bits_per_byte" ) ;
 
-    typedef typename breath::digest< Hasher >::const_iterator it_type ;
+    typedef typename breath::digest< Hasher >::const_iterator
+                        it_type ;
     for ( it_type it( d.begin() ) ; it != d.end() ; ++ it ) {
-        for ( int t( bits_per_byte - bits_per_digit ) ;
+        for ( int t = bits_per_byte - bits_per_digit ;
                 t >= 0 ;
                 t -= bits_per_digit ) {
             os.put( os.widen( digits[ *it >> t & mask ] ) ) ;
