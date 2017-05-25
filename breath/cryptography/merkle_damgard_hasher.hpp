@@ -67,7 +67,8 @@ class               digest ;
 template< typename Engine >
 class merkle_damgard_machine
 {
-    //      These are basically the algorithm (<=> the Engine's) "traits"
+    //      These are basically the algorithm (<=> the Engine's)
+    //      "traits".
     // -----------------------------------------------------------------
 public:
     enum
