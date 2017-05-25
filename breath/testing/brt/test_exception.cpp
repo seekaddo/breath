@@ -16,10 +16,10 @@ test_exception::test_exception( char const * filename,
 {
 }
 
-test_exception::test_exception( std::string const & str,
+test_exception::test_exception( std::string const & message,
                                 char const * filename,
                                 unsigned long line ) noexcept
-    : exception( str ), m_filename( filename ), m_line( line )
+    : exception( message ), m_filename( filename ), m_line( line )
 {
 }
 

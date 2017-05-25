@@ -23,7 +23,7 @@ class test_exception : public exception
 public:
                         test_exception( char const * filename,
                                         unsigned long line ) noexcept ;
-                        test_exception( std::string const &,
+                        test_exception( std::string const & message,
                                         char const * filename,
                                         unsigned long line ) noexcept ;
     char const *        filename() const noexcept ;
