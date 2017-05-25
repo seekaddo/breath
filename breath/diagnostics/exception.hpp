@@ -55,7 +55,7 @@ public:
 
 private:
     enum { what_message_max_size = 1023 } ;
-    char                m_what_message[ what_message_max_size] ;
+    char                m_what_message[ what_message_max_size ] ;
 } ;
 
 }
