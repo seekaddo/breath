@@ -24,6 +24,8 @@ template< typename Hasher >
 class               digest ;
 
 
+//      merkle_damgard_machine:
+//      -----------------------
 //
 //!     This template models a simple state machine for
 //!     Merkle-Damgard's construction of unkeyed hash functions.
