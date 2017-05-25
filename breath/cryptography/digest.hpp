@@ -18,13 +18,12 @@
 
 namespace breath {
 
-// =======================================================================
 //      Digest template:
-//      ================
-//!
+//      ----------------
+//
 //!     A digest object represents the result of applying a digest
 //!     algorithm to a given input sequence.
-//!
+// -------------------------------------------------------------------------
 template < typename Hasher >
 class digest
     : private equality_comparison< digest< Hasher > >
