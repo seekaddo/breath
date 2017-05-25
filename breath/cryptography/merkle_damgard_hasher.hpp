@@ -63,13 +63,13 @@ class               digest ;
 //          (Note that internally we already keep the *bit* count
 //          of the input, not the byte count, so extending it
 //          should be fairly straightforward - gps )
-// ---------------------------------------------------------------------
+// -------------------------------------------------------------------------
 template< typename Engine >
 class merkle_damgard_machine
 {
     //      These are basically the algorithm (<=> the Engine's)
     //      "traits".
-    // -----------------------------------------------------------------
+    // ---------------------------------------------------------------------
 public:
     enum
     {
@@ -80,10 +80,10 @@ public:
     } ;
 
 private:
+    //      Lengths
+    // ---------------------------------------------------------------------
     enum
     {
-        //      Lengths
-        // -------------------------------------------------------------
         block_length = Engine::block_width / byte_width,
         state_length = Engine::state_width / byte_width,
         word_length  = word_width / byte_width,
