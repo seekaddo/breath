@@ -179,9 +179,8 @@ template< typename EndianPolicy,
 std::size_t const
 endian_codec< EndianPolicy, T, Byte, n >::required_count ;
 
-//!
-//! Convenience functions ( experimental - gps )
-//!
+//!     Convenience functions
+// -------------------------------------------------------------------------
 template< typename EndianPolicy, typename T, typename ByteRandomIter >
 T
 endian_store( T const & value, ByteRandomIter it )
