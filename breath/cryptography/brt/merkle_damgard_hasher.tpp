@@ -6,12 +6,12 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include "breath/iteration/begin_end.hpp"
-#include "breath/endianness/endian_codec.hpp"
 #include "breath/algorithm/secure_fill.hpp"
+#include "breath/endianness/endian_codec.hpp"
+#include "breath/iteration/begin_end.hpp"
 
-#include <iterator>
 #include <algorithm>
+#include <iterator>
 
 namespace breath {
 
