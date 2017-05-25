@@ -78,6 +78,7 @@ public:
         word_width   = Engine::word_width,
         digest_width = Engine::digest_width
     } ;
+
 private:
     enum
     {
