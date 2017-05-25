@@ -62,8 +62,8 @@ struct cpuid_result
 // -------------------------------------------------------------------------
 bool                is_cpuid_supported() ;
 
-//      get_cpuid_info:
-//      ---------------
+//      get_cpuid_info():
+//      -----------------
 //
 //!     Namespace: global (see above)
 //!
