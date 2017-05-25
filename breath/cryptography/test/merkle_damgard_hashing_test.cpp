@@ -196,7 +196,7 @@ void check_known_digests()
         digest< Hasher > const
                             d( hasher ) ;
         std::string const   result = breath::to_string( d ) ;
-        BREATH_CHECK( result == entry.expected );
+        BREATH_CHECK( result == entry.expected ) ;
     }
 }
 
