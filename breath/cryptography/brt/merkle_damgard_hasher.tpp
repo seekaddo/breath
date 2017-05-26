@@ -233,7 +233,7 @@ void
 merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
 {
     typedef std::size_t size_type ;
-    typedef breath::endian_codec< breath::big_endian_policy,
+    typedef breath::endian_codec< breath::little_endian_policy,
                                   size_type,
                                   length_unit_type
                       > codec ;
