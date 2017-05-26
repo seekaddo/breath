@@ -18,7 +18,7 @@ libraries = advapi32.lib
 all: $(target)
 
 
-$(target) : main$(object_file_suffix) macro_name$(object_file_suffix) entropy_source$(object_file_suffix) subrange_max$(object_file_suffix) last_api_error$(object_file_suffix) program_status$(object_file_suffix) exit_code$(object_file_suffix) exception$(object_file_suffix) assert$(object_file_suffix) base_filename$(object_file_suffix) allowed_path_separators$(object_file_suffix)
+$(target) : main$(object_file_suffix) macro_name$(object_file_suffix) entropy_source$(object_file_suffix) subrange_max$(object_file_suffix) last_api_error$(object_file_suffix) program$(object_file_suffix) exit_code$(object_file_suffix) exception$(object_file_suffix) assert$(object_file_suffix) base_filename$(object_file_suffix) allowed_path_separators$(object_file_suffix) command_line$(object_file_suffix) program_option$(object_file_suffix) begins_with$(object_file_suffix)
 	$(link_to_exec)
 
 
@@ -52,7 +52,7 @@ last_api_error$(object_file_suffix): ../../breath/diagnostics/brt/last_api_error
 	$(compile_to_object)
 
 
-program_status$(object_file_suffix): ../../breath/process/brt/program_status.cpp
+program$(object_file_suffix): ../../breath/process/brt/program.cpp
 	$(compile_to_object)
 
 exit_code$(object_file_suffix): ../../breath/process/brt/exit_code.cpp
@@ -68,4 +68,13 @@ base_filename$(object_file_suffix): ../../breath/path/brt/base_filename.cpp
 	$(compile_to_object)
 
 allowed_path_separators$(object_file_suffix): ../../breath/path/brt/allowed_path_separators.cpp
+	$(compile_to_object)
+
+command_line$(object_file_suffix): ../../breath/process/brt/command_line.cpp
+	$(compile_to_object)
+
+program_option$(object_file_suffix): ../../breath/process/brt/program_option.cpp
+	$(compile_to_object)
+
+begins_with$(object_file_suffix): ../../breath/text/brt/begins_with.cpp
 	$(compile_to_object)
