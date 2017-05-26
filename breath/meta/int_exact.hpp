@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief A generic version of C99's exact-width integer types (intN_t).
+//!     \brief A generic version of C99's exact-width integer types
+//!            (intN_t).
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
