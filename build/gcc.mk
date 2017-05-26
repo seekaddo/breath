@@ -75,7 +75,6 @@ cpp_basic_options += -Wshadow               \
                      -Wuseless-cast         \
                                             \
                      -Wnoexcept             \
-                     -Wnon-virtual-dtor     \
                      -Wstrict-null-sentinel \
                      -Woverloaded-virtual
 
