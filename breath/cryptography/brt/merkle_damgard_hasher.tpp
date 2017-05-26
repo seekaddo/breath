@@ -240,9 +240,9 @@ merkle_damgard_machine< Engine >::increase_count( std::size_t amount )
 
     static_assert( codec::required_count <= length_count, "" ) ;
 
-    //      Encode a base-n representation of amount (n=32, 64, etc.)
-    //      (note that we *need* to zero out repr[], as it is
-    //      typically larger than the type of the amount parameter)
+    //      Encode a base-n representation of amount (n=32, 64, etc.);
+    //      note that we *need* to zero out repr[], as it is
+    //      typically larger than the type of the amount parameter.
     // ---------------------------------------------------------------------
     length_unit_type    repr[ length_count ] = {} ;
     codec::encode( amount, breath::begin( repr ) ) ;
