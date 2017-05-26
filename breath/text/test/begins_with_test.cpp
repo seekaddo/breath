@@ -35,6 +35,7 @@ main()
     DO_TEST( ! begins_with( "          ", "\t" ) ) ;
 
     DO_TEST(   begins_with( "abc", "ab"   ) ) ;
+    DO_TEST( ! begins_with( "ab", "abc"   ) ) ;
     DO_TEST( ! begins_with( "bcd", "abcd" ) ) ;
 
     // check that embedded NULs are handled correctly
