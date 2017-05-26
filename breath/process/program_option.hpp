@@ -25,6 +25,7 @@ class option_reader
 {
 public:
     virtual T           operator()( std::string const & s ) const = 0 ;
+    virtual             ~option_reader() = default ;
 } ;
 
 template < typename T >
@@ -34,6 +35,8 @@ struct default_reader : public option_reader< T >
   {
     return breath::from_string< T >( str ) ;
   }
+
+  virtual               ~default_reader() = default ;
 } ;
 
 template< typename T >
