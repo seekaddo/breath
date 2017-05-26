@@ -9,8 +9,10 @@
 #include "breath/endianness/endian_codec.hpp"
 #include "breath/testing/testing.hpp"
 
+#include <cstddef>
 #include <cstdint>
 #include <iostream>
+#include <iterator>
 #include <ostream>
 
 namespace {
@@ -46,6 +48,26 @@ void check()
     BREATH_CHECK( u2 == 0x01020304 ) ;
 }
 
+void
+check2()
+{
+    using               breath::big_endian_policy ;
+    using               breath::little_endian_policy ;
+
+    typedef breath::endian_codec< breath::big_endian_policy,
+                                  std::size_t,
+                                  unsigned int
+                      > codec_type ;
+    std::size_t const   amount = 24 ;
+    unsigned int        repr[ 16 ] = {} ;
+    codec_type::encode( amount, std::begin( repr ) ) ;
+
+    //      std::size_t changes size in 64-bit mode, so take into
+    //      account that the representation may "enlarge".
+    // ---------------------------------------------------------------------
+    BREATH_CHECK( repr[ sizeof amount / sizeof repr[ 0 ] - 1 ] == 24 ) ;
+}
+
 }
 
 int
@@ -56,7 +78,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { check } ) ;
+    return test_runner::instance().run( { check, check2 } ) ;
 }
 
 // Local Variables:
