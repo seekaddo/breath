@@ -43,7 +43,7 @@ public:
                         entries[] ;
 };
 
-// MD5 test vectors ---------------------------------------------------- //
+// MD5 test vectors ----------------------------------------------------- //
 
 template<>
 test_vectors< breath::md5_hasher >::test_entry const
@@ -91,7 +91,7 @@ test_vectors< breath::md5_hasher >::test_entry const
 } ;
 
 
-// SHA-1 test vectors -------------------------------------------------- //
+// SHA-1 test vectors --------------------------------------------------- //
 
 template<>
 test_vectors< breath::sha1_hasher >::test_entry const
@@ -110,7 +110,7 @@ test_vectors< breath::sha1_hasher >::test_entry const
         "de9f2c7fd25e1b3afad3e85a0bd17d9b100db4b3" }
 } ;
 
-// SHA-256 test vectors ------------------------------------------------ //
+// SHA-256 test vectors ------------------------------------------------- //
 
 template<>
 test_vectors< breath::sha256_hasher >::test_entry const
@@ -132,7 +132,7 @@ test_vectors< breath::sha256_hasher >::test_entry const
         ( 1ul << 19 ) - 1 }
 } ;
 
-// SHA-224 test vectors ------------------------------------------------ //
+// SHA-224 test vectors ------------------------------------------------- //
 
 template<>
 test_vectors< breath::sha224_hasher >::test_entry const
@@ -144,7 +144,7 @@ test_vectors< breath::sha224_hasher >::test_entry const
 } ;
 
 
-// SHA-512 test vectors ------------------------------------------------ //
+// SHA-512 test vectors ------------------------------------------------- //
 
 template<>
 test_vectors< breath::sha512_hasher >::test_entry const
