@@ -26,7 +26,7 @@ include $(root)/build/$(compiler).mk
 define do_for_all_subdirs
     for x in $(subdirs) ; \
     do \
-    $(MAKE) -C $$x $@ || exit $$? ; \
+        $(MAKE) -C $$x $@ || exit $$? ; \
     done
 endef
 
