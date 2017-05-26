@@ -55,7 +55,7 @@ public:
     //!     \c EXIT_SUCCESS or \c EXIT_FAILURE.
     //!
     //!     Important: this function also flushes \c std::cout, and
-    //!     generates an error if the flush fails.
+    //!     calls \c declare_error() if the flush fails.
     // ----------------------------------------------------------------------
     int                 exit_code() const ;
 
