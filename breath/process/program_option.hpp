@@ -100,16 +100,6 @@ oneof_reader< T > oneof( T a1 )
     return ret ;
 }
 
-#if 0
-template< typename T, typename ... Args >
-oneof_reader< T > oneof( T a1, Args... a )
-{
-    oneof_reader< T >   ret ;
-    ret.add( a1 ) ;
-    return oneof( a... ) ;
-}
-#endif
-
 template <class T>
 oneof_reader<T> oneof(T a1, T a2)
 {
