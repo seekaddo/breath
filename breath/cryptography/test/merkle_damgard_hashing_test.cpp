@@ -208,7 +208,8 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    test_descriptor     desc[] =
+    test_descriptor const
+                        desc[] =
     {
         check_known_digests< breath::   md5_hasher > ,
         check_known_digests< breath::  sha1_hasher > ,
