@@ -25,18 +25,19 @@ class option_reader
 {
 public:
     virtual T           operator()( std::string const & s ) const = 0 ;
-    virtual             ~option_reader() = default ;
+    virtual             ~option_reader() noexcept = default ;
 } ;
 
 template < typename T >
-struct default_reader : public option_reader< T >
+class default_reader : public option_reader< T >
 {
-  T                     operator()( std::string const & str ) const
-  {
-    return breath::from_string< T >( str ) ;
-  }
+public:
+    virtual T           operator()( std::string const & str ) const override
+    {
+        return breath::from_string< T >( str ) ;
+    }
 
-  virtual               ~default_reader() = default ;
+    virtual             ~default_reader() noexcept = default ;
 } ;
 
 template< typename T >
@@ -45,17 +46,17 @@ class range_reader : public option_reader< T >
 public:
                         range_reader( T const & low, T const & high )
                             : m_low( low ), m_high( high )
-  {
-  }
-
-  T                     operator()( std::string const & s ) const
-  {
-    T const ret = default_reader< T >()( s ) ;
-    if ( ret < m_low || ret > m_high ) {
-        throw breath::command_line_error( "range_error" ) ;
+    {
     }
-    return ret;
-  }
+
+    virtual T           operator()( std::string const & s ) const override
+    {
+        T const         ret = default_reader< T >()( s ) ;
+        if ( ret < m_low || ret > m_high ) {
+            throw breath::command_line_error( "range_error" ) ;
+        }
+        return ret;
+    }
 
 private:
   T                     m_low ;
@@ -73,7 +74,7 @@ template < typename T >
 class oneof_reader : public option_reader< T >
 {
 public:
-    T                     operator()( std::string const & s ) const
+    virtual T           operator()( std::string const & s ) const override
     {
         T const         ret = default_reader< T >()( s ) ;
         if ( std::find( m_alt.cbegin(), m_alt.cend(), ret ) == m_alt.cend() ) {
@@ -94,9 +95,9 @@ private:
 template< typename T >
 oneof_reader< T > oneof( T a1 )
 {
-  oneof_reader< T >     ret ;
-  ret.add( a1 ) ;
-  return ret ;
+    oneof_reader< T >   ret ;
+    ret.add( a1 ) ;
+    return ret ;
 }
 
 #if 0
@@ -112,118 +113,119 @@ oneof_reader< T > oneof( T a1, Args... a )
 template <class T>
 oneof_reader<T> oneof(T a1, T a2)
 {
-  oneof_reader<T> ret;
-  ret.add(a1);
-  ret.add(a2);
-  return ret;
+    oneof_reader< T >   ret ;
+    ret.add(a1) ;
+    ret.add(a2) ;
+    return ret ;
 }
 
 template <class T>
 oneof_reader<T> oneof(T a1, T a2, T a3)
 {
-  oneof_reader< T >     ret ;
-  ret.add( a1 ) ;
-  ret.add( a2 ) ;
-  ret.add( a3 ) ;
-  return ret ;
+    oneof_reader< T >   ret ;
+    ret.add( a1 ) ;
+    ret.add( a2 ) ;
+    ret.add( a3 ) ;
+    return ret ;
 }
 
 template < typename T >
 oneof_reader< T > oneof( T a1, T a2, T a3, T a4 )
 {
-  oneof_reader< T >     ret;
-  ret.add( a1 ) ;
-  ret.add( a2 ) ;
-  ret.add( a3 ) ;
-  ret.add( a4 ) ;
-  return ret ;
+    oneof_reader< T >   ret ;
+    ret.add( a1 ) ;
+    ret.add( a2 ) ;
+    ret.add( a3 ) ;
+    ret.add( a4 ) ;
+    return ret ;
 }
 
 template <class T>
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5)
 {
-  oneof_reader<T> ret;
-  ret.add(a1);
-  ret.add(a2);
-  ret.add(a3);
-  ret.add(a4);
-  ret.add(a5);
-  return ret;
+    oneof_reader< T >   ret ;
+    ret.add(a1) ;
+    ret.add(a2) ;
+    ret.add(a3) ;
+    ret.add(a4) ;
+    ret.add(a5) ;
+    return ret ;
 }
 
 template <class T>
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6)
 {
-  oneof_reader<T> ret;
-  ret.add(a1);
-  ret.add(a2);
-  ret.add(a3);
-  ret.add(a4);
-  ret.add(a5);
-  ret.add(a6);
-  return ret;
+    oneof_reader< T >   ret ;
+    ret.add(a1) ;
+    ret.add(a2) ;
+    ret.add(a3) ;
+    ret.add(a4) ;
+    ret.add(a5) ;
+    ret.add(a6) ;
+    return ret ;
 }
 
 template <class T>
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7)
 {
-  oneof_reader<T> ret;
-  ret.add(a1);
-  ret.add(a2);
-  ret.add(a3);
-  ret.add(a4);
-  ret.add(a5);
-  ret.add(a6);
-  ret.add(a7);
-  return ret;
+    oneof_reader< T >   ret ;
+    ret.add(a1) ;
+    ret.add(a2) ;
+    ret.add(a3) ;
+    ret.add(a4) ;
+    ret.add(a5) ;
+    ret.add(a6) ;
+    ret.add(a7) ;
+    return ret ;
 }
 
 template <class T>
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7, T a8)
 {
-  oneof_reader<T> ret;
-  ret.add(a1);
-  ret.add(a2);
-  ret.add(a3);
-  ret.add(a4);
-  ret.add(a5);
-  ret.add(a6);
-  ret.add(a7);
-  ret.add(a8);
-  return ret;
+    oneof_reader< T >   ret ;
+    ret.add(a1) ;
+    ret.add(a2) ;
+    ret.add(a3) ;
+    ret.add(a4) ;
+    ret.add(a5) ;
+    ret.add(a6) ;
+    ret.add(a7) ;
+    ret.add(a8) ;
+    return ret ;
 }
 
 template <class T>
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7, T a8, T a9)
 {
-  oneof_reader<T> ret;
-  ret.add(a1);
-  ret.add(a2);
-  ret.add(a3);
-  ret.add(a4);
-  ret.add(a5);
-  ret.add(a6);
-  ret.add(a7);
-  ret.add(a8);
-  ret.add(a9);
-  return ret;
+    oneof_reader< T >   ret ;
+    ret.add(a1) ;
+    ret.add(a2) ;
+    ret.add(a3) ;
+    ret.add(a4) ;
+    ret.add(a5) ;
+    ret.add(a6) ;
+    ret.add(a7) ;
+    ret.add(a8) ;
+    ret.add(a9) ;
+    return ret ;
 }
 
 template <class T>
-oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7, T a8, T a9, T a10)
+oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7, T a8, T a9,
+                                                                      T a10)
 {
-  oneof_reader<T> ret;
-  ret.add(a1);
-  ret.add(a2);
-  ret.add(a3);
-  ret.add(a4);
-  ret.add(a5);
-  ret.add(a6);
-  ret.add(a7);
-  ret.add(a8);
-  ret.add(a9);
-  ret.add(a10);
-  return ret;
+    oneof_reader< T >   ret ;
+    ret.add(a1) ;
+    ret.add(a2) ;
+    ret.add(a3) ;
+    ret.add(a4) ;
+    ret.add(a5) ;
+    ret.add(a6) ;
+    ret.add(a7) ;
+    ret.add(a8) ;
+    ret.add(a9) ;
+    ret.add(a10) ;
+    return ret ;
 }
 
 class option_base
