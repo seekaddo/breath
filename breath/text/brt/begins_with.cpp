@@ -12,6 +12,8 @@
 
 namespace breath {
 
+//      Note: if with.length() == 0 this always returns true.
+// -------------------------------------------------------------------------
 bool
 begins_with( std::string const & str, std::string const & with )
 {
