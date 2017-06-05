@@ -9,7 +9,6 @@
 #include "breath/algorithm/secure_fill.hpp"
 #include <algorithm>
 
-
 namespace breath {
 
 template< typename T, std::size_t n >
@@ -91,6 +90,7 @@ sensitive_buffer< T[ n ] >::operator []( size_type index ) const
 }
 
 }
+
 // Local Variables:
 // mode: c++
 // indent-tabs-mode: nil
