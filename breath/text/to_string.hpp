@@ -10,6 +10,9 @@
 //!     \brief Converts an object to its textual representation.
 // -------------------------------------------------------------------------
 
+#ifndef BREATH_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
+#define BREATH_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
+
 #include <string>
 
 namespace breath {
@@ -20,6 +23,7 @@ std::string         to_string( OutputStreamable const & ) ;
 }
 
 #include "brt/to_string.tpp"
+#endif
 
 // Local Variables:
 // mode: c++
