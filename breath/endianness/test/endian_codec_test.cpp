@@ -51,9 +51,6 @@ void check()
 void
 check2()
 {
-    using               breath::big_endian_policy ;
-    using               breath::little_endian_policy ;
-
     typedef breath::endian_codec< breath::big_endian_policy,
                                   std::size_t,
                                   unsigned int
