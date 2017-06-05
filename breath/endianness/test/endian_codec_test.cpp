@@ -43,7 +43,7 @@ void check()
 
     std::uint32_t const u2 = breath::endian_load< big_endian_policy,
                                                   std::uint32_t >(
-                                                        &array[ 0 ]
+                                                            &array[ 0 ]
                                                         ) ;
     BREATH_CHECK( u2 == value ) ;
 }
