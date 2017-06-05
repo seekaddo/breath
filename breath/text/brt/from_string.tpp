@@ -7,8 +7,9 @@
 // _________________________________________________________________________
 
 #include "breath/diagnostics/exception.hpp"
-#include <sstream>
+
 #include <istream>
+#include <sstream>
 
 namespace breath {
 
