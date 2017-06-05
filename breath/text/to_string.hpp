@@ -14,7 +14,7 @@
 
 namespace breath {
 
-template <typename OutputStreamable >
+template< typename OutputStreamable >
 std::string         to_string( OutputStreamable const & ) ;
 
 }
