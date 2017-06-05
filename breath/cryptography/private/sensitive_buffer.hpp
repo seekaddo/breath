@@ -17,9 +17,9 @@
 
 namespace breath {
 
-// This template is a quick hack to be replaced with a more
-// complete solution
-//
+//      This template is a quick hack to be replaced with a more
+//      complete solution
+// -------------------------------------------------------------------------
 template< typename T >
 class sensitive_buffer ;
 
@@ -37,7 +37,6 @@ public:
 
 public:
 
-    // construction
                         sensitive_buffer() ;
 
     template< typename InputIter >
@@ -45,7 +44,6 @@ public:
 
     explicit            sensitive_buffer( T const ( &src )[ n ] ) ;
 
-    // destruction
                         ~sensitive_buffer() noexcept ;
 
     // iteration and access
