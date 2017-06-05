@@ -7,11 +7,11 @@
 // _________________________________________________________________________
 
 #include <array>
-#include <iostream>
-#include <ostream>
-#include <iterator>
 #include <cstddef>
 #include <iomanip>
+#include <iostream>
+#include <iterator>
+#include <ostream>
 
 int
 main()
