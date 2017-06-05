@@ -13,7 +13,7 @@ constexpr typename std::enable_if< ! std::numeric_limits< T >::is_signed,
                                    bool >::type
                     is_power_of_two( T x ) noexcept
 {
-    return x > 0 && ( x & ( x-1 ) ) == 0 ;
+    return ( x & ( x-1 ) ) == 0 && x > 0 ;
 }
 
 }
