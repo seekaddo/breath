@@ -12,7 +12,12 @@
 
 namespace breath {
 
-//      Note: if with.length() == 0 this always returns true.
+//      Note: if 'with' is empty this always returns true. (Actually,
+//            our unit tests verify that this is the case but, to me,
+//            the standard is not clear about the return value of
+//            std::equal() on empty ranges; I've filed a DR about it:
+//              <http://cplusplus.github.io/LWG/lwg-active.html#2967>.
+//            )
 // -------------------------------------------------------------------------
 bool
 begins_with( std::string const & str, std::string const & with )

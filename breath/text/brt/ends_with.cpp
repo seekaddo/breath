@@ -12,7 +12,8 @@
 
 namespace breath {
 
-//      Note: if with.length() == 0 this always returns true.
+//      Note: if 'with' is empty this always returns true. (See the
+//            analogous comment in begins_with.cpp.)
 // -------------------------------------------------------------------------
 bool
 ends_with( std::string const & str, std::string const & with )
