@@ -33,7 +33,7 @@ void check()
                                                  std::uint32_t >(
                                                             &array[ 0 ]
                                                             ) ;
-    BREATH_CHECK( u == 0x01020304 ) ;
+    BREATH_CHECK( u == value ) ;
 
     breath::endian_store< big_endian_policy >( value, &array[ 0 ] ) ;
     BREATH_CHECK( array[ 0 ] == 1 ) ;
@@ -45,7 +45,7 @@ void check()
                                                   std::uint32_t >(
                                                         &array[ 0 ]
                                                         ) ;
-    BREATH_CHECK( u2 == 0x01020304 ) ;
+    BREATH_CHECK( u2 == value ) ;
 }
 
 void
