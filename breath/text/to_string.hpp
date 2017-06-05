@@ -19,7 +19,7 @@ std::string         to_string( OutputStreamable const & ) ;
 
 }
 
-#include "breath/text/brt/to_string.tpp"
+#include "brt/to_string.tpp"
 
 // Local Variables:
 // mode: c++
