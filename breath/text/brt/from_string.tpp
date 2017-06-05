@@ -4,7 +4,6 @@
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
-//
 // _________________________________________________________________________
 
 #include "breath/diagnostics/exception.hpp"
