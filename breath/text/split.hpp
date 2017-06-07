@@ -10,7 +10,7 @@
 //!     \brief Splits a \c std::string into a \c std::vector of strings.
 // -------------------------------------------------------------------------
 
-#include<string>
+#include <string>
 #include <vector>
 
 namespace breath {
