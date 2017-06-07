@@ -35,11 +35,11 @@ main()
 
     os << "static constexpr int table[] = \n{\n    " ;
     for ( int i = 0 ; i < size ; ++ i ) {
-        os << std::setw(2) << table[ i ] ;
+        os << std::setw( 2 ) << table[ i ] ;
         if ( i != ( size - 1 ) ) {
             os << ", " ;
         }
-        if ( (i+1) % entries_per_row == 0 ) {
+        if ( ( i + 1 ) % entries_per_row == 0 ) {
             os << "\n    " ;
         }
     }
