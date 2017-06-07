@@ -26,7 +26,7 @@ public:
 
     //!     A typedef for <code>select_< ! condition, T, U ></code>.
     // ---------------------------------------------------------------------
-    typedef select_< !condition, T, U > opposite ;
+    typedef select_< ! condition, T, U > opposite ;
 } ;
 
 template< typename T, typename U >
