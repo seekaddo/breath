@@ -18,7 +18,7 @@
 namespace breath {
 
 //      This template is a quick hack to be replaced with a more
-//      complete solution
+//      complete solution.
 // -------------------------------------------------------------------------
 template< typename T >
 class sensitive_buffer ;
