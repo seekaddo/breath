@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Tells whether a type uses a two's complement representation.
+//!     \brief Tells whether a type uses a two's complement
+//!            representation.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_tWPolV5CdSeUDR2dhiin3jIbwnOhvgwW
