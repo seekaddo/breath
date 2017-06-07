@@ -22,7 +22,7 @@ split( std::string const & s, char c )
             ++ it ;
         }
         result.push_back( std::string( curr, it ) ) ;
-        if ( it != s.cend() && *it == c ) {
+        if ( it != s.cend() ) {
             ++ it ;
         }
     }
