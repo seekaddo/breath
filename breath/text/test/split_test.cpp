@@ -22,6 +22,13 @@ main()
     using breath::split ;
 
     {
+        std::string         s ;
+        std::vector< std::string >
+                            v = split( s, '\0' ) ;
+        DO_TEST( v.size() == 0 ) ;
+    }
+
+    {
         std::string         s( "abcde" ) ;
         std::vector< std::string > v = split( s, '\0' ) ;
 
