@@ -22,6 +22,9 @@
 namespace breath {
 namespace adl_shield {
 
+//      equality_comparison<>:
+//      ----------------------
+//
 //!     The class template \c equality_comparison<> provides <code>
 //!     operator ==</code> and <code>operator != </code> as namespace
 //!     scope functions whose name is associated "on demand" (i.e. at
@@ -58,7 +61,7 @@ namespace adl_shield {
 //!     noun-based name (as opposed, for instance, to
 //!     "equality_comparable"), consistently with the general naming
 //!     style of Breath C++ components.
-//!
+// -------------------------------------------------------------------------
 template< typename T >
 class equality_comparison
 {
