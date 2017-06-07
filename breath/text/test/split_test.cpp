@@ -19,7 +19,7 @@
 int
 main()
 {
-    using breath::split ;
+    using               breath::split ;
 
     {
         std::string         s ;
