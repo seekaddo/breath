@@ -11,7 +11,7 @@ NOTES:
   -- exceptionally, no line wrapping is used for the license text. Use the
      line-wrapping features in your editor, or open this file in a web browser
 
-  -- a copyright symbol has been added for the copyright notice; there is no
+  -- a copyright symbol has been added for the copyright notices; there is no
      comma after the years
 
 --------------------------------------------------------------------------------
