@@ -83,7 +83,7 @@ program::parse_command_line( int argc, char const * const * argv,
 
     std::string const   name = ! program_name.empty()
                                     ? program_name
-                                    : argc > 0
+                                    : ( argc > 0 && argv[ 0 ][ 0 ] != '\0' )
                                         ? argv[ 0 ]
                                         : "<unknown program>"
                                 ;
