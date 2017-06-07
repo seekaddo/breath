@@ -35,8 +35,6 @@ public:
     typedef       T *   iterator ;
     typedef T const *   const_iterator ;
 
-public:
-
                         sensitive_buffer() ;
 
     template< typename InputIter >
