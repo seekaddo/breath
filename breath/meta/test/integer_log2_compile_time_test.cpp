@@ -68,7 +68,6 @@ main()
     const int dummy = log2_checker< recursion_start, width - 1 >::dummy ;
 
     static_cast< void >( dummy ) ;
-
 }
 
 // Local Variables:
