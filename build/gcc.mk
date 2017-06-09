@@ -72,7 +72,6 @@ cpp_basic_options += -Wshadow               \
                                             \
                      -Wsync-nand            \
                      -Wold-style-cast       \
-                     -Wuseless-cast         \
                                             \
                      -Wnoexcept             \
                      -Wnon-virtual-dtor     \
