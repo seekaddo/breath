@@ -91,7 +91,7 @@ operator <<( std::ostream & dest, printable_string const & ps )
                 static_assert( CHAR_BIT == 8, "please, adjust the setw()"
                                                                     " below") ;
                 dest << "\\x"
-                     << std::setw(2)
+                     << std::setw( 2 )
                      << static_cast< unsigned int >(
                          static_cast< unsigned char>( c ) ) ;
             }
