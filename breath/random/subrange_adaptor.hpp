@@ -30,7 +30,7 @@ public:
     typedef typename Engine::result_type
                         result_type ;
 
-    void                operator =(subrange_adaptor const & ) = delete ;
+    void                operator =( subrange_adaptor const & ) = delete ;
 
     //!     Constructs a subrange adaptor from a given Engine and a new max
     //!     value.
