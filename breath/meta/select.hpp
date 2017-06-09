@@ -8,6 +8,9 @@
 //
 //!     \file
 //!     \brief Compile-time selection between types.
+//!
+//!     In C++11 and later, this is superseded by \c std::conditional
+//!     but we need it in some C++03 projects.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Mcff5zkaJE9eTbXnwJQWQ2WlCXIXfcmc
