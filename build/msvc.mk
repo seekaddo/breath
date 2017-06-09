@@ -6,17 +6,8 @@
 #             <https://opensource.org/licenses/BSD-3-Clause>.)
 # _________________________________________________________________________
 #
-#       As usual, the options are listed "in groups", related to their purpose.
-#       The group appearing first is related to standards conformance, including
-#       (if necessary) removing macro definitions such as those for "min" and
-#       "max" which are prohibited by the standard.
-#
-#       TODO: check this answer by Alf Steinbach:
-#
-#               <http://stackoverflow.com/questions/4913922/possible-problems-with-nominmax-on-visual-c>
-#
-#             What if we need to use GdiPlus?
-#
+#       As usual, the options are listed in two groups. The group
+#	appearing first is related to standards conformance.
 #
 #       Rationale
 #       =========
