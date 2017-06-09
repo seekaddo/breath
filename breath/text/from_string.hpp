@@ -17,6 +17,11 @@
 
 namespace breath {
 
+//!     Type requirements:
+//!         \c T shall be default constructible and move constructible
+//!         or copy constructible. Furthermore it shall be input
+//!         streamable.
+// -------------------------------------------------------------------------
 template< typename T >
 T                   from_string( std::string const & s ) ;
 
