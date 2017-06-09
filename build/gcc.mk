@@ -61,8 +61,6 @@ cpp_basic_options += -pipe
 # More preprocessing warnings (that are not enabled by -Wall, nor on by
 # default)
 #
-cpp_basic_options += -Wundef                \
-                     -Wunused-macros
 
 cpp_basic_options += -Wshadow               \
                      -Wfloat-equal          \
