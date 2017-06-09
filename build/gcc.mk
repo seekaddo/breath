@@ -68,20 +68,21 @@ cpp_basic_options += -Wshadow               \
                      -Wfloat-equal          \
                      -Wredundant-decls      \
                                             \
+cpp_basic_options += -pipe                  \
+                     -Wabi                  \
                      -Wdouble-promotion     \
-                                            \
-                     -Wsync-nand            \
-                     -Wold-style-cast       \
-                                            \
+                     -Wfloat-equal          \
+                     -Winvalid-pch          \
                      -Wnoexcept             \
                      -Wnon-virtual-dtor     \
+                     -Wold-style-cast       \
+                     -Woverloaded-virtual   \
+                     -Wredundant-decls      \
+                     -Wshadow               \
                      -Wstrict-null-sentinel \
-                     -Woverloaded-virtual
-
-# more about cleanliness (???) of the working dir
-
-cpp_basic_options += -Winvalid-pch
-
+                     -Wsync-nand            \
+                     -Wundef                \
+                     -Wunused-macros
 
 include_switch = -I
 object_file_suffix = .o
