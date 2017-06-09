@@ -1,14 +1,16 @@
 // =========================================================================
-//                       Copyright 2016 Gennaro Prota
+//                  Copyright 2016-2017 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
+#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/text/from_string.hpp"
 #include "breath/testing/testing.hpp"
 #include <iostream>
+#include <istream>
 #include <ostream>
 #include <string>
 
@@ -29,6 +31,35 @@ void do_tests()
     BREATH_CHECK( breath::from_string< std::string >( "" ) == "" ) ;
 }
 
+class move_only final
+{
+    std::string         m_s ;
+
+public:
+    BREATH_DECLARE_NON_COPYABLE( move_only )
+
+                        move_only()                     = default ;
+                        move_only( move_only && other ) = default ;
+    move_only &         operator =( move_only && rhs )  = default ;
+
+    std::string         get() const { return m_s; }
+
+    friend std::istream &
+                        operator >>( std::istream &, move_only & ) ;
+} ;
+
+std::istream &
+operator >>( std::istream & is, move_only & m )
+{
+    return is >> m.m_s ;
+}
+
+void
+test_move_only()
+{
+    BREATH_CHECK( breath::from_string< move_only >( "test" ).get() == "test" ) ;
+}
+
 }
 
 int
@@ -39,7 +70,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_tests } ) ;
+    return test_runner::instance().run( { do_tests, test_move_only } ) ;
 }
 
 // Local Variables:
