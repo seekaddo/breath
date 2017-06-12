@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2008 Gennaro Prota
+//                    Copyright 2008-2017 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -7,6 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/diagnostics/exception.hpp"
+#include "breath/type_identification/readable_type_name.hpp"
 #include <sstream>
 
 namespace breath {
@@ -18,7 +19,9 @@ to_string( OutputStreamable const & object )
     std::ostringstream  ss ;
     ss << object ;
     if ( ss.fail() ) {
-        throw breath::exception( "error in to_string()" ) ;
+        throw breath::exception( "error in to_string(), trying to convert"
+                                 " an instance of " +
+                                 readable_type_name< OutputStreamable >() ) ;
     }
     return ss.str() ;
 }
