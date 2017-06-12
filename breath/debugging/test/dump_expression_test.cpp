@@ -28,19 +28,19 @@ namespace {
 class stream_guard
 {
 public:
-    explicit        stream_guard( std::ostream & os, std::streambuf * buf )
-                        :   m_os( os ), m_oldbuf( os.rdbuf( buf ) )
-                    {
-                    }
+    explicit            stream_guard( std::ostream & os, std::streambuf * buf )
+                            :   m_os( os ), m_oldbuf( os.rdbuf( buf ) )
+                        {
+                        }
 
-                    ~stream_guard()
-                    {
-                        m_os.rdbuf( m_oldbuf ) ;
-                    }
+                        ~stream_guard() noexcept
+                        {
+                            m_os.rdbuf( m_oldbuf ) ;
+                        }
+
 private:
-    std::ostream &  m_os ;
-    std::streambuf * m_oldbuf ;
-
+    std::ostream &      m_os ;
+    std::streambuf *    m_oldbuf ;
 } ;
 
 void
