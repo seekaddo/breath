@@ -1,5 +1,5 @@
 // =========================================================================
-//                  Copyright 2016-2017 Gennaro Prota
+//                    Copyright 2016-2017 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
