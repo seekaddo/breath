@@ -38,12 +38,14 @@ readable_type_name()
     } ;
 
     int                 status ;
-    char * const        p = abi::__cxa_demangle( typeid( T ).name(),
+    char const * const  name = typeid( T ).name() ;
+    char * const        p = abi::__cxa_demangle( name,
                                                  nullptr,
                                                  0,
                                                  &status ) ;
     if ( status != 0 ) {
-        throw breath::exception( "__cxa_demangle() failed" ) ;
+        throw breath::exception( "__cxa_demangle() failed to demangle \"" +
+                                 std::string( name ) + "\"" ) ;
     }
 
     deallocator const   dlc( p ) ;
