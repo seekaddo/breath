@@ -15,6 +15,8 @@
 
 #include "breath/preprocessing/token_paste.hpp"
 
+//!     See BREATH_TOKEN_PASTE() for the naming rationale.
+// -------------------------------------------------------------------------
 #define BREATH_TOKEN_PASTE_DELAYED( x, y )    BREATH_TOKEN_PASTE( x, y )
 
 #endif
