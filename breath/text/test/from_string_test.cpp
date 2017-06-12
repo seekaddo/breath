@@ -7,8 +7,8 @@
 // _________________________________________________________________________
 
 #include "breath/idiom/declare_non_copyable.hpp"
-#include "breath/text/from_string.hpp"
 #include "breath/testing/testing.hpp"
+#include "breath/text/from_string.hpp"
 #include <iostream>
 #include <istream>
 #include <ostream>
