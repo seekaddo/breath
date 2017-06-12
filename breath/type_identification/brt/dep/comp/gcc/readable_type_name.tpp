@@ -13,6 +13,7 @@
 
 #include <cstdlib>
 #include <cxxabi.h>
+#include <string>
 #include <typeinfo>
 
 namespace breath {
