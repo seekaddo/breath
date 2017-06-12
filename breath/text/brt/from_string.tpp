@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2016 Gennaro Prota
+//                    Copyright 2016-2017 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -7,6 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/diagnostics/exception.hpp"
+#include "breath/type_identification/readable_type_name.hpp"
 
 #include <istream>
 #include <sstream>
@@ -20,7 +21,9 @@ from_string( std::string const & s )
     T                   t ;
     std::istringstream  ss( s ) ;
     if ( ! ( ss >> t ) || ! ( ss >> std::ws ).eof() ) {
-        throw breath::exception( "error in from_string()" ) ;
+        throw breath::exception( "error in from_string(), trying to"
+                                 " convert \"" + s + "\" to type " +
+                                 readable_type_name< T >()) ;
     }
     return t ;
 }
