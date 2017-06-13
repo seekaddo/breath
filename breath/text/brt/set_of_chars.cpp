@@ -186,6 +186,18 @@ set_of_chars::end() const
     return iterator() ;
 }
 
+set_of_chars::const_iterator
+set_of_chars::cbegin() const
+{
+    return begin() ;
+}
+
+set_of_chars::const_iterator
+set_of_chars::cend() const
+{
+    return end() ;
+}
+
 char
 set_of_chars::iterator::operator * () const
 {

@@ -68,11 +68,15 @@ public:
 
     class               iterator ;
     friend class        iterator ;
+    typedef iterator    const_iterator ;
 
     //!     Read-only iterators for the standard library.
     // ---------------------------------------------------------------------
     iterator            begin() const ;
     iterator            end() const ;
+
+    const_iterator      cbegin() const ;
+    const_iterator      cend() const ;
 
 private:
     enum { size = CHAR_MAX - CHAR_MIN + 1 } ;
