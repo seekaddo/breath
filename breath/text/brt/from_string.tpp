@@ -22,7 +22,7 @@ from_string( std::string const & s )
     std::istringstream  ss( s ) ;
     if ( ! ( ss >> t ) || ! ( ss >> std::ws ).eof() ) {
         throw breath::exception( "error in from_string(), trying to"
-                                 " convert \"" + s + "\" to type " +
+                                 " convert \"" + s + "\" to the type " +
                                  readable_type_name< T >()) ;
     }
     return t ;
