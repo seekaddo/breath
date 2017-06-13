@@ -23,7 +23,7 @@ from_string( std::string const & s )
     if ( ! ( ss >> t ) || ! ( ss >> std::ws ).eof() ) {
         throw breath::exception( "error in from_string(), trying to"
                                  " convert \"" + s + "\" to the type " +
-                                 readable_type_name< T >()) ;
+                                 readable_type_name< T >() ) ;
     }
     return t ;
 }
