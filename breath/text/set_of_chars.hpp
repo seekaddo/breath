@@ -124,7 +124,7 @@ set_of_chars::set_of_chars( FwdIterator begin, FwdIterator end )
     add( begin, end ) ;
 }
 
-template < typename FwdIterator >
+template< typename FwdIterator >
 set_of_chars &
 set_of_chars::add( FwdIterator begin, FwdIterator end )
 {
