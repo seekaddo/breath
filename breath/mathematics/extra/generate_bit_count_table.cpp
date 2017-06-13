@@ -6,6 +6,7 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
+#include <algorithm>
 #include <array>
 #include <cstddef>
 #include <iostream>
