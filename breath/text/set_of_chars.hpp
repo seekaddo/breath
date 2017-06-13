@@ -13,9 +13,9 @@
 #ifndef BREATH_GUARD_Gq4RCdDZQAIMmQBL7I3lbPfT3oHjV7of
 #define BREATH_GUARD_Gq4RCdDZQAIMmQBL7I3lbPfT3oHjV7of
 
+#include <bitset>
 #include <climits>
 #include <cstddef>
-#include <deque>
 #include <iterator>
 #include <string>
 
@@ -76,10 +76,9 @@ public:
 
 private:
     enum { size = CHAR_MAX - CHAR_MIN + 1 } ;
-    typedef std::deque< bool >
+    typedef std::bitset< size >
                         bits_type ;
-    typedef bits_type::size_type
-                        index_type ;
+    typedef std::size_t index_type ;
     bits_type           m_bits ;
 
 public:
@@ -120,7 +119,7 @@ public:
 
 template< typename FwdIterator>
 set_of_chars::set_of_chars( FwdIterator begin, FwdIterator end )
-    :   m_bits( set_of_chars::size )
+    :   m_bits()
 {
     add( begin, end ) ;
 }

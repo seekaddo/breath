@@ -8,47 +8,48 @@
 
 #include "breath/text/set_of_chars.hpp"
 
-#include <algorithm>
 #include <climits> // gps could use our meta::stuff, or C++11 numeric_limits
 #include <cstddef>
-#include <deque>
 
 namespace breath {
 
 set_of_chars::set_of_chars()
-    :   m_bits( set_of_chars::size )
+    :   m_bits()
 {
 }
 
 // gps note that this contructor cannot add a '\0'; to do that
 // you must use the overload taking an std::string.
 set_of_chars::set_of_chars( char const * elements )
-    : m_bits( set_of_chars::size )
+    : m_bits()
 {
     add( elements ) ;
 }
 
 set_of_chars::set_of_chars( std::string const & s )
-    : m_bits( set_of_chars::size )
+    : m_bits()
 {
     add( s ) ;
 }
 
 set_of_chars::set_of_chars( except_for, char c )
-    :   m_bits( set_of_chars::size, true )
+    :   m_bits()
 {
+    m_bits.flip() ;
     remove( c ) ;
 }
 
 set_of_chars::set_of_chars( except_for, char const * s )
-    :   m_bits( set_of_chars::size, true )
+    :   m_bits()
 {
+    m_bits.flip() ;
     remove( s ) ;
 }
 
 set_of_chars::set_of_chars( except_for, std::string const & s )
-    :   m_bits( set_of_chars::size, true )
+    :   m_bits()
 {
+    m_bits.flip() ;
     remove( s ) ;
 }
 
@@ -136,9 +137,7 @@ set_of_chars::remove( std::string const & s )
 void
 set_of_chars::complement()
 {
-    for ( auto it = m_bits.begin() ; it != m_bits.end() ; ++ it ) {
-        *it = ! *it ;
-    }
+    m_bits.flip() ;
 }
 
 std::string
@@ -150,19 +149,13 @@ set_of_chars::as_string() const
 std::size_t
 set_of_chars::count() const
 {
-    return std::count( m_bits.cbegin(), m_bits.cend(), true ) ;
+    return m_bits.count() ;
 }
 
 bool
 set_of_chars::is_empty() const
 {
-    for( auto curr = m_bits.cbegin() ; curr != m_bits.cend() ; ++ curr ) {
-        if ( *curr ) {
-            return false ;
-        }
-    }
-
-    return true ;
+    return m_bits.none() ;
 }
 
 //      iterators:
