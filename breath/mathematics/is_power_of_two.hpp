@@ -21,7 +21,8 @@ namespace breath {
 //!     \return \c true if an only if \c x is a power of two.
 // -------------------------------------------------------------------------
 template< typename T >
-constexpr typename std::enable_if< ! std::numeric_limits< T >::is_signed,
+constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
+                                   ! std::numeric_limits< T >::is_signed,
                                    bool >::type
                     is_power_of_two( T x ) noexcept ;
 
