@@ -22,9 +22,9 @@ main()
     class               bit_count
     {
     public:
-        std::size_t     operator()() noexcept
+        std::size_t         operator()() noexcept
         {
-            unsigned    value = m_n ;
+            unsigned            value = m_n ;
             std::size_t         count = 0 ;
             while ( value != 0 ) {
                 ++ count ;
@@ -34,7 +34,7 @@ main()
             return count ;
         }
     private:
-        unsigned int    m_n = 0 ;
+        unsigned int        m_n = 0 ;
     } ;
 
     std::generate( table.begin(), table.end(), bit_count{} ) ;
