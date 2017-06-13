@@ -100,8 +100,8 @@ public:
                             iterator_category  ;
         typedef char        value_type         ;
         typedef int         difference_type    ;
-        typedef char const * pointer           ;
-        typedef char const & reference         ;
+        typedef char const *pointer            ;
+        typedef char const &reference          ;
 
                             iterator() ;
         explicit            iterator( set_of_chars const & sc ) ;
