@@ -62,8 +62,8 @@ main()
     // contains
     {
         set_of_chars const  s( "wxyz") ;
-        DO_TEST( s.contains( 'w' ) && s.contains( 'x' ) && s.contains( 'y' )
-            && s.contains( 'z' ) && ! s.contains( 'a' ) && ! s.contains( '\0' ) ) ;
+        DO_TEST( s.contains( 'w' ) && s.contains( 'x' ) && s.contains( 'y' ) &&
+            s.contains( 'z' ) && ! s.contains( 'a' ) && ! s.contains( '\0' ) ) ;
     }
 
     // add
