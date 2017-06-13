@@ -26,7 +26,7 @@ namespace breath {
 class set_of_chars
 {
 public:
-                        set_of_chars() ; // empty set
+                        set_of_chars() ;
     explicit            set_of_chars( char const * ) ;
     explicit            set_of_chars( std::string const & ) ;
     template< typename FwdIterator>
@@ -102,7 +102,6 @@ public:
         typedef int         difference_type    ;
         typedef char const * pointer           ;
         typedef char const & reference         ;
-
 
                             iterator() ;
         explicit            iterator( set_of_chars const & sc ) ;
