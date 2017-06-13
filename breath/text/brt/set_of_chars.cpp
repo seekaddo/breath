@@ -85,7 +85,7 @@ set_of_chars::contains( char c ) const
 set_of_chars &
 set_of_chars::add( char c )
 {
-    m_bits[ c - CHAR_MIN ] = true ;
+    m_bits.set( c - CHAR_MIN ) ;
     return *this ;
 }
 
@@ -111,7 +111,7 @@ set_of_chars::add( std::string const & s )
 set_of_chars &
 set_of_chars::remove( char c )
 {
-    m_bits[ c - CHAR_MIN ] = false ;
+    m_bits.reset( c - CHAR_MIN ) ;
     return *this ;
 }
 
