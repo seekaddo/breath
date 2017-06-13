@@ -55,7 +55,7 @@ main()
         }
         if ( ( i + 1 ) % numbers_per_line == 0 &&
              i != ( size - 1 ) ) {
-            os << '\n' << indent ;
+            os << std::endl << indent ;
         } else if ( i != ( size - 1 ) ) {
             os << ' ' ;
         } else {
