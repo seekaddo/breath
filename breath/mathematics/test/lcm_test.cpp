@@ -36,7 +36,6 @@ do_check()
         BREATH_CHECK( breath::lcm( t.a, t.b ) == t.lcm ) ;
         BREATH_CHECK( breath::lcm( t.b, t.a ) == t.lcm ) ;
     }
-
 }
 
 }
