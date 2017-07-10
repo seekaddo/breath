@@ -145,17 +145,17 @@
 //      confirmation that we correctly interpreted the intent, as
 //      described above; the more so, considering that the same
 //      example exists in C90, C99, C++98, C++03 and C++0x.
-// ---------------------------------------------------------------------------
+// -------------------------------------------------------------------------
 
-#define BREATH_DEPENDENT_CODE( variant, filename )                          \
-    BREATH_TOKEN_PASTE( BREATH_DEPENDENT_CODE_, variant )( filename )    /**/
+#define BREATH_DEPENDENT_CODE( variant, filename )                        \
+    BREATH_TOKEN_PASTE( BREATH_DEPENDENT_CODE_, variant )( filename )  /**/
 
 
-#define BREATH_DEPENDENT_CODE_compiler( filename )                          \
-    BREATH_STRINGIZE_DELAYED( dep/comp/BREATH_COMPILER/filename )        /**/
+#define BREATH_DEPENDENT_CODE_compiler( filename )                        \
+    BREATH_STRINGIZE_DELAYED( dep/comp/BREATH_COMPILER/filename )      /**/
 
-#define BREATH_DEPENDENT_CODE_system( filename )                            \
-    BREATH_STRINGIZE_DELAYED( dep/syst/BREATH_SYSTEM/filename )          /**/
+#define BREATH_DEPENDENT_CODE_system( filename )                          \
+    BREATH_STRINGIZE_DELAYED( dep/syst/BREATH_SYSTEM/filename )        /**/
 
 
 #endif
