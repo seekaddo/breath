@@ -34,7 +34,7 @@ time_string( std::string const & format, time_string_zone::zone zone )
                                             ? gmtime(    &time_stamp )
                                             : localtime( &time_stamp ) ) ;
         if ( broken_down != nullptr ) {
-            std::size_t const   max_size( 256 ) ;
+            std::size_t const   max_size = 256 ;
             char                buffer[ max_size ] = { 0 } ;
             if ( strftime( buffer, max_size, format.c_str(), broken_down )
                     != 0 ) {
