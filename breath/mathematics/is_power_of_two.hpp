@@ -22,7 +22,8 @@ namespace breath {
 // -------------------------------------------------------------------------
 template< typename T >
 constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
-                                   ! std::numeric_limits< T >::is_signed,
+                                   ! std::numeric_limits< T >::is_signed &&
+                                   ! std::is_same< T, bool >::value,
                                    bool >::type
                     is_power_of_two( T x ) noexcept ;
 

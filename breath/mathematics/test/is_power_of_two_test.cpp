@@ -25,7 +25,6 @@ do_check()
         }
         BREATH_CHECK( ! breath::is_power_of_two( i + 1 ) ) ;
     }
-    BREATH_CHECK( breath::is_power_of_two( true ) ) ;
 }
 
 }

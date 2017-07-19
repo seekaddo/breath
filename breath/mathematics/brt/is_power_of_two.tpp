@@ -10,23 +10,12 @@ namespace breath {
 
 template< typename T >
 constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
-                                   ! std::numeric_limits< T >::is_signed,
+                                   ! std::numeric_limits< T >::is_signed &&
+                                   ! std::is_same< T, bool >::value,
                                    bool >::type
                     is_power_of_two( T x ) noexcept
 {
     return ( x & ( x-1 ) ) == 0 && x > 0 ;
-}
-
-//!     This specialization is logically unnecessary but silences MSVC
-//!     warnings. Anyway, consider it experimental: it's possible that
-//!     I'll add a static_assert( ! is_bool< T >::value ) ; to the
-//!     primary template.
-// -------------------------------------------------------------------------
-template<>
-inline constexpr bool
-is_power_of_two< bool >( bool b ) noexcept
-{
-    return b ;
 }
 
 }
