@@ -55,31 +55,21 @@ cpp_basic_options =  -ansi                      \
                      -D_POSIX_C_SOURCE=200112L  \
                      -U_GNU_SOURCE
 
-cpp_basic_options += -Wabi
-cpp_basic_options += -pipe
-
-# More preprocessing warnings (that are not enabled by -Wall, nor on by
-# default)
-#
-
-cpp_basic_options += -Wshadow               \
-                     -Wfloat-equal          \
-                     -Wredundant-decls      \
-                                            \
-cpp_basic_options += -pipe                  \
-                     -Wabi                  \
-                     -Wdouble-promotion     \
-                     -Wfloat-equal          \
-                     -Winvalid-pch          \
-                     -Wnoexcept             \
-                     -Wnon-virtual-dtor     \
-                     -Wold-style-cast       \
-                     -Woverloaded-virtual   \
-                     -Wredundant-decls      \
-                     -Wshadow               \
-                     -Wstrict-null-sentinel \
-                     -Wsync-nand            \
-                     -Wundef                \
+cpp_basic_options += -pipe                      \
+                     -Wabi                      \
+                     -Wdouble-promotion         \
+                     -Wfloat-equal              \
+                     -Winvalid-pch              \
+                     -Wnoexcept                 \
+                     -Wnon-virtual-dtor         \
+                     -Wold-style-cast           \
+                     -Woverloaded-virtual       \
+                     -Wredundant-decls          \
+                     -Wshadow                   \
+                     -Wstrict-null-sentinel     \
+                     -Wsuggest-override         \
+                     -Wsync-nand                \
+                     -Wundef                    \
                      -Wunused-macros
 
 include_switch = -I
