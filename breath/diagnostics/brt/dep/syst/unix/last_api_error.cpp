@@ -57,7 +57,7 @@ last_api_error::last_api_error( char const * p ) noexcept
 }
 
 last_api_error::last_api_error( last_api_error const & other ) noexcept
-    :   exception(), m_errno( other.m_errno )
+    :   exception( other ), m_errno( other.m_errno )
 {
     strcpy( &m_message[ 0 ], &other.m_message[ 0 ] ) ;
 }
