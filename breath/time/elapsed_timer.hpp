@@ -15,9 +15,8 @@
 
 namespace breath {
 
-//      Elapsed timer template:
-//      =======================
-//
+//      elapsed_timer<>:
+//      ----------------
 //
 //!     A policy based timer class which allows the user to retrieve
 //!     the amount of time elapsed from its start.
@@ -45,9 +44,8 @@ public:
 
     enum start_mode { auto_start, manual_start } ;
 
-    //
-    //! Construction and start
-    //
+    //!     Construction and start
+    // ---------------------------------------------------------------------
     explicit            elapsed_timer( start_mode = auto_start ) ;
 
     void                restart() ;
