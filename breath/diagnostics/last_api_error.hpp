@@ -11,8 +11,8 @@
 // -------------------------------------------------------------------------
 //!
 //!     An exception class representing the last error encountered
-//!     in an OS API call. It corresponds to GetLastError() under
-//!     Windows and errno under Unix.
+//!     in an OS API call. It corresponds to \c GetLastError() under
+//!     Windows and \c errno under Unix.
 //!
 //!     The idea is that after an unsuccessful API call you write:
 //!     <code>
