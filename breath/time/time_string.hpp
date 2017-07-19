@@ -36,6 +36,10 @@ public:
 //      time_string
 //      -----------
 //
+//!     Returns the current date and time formatted according to \c
+//!     format, interpreted as if passed to the \c strftime standard
+//!     function.
+//!
 //!     This is a simple tool for simple and quick formatting needs.
 //!     You should use a more complete solution for more complex needs
 //!     (but don't underestimate the good old strftime() ;-)).
