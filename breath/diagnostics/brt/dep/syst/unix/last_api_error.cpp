@@ -6,9 +6,9 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include <string.h>
 #include <cerrno>
 #include <ostream>
+#include <string.h>
 
 namespace breath {
 
