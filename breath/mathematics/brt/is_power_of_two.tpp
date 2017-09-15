@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2016 Gennaro Prota
+//                    Copyright 2016-2017 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -11,7 +11,7 @@ namespace breath {
 template< typename T >
 constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
                                    ! std::numeric_limits< T >::is_signed &&
-                                   ! std::is_same< T, bool >::value,
+              ! std::is_same< typename std::remove_cv< T >::type, bool >::value,
                                    bool >::type
                     is_power_of_two( T x ) noexcept
 {
