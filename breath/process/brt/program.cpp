@@ -22,20 +22,6 @@ namespace breath {
 program::program() noexcept
     :   m_max_gravity( comment )
 {
-    std::basic_ios< char > * const
-                        arr[] = {
-        &std::cin,
-        &std::cout,
-        &std::cerr,
-        &std::clog
-    } ;
-    for ( auto const stream : arr ) {
-        try {
-            stream->exceptions( std::ios_base::badbit ) ;
-        } catch ( std::ios_base::failure const & ) {
-            // nothing to do
-        }
-    }
 }
 
 program &
