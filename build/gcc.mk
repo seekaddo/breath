@@ -46,30 +46,24 @@
 #           while the front end is parsing the next" (insights provided
 #           by James Kanze).
 # ----------------------------------------------------------------------------
-cpp_basic_options = -ansi                      \
-                    -std=c++14                 \
-                    -Wall                      \
-                    -Wextra                    \
-                    -pedantic                  \
-                    -Werror                    \
-                    -D_POSIX_C_SOURCE=200112L  \
-                    -U_GNU_SOURCE
+cpp_basic_options =  -ansi                      \
+                     -std=c++14                 \
+                     -Wall                      \
+                     -Wextra                    \
+                     -pedantic                  \
+                     -Werror                    \
+                     -D_POSIX_C_SOURCE=200112L  \
+                     -U_GNU_SOURCE
 
-cpp_basic_options += -Wabi      \
-                     -fabi-version=6    #newest as of august 2013
-                                        #Ok to use? -gps
+cpp_basic_options += -Wabi
 cpp_basic_options += -pipe
 
-
 # More preprocessing warnings (that are not enabled by -Wall, nor on by
 # default)
 #
-cpp_basic_options += -Wundef            \
+cpp_basic_options += -Wundef                \
                      -Wunused-macros
 
-# More preprocessing warnings (that are not enabled by -Wall, nor on by
-# default)
-#
 cpp_basic_options += -Wshadow               \
                      -Wfloat-equal          \
                      -Wredundant-decls      \
