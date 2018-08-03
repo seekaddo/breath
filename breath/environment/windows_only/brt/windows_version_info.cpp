@@ -250,8 +250,6 @@ windows_version_info::edition() const
             return "Essential Business Server Messaging Server" ;
         case PRODUCT_MEDIUMBUSINESS_SERVER_SECURITY:
             return "Essential Business Server Security Server" ;
-        case PRODUCT_MOBILE_CORE:
-            return "Mobile" ;
         //case PRODUCT_MOBILE_ENTERPRISE:
         //    return "Mobile Enterprise" ;
         case PRODUCT_MULTIPOINT_PREMIUM_SERVER:
