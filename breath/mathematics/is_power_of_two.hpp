@@ -1,5 +1,5 @@
 // =========================================================================
-//                    Copyright 2016-2017 Gennaro Prota
+//                    Copyright 2016-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -19,6 +19,9 @@
 namespace breath {
 
 //!     \return \c true if an only if \c x is a power of two.
+//
+//      Note that C++20 will likely have an ispow2() that can replace
+//      this one: <http://wg21.link/p0556>.
 // -------------------------------------------------------------------------
 template< typename T >
 constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
