@@ -1,11 +1,15 @@
 # =========================================================================
-#                       Copyright 2007 Gennaro Prota
+#                    Copyright 2007-2018 Gennaro Prota
 #
 #                 Licensed under the 3-Clause BSD License.
 #            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 #             <https://opensource.org/licenses/BSD-3-Clause>.)
 # _________________________________________________________________________
 
+#       As usual, the options are listed in two groups. The group
+#       listed first relates mainly to standards conformance. The other
+#       group contains other options in alphabetical order.
+#
 #       Special notes for some of the options:
 #       ======================================
 #
@@ -18,10 +22,10 @@
 #
 #           particularly, the name "unix", which would bite us
 #           immediately because it may appear when expanding our
-#           BREATH_..DEPENDENT_INCLUDE.. macros gps
+#           BREATH_DEPENDENT_CODE_* macros.
 #
-#           TODO: add something like `cpp  -dM < /dev/null | grep...' to
-#           the makefiles, as a form of pre-check?   --gps
+#           TODO: add something like `g++ -E -dM - < /dev/null | grep...'
+#           to the makefiles, as a form of pre-check?   --gps
 #
 #           If it wasn't for this reason I wouldn't use the option at
 #           all (even if this was C++98 and not C++14), because I don't
