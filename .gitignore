@@ -43,7 +43,7 @@
 *.iobj
 .vs/
 
-# Visual Studio Code
+# Visual Studio Code files
 .vscode/
 
 # PVS-Studio files
