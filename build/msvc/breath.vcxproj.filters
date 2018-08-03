@@ -323,7 +323,6 @@
     <None Include="..\..\breath\mathematics\brt\clamp.tpp" />
     <None Include="..\..\breath\mathematics\brt\gcd.tpp" />
     <None Include="..\..\breath\mathematics\brt\integer_log2.tpp" />
-    <None Include="..\..\breath\mathematics\brt\is_power_of_two.tpp" />
     <None Include="..\..\breath\mathematics\brt\lcm.tpp" />
     <None Include="..\..\breath\memory\brt\auto_array.tpp" />
     <None Include="..\..\breath\meta\brt\is_twos_complement.tpp" />
@@ -337,6 +336,7 @@
     <None Include="..\..\breath\type_identification\brt\readable_type_name.tpp" />
     <None Include="..\..\breath\process\brt\command_line.tpp" />
     <None Include="..\..\breath\process\brt\program_option.tpp" />
+    <None Include="..\..\breath\mathematics\brt\is_power_of_2.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -469,9 +469,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\mathematics\integer_log2.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\mathematics\is_power_of_two.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\mathematics\lcm.hpp">
@@ -685,6 +682,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\process\command_line.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\mathematics\is_power_of_2.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

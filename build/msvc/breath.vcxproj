@@ -515,7 +515,7 @@
     <None Include="..\..\breath\mathematics\brt\count_bits.tpp" />
     <None Include="..\..\breath\mathematics\brt\gcd.tpp" />
     <None Include="..\..\breath\mathematics\brt\integer_log2.tpp" />
-    <None Include="..\..\breath\mathematics\brt\is_power_of_two.tpp" />
+    <None Include="..\..\breath\mathematics\brt\is_power_of_2.tpp" />
     <None Include="..\..\breath\mathematics\brt\lcm.tpp" />
     <None Include="..\..\breath\memory\brt\auto_array.tpp" />
     <None Include="..\..\breath\meta\brt\is_twos_complement.tpp" />
@@ -576,7 +576,7 @@
     <ClInclude Include="..\..\breath\mathematics\count_bits.hpp" />
     <ClInclude Include="..\..\breath\mathematics\gcd.hpp" />
     <ClInclude Include="..\..\breath\mathematics\integer_log2.hpp" />
-    <ClInclude Include="..\..\breath\mathematics\is_power_of_two.hpp" />
+    <ClInclude Include="..\..\breath\mathematics\is_power_of_2.hpp" />
     <ClInclude Include="..\..\breath\mathematics\lcm.hpp" />
     <ClInclude Include="..\..\breath\mathematics\next_multiple.hpp" />
     <ClInclude Include="..\..\breath\memory\auto_array.hpp" />

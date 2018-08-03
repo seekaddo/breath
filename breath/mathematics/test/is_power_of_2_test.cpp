@@ -6,7 +6,7 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include "breath/mathematics/is_power_of_two.hpp"
+#include "breath/mathematics/is_power_of_2.hpp"
 #include "breath/testing/testing.hpp"
 #include <cstdint>
 #include <iostream>
@@ -16,14 +16,14 @@ namespace {
 void
 do_check()
 {
-    BREATH_CHECK( ! breath::is_power_of_two( 0u ) ) ;
-    BREATH_CHECK( breath::is_power_of_two( 1u ) ) ;
+    BREATH_CHECK( ! breath::is_power_of_2( 0u ) ) ;
+    BREATH_CHECK( breath::is_power_of_2( 1u ) ) ;
     for ( std::uint32_t  i = 2; i > 0 ; i *= 2 ) {
-        BREATH_CHECK( breath::is_power_of_two( i ) ) ;
+        BREATH_CHECK( breath::is_power_of_2( i ) ) ;
         if (i != 2) {
-            BREATH_CHECK( ! breath::is_power_of_two( i - 1 ) );
+            BREATH_CHECK( ! breath::is_power_of_2( i - 1 ) );
         }
-        BREATH_CHECK( ! breath::is_power_of_two( i + 1 ) ) ;
+        BREATH_CHECK( ! breath::is_power_of_2( i + 1 ) ) ;
     }
 }
 

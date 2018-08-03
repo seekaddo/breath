@@ -1,24 +1,39 @@
 // =========================================================================
-//                    Copyright 2016-2017 Gennaro Prota
+//                    Copyright 2016-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
+//
+//!     \file
+//!     \brief Tells if an integer is a power of two.
+// -------------------------------------------------------------------------
+
+#ifndef BREATH_GUARD_33316YlRoQ2LToi0iu44YByR2XFvlCOy
+#define BREATH_GUARD_33316YlRoQ2LToi0iu44YByR2XFvlCOy
+
+#include <limits>
+#include <type_traits>
 
 namespace breath {
 
+//!     \return \c true if an only if \c x is a power of two.
+//
+//      Note that C++20 will likely have an ispow2() that can replace
+//      this one: <http://wg21.link/p0556>.
+// -------------------------------------------------------------------------
 template< typename T >
 constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
                                    ! std::numeric_limits< T >::is_signed &&
               ! std::is_same< typename std::remove_cv< T >::type, bool >::value,
                                    bool >::type
-                    is_power_of_two( T x ) noexcept
-{
-    return ( x & ( x-1 ) ) == 0 && x > 0 ;
-}
+                    is_power_of_2( T x ) noexcept ;
 
 }
+
+#include "brt/is_power_of_2.tpp"
+#endif
 
 // Local Variables:
 // mode: c++
