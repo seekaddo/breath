@@ -9,6 +9,7 @@
 
 #include "breath/process/command_line.hpp"
 #include "breath/counting/count.hpp"
+#include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include "breath/process/program.hpp"
 #include "breath/process/program_option.hpp"
 #include "breath/text/begins_with.hpp"
@@ -192,7 +193,8 @@ command_line::usage() const
 
     std::size_t         max_width = 0 ;
     for ( std::size_t i = 0 ; i < m_ordered.size() ; ++ i ) {
-        max_width = std::max( max_width, m_ordered[ i ]->name().length() ) ;
+        max_width = std::max BREATH_PREVENT_MACRO_EXPANSION
+		            ( max_width, m_ordered[ i ]->name().length() ) ;
     }
     for (std::size_t i = 0 ; i < m_ordered.size() ; ++ i ) {
         if ( m_ordered[ i ]->short_name() != '\0' ){

@@ -30,7 +30,7 @@ levenshtein_distance( std::string const & first, std::string const & second )
             size_t const        upper = costs[ j + 1 ] ;
             costs[ j + 1 ] = first[ i ] == second[ j ]
                                ? corner
-                               : 1 + std::min( { upper, corner, costs[ j ] } )
+                               : 1 + (std::min)( { upper, corner, costs[ j ] } )
                                ;
             corner = upper ;
         }

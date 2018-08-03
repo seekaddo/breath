@@ -15,7 +15,7 @@
 
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/diagnostics/exception.hpp"
-
+#include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include <string>
 
 namespace breath {
@@ -72,11 +72,11 @@ public:
 
     //!     The minimum random number that can be emitted.
     // ---------------------------------------------------------------------
-    result_type         min() const noexcept ;
+    result_type         min BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
 
     //!     The maximum random number that can be emitted.
     // ---------------------------------------------------------------------
-    result_type         max() const noexcept ;
+    result_type         max BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
 
     //!     \todo:
     //!         define entropy()??? It should be 8 for /dev/random...

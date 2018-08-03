@@ -18,7 +18,8 @@ is_twos_complement() noexcept
 {
     static_assert( std::is_integral< T >::value, "T must be an integral type" ) ;
 
-    return ( std::numeric_limits< T >::min() + std::numeric_limits< T >::max() )
+    return ( std::numeric_limits< T >::min BREATH_PREVENT_MACRO_EXPANSION ()
+	         + std::numeric_limits< T >::max BREATH_PREVENT_MACRO_EXPANSION() )
         == -1 ;
 }
 
