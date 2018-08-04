@@ -315,6 +315,9 @@
     <ClCompile Include="..\..\breath\text\test\replace_all_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\mathematics\test\digital_root_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />
@@ -343,6 +346,7 @@
     <None Include="..\..\breath\process\brt\command_line.tpp" />
     <None Include="..\..\breath\process\brt\program_option.tpp" />
     <None Include="..\..\breath\mathematics\brt\is_power_of_2.tpp" />
+    <None Include="..\..\breath\mathematics\brt\digital_root.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -694,6 +698,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\text\replace_all.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\mathematics\digital_root.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

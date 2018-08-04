@@ -298,6 +298,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\breath\mathematics\test\digital_root_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\breath\mathematics\test\gcd_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -520,6 +526,7 @@
     <None Include="..\..\breath\idiom\brt\maybe.tpp" />
     <None Include="..\..\breath\mathematics\brt\clamp.tpp" />
     <None Include="..\..\breath\mathematics\brt\count_bits.tpp" />
+    <None Include="..\..\breath\mathematics\brt\digital_root.tpp" />
     <None Include="..\..\breath\mathematics\brt\gcd.tpp" />
     <None Include="..\..\breath\mathematics\brt\integer_log2.tpp" />
     <None Include="..\..\breath\mathematics\brt\is_power_of_2.tpp" />
@@ -581,6 +588,7 @@
     <ClInclude Include="..\..\breath\mathematics\brt\private\check_common_gcd_lcm_preconditions.hpp" />
     <ClInclude Include="..\..\breath\mathematics\clamp.hpp" />
     <ClInclude Include="..\..\breath\mathematics\count_bits.hpp" />
+    <ClInclude Include="..\..\breath\mathematics\digital_root.hpp" />
     <ClInclude Include="..\..\breath\mathematics\gcd.hpp" />
     <ClInclude Include="..\..\breath\mathematics\integer_log2.hpp" />
     <ClInclude Include="..\..\breath\mathematics\is_power_of_2.hpp" />
