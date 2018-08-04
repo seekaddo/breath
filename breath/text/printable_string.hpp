@@ -19,6 +19,23 @@
 
 namespace breath {
 
+//      printable_string:
+//      =================
+//
+//!     Represents a string that prints to an ostream without
+//!     non-printable characters.
+//!
+//!     Non-printable characters are displayed either using a
+//!     simple-escape-sequence or an escape sequence of the form
+//!     <tt>\\x...</tt>. The number of digits in the hexadecimal
+//!     escape sequence is std::ceil( CHAR_ BIT / 4.0 ). The string is
+//!     delimited by double quotes, and a double quote character in
+//!     the string will be escaped, as is usual in C++.
+//!
+//!     This class maintains a copy of the string, so the user does
+//!     not have to worry about the lifetime of the argument it gives
+//!     to the constructor.
+// ---------------------------------------------------------------------------
 class printable_string
 {
 public:
