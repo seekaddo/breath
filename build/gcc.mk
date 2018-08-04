@@ -28,13 +28,13 @@
 #           to the makefiles, as a form of pre-check?   --gps
 #
 #           If it wasn't for this reason I wouldn't use the option at
-#           all (even if this was C++98 and not C++14), because I don't
-#           like using the name "ansi" when in fact the standard is from
-#           ISO. (I could have attempted to use it on affected systems
-#           only, but it doesn't do any harm for the others (it seems),
-#           so why adding further complexity...)
+#           all (even if this was C++98), because I don't like using
+#           the name "ansi" when in fact the standard is from ISO. (I
+#           could have attempted to use it on affected systems only,
+#           but it doesn't do any harm for the others (it seems), so
+#           why adding further complexity...)
 #
-#           Note that it must appear *before* -std=c++14, or it will
+#           Note that it must appear *before* -std=..., or it will
 #           revert things to an earlier standard (C++03 or C++98, I
 #           haven't verified).
 #
