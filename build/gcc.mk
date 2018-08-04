@@ -38,6 +38,13 @@
 #           revert things to an earlier standard (C++03 or C++98, I
 #           haven't verified).
 #
+#       -D_GLIBCXX_USE_CXX11_ABI:
+#
+#           enables the new implementations of std::string and
+#           std::list, which conform to C++11; for more details see:
+#
+#             <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html>
+#
 #       -pipe:
 #
 #           just an optimization, "but it can also allow compilations to
@@ -57,7 +64,8 @@ cpp_basic_options =  -ansi                      \
                      -pedantic                  \
                      -Werror                    \
                      -D_POSIX_C_SOURCE=200112L  \
-                     -U_GNU_SOURCE
+                     -U_GNU_SOURCE              \
+                     -D_GLIBCXX_USE_CXX11_ABI
 
 cpp_basic_options += -pipe                      \
                      -Wabi                      \
