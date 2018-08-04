@@ -1,5 +1,5 @@
 // =========================================================================
-//                    Copyright 2006-2015 Gennaro Prota
+//                    Copyright 2006-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -7,6 +7,7 @@
 // _________________________________________________________________________
 
 #include "breath/diagnostics/assert.hpp"
+#include <new>
 #include <utility>
 
 namespace breath {
