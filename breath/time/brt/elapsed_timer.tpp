@@ -18,7 +18,8 @@ elapsed_timer< Device >::elapsed_timer( start_mode mode )
 }
 
 template< class Device >
-void elapsed_timer< Device >::restart()
+void
+elapsed_timer< Device >::restart()
 {
     return m_device.restart() ;
 }
