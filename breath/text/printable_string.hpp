@@ -46,7 +46,7 @@ private:
 
     friend std::ostream &
                     operator <<( std::ostream & dest,
-                                 printable_string const &) ;
+                                 printable_string const & ) ;
 
     maybe< std::string >
                         m_value ;
