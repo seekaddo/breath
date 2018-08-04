@@ -30,8 +30,11 @@
 # Stack dumps
 *.stackdump
 
-# Vim swap files
+# Vim swap files (up to three levels; this seems a
+# reasonable compromise)
 *.swp
+*.swo
+*.swn
 
 # Visual C++ files and dirs
 *.ilk
