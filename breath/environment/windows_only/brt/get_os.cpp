@@ -276,7 +276,7 @@ get_os()
                         info ;
     // When Windows 9x was supported as well, the function identify_nt()
     // was accompanied by a corresponding identify_9x. Now that the
-    // latter has disappeared, identify_nt could be conglobated directly
+    // latter has disappeared, identify_nt could be incorporated directly
     // into get_os().
     return identify_nt( info ) ;
 }
