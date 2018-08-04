@@ -407,6 +407,7 @@
     <ClCompile Include="..\..\breath\text\brt\ends_with.cpp" />
     <ClCompile Include="..\..\breath\text\brt\printable_string.cpp" />
     <ClCompile Include="..\..\breath\text\brt\remove_from_end.cpp" />
+    <ClCompile Include="..\..\breath\text\brt\replace_all.cpp" />
     <ClCompile Include="..\..\breath\text\brt\set_of_chars.cpp" />
     <ClCompile Include="..\..\breath\text\brt\split.cpp" />
     <ClCompile Include="..\..\breath\text\brt\trim.cpp" />
@@ -437,6 +438,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\breath\text\test\remove_from_end_test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\breath\text\test\replace_all_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -633,6 +640,7 @@
     <ClInclude Include="..\..\breath\text\from_string.hpp" />
     <ClInclude Include="..\..\breath\text\printable_string.hpp" />
     <ClInclude Include="..\..\breath\text\remove_from_end.hpp" />
+    <ClInclude Include="..\..\breath\text\replace_all.hpp" />
     <ClInclude Include="..\..\breath\text\set_of_chars.hpp" />
     <ClInclude Include="..\..\breath\text\split.hpp" />
     <ClInclude Include="..\..\breath\text\to_string.hpp" />
