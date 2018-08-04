@@ -142,7 +142,7 @@
 //        default:         "Standard Edition"   break ;
 //
 // Limitations:
-//  For simplicity sake we avoid the following detections:
+//  For simplicity's sake, we avoid the following detections:
 //
 //    * Specific edition for Windows NT 4.0 SP6 and later
 //      (NT Workstation: Workstation, Home Edition, Professional)
