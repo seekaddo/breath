@@ -63,9 +63,9 @@
 #       These options will be added when the minimum required gcc
 #       version will support them:
 #
-#           -Waligned-new=all
-#           -Wcast-align=strict
-#           -Wduplicated-branches
+#           -Waligned-new=all      (introduced in gcc 7.1.0)
+#           -Wcast-align=strict    (    "       "  "  8.1.0)
+#           -Wduplicated-branches  (    "       "  "  7.1.0)
 # ----------------------------------------------------------------------------
 cpp_basic_options =  -ansi                      \
                      -std=c++14                 \
