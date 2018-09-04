@@ -64,8 +64,11 @@
 #       version will support them:
 #
 #           -Waligned-new=all      (introduced in gcc 7.1.0)
-#           -Wcast-align=strict    (    "       "  "  8.1.0)
+#           -Wcast-align=strict    (    "       "  "  8.1.0)  (note1)
 #           -Wduplicated-branches  (    "       "  "  7.1.0)
+#
+# ---
+# note1 This will replace -Wcast-align
 # ----------------------------------------------------------------------------
 cpp_basic_options =  -ansi                      \
                      -std=c++14                 \
@@ -79,6 +82,7 @@ cpp_basic_options =  -ansi                      \
 
 cpp_basic_options += -pipe                      \
                      -Wabi                      \
+                     -Wcast-align               \
                      -Wconversion               \
                      -Wdouble-promotion         \
                      -Wduplicated-cond          \
