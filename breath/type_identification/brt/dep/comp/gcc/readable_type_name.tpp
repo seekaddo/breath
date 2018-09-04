@@ -41,7 +41,7 @@ readable_type_name()
     char const * const  name = typeid( T ).name() ;
     char * const        p = abi::__cxa_demangle( name,
                                                  nullptr,
-                                                 0,
+                                                 nullptr,
                                                  &status ) ;
     if ( status != 0 ) {
         throw breath::exception( "__cxa_demangle() failed to demangle \"" +
