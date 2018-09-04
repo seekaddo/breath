@@ -56,6 +56,16 @@
 #           it allows the back end to generate code for one function
 #           while the front end is parsing the next" (insights provided
 #           by James Kanze).
+#
+#       Options to be added in the future:
+#       ==================================
+#
+#       These options will be added when the minimum required gcc
+#       version will support them:
+#
+#           -Waligned-new=all
+#           -Wcast-align=strict
+#           -Wduplicated-branches
 # ----------------------------------------------------------------------------
 cpp_basic_options =  -ansi                      \
                      -std=c++14                 \
@@ -69,13 +79,18 @@ cpp_basic_options =  -ansi                      \
 
 cpp_basic_options += -pipe                      \
                      -Wabi                      \
+                     -Wconversion               \
                      -Wdouble-promotion         \
+                     -Wduplicated-cond          \
                      -Wfloat-equal              \
+                     -Wformat=2                 \
                      -Winvalid-pch              \
+                     -Wlogical-op               \
                      -Wnoexcept                 \
                      -Wnon-virtual-dtor         \
                      -Wold-style-cast           \
                      -Woverloaded-virtual       \
+                     -Wplacement-new=2          \
                      -Wredundant-decls          \
                      -Wshadow                   \
                      -Wstrict-null-sentinel     \
