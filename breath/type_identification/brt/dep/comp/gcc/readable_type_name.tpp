@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2017 Gennaro Prota
+//                    Copyright 2017-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -37,7 +37,6 @@ readable_type_name()
         char * const    m_p ;
     } ;
 
-    int                 status ;
     char const * const  name = typeid( T ).name() ;
 
     //  For the documentation of __cxa_demangle(), see:
@@ -46,8 +45,8 @@ readable_type_name()
     char * const        p = abi::__cxa_demangle( name,
                                                  nullptr,
                                                  nullptr,
-                                                 &status ) ;
-    if ( status != 0 ) {
+                                                 nullptr ) ;
+    if ( p == nullptr ) {
         throw breath::exception( "__cxa_demangle() failed to demangle \"" +
                                  std::string( name ) + "\"" ) ;
     }
