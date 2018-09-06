@@ -39,7 +39,8 @@ readable_type_name()
 
     char const * const  name = typeid( T ).name() ;
 
-    //  For the documentation of __cxa_demangle(), see:
+    //  The __cxa_demangle() specification can be found at:
+    //
     //    <https://itanium-cxx-abi.github.io/cxx-abi/abi.html>
     // -------------------------------------------------------------------------
     char * const        p = abi::__cxa_demangle( name,
