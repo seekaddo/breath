@@ -61,11 +61,11 @@
 #       ==================================
 #
 #       These options will be added when the minimum required gcc
-#       version will support them:
+#       version will support them (see <https://gcc.gnu.org/wiki/WarningHistory>):
 #
 #           -Waligned-new=all      (introduced in gcc 7.1.0)
 #           -Wcast-align=strict    (    "       "  "  8.1.0)  (note1)
-#           -Wduplicated-branches  (    "       "  "  7.1.0)
+#           -Wduplicated-branches  (    "       "  "  7.2.0)
 #
 # ---
 # note1 This will replace -Wcast-align
