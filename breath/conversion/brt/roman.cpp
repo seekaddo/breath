@@ -28,8 +28,13 @@ roman::roman( int n )
           { 0, nullptr }
     } ;
 
-    int const           max_roman_length = 15 ;
-    m_representation.reserve( max_roman_length ) ;
+    //  If using libstdc++ without -D_GLIBCXX_USE_CXX11_ABI, this
+    //  reserve() is, on average, beneficial:
+    //
+    //    int const           max_roman_length = 15 ;
+    //    m_representation.reserve( max_roman_length ) ;
+    // ---------------------------------------------------------------------
+
     entry const *       p = &table[ 0 ] ;
     for ( ; p->value != 0 ; ++ p ) {
         int                 value = n / p->value ;
