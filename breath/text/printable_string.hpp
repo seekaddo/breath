@@ -33,8 +33,8 @@ namespace breath {
 //!     the string will be escaped, as is usual in C++.
 //!
 //!     This class maintains a copy of the string, so the user does
-//!     not have to worry about the lifetime of the argument it gives
-//!     to the constructor.
+//!     not have to worry about the lifetime of the argument given to
+//!     the constructor.
 // ---------------------------------------------------------------------------
 class printable_string
 {
