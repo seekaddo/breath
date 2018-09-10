@@ -21,7 +21,12 @@ namespace breath {
 //!     \return \c true if an only if \c x is a power of two.
 //
 //      Note that C++20 will likely have an ispow2() that can replace
-//      this one: <http://wg21.link/p0556>.
+//      this one:
+//
+//        <http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0556r3.html>
+//        (current as of writing this);
+//
+//        <http://wg21.link/p0556> (latest).
 // -------------------------------------------------------------------------
 template< typename T >
 constexpr typename std::enable_if< std::numeric_limits< T >::is_integer &&
