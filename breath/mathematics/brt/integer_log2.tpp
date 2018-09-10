@@ -22,12 +22,12 @@ namespace integer_log2_private {
 constexpr int       start_at = 4 ;
 
 constexpr int
-max_power2_less_than_p( int p, int n = start_at ) noexcept
+max_power_of_2_less_than_p( int p, int n = start_at ) noexcept
 {
     BREATH_ASSERT( breath::is_power_of_2( static_cast< unsigned >( n ) ) ) ;
 
     return 2*n < p
-        ? max_power2_less_than_p( p, 2*n )
+        ? max_power_of_2_less_than_p( p, 2*n )
         : n
         ;
 }
@@ -57,7 +57,7 @@ integer_log2( std::uintmax_t x ) noexcept
 
     using namespace integer_log2_private ;
 
-    constexpr int       n = max_power2_less_than_p(
+    constexpr int       n = max_power_of_2_less_than_p(
             std::numeric_limits< std::uintmax_t >::digits
         ) ;
     return integer_log2_implementation( x, n ) ;
