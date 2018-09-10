@@ -6,8 +6,8 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include "breath/mathematics/is_power_of_2.hpp"
 #include "breath/diagnostics/assert.hpp"
+#include "breath/mathematics/is_power_of_2.hpp"
 #include <limits>
 
 namespace breath {
