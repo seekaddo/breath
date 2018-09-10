@@ -6,7 +6,7 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include "breath/mathematics/is_power_of_two.hpp"
+#include "breath/mathematics/is_power_of_2.hpp"
 #include "breath/diagnostics/assert.hpp"
 #include <limits>
 
@@ -24,7 +24,7 @@ constexpr int       start_at = 4 ;
 constexpr int
 max_power2_less_than_p( int p, int n = start_at ) noexcept
 {
-    BREATH_ASSERT( breath::is_power_of_two( n ) ) ;
+    BREATH_ASSERT( breath::is_power_of_2( static_cast< unsigned >( n ) ) ) ;
 
     return 2*n < p
         ? max_power2_less_than_p( p, 2*n )
