@@ -37,9 +37,8 @@ namespace breath {
 //!         One or two comparisons.
 //!
 //!     Remarks:
-//!         The function template returns a reference to \c value when
-//!         \c value is equivalent to one (or both) of the boundary
-//!         arguments.
+//!         Returns a reference to \c value when \c value is
+//!         equivalent to one (or both) of the boundary arguments.
 // -------------------------------------------------------------------------
 template< typename T >
 constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
@@ -58,9 +57,8 @@ constexpr T const & clamp( T const & value, T const & low, T const & high ) ;
 //!         One or two comparisons.
 //!
 //!     Remarks:
-//!         The function template returns a reference to \c value when
-//!         \c value is equivalent to one (or both) of the boundary
-//!         arguments.
+//!         Returns a reference to \c value when \c value is
+//!         equivalent to one (or both) of the boundary arguments.
 // --------------------------------------------------------------------------
 template< typename T, typename Compare  >
 constexpr T const & clamp( T const & value,
