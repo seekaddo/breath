@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2017 Gennaro Prota
+//                    Copyright 2017-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -18,6 +18,11 @@
 namespace breath {
 
 //!     \return A human readable name for the type \c T.
+//!
+//!     Limitations: if T is a reference to a possibly cv-qualified
+//!     type, the name returned is that of the cv-unqualified
+//!     referenced type; if T is a cv-qualified type, the name
+//!     returned is that of the cv-unqualified type.
 // -------------------------------------------------------------------------
 template< typename T >
 std::string         readable_type_name() ;
