@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns a human readable name for its type parameter.
+//!     \brief Returns a human readable name for its type argument.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_e0aZnjL0UZmNVTa9XkUU1WypgFnHm24u
