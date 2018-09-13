@@ -38,7 +38,6 @@ main()
         ss << no_trigraph ;
         DO_TEST( ss.str() == "\"\\?\\?!\"" ) ;
     }
-
 }
 
 // Local Variables:
