@@ -23,6 +23,9 @@ namespace breath {
 //!     type, the name returned is that of the cv-unqualified
 //!     referenced type; if T is a cv-qualified type, the name
 //!     returned is that of the cv-unqualified type.
+//!
+//!     Furthermore,  if T is a class type or a reference to a class
+//!     type, the class shall be completely-defined.
 // -------------------------------------------------------------------------
 template< typename T >
 std::string         readable_type_name() ;
