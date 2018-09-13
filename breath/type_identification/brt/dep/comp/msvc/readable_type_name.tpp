@@ -1,32 +1,27 @@
 // =========================================================================
-//                       Copyright 2017 Gennaro Prota
+//                    Copyright 2017-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 //
-//      Implementation of readable_type_name() for Visual C++.
+//      Implementation helper for readable_type_name() for Visual C++.
 // -------------------------------------------------------------------------
 
 #include <typeinfo>
 
 namespace breath {
+namespace readable_type_name_private {
 
 template< typename T >
 std::string
-readable_type_name()
+demangled_typeid_name()
 {
     return typeid( T ).name() ;
 }
 
-template<>
-inline std::string
-readable_type_name< std::string >()
-{
-    return "std::string" ;
 }
-
 }
 
 // Local Variables:

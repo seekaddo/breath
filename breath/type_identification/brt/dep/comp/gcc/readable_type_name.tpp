@@ -6,7 +6,7 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 //
-//      Implementation of readable_type_name() for gcc.
+//      Implementation helper for readable_type_name() for gcc.
 // -------------------------------------------------------------------------
 
 #include "breath/diagnostics/exception.hpp"
@@ -17,10 +17,11 @@
 #include <typeinfo>
 
 namespace breath {
+namespace readable_type_name_private {
 
 template< typename T >
 std::string
-readable_type_name()
+demangled_typeid_name()
 {
     class deallocator
     {
@@ -63,13 +64,7 @@ readable_type_name()
     return std::string( p ) ;
 }
 
-template<>
-inline std::string
-readable_type_name< std::string >()
-{
-    return "std::string" ;
 }
-
 }
 
 // Local Variables:
