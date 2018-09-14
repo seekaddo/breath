@@ -32,6 +32,13 @@ void do_tests()
 
     BREATH_CHECK( breath::readable_type_name< unsigned long >() ==
                                                              "unsigned long" ) ;
+
+    std::string const   s4 = breath::readable_type_name< int ( & )[ 10 ] >() ;
+    BREATH_CHECK( s4 == "int (&) [10]" || s4 == "int (&)[10]") ;
+
+    std::string const   s5 = breath::readable_type_name< double ( * )( long )
+                                                       >() ;
+    BREATH_CHECK( s5 == "double (*)(long)" || s5 == "double (__cdecl*)(long)") ;
 }
 
 }
