@@ -70,6 +70,33 @@
 # ---
 # note1 This will replace -Wcast-align
 # ----------------------------------------------------------------------------
+
+
+# This check on the minimum compiler version was implemented thanks to
+# Jonathan Wakely
+# ----------------------------------------------------------------------------
+
+minimum_gcc_version := 6.4.0
+
+# Note: starting from GCC 7 -dumpversion might print the major version
+# only, and we need -dumpfullversion to print the major.minor.patch
+# version (this depends on the --with-gcc-major-version-only configure
+# option). This insight is from Jonathan Wakely, as well.
+# ----------------------------------------------------------------------------
+actual_gcc_version := $(shell g++ -dumpfullversion 2>/dev/null \
+                           || g++ -dumpversion)
+
+lowest_version := $(shell                                            \
+  printf '%s\n%s\n' $(minimum_gcc_version) $(actual_gcc_version)  |  \
+  sort -t . -k 1,1n -k 2,2n -k 3,3n | head -1                        \
+  )
+
+ifneq "$(lowest_version)" "$(minimum_gcc_version)"
+    $(error Your gcc version is $(actual_gcc_version) but the minimum supported \
+    version is $(minimum_gcc_version))
+endif
+
+
 cpp_basic_options =  -ansi                      \
                      -std=c++14                 \
                      -Wall                      \
