@@ -24,7 +24,7 @@
 #           immediately because it may appear when expanding our
 #           BREATH_DEPENDENT_CODE_* macros.
 #
-#           TODO: add something like `g++ -E -dM - < /dev/null | grep...'
+#           TODO: add something like `g++ -std=c++14 -E -dM -xc++ - < /dev/null | grep...'
 #           to the makefiles, as a form of pre-check?   --gps
 #
 #           If it wasn't for this reason I wouldn't use the option at
