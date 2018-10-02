@@ -13,31 +13,6 @@
 #       Special notes for some of the options:
 #       ======================================
 #
-#       -ansi:
-#
-#           this one seemed to be the only way, with both gcc 4.7.3
-#           under Cygwin and gcc 4.7.1 under Slackware 14.0 x86_64, to
-#           prevent the compiler from pre-defining macros with names
-#           that are in the user's name space;
-#
-#           particularly, the name "unix", which would bite us
-#           immediately because it may appear when expanding our
-#           BREATH_DEPENDENT_CODE_* macros.
-#
-#           TODO: add something like `g++ -std=c++14 -E -dM -xc++ - < /dev/null | grep...'
-#           to the makefiles, as a form of pre-check?   --gps
-#
-#           If it wasn't for this reason I wouldn't use the option at
-#           all (even if this was C++98), because I don't like using
-#           the name "ansi" when in fact the standard is from ISO. (I
-#           could have attempted to use it on affected systems only,
-#           but it doesn't do any harm for the others (it seems), so
-#           why adding further complexity...)
-#
-#           Note that it must appear *before* -std=..., or it will
-#           revert things to an earlier standard (C++03 or C++98, I
-#           haven't verified).
-#
 #       -D_GLIBCXX_USE_CXX11_ABI:
 #
 #           enables the new implementations of std::string and
@@ -97,8 +72,7 @@ ifneq "$(lowest_version)" "$(minimum_gcc_version)"
 endif
 
 
-cpp_basic_options =  -ansi                      \
-                     -std=c++14                 \
+cpp_basic_options =  -std=c++14                 \
                      -Wall                      \
                      -Wextra                    \
                      -pedantic                  \
