@@ -110,7 +110,8 @@ cpp_basic_options += -pipe                      \
                      -Wsuggest-override         \
                      -Wsync-nand                \
                      -Wundef                    \
-                     -Wunused-macros
+                     -Wunused-macros            \
+                     -Wzero-as-null-pointer-constant
 
 include_switch = -I
 object_file_suffix = .o
