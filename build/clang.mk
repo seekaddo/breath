@@ -27,10 +27,12 @@ cpp_basic_options =  -std=c++14                 \
 cpp_basic_options += -pipe                      \
                      -Wno-padded
 
-# The following three options are temporary - gps
+# The following four options are temporary (the -Wno-documentation... is because
+# Clang doesn't seem to recognize the \cond command in assert.hpp)- gps
 cpp_basic_options += -Wno-exit-time-destructors \
                      -Wno-global-constructors   \
-                     -Wno-weak-vtables
+                     -Wno-weak-vtables          \
+                     -Wno-documentation-unknown-command
 
 # gps queste vanno nel debug:
 #cpp_extra_options += -fcatch-undefined-behavior
