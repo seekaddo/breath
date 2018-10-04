@@ -47,7 +47,7 @@ public:
 
     //!     Compiler-generated destructor
     // ---------------------------------------------------------------------
-    virtual             ~exception() noexcept = default ;
+    virtual             ~exception() noexcept override = default ;
 
     //!     Returns a description of the exception object.
     // ---------------------------------------------------------------------

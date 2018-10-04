@@ -37,7 +37,7 @@ public:
         return breath::from_string< T >( str ) ;
     }
 
-    virtual             ~default_reader() noexcept = default ;
+    virtual             ~default_reader() noexcept override = default ;
 } ;
 
 template< typename T >
