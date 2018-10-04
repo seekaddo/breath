@@ -34,7 +34,8 @@
 #           file.
 # ----------------------------------------------------------------------------
 
-cpp_basic_options = /Zc:forScope        \
+cpp_basic_options = /std:c++14          \
+                    /Zc:forScope        \
                     /Zc:wchar_t         \
                     /Zc:auto            \
                     /Zc:trigraphs       \
