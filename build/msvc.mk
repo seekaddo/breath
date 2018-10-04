@@ -6,6 +6,14 @@
 #             <https://opensource.org/licenses/BSD-3-Clause>.)
 # _________________________________________________________________________
 #
+#       Maintenance note
+#       ----------------
+#
+#       Be sure that modifications to these options don't put the various
+#       compiler-specific makefiles out of sync (e.g. by requiring
+#       C++14 with one compiler and C++17 with another).
+#
+#
 #       As usual, the options are listed in two groups. The group
 #	appearing first is related to standards conformance.
 #
