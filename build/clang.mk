@@ -21,7 +21,20 @@
 #       Special notes for some of the options:
 #       ======================================
 #
-#       (See gcc.mk)
+#       (See gcc.mk for further notes on some options.)
+#
+#       -Wno-weak-vtables:
+#
+#           The -Wweak-vtables warning tries to point out possible
+#           object files bloat, but that's probably moot either because
+#           it isn't really going to make a difference on performances,
+#           and because the linker will likely collapse the duplicated
+#           vtables anyway.
+#
+#           So this warning can be safely suppressed. Note, too, that
+#           it would be difficult to silence it by modifying the code,
+#           as in the case of class command_line_error, in
+#           command_line.hpp.
 # ----------------------------------------------------------------------------
 
 # KEEP in sync! (See above.)
@@ -35,13 +48,13 @@ cpp_basic_options =  -std=c++14                 \
                      -D_GLIBCXX_USE_CXX11_ABI
 
 cpp_basic_options += -pipe                      \
-                     -Wno-padded
+                     -Wno-padded                \
+                     -Wno-weak-vtables
 
-# The following four options are temporary (the -Wno-documentation... is because
+# The following three options are temporary (the -Wno-documentation... is because
 # Clang doesn't seem to recognize the \cond command in assert.hpp)- gps
 cpp_basic_options += -Wno-exit-time-destructors \
                      -Wno-global-constructors   \
-                     -Wno-weak-vtables          \
                      -Wno-documentation-unknown-command
 
 # gps queste vanno nel debug:
