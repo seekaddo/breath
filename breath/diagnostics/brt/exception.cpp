@@ -32,7 +32,7 @@ exception::exception( std::string const & what_msg ) noexcept
     curr += ( count( sep ) - 1 ) ;
     std::strncpy( curr, what_msg.c_str(),
         static_cast< std::size_t >( what_message_max_size -
-                                    (curr - &m_what_message[ 0 ] ) ) ) ;
+                                    ( curr - &m_what_message[ 0 ] ) ) ) ;
 }
 
 char const *
