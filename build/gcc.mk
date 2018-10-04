@@ -79,7 +79,7 @@ ifneq "$(lowest_version)" "$(minimum_gcc_version)"
     version is $(minimum_gcc_version))
 endif
 
-
+# KEEP in sync! (See above.)
 cpp_basic_options =  -std=c++14                 \
                      -Wall                      \
                      -Wextra                    \

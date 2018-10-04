@@ -23,6 +23,8 @@
 #
 #       (See gcc.mk)
 # ----------------------------------------------------------------------------
+
+# KEEP in sync! (See above.)
 cpp_basic_options =  -std=c++14                 \
                      -Weverything               \
                      -Wno-c++98-compat          \
