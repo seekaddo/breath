@@ -45,7 +45,7 @@ cpp_basic_options =  -std=c++14                 \
                      -Werror                    \
                      -D_POSIX_C_SOURCE=200112L  \
                      -U_GNU_SOURCE              \
-                     -D_GLIBCXX_USE_CXX11_ABI
+                     -D_GLIBCXX_USE_CXX11_ABI=1
 
 cpp_basic_options += -pipe                      \
                      -Wno-padded                \

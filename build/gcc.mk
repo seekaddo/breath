@@ -21,7 +21,7 @@
 #       Special notes for some of the options:
 #       ======================================
 #
-#       -D_GLIBCXX_USE_CXX11_ABI:
+#       -D_GLIBCXX_USE_CXX11_ABI=1:
 #
 #           enables the new implementations of std::string and
 #           std::list, which conform to C++11; for more details see:
@@ -87,7 +87,7 @@ cpp_basic_options =  -std=c++14                 \
                      -Werror                    \
                      -D_POSIX_C_SOURCE=200112L  \
                      -U_GNU_SOURCE              \
-                     -D_GLIBCXX_USE_CXX11_ABI
+                     -D_GLIBCXX_USE_CXX11_ABI=1
 
 cpp_basic_options += -pipe                      \
                      -Wabi                      \
