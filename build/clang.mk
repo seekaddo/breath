@@ -24,7 +24,13 @@ cpp_basic_options =  -std=c++14                 \
                      -U_GNU_SOURCE              \
                      -D_GLIBCXX_USE_CXX11_ABI
 
-cpp_basic_options += -pipe
+cpp_basic_options += -pipe                      \
+                     -Wno-padded
+
+# The following three options are temporary - gps
+cpp_basic_options += -Wno-exit-time-destructors \
+                     -Wno-global-constructors   \
+                     -Wno-weak-vtables
 
 # gps queste vanno nel debug:
 #cpp_extra_options += -fcatch-undefined-behavior
