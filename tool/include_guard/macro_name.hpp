@@ -9,6 +9,7 @@
 #ifndef BREATH_GUARD_6wcoEyV5QUsnWplOvviqZvbfmnCMU19g
 #define BREATH_GUARD_6wcoEyV5QUsnWplOvviqZvbfmnCMU19g
 
+#include <cstddef>
 #include <string>
 
 class macro_name_creation // this could be a scoped enum in C++11
@@ -18,7 +19,7 @@ public:
 } ;
 
 std::string         make_macro_name( std::string const & prefix,
-                                     int random_part_length,
+                                     std::size_t random_part_length,
                                      macro_name_creation::exit_status * ) ;
 
 
