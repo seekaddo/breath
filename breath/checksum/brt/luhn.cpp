@@ -24,7 +24,7 @@ int
 luhn_sum( std::string const & str )
 {
     bool                from_table = false ;
-    auto lambda = [ & ]( int s, char c )
+    auto checked_adder = [ & ]( int s, char c )
     {
         if ( ! std::isdigit( static_cast< unsigned char >( c ) ) ) {
             throw exception( "non-digit char in Luhn string" ) ;
@@ -37,7 +37,7 @@ luhn_sum( std::string const & str )
         return sum % base ;
     } ;
 
-    return std::accumulate( str.crbegin(), str.crend(), 0, lambda ) ;
+    return std::accumulate( str.crbegin(), str.crend(), 0, checked_adder ) ;
 }
 
 bool
