@@ -41,7 +41,6 @@
 cpp_basic_options =  -std=c++14                 \
                      -Weverything               \
                      -Wno-c++98-compat          \
-                     -pedantic                  \
                      -Werror                    \
                      -D_POSIX_C_SOURCE=200112L  \
                      -U_GNU_SOURCE              \
