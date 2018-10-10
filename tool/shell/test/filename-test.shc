@@ -8,17 +8,6 @@
 
 .   "$BREATH_ROOT/tool/shell/file_name.shc"
 
-
-# Test cases:
-#   $1                  result
-#   --                  ------
-#   name
-#   name.ext            ext
-#   name.ext1.ext2      ext2
-#   .dotfile
-#   a/b/c/file.txt      txt
-#   ./a/file.txt        txt
-
 {
 get_extension name ; printf '\n'
 get_extension name.ext ; printf '\n'
