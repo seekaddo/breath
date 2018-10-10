@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2006 Gennaro Prota
+//                    Copyright 2006-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -7,16 +7,24 @@
 // _________________________________________________________________________
 
 #include "breath/path/extension.hpp"
+#include "breath/path/allowed_path_separators.hpp"
 
 namespace breath {
 
 std::string
 extension( std::string const & path )
 {
-    auto const          pos = path.rfind( '.' ) ;
-    return pos == std::string::npos
+    auto const          last_sep = path.find_last_of(
+                            breath::allowed_path_separators()
+                        ) ;
+    std::string const   last_name = path.substr( last_sep + 1 ) ;
+
+    auto const          pos = last_name.rfind( '.' ) ;
+    return pos == std::string::npos ||
+           pos == 0                 ||
+           last_name == ".."
         ? ""
-        : path.substr( pos )
+        : last_name.substr( pos )
         ;
 }
 

@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2006 Gennaro Prota
+//                    Copyright 2006-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -19,10 +19,20 @@ main()
 {
     using               breath::extension ;
 
-    DO_TEST( extension( "" )               == "" ) ;
+    DO_TEST( extension( "" )                == "" ) ;
+    DO_TEST( extension( "." )               == "" ) ;
+    DO_TEST( extension( ".." )              == "" ) ;
+
+    DO_TEST( extension( ".dotfile" )        == "" ) ;
+    DO_TEST( extension( ".dotfile.txt" )    == ".txt" ) ;
+    DO_TEST( extension( ".dotfile.tar.gz" ) == ".gz" ) ;
+
     DO_TEST( extension( "my_file" )        == "" ) ;
     DO_TEST( extension( "my_file." )       == "." ) ;
     DO_TEST( extension( "my_file.txt.exe") == ".exe" ) ;
+
+    DO_TEST( extension( "C:\\a.b\\" )      == "" ) ;
+    DO_TEST( extension( "C:\\a.b\\file" )  == "" ) ;
     DO_TEST( extension( "/my_file.exe" )   == ".exe" ) ;
 
     DO_TEST( extension( "C:\\Documents and Settings\\Genny\\Desktop\\my_file.bat" )
