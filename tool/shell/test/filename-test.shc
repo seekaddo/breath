@@ -17,12 +17,13 @@ get_extension a/b/c/file.txt ; printf '\n'
 get_extension ./a/file.txt ; printf '\n'
 }       >   output
 
-echo '
+printf '
 ext
 ext2
 
 txt
-txt'       >   expected_output
+txt
+'       >   expected_output
 
 # Local Variables:
 # mode: shell-script
