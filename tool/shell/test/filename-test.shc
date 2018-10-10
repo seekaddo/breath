@@ -20,22 +20,20 @@
 #   ./a/file.txt        txt
 
 {
-get_extension name
-get_extension name.ext
-get_extension name.ext1.ext2
-get_extension .dotfile
-get_extension a/b/c/file.txt
-get_extension ./a/file.txt
+get_extension name ; printf '\n'
+get_extension name.ext ; printf '\n'
+get_extension name.ext1.ext2 ; printf '\n'
+get_extension .dotfile ; printf '\n'
+get_extension a/b/c/file.txt ; printf '\n'
+get_extension ./a/file.txt ; printf '\n'
 }       >   output
 
 echo '
-
 ext
 ext2
 
 txt
-txt
-'       >   expected_output
+txt'       >   expected_output
 
 # Local Variables:
 # mode: shell-script
