@@ -13,7 +13,7 @@ get_base_name()
 
 get_extension()
 {
-    get_base_name "$1" | awk -F. ' NF > 1 && $1 != "" { print $NF } '
+    get_base_name "$1" | awk -F. ' NF > 1 && $1 != "" { printf "%s", $NF } '
 }
 
 # Local Variables:
