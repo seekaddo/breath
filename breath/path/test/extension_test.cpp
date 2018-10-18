@@ -31,11 +31,11 @@ main()
     DO_TEST( extension( "my_file." )       == "." ) ;
     DO_TEST( extension( "my_file.txt.exe") == ".exe" ) ;
 
-    DO_TEST( extension( "C:\\a.b\\" )      == "" ) ;
-    DO_TEST( extension( "C:\\a.b\\file" )  == "" ) ;
+    DO_TEST( extension( "C:/a.b/" )      == "" ) ;
+    DO_TEST( extension( "C:/a.b/file" )  == "" ) ;
     DO_TEST( extension( "/my_file.exe" )   == ".exe" ) ;
 
-    DO_TEST( extension( "C:\\Documents and Settings\\Genny\\Desktop\\my_file.bat" )
+    DO_TEST( extension( "C:/Documents and Settings/Genny/Desktop/my_file.bat" )
                                                             == ".bat" ) ;
 }
 
