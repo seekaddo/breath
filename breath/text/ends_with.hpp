@@ -17,6 +17,8 @@
 
 namespace breath {
 
+//      [FUTURE] C++20 will have std::string::ends_with() for this.
+//  ------------------------------------------------------------------------
 bool                ends_with( std::string const & str,
                                std::string const & with ) ;
 
