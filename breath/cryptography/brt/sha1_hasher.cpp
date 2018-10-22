@@ -97,7 +97,7 @@ void sha1_engine::process_block( state_type & state
     //       forming an array of pointers to ch, parity and maj prevents
     //       their calls to be inlined, with most compilers; but perhaps
     //       there are (non macro-based) other beneficial solutions
-    //       (FUTURE [gps])
+    //       ([FUTURE] [gps])
     //
     word_type           t( 0 ) ;
     for ( int i = 0 ; i < 20 ; ++ i ) {

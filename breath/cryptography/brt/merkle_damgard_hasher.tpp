@@ -36,7 +36,7 @@ public:
     }
 } ;
 
-// FUTURE: template typedef (using) for
+// [FUTURE], [C++11]: template typedef (using) for
 //           accumulator< Hasher, merkle_damgard_accumulation_policy >
 // [gps]
 
@@ -50,7 +50,7 @@ template< typename Engine >
 template< typename InputIter >
 merkle_damgard_machine< Engine >::merkle_damgard_machine( InputIter begin,
                                                           InputIter end )
-// [gps] this will forward to the default ctor, in the future
+// [FUTURE], [C++11] [gps] this will forward to the default ctor
 {
     reset() ;
     append( begin, end ) ;

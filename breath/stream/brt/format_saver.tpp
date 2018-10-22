@@ -153,7 +153,7 @@ basic_format_saver< Ch, Traits >::~basic_format_saver() noexcept
     // swap(basic_ios&& rhs) member function:
     //
     //  temp.copyfmt( m_store ) ;
-    //  temp.swap( m_user_stream ) ;        // [FUTURE], [C++0x]
+    //  temp.swap( m_user_stream ) ;        // [FUTURE], [C++11]
     //
     // This way, we could still guarantee a copy of the normal members
     // when copyfmt fails.

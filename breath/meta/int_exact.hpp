@@ -27,7 +27,7 @@ namespace breath {
 //! \cond
 namespace int_exact_private {
 
-// FUTURE
+// [FUTURE], [C++11]
 // ------
 //
 //      This file could use <stdint.h> or <cstdint> when they will be
