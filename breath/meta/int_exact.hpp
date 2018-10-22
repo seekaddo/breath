@@ -27,13 +27,6 @@ namespace breath {
 //! \cond
 namespace int_exact_private {
 
-// [FUTURE], [C++11]
-// ------
-//
-//      This file could use <stdint.h> or <cstdint> when they will be
-//      available. [gps]
-// ---------------------------------------------------------
-//
 //      This might be elegantly implemented via type lists or maps,
 //      but we chose to keep metaprogramming (and dependencies) to a
 //      minimum.
