@@ -7,8 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief A generic version of C99's exact-width integer types
-//!            (intN_t).
+//!     \brief Templatized exact-width integer types
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
@@ -63,6 +62,10 @@ public:
 }
 //! \endcond
 
+//!     Provides an integer type with width 'width'. Differently from
+//!     intN_t in C99, it can have padding and can use a representation
+//!     different from two's complement.
+//!
 //!     \par Type requirements
 //!         \p T shall be either \c signed \c int or \c unsigned \c int.
 //!
