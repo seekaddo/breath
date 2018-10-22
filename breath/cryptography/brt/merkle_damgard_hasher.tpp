@@ -193,7 +193,7 @@ merkle_damgard_machine< Engine >::append( Iter begin, Iter end )
 // ---------------------------------------------------------------------------
 template< typename Engine >
 void
-merkle_damgard_machine< Engine >::final()
+merkle_damgard_machine< Engine >::finalize()
 {
     enum { r = word_length * length_count } ; // room to append bit-length
 
@@ -219,7 +219,7 @@ template< typename Engine >
 void
 merkle_damgard_machine< Engine >::create_digest( raw_digest_type & raw )
 {
-    final() ;
+    finalize() ;
     for ( int i = 0 ; i < digest_width / word_width ; ++ i ) {
         Engine::encode_word( m_state[ i ],
                              raw + i * word_length ) ;

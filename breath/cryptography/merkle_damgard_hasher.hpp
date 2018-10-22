@@ -136,7 +136,7 @@ private:
     byte_type           m_input_buffer[ block_length ] ;
 
     void                compress() ;
-    void                final() ;
+    void                finalize() ;
     void                reset() ;
     void                create_digest( raw_digest_type & ) ;
 
