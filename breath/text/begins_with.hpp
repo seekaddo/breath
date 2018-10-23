@@ -20,7 +20,7 @@ namespace breath {
 //!     \return Whether \c str begins with \c with. If \c with is
 //!             empty, the result is always true.
 //!
-//      [FUTURE] C++20 will have std::string::starts_with() for this.
+//!     [FUTURE] C++20 will have std::string::starts_with() for this.
 //  ------------------------------------------------------------------------
 bool                begins_with( std::string const & str,
                                  std::string const & with ) noexcept ;
