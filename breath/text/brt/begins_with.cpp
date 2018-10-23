@@ -12,11 +12,13 @@
 
 namespace breath {
 
-//      Note: if 'with' is empty this always returns true. (Actually,
-//            our unit tests verify that this is the case but, to me,
-//            the standard is not clear about the return value of
-//            std::equal() on empty ranges; I've filed a DR about it:
-//              <http://cplusplus.github.io/LWG/lwg-active.html#2967>.
+//      Note: if 'with' is empty this always returns true. (Two empty
+//            ranges always compare equal with std::equal. This wasn't
+//            clear to me, but the committee said otherwise; see:
+//
+//              <https://wg21.link/lwg2967>.
+//
+//            Of course, our unit tests verify that this is the case.
 //            )
 // -------------------------------------------------------------------------
 bool
