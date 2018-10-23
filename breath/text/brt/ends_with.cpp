@@ -1,5 +1,5 @@
 // =========================================================================
-//                    Copyright 2013-2015 Gennaro Prota
+//                    Copyright 2013-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -16,7 +16,7 @@ namespace breath {
 //            analogous comment in begins_with.cpp.)
 // -------------------------------------------------------------------------
 bool
-ends_with( std::string const & str, std::string const & with )
+ends_with( std::string const & str, std::string const & with ) noexcept
 {
     auto const          sz( with.size() ) ;
     return str.size() >= sz

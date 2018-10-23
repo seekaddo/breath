@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2013 Gennaro Prota
+//                    Copyright 2013-2018 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -20,7 +20,7 @@ namespace breath {
 //      [FUTURE] C++20 will have std::string::ends_with() for this.
 //  ------------------------------------------------------------------------
 bool                ends_with( std::string const & str,
-                               std::string const & with ) ;
+                               std::string const & with ) noexcept ;
 
 }
 
