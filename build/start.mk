@@ -17,7 +17,7 @@
 # gps ---  mi sembra che la dir corrente dipenda dal file che include questo :-(
 #          almeno per il momento quindi uso $BREATH_ROOT
 #
-root            = ../..
+root            = $(BREATH_ROOT)
 include $(root)/build/$(compiler).mk
 
 #

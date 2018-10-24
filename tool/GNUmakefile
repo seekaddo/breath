@@ -1,0 +1,26 @@
+# =========================================================================
+#                       Copyright 2018 Gennaro Prota
+#
+#                 Licensed under the 3-Clause BSD License.
+#            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
+#             <https://opensource.org/licenses/BSD-3-Clause>.)
+# _________________________________________________________________________
+
+subdirs := include_guard
+
+root := $(BREATH_ROOT)
+
+include $(root)/build/start.mk
+
+all:
+	$(do_for_all_subdirs)
+
+clean:
+	$(do_for_all_subdirs)
+
+# Local Variables:
+# mode: makefile
+# indent-tabs-mode: t
+# tab-width: 8
+# End:
+# vim: set ft=make noet ts=8 sts=0 sw=8:
