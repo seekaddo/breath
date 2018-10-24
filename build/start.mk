@@ -12,7 +12,11 @@
 #  - compiler
 #  - subdirs?? -gps
 
-# gps TODO: add a check for the three main variables (arch, comp, syst)
+
+ifeq ($(and $(compiler), $(system)),)
+    $(error Please, define 'compiler' and 'system' on the command line)
+endif
+
 
 #       Use $(BREATH_ROOT) and not a relative path, because a relative
 #       path would depend on what makefile did the include, and we
