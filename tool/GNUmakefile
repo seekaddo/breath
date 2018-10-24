@@ -12,12 +12,6 @@ root := $(BREATH_ROOT)
 
 include $(root)/build/start.mk
 
-all:
-	$(do_for_all_subdirs)
-
-clean:
-	$(do_for_all_subdirs)
-
 # Local Variables:
 # mode: makefile
 # indent-tabs-mode: t
