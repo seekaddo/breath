@@ -10,7 +10,7 @@ subdirs := include_guard
 
 root := $(BREATH_ROOT)
 
-include $(root)/build/start.mk
+include $(root)/makefile/start.mk
 
 # Local Variables:
 # mode: makefile

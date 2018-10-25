@@ -24,7 +24,7 @@ endif
 #       <root>.
 # --------------------------------------------------------------------------
 root            = $(BREATH_ROOT)
-include $(root)/build/$(compiler).mk
+include $(root)/makefile/$(compiler).mk
 
 #
 # Function originally taken from James Kanze's GABI Library version 2005v01 (named "doForAll", there).

@@ -1,7 +1,7 @@
 # Author: Gennaro Prota
 # gps add boilerplate!!
 
-include ../../build/start.mk
+include ../../makefile/start.mk
 
 # DESIGN GOALS:
 #
