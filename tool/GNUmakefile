@@ -8,7 +8,7 @@
 
 subdirs := include_guard
 
-root := $(BREATH_ROOT)
+root := ..
 
 include $(root)/makefile/start.mk
 

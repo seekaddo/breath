@@ -18,12 +18,6 @@ ifeq ($(and $(compiler), $(system)),)
 endif
 
 
-#       Use $(BREATH_ROOT) and not a relative path, because a relative
-#       path would depend on what makefile did the include, and we
-#       want to allow building .e.g. from <root>/tool, in addition to
-#       <root>.
-# --------------------------------------------------------------------------
-root            = $(BREATH_ROOT)
 include $(root)/makefile/$(compiler).mk
 
 #

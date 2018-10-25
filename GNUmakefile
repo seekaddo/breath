@@ -10,7 +10,8 @@
 # -------------------------------------------------------------------------
 
 subdirs = tool
-include $(BREATH_ROOT)/makefile/start.mk
+root = .
+include $(root)/makefile/start.mk
 
 # Local Variables:
 # mode: makefile
