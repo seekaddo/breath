@@ -54,8 +54,8 @@ public:
     virtual char const *what() const noexcept override ;
 
 private:
-    enum { what_message_max_size = 1023 } ;
-    char                m_what_message[ what_message_max_size ] ;
+    enum { what_message_buffer_size = 1023 } ;
+    char                m_what_message[ what_message_buffer_size ] ;
 } ;
 
 }

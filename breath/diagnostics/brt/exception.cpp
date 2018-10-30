@@ -31,7 +31,7 @@ exception::exception( std::string const & what_msg ) noexcept
     std::strcpy( curr, sep ) ;
     curr += ( count( sep ) - 1 ) ;
     std::strncpy( curr, what_msg.c_str(),
-        static_cast< std::size_t >( what_message_max_size -
+        static_cast< std::size_t >( what_message_buffer_size -
                                     ( curr - &m_what_message[ 0 ] ) ) ) ;
 }
 
