@@ -22,7 +22,8 @@ namespace breath {
 //      ----------
 //
 //!     Base class for all Breath's exception types. Derives virtually
-//!     from \c std::exception.
+//!     from \c std::exception. With respect to the latter, it manages
+//!     a custom what() message.
 // -------------------------------------------------------------------------
 class exception : public virtual std::exception
 {
