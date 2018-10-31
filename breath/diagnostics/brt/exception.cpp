@@ -14,32 +14,33 @@
 
 namespace breath {
 
-namespace {
-char const          incipit[] = "Breath library exception" ;
-}
-
 exception::exception() noexcept
+    :   exception( "" )
 {
-    std::strcpy( m_what_message, incipit ) ;
 }
 
 exception::exception( std::string const & what_msg ) noexcept
 {
+    char const          incipit[] = "Breath library exception" ;
+
     char *              curr = &m_what_message[ 0 ] ;
     std::strcpy( curr, incipit ) ;
-    curr += ( count( incipit ) - 1 ) ;
-    char const          sep[] = ": " ;
-    std::strcpy( curr, sep ) ;
-    curr += ( count( sep ) - 1 ) ;
 
-    std::size_t const   length_so_far = curr - &m_what_message[ 0 ] ;
-    std::size_t const   remaining_length = what_message_buffer_size - 1 -
-                                            length_so_far ;
-    std::size_t const   length_to_copy = std::min( what_msg.length(),
-                                            remaining_length ) ;
+    if ( ! what_msg.empty() ) {
+        curr += ( count( incipit ) - 1 ) ;
+        char const          sep[] = ": " ;
+        std::strcpy( curr, sep ) ;
+        curr += ( count( sep ) - 1 ) ;
 
-    std::strncpy( curr, what_msg.c_str(), length_to_copy ) ;
-    curr[ length_to_copy ]  = '\0' ;
+        std::size_t const   length_so_far = curr - &m_what_message[ 0 ] ;
+        std::size_t const   remaining_length = what_message_buffer_size - 1 -
+                                                length_so_far ;
+        std::size_t const   length_to_copy = std::min( what_msg.length(),
+                                                remaining_length ) ;
+
+        std::strncpy( curr, what_msg.c_str(), length_to_copy ) ;
+        curr[ length_to_copy ]  = '\0' ;
+    }
 }
 
 char const *
