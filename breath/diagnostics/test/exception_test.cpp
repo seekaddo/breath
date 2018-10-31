@@ -27,15 +27,24 @@ test_throwability()
 void
 test_what_message_handling()
 {
+    std::string const   default_message = "Breath library exception" ;
+
+    breath::exception const
+                        e1 ;
+    breath::exception const
+                        e2( "" ) ;
+    BREATH_CHECK( e1.what() == default_message ) ;
+    BREATH_CHECK( e2.what() == default_message ) ;
+
     std::string const   very_long_string( 5 * 1024, 'A' ) ;
     breath::exception const
-                        e( very_long_string ) ;
+                        e3( very_long_string ) ;
 
     //  The idea, here, is that std::strlen will crash if the string
     //  is not null-terminated.
     // --------------------------------------------------------------
     std::size_t const volatile
-                        length = std::strlen( e.what() ) ;
+                        length = std::strlen( e3.what() ) ;
     static_cast< void >( length ) ;
 }
 
