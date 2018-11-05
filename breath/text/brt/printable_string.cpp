@@ -85,7 +85,7 @@ operator <<( std::ostream & dest, printable_string const & ps )
             break ;
 
         default:
-            if ( std::isprint( static_cast< unsigned char >( c ) ) != 0 ) {
+            if ( std::isprint( static_cast< unsigned char >( c ) ) ) {
                 dest << c ;
             }  else {
                 static_assert( CHAR_BIT == 8, "please, adjust the setw()"
