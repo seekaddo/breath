@@ -23,11 +23,11 @@ exception::exception( std::string const & what_msg ) noexcept
 {
     char const          incipit[] = "Breath library exception" ;
 
-    char *              curr = &m_what_message[ 0 ] ;
-    std::strcpy( curr, incipit ) ;
+    std::strcpy( m_what_message, incipit ) ;
 
     if ( ! what_msg.empty() ) {
-        curr += ( count( incipit ) - 1 ) ;
+        char *              curr = &m_what_message[ 0 ] +
+                                     ( count( incipit ) - 1 ) ;
         char const          sep[] = ": " ;
         std::strcpy( curr, sep ) ;
         curr += ( count( sep ) - 1 ) ;
