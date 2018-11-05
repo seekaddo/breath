@@ -13,7 +13,7 @@
 #include "breath/preprocessing/prevent_macro_expansion.hpp"
 
 #include <Windows.h>
-#include <Wincrypt.h>
+#include <wincrypt.h>
 
 #include <limits>
 #include <string>
