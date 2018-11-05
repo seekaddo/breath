@@ -28,7 +28,7 @@ breath::program_option_with_value< std::string >
 }
 
 int
-main( int argc, char * argv[] )
+main( int argc, char ** argv )
 {
     using               breath::command_line ;
     using               breath::program ;
