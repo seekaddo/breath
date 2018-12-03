@@ -37,9 +37,9 @@ namespace breath {
 //!     a double quote character in the string will be escaped, as is
 //!     usual in C++.
 //!
-//!     This class maintains a copy of the string, so the user does
-//!     not have to worry about the lifetime of the object given to the
-//!     constructor.
+//!     Instances of this class maintain a copy of the string, so the
+//!     user does not have to worry about the lifetime of the object
+//!     given to the constructor.
 // ---------------------------------------------------------------------------
 class printable_string
 {
