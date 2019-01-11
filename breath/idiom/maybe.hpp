@@ -94,7 +94,6 @@ private:
     bool                m_is_valid = false ;
 
 public:
-
                         maybe() noexcept ; // POST: ! is_valid()
                         maybe( maybe const & ) ;
     explicit            maybe( T const & ) ;
