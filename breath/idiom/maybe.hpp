@@ -108,7 +108,15 @@ public:
     bool                is_valid() const noexcept ;
 
     T const &           value() const noexcept ;
-    T const &           default_to( T const & t ) const noexcept ;
+
+    //!     \returns
+    //!     \c value() if \c is_valid(); otherwise \c t.
+    //!
+    //!     Note that, differently from \c value(), this function
+    //!     returns by value, which prevents problems of dangling
+    //!     references.
+    // ---------------------------------------------------------------------
+    T                   default_to( T const & t ) const noexcept ;
 
 private:
     void                construct( T && source ) ;

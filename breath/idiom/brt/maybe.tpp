@@ -141,7 +141,7 @@ maybe< T >::value() const noexcept
 }
 
 template< typename T >
-T const &
+T
 maybe< T >::default_to( T const & t ) const noexcept
 {
     return is_valid()
