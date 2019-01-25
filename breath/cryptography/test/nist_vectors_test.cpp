@@ -38,18 +38,18 @@ class nist_file
     friend nist_file &  operator >>( nist_file &, T & t ) ;
 
 public:
-    explicit            nist_file( char const * filename ) ;
+    explicit            nist_file( char const * file_name ) ;
     bool                good() const ;
     bool                new_section() ;
 } ;
 
-nist_file::nist_file( char const * filename )
+nist_file::nist_file( char const * file_name )
 {
     std::string const   breath_root( breath::find_environment_string(
                                                     "BREATH_ROOT" ).value() ) ;
     std::string const   subdir( breath_root +
                                     "/breath/cryptography/test/nist_vectors/" ) ;
-    m_stream.open( ( subdir + filename ).c_str() ) ;
+    m_stream.open( ( subdir + file_name ).c_str() ) ;
     if ( m_stream ) {
         for ( std::string s ; s != "D>" ; ) {
             m_stream >> s;

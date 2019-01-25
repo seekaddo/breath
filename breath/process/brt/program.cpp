@@ -10,7 +10,7 @@
 #include "breath/process/program.hpp"
 #include "breath/counting/count.hpp"
 #include "breath/diagnostics/assert.hpp"
-#include "breath/path/base_filename.hpp"
+#include "breath/path/base_file_name.hpp"
 #include "breath/process/exit_code.hpp"
 
 #include <iostream>
@@ -73,7 +73,7 @@ program::parse_command_line( int argc, char const * const * argv,
                                         ? argv[ 0 ]
                                         : "<unknown program>"
                                 ;
-    m_program_name = breath::base_filename( name ) ;
+    m_program_name = breath::base_file_name( name ) ;
 }
 
 std::string

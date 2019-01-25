@@ -166,7 +166,7 @@
     <ClCompile Include="..\..\..\breath\diagnostics\brt\exception.cpp" />
     <ClCompile Include="..\..\..\breath\diagnostics\brt\last_api_error.cpp" />
     <ClCompile Include="..\..\..\breath\path\brt\allowed_path_separators.cpp" />
-    <ClCompile Include="..\..\..\breath\path\brt\base_filename.cpp" />
+    <ClCompile Include="..\..\..\breath\path\brt\base_file_name.cpp" />
     <ClCompile Include="..\..\..\breath\process\brt\command_line.cpp" />
     <ClCompile Include="..\..\..\breath\process\brt\exit_code.cpp" />
     <ClCompile Include="..\..\..\breath\process\brt\program.cpp" />

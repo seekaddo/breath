@@ -41,7 +41,7 @@
 #       from version 22.1 (!) What happens for unrecognized modes?
 #
 
-# filename extension  comment  comment   line
+# file name extension comment  comment   line
 # (extended regexp)    start     end    comment    language
 # --------------------------------------------------------------------
 asm                     /*       */       #          Asm

@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 
 
-#include "breath/path/base_filename.hpp"
+#include "breath/path/base_file_name.hpp"
 
 ///////// gps
 #include "breath/diagnostics/assert.hpp"
@@ -17,15 +17,15 @@
 int
 main()
 {
-    using               breath::base_filename ;
+    using               breath::base_file_name ;
 
-    DO_TEST( base_filename( "" )      == "" ) ;
-    DO_TEST( base_filename( "my_file" )      == "my_file" ) ;
-    DO_TEST( base_filename( "/my_file" )     == "my_file" ) ;
+    DO_TEST( base_file_name( "" )      == "" ) ;
+    DO_TEST( base_file_name( "my_file" )      == "my_file" ) ;
+    DO_TEST( base_file_name( "/my_file" )     == "my_file" ) ;
 
-    DO_TEST( base_filename( "/usr/")           == "" ) ;
-    DO_TEST( base_filename( "/usr/lib/my_lib") == "my_lib" ) ;
-    DO_TEST( base_filename( "C:\\Documents and Settings\\Genny\\Desktop\\my_file" )
+    DO_TEST( base_file_name( "/usr/")           == "" ) ;
+    DO_TEST( base_file_name( "/usr/lib/my_lib") == "my_lib" ) ;
+    DO_TEST( base_file_name( "C:\\Documents and Settings\\Genny\\Desktop\\my_file" )
                                                             == "my_file" ) ;
 }
 

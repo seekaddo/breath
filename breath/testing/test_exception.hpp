@@ -22,16 +22,16 @@ class test_exception
     : public virtual breath::exception
 {
 public:
-                        test_exception( char const * filename,
+                        test_exception( char const * file_name,
                                         unsigned long line ) noexcept ;
                         test_exception( std::string const & message,
-                                        char const * filename,
+                                        char const * file_name,
                                         unsigned long line ) noexcept ;
-    char const *        filename() const noexcept ;
+    char const *        file_name() const noexcept ;
     unsigned long       line()     const noexcept ;
 
 private:
-    char const *        m_filename ;
+    char const *        m_file_name ;
     unsigned long       m_line ;
 } ;
 

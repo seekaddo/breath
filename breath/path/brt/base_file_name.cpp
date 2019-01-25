@@ -6,14 +6,14 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include "breath/path/base_filename.hpp"
+#include "breath/path/base_file_name.hpp"
 #include "breath/path/allowed_path_separators.hpp"
 #include <string>
 
 namespace breath {
 
 std::string
-base_filename( std:: string const & full_path)
+base_file_name( std:: string const & full_path)
 {
     std::string::size_type const
                         pos = full_path.find_last_of(

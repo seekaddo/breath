@@ -126,7 +126,7 @@ eval ` awk '
 
 if [ -z "$language" ]
 then
-    quit_script "filename extension not found in $traits_file"
+    quit_script "file name extension not found in $traits_file"
 fi
 
 absent='no'

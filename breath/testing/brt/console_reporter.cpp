@@ -51,7 +51,7 @@ console_reporter::on_test_passed( std::size_t )
 void
 console_reporter::on_test_failed( std::size_t, test_exception const & ex )
 {
-    m_stream << "F (" << ex.filename() << ": " << ex.line() << ")]" ;
+    m_stream << "F (" << ex.file_name() << ": " << ex.line() << ")]" ;
     ++ m_failed ;
 }
 

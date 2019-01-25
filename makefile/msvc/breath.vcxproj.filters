@@ -141,13 +141,13 @@
     <ClCompile Include="..\..\breath\path\brt\allowed_path_separators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\path\brt\base_filename.cpp">
+    <ClCompile Include="..\..\breath\path\brt\base_file_name.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\path\brt\extension.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\path\test\base_filename_test.cpp">
+    <ClCompile Include="..\..\breath\path\test\base_file_name_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\path\test\extension_test.cpp">
@@ -535,7 +535,7 @@
     <ClInclude Include="..\..\breath\path\allowed_path_separators.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\path\base_filename.hpp">
+    <ClInclude Include="..\..\breath\path\base_file_name.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\path\extension.hpp">

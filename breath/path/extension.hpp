@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns the filename extension from a given path.
+//!     \brief Returns the file name extension from a given path.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_BtNGaSvg9IBya5J9FQZmayMQRBx2oBwo
@@ -17,15 +17,15 @@
 
 namespace breath {
 
-//!     \return The extension of the filename part of \c path,
+//!     \return The extension of the file name part of \c path,
 //!             including the period, if any. This is the substring
 //!             starting from the last period, except that:
 //!
-//!              - if the filename part is "." or ".." (without
+//!              - if the file name part is "." or ".." (without
 //!                quotes), or does not cointain a period, the result
 //!                is an empty string
 //!
-//!              - if the filename part begins with a period, then
+//!              - if the file name part begins with a period, then
 //!                that initial period (and only that) is ignored
 //!                (so ".dotfile" gives "", while ".dotfile.txt" gives
 //!                ".txt").

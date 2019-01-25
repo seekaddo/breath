@@ -147,15 +147,15 @@
 //      example exists in C90, C99, C++98, C++03 and C++0x.
 // -------------------------------------------------------------------------
 
-#define BREATH_DEPENDENT_CODE( variant, filename )                        \
-    BREATH_TOKEN_PASTE( BREATH_DEPENDENT_CODE_, variant )( filename )  /**/
+#define BREATH_DEPENDENT_CODE( variant, file_name )                        \
+    BREATH_TOKEN_PASTE( BREATH_DEPENDENT_CODE_, variant )( file_name )  /**/
 
 
-#define BREATH_DEPENDENT_CODE_compiler( filename )                        \
-    BREATH_STRINGIZE_DELAYED( dep/comp/BREATH_COMPILER/filename )      /**/
+#define BREATH_DEPENDENT_CODE_compiler( file_name )                        \
+    BREATH_STRINGIZE_DELAYED( dep/comp/BREATH_COMPILER/file_name )      /**/
 
-#define BREATH_DEPENDENT_CODE_system( filename )                          \
-    BREATH_STRINGIZE_DELAYED( dep/syst/BREATH_SYSTEM/filename )        /**/
+#define BREATH_DEPENDENT_CODE_system( file_name )                          \
+    BREATH_STRINGIZE_DELAYED( dep/syst/BREATH_SYSTEM/file_name )        /**/
 
 
 #endif
