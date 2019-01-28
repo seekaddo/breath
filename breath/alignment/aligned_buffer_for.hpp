@@ -118,7 +118,7 @@ struct pod_with_same_align
 //!
 //!     So: this facility exists basically for C++03; and all of the
 //!     alternatives (this one, TR1's one and the library-based
-//!     C++11's one) will be made superflous by C++11's core support.
+//!     C++11's one) will be made superfluous by C++11's core support.
 // -------------------------------------------------------------------------
 template< typename T >
 class aligned_buffer_for

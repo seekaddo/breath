@@ -6,7 +6,7 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 //
-//      Implementation helper for readable_type_name() for gcc.
+//      Implementation helper for readable_type_name() for GCC.
 // -------------------------------------------------------------------------
 
 #include "breath/diagnostics/exception.hpp"

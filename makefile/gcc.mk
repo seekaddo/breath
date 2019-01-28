@@ -44,10 +44,10 @@
 #       Options to be added in the future:
 #       ==================================
 #
-#       These options will be added when the minimum required gcc
+#       These options will be added when the minimum required GCC
 #       version will support them (see <https://gcc.gnu.org/wiki/WarningHistory>):
 #
-#           -Waligned-new=all      (introduced in gcc 7.1.0)
+#           -Waligned-new=all      (introduced in GCC 7.1.0)
 #           -Wcast-align=strict    (    "       "  "  8.1.0)  (note1)
 #           -Wduplicated-branches  (    "       "  "  7.2.0)
 #
@@ -76,7 +76,7 @@ lowest_version := $(shell                                            \
   )
 
 ifneq "$(lowest_version)" "$(minimum_gcc_version)"
-    $(error Your gcc version is $(actual_gcc_version) but the minimum supported \
+    $(error Your GCC version is $(actual_gcc_version) but the minimum supported \
     version is $(minimum_gcc_version))
 endif
 

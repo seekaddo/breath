@@ -22,7 +22,7 @@ namespace breath {
 //!             starting from the last period, except that:
 //!
 //!              - if the file name part is "." or ".." (without
-//!                quotes), or does not cointain a period, the result
+//!                quotes), or does not contain a period, the result
 //!                is an empty string
 //!
 //!              - if the file name part begins with a period, then
