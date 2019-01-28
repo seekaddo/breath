@@ -42,8 +42,8 @@ namespace assert_private {
 //!     expands to an expression. When that expression is evaluated:
 //!     first, if \c expr is not implicitly convertible to \c bool the
 //!     program is ill-formed; otherwise, an assertion is triggered
-//!     \e iif the result of such a conversion is \c false. If the
-//!     result is \c true, the evaluation has no effect besides the
+//!     if the result of such a conversion is \c false. If the result
+//!     is \c true, the evaluation has no effect besides the
 //!     conversion to \c bool itself.
 //!
 //!     In this context, "triggering an assertion" means writing
