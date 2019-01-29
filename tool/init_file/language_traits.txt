@@ -42,7 +42,7 @@
 #
 
 # file name extension comment  comment   line
-# (extended regexp)    start     end    comment    language
+#  (extended regexp)   start     end    comment    language
 # --------------------------------------------------------------------
 asm                     /*       */       #          Asm
 awk                     no       no       #          AWK
