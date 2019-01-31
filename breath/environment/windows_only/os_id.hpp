@@ -85,8 +85,6 @@ public:
 
 } ;
 
-// gps controlla se mettiamo una dichiarazione anche prima (vedi crypto/)
-std::ostream & operator <<( std::ostream & dest, os_id const & id ) ;
 }
 
 #endif
