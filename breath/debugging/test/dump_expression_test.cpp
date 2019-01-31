@@ -62,12 +62,6 @@ main()
     DO_TEST( oss.str() == "1 << 3 = 8\n" ) ;
     clear_stringstream( oss ) ;
 
-    // now check with some strings (gps ricordati di portare questo test nei
-    // test di BREATH_STRINGIZE (e controllare cosa dice lo standard)!)
-    BREATH_DUMP_EXPRESSION( "test" ) ;
-    DO_TEST( oss.str() == "\"test\" = test\n" ) ;
-    clear_stringstream( oss ) ;
-
     // check that macros are expanded (the replacement lists here are
     // intentionally not parenthesized, although we already have a
     // separate parenthesis-test in place)
