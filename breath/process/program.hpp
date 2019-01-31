@@ -59,8 +59,8 @@ public:
     // ----------------------------------------------------------------------
     int                 exit_code() const ;
 
-    //!     This is useful to "extract" the program name (if any) from
-    //!     the arguments to \c main(). It must be called at most once
+    //!     Sets the program name from the \c program_name argument or
+    //!     from the arguments to main. It must be called at most once
     //!     in the program execution. The advice is to call it in the
     //!     first lines of \c main(), before threading starts.
     //!
@@ -70,12 +70,12 @@ public:
     //!     argv parameters, respectively). In any case, only the
     //!     basename part of the program name is considered.
     // ----------------------------------------------------------------------
-    void                parse_command_line( int argc, char const * const *
+    void                set_name( int argc, char const * const *
                                 argv, std::string const & program_name = "" ) ;
 
-    //!     \return The program name set by \c parse_command_line().
-    //!     An assertion is triggered if \c parse_command_line() had
-    //!     not been called before.
+    //!     \return The program name set by \c set_name().
+    //!     An assertion is triggered if \c set_name() had not been
+    //!     called before.
     // ----------------------------------------------------------------------
     std::string         name() const ;
 

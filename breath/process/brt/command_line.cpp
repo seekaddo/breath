@@ -56,7 +56,7 @@ command_line::parse( int argc,  char const * const * argv )
         return false ;
     }
 
-    program::instance().parse_command_line( argc, argv ) ;
+    program::instance().set_name( argc, argv ) ;
 
     std::map< char, std::string > lookup ;
     for (std::map< std::string, option_base * >::const_iterator it = 

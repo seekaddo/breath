@@ -62,7 +62,7 @@ program::exit_code() const
 }
 
 void
-program::parse_command_line( int argc, char const * const * argv,
+program::set_name( int argc, char const * const * argv,
                              std::string const & program_name )
 {
     BREATH_ASSERT( m_program_name.empty() ) ;
