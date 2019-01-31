@@ -171,7 +171,7 @@ then
                 "$exe_root/include_guard"
             new_line 1
         else
-            printf '%s\n' "Cannot find the include_guard tool. Did you build it?"
+            printf '%s\n' "Cannot find or execute the include_guard tool. Did you build it?"
         fi
     else
         printf '\nnamespace breath {\n\n}\n\n'
