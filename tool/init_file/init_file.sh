@@ -164,7 +164,7 @@ if [ "$language" = 'C++' ]
 then
     if [ "$name_extension" = 'hpp' ]
     then
-        if [ -x "$exe_root/include_guard" ] ##gps check with POSIX!!
+        if [ -x "$exe_root/include_guard" ]
         then
             new_line 1
             (printf '\nnamespace breath {'; new_line "$blank_lines"; printf '}\n') |
