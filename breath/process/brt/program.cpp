@@ -47,7 +47,8 @@ program::exit_code() const
     } ;
 
     bool                is_internal = false ;
-    if ( static_cast< unsigned int >( m_max_gravity ) >= breath::count( table ) ) {
+    if ( static_cast< unsigned int >( m_max_gravity ) >=
+                                                     breath::count( table ) ) {
         instance().declare_error( program::internal ) ;
         is_internal = true ;
         std::cerr << "impossible gravity seen in class program" ;
