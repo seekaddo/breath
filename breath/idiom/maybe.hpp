@@ -114,9 +114,10 @@ public:
     //!
     //!     Note that, differently from \c value(), this function
     //!     returns by value, which prevents problems of dangling
-    //!     references.
+    //!     references. Note, too, that, for this reason, it is not
+    //!     noexcept.
     // ---------------------------------------------------------------------
-    T                   default_to( T const & t ) const noexcept ;
+    T                   default_to( T const & t ) const ;
 
 private:
     void                construct( T && source ) ;
