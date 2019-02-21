@@ -115,7 +115,10 @@ public:
     //!     Note that, differently from \c value(), this function
     //!     returns by value, which prevents problems of dangling
     //!     references. Note, too, that, for this reason, it is not
-    //!     noexcept.
+    //!     noexcept (T's copy constructor might throw); a conditional
+    //!     noexcept() would be an option, but it adds too much
+    //!     complexity, in our opinion, and of course we would have to
+    //!     use it consistently, not just for default_to().
     // ---------------------------------------------------------------------
     T                   default_to( T const & t ) const ;
 
