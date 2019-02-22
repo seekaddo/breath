@@ -105,11 +105,10 @@ public:
     void                declare_error( gravity g ) ;
 
 private:
-
     void                do_set_name( std::string const & name ) ;
 
-     gravity            m_max_gravity ;
-     maybe< std::string >
+    gravity             m_max_gravity ;
+    maybe< std::string >
                         m_program_name ;
 } ;
 
