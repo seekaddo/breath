@@ -55,8 +55,8 @@ program::exit_code() const
     }
     std::cout.flush() ;
     if ( std::cout.fail() ) {
-        instance().declare_error( program::error ) ; // NOTE: we need an error
-                                                     // message here -gps
+        std::cerr << "I/O error on standard output" << std::endl ;
+        instance().declare_error( program::error ) ;
     }
     return is_internal
             ? exit_internal
