@@ -56,9 +56,10 @@ public:
     //!     \c EXIT_SUCCESS or \c EXIT_FAILURE.
     //!
     //!     Important: this function also flushes \c std::cout, and
-    //!     calls \c declare_error() if the flush fails.
+    //!     calls \c declare_error() if the flush fails. For this
+    //!     reason, it is not const.
     // ----------------------------------------------------------------------
-    int                 exit_code() const ;
+    int                 exit_code() ;
 
     //!     Sets the program name from the arguments to main, if they
     //!     contain a non-empty name (<tt>argc > 0 && argv[ 0 ][ 0 ] !=

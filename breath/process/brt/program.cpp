@@ -33,7 +33,7 @@ program::instance() noexcept
 }
 
 int
-program::exit_code() const
+program::exit_code()
 {
     // NOTE: gps this code is very fragile; how to avoid this dependency?
     // NOTE: keep in sync with the enumeration definition in the .hpp file.
@@ -49,14 +49,14 @@ program::exit_code() const
     bool                is_internal = false ;
     if ( static_cast< unsigned int >( m_max_gravity ) >=
                                                      breath::count( table ) ) {
-        instance().declare_error( program::internal ) ;
+        declare_error( program::internal ) ;
         is_internal = true ;
         std::cerr << "impossible gravity seen in class program" << std::endl ;
     }
     std::cout.flush() ;
     if ( std::cout.fail() ) {
         std::cerr << "I/O error on standard output" << std::endl ;
-        instance().declare_error( program::error ) ;
+        declare_error( program::error ) ;
     }
     return is_internal
             ? exit_internal
