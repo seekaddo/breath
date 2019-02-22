@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2010 Gennaro Prota
+//                    Copyright 2010-2019 Gennaro Prota
 //                     Copyright 1997-2003 James Kanze
 //
 //                 Licensed under the 3-Clause BSD License.
@@ -64,25 +64,41 @@ program::exit_code() const
 }
 
 void
-program::set_name( int argc, char const * const * argv,
-                             std::string const & program_name )
+program::set_name( int argc, char const * const * argv )
 {
-    BREATH_ASSERT( m_program_name.empty() ) ;
+    BREATH_ASSERT( ! m_program_name.is_valid() ) ;
 
-    std::string const   name = ! program_name.empty()
-                                    ? program_name
-                                    : ( argc > 0 && argv[ 0 ][ 0 ] != '\0' )
-                                        ? argv[ 0 ]
-                                        : "<unknown program>"
-                                ;
-    m_program_name = breath::base_file_name( name ) ;
+    if ( argc > 0 && argv[ 0 ][ 0 ] != '\0' ) {
+        do_set_name( argv[ 0 ] ) ;
+    }
 }
 
-std::string
+void
+program::set_name( int argc, char const * const * argv,
+                             std::string const & fallback )
+{
+    BREATH_ASSERT( ! m_program_name.is_valid() ) ;
+    BREATH_ASSERT( ! fallback.empty() ) ;
+
+    std::string const     name = ( argc > 0 && argv[ 0 ][ 0 ] != '\0' )
+                                    ? argv[ 0 ]
+                                    : fallback
+                                    ;
+    do_set_name( name ) ;
+}
+
+void
+program::set_name( std::string const & name )
+{
+    BREATH_ASSERT( ! m_program_name.is_valid() ) ;
+    BREATH_ASSERT( ! name.empty() ) ;
+
+    do_set_name( name ) ;
+}
+
+maybe< std::string >
 program::name() const
 {
-    BREATH_ASSERT( ! m_program_name.empty() ) ;
-
     return m_program_name ;
 }
 
@@ -93,6 +109,13 @@ program::declare_error( program::gravity g ) // gps nome OK?
         m_max_gravity = g ;
     }
 }
+
+void
+program::do_set_name( std::string const & name )
+{
+    m_program_name = breath::base_file_name( name ) ;
+}
+
 
 }
 

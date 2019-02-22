@@ -181,7 +181,8 @@ std::string
 command_line::usage() const
 {
     std::ostringstream  oss ;
-    oss << "Usage: " << program::instance().name() << ' ' ;
+    oss << "Usage: " << program::instance().name().default_to( "program-name" )
+        << ' ' ;
     for ( auto const & ord: m_ordered ) {
         if ( ord->is_mandatory() ) {
             oss << ord->short_description() << " " ;
