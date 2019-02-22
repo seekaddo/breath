@@ -51,7 +51,7 @@ program::exit_code() const
                                                      breath::count( table ) ) {
         instance().declare_error( program::internal ) ;
         is_internal = true ;
-        std::cerr << "impossible gravity seen in class program" ;
+        std::cerr << "impossible gravity seen in class program" << std::endl ;
     }
     std::cout.flush() ;
     if ( std::cout.fail() ) {
