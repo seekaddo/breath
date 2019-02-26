@@ -40,8 +40,10 @@
 *.swn
 
 # Visual C++ files and dirs
+*.idb
 *.ilk
-*.pdb
+*.lastbuildstate
+*.tlog
 *.VC.db
 *.VC.VC.opendb
 *.pdb
