@@ -15,7 +15,7 @@
 #
 #
 #       As usual, the options are listed in two groups. The group
-#	appearing first is related to standards conformance.
+#       appearing first is related to standards conformance.
 #
 #       Rationale
 #       =========

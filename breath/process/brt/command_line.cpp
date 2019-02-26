@@ -195,7 +195,7 @@ command_line::usage() const
     std::size_t         max_width = 0 ;
     for ( std::size_t i = 0 ; i < m_ordered.size() ; ++ i ) {
         max_width = std::max BREATH_PREVENT_MACRO_EXPANSION
-		            ( max_width, m_ordered[ i ]->name().length() ) ;
+                    ( max_width, m_ordered[ i ]->name().length() ) ;
     }
     for (std::size_t i = 0 ; i < m_ordered.size() ; ++ i ) {
         if ( m_ordered[ i ]->short_name() != '\0' ){
