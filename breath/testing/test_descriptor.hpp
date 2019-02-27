@@ -20,6 +20,11 @@ namespace breath {
 class test_descriptor
 {
 public:
+    //      Declare this explicitly to avoid Visual C++ C4626 (and
+    //      C5027).
+    // ---------------------------------------------------------------------
+    void                operator=( test_descriptor const & ) = delete ;
+
     //!     Constructs the descriptor for a test having a given \c
     //!     name and running the given function.
     //!     Intentionally not explicit to allow our typical usage:

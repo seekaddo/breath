@@ -13,6 +13,7 @@
 #ifndef BREATH_GUARD_R609ymqmTeLeF2v3mTEcOyW8AqCEibGg
 #define BREATH_GUARD_R609ymqmTeLeF2v3mTEcOyW8AqCEibGg
 
+#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/process/process.hpp"
 #include <cstddef>
 #include <string>
@@ -23,6 +24,8 @@ class win32_process
     :   public process
 {
 public:
+    BREATH_DECLARE_NON_COPYABLE( win32_process )
+
      //                   win32_process( process_id_type id ) ;
     std::string         name() const ;
     std::size_t         module_count() const ;

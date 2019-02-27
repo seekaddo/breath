@@ -80,7 +80,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /w14837 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /Wall /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4820 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -101,7 +101,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /w14837 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /Wall /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4820 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -135,7 +135,7 @@
       <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;</PreprocessorDefinitions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /w14837 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /Wall /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4820 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalDependencies>iphlpapi.lib;netapi32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -161,7 +161,7 @@
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
       <PreprocessorDefinitions>BREATH_SYSTEM=windows;BREATH_COMPILER=msvc;</PreprocessorDefinitions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /w14837 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++14 /Zc:forScope /Zc:wchar_t /Zc:auto /Zc:trigraphs /Zc:rvalueCast /Zc:strictStrings /Zc:inline /Wall /wd4365 /wd4514 /wd4571 /wd4668 /wd4710 /wd4820 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalDependencies>iphlpapi.lib;netapi32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>

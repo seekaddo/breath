@@ -1,5 +1,5 @@
 # =========================================================================
-#                    Copyright 2008-2016 Gennaro Prota
+#                    Copyright 2008-2019 Gennaro Prota
 #
 #                 Licensed under the 3-Clause BSD License.
 #            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -48,7 +48,14 @@ cpp_basic_options = /std:c++14          \
                     /W4     \
                     /wd4996 \
                     /WX     \
-                    /w14837   # enable a warning for trigraphs, even at level 1
+
+#       Enable /Wall, except for a handful of warnings (some of which
+#       arise in the standard headers). For a synopsis, see:
+#
+#         <https://docs.microsoft.com/en-us/cpp/preprocessor/compiler-warnings-that-are-off-by-default?view=vs-2015>
+# ----------------------------------------------------------------------------
+cpp_basic_options += /Wall /wd4365 /wd4514 /wd4571     \
+                           /wd4668 /wd4710 /wd4820
 
 
 

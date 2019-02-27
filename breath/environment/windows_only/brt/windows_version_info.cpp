@@ -359,8 +359,14 @@ windows_version_info::is_wow64_process()
     typedef BOOL ( WINAPI * fn_ptr_type )( HANDLE, PBOOL ) ;
 
     BOOL                is_wow64 = 0 ;
-    fn_ptr_type const   is_wow64_process = reinterpret_cast< fn_ptr_type >(
-                            GetProcAddress( module, "IsWow64Process" ) ) ;
+
+    // Note: the intermediate cast to void * is to silence Visual C++
+    //       C4191, which is a useful warning to have.
+    // -------------------------------------------------------------------
+    fn_ptr_type const   is_wow64_process =
+                reinterpret_cast< fn_ptr_type >(
+                    reinterpret_cast< void * >(
+                        GetProcAddress( module, "IsWow64Process" ) ) ) ;
     if ( is_wow64_process != nullptr ) {
         if ( is_wow64_process( GetCurrentProcess(), &is_wow64 ) == 0 ) {
             throw last_api_error( "IsWow64Process() failed" ) ;

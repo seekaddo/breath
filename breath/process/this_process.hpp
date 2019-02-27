@@ -13,6 +13,7 @@
 #ifndef BREATH_GUARD_cTwXYy0xHxVtUgvI0o8Sme94ALCfx0R9
 #define BREATH_GUARD_cTwXYy0xHxVtUgvI0o8Sme94ALCfx0R9
 
+#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/process/process.hpp"
 #include <string>
 
@@ -25,6 +26,8 @@ private:
                         this_process() ;
 
 public:
+    BREATH_DECLARE_NON_COPYABLE( this_process )
+
     this_process &      instance() ;
 
 

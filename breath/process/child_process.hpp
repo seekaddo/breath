@@ -13,6 +13,7 @@
 #ifndef BREATH_GUARD_xHOnLsh9W9NZSotPhf95oOS1ufiT1xmH
 #define BREATH_GUARD_xHOnLsh9W9NZSotPhf95oOS1ufiT1xmH
 
+#include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/process/process.hpp"
 
 namespace breath {
@@ -21,6 +22,8 @@ class child_process
     :   public process
 {
 public:
+    BREATH_DECLARE_NON_COPYABLE( child_process )
+
                         child_process() ;
 } ;
 

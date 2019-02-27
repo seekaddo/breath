@@ -23,6 +23,11 @@ namespace breath {
 class console_reporter : public test_reporter
 {
 public:
+    //      Declare this explicitly to avoid Visual C++ C4626 (and
+    //      C5027).
+    // ---------------------------------------------------------------------
+    void                operator=( console_reporter const & ) = delete ;
+
     explicit            console_reporter( std::ostream & os ) ;
 
     virtual void        on_all_tests_begin() override ;
