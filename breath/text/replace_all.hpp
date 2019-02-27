@@ -21,7 +21,7 @@ namespace breath {
 //      --------------
 //
 //!     Replaces all occurrences of \c from in \c s with \c to. May
-//!     throw length_error (only if \c to is longer than \c from??).
+//!     throw length_error (only if \c to is longer than \c from?).
 //!
 //!     Precondition: ! from.empty()
 //!
