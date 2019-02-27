@@ -33,8 +33,8 @@
 #
 #           So this warning can be safely suppressed. Note, too, that
 #           it would be difficult to silence it by modifying the code,
-#           as in the case of class command_line_error, in
-#           command_line.hpp.
+#           as in the case (as of Febrary 27, 2009) for the class
+#           command_line_error, in command_line.hpp.
 # ----------------------------------------------------------------------------
 
 # KEEP in sync! (See above.)
