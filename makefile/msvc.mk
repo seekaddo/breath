@@ -46,8 +46,9 @@ cpp_basic_options = /std:c++14          \
                                         \
                     /EHs    \
                     /W4     \
-                    /wd4996 \
                     /WX     \
+                    /D_CRT_SECURE_NO_WARNINGS \
+                    /D_SCL_SECURE_NO_WARNINGS
 
 #       Enable /Wall, except for a handful of warnings (some of which
 #       arise in the standard headers). For a synopsis, see:
