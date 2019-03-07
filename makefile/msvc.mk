@@ -35,18 +35,18 @@
 # ----------------------------------------------------------------------------
 
 # KEEP in sync! (See above.)
-cpp_basic_options = /std:c++14          \
-                    /Zc:forScope        \
-                    /Zc:wchar_t         \
-                    /Zc:auto            \
-                    /Zc:trigraphs       \
-                    /Zc:rvalueCast      \
-                    /Zc:strictStrings   \
-                    /Zc:inline          \
-                                        \
-                    /EHs    \
-                    /W4     \
-                    /WX     \
+cpp_basic_options = /std:c++14                \
+                    /Zc:forScope              \
+                    /Zc:wchar_t               \
+                    /Zc:auto                  \
+                    /Zc:trigraphs             \
+                    /Zc:rvalueCast            \
+                    /Zc:strictStrings         \
+                    /Zc:inline                \
+                                              \
+                    /EHs                      \
+                    /W4                       \
+                    /WX                       \
                     /D_CRT_SECURE_NO_WARNINGS \
                     /D_SCL_SECURE_NO_WARNINGS
 
