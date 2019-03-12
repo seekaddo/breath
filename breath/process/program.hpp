@@ -31,8 +31,10 @@ private:
                         ~program() noexcept = default ;
 
 public:
-    // NOTE: keep the enumeration in sync with the exit_codes[] array
-    //       in the implementation file.
+    //!     The gravity of an error.
+    //
+    //      NOTE: keep the enumeration in sync with the exit_codes[]
+    //            array in the implementation file.
     // ----------------------------------------------------------------------
     enum gravity
     {
@@ -45,14 +47,14 @@ public:
 
     static program &    instance() noexcept ;
 
-    //!     Returns an integer suitable for calling \c std::exit() or
-    //!     returning from \c main().
-    //!     This corresponds to the "worst" error reported by client
-    //!     code to the \c program class through the \c
-    //!     declare_error() member function.
+    //!     \return
+    //!         An integer to be passed to \c std::exit() or returned
+    //!         from \c main(). This corresponds to the most severe
+    //!         error reported by client code to the \c program class
+    //!         through the \c declare_error() member function.
     //!
     //!     If the system supports it, the various gravities will be
-    //!     distinguished in the return code; if not, all you get is
+    //!     distinguished in the exit code; if not, all you get is
     //!     \c EXIT_SUCCESS or \c EXIT_FAILURE.
     //!
     //!     Important: this function also flushes \c std::cout, and
@@ -102,6 +104,11 @@ public:
                         name() const ;
 
     //!     Declares a program error.
+    //!
+    //!     \param g
+    //!         The gravity of the error. If the gravity is higher
+    //!         than any seen previously, it is saved to be used in
+    //!         \c exit_code().
     // ----------------------------------------------------------------------
     void                declare_error( gravity g ) ;
 
