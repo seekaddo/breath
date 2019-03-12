@@ -31,8 +31,8 @@ private:
                         ~program() noexcept = default ;
 
 public:
-    // NOTE: keep the enumeration in sync with the array definition in
-    //       program::exit_code().
+    // NOTE: keep the enumeration in sync with the exit_codes[] array
+    //       in the implementation file.
     // ----------------------------------------------------------------------
     enum gravity
     {

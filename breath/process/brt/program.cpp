@@ -17,6 +17,21 @@
 #include <ostream>
 #include <string>
 
+namespace {
+
+// NOTE: keep in sync with enum gravity, in the class definition.
+// ----------------------------------------------------------------------
+int const           exit_codes[] = {
+    breath::exit_success,
+    breath::exit_warning,
+    breath::exit_error,
+    breath::exit_fatal,
+    breath::exit_internal
+} ;
+
+}
+
+
 namespace breath {
 
 program::program() noexcept
@@ -35,32 +50,13 @@ program::instance() noexcept
 int
 program::exit_code()
 {
-    // NOTE: gps this code is very fragile; how to avoid this dependency?
-    // NOTE: keep in sync with the enumeration definition in the .hpp file.
-    //
-    static int const    table[] = {
-        exit_success,
-        exit_warning,
-        exit_error,
-        exit_fatal,
-        exit_internal
-    } ;
-
-    bool                is_internal = false ;
-    if ( static_cast< unsigned int >( m_max_gravity ) >=
-                                                     breath::count( table ) ) {
-        declare_error( program::internal ) ;
-        is_internal = true ;
-        std::cerr << "Impossible gravity seen in class program" << std::endl ;
-    }
     std::cout.flush() ;
     if ( std::cout.fail() ) {
         std::cerr << "I/O error on standard output" << std::endl ;
         declare_error( program::error ) ;
     }
-    return is_internal
-            ? exit_internal
-            : table[ m_max_gravity ] ;
+
+    return ::exit_codes[ m_max_gravity ] ;
 }
 
 void
@@ -105,6 +101,9 @@ program::name() const
 void
 program::declare_error( program::gravity g ) // gps nome OK?
 {
+    BREATH_ASSERT( static_cast< unsigned int >( g ) <
+                     breath::count( ::exit_codes ) ) ;
+
     if ( g > m_max_gravity ) {
         m_max_gravity = g ;
     }
