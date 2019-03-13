@@ -35,7 +35,7 @@ get_environment_map()
 {
     typedef std::map< std::string, std::string >
                         result_type ;
-    
+
     result_type         result ;
     char *              start = GetEnvironmentStrings() ;
     if ( start == nullptr ) {
