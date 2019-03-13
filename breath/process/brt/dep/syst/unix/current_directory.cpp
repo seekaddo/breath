@@ -26,7 +26,7 @@ current_directory()
         sz *= 2 ;
         aa.reset( new char[ sz ] ) ;
         p = getcwd( aa.get(), sz ) ;
-    } while ( p == nullptr && errno == ERANGE  ) ;
+    } while ( p == nullptr && errno == ERANGE ) ;
 
     if ( p == nullptr ) {
         throw last_api_error( "getcwd() failed" ) ;
