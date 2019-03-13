@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2015 Gennaro Prota
+//                    Copyright 2015-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -13,7 +13,7 @@
 namespace breath {
 
 std::string
-this_process::current_directory()
+current_directory()
 {
     DWORD const         required = GetCurrentDirectoryA( 0, nullptr ) ;
     if ( required == 0 ) {
@@ -26,33 +26,6 @@ this_process::current_directory()
     }
     s.resize( s.size() - 1 ) ; // remove trailing '\0'
     return s ;
-}
-
-void
-this_process::set_current_directory( std::string const & dir )
-{
-    BREATH_ASSERT( 0 < dir.length() && dir.length()  < MAX_PATH ) ;
-    BREATH_ASSERT( dir.back() == '\\' || dir.length() <= (MAX_PATH-2) ) ;
-    if ( SetCurrentDirectoryA( dir.c_str() ) == 0 ) {
-        throw last_api_error( "SetCurrentDirectory() failed" ) ;
-    }
-}
-
-void
-this_process::wait( process const & pr )
-{
-    HANDLE const        h = OpenProcess(
-                PROCESS_QUERY_INFORMATION | SYNCHRONIZE, FALSE, pr.id() ) ;
-    if ( h == NULL ) {
-        throw last_api_error( "OpenProcess() failed" ) ;
-    }
-    if ( WaitForSingleObject( h, INFINITE ) == WAIT_FAILED ) {
-        CloseHandle( h ) ;
-        throw last_api_error( "WaitForSingleObject() failed" ) ;
-    }
-    if ( CloseHandle( h ) == 0 ) {
-        throw last_api_error( "CloseHandle() failed" ) ;
-    }
 }
 
 }

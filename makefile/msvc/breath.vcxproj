@@ -380,13 +380,14 @@
     </ClCompile>
     <ClCompile Include="..\..\breath\process\brt\child_process.cpp" />
     <ClCompile Include="..\..\breath\process\brt\command_line.cpp" />
+    <ClCompile Include="..\..\breath\process\brt\current_directory.cpp" />
     <ClCompile Include="..\..\breath\process\brt\dep\syst\windows\win32_process.cpp" />
     <ClCompile Include="..\..\breath\process\brt\exit_code.cpp" />
     <ClCompile Include="..\..\breath\process\brt\find_executable_in_path.cpp" />
     <ClCompile Include="..\..\breath\process\brt\process.cpp" />
     <ClCompile Include="..\..\breath\process\brt\program.cpp" />
     <ClCompile Include="..\..\breath\process\brt\program_option.cpp" />
-    <ClCompile Include="..\..\breath\process\brt\this_process.cpp" />
+    <ClCompile Include="..\..\breath\process\brt\set_current_directory.cpp" />
     <ClCompile Include="..\..\breath\random\brt\entropy_source.cpp" />
     <ClCompile Include="..\..\breath\random\brt\subrange_max.cpp" />
     <ClCompile Include="..\..\breath\random\test\entropy_source_test.cpp">
@@ -629,6 +630,7 @@
     <ClInclude Include="..\..\breath\preprocessing\token_paste_delayed.hpp" />
     <ClInclude Include="..\..\breath\process\child_process.hpp" />
     <ClInclude Include="..\..\breath\process\command_line.hpp" />
+    <ClInclude Include="..\..\breath\process\current_directory.hpp" />
     <ClInclude Include="..\..\breath\process\exit_code.hpp" />
     <ClInclude Include="..\..\breath\process\find_executable_in_path.hpp" />
     <ClInclude Include="..\..\breath\process\private\handle.hpp" />
@@ -636,7 +638,7 @@
     <ClInclude Include="..\..\breath\process\process.hpp" />
     <ClInclude Include="..\..\breath\process\program.hpp" />
     <ClInclude Include="..\..\breath\process\program_option.hpp" />
-    <ClInclude Include="..\..\breath\process\this_process.hpp" />
+    <ClInclude Include="..\..\breath\process\set_current_directory.hpp" />
     <ClInclude Include="..\..\breath\process\win32_process.hpp" />
     <ClInclude Include="..\..\breath\random\entropy_source.hpp" />
     <ClInclude Include="..\..\breath\random\subrange_adaptor.hpp" />

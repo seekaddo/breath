@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2015 Gennaro Prota
+//                    Copyright 2015-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -15,23 +15,8 @@
 
 namespace breath {
 
-this_process::this_process()
-{
-}
-
-this_process &
-this_process::instance()
-{
-    static this_process * inst ;
-    if ( inst == nullptr ) {
-        inst = new this_process() ;
-    }
-    return *inst ;
-
-}
-
 std::string
-this_process::current_directory()
+current_directory()
 {
     std::size_t         sz = 512 ;
     auto_array< char >  aa ;
@@ -47,12 +32,6 @@ this_process::current_directory()
         throw last_api_error( "getcwd() failed" ) ;
     }
     return std::string( p ) ;
-}
-
-void
-this_process::set_current_directory( std::string const & /*dir*/ )
-{
-    BREATH_ASSERT( false && "not implementable?" ) ;
 }
 
 }

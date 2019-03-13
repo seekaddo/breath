@@ -168,9 +168,6 @@
     <ClCompile Include="..\..\breath\process\brt\process.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\process\brt\this_process.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breath\process\brt\dep\syst\windows\win32_process.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -316,6 +313,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\breath\mathematics\test\digital_root_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\breath\process\brt\set_current_directory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\breath\process\brt\current_directory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -571,9 +574,6 @@
     <ClInclude Include="..\..\breath\process\process.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\process\this_process.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breath\process\win32_process.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -701,6 +701,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\mathematics\digital_root.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\process\current_directory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\process\set_current_directory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

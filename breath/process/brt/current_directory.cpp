@@ -6,9 +6,8 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
-#include "breath/process/this_process.hpp"
 #include "breath/porting/dependent_code.hpp"
-#include BREATH_DEPENDENT_CODE( system, this_process.cpp )
+#include BREATH_DEPENDENT_CODE( system, current_directory.cpp )
 
 // Local Variables:
 // mode: c++
