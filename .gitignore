@@ -49,6 +49,7 @@
 *.pdb
 *.ipdb
 *.iobj
+*.nativecodeanalysis.xml
 .vs/
 
 # Visual Studio Code files
