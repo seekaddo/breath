@@ -9,8 +9,8 @@
 #include "breath/diagnostics/assert.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/memory/auto_array.hpp"
-#include <unistd.h>
 #include <errno.h>
+#include <unistd.h>
 #include <string>
 
 namespace breath {
