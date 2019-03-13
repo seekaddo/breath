@@ -13,13 +13,15 @@
 #include "breath/path/base_file_name.hpp"
 #include "breath/process/exit_code.hpp"
 
+#include <cstdlib>
 #include <iostream>
 #include <ostream>
 #include <string>
 
 namespace {
 
-// NOTE: keep in sync with enum gravity, in the class definition.
+// NOTE: keep in sync with enum gravity, in the class definition and
+//       the switch-case in declare_error().
 // ----------------------------------------------------------------------
 int const           exit_codes[] = {
     breath::exit_success,
@@ -29,13 +31,24 @@ int const           exit_codes[] = {
     breath::exit_internal
 } ;
 
+
+//      Because it is implementation-defined whether exit() has C
+//      linkage or C++ linkage.
+// ----------------------------------------------------------------------
+[[noreturn]] void
+cpp_exit( int exit_code )
+{
+    std::exit( exit_code ) ;
+}
+
 }
 
 
 namespace breath {
 
 program::program() noexcept
-    :   m_max_gravity( comment )
+    :   m_max_gravity( comment ),
+        m_terminate_handler( nullptr )
 {
 }
 
@@ -107,6 +120,38 @@ program::declare_error( program::gravity g ) // gps nome OK?
     if ( g > m_max_gravity ) {
         m_max_gravity = g ;
     }
+
+    switch ( m_max_gravity )
+    {
+        case comment:
+        case warning:
+        case error:
+            break ;
+
+        case fatal:
+            terminate() ;
+            // break ;
+
+        case internal:
+            std::abort() ;
+            // break ;
+    }
+}
+
+[[noreturn]] void
+program::terminate()
+{
+    ( m_terminate_handler != nullptr
+      ? *m_terminate_handler
+      : cpp_exit )( exit_code() ) ;
+
+    std::abort() ;
+}
+
+void
+program::set_terminate_handler( void (*handler)( int ) )
+{
+    m_terminate_handler = handler ;
 }
 
 void

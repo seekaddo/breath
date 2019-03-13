@@ -8,7 +8,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief A singleton class to manage the overall program status.
+//!     \brief A singleton class to manage the overall status of the
+//!            program and its termination.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_1kA1ToNG1qsz9KwlXD9MfVvhaHxMym5b
@@ -109,8 +110,46 @@ public:
     //!         The gravity of the error. If the gravity is higher
     //!         than any seen previously, it is saved to be used in
     //!         \c exit_code().
+    //!
+    //!     If the gravity is \c fatal or higher, this will also
+    //!     terminate the program by calling \c terminate() (gravity
+    //!     == \c fatal) or \c std::abort() (gravity == \c internal).
     // ----------------------------------------------------------------------
     void                declare_error( gravity g ) ;
+
+    //!     Triggers the termination of the program with the exit
+    //!     code which corresponds to the maximum value seen until
+    //!     now. This function calls the function defined by
+    //!     set_terminate_handler(), if set_terminate_handler() has
+    //!     been called; otherwise, it invokes \c std::exit().
+    //!
+    //!     The terminate handler should not return, or \c
+    //!     std::abort() will be called after it returns.
+    // -----------------------------------------------------------------------
+    [[noreturn]] void   terminate() ;
+
+    //!     The function passed through the parameter to this function
+    //!     is called, instead of \c exit(), with the exit code as an
+    //!     argument, if there is a fatal error or if the user calls
+    //!     \c terminate(). This makes it possible for the user to
+    //!     avoid calling \c exit() (and thus to avoid \e not calling
+    //!     destructors of stack based objects), for example, by
+    //!     raising an exception with the argument, having taken
+    //!     the precaution to encapsulate the entire contents of
+    //!     main() with:
+    //!
+    //!     \code
+    //!         try {
+    //!             breath::program::instance().set_terminate_handler(
+    //!                                             raise_int_exception ) ;
+    //!             // ...
+    //!         } catch ( int exit_code ) {
+    //!             return exit_code ;
+    //!         }
+    //!     \endcode
+    // -----------------------------------------------------------------------
+    void                set_terminate_handler( void (*user_function)( int ) ) ;
+
 
 private:
     void                do_set_name( std::string const & name ) ;
@@ -118,6 +157,7 @@ private:
     gravity             m_max_gravity ;
     maybe< std::string >
                         m_program_name ;
+    void (*             m_terminate_handler)( int ) ;
 } ;
 
 }
