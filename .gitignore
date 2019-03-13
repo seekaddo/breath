@@ -1,3 +1,6 @@
+# Generic backup files
+*.bak
+
 # Make dependency files
 *.d
 
