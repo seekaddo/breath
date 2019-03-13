@@ -36,12 +36,12 @@ get_environment_map()
     typedef std::map< std::string, std::string >
                         result_type ;
 
-    result_type         result ;
     char *              start = GetEnvironmentStrings() ;
     if ( start == nullptr ) {
         throw last_api_error( "GetEnvironmentStrings() failed" ) ;
     }
 
+    result_type         result ;
     try {
         char const *        curr = start ;
         while ( *curr != '\0' ) {
