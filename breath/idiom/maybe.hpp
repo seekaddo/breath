@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Template for "maybe" values.
+//!     \brief A template for "maybe" values.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_93j8pelTutz7YloouImWg9M7REakYYSD
@@ -26,8 +26,8 @@ namespace breath {
 //!
 //!         John J. Barton, Lee R. Nackman (1994).
 //!         Scientific and Engineering C++: An Introduction with
-//!         Advanced Techniques and Examples. Addison-Wesley Professional.
-//!         ISBN 0-201-53393-6.
+//!         Advanced Techniques and Examples. Addison-Wesley
+//!         Professional. ISBN 0-201-53393-6.
 //!
 //!     which calls it "Fallible".
 //!     Basically: \c maybe< T > is used as return type for functions
@@ -37,53 +37,46 @@ namespace breath {
 //!     the \c T object when it is marked as invalid will cause an
 //!     assertion failure.
 //!
-//!     Note that the original Barton and Nackman solution did throw
-//!     an exception, instead.
+//!     Note that the original Barton and Nackman solution threw an
+//!     exception, instead.
 //!
-//!     There are some important differences compared to the version
-//!     provided by Barton and Nackman, many of which can be traced
-//!     back to evolution on "best practices" happened after the book
-//!     publication.
+//!     There are other important differences compared to the version
+//!     provided by Barton and Nackman.
 //!
-//!     0. The object can only be validated by providing a \c T: there
-//!     is no \c validate() function (and, at least for the moment, no
-//!     \c invalidate() either; I'm still waiting to see if a reasonable
-//!     usage for it exists).
+//!     1. At least for the moment, there is no \c invalidate()
+//!        function; I'm still waiting to see if a reasonable usage for
+//!        it exists (perhaps a cache?).
 //!
-//!     1. No conversion function to \c T is provided. Among other
-//!     things, it wouldn't be useful in at least the following
-//!     situations:
+//!     2. No conversion function to \c T is provided. Among other
+//!        things, it wouldn't be useful in at least the following
+//!        situations:
 //!
-//!      - when using a Fallible instance as argument to a function
-//!        template:
+//!         - when we want to invoke a member function on the "real"
+//!           object:
 //!
-//!          gps add std::cout << example
+//!             maybe< std::string > my_function() ;
+//!             my_function().size() ;        // error
+//!             my_function().value().size()  // OK
 //!
-//!      - when we want to invoke a member function on the "real"
-//!        object:
+//!           (but, of course, the latter is stylistically rare: one
+//            would usually assign the function return value first)
 //!
-//!          maybe< std::string > my_function() ;
-//!          my_function().size() ;        // error
-//!          my_function().value().size()  // OK
+//!         - when \p T itself has a user defined conversion, which
+//!           you want to be applied
 //!
-//!        (but, of course, the latter is stylistically rare: one would
-//!        usually assign the function return value first)
+//!        As shown above, in these cases you have to explicitly
+//!        invoke value().
 //!
-//!      - when \p T itself has a user defined conversion, which you
-//!        want to be applied:
+//!        Curiously enough, B&N's book introduces Fallible<> as an
+//!        example of using conversions "to add a binary state" --
+//!        valid or invalid-- and checking to objects. The conversion
+//!        itself, however, isn't part of the concept: it just makes the
+//!        checking more "transparent" (at the well-known cost that
+//!        implicit conversions generally bring).
 //!
-//!          // gps add example
+//!     3. It isn't required for T to have a default constructor.
 //!
-//!
-//!     As shown above, in these cases you have to explicitly invoke
-//!     value().
-//!
-//!     Curiously enough, B&N's book introduces Fallible<> as an example
-//!     of using conversions "to add a binary state" --valid or invalid--
-//!     and checking to objects. The conversion itself, however, isn't
-//!     part of the concept: it just makes the checking more
-//!     "transparent" (at the well-known cost that implicit conversions
-//!     generally bring).
+//!     4. Has a richer interface and supports move semantics.
 // ---------------------------------------------------------------------------
 template< typename T >
 class maybe
