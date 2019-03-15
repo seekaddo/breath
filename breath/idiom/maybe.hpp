@@ -91,7 +91,7 @@ public:
 //!             my_function().value().size()  // OK
 //!
 //!           (but, of course, the latter is stylistically rare: one
-//            would usually assign the function return value first)
+//!           would usually assign the function return value first)
 //!
 //!         - when \p T itself has a user defined conversion, which
 //!           you want to be applied
@@ -116,24 +116,24 @@ public:
 //!     The template parameters are:
 //!
 //!      - T
-//
+//!
 //!        The type of the value to store when the maybe is valid.
 //!
 //!      - Traits
-//
+//!
 //!        A traits class defining the valid and the invalid states of
 //!        the maybe object. It shall contain:
 //!
-//          - a nested type or typedef named "status" that can be used
-//            to store the state of the maybe object
-//
-//          - an is_valid() static function, which returns whether a
-//            given value of type status corresponds to a valid status
-//            or not
-//
-//          - two static functions, named "default_invalid" and
-//            "default_valid" which give the default invalid and valid
-//            state, respectively
+//!         - a nested type or typedef named "status" that can be used
+//!           to store the state of the maybe object
+//!
+//!         - an is_valid() static function, which returns whether a
+//!           given value of type status corresponds to a valid status
+//!           or not
+//!
+//!         - two static functions, named "default_invalid" and
+//!           "default_valid" which give the default invalid and valid
+//!           state, respectively
 // ---------------------------------------------------------------------------
 template< typename T, typename Traits = boolean_maybe_traits >
 class maybe
