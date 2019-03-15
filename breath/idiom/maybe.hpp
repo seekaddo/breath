@@ -1,5 +1,5 @@
 // =========================================================================
-//                    Copyright 2006-2015 Gennaro Prota
+//                    Copyright 2006-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -16,6 +16,38 @@
 #include "breath/alignment/aligned_buffer_for.hpp"
 
 namespace breath {
+
+//! \brief
+//!     The default traits class for maybe<>. Logically corresponds to
+//!     a boolean (valid/invalid).
+// --------------------------------------------------------------------------
+class boolean_maybe_traits
+{
+public:
+    class status
+    {
+    public:
+        explicit            status( bool b ) noexcept : m_status( b ) {}
+        bool                m_status ;
+    } ;
+
+    static bool         is_valid( status s ) noexcept
+    {
+        return s.m_status ;
+    }
+
+    static status       default_invalid() noexcept
+    {
+        return status( false ) ;
+    }
+
+    static status       default_valid() noexcept
+    {
+        return status( true ) ;
+    }
+} ;
+
+
 
 //      maybe< T >:
 //      ===========
@@ -77,33 +109,69 @@ namespace breath {
 //!     3. It isn't required for T to have a default constructor.
 //!
 //!     4. Has a richer interface and supports move semantics.
+//!
+//!     5. Has an additional template parameter (Traits) which allows
+//!        specifying several invalid states or several valid states.
+//!
+//!     The template parameters are:
+//!
+//!      - T
+//
+//!        The type of the value to store when the maybe is valid.
+//!
+//!      - Traits
+//
+//!        A traits class defining the valid and the invalid states of
+//!        the maybe object. It shall contain:
+//!
+//          - a nested type or typedef named "status" that can be used
+//            to store the state of the maybe object
+//
+//          - an is_valid() static function, which returns whether a
+//            given value of type status corresponds to a valid status
+//            or not
+//
+//          - two static functions, named "default_invalid" and
+//            "default_valid" which give the default invalid and valid
+//            state, respectively
 // ---------------------------------------------------------------------------
-template< typename T >
+template< typename T, typename Traits = boolean_maybe_traits >
 class maybe
 {
+public:
+    typedef typename Traits::status
+                        status_type ;
+
 private:
     aligned_buffer_for< T >
                         m_buffer ;
-    bool                m_is_valid = false ;
+    status_type         m_status ;
 
 public:
-                        maybe() noexcept ; // POST: ! is_valid()
-                        maybe( maybe const & ) ;
-    explicit            maybe( T const & ) ;
-                        maybe( maybe && ) ;
-    explicit            maybe( T && ) ;
-                        ~maybe() noexcept ;
-    maybe &             operator =( maybe const & ) ;
-    maybe &             operator =( T const & ) ;
-    maybe &             operator =( maybe && ) ;
-    maybe &             operator =( T && ) ;
+    explicit            maybe( status_type status =
+                                          Traits::default_invalid() ) noexcept ;
 
+                        maybe( maybe const & other ) ;
+
+    explicit            maybe( T const & value, status_type status =
+                                                     Traits::default_valid() ) ;
+
+                        maybe( maybe && other ) ;
+    explicit            maybe( T && value, status_type status =
+                                                   Traits::default_valid() ) ;
+                        ~maybe() noexcept ;
+    maybe &             operator =( maybe const & other ) ;
+    maybe &             operator =( T const & value ) ;
+    maybe &             operator =( maybe && other ) ;
+    maybe &             operator =( T && value ) ;
+
+    status_type         status() const noexcept ;
     bool                is_valid() const noexcept ;
 
     T const &           value() const noexcept ;
 
     //!     \returns
-    //!     \c value() if \c is_valid(); otherwise \c t.
+    //!     \c value() if \c is_valid(); otherwise \c default_value.
     //!
     //!     Note that, differently from \c value(), this function
     //!     returns by value, which prevents problems of dangling
@@ -113,11 +181,11 @@ public:
     //!     complexity, in our opinion, and of course we would have to
     //!     use it consistently, not just for default_to().
     // ---------------------------------------------------------------------
-    T                   default_to( T const & t ) const ;
+    T                   default_to( T const & default_value ) const ;
 
 private:
-    void                construct( T && source ) ;
-    void                construct( T const & source ) ;
+    void                construct( T && value ) ;
+    void                construct( T const & value ) ;
     void                destroy() noexcept ;
 
     //      used in moving functions only
