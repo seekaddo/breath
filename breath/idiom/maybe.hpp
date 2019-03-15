@@ -257,8 +257,8 @@ public:
     // ------------------------------------------------------------------------
     T const &           value() const noexcept ;
 
-    //!     \returns
-    //!     \c value() if \c is_valid(); otherwise \c default_value.
+    //!     \return
+    //!         \c value() if \c is_valid(); otherwise \c default_value.
     //!
     //!     Note that, differently from \c value(), this function
     //!     returns by value, which prevents problems of dangling
