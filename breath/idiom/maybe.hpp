@@ -142,10 +142,6 @@ public:
     typedef typename Traits::status
                         status_type ;
 
-private:
-    aligned_buffer_for< T >
-                        m_buffer ;
-    status_type         m_status ;
 
 public:
     //!     Constructs an invalid maybe.
@@ -159,12 +155,6 @@ public:
     // ------------------------------------------------------------------------
     explicit            maybe( status_type status =
                                           Traits::default_invalid() ) noexcept ;
-
-    //!     \post
-    //!         - status() == other.status()
-    //!         - ! is_valid() || value() == other.value()
-    // ------------------------------------------------------------------------
-                        maybe( maybe const & other ) ;
 
     //!     Constructs a valid maybe.
     //!
@@ -184,12 +174,6 @@ public:
     // ------------------------------------------------------------------------
     explicit            maybe( T const & value, status_type status =
                                                      Traits::default_valid() ) ;
-    //!     \post
-    //!         - value() is moved from other.value()
-    //!         - status() == other.status()
-    //!         - other.status() == Traits::default_invalid()
-    // ------------------------------------------------------------------------
-                        maybe( maybe && other ) ;
 
     //!     \pre
     //!         Traits::is_valid( status )
@@ -208,6 +192,20 @@ public:
     explicit            maybe( T && value, status_type status =
                                                    Traits::default_valid() ) ;
 
+
+    //!     \post
+    //!         - status() == other.status()
+    //!         - ! is_valid() || value() == other.value()
+    // ------------------------------------------------------------------------
+                        maybe( maybe const & other ) ;
+
+    //!     \post
+    //!         - value() is moved from other.value()
+    //!         - status() == other.status()
+    //!         - other.status() == Traits::default_invalid()
+    // ------------------------------------------------------------------------
+                        maybe( maybe && other ) ;
+
                         ~maybe() noexcept ;
 
     //!     \post
@@ -215,6 +213,12 @@ public:
     //!         - status() == other.status()
     // ------------------------------------------------------------------------
     maybe &             operator =( maybe const & other ) ;
+
+    //!     \post
+    //!         - ! is_valid() || value() is moved from other.value()
+    //!         - status() == other.status()
+    // ------------------------------------------------------------------------
+    maybe &             operator =( maybe && other ) ;
 
     //!     \param value
     //!         The value to copy.
@@ -226,11 +230,6 @@ public:
     // ------------------------------------------------------------------------
     maybe &             operator =( T const & value ) ;
 
-    //!     \post
-    //!         - ! is_valid() || value() is moved from other.value()
-    //!         - status() == other.status()
-    // ------------------------------------------------------------------------
-    maybe &             operator =( maybe && other ) ;
 
     //!     \post
     //!         - is_valid()
@@ -271,13 +270,18 @@ public:
     T                   default_to( T const & default_value ) const ;
 
 private:
-    void                construct( T && value ) ;
     void                construct( T const & value ) ;
+    void                construct( T && value ) ;
     void                destroy() noexcept ;
 
     //      used in moving functions only
     //
     T &                 non_const_value() noexcept ;
+
+    aligned_buffer_for< T >
+                        m_buffer ;
+    status_type         m_status ;
+
 } ;
 
 }

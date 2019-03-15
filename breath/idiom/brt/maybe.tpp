@@ -21,16 +21,6 @@ maybe< T, Traits >::maybe( status_type status ) noexcept
 }
 
 template< typename T, typename Traits >
-maybe< T, Traits >::maybe( maybe const & other )
-    : m_status( Traits::default_invalid() )
-{
-    if ( other.is_valid() ) {
-        construct( other.value() ) ;
-    }
-    m_status = other.status() ;
-}
-
-template< typename T, typename Traits >
 maybe< T, Traits >::maybe( T const & value, status_type status )
     : m_status( Traits::default_invalid() )
 {
@@ -47,6 +37,18 @@ maybe< T, Traits >::maybe( T && value, status_type status )
     construct( std::move( value ) ) ;
     m_status = status ; // gps use std::move()?
 }
+
+
+template< typename T, typename Traits >
+maybe< T, Traits >::maybe( maybe const & other )
+    : m_status( Traits::default_invalid() )
+{
+    if ( other.is_valid() ) {
+        construct( other.value() ) ;
+    }
+    m_status = other.status() ;
+}
+
 
 template< typename T, typename Traits >
 maybe< T, Traits >::maybe( maybe && other )
