@@ -148,26 +148,113 @@ private:
     status_type         m_status ;
 
 public:
+    //!     Constructs an invalid maybe.
+    //!
+    //!     \pre
+    //!         ! Traits::is_valid( status )
+    //!
+    //!     \post
+    //!         - ! is_valid()
+    //!         - status() == status
+    // ------------------------------------------------------------------------
     explicit            maybe( status_type status =
                                           Traits::default_invalid() ) noexcept ;
 
+    //!     \post
+    //!         - status() == other.status()
+    //!         - ! is_valid() || value() == other.value()
+    // ------------------------------------------------------------------------
                         maybe( maybe const & other ) ;
 
+    //!     Constructs a valid maybe.
+    //!
+    //!     \pre
+    //!         Traits::is_valid( status )
+    //!
+    //!     \param value
+    //!         The T value to copy.
+    //!
+    //!     \param status
+    //!         The status to associate to the object.
+    //!
+    //!     \post
+    //!         - is_valid()
+    //!         - value() == value
+    //!         - status() == status
+    // ------------------------------------------------------------------------
     explicit            maybe( T const & value, status_type status =
                                                      Traits::default_valid() ) ;
-
+    //!     \post
+    //!         - value() is moved from other.value()
+    //!         - status() == other.status()
+    //!         - other.status() == Traits::default_invalid()
+    // ------------------------------------------------------------------------
                         maybe( maybe && other ) ;
+
+    //!     \pre
+    //!         Traits::is_valid( status )
+    //!
+    //!     \param value
+    //!         The T value to move from.
+    //!
+    //!     \param status
+    //!         The status to associate to the object
+    //!
+    //!     \post
+    //!         - is_valid()
+    //!         - value() is moved from value
+    //!         - status() == status
+    // ------------------------------------------------------------------------
     explicit            maybe( T && value, status_type status =
                                                    Traits::default_valid() ) ;
+
                         ~maybe() noexcept ;
+
+    //!     \post
+    //!         - ! is_valid() || value() == other.value()
+    //!         - status() == other.status()
+    // ------------------------------------------------------------------------
     maybe &             operator =( maybe const & other ) ;
+
+    //!     \param value
+    //!         The value to copy.
+    //!
+    //!     \post
+    //!         - is_valid()
+    //!         - value() == value
+    //!         - status == Traits::default_valid()
+    // ------------------------------------------------------------------------
     maybe &             operator =( T const & value ) ;
+
+    //!     \post
+    //!         - ! is_valid() || value() is moved from other.value()
+    //!         - status() == other.status()
+    // ------------------------------------------------------------------------
     maybe &             operator =( maybe && other ) ;
+
+    //!     \post
+    //!         - is_valid()
+    //!         - value() is moved from value
+    //!         - status() == Traits::default_valid()
+    // ------------------------------------------------------------------------
     maybe &             operator =( T && value ) ;
 
+    //!     \return
+    //!         The validity status.
+    // ------------------------------------------------------------------------
     status_type         status() const noexcept ;
+
+    //!     \return
+    //!         Traits::is_valid( status() )
+    // ------------------------------------------------------------------------
     bool                is_valid() const noexcept ;
 
+    //!     \return
+    //!         A reference to the T value.
+    //!
+    //!     \pre
+    //!         is_valid()
+    // ------------------------------------------------------------------------
     T const &           value() const noexcept ;
 
     //!     \returns
