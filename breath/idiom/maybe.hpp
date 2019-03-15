@@ -134,6 +134,32 @@ public:
 //!         - two static functions, named "default_invalid" and
 //!           "default_valid" which give the default invalid and valid
 //!           state, respectively
+//!
+//!     A final note about std::optional
+//!     --------------------------------
+//!
+//!     C++17 introduces std::optional, which has the same purpose as
+//!     maybe.
+//!
+//!     Generally, I'm against using components that do double duty with
+//!     the standard library but std::optional:
+//!
+//!      - is IMHO quite over-engineered
+//!
+//!      - abuses operator overloading to provide a pointer-like syntax
+//!        for unchecked access to the contained value
+//!
+//!      - has an error-prone conversion to bool for is_valid(): see
+//!        std::optional< bool >
+//!
+//!      - treats a valid std::optional< T > as a T in some contexts (
+//!        comparison operators) and not in others
+//!
+//!      - doesn't (yet?) support a generalized error status, which is
+//!        essential for our usages
+//!
+//!     So, I'm not going to replace our maybe with std::optional, even
+//!     in C++17.
 // ---------------------------------------------------------------------------
 template< typename T, typename Traits = boolean_maybe_traits >
 class maybe
