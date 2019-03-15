@@ -49,8 +49,8 @@ public:
 
 
 
-//      maybe< T >:
-//      ===========
+//      maybe:
+//      ======
 //
 //!     A class template to represent "possible" values. The idea was
 //!     signaled by James Kanze in some illo-tempore conversation, and
