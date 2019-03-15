@@ -83,7 +83,7 @@ public:
 //!        things, it wouldn't be useful in at least the following
 //!        situations:
 //!
-//!         - when we want to invoke a member function on the "real"
+//!         - when you want to invoke a member function on the "real"
 //!           object:
 //!
 //!             maybe< std::string > my_function() ;
@@ -142,7 +142,7 @@ public:
 //!     maybe.
 //!
 //!     Generally, I'm against using components that do double duty with
-//!     the standard library but std::optional:
+//!     the standard library, but std::optional:
 //!
 //!      - is IMHO quite over-engineered
 //!
