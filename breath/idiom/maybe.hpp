@@ -86,9 +86,11 @@ public:
 //!         - when you want to invoke a member function on the "real"
 //!           object:
 //!
+//!           \code
 //!             maybe< std::string > my_function() ;
 //!             my_function().size() ;        // error
 //!             my_function().value().size()  // OK
+//!           \endcode
 //!
 //!           (but, of course, the latter is stylistically rare: one
 //!           would usually assign the function return value first)
@@ -97,29 +99,29 @@ public:
 //!           you want to be applied
 //!
 //!        As shown above, in these cases you have to explicitly
-//!        invoke value().
+//!        invoke \t value().
 //!
-//!        Curiously enough, B&N's book introduces Fallible<> as an
+//!        Curiously enough, B&N's book introduces \c Fallible<> as an
 //!        example of using conversions "to add a binary state" --
 //!        valid or invalid-- and checking to objects. The conversion
 //!        itself, however, isn't part of the concept: it just makes the
 //!        checking more "transparent" (at the well-known cost that
 //!        implicit conversions generally bring).
 //!
-//!     3. It isn't required for T to have a default constructor.
+//!     3. It isn't required for \c T to have a default constructor.
 //!
 //!     4. Has a richer interface and supports move semantics.
 //!
-//!     5. Has an additional template parameter (Traits) which allows
+//!     5. Has an additional template parameter (\c Traits) which allows
 //!        specifying several invalid states or several valid states.
 //!
 //!     The template parameters are:
 //!
-//!      - T
+//!      - \c T
 //!
 //!        The type of the value to store when the maybe is valid.
 //!
-//!      - Traits
+//!      - \c Traits
 //!
 //!        A traits class defining the valid and the invalid states of
 //!        the maybe object. It shall contain:
@@ -127,7 +129,7 @@ public:
 //!         - a nested type or typedef named "status" that can be used
 //!           to store the state of the maybe object
 //!
-//!         - an is_valid() static function, which returns whether a
+//!         - an \c %is_valid() static function, which returns whether a
 //!           given value of type status corresponds to a valid status
 //!           or not
 //!
@@ -138,28 +140,28 @@ public:
 //!     A final note about std::optional
 //!     --------------------------------
 //!
-//!     C++17 introduces std::optional, which has the same purpose as
-//!     maybe.
+//!     C++17 introduces \c std::optional, which has the same purpose as
+//!     \c maybe.
 //!
 //!     Generally, I'm against using components that do double duty with
-//!     the standard library, but std::optional:
+//!     the standard library, but \c std::optional:
 //!
 //!      - is IMHO quite over-engineered
 //!
 //!      - abuses operator overloading to provide a pointer-like syntax
 //!        for unchecked access to the contained value
 //!
-//!      - has an error-prone conversion to bool for is_valid(): see
-//!        std::optional< bool >
+//!      - has an error-prone conversion to \c bool for \c is_valid():
+//!        see \c std::optional< bool >
 //!
-//!      - treats a valid std::optional< T > as a T in some contexts (
-//!        comparison operators) and not in others
+//!      - treats a valid \c std::optional< T > as a \c T in some
+//!        contexts (comparison operators) and not in others
 //!
 //!      - doesn't (yet?) support a generalized error status, which is
 //!        essential for our usages
 //!
-//!     So, I'm not going to replace our maybe with std::optional, even
-//!     in C++17.
+//!     So, I'm not going to replace our \c maybe with \c std::optional,
+//!     even in C++17.
 // ---------------------------------------------------------------------------
 template< typename T, typename Traits = boolean_maybe_traits >
 class maybe
@@ -188,7 +190,7 @@ public:
     //!         Traits::is_valid( status )
     //!
     //!     \param value
-    //!         The T value to copy.
+    //!         The \c T value to copy.
     //!
     //!     \param status
     //!         The status to associate to the object.
@@ -205,7 +207,7 @@ public:
     //!         Traits::is_valid( status )
     //!
     //!     \param value
-    //!         The T value to move from.
+    //!         The \c T value to move from.
     //!
     //!     \param status
     //!         The status to associate to the object
@@ -288,10 +290,10 @@ public:
     //!     Note that, differently from \c value(), this function
     //!     returns by value, which prevents problems of dangling
     //!     references. Note, too, that, for this reason, it is not
-    //!     noexcept (T's copy constructor might throw); a conditional
-    //!     noexcept() would be an option, but it adds too much
-    //!     complexity, in our opinion, and of course we would have to
-    //!     use it consistently, not just for default_to().
+    //!     noexcept (\c T's copy constructor might throw); a
+    //!     conditional noexcept() would be an option, but it adds too
+    //!     much complexity, in our opinion, and of course we would have
+    //!     to use it consistently, not just for \c default_to().
     // ---------------------------------------------------------------------
     T                   default_to( T const & default_value ) const ;
 
