@@ -17,21 +17,20 @@
 
 namespace breath {
 
-//!     \return The extension of the file name part of \c path,
-//!             including the period, if any. This is the substring
-//!             starting from the last period, except that:
+//!     \return
+//!         The extension of the file name part of \c path, including
+//!         the period, if any. This is the substring starting from the
+//!         last period, except that:
 //!
-//!              - if the file name part is "." or ".." (without
-//!                quotes), or does not contain a period, the result
-//!                is an empty string;
+//!          - if the file name part is "." or ".." (without quotes) or
+//!            does not contain a period, the result is an empty string;
 //!
-//!              - if the file name part begins with a period, then
-//!                that initial period (and only that) is ignored
-//!                (so ".dotfile" gives "", while ".dotfile.txt" gives
-//!                ".txt").
+//!          - if the file name part begins with a period, then that
+//!            initial period (and only that) is ignored (so ".dotfile"
+//!            gives "", while ".dotfile.txt" gives ".txt").
 //!
-//!     Note:   this behavior is aligned with that of
-//!               std::filesystem::path::extension (C++17)
+//!     Note: this behavior is aligned with that of
+//!           std::filesystem::path::extension (C++17)
 // -------------------------------------------------------------------------
 std::string         extension( std::string const & path ) ;
 

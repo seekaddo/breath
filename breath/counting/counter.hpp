@@ -53,13 +53,14 @@ public:
     // ----------------------------------------------------------------------
     counter             operator --( int ) & ;
 
-    //!     \return The internal value of the counter.
+    //!     \return
+    //!         The internal value of the counter.
     // ----------------------------------------------------------------------
     IntegralType        value() const ;
 
-    //!     \return \c true if an only if \c *this and \c other
-    //!     compare equal (same internal value). Used by the base
-    //!     class.
+    //!     \return
+    //!         \c true if an only if \c *this and \c other compare
+    //!         equal (same internal value). Used by the base class.
     // ----------------------------------------------------------------------
     bool                is_equal( counter const & other ) const ;
 

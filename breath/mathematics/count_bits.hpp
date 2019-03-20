@@ -17,8 +17,9 @@
 
 namespace breath {
 
-//!     \return The number of on bits in the value \c t. \p T must be
-//!     an unsigned built-in type.
+//!     \return
+//!         The number of on bits in the value \c t. \p T must be an
+//!         unsigned built-in type.
 // -------------------------------------------------------------------------
 template< typename T >
 constexpr std::size_t

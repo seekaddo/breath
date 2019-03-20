@@ -17,7 +17,8 @@
 
 namespace breath {
 
-//!     \return A human readable name for the type \c T.
+//!     \return
+//!         A human readable name for the type \c T.
 // -------------------------------------------------------------------------
 template< typename T >
 std::string         readable_type_name() ;

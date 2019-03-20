@@ -15,8 +15,9 @@
 
 namespace breath {
 
-//!     \return The amount of physical memory installed in the system, in
-//!             KiB.
+//!     \return
+//!         The amount of physical memory installed in the system, in
+//!         KiB.
 // -------------------------------------------------------------------------
 unsigned long long  amount_of_physical_memory() ;
 

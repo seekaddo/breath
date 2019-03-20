@@ -142,13 +142,15 @@ private:
     } ;
 //! \endcond
 public:
-    //!     \return The address of the internal (aligned) buffer, as a
-    //!     <code>void *</code>.
+    //!     \return
+    //!         The address of the internal (aligned) buffer, as a
+    //!         <code>void *</code>.
     // ----------------------------------------------------------------------
     void *              address() noexcept       { return m_raw_buffer ; }
 
-    //!     \return The address of the internal (aligned) buffer, as a
-    //!     <code>void const *</code>.
+    //!     \return
+    //!         The address of the internal (aligned) buffer, as a
+    //!         <code>void const *</code>.
     // ----------------------------------------------------------------------
     void const *        address() const noexcept { return m_raw_buffer ; }
 } ;

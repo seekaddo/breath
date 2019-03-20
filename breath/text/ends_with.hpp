@@ -17,8 +17,9 @@
 
 namespace breath {
 
-//!     \return Whether \c str ends with \c with. If \c with is empty,
-//!             the result is always true.
+//!     \return
+//!         Whether \c str ends with \c with. If \c with is empty, the
+//!         result is always \c true.
 //!
 //!     [FUTURE] C++20 will have std::basic_string::ends_with() and
 //!              std::basic_string_view::ends_with() for this.

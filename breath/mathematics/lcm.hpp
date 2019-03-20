@@ -26,9 +26,9 @@ namespace breath {
 //!     common multiple of |m| and |n| is not representable as a value
 //!     of type \c common_type_t< M, N>, the behavior is undefined.
 //!
-//!     \returns
-//!     If either \c m or \c n is zero, returns zero. Otherwise it
-//!     returns the least common multiple of |m| and |n|.
+//!     \return
+//!         If either \c m or \c n is zero, returns zero. Otherwise it
+//!         returns the least common multiple of |m| and |n|.
 // -------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >

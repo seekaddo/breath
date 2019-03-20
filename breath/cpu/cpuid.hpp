@@ -57,8 +57,8 @@ struct cpuid_result
 //!     Namespace: global (see above)
 //!
 //!     \return
-//!             \c true if and only if the executing CPU supports the
-//!             CPUID machine instruction.
+//!         \c true if and only if the executing CPU supports the CPUID
+//!         machine instruction.
 // -------------------------------------------------------------------------
 bool                is_cpuid_supported() ;
 
@@ -71,12 +71,12 @@ bool                is_cpuid_supported() ;
 //!     EAX and \c ECX.
 //!
 //!     \pre
-//!             the CPUID instruction is supported (see
-//!             is_cpuid_supported())
+//!         the CPUID instruction is supported (see
+//!         is_cpuid_supported())
 //!
 //!     \return
-//!             a struct with the values of \c EAX, \c EBX, \c ECX,
-//!             \c EDX returned by the CPUID instruction itself.
+//!         a struct with the values of \c EAX, \c EBX, \c ECX, \c EDX
+//!         returned by the CPUID instruction itself.
 // -------------------------------------------------------------------------
 cpuid_result        get_cpuid_info( uint32_t eax, uint32_t ecx ) ;
 

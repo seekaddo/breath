@@ -25,9 +25,9 @@ namespace breath {
 //!     or |n| is not representable as a value of type N, the behavior
 //!     is undefined.
 //!
-//!     \returns
-//!     If both \c m and \c n are zero, returns zero. Otherwise it
-//!     returns the greatest common divisor of |m| and |n|.
+//!     \return
+//!         If both \c m and \c n are zero, returns zero. Otherwise it
+//!         returns the greatest common divisor of |m| and |n|.
 // -------------------------------------------------------------------------
 template< typename M, typename N >
 constexpr std::common_type_t< M, N >

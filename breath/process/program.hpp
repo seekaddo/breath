@@ -106,7 +106,8 @@ public:
     // ----------------------------------------------------------------------
     void                set_name( std::string const & name ) ;
 
-    //!     \return The program name set by \c set_name().
+    //!     \return
+    //!         The program name set by \c set_name().
     // ----------------------------------------------------------------------
     maybe< std::string >
                         name() const ;

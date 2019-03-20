@@ -71,6 +71,7 @@ operator <<( std::basic_ostream< Ch, Tr >   & os,
             breath::digest< Hasher > const & d ) ;
 
 //!     Convenience function (can use type deduction)
+//!
 //!     \return
 //!         digest< Hasher >( h )
 // -----------------------------------------------------------------------

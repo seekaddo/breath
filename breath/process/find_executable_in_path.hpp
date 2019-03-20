@@ -25,9 +25,9 @@ namespace breath {
 //!     unspecified whether the current working directory is searched
 //!     before or after the directories in \c PATH.
 //!
-//! \return
-//!     A \c maybe< std::string > that is invalid (for failure) or
-//!     contains the full path of the found executable.
+//!     \return
+//!         A \c maybe< std::string > that is invalid (for failure) or
+//!         contains the full path of the found executable.
 // -------------------------------------------------------------------------
 maybe< std::string >
                     find_executable_in_path(

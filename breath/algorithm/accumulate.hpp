@@ -33,7 +33,8 @@ public:
     // -----------------------------------------------------------------------
     typedef T           result_type ;
 
-    //!     \return The default init value for \c breath::accumulate.
+    //!     \return
+    //!         The default init value for \c breath::accumulate.
     // -----------------------------------------------------------------------
     static init_type    first() ;
 

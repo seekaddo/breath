@@ -29,12 +29,14 @@ public:
 
                         node_id() ;
 
-    //!     \return The one and only instance of \c node_id.
+    //!     \return
+    //!         The one and only instance of \c node_id.
     // ---------------------------------------------------------------------
     static node_id const &
                         instance() ;
 
-    //!     \return The \c n-th byte of the MAC address.
+    //!     \return
+    //!         The \c n-th byte of the MAC address.
     // ---------------------------------------------------------------------
     uint8_t             operator []( int n ) const ;
 

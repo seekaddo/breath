@@ -18,7 +18,8 @@
 
 namespace breath {
 
-//!     \return \c true if an only if \c x is a power of two.
+//!     \return
+//!         \c true if an only if \c x is a power of two.
 //
 //      Note that C++20 will likely have an ispow2() that can replace
 //      this one:

@@ -18,8 +18,8 @@
 
 namespace breath {
 
-//!     \return The Levenshtein distance between \c first and \c
-//!     second.
+//!     \return
+//!         The Levenshtein distance between \c first and \c second.
 // -------------------------------------------------------------------------
 std::size_t         levenshtein_distance( std::string const & first,
                                           std::string const & second ) ;

@@ -30,35 +30,42 @@ public:
     // -----------------------------------------------------------------------
     BREATH_DECLARE_NON_COPYABLE( windows_version_info )
 
-    //! \return The major version number of the operating system.
+    //! \return
+    //!     The major version number of the operating system.
     // -----------------------------------------------------------------------
     int                 major_version() const ;
 
-    //! \return The minor version number of the operating system.
+    //! \return
+    //!     The minor version number of the operating system.
     // -----------------------------------------------------------------------
     int                 minor_version() const ;
 
-    //! \return The build number of the operating system.
+    //! \return
+    //!     The build number of the operating system.
     // -----------------------------------------------------------------------
     int                 build_number() const ;
 
-    //! \return A (possibly empty) string with the edition of the operating
-    //!         system. The return type could be <code>maybe< std::string >
-    //!         </code> but I didn't want to introduce another dependency.
+    //! \return
+    //!     A (possibly empty) string with the edition of the operating
+    //!     system. The return type could be <code>maybe< std::string >
+    //!     </code> but I didn't want to introduce another dependency.
     // -----------------------------------------------------------------------
     std::string         edition() const ;
 
-    //! \return Whether the OS is 64-bit.
+    //! \return
+    //!     Whether the OS is 64-bit.
     // -----------------------------------------------------------------------
     static bool         is_64_bit() ;
 
-    //! \return Whether the OS is a Windows client version.
+    //! \return
+    //!     Whether the OS is a Windows client version.
     // -----------------------------------------------------------------------
     static bool         is_client() ;
 
-    //! \return A (possibly empty) string with the service pack of the
-    //!         operating system. This could use <code>maybe< std::string >
-    //!         </code> as well.
+    //! \return
+    //!     A (possibly empty) string with the service pack of the
+    //!     operating system. This could use <code>maybe< std::string >
+    //!     </code> as well.
     // -----------------------------------------------------------------------
     static std::string  service_pack_string() ;
 

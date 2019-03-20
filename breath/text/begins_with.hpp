@@ -17,8 +17,9 @@
 
 namespace breath {
 
-//!     \return Whether \c str begins with \c with. If \c with is
-//!             empty, the result is always true.
+//!     \return
+//!         Whether \c str begins with \c with. If \c with is empty, the
+//!         result is always \c true.
 //!
 //!     [FUTURE] C++20 will have std::basic_string::starts_with() and
 //!              std::basic_string_view::starts_with() for this.

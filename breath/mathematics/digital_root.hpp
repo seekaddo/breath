@@ -15,8 +15,9 @@
 
 namespace breath {
 
-//!     \return The digital root of the number \c n in base \c base.
-//
+//!     \return
+//!         The digital root of the number \c n in base \c base.
+//!
 //!     \pre
 //!         n >= 0 && base > 2
 // -------------------------------------------------------------------------
