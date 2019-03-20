@@ -45,7 +45,7 @@ cpp_basic_options = /std:c++14                 \
                     /Zc:inline                 \
                                                \
                     /EHs                       \
-                    /W4                        \
+                    /Wall                      \
                     /WX                        \
                     /D _CRT_SECURE_NO_WARNINGS \
                     /D _SCL_SECURE_NO_WARNINGS
@@ -55,8 +55,8 @@ cpp_basic_options = /std:c++14                 \
 #
 #         <https://docs.microsoft.com/en-us/cpp/preprocessor/compiler-warnings-that-are-off-by-default?view=vs-2015>
 # ----------------------------------------------------------------------------
-cpp_basic_options += /Wall /wd4365 /wd4514 /wd4571     \
-                           /wd4668 /wd4710 /wd4820
+cpp_basic_options += /wd4365 /wd4514 /wd4571   \
+                     /wd4668 /wd4710 /wd4820
 
 
 
