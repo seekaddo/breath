@@ -8,18 +8,14 @@
 //
 //!     \file
 //!     \brief Metafunction yielding the \e precision of a type.
+//!
+//!     The library provides specializations for all integer types and
+//!     \e built-in arrays thereof (including multidimensional arrays).
+//!     The user can specialize it for UDTs. See also \c width< T >. // gps
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
 #define BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
-
-/*!
-    \todo document!
-
-    The library provides specializations for all integer types and \e
-    built-in arrays thereof (including multidimensional arrays).
-    The user can specialize it for UDTs. See also \c width< T >. // gps
-*/
 
 #include "breath/meta/constant.hpp"
 

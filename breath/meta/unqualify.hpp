@@ -9,14 +9,12 @@
 //!     \file
 //!     \brief Metafunction to get the corresponding unqualified type of
 //!            its argument.
+//!
+//!     Example: <code>unqualify< char const >::type == char</code>
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_y2qhOILUvLqZ79ED32KSdlOabmhuefgQ
 #define BREATH_GUARD_y2qhOILUvLqZ79ED32KSdlOabmhuefgQ
-
-/*!
-        Example: unqualify< char const >::type = char
-*/
 
 // NOTE:
 //      No #includes here

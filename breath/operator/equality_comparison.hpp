@@ -13,12 +13,6 @@
 #ifndef BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
 #define BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
 
-/*!
-        Automatically provides a definition for \c operator ==() and
-        \c operator !=() in terms of a user-declared member function
-        \c %is_equal().
-*/
-
 namespace breath {
 namespace adl_shield {
 

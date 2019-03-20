@@ -13,28 +13,27 @@
 #ifndef BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 #define BREATH_GUARD_orbeymgqIeZsonBH4PuD1mZImaMGlaZ1
 
-/*!
-        This is completely analogous to the \c std::fill algorithm, except
-        that, due to a \c volatile qualification, it guarantees that the
-        sequence is written to, even if it is never touched after the
-        \c secure_fill() call (in other words: it ensures that the compiler
-        will not optimize the function out); useful to zeroize passwords
-        and other sensitive data.
-
-        Note that a convenience overload for built-in arrays is provided.
-
-        Many thanks go to David R Tribble and Douglas A. Gwyn who clarified
-        my doubts on comp.std.c; see the thread starting with
-
-          message-id: <38i6r2d5uksv7eovk0os7506k9bbshgl2j@4ax.com>
-*/
-
 #include "breath/idiom/volatilize.hpp"
 #include <cstddef>
 
 namespace breath {
 
 
+//!     This is completely analogous to the \c std::fill algorithm, except
+//!     that, due to a \c volatile qualification, it guarantees that the
+//!     sequence is written to, even if it is never touched after the
+//!     \c secure_fill() call (in other words: it ensures that the compiler
+//!     will not optimize the function out); useful to zeroize passwords
+//!     and other sensitive data.
+//!
+//!     Note that a convenience overload for built-in arrays is provided.
+//!
+//!     Many thanks go to David R Tribble and Douglas A. Gwyn who clarified
+//!     my doubts on comp.std.c; see the thread starting with
+//!
+//!       message-id: <38i6r2d5uksv7eovk0os7506k9bbshgl2j@4ax.com>
+//!
+// --------------------------------------------------------------------------
 //      Note how this is intentionally implemented with a hand-coded
 //      loop. It's not crystal clear whether we could use std::fill
 //      or std::fill_n (which would bring the advantage of debugging

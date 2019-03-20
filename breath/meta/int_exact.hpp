@@ -8,15 +8,13 @@
 //
 //!     \file
 //!     \brief Templatized exact-width integer types
+//!
+//!     As for their C99 counterparts, there's no guarantee that the
+//!     types are provided for any given value of \c N.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
 #define BREATH_GUARD_HdHZPdx1OyaeosOjcrni6ByNfUBalEG4
-
-/*!
-        As for their C99 counterparts, there's no guarantee that the
-        types are provided for any given value of N.
-*/
 
 #include "breath/meta/select.hpp"
 #include <limits>

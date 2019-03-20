@@ -8,8 +8,8 @@
 //
 //!     \file
 //!     \brief A replacement for \c EOF and \c char_traits<>::eof().
-// -------------------------------------------------------------------------
-//
+//!
+//!
 //!     A convenience source file to separate out the crazy \#includes
 //!     required for using \c EOF or \c char_traits<...>::eof():
 //!
