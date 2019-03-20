@@ -34,9 +34,9 @@ namespace breath {
 //!     A \c %printable_string can be constructed "from a non-string"
 //!     (i.e. from a null pointer): this is useful for debugging purposes.
 //!     In this special case, only, the \c %printable_string outputs
-//!     without quotes. Otherwise, it gets always enclosed in double
-//!     quotes and a double quote character in the string will be
-////    escaped, as is usual in C++.
+//!     without quotes. Otherwise, it is always enclosed in double
+//!     quotes and a double quote character in the string is escaped,
+////    as is usual in C++.
 //!
 //!     Instances of this class maintain a copy of the string, so the
 //!     user does not have to worry about the lifetime of the object

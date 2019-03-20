@@ -9,11 +9,11 @@
 //      dependent_code.hpp:
 //      -------------------
 //
-//      This is the file which gets internally included every time
-//      that we need to select code according to one or more of the
-//      configuration variables (system, compiler, etc.). Note that it
-//      only relies on the preprocessing facilities, which, in turn,
-//      don't need any configuration.
+//      This is the file which is internally included every time we need
+//      to select code according to one or more of the configuration
+//      variables (system, compiler, etc.). Note that it only relies on
+//      the preprocessing facilities, which, in turn, don't need any
+//      configuration.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_LJrbr2rF89IS3w34IDEgr8K9ZUsCl9Ll
