@@ -8,37 +8,32 @@
 //
 //!     \file
 //!     \brief Arrays and containers element counter.
+//!
+//!     An extension of \c container::size() to cover both standard
+//!     containers and built-in arrays.
+//!
+//!     The syntax is, uniformly, \c breath::count( a ) regardless of
+//!     the actual type of \c a. See also begin_end.hpp.
+//!
+//!     These functions are made obsolete in C++17 by the namespace
+//!     scope std::size()'s. However our version uses, for containers,
+//!     a conditional noexcept that the standard version is not
+//!     required to have.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
 #define BREATH_GUARD_ivBlyIgMoh0KJl1p5J44xFCWiI9nPqRi
 
-/*
-        An extension of container::size to cover both standard
-        containers and built-in arrays.
-
-        The syntax is, uniformly,
-
-            breath::count( a )
-
-        regardless of the actual type of a. See also begin_end.hpp.
-
-        These functions are made obsolete in C++17 by the namespace
-        scope std::size()'s. However our version uses, for containers,
-        a conditional noexcept that the standard version is not
-        required to have.
-*/
-
 #include <cstddef>
 
 namespace breath {
 
-//      count:
-//      ------
+//      count():
+//      --------
 //
 //!     \return
 //!         The number of elements of the array argument
-//!         (obviously, \c n).
+//!         (obviously, \c n). See also the file-level documentation.
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr std::size_t
@@ -47,10 +42,11 @@ count( T const ( & )[ n ] ) noexcept
     return n ;
 }
 
-//      count:
-//      ------
+//      count():
+//      --------
 //
-//!     The same as \c t.size(), for any standard container.
+//!     The same as \c t.size(), for any standard container. See also
+//!     the file-level documentation.
 // -----------------------------------------------------------------------
 template< typename T >
 constexpr typename T::size_type
