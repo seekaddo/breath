@@ -16,10 +16,10 @@
 namespace breath {
 namespace adl_shield {
 
-//      equality_comparison<>:
-//      ----------------------
+//      equality_comparison:
+//      --------------------
 //
-//!     The class template \c equality_comparison<> provides <code>
+//!     The class template \c equality_comparison provides <code>
 //!     operator ==</code> and <code>operator != </code> as namespace
 //!     scope functions whose name is associated "on demand" (i.e. at
 //!     instantiation) to class \c T, via ADL.

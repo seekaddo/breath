@@ -45,7 +45,7 @@ namespace meta {
 //!
 //!     \par Credit
 //!         The basic idea of this class template was suggested by
-//!         Paul Mensonides as <code>map_integral<></code>.
+//!         Paul Mensonides as <code>map_integral</code>.
 // -------------------------------------------------------------------------
 template< typename T, T v >
 class constant

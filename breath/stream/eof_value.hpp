@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief A replacement for \c EOF and \c char_traits<>::eof().
+//!     \brief A replacement for \c EOF and \c char_traits::eof().
 //!
 //!
 //!     A convenience source file to separate out the crazy \#includes

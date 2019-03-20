@@ -15,10 +15,10 @@
 
 namespace breath {
 
-//      accumulate_traits<>:
-//      --------------------
+//      accumulate_traits:
+//      ------------------
 //
-//!     Traits template for \c breath::accumulate<>().
+//!     Traits template for \c breath::accumulate().
 //!     (gps should we use the term "policy" in place of "traits"?)
 // ---------------------------------------------------------------------------
 template< typename T >
@@ -53,15 +53,15 @@ public:
 //!     Traits
 //!     ------
 //!
-//!     \c breath::accumulate() uses \c accumulate_traits<> as a point
-//!     of customization: you are allowed to specialize it, in
-//!     namespace \c breath, for your own types.
+//!     \c breath::accumulate() uses \c accumulate_traits as a point of
+//!     customization: you are allowed to specialize it, in namespace
+//!     \c breath, for your own types.
 //!
 //!     The default traits template performs a summation of the
 //!     elements in the range <code>[begin, end)</code> via
 //!     <code>operator +=</code> (which is searched via ADL).
 //!
-//!     Any \c accumulate_traits<> shall provide the following
+//!     Any \c accumulate_traits shall provide the following
 //!     accessible members:
 //!
 //!         - init_type

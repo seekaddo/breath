@@ -18,7 +18,7 @@
 namespace breath {
 namespace meta {
 
-//!     A \c meta::constant<> yielding whether a type allows negative
+//!     A \c meta::constant yielding whether a type allows negative
 //!     values.
 // -------------------------------------------------------------------------
 template< typename T >

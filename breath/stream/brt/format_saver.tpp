@@ -9,9 +9,9 @@
 //      Some notes:
 //      -----------
 //
-//      1. We use basic_ios<>::copyfmt because we also want to save
-//      and restore all the iword()/pword() data, and that function is
-//      the only standard way to copy them. However, despite its name,
+//      1. We use basic_ios::copyfmt because we also want to save and
+//      restore all the iword()/pword() data, and that function is the
+//      only standard way to copy them. However, despite its name,
 //      copyfmt also copies information which have nothing to do with
 //      the format; for instance, the exception mask. So we "undo"
 //      part of its job. (In practice, copyfmt "does too much": I
@@ -23,13 +23,13 @@
 //      2. The reason for the ios_base:: qualification in the call to
 //      imbue is the following:
 //
-//      both basic_ios<> and its base ios_base have an imbue()
-//      function. (Neither is virtual.) The base one deals with the
-//      stream locale (and callbacks). The derived one (which hides
-//      the base version) deals with both the stream locale and the
-//      stream buffer locale (if rdbuf() != 0) [C++03: 27.4.2.3 and
-//      27.4.4.2]. Since copyfmt does not copy the stream buffer
-//      locale --only the stream one-- we invoke the base version.
+//      both basic_ios and its base ios_base have an imbue() function.
+//      (Neither is virtual.) The base one deals with the stream locale
+//      (and callbacks). The derived one (which hides the base version)
+//      deals with both the stream locale and the stream buffer locale
+//      (if rdbuf() != 0) [C++03: 27.4.2.3 and 27.4.4.2]. Since copyfmt
+//      does not copy the stream buffer locale --only the stream one--
+//      we invoke the base version.
 // ---------------------------------------------------------------------------
 
 namespace breath {

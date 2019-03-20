@@ -65,11 +65,11 @@ namespace breath {
 //!     About locales:
 //!
 //!     Instances of the class \c ios_base contain a locale object.
-//!     Instances of \c basic_ios<> (which have an \c ios_base
+//!     Instances of \c basic_ios (which have an \c ios_base
 //!     subobject) hold a pointer the stream buffer, which has a
 //!     locale too (coding conversions).
 //!
-//!     \c basic_ios<>::copyfmt copies the stream locale (member of
+//!     \c basic_ios::copyfmt copies the stream locale (member of
 //!     \c ios_base), but not the stream-buffer one. Note, BTW, that
 //!     it does so without triggering the \c imbue_event.
 //!

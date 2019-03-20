@@ -19,7 +19,7 @@ namespace breath {
 //! \cond
 namespace  integer_log2_private {
 
-//      choose_initial_n<>
+//      choose_initial_n
 //
 //      Recursively doubles its integer argument n, until 2*n becomes
 //      >= of the "width" (C99, 6.2.6.2p6) of integer_log2's
@@ -83,7 +83,7 @@ const result_type initial_n = choose_initial_n<n_zero>::value ;
 //      Invariant:
 //                     2n
 //      1 <= x && x < 2    at the start of each recursion
-//                         (see also choose_initial_n<>)
+//                         (see also choose_initial_n)
 //
 //      Type requirements:
 //

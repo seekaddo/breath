@@ -20,8 +20,8 @@ class wrapper
 
 }
 
-//      The use of wrapper<>, here, is to workaround the following
-//      limitations of typeid( T ).name():
+//      The use of the wrapper template, here, is to workaround the
+//      following limitations of typeid( T ).name():
 //
 //      (1) if T is a reference to a possibly cv-qualified type, the
 //      name returned is that of the cv-unqualified referenced type;

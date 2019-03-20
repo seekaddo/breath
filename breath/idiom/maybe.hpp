@@ -18,8 +18,8 @@
 namespace breath {
 
 //! \brief
-//!     The default traits class for maybe<>. Logically corresponds to
-//!     a boolean (valid/invalid).
+//!     The default traits class for maybe. Logically corresponds to a
+//!     boolean (valid/invalid).
 // --------------------------------------------------------------------------
 class boolean_maybe_traits
 {
@@ -101,7 +101,7 @@ public:
 //!        As shown above, in these cases you have to explicitly
 //!        invoke \t value().
 //!
-//!        Curiously enough, B&N's book introduces \c Fallible<> as an
+//!        Curiously enough, B&N's book introduces \c Fallible as an
 //!        example of using conversions "to add a binary state" --
 //!        valid or invalid-- and checking to objects. The conversion
 //!        itself, however, isn't part of the concept: it just makes the
