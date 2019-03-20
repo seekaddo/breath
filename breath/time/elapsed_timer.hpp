@@ -21,19 +21,18 @@ namespace breath {
 //!     A policy based timer which allows the user to retrieve the
 //!     amount of time elapsed from its start.
 //!
-//!     Device is a policy modeling the "clock device" concept: this
-//!     can be a hardware device, a network time provider, a GPS
-//!     system or pretty much anything else. It must provide the
-//!     member functions
+//!     \c Device is a policy modeling the "clock device" concept: this
+//!     can be a hardware device, a network time provider, a GPS system
+//!     or pretty much anything else. It must provide the member
+//!     functions:
 //!
-//!         * restart()
-//!         * elapsed()
-//!      and
-//!         * resolution()
+//!      - \c restart()
+//!      - \c elapsed()
+//!      - \c resolution()
 //!
-//!      and the typedef
+//!     and the typedef
 //!
-//!         * duration_type
+//!      - \c duration_type
 // -------------------------------------------------------------------------
 template< class Device >
 class elapsed_timer
