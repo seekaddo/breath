@@ -17,7 +17,8 @@ namespace breath {
 
 //!     \return The digital root of the number \c n in base \c base.
 //
-//!     Precondition: n >= 0 && base > 2
+//!     \pre
+//!         n >= 0 && base > 2
 // -------------------------------------------------------------------------
 template< typename T >
 constexpr T         digital_root( T n, T base = 10 ) noexcept ;

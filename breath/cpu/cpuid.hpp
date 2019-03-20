@@ -70,7 +70,7 @@ bool                is_cpuid_supported() ;
 //!     Executes the CPUID instruction with the provided values in \c
 //!     EAX and \c ECX.
 //!
-//!     Precondition:
+//!     \pre
 //!             the CPUID instruction is supported (see
 //!             is_cpuid_supported())
 //!

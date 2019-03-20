@@ -29,7 +29,9 @@ public:
                         counter() ;
 
     //!     Constructs a counter with internal value \c n.
-    //!     Precondition: \c n >= 0.
+    //!
+    //!     \pre
+    //!         n >= 0
     // ----------------------------------------------------------------------
     explicit            counter( IntegralType n ) ;
 

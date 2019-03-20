@@ -70,9 +70,11 @@ public:
     //!
     //!     If the name is set, any leading path is stripped.
     //!
-    //!     Precondition: name was not set before.
+    //!     \pre
+    //!         name was not set before
     //!
-    //!     Postcondition: none.
+    //!     \post
+    //!         \e none
     // ----------------------------------------------------------------------
     void                set_name( int argc, char const * const * argv ) ;
 
@@ -82,10 +84,12 @@ public:
     //!
     //!     In any case, any leading path is stripped.
     //!
-    //!     Precondition: <tt>! fallback.empty()</tt> and name was not
-    //!     set before.
+    //!     \pre
+    //!         <tt>! fallback.empty()</tt> and name was not
+    //!         set before
     //!
-    //!     Postcondition: <tt>name().is_valid()</tt>.
+    //!     \post
+    //!         <tt>name().is_valid()</tt>
     // ----------------------------------------------------------------------
     void                set_name( int argc, char const * const * argv,
                                   std::string const & fallback ) ;
@@ -93,10 +97,12 @@ public:
     //!     Sets the program name to \c name, with any leading path
     //!     stripped.
     //!
-    //!     Precondition: <tt>! name.empty()</tt> and name was not set
-    //!     before.
+    //!     \pre
+    //!         <tt>! name.empty()</tt> and name was not set
+    //!          before
     //!
-    //!     Postcondition: <tt>name().is_valid()</tt>.
+    //!     \post
+    //!         <tt>name().is_valid()</tt>
     // ----------------------------------------------------------------------
     void                set_name( std::string const & name ) ;
 

@@ -23,7 +23,8 @@ namespace breath {
 //!     Replaces all occurrences of \c from in \c s with \c to. May
 //!     throw length_error (only if \c to is longer than \c from?).
 //!
-//!     Precondition: ! from.empty()
+//!     \pre
+//!         ! from.empty()
 //!
 //!     Note that \c to can be empty; so, as a special case, this
 //!     function can *remove* all occurrences of a substring.
