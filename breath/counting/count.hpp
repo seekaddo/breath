@@ -36,8 +36,9 @@ namespace breath {
 //      count:
 //      ------
 //
-//!     Returns the number of elements of the array argument
-//!     (obviously, \c n).
+//!     \return
+//!         The number of elements of the array argument
+//!         (obviously, \c n).
 // -----------------------------------------------------------------------
 template< typename T, std::size_t n >
 constexpr std::size_t
