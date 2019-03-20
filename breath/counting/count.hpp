@@ -50,7 +50,7 @@ count( T const ( & )[ n ] ) noexcept
 //      count:
 //      ------
 //
-//!     Same as \c t.size(), for any standard container.
+//!     The same as \c t.size(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename T >
 constexpr typename T::size_type
