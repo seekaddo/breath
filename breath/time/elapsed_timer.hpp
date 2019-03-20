@@ -18,8 +18,8 @@ namespace breath {
 //      elapsed_timer:
 //      --------------
 //
-//!     A policy based timer class which allows the user to retrieve
-//!     the amount of time elapsed from its start.
+//!     A policy based timer which allows the user to retrieve the
+//!     amount of time elapsed from its start.
 //!
 //!     Device is a policy modeling the "clock device" concept: this
 //!     can be a hardware device, a network time provider, a GPS
