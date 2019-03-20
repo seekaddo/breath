@@ -293,7 +293,7 @@ public:
     //!     noexcept (\c T's copy constructor might throw); a
     //!     conditional noexcept() would be an option, but it adds too
     //!     much complexity, in our opinion, and of course we would have
-    //!     to use it consistently, not just for \c default_to().
+    //!     to use it consistently, not just for \c %default_to().
     // ---------------------------------------------------------------------
     T                   default_to( T const & default_value ) const ;
 
