@@ -48,7 +48,6 @@ public:
     explicit            printable_string( std::string const & ) ;
 
 private:
-
     friend std::ostream &
                     operator <<( std::ostream & dest,
                                  printable_string const & ) ;
