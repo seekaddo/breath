@@ -51,7 +51,7 @@ public:
     set_of_chars &      add( char c ) ;
     set_of_chars &      add( char const * ) ;
     set_of_chars &      add( std::string const & ) ;
-    template < typename FwdIterator >
+    template< typename FwdIterator >
     set_of_chars &      add( FwdIterator begin, FwdIterator end ) ;
 
     set_of_chars &      remove( char c ) ;

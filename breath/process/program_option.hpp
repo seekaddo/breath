@@ -28,7 +28,7 @@ public:
     virtual             ~option_reader() noexcept = default ;
 } ;
 
-template < typename T >
+template< typename T >
 class default_reader : public option_reader< T >
 {
 public:
@@ -63,14 +63,14 @@ private:
   T                     m_high ;
 } ;
 
-template < typename T >
+template< typename T >
 range_reader< T >
 range( T const & low, T const & high )
 {
     return range_reader< T >( low, high ) ;
 }
 
-template < typename T >
+template< typename T >
 class oneof_reader : public option_reader< T >
 {
 public:
@@ -100,7 +100,7 @@ oneof_reader< T > oneof( T a1 )
     return ret ;
 }
 
-template <class T>
+template< class T >
 oneof_reader<T> oneof(T a1, T a2)
 {
     oneof_reader< T >   ret ;
@@ -109,7 +109,7 @@ oneof_reader<T> oneof(T a1, T a2)
     return ret ;
 }
 
-template <class T>
+template< class T >
 oneof_reader<T> oneof(T a1, T a2, T a3)
 {
     oneof_reader< T >   ret ;
@@ -119,7 +119,7 @@ oneof_reader<T> oneof(T a1, T a2, T a3)
     return ret ;
 }
 
-template < typename T >
+template< typename T >
 oneof_reader< T > oneof( T a1, T a2, T a3, T a4 )
 {
     oneof_reader< T >   ret ;
@@ -130,7 +130,7 @@ oneof_reader< T > oneof( T a1, T a2, T a3, T a4 )
     return ret ;
 }
 
-template <class T>
+template< class T >
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5)
 {
     oneof_reader< T >   ret ;
@@ -142,7 +142,7 @@ oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5)
     return ret ;
 }
 
-template <class T>
+template< class T >
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6)
 {
     oneof_reader< T >   ret ;
@@ -155,7 +155,7 @@ oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6)
     return ret ;
 }
 
-template <class T>
+template< class T >
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7)
 {
     oneof_reader< T >   ret ;
@@ -169,7 +169,7 @@ oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7)
     return ret ;
 }
 
-template <class T>
+template< class T >
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7, T a8)
 {
     oneof_reader< T >   ret ;
@@ -184,7 +184,7 @@ oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7, T a8)
     return ret ;
 }
 
-template <class T>
+template< class T >
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7, T a8, T a9)
 {
     oneof_reader< T >   ret ;
@@ -200,7 +200,7 @@ oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7, T a8, T a9)
     return ret ;
 }
 
-template <class T>
+template< class T >
 oneof_reader<T> oneof(T a1, T a2, T a3, T a4, T a5, T a6, T a7, T a8, T a9,
                                                                       T a10)
 {
@@ -262,7 +262,7 @@ class program_option_without_value
     bool                m_is_set ;
 } ;
 
-template <class T>
+template< class T >
 class program_option_with_value : public option_base
 {
 public:

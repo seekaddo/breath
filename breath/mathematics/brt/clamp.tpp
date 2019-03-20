@@ -17,7 +17,7 @@ clamp( T const & value, T const & low, T const & high )
     return clamp( value, low, high, std::less<>() ) ;
 }
 
-template < typename T, typename Compare >
+template< typename T, typename Compare >
 constexpr T const &
 clamp( T const & value,
        T const & low,

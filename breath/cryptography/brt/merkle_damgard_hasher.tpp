@@ -68,7 +68,7 @@ merkle_damgard_machine< Engine>::push_back( byte_type b )
         this->compress() ;
 }
 
-template <typename Engine>
+template< typename Engine >
 std::size_t
 merkle_damgard_machine< Engine >::input_index() const
 {

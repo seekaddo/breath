@@ -23,8 +23,8 @@ namespace breath {
 //!     A smart pointer that retains sole ownership of an array through
 //!     a pointer. This template is similar to
 //!
-//!       template < typename T,
-//!                  typename Deleter
+//!       template< typename T,
+//!                 typename Deleter
 //!                > class unique_ptr< T[], Deleter > ;
 //!     but was written way before C++11.
 //!

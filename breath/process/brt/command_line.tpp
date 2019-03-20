@@ -21,7 +21,7 @@ command_line::add( program_option_with_value< T > & opt )
 }
 
 #if 0
-template < typename T >
+template< typename T >
 program_option_with_value< T > const &
 command_line::get( std::string const & name ) const
 {
