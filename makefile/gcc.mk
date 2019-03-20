@@ -16,8 +16,8 @@
 #
 #
 #       As usual, the options are listed in two groups. The group
-#       listed first relates mainly to standards conformance. The other
-#       group contains other options in alphabetical order.
+#       appearing first relates mainly to standards conformance. The
+#       other group contains other options in alphabetical order.
 #
 #       Special notes for some of the options:
 #       ======================================
