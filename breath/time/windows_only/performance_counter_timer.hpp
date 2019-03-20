@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief A timer policy using Windows' \c QueryPerformanceCounter().
+//!     \brief A timer policy using Windows' \c
+//!            QueryPerformanceCounter().
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_xQJo3uSTt7ypxnH7y1CyRR3fJM5i3dsb

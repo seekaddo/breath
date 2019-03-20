@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns the allowed path separators in the running system.
+//!     \brief Returns the allowed path separators in the running
+//!            system.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_bvA1h6sHG51DDAzrkOaJBHIxlZBpgVnA

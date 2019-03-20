@@ -7,8 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief CRC-32, as used by Ethernet, Serial ATA, PKZIP, Gzip, Bzip2,
-//!            PNG.
+//!     \brief CRC-32, as used by Ethernet, Serial ATA, PKZIP, Gzip,
+//!            Bzip2, PNG.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_K46CqplQJyZFGjsXe5vROIAJbKonAZ10

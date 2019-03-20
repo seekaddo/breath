@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns the amount of physical memory in the system, in KiB.
+//!     \brief Returns the amount of physical memory in the system, in
+//!            KiB.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_MGUaDhlpQlBVyyLZNOhIfvYsz5BgazUe

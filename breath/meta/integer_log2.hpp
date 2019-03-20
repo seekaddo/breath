@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Returns the integer part of the log, base 2, of its argument.
+//!     \brief Returns the integer part of the log, base 2, of its
+//!            argument.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_4uQJExogJdntOgg4rVCN5jmuqREdR7xS
