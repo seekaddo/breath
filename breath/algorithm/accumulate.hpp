@@ -64,10 +64,10 @@ public:
 //!     Any \c accumulate_traits shall provide the following
 //!     accessible members:
 //!
-//!         - init_type
-//!         - result_type
-//!         - first()
-//!         - compute()
+//!      - init_type
+//!      - result_type
+//!      - first()
+//!      - compute()
 // ---------------------------------------------------------------------------
 template< typename InputIterator, typename T >
 typename accumulate_traits< T >::result_type
