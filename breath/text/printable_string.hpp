@@ -23,20 +23,20 @@ namespace breath {
 //      printable_string:
 //      =================
 //
-//!     Represents a string that prints to an ostream without
+//!     Represents a string that prints to an \c ostream without
 //!     non-printable characters.
 //!
 //!     Non-printable characters are displayed either using a
 //!     simple-escape-sequence or an escape sequence of the form
-//!     <tt>\\x...</tt>. The number of digits in the hexadecimal
-//!     escape sequence is std::ceil( CHAR_ BIT / 4.0 ).
+//!     <tt>\\x...</tt>. The number of digits in the hexadecimal escape
+//!     sequence is <code>std::ceil( CHAR_ BIT / 4.0 )</code>.
 //!
-//!     A printable_string can be constructed "from a non-string" (i.e.
-//!     from a null pointer): this is useful for debugging purposes.
-//!     In this special case, only, the printable_string outputs without
-//!     quotes. Otherwise, it gets always enclosed in double quotes and
-//!     a double quote character in the string will be escaped, as is
-//!     usual in C++.
+//!     A \c %printable_string can be constructed "from a non-string"
+//!     (i.e. from a null pointer): this is useful for debugging purposes.
+//!     In this special case, only, the \c %printable_string outputs
+//!     without quotes. Otherwise, it gets always enclosed in double
+//!     quotes and a double quote character in the string will be
+////    escaped, as is usual in C++.
 //!
 //!     Instances of this class maintain a copy of the string, so the
 //!     user does not have to worry about the lifetime of the object
