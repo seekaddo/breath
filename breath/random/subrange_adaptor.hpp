@@ -40,7 +40,8 @@ public:
     // ---------------------------------------------------------------------
                         subrange_adaptor( Engine & e, result_type new_max ) ;
 
-    //!     Returns a new random value in the adaptor's subrange.
+    //!     \return
+    //!         A new random value in the adaptor's subrange.
     // ---------------------------------------------------------------------
     result_type         next() ;
 

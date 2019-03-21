@@ -34,8 +34,9 @@ public:
     void                restart() ;
     duration_type       elapsed() const ;
 
-    //! Returns an estimate of the timer resolution, in ms.
-    //! May return slightly different values from call to call.
+    //!     \return
+    //!         An estimate of the timer resolution, in ms.
+    //!         May return slightly different values from call to call.
     // -----------------------------------------------------------------------
     duration_type       resolution() const ;
 

@@ -64,17 +64,19 @@ public:
     // ---------------------------------------------------------------------
     virtual             ~entropy_source() noexcept ;
 
-
-    //!     Returns a new random value. Each call gives, with
-    //!     overwhelming probability, a different value.
+    //!     \return
+    //!         A new random value. Each call gives, with overwhelming
+    //!         probability, a different value.
     // ---------------------------------------------------------------------
     result_type         next() ;
 
-    //!     The minimum random number that can be emitted.
+    //!     \return
+    //!         The minimum random number that can be emitted.
     // ---------------------------------------------------------------------
     result_type         min BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
 
-    //!     The maximum random number that can be emitted.
+    //!     \return
+    //!         The maximum random number that can be emitted.
     // ---------------------------------------------------------------------
     result_type         max BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
 
@@ -84,11 +86,13 @@ public:
     // ---------------------------------------------------------------------
 
 
-    //!     Returns a new random value: the same as \c next().
+    //!     \return
+    //!         A new random value: the same as \c next().
     // ---------------------------------------------------------------------
     result_type         operator ()() ;
 
-    //!     Returns a new random value in the range [min(), maximum].
+    //!     \return
+    //!         A new random value in the range [min(), maximum].
     // ---------------------------------------------------------------------
     result_type         operator ()( result_type maximum ) ;
 
@@ -96,8 +100,8 @@ public:
     //!     Releases the system resource(s) associated with this
     //!     object (usually a file or a handle).
     //!
-    //!     Returns true <=> the resource(s) were successfully
-    //!     released.
+    //!     \return
+    //!         true <=> the resource(s) were successfully released.
     //!
     //!     Throws: nothing (reports via its return value)
     //!

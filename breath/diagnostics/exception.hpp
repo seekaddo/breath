@@ -50,7 +50,8 @@ public:
     // ---------------------------------------------------------------------
     virtual             ~exception() noexcept override = default ;
 
-    //!     Returns a description of the exception object.
+    //!     \return
+    //!         A description of the exception object.
     // ---------------------------------------------------------------------
     virtual char const *what() const noexcept override ;
 

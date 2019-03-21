@@ -18,10 +18,11 @@ namespace breath {
 //      subrange_max():
 //      ===============
 //
-//!     Returns the maximum value that can be kept (before taking the
-//!     remainder of the division by `x+1') for getting a random (or
-//!     pseudorandom) integer in the range [0, x] from a source that
-//!     spans [0, m], x <= m.
+//!     \return
+//!         The maximum value that can be kept (before taking the
+//!         remainder of the division by `x+1') for getting a random (or
+//!         pseudorandom) integer in the range [0, x] from a source that
+//!         spans [0, m], x <= m.
 //!
 //!     Typical example: wanting a value in [0, 5] (dice) from [0,
 //!     RAND_MAX]; if e.g. RAND_MAX == 32767 then subrange_max(5,
