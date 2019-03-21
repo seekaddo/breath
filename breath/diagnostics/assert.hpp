@@ -35,16 +35,13 @@ namespace assert_private {
 //!     assert() it is always defined and has always the same
 //!     expansion (regardless of \c NDEBUG).
 //!
-//!     The code
-//!
-//!         BREATH_ASSERT( expr )
-//!
-//!     expands to an expression. When that expression is evaluated:
-//!     first, if \c expr is not implicitly convertible to \c bool the
-//!     program is ill-formed; otherwise, an assertion is triggered
-//!     if the result of such a conversion is \c false. If the result
-//!     is \c true, the evaluation has no effect besides the
-//!     conversion to \c bool itself.
+//!     The code <code>BREATH_ASSERT( expr )</code> expands to an
+//!     expression. When that expression is evaluated: first, if \c expr
+//!     is not implicitly convertible to \c bool the program is
+//!     ill-formed; otherwise, an assertion is triggered if the result
+//!     that conversion is \c false. If the result is \c true, the
+//!     evaluation has no effects besides the conversion to \c bool
+//!     itself.
 //!
 //!     In this context, "triggering an assertion" means writing
 //!     information related to the specific macro invocation (e.g.
@@ -56,7 +53,7 @@ namespace assert_private {
 //!
 //!     It has become "common practice" to define the macro \c NDEBUG
 //!     when compiling the "release" version of code. Many IDEs do so
-//!     silently. In fact, "NDEBUG" (or a logical complement of it,
+//!     silently. In fact, \c NDEBUG (or a logical complement of it,
 //!     such as \c _DEBUG) has become the macro which is usually
 //!     checked for by your library code to know which version of it
 //!     (release/debug) you want to link with.
