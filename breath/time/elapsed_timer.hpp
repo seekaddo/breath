@@ -43,9 +43,10 @@ public:
 
     enum start_mode { auto_start, manual_start } ;
 
-    //!     Construction and start
+    //!     Initializes the underlying device and, if <code>mode ==
+    //!     auto_start</code> calls \c restart().
     // ---------------------------------------------------------------------
-    explicit            elapsed_timer( start_mode = auto_start ) ;
+    explicit            elapsed_timer( start_mode mode = auto_start ) ;
 
     //!     Starts or restarts the timer. See \c elapsed().
     // ---------------------------------------------------------------------
