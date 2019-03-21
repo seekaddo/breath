@@ -20,6 +20,7 @@
 
 namespace breath {
 
+//! \cond
 template< typename Ch, typename Traits = std::char_traits< Ch > >
 class basic_null_stream_buffer
     :   public std::basic_streambuf< Ch, Traits >
@@ -43,6 +44,7 @@ private:
     // ---------------------------------------------------------------------
     Ch                  m_dummy_buffer[ 64 ] ;
 } ;
+//! \endcond
 
 //!     basic_null_stream:
 //!     ------------------

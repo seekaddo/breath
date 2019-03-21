@@ -18,6 +18,13 @@
 
 namespace breath {
 
+//      crc32():
+//      --------
+//
+//!     \return
+//!         The CRC-32 of the sequence identified by <code>
+//!         [ begin, end )</code>.
+// -------------------------------------------------------------------------
 template< typename InputIterator >
 std::uint_fast32_t  crc32( InputIterator begin, InputIterator end ) ;
 

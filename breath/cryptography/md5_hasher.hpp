@@ -30,7 +30,7 @@ typedef merkle_damgard_machine< md5_engine > md5_hasher ;
 typedef digest< md5_hasher >                 md5_digest ;
 
 
-//      The MD5 policy class for Merkle Damgard machine
+//!     The MD5 policy class for Merkle Damgard machine
 // -------------------------------------------------------------------------
 class md5_engine
     : public merkle_damgard_engine< 128, 512, little_endian_policy,

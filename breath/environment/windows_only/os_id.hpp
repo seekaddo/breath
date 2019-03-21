@@ -20,8 +20,13 @@
 
 namespace breath {
 
-//      A thin wrapper around an int: we assign distinct integral
-//      numbers to the different Windows versions.
+//      os_id:
+//      ------
+//
+//!     Operating system identifier.
+//!
+//!     A thin wrapper around an int: we assign distinct integral
+//!     numbers to the different Windows versions.
 //      ---------------------------------------------------------
 //
 //      Rationale for the absence of comparison operators:

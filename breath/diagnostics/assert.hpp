@@ -58,9 +58,9 @@ namespace assert_private {
 //!     when compiling the "release" version of code. Many IDEs do so
 //!     silently. In fact, "NDEBUG" (or a logical complement of it,
 //!     such as \c _DEBUG) has become the macro which is usually
-//!     checked for, via #if, by your library code to know which
-//!     version of it (release/debug) you want to link with. We
-//!     believe, though, that assertions must be left on in the
+//!     checked for by your library code to know which version of it
+//!     (release/debug) you want to link with.
+//!     We believe, though, that assertions must be left on in the
 //!     release version of the product. So we wanted an assert macro
 //!     decoupled from \c NDEBUG. (Thinking of it, there has been a
 //!     fatal misunderstanding: the C committee thought of a macro to

@@ -28,6 +28,11 @@ typedef merkle_damgard_machine< sha224_engine >
 typedef digest< sha224_hasher >
                     sha224_digest ;
 
+//      sha224_engine:
+//      --------------
+//
+//!     SHA-224 policy class for Merkle Damgard machine.
+// -------------------------------------------------------------------------
 class sha224_engine
     : public merkle_damgard_engine< 224, 512, big_endian_policy, 32, 256 >
 {

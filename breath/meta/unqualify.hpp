@@ -27,6 +27,11 @@
 namespace breath {
 namespace meta {
 
+//      unqualify:
+//      ----------
+//
+//!     Gives the corresponding unqualified type of its argument.
+// -------------------------------------------------------------------------
 template< typename T >
 class unqualify
 {
@@ -36,6 +41,7 @@ public:
     typedef T type ;
 } ;
 
+//! \cond
 template< typename T >
 class unqualify< T const >
 {
@@ -62,7 +68,7 @@ public:
     // ---------------------------------------------------------------------
     typedef T type ;
 } ;
-
+//! \endcond
 }
 }
 

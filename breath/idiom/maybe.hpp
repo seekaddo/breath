@@ -24,6 +24,11 @@ namespace breath {
 class boolean_maybe_traits
 {
 public:
+    //      status:
+    //      -------
+    //
+    //!     The type of the status to associate to the maybe value.
+    // ---------------------------------------------------------------------
     class status
     {
     public:
@@ -31,16 +36,22 @@ public:
         bool                m_status ;
     } ;
 
+    //!     See the maybe documentation.
+    // ---------------------------------------------------------------------
     static bool         is_valid( status s ) noexcept
     {
         return s.m_status ;
     }
 
+    //!     See the maybe documentation.
+    // ---------------------------------------------------------------------
     static status       default_invalid() noexcept
     {
         return status( false ) ;
     }
 
+    //!     See the maybe documentation.
+    // ---------------------------------------------------------------------
     static status       default_valid() noexcept
     {
         return status( true ) ;

@@ -15,6 +15,11 @@
 
 namespace breath {
 
+//      windows_version_info:
+//      ---------------------
+//
+//!     Microsoft Windows version information.
+// -------------------------------------------------------------------------
 class windows_version_info
 {
 public:

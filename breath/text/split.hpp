@@ -15,6 +15,13 @@
 
 namespace breath {
 
+//      split():
+//      --------
+//
+//!     \return
+//!         A vector of strings obtained by splitting \c s at each
+//!         delimiter character \c delim, in order.
+// -------------------------------------------------------------------------
 std::vector< std::string >
                     split( std::string const & s, char delim ) ;
 

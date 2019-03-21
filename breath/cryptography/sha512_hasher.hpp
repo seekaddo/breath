@@ -30,6 +30,11 @@ typedef merkle_damgard_machine< sha512_engine >
 typedef digest< sha512_hasher >
                     sha512_digest ;
 
+//      sha512_engine:
+//      --------------
+//
+//!     SHA-512 policy class for Merkle Damgard machine.
+// -------------------------------------------------------------------------
 class sha512_engine
     : public merkle_damgard_engine< 512, 1024, big_endian_policy, 64 >
 {

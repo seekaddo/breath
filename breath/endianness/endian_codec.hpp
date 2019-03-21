@@ -39,6 +39,12 @@ width_ratio< T, Byte >::value ;
 }
 //! \endcond
 
+//      little_endian_policy:
+//      ---------------------
+//
+//!     Little-endian policy for endian_codec.
+// -------------------------------------------------------------------------
+//
 // NOTE
 // ====
 //
@@ -70,6 +76,11 @@ public:
     }
 } ;
 
+//      big_endian_policy:
+//      ------------------
+//
+//!     Big-endian policy for endian_codec.
+// -------------------------------------------------------------------------
 class big_endian_policy
 {
 public:

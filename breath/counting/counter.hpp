@@ -18,6 +18,12 @@
 
 namespace breath {
 
+//      counter:
+//      --------
+//
+//!     A counter providing only operations meaningful for a counter,
+//!     plus error checking.
+// -------------------------------------------------------------------------
 template< typename IntegralType >
 class counter
     :   private comparison< counter< IntegralType > >

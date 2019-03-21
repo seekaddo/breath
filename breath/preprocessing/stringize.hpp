@@ -13,6 +13,11 @@
 #ifndef BREATH_GUARD_RpaaJEDUCrphXj8N3jjktofBYwpHygTL
 #define BREATH_GUARD_RpaaJEDUCrphXj8N3jjktofBYwpHygTL
 
+//      BREATH_STRINGIZE():
+//      -------------------
+//
+//!     Expands to a string literal obtained with <code># x</code>.
+// -------------------------------------------------------------------------
 #define BREATH_STRINGIZE( x )   # x
 
 #endif

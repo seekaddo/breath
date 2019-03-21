@@ -42,6 +42,12 @@
 
 namespace breath {
 
+//      eof_value():
+//      ------------
+//
+//!     \return
+//!         The end-of-file value for the given \c Stream.
+// -------------------------------------------------------------------------
 template< typename Stream >
 typename Stream::int_type
 eof_value( Stream const & )
@@ -49,6 +55,13 @@ eof_value( Stream const & )
     return Stream::traits_type::eof() ;
 }
 
+//      is_eof_value():
+//      ---------------
+//
+//!     \return
+//!         Whether \c x equals the eof value for the \c Stream given as
+//!         the second argument.
+// -------------------------------------------------------------------------
 template< typename Stream >
 bool
 is_eof_value( typename Stream::int_type x, Stream const & )

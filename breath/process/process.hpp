@@ -20,6 +20,11 @@
 
 namespace breath {
 
+//      process:
+//      --------
+//
+//!     A system process.
+// -------------------------------------------------------------------------
 class process
 {
 public:

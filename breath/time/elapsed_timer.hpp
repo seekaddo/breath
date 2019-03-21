@@ -47,8 +47,20 @@ public:
     // ---------------------------------------------------------------------
     explicit            elapsed_timer( start_mode = auto_start ) ;
 
+    //!     Starts or restarts the timer. See \c elapsed().
+    // ---------------------------------------------------------------------
     void                restart() ;
+
+    //!     \return
+    //!         The amount of time elapsed from the last call to \c
+    //!         restart(). TODO gps: unit of measure.
+    // ---------------------------------------------------------------------
     duration_type       elapsed() const ;
+
+    //!     \return
+    //!         The resolution of the timer, i.e. the smallest amount of
+    //!         time that it can measure.
+    // ---------------------------------------------------------------------
     duration_type       resolution() const ;
 
 private:

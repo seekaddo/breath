@@ -17,6 +17,11 @@
 
 namespace breath {
 
+//!     \return
+//!         If \c str ends with \c to_be_removed, \c str with the
+//!         \c to_be_removed part erased from its end; otherwise
+//!         a copy of \c str.
+// -------------------------------------------------------------------------
 std::string         remove_from_end( std::string const & str,
                                      std::string const & to_be_removed ) ;
 

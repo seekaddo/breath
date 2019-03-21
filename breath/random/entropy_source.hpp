@@ -117,8 +117,10 @@ private:
 class entropy_source::exception : public virtual breath::exception
 {
 public:
+    //! \cond
     [[ noreturn ]] static void
                         raise( std::string const & message ) ;
+    //! \endcond
 
     //!     Constructs an entropy_source::exception with the given
     //!     string as \c what() message. The string returned by \c

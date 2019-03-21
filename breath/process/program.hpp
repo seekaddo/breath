@@ -22,6 +22,11 @@
 
 namespace breath {
 
+//      program:
+//      --------
+//
+//!     Manager of the overall program status and termination.
+// -------------------------------------------------------------------------
 class program
 {
 public:

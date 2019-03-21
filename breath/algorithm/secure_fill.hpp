@@ -61,6 +61,9 @@ secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
     }
 }
 
+//!     Version for sequences.
+// --------------------------------------------------------------------------
+//
 //      [FUTURE], [C++11] [gps]:
 //      As a result of core issue 226, C++11 is likely to allow
 //      default template arguments for function templates; so one day

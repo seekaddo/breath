@@ -20,6 +20,11 @@
 
 namespace breath {
 
+//      node_id:
+//      --------
+//
+//!     The primacy MAC address of the machine.
+// -------------------------------------------------------------------------
 class node_id
 {
 public:

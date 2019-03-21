@@ -32,11 +32,11 @@
 //!     It's intended that you use this just for quick and dirty
 //!     checks, and that you *remove* it after that!
 //!
-//!     The expression is shown in the form <expression> = value. If
-//!     expression contains macro invocations, the unexpanded form
+//!     The expression is shown in the form &lt;expression&gt; = value.
+//!     If expression contains macro invocations, the unexpanded form
 //!     is displayed, too.
 //!
-//!     NOTE: the #includes are not part of the interface.
+//!     NOTE: the <code>#includes</code> are not part of the interface.
 //!
 //!     NOTE2: macros within the argument `expr' are expanded.
 // ---------------------------------------------------------------------------

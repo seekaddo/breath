@@ -17,6 +17,12 @@
 
 namespace breath {
 
+//      to_string():
+//      ------------
+//
+//!     \return
+//!         The textual representation of its argument.
+// -------------------------------------------------------------------------
 template< typename OutputStreamable >
 std::string         to_string( OutputStreamable const & ) ;
 

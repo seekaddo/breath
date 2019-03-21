@@ -18,6 +18,11 @@
 
 namespace breath {
 
+//      roman:
+//      ------
+//
+//!     A number that outputs in roman numerals.
+// -------------------------------------------------------------------------
 class roman
 {
 public:

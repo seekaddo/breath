@@ -32,7 +32,7 @@ namespace adl_shield {
 //!      - Add <code>equality_comparison< C ></code> as a private base
 //|        class of \c C.
 //!
-//!     As a result, \c== and \c != will be available too for class \c
+//!     As a result, \c == and \c != will be available too for class \c
 //!     C and defined in terms of is_equal.
 //!
 //!     ADL protection:

@@ -20,6 +20,12 @@
 
 namespace breath {
 
+//      win32_process:
+//      --------------
+//
+//!     A Win32 process. Provides operations which aren't available in
+//!     the portable process class.
+// -------------------------------------------------------------------------
 class win32_process
     :   public process
 {

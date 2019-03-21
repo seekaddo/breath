@@ -19,6 +19,11 @@
 
 namespace breath {
 
+//      uuid:
+//      -----
+//
+//!     A universally unique identifier.
+// -------------------------------------------------------------------------
 class uuid
 {
 public:

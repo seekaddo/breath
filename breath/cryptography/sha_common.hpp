@@ -16,6 +16,7 @@
 #include <limits>
 
 namespace breath {
+//!     \cond
 namespace sha_common_private {
 
 //      The "choice" function - for each bit position p it acts as a
@@ -49,6 +50,7 @@ ror( T x )
 }
 
 }
+//!     \endcond
 }
 
 #endif
