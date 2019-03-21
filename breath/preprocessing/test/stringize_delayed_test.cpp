@@ -18,6 +18,8 @@
 #define BAR "a"
 #define BAR2 BAR
 
+#define FIRST_TOKEN multiple
+
 namespace {
 
 void
@@ -25,6 +27,9 @@ do_tests()
 {
     BREATH_CHECK( std::strcmp( BREATH_STRINGIZE_DELAYED( FOO2 ), "1" )  == 0 ) ;
     BREATH_CHECK( std::strcmp( BREATH_STRINGIZE_DELAYED( BAR2 ), "\"a\"" )  == 0 ) ;
+
+    BREATH_CHECK( std::strcmp( BREATH_STRINGIZE_DELAYED( FIRST_TOKEN tokens),
+                               "multiple tokens" ) == 0 ) ;
 }
 
 }

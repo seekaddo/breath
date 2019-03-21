@@ -22,6 +22,9 @@ do_tests()
 {
     BREATH_CHECK( std::strcmp( BREATH_STRINGIZE( FOO2 ), "FOO2" )  == 0 ) ;
     BREATH_CHECK( std::strcmp( BREATH_STRINGIZE( "FOO2" ), "\"FOO2\"" ) == 0 ) ;
+
+    BREATH_CHECK( std::strcmp( BREATH_STRINGIZE( multiple tokens ),
+                                                "multiple tokens") == 0 ) ;
 }
 
 }
