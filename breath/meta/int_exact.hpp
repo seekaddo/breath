@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Templatized exact-width integer types
+//!     \brief Templatized exact-width integer types.
 //!
 //!     As for their C99 counterparts, there's no guarantee that the
 //!     types are provided for any given value of \c N.
@@ -24,10 +24,10 @@ namespace breath {
 //! \cond
 namespace int_exact_private {
 
-//      This might be elegantly implemented via type lists or maps,
-//      but we chose to keep metaprogramming (and dependencies) to a
+//      This might be elegantly implemented via type lists or maps, but
+//      we chose to keep metaprogramming (and dependencies) to a
 //      minimum.
-//
+// -------------------------------------------------------------------------
 template< typename IntType, int index > struct types ;
 
 //      "list" of unsigned (list of signed not yet implemented [gps])
@@ -60,13 +60,13 @@ public:
 }
 //! \endcond
 
-//!     Provides an integer type with width 'width'. Differently from
-//!     intN_t in C99, it can have padding and can use a representation
-//!     different from two's complement.
+//!     Provides an integer type with width \c width. Differently from
+//!     \c intN_t in C99, it can have padding and can use a
+//!     representation different from two's complement.
 //!
 //!     \par Type requirements
 //!         \p T shall be either \c signed \c int or \c unsigned \c int.
-//!
+// -------------------------------------------------------------------------
 template< std::size_t width, typename T /* gps temp = signed */ >
 class int_exact
 {
@@ -77,7 +77,7 @@ public:
 
 //!
 //!     A convenience shortcut to int_exact< N, unsigned >
-//!
+// -------------------------------------------------------------------------
 template< std::size_t width >
 class uint_exact
     : public int_exact< width, unsigned >
