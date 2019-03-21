@@ -25,8 +25,8 @@ namespace assert_private {
 //! \endcond
 }
 
-//      BREATH_ASSERT:
-//      --------------
+//      BREATH_ASSERT():
+//      ================
 //
 //!     \hideinitializer
 //!

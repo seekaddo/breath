@@ -16,7 +16,7 @@
 namespace breath {
 
 //      split():
-//      --------
+//      ========
 //
 //!     \return
 //!         A vector of strings obtained by splitting \c s at each

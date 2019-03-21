@@ -23,7 +23,7 @@
 #include "breath/preprocessing/stringize_delayed.hpp"
 
 //      Dependent #includes:
-//      --------------------
+//      ====================
 //
 //      The macros below create a narrow string-literal for use in a
 //      #include directive:

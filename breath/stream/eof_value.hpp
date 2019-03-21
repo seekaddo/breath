@@ -43,7 +43,7 @@
 namespace breath {
 
 //      eof_value():
-//      ------------
+//      ============
 //
 //!     \return
 //!         The end-of-file value for the given \c Stream.
@@ -56,7 +56,7 @@ eof_value( Stream const & )
 }
 
 //      is_eof_value():
-//      ---------------
+//      ===============
 //
 //!     \return
 //!         Whether \c x equals the eof value for the \c Stream given as

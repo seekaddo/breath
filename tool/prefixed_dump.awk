@@ -8,7 +8,7 @@
 # _________________________________________________________________________
 #
 #       Arguments:
-#       ----------
+#       ==========
 #
 #       All arguments must be passed via awk's ENVIRON (for the
 #       rationale, see our Scripting Guidelines). They are:

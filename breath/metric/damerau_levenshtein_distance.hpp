@@ -18,6 +18,9 @@
 
 namespace breath {
 
+//      damerau_levenshtein_distance():
+//      ===============================
+//
 //!     \return
 //!         The Damerau-Levenshtein distance between \c first and
 //!         \c second.

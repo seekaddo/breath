@@ -6,8 +6,8 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 //
-//      get_os()
-//      ========
+//      get_os():
+//      =========
 //
 //      Windows-specific implementation.
 //

@@ -15,6 +15,9 @@
 
 namespace breath {
 
+//      subrange_adaptor:
+//      =================
+//
 //!     Adapts a random or pseudorandom number generator to emit
 //!     numbers in a subrange of its original range (see the
 //!     subrange_max facility).

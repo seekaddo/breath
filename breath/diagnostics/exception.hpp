@@ -19,7 +19,7 @@
 namespace breath {
 
 //      exception:
-//      ----------
+//      ==========
 //
 //!     Base class for all Breath's exception types. Derives virtually
 //!     from \c std::exception. With respect to the latter, it manages

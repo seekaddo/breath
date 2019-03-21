@@ -8,7 +8,7 @@
 
 
 #       script_name():
-#       --------------
+#       ==============
 #
 #       Returns (outputs to standard output) the non-directory portion
 #       of the running script's name.
@@ -19,7 +19,7 @@ script_name()
 }
 
 #       quit_script():
-#       --------------
+#       ==============
 #
 #       Exits the running script with a failure code (non-zero). If
 #       the first argument, seen as a string, has a non null length,

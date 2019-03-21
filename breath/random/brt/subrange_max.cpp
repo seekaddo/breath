@@ -10,7 +10,7 @@
 #include "breath/diagnostics/assert.hpp"
 
 //      Implementation:
-//      ---------------
+//      ===============
 //
 //      We want to have a range [0, p] such that p+1 (the number of
 //      integer values that it contains) is a multiple of x+1 (the

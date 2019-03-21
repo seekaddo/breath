@@ -16,6 +16,9 @@
 
 namespace breath {
 
+//      amount_of_physical_memory():
+//      ============================
+//
 //!     \return
 //!         The amount of physical memory installed in the system, in
 //!         KiB.

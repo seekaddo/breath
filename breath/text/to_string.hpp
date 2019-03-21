@@ -18,7 +18,7 @@
 namespace breath {
 
 //      to_string():
-//      ------------
+//      ============
 //
 //!     \return
 //!         The textual representation of its argument.

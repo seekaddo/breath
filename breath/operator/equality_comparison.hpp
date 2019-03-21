@@ -17,7 +17,7 @@ namespace breath {
 namespace adl_shield {
 
 //      equality_comparison:
-//      --------------------
+//      ====================
 //
 //!     The class template \c equality_comparison provides <code>
 //!     operator ==</code> and <code>operator !=</code> as namespace

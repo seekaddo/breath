@@ -16,6 +16,9 @@
 
 namespace breath {
 
+//      allowed_path_separators():
+//      ==========================
+//
 //!     Note that the separators are returned with the "preferred" one
 //!     first.
 //!

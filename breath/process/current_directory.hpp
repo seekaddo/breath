@@ -17,6 +17,9 @@
 
 namespace breath {
 
+//      current_directory():
+//      ====================
+//
 //!     Gets the current directory of the current process.
 // ------------------------------------------------------------------------
 std::string         current_directory() ;

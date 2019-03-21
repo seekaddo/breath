@@ -18,7 +18,7 @@
 namespace breath {
 
 //      auto_array:
-//      -----------
+//      ===========
 //!
 //!     A smart pointer that retains sole ownership of an array through
 //!     a pointer. This template is similar to <code>unique_ptr< T[],

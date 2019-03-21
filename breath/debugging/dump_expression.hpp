@@ -19,7 +19,7 @@
 #include <ostream> // not necessary in C++11
 
 //      BREATH_DUMP_EXPRESSION():
-//      -------------------------
+//      =========================
 //
 //!     \hideinitializer
 //!

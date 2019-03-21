@@ -16,7 +16,7 @@
 namespace breath {
 
 //      windows_version_info:
-//      ---------------------
+//      =====================
 //
 //!     Microsoft Windows version information.
 // -------------------------------------------------------------------------

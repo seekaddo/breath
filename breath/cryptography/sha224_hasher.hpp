@@ -29,7 +29,7 @@ typedef digest< sha224_hasher >
                     sha224_digest ;
 
 //      sha224_engine:
-//      --------------
+//      ==============
 //
 //!     SHA-224 policy class for Merkle Damgard machine.
 // -------------------------------------------------------------------------

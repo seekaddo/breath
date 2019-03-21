@@ -16,7 +16,7 @@
 #include "breath/preprocessing/stringize.hpp"
 
 //      BREATH_STRINGIZE_DELAYED():
-//      ---------------------------
+//      ===========================
 //
 //!     Stringizes (with \c BREATH_STRINGIZE()) the result of performing
 //!     macro replacement on the argument \c x.

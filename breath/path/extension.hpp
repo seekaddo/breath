@@ -17,6 +17,9 @@
 
 namespace breath {
 
+//      extension():
+//      ============
+//
 //!     \return
 //!         The extension of the file name part of \c path, including
 //!         the period, if any. This is the substring starting from the

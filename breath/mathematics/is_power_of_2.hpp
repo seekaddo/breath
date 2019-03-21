@@ -18,6 +18,9 @@
 
 namespace breath {
 
+//      is_power_of_2():
+//      ================
+//
 //!     \return
 //!         \c true if an only if \c x is a power of two.
 //

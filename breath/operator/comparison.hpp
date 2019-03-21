@@ -20,6 +20,9 @@ namespace breath {
 
 namespace adl_shield {
 
+//      comparison:
+//      ===========
+//
 template< typename T >
 class comparison
     :   private equality_comparison< T >

@@ -25,7 +25,7 @@ class boolean_maybe_traits
 {
 public:
     //      status:
-    //      -------
+    //      =======
     //
     //!     The type of the status to associate to the maybe value.
     // ---------------------------------------------------------------------

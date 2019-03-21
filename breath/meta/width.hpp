@@ -24,6 +24,9 @@
 namespace breath {
 namespace meta {
 
+//      width:
+//      ======
+//
 //!     A \c meta::constant whose \c value_type is \p T and whose value
 //!     is the \c width of \p T (the number of bits it uses to
 //!     represent values, including any sign but excluding any padding

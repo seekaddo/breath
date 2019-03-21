@@ -8,7 +8,7 @@
 
 
 #       make_string():
-#       --------------
+#       ==============
 #
 #       Returns a string consisting of max( $1, 0 ) consecutive
 #       occurrences of "$2"; "$2" will often be a single-character
@@ -30,7 +30,7 @@ make_string()
 }
 
 #       string_length():
-#       ----------------
+#       ================
 #
 #       Returns the length in characters of the first argument
 #       (followed by a newline). Note that there is, intentionally, no

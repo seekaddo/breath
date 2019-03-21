@@ -31,7 +31,7 @@ typedef digest< sha512_hasher >
                     sha512_digest ;
 
 //      sha512_engine:
-//      --------------
+//      ==============
 //
 //!     SHA-512 policy class for Merkle Damgard machine.
 // -------------------------------------------------------------------------

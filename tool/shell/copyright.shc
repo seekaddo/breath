@@ -7,8 +7,8 @@
 #  ___________________________________________________________________________
 
 
-#       make_copyright_notice:
-#       ----------------------
+#       make_copyright_notice():
+#       ========================
 #
 #       With the disclaimer that I'm not a lawyer and you shouldn't
 #       rely on anything I'm going to say: this function returns a

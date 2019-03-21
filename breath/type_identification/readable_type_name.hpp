@@ -17,6 +17,9 @@
 
 namespace breath {
 
+//      readable_type_name():
+//      =====================
+//
 //!     \return
 //!         A human readable name for the type \c T.
 // -------------------------------------------------------------------------

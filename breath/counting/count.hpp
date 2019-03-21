@@ -29,7 +29,7 @@
 namespace breath {
 
 //      count():
-//      --------
+//      ========
 //
 //!     \return
 //!         The number of elements of the array argument
@@ -43,7 +43,7 @@ count( T const ( & )[ n ] ) noexcept
 }
 
 //      count():
-//      --------
+//      ========
 //
 //!     The same as \c t.size(), for any standard container. See also
 //!     the file-level documentation.

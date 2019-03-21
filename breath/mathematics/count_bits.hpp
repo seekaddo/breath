@@ -17,6 +17,9 @@
 
 namespace breath {
 
+//      count_bits():
+//      =============
+//
 //!     \return
 //!         The number of on bits in the value \c t. \p T must be an
 //!         unsigned built-in type.

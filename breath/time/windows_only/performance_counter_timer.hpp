@@ -17,7 +17,7 @@
 namespace breath {
 
 //      performance_counter_timer:
-//      --------------------------
+//      ==========================
 //
 //!     A timer policy using Windows' \c QueryPerformanceCounter().
 // -------------------------------------------------------------------------

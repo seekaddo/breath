@@ -8,7 +8,7 @@
 
 
 #       dump_here_document():
-#       ---------------------
+#       =====================
 #
 #       Writes to standard output one or more here-documents contained
 #       in the running script ($0). The first argument to the function

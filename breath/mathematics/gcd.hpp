@@ -17,6 +17,9 @@
 
 namespace breath {
 
+//      gcd():
+//      ======
+//
 //!     This function follows the C++ Library Fundamental TS v2, as of
 //!     May 14, 2016. (It adds, as allowed, a noexcept specification.)
 //!

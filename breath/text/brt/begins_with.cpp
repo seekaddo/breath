@@ -12,6 +12,9 @@
 
 namespace breath {
 
+//      begins_with():
+//      ==============
+//
 //      Note: if 'with' is empty this always returns true. (Two empty
 //            ranges always compare equal with std::equal. This wasn't
 //            clear to me, but the committee said otherwise; see:

@@ -18,6 +18,9 @@
 
 namespace breath {
 
+//      time_string_zone:
+//      =================
+//
 //!     The type of timezone (UTC/local) in which the time
 //!     must be returned.
 // -------------------------------------------------------------------------
@@ -33,8 +36,8 @@ public:
 } ;
 
 
-//      time_string
-//      -----------
+//      time_string():
+//      ==============
 //
 //!     Returns the current date and time formatted according to \c
 //!     format, interpreted as if passed to the \c strftime standard

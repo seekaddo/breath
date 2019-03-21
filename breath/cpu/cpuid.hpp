@@ -52,7 +52,7 @@ struct cpuid_result
 } ;
 
 //      is_cpuid_supported():
-//      ---------------------
+//      =====================
 //
 //!     Namespace: global (see above)
 //!
@@ -63,7 +63,7 @@ struct cpuid_result
 bool                is_cpuid_supported() ;
 
 //      get_cpuid_info():
-//      -----------------
+//      =================
 //
 //!     Namespace: global (see above)
 //!

@@ -21,7 +21,7 @@
 namespace breath {
 
 //      node_id:
-//      --------
+//      ========
 //
 //!     The primacy MAC address of the machine.
 // -------------------------------------------------------------------------

@@ -18,6 +18,9 @@
 namespace breath {
 namespace meta {
 
+//      has_sign:
+//      =========
+//
 //!     A \c meta::constant yielding whether a type allows negative
 //!     values.
 // -------------------------------------------------------------------------

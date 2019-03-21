@@ -28,7 +28,7 @@ namespace breath {
 namespace meta {
 
 //      unqualify:
-//      ----------
+//      ==========
 //
 //!     Gives the corresponding unqualified type of its argument.
 // -------------------------------------------------------------------------

@@ -17,7 +17,7 @@
 namespace breath {
 
 //      check_type_completeness():
-//      --------------------------
+//      ==========================
 //
 //
 //!     To be used to check that \c T is a complete type at the point

@@ -18,8 +18,8 @@
 
 namespace breath {
 
-//      find_environment_string:
-//      ------------------------
+//      find_environment_string():
+//      ==========================
 //
 //!     Searches an implementation-defined list, as if by calling
 //!     \c std::getenv(), for a string that matches \c name.

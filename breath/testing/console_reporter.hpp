@@ -20,6 +20,9 @@
 
 namespace breath {
 
+//      console_reporter:
+//      =================
+//
 class console_reporter : public test_reporter
 {
 public:

@@ -38,8 +38,8 @@
 
 namespace breath {
 
-//      begin:
-//      ------
+//      begin():
+//      ========
 //
 //!     Same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
@@ -50,8 +50,8 @@ begin( C & c ) noexcept( noexcept( c.begin() ) )
     return c.begin() ;
 }
 
-//      begin:
-//      ------
+//      begin():
+//      ========
 //
 //!     Same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
@@ -62,8 +62,8 @@ begin( C const & c ) noexcept( noexcept( c.begin() ) )
     return c.begin() ;
 }
 
-//      cbegin:
-//      -------
+//      cbegin():
+//      =========
 //
 //!     Same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
@@ -74,8 +74,8 @@ cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
     return c.begin() ;
 }
 
-//      end:
-//      ----
+//      end():
+//      ======
 //
 //!     Same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
@@ -86,8 +86,8 @@ end( C & c ) noexcept( noexcept( c.end() ) )
     return c.end() ;
 }
 
-//      end:
-//      ----
+//      end():
+//      ======
 //
 //!     Same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
@@ -98,8 +98,8 @@ end( C const & c ) noexcept( noexcept( c.end() ) )
     return c.end() ;
 }
 
-//      cend:
-//      -----
+//      cend():
+//      =======
 //
 //!     Same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
@@ -110,8 +110,8 @@ cend( C const & c ) noexcept( noexcept( c.end() ) )
     return c.end() ;
 }
 
-//      begin:
-//      ------
+//      begin():
+//      ========
 //
 //!     Like container::begin, but for a built-in array.
 //!
@@ -124,8 +124,8 @@ begin( T ( &a )[ n ] ) noexcept
     return a ;
 }
 
-//      cbegin:
-//      -------
+//      cbegin():
+//      =========
 //
 //!     Like container::begin, but for a built-in array.
 // -----------------------------------------------------------------------
@@ -136,8 +136,8 @@ cbegin( T const ( &a )[ n ] ) noexcept
     return a ;
 }
 
-//      end:
-//      ----
+//      end():
+//      ======
 //
 //!     Like container::end, but for a built-in array.
 //
@@ -151,8 +151,8 @@ end( T ( &a )[ n ] ) noexcept
     return a + n ;
 }
 
-//      cend:
-//      -----
+//      cend():
+//      =======
 //
 //!     Like container::end, but for a built-in array.
 // -----------------------------------------------------------------------

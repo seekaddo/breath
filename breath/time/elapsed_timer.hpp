@@ -16,7 +16,7 @@
 namespace breath {
 
 //      elapsed_timer:
-//      --------------
+//      ==============
 //
 //!     A policy based timer which allows the user to retrieve the
 //!     amount of time elapsed from its start.

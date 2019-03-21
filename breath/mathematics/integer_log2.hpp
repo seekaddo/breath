@@ -17,6 +17,9 @@
 
 namespace breath {
 
+//      integer_log2():
+//      ===============
+//
 //!     The behavior is undefined if x == 0 (and might result in an
 //!     assertion failure). Otherwise the function returns the integer
 //!     part of the logarithm, base 2, of its argument.

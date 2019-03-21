@@ -17,6 +17,9 @@
 
 namespace breath {
 
+//      base_file_name():
+//      =================
+//
 //!         Returns the file name part of a path. Assumes that the path
 //!         is well-formed.
 // -------------------------------------------------------------------------

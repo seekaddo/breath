@@ -40,7 +40,7 @@ width_ratio< T, Byte >::value ;
 //! \endcond
 
 //      little_endian_policy:
-//      ---------------------
+//      =====================
 //
 //!     Little-endian policy for endian_codec.
 // -------------------------------------------------------------------------
@@ -77,7 +77,7 @@ public:
 } ;
 
 //      big_endian_policy:
-//      ------------------
+//      ==================
 //
 //!     Big-endian policy for endian_codec.
 // -------------------------------------------------------------------------
@@ -98,7 +98,7 @@ public:
 } ;
 
 //      endian_codec:
-//      -------------
+//      =============
 //
 //!     Converts generic values to/from (byte-)sequence
 //!     representations.

@@ -19,7 +19,7 @@
 namespace breath {
 
 //      crc32():
-//      --------
+//      ========
 //
 //!     \return
 //!         The CRC-32 of the sequence identified by <code>

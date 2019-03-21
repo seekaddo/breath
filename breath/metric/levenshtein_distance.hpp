@@ -18,6 +18,9 @@
 
 namespace breath {
 
+//      levenshtein_distance():
+//      =======================
+//
 //!     \return
 //!         The Levenshtein distance between \c first and \c second.
 // -------------------------------------------------------------------------

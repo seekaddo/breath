@@ -18,6 +18,9 @@
 
 namespace breath {
 
+//      find_executable_in_path():
+//      ==========================
+//
 //!     Finds an executable file. If \c path.is_valid(), then the
 //!     executable is searched in \c path.value(). Otherwise, it
 //!     is searched in a system dependent list (\c PATH environment

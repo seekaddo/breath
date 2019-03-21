@@ -21,7 +21,7 @@
 namespace breath {
 
 //      os_id:
-//      ------
+//      ======
 //
 //!     Operating system identifier.
 //!

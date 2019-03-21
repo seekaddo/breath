@@ -19,7 +19,7 @@
 namespace breath {
 
 //      counter:
-//      --------
+//      ========
 //
 //!     A counter providing only operations meaningful for a counter,
 //!     plus error checking.

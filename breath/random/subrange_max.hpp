@@ -15,6 +15,9 @@
 
 namespace breath {
 
+//      subrange_max():
+//      ===============
+//
 //!     Returns the maximum value that can be kept (before taking the
 //!     remainder of the division by `x+1') for getting a random (or
 //!     pseudorandom) integer in the range [0, x] from a source that

@@ -15,6 +15,9 @@
 
 namespace breath {
 
+//      digital_root():
+//      ===============
+//
 //!     \return
 //!         The digital root of the number \c n in base \c base.
 //!

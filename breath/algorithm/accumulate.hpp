@@ -16,7 +16,7 @@
 namespace breath {
 
 //      accumulate_traits:
-//      ------------------
+//      ==================
 //
 //!     Traits template for \c breath::accumulate().
 //!     (gps should we use the term "policy" in place of "traits"?)

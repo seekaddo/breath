@@ -18,8 +18,8 @@
 
 namespace breath {
 
-//      Digest template:
-//      ----------------
+//      digest:
+//      =======
 //
 //!     A digest object represents the result of applying a digest
 //!     algorithm to a given input sequence.

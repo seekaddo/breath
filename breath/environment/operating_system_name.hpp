@@ -18,7 +18,7 @@
 namespace breath {
 
 //      operating_system_name:
-//      ----------------------
+//      ======================
 //
 //!     A streamable description of the operating system.
 // -------------------------------------------------------------------------
