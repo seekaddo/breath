@@ -13,7 +13,6 @@
 #ifndef BREATH_GUARD_9eLHEHtKblEdQIGuXiqd2HmEUjrUscjf
 #define BREATH_GUARD_9eLHEHtKblEdQIGuXiqd2HmEUjrUscjf
 
-
 #include "breath/operator/equality_comparison.hpp"
 
 namespace breath {

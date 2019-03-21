@@ -17,7 +17,6 @@
 
 namespace breath {
 
-
 //      c_clock_device
 //      ==============
 //
