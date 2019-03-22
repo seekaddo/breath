@@ -13,9 +13,9 @@
 
 namespace breath {
 
-// These two can be specified portably, so we define them outside of the
-// system-dependent exit_code.cpp's.
-//
+//      These two can be specified portably, so we define them outside
+//      of the system-dependent exit_code.cpp's.
+// -------------------------------------------------------------------------
 int const           exit_success = 0 ;
 int const           exit_failure = EXIT_FAILURE ;
 
