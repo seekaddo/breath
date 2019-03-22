@@ -32,7 +32,7 @@ namespace breath {
 //!
 //!     \param wrap_column
 //!         Column where line-wrapping must occur in the generated
-//!         output (0 means "no wrapping").
+//!         output (\c 0 means "no wrapping").
 // -------------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
 void                binary_to_base64( InputIter begin, InputIter end,
