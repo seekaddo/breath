@@ -12,9 +12,6 @@
 
 namespace breath {
 
-//      time_string:
-//      ------------
-//
 //      IMPLEMENTATION NOTE:
 //      --------------------
 //      Intentionally I used a fixed size buffer here: the size is
