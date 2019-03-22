@@ -21,8 +21,8 @@ namespace breath {
 //      time_string_zone:
 //      =================
 //
-//!     The type of timezone (UTC/local) in which the time
-//!     must be returned.
+//!     The type of timezone (UTC/local) in which the time must be
+//!     returned.
 // -------------------------------------------------------------------------
 class time_string_zone
 {
@@ -42,7 +42,7 @@ public:
 //!     \return
 //!         The current date and time formatted according to \c format,
 //!         interpreted as if passed to the \c strftime standard
-//!         function.
+//!         function. See also: time_string_zone.
 //!
 //!     This is a simple tool for simple and quick formatting needs.
 //!     You should use a more complete solution for more complex needs
