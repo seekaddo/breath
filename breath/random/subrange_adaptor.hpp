@@ -24,7 +24,7 @@ namespace breath {
 //!
 //!     \note
 //!         Does NOT support min != 0.
-//
+// -------------------------------------------------------------------------
 template< typename Engine >
 class subrange_adaptor
 {
