@@ -9,6 +9,8 @@
 #include "breath/random/subrange_max.hpp"
 #include "breath/diagnostics/assert.hpp"
 
+namespace breath {
+
 //      Implementation:
 //      ===============
 //
@@ -30,8 +32,6 @@
 //      a division of m-x (which is non-negative) by x+1. Hence the
 //      implementation below.
 // ---------------------------------------------------------------------------
-namespace breath {
-
 unsigned long
 subrange_max( unsigned long x, unsigned long m )
 {
