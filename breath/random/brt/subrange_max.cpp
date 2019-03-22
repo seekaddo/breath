@@ -23,13 +23,13 @@ namespace breath {
 //         m+1 = q(x+1) + r
 //
 //      but *programmatically* we can't do that directly, because m+1
-//      may overflow. However, subtracting x+1 from both members
-//      (which is fine...)
+//      may overflow. However, subtracting x+1 from both members (which
+//      is fine...)
 //
 //         m-x = (q-1)(x+1) + r
 //
-//      which says that we can obtain the same remainder r performing
-//      a division of m-x (which is non-negative) by x+1. Hence the
+//      which says that we can obtain the same remainder r performing a
+//      division of m-x (which is non-negative) by x+1. Hence the
 //      implementation below.
 // ---------------------------------------------------------------------------
 unsigned long
