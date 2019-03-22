@@ -32,9 +32,9 @@ namespace breath {
 //!            initial period (and only that) is ignored (so ".dotfile"
 //!            gives "", while ".dotfile.txt" gives ".txt").
 //!
-//!     Note:
-//!         this behavior is aligned with that of
-//!         std::filesystem::path::extension (C++17)
+//!     \note
+//!         This behavior is aligned with that of <code>
+//!         std::filesystem::path::extension()</code> (C++17).
 // -------------------------------------------------------------------------
 std::string         extension( std::string const & path ) ;
 
