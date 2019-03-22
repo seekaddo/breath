@@ -32,7 +32,8 @@ subrange_adaptor< Engine >::next()
 
     auto                n ( m_engine.next() ) ;
     unsigned long const sub_max =
-                    breath::subrange_max( m_max, m_engine.max BREATH_PREVENT_MACRO_EXPANSION () ) ;
+                    breath::subrange_max( m_max,
+                              m_engine.max BREATH_PREVENT_MACRO_EXPANSION () ) ;
     while ( n > sub_max ) {
         n = m_engine.next() ;
     }
