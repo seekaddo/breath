@@ -92,7 +92,8 @@ public:
     result_type         operator ()() ;
 
     //!     \return
-    //!         A new random value in the range [min(), maximum].
+    //!         A new random value in the range <code>[min(), maximum]
+    //          </code>.
     // ---------------------------------------------------------------------
     result_type         operator ()( result_type maximum ) ;
 
@@ -101,12 +102,13 @@ public:
     //!     object (usually a file or a handle).
     //!
     //!     \return
-    //!         true <=> the resource(s) were successfully released.
+    //!         \c true if and only if the resource(s) were successfully
+    //!         released.
     //!
     //!     Throws: nothing (reports via its return value)
     //!
-    //!     NOTE: you cannot reattempt a release if it has already
-    //!           succeeded.
+    //!     \warning
+    //!         You cannot reattempt a release if it already succeeded.
     // ------------------------------------------------------------------------
     bool                release() noexcept ;
 
