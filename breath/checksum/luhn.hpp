@@ -22,7 +22,7 @@ namespace breath {
 //
 //      \return
 //!         The Luhn sum of the given string. The result is a number in
-//!         [0, 9].
+//!         <code>[0, 9]</code>.
 //!
 //!     \throw
 //!         A \c breath::exception if any of the characters in \c s is
