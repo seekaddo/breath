@@ -7,7 +7,7 @@
 // ___________________________________________________________________________
 //
 //!     \file
-//!     \brief A generalized version of \c std::accumulate.
+//!     \brief A generalized version of \c std::accumulate().
 // ---------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_AIxamIWyjxqb3pPGHU23CYP8v7Zo1TTt
@@ -25,16 +25,16 @@ template< typename T >
 class accumulate_traits
 {
 public:
-    //!     Type of the default init value for \c breath::accumulate.
+    //!     Type of the default init value for \c breath::accumulate().
     // -----------------------------------------------------------------------
     typedef T           init_type ;
 
-    //!     Type of the result of \c breath::accumulate.
+    //!     Type of the result of \c breath::accumulate().
     // -----------------------------------------------------------------------
     typedef T           result_type ;
 
     //!     \return
-    //!         The default init value for \c breath::accumulate.
+    //!         The default init value for \c breath::accumulate().
     // -----------------------------------------------------------------------
     static init_type    first() ;
 

@@ -20,7 +20,7 @@ namespace adl_shield {
 //      ====================
 //
 //!     The class template \c equality_comparison provides <code>
-//!     operator ==</code> and <code>operator !=</code> as namespace
+//!     operator ==()</code> and <code>operator !=()</code> as namespace
 //!     scope functions whose name is associated "on demand" (i.e. at
 //!     instantiation) to class \c T, via ADL.
 //!
@@ -33,7 +33,7 @@ namespace adl_shield {
 //|        class of \c C.
 //!
 //!     As a result, \c == and \c != will be available too for class \c
-//!     C and defined in terms of is_equal.
+//!     C and defined in terms of is_equal().
 //!
 //!     ADL protection:
 //!     ===============
