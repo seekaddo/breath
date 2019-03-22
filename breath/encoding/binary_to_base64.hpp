@@ -21,14 +21,18 @@ namespace breath {
 //!     except that it allows to line-wrap the generated base64 output
 //!     (\c wrap_column != 0).
 //!
-//!     \param[in]  begin Iterator to the first element of the binary
-//!                 sequence
-//!     \param[in]  end   One-past-the-end iterator in the binary
-//!                 sequence
-//!     \param[out] out   Iterator to the first element of the base64
-//!                 output
-//!     \param[in]  wrap_column Column where line-wrapping must occur
-//!                 in the generated output (0 means "no wrapping")
+//!     \param begin
+//!         Iterator to the first element of the binary sequence.
+//!
+//!     \param end
+//!         One-past-the-end iterator in the binary sequence.
+//!
+//!     \param out
+//!         Iterator to the first element of the base64 output.
+//!
+//!     \param wrap_column
+//!         Column where line-wrapping must occur in the generated
+//!         output (0 means "no wrapping").
 // -------------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
 void                binary_to_base64( InputIter begin, InputIter end,

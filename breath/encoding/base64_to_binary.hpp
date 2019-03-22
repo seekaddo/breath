@@ -23,12 +23,16 @@ namespace breath {
 //!     \throw
 //!         A \c breath::exception on any invalid input character.
 //!
-//!     \param[in] begin Iterator to the first element of the base64
-//!                      sequence
-//!     \param[in] end   One-past-the-end iterator in the same
-//!                      sequence
-//!     \param[out] out  Iterator to the first element of the output
-//!                      sequence (binary)
+//!     \param begin
+//!         Iterator to the first element of the input (i.e. base64)
+//!         sequence.
+//!
+//!     \param end
+//!         One-past-the-end iterator in the input sequence.
+//!
+//!     \param out
+//!         Iterator to the first element of the output sequence
+//!         (binary).
 // -------------------------------------------------------------------------
 template< typename InputIter, typename OutputIter >
 void                base64_to_binary( InputIter begin, InputIter end,
