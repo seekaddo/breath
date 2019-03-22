@@ -6,8 +6,6 @@
 "             <https://opensource.org/licenses/BSD-3-Clause>.)
 " _________________________________________________________________________
 "
-"       breath.vim:
-"       ===========
 "
 "       Support for (g)Vim.
 "

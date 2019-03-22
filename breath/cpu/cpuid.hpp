@@ -10,9 +10,6 @@
 //!     \brief Interface to the CPUID instruction.
 // -------------------------------------------------------------------------
 //
-//      cpuid.hpp:
-//      ==========
-//
 //!     Interface to the CPUID instruction available on x86 and Intel
 //!     64 architectures.
 //!

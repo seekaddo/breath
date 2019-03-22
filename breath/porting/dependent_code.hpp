@@ -6,9 +6,6 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 //
-//      dependent_code.hpp:
-//      -------------------
-//
 //      This is the file which is internally included every time we need
 //      to select code according to one or more of the configuration
 //      variables (system, compiler, etc.). Note that it only relies on
