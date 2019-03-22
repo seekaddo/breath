@@ -26,20 +26,20 @@
 #       "comments" in .txt files.
 #
 #       NOTE:
-#       * since, of course, we don't want to retrofit all existing
-#         files, changes to the table should be limited to *addition*
-#         of new entries, barring modifications which might be
-#         absolutely necessary.
+#           since, of course, we don't want to retrofit all existing
+#           files, changes to the table should be limited to *addition*
+#           of new entries, barring modifications which might be
+#           absolutely necessary.
 #
 #       NOTE 2:
-#       * keep in sync with $BREATH_ROOT/.gitattributes
+#           keep in sync with $BREATH_ROOT/.gitattributes.
 # ----------------------------------------------------------------------------
 
 
-#   Note:
-#       The css mode for Emacs seems to have been introduced starting
-#       from version 22.1 (!) What happens for unrecognized modes?
-#
+#       Note:
+#           The css mode for Emacs seems to have been introduced starting from
+#           version 22.1 (!) What happens for unrecognized modes?
+
 
 # file name extension comment  comment   line
 #  (extended regexp)   start     end    comment    language

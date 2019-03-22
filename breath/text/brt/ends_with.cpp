@@ -15,8 +15,9 @@ namespace breath {
 //      ends_with():
 //      ============
 //
-//      Note: if 'with' is empty this always returns true. (See the
-//            analogous comment in begins_with.cpp.)
+//      Note:
+//          if 'with' is empty this always returns true. (See the
+//          analogous comment in begins_with.cpp.)
 // -------------------------------------------------------------------------
 bool
 ends_with( std::string const & str, std::string const & with ) noexcept

@@ -48,7 +48,8 @@ public:
 //!     You should use a more complete solution for more complex needs
 //!     (but don't underestimate the good old strftime() ;-)).
 //!
-//!     NOTE: document reentrancy issues (see C99, 7.23.3)
+//!     NOTE:
+//!         document reentrancy issues (see C99, 7.23.3)
 // -------------------------------------------------------------------------
 breath::maybe< std::string >
                     time_string( std::string const & format,

@@ -45,8 +45,7 @@ width_ratio< T, Byte >::value ;
 //!     Little-endian policy for endian_codec.
 // -------------------------------------------------------------------------
 //
-// NOTE
-// ====
+//      NOTE:
 //
 //      There's no general guarantee that we can infer the load/store
 //      order via a single Endianness template parameter: the ordering
@@ -123,12 +122,12 @@ public:
 //!
 //!     \todo Check this; is it true for user-policies?
 //!
-//! NOTE:
-//!     For purposes other than memory read/writes, different
-//!     arrangements than a sequence are theoretically conceivable but
-//!     no need has so far arisen for such a generalization. This only
-//!     deals with a linear sequence of "Bytes", representing a \c
-//!     T value according to a given convention.
+//!     NOTE:
+//!         For purposes other than memory read/writes, different
+//!         arrangements than a sequence are theoretically conceivable
+//!         but no need has so far arisen for such a generalization.
+//!         This only deals with a linear sequence of "Bytes",
+//!         representing a \c T value according to a given convention.
 // --------------------------------------------------------------------------
 template<
     typename EndianPolicy,

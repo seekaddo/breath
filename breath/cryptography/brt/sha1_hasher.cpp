@@ -17,7 +17,6 @@
 
 
 //  NOTE:
-//
 //      All references in the comments below are relative to
 //      FIPS 180-2 (with change notice), as indicated in the
 //      module documentation. [gps]
@@ -40,9 +39,10 @@ parity( word_type x, word_type y, word_type z )
     return x ^ y ^ z ;
 }
 
-//      NB: this is not a general rotate-left function:
-//          it assumes (which always happens with MD5 and SHA-1),
-//          that **  0 < amount < 32 **
+//      Note:
+//          this is not a general rotate-left function: it assumes
+//          (which always happens with MD5 and SHA-1), that
+//          0 < amount < 32.
 // -------------------------------------------------------------------------
 template< int amount >
 word_type

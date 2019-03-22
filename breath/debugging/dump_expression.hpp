@@ -37,9 +37,11 @@
 //!     If expression contains macro invocations, the unexpanded form
 //!     is displayed, too.
 //!
-//!     NOTE: the <code>#includes</code> are not part of the interface.
+//!     \note
+//!         The <code>#includes</code> are not part of the interface.
 //!
-//!     NOTE2: macros within the argument `expr' are expanded.
+//!     \note
+//!         Macros within the argument `expr' are expanded.
 // ---------------------------------------------------------------------------
 #define BREATH_DUMP_EXPRESSION( expr )                                        \
         do {                                                                  \

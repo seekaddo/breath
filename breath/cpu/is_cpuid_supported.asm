@@ -68,13 +68,14 @@
 ;       (Note that according to [2] you can't rely on the absence of an
 ;       invalid opcode trap, instead.)
 ;
-;       Special Note:
+;       Special note:
 ;
-;       the quote above from the Intel manual talks about setting *and*
-;       clearing, so one should really verify both. The application note
-;       however just considers *modifying* (flipping), and so do all the
-;       code snippets I've seen from Intel. I'm assuming, therefore,
-;       that the error is in the wording used in the manual.
+;           the quote above from the Intel manual talks about setting
+;           *and* clearing, so one should really verify both. The
+;           application note however just considers *modifying*
+;           (flipping), and so do all the code snippets I've seen from
+;           Intel. I'm assuming, therefore, that the error is in the
+;           wording used in the manual.
 ; ----------------------------------------------------------------------------
 ;
 ;       C interface:    int is_cpuid_supported() ;

@@ -6,7 +6,8 @@
 # text editor; for instance, Visual Studio solution
 # files are excluded from this list and set later).
 #
-# Maintenance note: keep in sync with
+# Maintenance note:
+#   keep in sync with
 #   $BREATH_ROOT/tool/init_file/language_traits.txt
 #
 *.asm   text

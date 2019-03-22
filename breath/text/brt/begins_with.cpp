@@ -15,14 +15,14 @@ namespace breath {
 //      begins_with():
 //      ==============
 //
-//      Note: if 'with' is empty this always returns true. (Two empty
-//            ranges always compare equal with std::equal. This wasn't
-//            clear to me, but the committee said otherwise; see:
+//      Note:
+//          if 'with' is empty this always returns true. (Two empty
+//          ranges always compare equal with std::equal. This wasn't
+//          clear to me, but the committee said otherwise; see:
 //
-//              <https://wg21.link/lwg2967>.
+//            <https://wg21.link/lwg2967>.
 //
-//            Of course, our unit tests verify that this is the case.
-//            )
+//          Of course, our unit tests verify that this is the case.)
 // -------------------------------------------------------------------------
 bool
 begins_with( std::string const & str, std::string const & with ) noexcept

@@ -39,7 +39,7 @@ public:
 
     ~key_handle_manager() noexcept
     {
-        // NOTE: the return value is ignored.
+        //      NOTE: the return value is ignored.
         RegCloseKey( m_key ) ;
     }
 
