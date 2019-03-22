@@ -19,8 +19,9 @@ namespace breath {
 //!
 //!     This function conforms to RFC 3548 with one exception: it
 //!     allows \e newlines to appear anywhere in the input.
-//!     It throws a \c breath::exception on any other invalid input
-//!     character.
+//!
+//!     \throw
+//!         A \c breath::exception on any invalid input character.
 //!
 //!     \param[in] begin Iterator to the first element of the base64
 //!                      sequence

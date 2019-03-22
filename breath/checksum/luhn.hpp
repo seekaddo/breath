@@ -22,8 +22,11 @@ namespace breath {
 //
 //      \return
 //!         The Luhn sum of the given string. The result is a number in
-//!         [0, 9]. This function throws a \c breath::exception if any
-//!         of the characters in \c s is not a decimal digit.
+//!         [0, 9].
+//!
+//!     \throw
+//!         A \c breath::exception if any of the characters in \c s is
+//!         not a decimal digit.
 // -------------------------------------------------------------------------
 int                 luhn_sum( std::string const & s ) ;
 
@@ -32,8 +35,11 @@ int                 luhn_sum( std::string const & s ) ;
 //
 //!     \return
 //!         Whether the given string has a Luhn sum as its last
-//!         character. Throws a \c breath::exception if any of the
-//!         characters in \c s is not a decimal digit.
+//!         character.
+//!
+//!     \throw
+//!         A \c breath::exception if any of the characters in \c s is
+//!         not a decimal digit.
 // -------------------------------------------------------------------------
 bool                has_luhn_sum( std::string const & s ) ;
 
@@ -41,9 +47,11 @@ bool                has_luhn_sum( std::string const & s ) ;
 //      ===================
 //
 //      \return
-//!         The Luhn checksum digit for the given string. Throws a \c
-//!         breath::exception if any of the characters in \c s is not
-//!         a decimal digit.
+//!         The Luhn checksum digit for the given string.
+//!
+//!     \throw
+//!         A \c breath::exception if any of the characters in \c s is
+//!         not a decimal digit.
 // -------------------------------------------------------------------------
 char                luhn_check_digit( std::string const & s ) ;
 
