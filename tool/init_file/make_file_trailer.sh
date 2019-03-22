@@ -51,11 +51,11 @@ sed 's/VimModeline/vim/g'
 #       Caution:
 #       ========
 #
-#           * keep the entries in alphabetical order (C locale)
-#           * keep in sync with the language traits file
-#             (gps perhaps we could merge the two files)
-#           * when modifying this file (if ever) please review *all*
-#             the entries.
+#        - keep the entries in alphabetical order (C locale)
+#        - keep in sync with the language traits file
+#          (gps perhaps we could merge the two files)
+#        - when modifying this file (if ever) please review *all*
+#          the entries.
 # ----------------------------------------------------------------------------
 
 
