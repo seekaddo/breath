@@ -19,6 +19,9 @@
 namespace breath {
 
 
+//      secure_fill():
+//      ==============
+//
 //!     This is completely analogous to the \c std::fill algorithm, except
 //!     that, due to a \c volatile qualification, it guarantees that the
 //!     sequence is written to, even if it is never touched after the
@@ -61,6 +64,9 @@ secure_fill( T volatile ( &arr )[ n ], T const & value = T() )
     }
 }
 
+//      secure_fill():
+//      ==============
+//
 //!     Version for sequences.
 // --------------------------------------------------------------------------
 //
