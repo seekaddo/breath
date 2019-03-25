@@ -25,6 +25,16 @@ namespace breath {
 template< typename T >
 T                   from_string( std::string const & s ) ;
 
+//!     \return
+//!         s
+//!
+//!     \note
+//!         This specialization is not just an optimization: it ensures
+//!         that e.g. " test " converts to " test " and not "test".
+// -------------------------------------------------------------------------
+template<>
+inline std::string  from_string< std::string >( std::string const & s ) ;
+
 }
 
 #include "brt/from_string.tpp"
