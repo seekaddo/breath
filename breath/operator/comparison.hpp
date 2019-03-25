@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Base class to provide inequality comparison operators.
+//!     \brief Base class template to provide inequality comparison
+//!            operators.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_9eLHEHtKblEdQIGuXiqd2HmEUjrUscjf
@@ -22,6 +23,14 @@ namespace adl_shield {
 //      comparison:
 //      ===========
 //
+//!     This is completely analogous to equality_comparison. See the
+//!     documentation of that facility for more information. The only
+//!     difference is that you class \c C must provide a \c compare()
+//!     member function, which accepts a \c C argument \c rhs to compare
+//!     with \c *this, and returns a value \c < \c 0, \c == \c 0 or \c >
+//!     \c 0 if \c *this is respectively less than \c rhs, equal to \c
+//!     rhs or greater then rhs.
+// -------------------------------------------------------------------------
 template< typename T >
 class comparison
     :   private equality_comparison< T >
