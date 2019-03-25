@@ -66,9 +66,12 @@ crc32( InputIterator begin, InputIterator end )
     } ;
 
 
-    constexpr auto      initial_value = static_cast< std::uint_fast32_t >( 0xFFFF'FFFFul ) ;
-    constexpr auto      all_ones =      static_cast< std::uint_fast32_t >( 0xFFFF'FFFFul ) ;
-    constexpr auto      table_size = static_cast< int >( breath::count( table ) ) ;
+    constexpr auto      initial_value = static_cast< std::uint_fast32_t >(
+                                                               0xFFFF'FFFFul ) ;
+    constexpr auto      all_ones =      static_cast< std::uint_fast32_t >(
+                                                               0xFFFF'FFFFul ) ;
+    constexpr auto      table_size = static_cast< int >(
+                                                      breath::count( table ) ) ;
 
     static_assert( table_size == 256, "wrong table size" ) ;
 

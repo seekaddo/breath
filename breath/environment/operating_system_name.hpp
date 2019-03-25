@@ -26,7 +26,8 @@ class operating_system_name
 {
 } ;
 
-std::ostream &      operator <<( std::ostream &, operating_system_name const & ) ;
+std::ostream &      operator <<( std::ostream &,
+                                 operating_system_name const & ) ;
 
 }
 
