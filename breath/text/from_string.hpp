@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Constructs an object from its textual representation.
+//!     \brief Returns an object given its textual representation.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_Q6sxk1RUMey9fbjLvtacucg61F39I6ob
