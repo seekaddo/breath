@@ -7,7 +7,7 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Converts an object to its textual representation.
+//!     \brief Returns the textual representation of an object.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_JRFfcCLm3oqVulEWGOycMApryPN2pq33
