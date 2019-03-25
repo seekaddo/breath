@@ -41,7 +41,7 @@ namespace breath {
 //      begin():
 //      ========
 //
-//!     Same as c.begin(), for any standard container.
+//!     The same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
 constexpr typename C::iterator
@@ -53,7 +53,7 @@ begin( C & c ) noexcept( noexcept( c.begin() ) )
 //      begin():
 //      ========
 //
-//!     Same as c.begin(), for any standard container.
+//!     The same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -65,7 +65,7 @@ begin( C const & c ) noexcept( noexcept( c.begin() ) )
 //      cbegin():
 //      =========
 //
-//!     Same as c.begin(), for any standard container.
+//!     The same as c.begin(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -77,7 +77,7 @@ cbegin( C const & c ) noexcept( noexcept( c.begin() ) )
 //      end():
 //      ======
 //
-//!     Same as c.end(), for any standard container.
+//!     The same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
 constexpr typename C::iterator
@@ -89,7 +89,7 @@ end( C & c ) noexcept( noexcept( c.end() ) )
 //      end():
 //      ======
 //
-//!     Same as c.end(), for any standard container.
+//!     The same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
@@ -101,7 +101,7 @@ end( C const & c ) noexcept( noexcept( c.end() ) )
 //      cend():
 //      =======
 //
-//!     Same as c.end(), for any standard container.
+//!     The same as c.end(), for any standard container.
 // -----------------------------------------------------------------------
 template< typename C >
 constexpr typename C::const_iterator
