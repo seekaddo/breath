@@ -8,7 +8,7 @@
 
 #include "breath/cryptography/sha1_hasher.hpp"
 #include "breath/cryptography/private/sensitive_buffer.hpp"
-#include "breath/cryptography/sha_common.hpp"
+#include "breath/cryptography/private/sha_common.tpp"
 #include "breath/idiom/volatilize.hpp"
 #include "breath/iteration/begin_end.hpp"
 

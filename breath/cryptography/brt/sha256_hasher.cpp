@@ -7,8 +7,8 @@
 // _________________________________________________________________________
 
 #include "breath/cryptography/sha256_hasher.hpp"
-#include "breath/cryptography/sha_common.hpp"
 #include "breath/cryptography/private/sensitive_buffer.hpp"
+#include "breath/cryptography/private/sha_common.tpp"
 #include "breath/iteration/begin_end.hpp"
 
 #include <algorithm>

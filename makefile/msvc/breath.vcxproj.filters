@@ -350,6 +350,9 @@
     <None Include="..\..\breath\process\brt\program_option.tpp" />
     <None Include="..\..\breath\mathematics\brt\is_power_of_2.tpp" />
     <None Include="..\..\breath\mathematics\brt\digital_root.tpp" />
+    <None Include="..\..\breath\cryptography\private\sha_common.tpp">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -407,9 +410,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\cryptography\sha512_hasher.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\cryptography\sha_common.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\cryptography\private\sensitive_buffer.hpp">

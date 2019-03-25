@@ -530,6 +530,7 @@
     <None Include="..\..\breath\cryptography\brt\digest.tpp" />
     <None Include="..\..\breath\cryptography\brt\merkle_damgard_hasher.tpp" />
     <None Include="..\..\breath\cryptography\private\sensitive_buffer.tpp" />
+    <None Include="..\..\breath\cryptography\private\sha_common.tpp" />
     <None Include="..\..\breath\encoding\brt\base64_to_binary.tpp" />
     <None Include="..\..\breath\encoding\brt\binary_to_base64.tpp" />
     <None Include="..\..\breath\idiom\brt\maybe.tpp" />
@@ -573,7 +574,6 @@
     <ClInclude Include="..\..\breath\cryptography\sha256_hasher.hpp" />
     <ClInclude Include="..\..\breath\cryptography\sha384_hasher.hpp" />
     <ClInclude Include="..\..\breath\cryptography\sha512_hasher.hpp" />
-    <ClInclude Include="..\..\breath\cryptography\sha_common.hpp" />
     <ClInclude Include="..\..\breath\debugging\dump_expression.hpp" />
     <ClInclude Include="..\..\breath\diagnostics\assert.hpp" />
     <ClInclude Include="..\..\breath\diagnostics\check_type_completeness.hpp" />
