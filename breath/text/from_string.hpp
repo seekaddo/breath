@@ -17,7 +17,7 @@
 
 namespace breath {
 
-//!     Type requirements:
+//!     \par Type requirements:
 //!         \c T shall be default constructible and either move
 //!         constructible or copy constructible. Furthermore it shall
 //!         be input streamable.
