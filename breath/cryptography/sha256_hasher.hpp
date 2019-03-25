@@ -34,7 +34,7 @@ typedef digest< sha256_hasher >
 //      sha256_engine:
 //      ==============
 //
-//!     SHA-256 policy class for Merkle Damgard machine.
+//!     SHA-256 policy class for merkle_damgard_machine.
 // -------------------------------------------------------------------------
 class sha256_engine
     : public merkle_damgard_engine< 256, 512, big_endian_policy >
