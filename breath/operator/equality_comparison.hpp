@@ -7,7 +7,8 @@
 // _________________________________________________________________________
 //
 //!     \file
-//!     \brief Base class to provide equality comparison operators.
+//!     \brief Base class template to provide equality comparison
+//!            operators.
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_FVjQpxOUioJICCQIoTK5TmuA8UEe4UzI
@@ -25,36 +26,38 @@ namespace adl_shield {
 //!     instantiation) to class \c T, via ADL.
 //!
 //!     Usage:
-//!     ======
+//!     ------
 //!
 //!      - Provide an %is_equal() function for your class \c C.
 //!
 //!      - Add <code>equality_comparison< C ></code> as a private base
-//|        class of \c C.
+//!        class of \c C.
 //!
 //!     As a result, \c == and \c != will be available too for class \c
 //!     C and defined in terms of is_equal().
 //!
 //!     ADL protection:
-//!     ===============
+//!     ---------------
 //!
-//!     Even though this uses the Barton-Nackman idiom and relies on
-//!     its standard-conforming, ADL-based, mechanics (no friend
-//!     injection), it is protected from ADL in namespace breath
-//!     in a way which allows only the provided operator function to
-//!     be found.
-//!     This means that you can safely derive your own type \c C
-//!     from any of its instantiations \b without risk of ADL picking
-//!     up anything \e unintended in \c namespace \c breath. Example:
-//!         <example TODO:>
+//!     Even though this uses the Barton-Nackman idiom and relies on its
+//!     standard-conforming, ADL-based, mechanics (no friend injection),
+//!     it is protected from ADL in namespace \c breath in a way which
+//!     allows only the provided operator functions to be found.
+//!
+//!     This means that the user can safely derive their own type from
+//!     any of its instantiations \e without risk of ADL picking up
+//!     anything \e unintended in \c namespace \c breath. Example:
+//!
+//!         Example TODO:
 //!
 //!     Naming rationale:
+//!     -----------------
 //!
-//!     The name of the class template indicates the kind of
-//!     comparison that its target will support. This leads to a
-//!     noun-based name (as opposed, for instance, to
-//!     "equality_comparable"), consistently with the general naming
-//!     style of Breath C++ components.
+//!     The name of the class template indicates the kind of comparison
+//!     that its target will support. This leads to a noun-based name
+//!     (as opposed, for instance, to "equality_comparable"),
+//!     consistently with the general naming style of the Breath C++
+//!     components.
 // -------------------------------------------------------------------------
 template< typename T >
 class equality_comparison
