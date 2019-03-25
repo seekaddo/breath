@@ -146,14 +146,14 @@ windows_version_info::edition() const
         return "" ;
     }
 
-    DWORD               dw ;
+    DWORD               product_type ;
     int const           failure = 0 ;
-    if ( GetProductInfo( major_version(), minor_version(), 0, 0, &dw )
+    if ( GetProductInfo( major_version(), minor_version(), 0, 0, &product_type )
                                                                 == failure ) {
         return "" ;
     }
 
-    switch ( dw ) {
+    switch ( product_type ) {
         case PRODUCT_BUSINESS:
             return "Business Edition" ;
         case PRODUCT_BUSINESS_N:
@@ -344,7 +344,8 @@ windows_version_info::edition() const
             return "Web Server (core installation)" ;
 
         default:
-            return "<unknown edition: " + breath::to_string( dw ) + ">" ;
+            return "<unknown edition: " + breath::to_string(
+                                                          product_type ) + ">" ;
     }
 }
 
