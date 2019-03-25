@@ -76,7 +76,7 @@ public:
 } ;
 
 //!
-//!     A synonym of exact_width_integer< N, unsigned >
+//!     A synonym of <code>exact_width_integer< N, unsigned ></code>.
 // -------------------------------------------------------------------------
 template< std::size_t width >
 class exact_width_unsigned_integer
