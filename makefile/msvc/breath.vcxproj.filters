@@ -505,9 +505,6 @@
     <ClInclude Include="..\..\breath\meta\integer_log2.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\breath\meta\int_exact.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\breath\meta\is_twos_complement.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -707,6 +704,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\process\set_current_directory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\meta\exact_width_integer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

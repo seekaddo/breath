@@ -22,7 +22,7 @@
 
 namespace breath {
 //! \cond
-namespace int_exact_private {
+namespace exact_width_integer_private {
 
 //      This might be elegantly implemented via type lists or maps, but
 //      we chose to keep metaprogramming (and dependencies) to a
@@ -68,19 +68,19 @@ public:
 //!         \p T shall be either \c signed \c int or \c unsigned \c int.
 // -------------------------------------------------------------------------
 template< std::size_t width, typename T /* gps temp = signed */ >
-class int_exact
+class exact_width_integer
 {
 public:
-    typedef typename int_exact_private
+    typedef typename exact_width_integer_private
                          ::selector< width, T, 0 >::type type ;
 } ;
 
 //!
-//!     A convenience shortcut to int_exact< N, unsigned >
+//!     A synonym of exact_width_integer< N, unsigned >
 // -------------------------------------------------------------------------
 template< std::size_t width >
-class uint_exact
-    : public int_exact< width, unsigned >
+class exact_width_unsigned_integer
+    : public exact_width_integer< width, unsigned >
 {
 } ;
 

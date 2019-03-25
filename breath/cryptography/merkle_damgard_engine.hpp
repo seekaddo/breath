@@ -15,7 +15,7 @@
 #define BREATH_GUARD_fYqwSU8p6zoTOMzKlvSB4iz96M3PyUF5
 
 #include "breath/cryptography/hashing_count.hpp"
-#include "breath/meta/int_exact.hpp"
+#include "breath/meta/exact_width_integer.hpp"
 #include "breath/endianness/endian_codec.hpp"
 
 #include <cstddef>
@@ -44,9 +44,9 @@ class merkle_damgard_engine
 {
 public:
 
-    typedef typename uint_exact< bits_per_byte >::type
+    typedef typename exact_width_unsigned_integer< bits_per_byte >::type
                         byte_type ;
-    typedef typename uint_exact< bits_per_word >::type
+    typedef typename exact_width_unsigned_integer< bits_per_word >::type
                         word_type ;
 
     enum
