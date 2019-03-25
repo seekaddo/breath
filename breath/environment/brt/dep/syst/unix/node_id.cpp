@@ -26,7 +26,7 @@ node_id::node_id()
     int const           sock = socket( AF_INET, SOCK_DGRAM, IPPROTO_IP ) ;
 
     if ( sock == failure ) {
-        throw exception( "could not create a socket" ) ;
+        throw exception( "node_id::node_id(): could not create a socket" ) ;
     }
 
     const int           len = 4 * 1024 ;
