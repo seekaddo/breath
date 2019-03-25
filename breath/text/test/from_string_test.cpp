@@ -1,5 +1,5 @@
 // =========================================================================
-//                    Copyright 2016-2017 Gennaro Prota
+//                    Copyright 2016-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -28,6 +28,8 @@ void do_tests()
     BREATH_CHECK( breath::from_string< double >( "1.2" ) == 1.2 ) ;
 
     BREATH_CHECK( breath::from_string< std::string >( " test " ) == " test " ) ;
+    BREATH_CHECK( breath::from_string< std::string >( " multiple words " ) ==
+                                                      " multiple words ") ;
     BREATH_CHECK( breath::from_string< std::string >( "" ) == "" ) ;
 }
 
