@@ -1,5 +1,5 @@
 // =========================================================================
-//                    Copyright 2016-2017 Gennaro Prota
+//                    Copyright 2016-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -8,12 +8,12 @@
 
 #include "breath/environment/node_id.hpp"
 #include "breath/diagnostics/exception.hpp"
-#include "breath/memory/auto_array.hpp"
 
 #include <Winsock2.h>
 #include <Iphlpapi.h>
 
 #include <algorithm>
+#include <vector>
 
 namespace breath {
 
@@ -23,14 +23,15 @@ node_id::node_id()
     int                 attempts = 0 ;
     int const           max_attempts = 3 ;
     ULONG               r = 0 ;
-    auto_array< unsigned char >
-                        array ;
+    std::vector< unsigned char >
+                        buffer ;
     IP_ADAPTER_ADDRESSES *
                         addresses = nullptr ;
     do {
         ++ attempts ;
-        array.reset( new unsigned char[ size ] ) ;
-        addresses = reinterpret_cast< IP_ADAPTER_ADDRESSES * >( array.get() ) ;
+        buffer.resize( size ) ;
+        addresses = reinterpret_cast< IP_ADAPTER_ADDRESSES * >(
+                                                               buffer.data() ) ;
         r = GetAdaptersAddresses( AF_UNSPEC, 0, nullptr, addresses, &size ) ;
     } while ( r == ERROR_BUFFER_OVERFLOW && attempts <= max_attempts ) ;
 
