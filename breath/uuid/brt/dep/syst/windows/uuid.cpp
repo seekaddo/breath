@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2016 Gennaro Prota
+//                    Copyright 2016-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -9,7 +9,6 @@
 #include "breath/uuid/uuid.hpp"
 #include "breath/counting/count.hpp"
 #include "breath/diagnostics/assert.hpp"
-#include "breath/environment/node_id.hpp"
 #include "breath/random/entropy_source.hpp"
 #include "breath/stream/format_saver.hpp"
 
@@ -46,9 +45,15 @@ uuid::uuid( uuid::variant var, uuid::version ver )
                             | ( es.next() << 8 )  |   es.next() ;
     m_clock_seq = ( ( rnd >> 4 ) & 0x3fff ) | 0x8000 ;
 
+    //      A random MAC address (this is allowed by RFC 4122, and
+    //      desirable). To distinguish it from a real MAC address, RFC
+    //      4122 requires that the least significant bit of the first
+    //      octet be set to 1.
+    // ---------------------------------------------------------------------
     for ( std::size_t i = 0 ; i < breath::count( m_node ) ; ++ i ) {
-        m_node[ i ] = node_id::instance()[ static_cast< int >( i ) ] ;
+        m_node[ i ] = static_cast< std::uint8_t >( es.next() ) ;
     }
+    m_node[ 0 ] |= 1 ;
 }
 
 template< typename T >

@@ -270,7 +270,6 @@
     </ClCompile>
     <ClCompile Include="..\..\breath\environment\brt\find_environment_string.cpp" />
     <ClCompile Include="..\..\breath\environment\brt\get_environment_map.cpp" />
-    <ClCompile Include="..\..\breath\environment\brt\node_id.cpp" />
     <ClCompile Include="..\..\breath\environment\brt\operating_system_name.cpp" />
     <ClCompile Include="..\..\breath\environment\test\find_environment_string_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -585,7 +584,6 @@
     <ClInclude Include="..\..\breath\endianness\endian_codec.hpp" />
     <ClInclude Include="..\..\breath\environment\find_environment_string.hpp" />
     <ClInclude Include="..\..\breath\environment\get_environment_map.hpp" />
-    <ClInclude Include="..\..\breath\environment\node_id.hpp" />
     <ClInclude Include="..\..\breath\environment\operating_system_name.hpp" />
     <ClInclude Include="..\..\breath\environment\windows_only\get_os.hpp" />
     <ClInclude Include="..\..\breath\environment\windows_only\os_id.hpp" />

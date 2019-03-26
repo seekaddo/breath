@@ -96,9 +96,6 @@
     <ClCompile Include="..\..\breath\environment\brt\get_environment_map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\breath\environment\brt\node_id.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\breath\environment\brt\operating_system_name.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -446,9 +443,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\environment\get_environment_map.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\environment\node_id.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\environment\operating_system_name.hpp">
