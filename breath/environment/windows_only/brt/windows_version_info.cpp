@@ -13,11 +13,11 @@
 
 #undef UNICODE
 #include <Windows.h>
-#include <VersionHelpers.h>
+#include <VersionHelpers.h> // must come after <Windows.h> to compile
 #include <Wow64apiset.h>
 
-#include <string>
 #include <climits>
+#include <string>
 #include <vector>
 
 namespace breath {
