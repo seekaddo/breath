@@ -1,5 +1,5 @@
 // =========================================================================
-//                    Copyright 2007-2016 Gennaro Prota
+//                    Copyright 2007-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -77,10 +77,9 @@ public:
 private:
     static bool         is_wow64_process() ;
 
-    // This uses the pimpl idiom to avoid including <Windows.h> from here.
-    //
-    class               impl ;
-    impl * const        m_impl ;
+    int                 m_major_version ;
+    int                 m_minor_version ;
+    int                 m_build_number ;
 } ;
 
 }

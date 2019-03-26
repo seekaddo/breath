@@ -18,8 +18,8 @@
 //      analysis done when the implementation used GetVersionEx().
 //      However that API has changed semantics in Windows 8.1 and
 //      can no longer be used to identify the running system.
-//      The current implementation uses the NetWkstaGetInfo() API,
-//      so the following has just historical value.
+//      The current implementation uses a different approach, so the
+//      following has just historical value.
 //      Also, the minimum supported Windows version is now Windows
 //      2000.
 //      ---------------------------------------------------------------------

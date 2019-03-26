@@ -1,5 +1,5 @@
 // =========================================================================
-//                    Copyright 2007-2017 Gennaro Prota
+//                    Copyright 2007-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -9,17 +9,16 @@
 #include "breath/environment/windows_only/windows_version_info.hpp"
 #include "breath/diagnostics/last_api_error.hpp"
 #include "breath/idiom/declare_non_copyable.hpp"
-#include "breath/text/from_string.hpp"
 #include "breath/text/to_string.hpp"
 
 #undef UNICODE
 #include <Windows.h>
-#include <Lm.h>
 #include <VersionHelpers.h>
 #include <Wow64apiset.h>
 
 #include <string>
 #include <climits>
+#include <vector>
 
 namespace breath {
 
@@ -48,94 +47,80 @@ private:
 } ;
 
 [[ noreturn ]] void
-raise_exception( char const * msg )
+raise_api_exception( char const * msg )
 {
-    throw breath::exception( msg ) ;
+    throw breath::last_api_error( msg ) ;
 }
 
 }
 
-class windows_version_info::impl
-{
-public:
-    BREATH_DECLARE_NON_COPYABLE( impl )
-
-                    impl() ;
-                    ~impl() noexcept ;
-
-    WKSTA_INFO_100 *
-                    m_info = nullptr ;
-} ;
-
-windows_version_info::impl::impl()
-{
-    constexpr int       level = 100 ;
-    NET_API_STATUS const
-                        status = NetWkstaGetInfo( nullptr, level,
-                                     reinterpret_cast< BYTE ** >( &m_info ) ) ;
-    if ( status != NERR_Success ) {
-        raise_exception( "cannot retrieve Windows version info" ) ;
-    }
-}
-
-windows_version_info::impl::~impl() noexcept
-{
-    // Ignoring the return value (success or failure).
-    NetApiBufferFree( m_info ) ;
-}
-
+//      Implementation
+//      --------------
+//
+//      After GetVersionEx() changed semantics, this went through at
+//      least two iterations. For a while, it used the NetWkstaGetInfo()
+//      API, which worked fine for getting major and minor version
+//      number of the OS, but still required us to extract the build
+//      number from a system DLL (there's the possibility to read that
+//      from the registry, but this is undocumented).
+//
+//      So, now, we just extract major and minor version number from a
+//      DLL, too. This approach is suggested by the MSDN, so shouldn't
+//      break unexpectedly (see e.g.
+//
+//        <https://docs.microsoft.com/en-us/windows/desktop/SysInfo/getting-the-system-version>
+//      ).
+// -------------------------------------------------------------------------
 windows_version_info::windows_version_info()
-    :   m_impl( new windows_version_info::impl )
 {
+    static char const   dll_name[] = "kernel32.dll" ;
+    DWORD               dummy ;
+    DWORD const         all_info_size = GetFileVersionInfoSizeA( dll_name,
+                                                                 &dummy ) ;
+    if ( all_info_size == 0 ) {
+        raise_api_exception( "cannot retrieve Windows version info (size)" ) ;
+    }
+
+    std::vector< unsigned char >
+                        all_info( all_info_size ) ;
+    DWORD               ignored = 0 ;
+    if ( GetFileVersionInfoA( dll_name, ignored, all_info_size,
+                                                &all_info[ 0 ] ) == 0 ) {
+        raise_api_exception( "cannot retrieve Windows version info" ) ;
+    }
+
+    void *              p = nullptr ;
+    UINT                unneeded ;
+    if ( VerQueryValueA( all_info.data(), "\\", &p, &unneeded ) == 0 ) {
+        raise_api_exception( "VerQueryValueA() failed" ) ;
+    }
+
+    auto const * const  fixed = static_cast< VS_FIXEDFILEINFO const *>( p ) ;
+
+    m_major_version = static_cast< int >( HIWORD( fixed->dwFileVersionMS ) ) ;
+    m_minor_version = static_cast< int >( LOWORD( fixed->dwFileVersionMS ) ) ;
+    m_build_number  = static_cast< int >( HIWORD( fixed->dwFileVersionLS ) ) ;
+
 }
 
-windows_version_info::~windows_version_info() noexcept
-{
-    delete m_impl ;
-}
+windows_version_info::~windows_version_info() noexcept = default ;
 
 int
 windows_version_info::major_version() const
 {
-    return m_impl->m_info->wki100_ver_major ;
+    return m_major_version ;
 }
 
 int
 windows_version_info::minor_version() const
 {
-    return m_impl->m_info->wki100_ver_minor ;
+    return m_minor_version ;
 }
 
 int
 windows_version_info::build_number() const
 {
-    //      Take the Windows build number from the registry.
-    //      In my registry there are both CurrentBuild and
-    //      CurrentBuildNumber. Using the latter as it has a more
-    //      explicit name. [gps]
-    // -------------------------------------------------------------------
-    HKEY                key = NULL ;
-    LONG const          ret = RegOpenKeyEx( HKEY_LOCAL_MACHINE,
-                              "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion",
-                              0,
-                              KEY_QUERY_VALUE | KEY_WOW64_32KEY,
-                              &key ) ;
-    if ( ret != ERROR_SUCCESS ) {
-        raise_exception( "cannot open the CurrentVersion registry key" ) ;
-    }
-    key_handle_manager const
-                        manager( key ) ;
-    constexpr int       size = 256 ;
-    DWORD               dw_size = size ;
-    char                buffer[ size ] = {} ;
-    int const           ret2 = RegGetValue( key, "", "CurrentBuildNumber",
-                                 RRF_RT_ANY, nullptr,
-                                 &buffer, &dw_size ) ;
-    if ( ret2 != ERROR_SUCCESS ) {
-        raise_exception( "cannot query the CurrentBuildNumber value"
-                                                " from the registry" ) ;
-    }
-    return breath::from_string< int >( std::string( buffer ) ) ;
+    return m_build_number ;
 }
 
 std::string
@@ -407,7 +392,7 @@ windows_version_info::service_pack_string()
                               KEY_QUERY_VALUE | KEY_WOW64_32KEY,
                               &key ) ;
     if ( ret != ERROR_SUCCESS ) {
-        raise_exception( "cannot open the Control\\Windows registry key" ) ;
+        raise_api_exception( "cannot open the Control\\Windows registry key" ) ;
     }
     key_handle_manager const
                         manager( key ) ;
@@ -417,7 +402,7 @@ windows_version_info::service_pack_string()
                                  RRF_RT_ANY, nullptr,
                                  &value, &dw_size ) ;
     if ( ret2 != ERROR_SUCCESS ) {
-        raise_exception( "cannot query the CSDVersion value from"
+        raise_api_exception( "cannot query the CSDVersion value from"
                                                             " the registry" ) ;
     }
 
