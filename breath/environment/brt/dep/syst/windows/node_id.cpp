@@ -35,7 +35,8 @@ node_id::node_id()
     } while ( r == ERROR_BUFFER_OVERFLOW && attempts <= max_attempts ) ;
 
     if ( r != ERROR_SUCCESS ) {
-        throw exception( "node_id::node_id(): cannot get network adapters info" ) ;
+        throw exception( "node_id::node_id(): cannot get network adapters"
+                                                                     " info" ) ;
     }
     bool                found = false ;
     while ( addresses != nullptr && ! found ) {
