@@ -105,9 +105,9 @@ operator <<( std::ostream & dest, const os_id & id )
         dest << ' ' << edition ;
     }
 
-    std::string const   sps = windows_version_info::service_pack_string() ;
-    if ( ! sps.empty() ) {
-        dest << ' ' << sps ;
+    int const           sp = windows_version_info::service_pack_level() ;
+    if ( sp != 0 ) {
+        dest << "Service Pack " << sp ;
     }
 
     if ( windows_version_info::is_64_bit() ) {

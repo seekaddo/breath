@@ -389,8 +389,8 @@ windows_version_info::is_client()
 //      but I read somewhere (unconfirmed) that Microsoft broke it with
 //      Windows Vista. - gps TODO
 // -------------------------------------------------------------------------
-std::string
-windows_version_info::service_pack_string()
+int
+windows_version_info::service_pack_level()
 {
     HKEY                key = NULL ;
     LONG const          ret = RegOpenKeyEx( HKEY_LOCAL_MACHINE,
@@ -413,11 +413,7 @@ windows_version_info::service_pack_string()
                                                             " the registry" ) ;
     }
 
-    int const           sp = value / 256 ;
-    return sp == 0
-        ? ""
-        : "Service Pack " + breath::to_string( sp )
-        ;
+    return value / 256 ;
 }
 
 }

@@ -68,11 +68,10 @@ public:
     static bool         is_client() ;
 
     //! \return
-    //!     A (possibly empty) string with the service pack of the
-    //!     operating system. This could use <code>maybe< std::string >
-    //!     </code> as well.
+    //!     The service pack level. Zero if no service pack is
+    //!     installed.
     // -----------------------------------------------------------------------
-    static std::string  service_pack_string() ;
+    static int          service_pack_level() ;
 
 private:
     static bool         is_wow64_process() ;
