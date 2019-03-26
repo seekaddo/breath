@@ -382,6 +382,13 @@ windows_version_info::is_client()
     return IsWindowsServer() == 0 ;
 }
 
+//      This implementation relies on:
+//
+//        <http://msdn.microsoft.com/en-us/library/ms954375.aspx>
+//
+//      but I read somewhere (unconfirmed) that Microsoft broke it with
+//      Windows Vista. - gps TODO
+// -------------------------------------------------------------------------
 std::string
 windows_version_info::service_pack_string()
 {
