@@ -152,7 +152,7 @@
 #include "breath/environment/windows_only/windows_version_info.hpp"
 #include "breath/environment/windows_only/os_id.hpp"
 
-#undef UNICODE
+#define UNICODE
 #include <Windows.h>
 
 namespace breath {

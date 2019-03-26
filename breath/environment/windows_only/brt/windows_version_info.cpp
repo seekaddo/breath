@@ -11,7 +11,7 @@
 #include "breath/idiom/declare_non_copyable.hpp"
 #include "breath/text/to_string.hpp"
 
-#undef UNICODE
+#define UNICODE
 #include <Windows.h>
 #include <VersionHelpers.h> // must come after <Windows.h> to compile
 #include <Wow64apiset.h>
@@ -73,10 +73,11 @@ raise_api_exception( char const * msg )
 // -------------------------------------------------------------------------
 windows_version_info::windows_version_info()
 {
-    static char const   dll_name[] = "kernel32.dll" ;
+    static wchar_t const
+                        dll_name[] = L"kernel32.dll" ;
     DWORD               dummy ;
-    DWORD const         all_info_size = GetFileVersionInfoSizeA( dll_name,
-                                                                 &dummy ) ;
+    DWORD const         all_info_size = GetFileVersionInfoSize( dll_name,
+                                                                &dummy ) ;
     if ( all_info_size == 0 ) {
         raise_api_exception( "cannot retrieve Windows version info (size)" ) ;
     }
@@ -84,15 +85,15 @@ windows_version_info::windows_version_info()
     std::vector< unsigned char >
                         all_info( all_info_size ) ;
     DWORD               ignored = 0 ;
-    if ( GetFileVersionInfoA( dll_name, ignored, all_info_size,
-                                                &all_info[ 0 ] ) == 0 ) {
+    if ( GetFileVersionInfo( dll_name, ignored, all_info_size,
+                                               &all_info[ 0 ] ) == 0 ) {
         raise_api_exception( "cannot retrieve Windows version info" ) ;
     }
 
     void *              p = nullptr ;
     UINT                unneeded ;
-    if ( VerQueryValueA( all_info.data(), "\\", &p, &unneeded ) == 0 ) {
-        raise_api_exception( "VerQueryValueA() failed" ) ;
+    if ( VerQueryValue( all_info.data(), L"\\", &p, &unneeded ) == 0 ) {
+        raise_api_exception( "VerQueryValue() failed" ) ;
     }
 
     auto const * const  fixed = static_cast< VS_FIXEDFILEINFO const *>( p ) ;
@@ -336,7 +337,7 @@ windows_version_info::edition() const
 bool
 windows_version_info::is_wow64_process()
 {
-    HMODULE const       module = GetModuleHandle( "kernel32" ) ;
+    HMODULE const       module = GetModuleHandle( L"kernel32" ) ;
     if ( module == NULL ) {
         throw last_api_error( "Cannot get a handle to kernel32.dll" ) ;
     }
@@ -386,7 +387,7 @@ windows_version_info::service_pack_string()
 {
     HKEY                key = NULL ;
     LONG const          ret = RegOpenKeyEx( HKEY_LOCAL_MACHINE,
-                              "SYSTEM\\CurrentControlSet\\Control\\Windows",
+                              L"SYSTEM\\CurrentControlSet\\Control\\Windows",
                               0,
                               KEY_QUERY_VALUE | KEY_WOW64_32KEY,
                               &key ) ;
@@ -397,7 +398,7 @@ windows_version_info::service_pack_string()
                         manager( key ) ;
     DWORD               value ;
     DWORD               dw_size = sizeof value ;
-    int                 ret2 = RegGetValue( key, "", "CSDVersion",
+    int                 ret2 = RegGetValue( key, L"", L"CSDVersion",
                                  RRF_RT_ANY, nullptr,
                                  &value, &dw_size ) ;
     if ( ret2 != ERROR_SUCCESS ) {
