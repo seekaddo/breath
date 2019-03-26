@@ -132,9 +132,8 @@ windows_version_info::edition() const
     }
 
     DWORD               product_type ;
-    int const           failure = 0 ;
     if ( GetProductInfo( major_version(), minor_version(), 0, 0, &product_type )
-                                                                == failure ) {
+                                                                == 0 ) {
         return "" ;
     }
 
