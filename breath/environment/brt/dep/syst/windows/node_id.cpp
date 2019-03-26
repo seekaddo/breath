@@ -10,7 +10,7 @@
 #include "breath/diagnostics/exception.hpp"
 
 #include <Winsock2.h>
-#include <Iphlpapi.h>
+#include <Iphlpapi.h> // can't be included before <Winsock2.h>
 
 #include <algorithm>
 #include <vector>
