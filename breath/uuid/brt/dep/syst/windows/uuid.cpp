@@ -9,12 +9,13 @@
 #include "breath/uuid/uuid.hpp"
 #include "breath/counting/count.hpp"
 #include "breath/diagnostics/assert.hpp"
+#include "breath/meta/width.hpp"
 #include "breath/random/entropy_source.hpp"
 #include "breath/stream/format_saver.hpp"
 
 #include <cinttypes>
-#include <climits>
 #include <cstddef>
+#include <iomanip>
 #include <ostream>
 #include <Windows.h>
 
@@ -60,20 +61,19 @@ template< typename T >
 std::ostream &
 output_as_hex( std::ostream & os, T t )
 {
-    static_assert( CHAR_BIT == 8, "" ) ;
-
-    os << std::hex << std::nouppercase ;
-    for ( std::size_t shift_amount = sizeof t * CHAR_BIT ; shift_amount > 0 ;
-                                            shift_amount -= CHAR_BIT ) {
-        uint8_t const       byte = t >> ( shift_amount - CHAR_BIT ) & 0xFF ;
-        os << ( byte >> ( CHAR_BIT / 2 ) ) ;
-        os << ( byte & 0x0f ) ;
-    }
+    int const           bits_per_hex_digit = 4 ;
+    int const           hex_digits_per_t = meta::width< T >::value /
+                                           bits_per_hex_digit ;
+    os << std::hex ;
+    os << std::setw( hex_digits_per_t ) << static_cast< std::uint32_t >( t ) ;
     return os ;
 }
 std::ostream & operator <<( std::ostream & os, uuid const & uu )
 {
     format_saver const  saver( os ) ;
+
+    os.fill( '0' ) ;
+    os.unsetf( std::ios_base::uppercase ) ;
 
     output_as_hex( os, uu.m_time_low ) << '-' ;
     output_as_hex( os, uu.m_time_mid ) << '-' ;
