@@ -20,20 +20,19 @@ namespace breath {
 node_id::node_id()
 {
     ULONG               size = 15 * 1024 ;
-    int                 attempts = 0 ;
-    int const           max_attempts = 3 ;
-    ULONG               r = 0 ;
-    std::vector< unsigned char >
-                        buffer ;
+
     IP_ADAPTER_ADDRESSES *
                         addresses = nullptr ;
-    do {
-        ++ attempts ;
+    std::vector< unsigned char >
+                        buffer( size ) ;
+    addresses = reinterpret_cast< IP_ADAPTER_ADDRESSES * >( buffer.data() ) ;
+
+    ULONG               r = GetAdaptersAddresses( AF_UNSPEC, 0, nullptr,
+                                                 addresses, &size ) ;
+    if ( r == ERROR_BUFFER_OVERFLOW ) {
         buffer.resize( size ) ;
-        addresses = reinterpret_cast< IP_ADAPTER_ADDRESSES * >(
-                                                               buffer.data() ) ;
         r = GetAdaptersAddresses( AF_UNSPEC, 0, nullptr, addresses, &size ) ;
-    } while ( r == ERROR_BUFFER_OVERFLOW && attempts <= max_attempts ) ;
+    }
 
     if ( r != ERROR_SUCCESS ) {
         throw exception( "node_id::node_id(): cannot get network adapters"
