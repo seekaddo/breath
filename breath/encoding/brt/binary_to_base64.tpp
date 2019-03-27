@@ -6,8 +6,8 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
+#include "breath/diagnostics/assert.hpp"
 #include <climits>
-#include <cstddef>
 #include <type_traits>
 
 namespace breath {
@@ -15,12 +15,14 @@ namespace breath {
 template< typename InputIter, typename OutputIter >
 void
 binary_to_base64( InputIter begin, InputIter end,
-                  OutputIter out, std::size_t wrap_column )
+                  OutputIter out, int wrap_column )
 {
     static_assert( CHAR_BIT == 8
     && ( std::is_same< typename InputIter::value_type, char >::value
       || std::is_same< typename InputIter::value_type, unsigned char >::value ),
                    "" ) ;
+
+    BREATH_ASSERT( wrap_column >= 0 ) ;
 
     static constexpr char
                         alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -29,7 +31,7 @@ binary_to_base64( InputIter begin, InputIter end,
     constexpr int       group_size( 3 ) ;
     auto                curr( begin ) ;
     int                 count( 0 ) ;
-    std::size_t         column( 0 ) ;
+    int                 column( 0 ) ;
 
     auto                do_output = [ & ]( char c )
     {
