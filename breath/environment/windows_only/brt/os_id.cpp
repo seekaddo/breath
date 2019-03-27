@@ -54,7 +54,7 @@ static char const * const
 //      rather than in the edition name (as in "Web Edition", "Home
 //      Edition" etc.) -- what should we do? leave "edition" or not?
 // --------------------------------------------------------------------------
-const os_id
+os_id const
         os_id::windows_unknown                    ( 0 ),
         //
         // The numbers 1 to 5 were used by Win32s, Win95,
@@ -88,13 +88,13 @@ os_id::os_id( os_id::id_type n )
 }
 
 bool
-os_id::is_equal( const os_id & other ) const
+os_id::is_equal( os_id const & other ) const
 {
     return m_id == other.m_id ;
 }
 
 std::ostream &
-operator <<( std::ostream & dest, const os_id & id )
+operator <<( std::ostream & dest, os_id const & id )
 {
     dest << breath::names[ id.m_id ] ;
 
