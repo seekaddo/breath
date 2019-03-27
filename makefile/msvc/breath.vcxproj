@@ -286,7 +286,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\breath\mathematics\brt\next_multiple.cpp" />
     <ClCompile Include="..\..\breath\mathematics\extra\generate_bit_count_table.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -318,12 +317,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\breath\mathematics\test\lcm_test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\breath\mathematics\test\next_multiple_test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -600,7 +593,6 @@
     <ClInclude Include="..\..\breath\mathematics\integer_log2.hpp" />
     <ClInclude Include="..\..\breath\mathematics\is_power_of_2.hpp" />
     <ClInclude Include="..\..\breath\mathematics\lcm.hpp" />
-    <ClInclude Include="..\..\breath\mathematics\next_multiple.hpp" />
     <ClInclude Include="..\..\breath\memory\auto_array.hpp" />
     <ClInclude Include="..\..\breath\meta\constant.hpp" />
     <ClInclude Include="..\..\breath\meta\exact_width_integer.hpp" />
