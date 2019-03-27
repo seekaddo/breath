@@ -14,7 +14,6 @@
 #define BREATH_GUARD_jjJFg8dCizQ6ClSYgT8Zsg2zo7zFYgfG
 
 #include <cstdint>
-#include <cstddef>
 #include <iosfwd>
 
 namespace breath {
@@ -30,15 +29,6 @@ public:
     enum variant { reserved, rfc_4122, microsoft, future } ;
     enum version { time_based, dce_security, name_based_md5, pseudo_random,
                    name_based_sha1 } ;
-
-    typedef uint8_t     value_type ;
-    typedef value_type const &
-                        const_reference ;
-    typedef value_type const *
-                        const_iterator ;
-    typedef std::size_t size_type ;
-    typedef std::ptrdiff_t
-                        difference_type ;
 
                         uuid( variant, version ) ;
 
