@@ -32,6 +32,20 @@
 #           if *all* the other options were kept the same) I don't think
 #           we can be sure. Thus I give up using /Za, for any source
 #           file.
+#
+#       /analyze [not used]:
+#
+#           I'd love to use it, but it's giving the following apparently
+#           bogus error:
+#
+#           c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\winioctl.h(4600) :
+#           warning C6001: Using uninitialized memory '*Input'.: Lines: 4584, 4591, 4592, 4593, 4594, 4596, 4600
+#
+#           NOTE: the error doesn't appear when running the analyzer
+#                 from the Visual Studio 2015 IDE, so I've added the
+#                 switch in the Visual Studio project (the project is
+#                 temporary and might have disappeared when you'll read
+#                 this).
 # ----------------------------------------------------------------------------
 
 # KEEP in sync! (See above.)

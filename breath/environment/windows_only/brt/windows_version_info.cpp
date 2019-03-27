@@ -52,6 +52,16 @@ raise_api_exception( char const * msg )
     throw breath::last_api_error( msg ) ;
 }
 
+//      Used to workaround two Visual Studio /analyze warnings (C6286
+//      and C6326).
+// -------------------------------------------------------------------------
+template< typename T >
+T
+make_non_const( T value )
+{
+    return value ;
+}
+
 }
 
 //      Implementation
@@ -369,7 +379,7 @@ windows_version_info::is_64_bit()
     // and the system is 64-bit if and only if the process runs under
     // WOW64.
     //
-    return ( sizeof ( void * ) * CHAR_BIT == 64 )
+    return ( make_non_const( sizeof ( void * ) * CHAR_BIT ) == 64 )
         || is_wow64_process() ;
 }
 
