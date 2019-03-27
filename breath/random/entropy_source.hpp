@@ -41,7 +41,7 @@ public:
     //!     function).
     //!
     //!     Guaranteed to be \e unsigned and different from \c char and
-    //!     \c unsigned \c char.
+    //!     <code>unsigned char</code>.
     //!
     //!     Note that the system entropy source may work on a smaller
     //!     type (typically <code>unsigned char</code>); but we don't
