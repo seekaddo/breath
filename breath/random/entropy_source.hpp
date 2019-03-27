@@ -40,10 +40,13 @@ public:
     //!     The type of the random numbers returned (\c next()
     //!     function).
     //!
+    //!     Guaranteed to be \e unsigned and different from \c char and
+    //!     \c unsigned \c char.
+    //!
     //!     Note that the system entropy source may work on a smaller
     //!     type (typically <code>unsigned char</code>); but we don't
-    //!     use <code>unsigned char</code> on the interface because we
-    //!     don't want things such as
+    //!     use \c char or <code>unsigned char</code> on the interface
+    //!     because we don't want things such as
     //!     <code>
     //!         std::cout << rnd.next()
     //!     </code>
@@ -66,13 +69,15 @@ public:
     virtual             ~entropy_source() noexcept ;
 
     //!     \return
-    //!         A new random value. Each call gives, with overwhelming
-    //!         probability, a different value.
+    //!         A new random value, evenly distributed in [min(),
+    //!         max()]. Each call gives, with overwhelming probability,
+    //!         a different value.
     // ---------------------------------------------------------------------
     result_type         next() ;
 
     //!     \return
-    //!         The minimum random number that can be emitted.
+    //!         The minimum random number that can be emitted, i.e.
+    //!         zero.
     // ---------------------------------------------------------------------
     result_type         min BREATH_PREVENT_MACRO_EXPANSION () const noexcept ;
 
