@@ -66,7 +66,7 @@ check()
 void
 check_string_of_nuls()
 {
-    std::string const   s = { '\x0', '\x0' } ;
+    std::string const   s = { '\0', '\0' } ;
     std::string         out ;
     breath::binary_to_base64( s.cbegin(), s.cend(),
                               std::back_inserter( out ) ) ;

@@ -87,7 +87,7 @@ check_invalid()
 
     // This is composed of NULs
     //
-    std::string const   invalid3 = { '\x0', '\x0' } ;
+    std::string const   invalid3 = { '\0', '\0' } ;
     BREATH_CHECK_THROW( breath::base64_to_binary( invalid3.cbegin(),
                                                   invalid3.cend(),
                                                  std::back_inserter( out ) ) ) ;
