@@ -33,6 +33,9 @@ public:
                         uuid( variant, version ) ;
 
 private:
+    //      Note: the stream inserter assumes the largest type, here, is
+    //      uint32_t. Keep in sync.
+    // ---------------------------------------------------------------------
     uint32_t            m_time_low ;
     uint16_t            m_time_mid ;
     uint16_t            m_time_hi_and_version ;

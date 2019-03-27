@@ -65,6 +65,10 @@ output_as_hex( std::ostream & os, T t )
     int const           hex_digits_per_t = meta::width< T >::value /
                                            bits_per_hex_digit ;
     os << std::hex ;
+
+    //      About the static_cast: see the note near the declarations of
+    //      the class data members. Keep in sync.
+    // ---------------------------------------------------------------------
     os << std::setw( hex_digits_per_t ) << static_cast< std::uint32_t >( t ) ;
     return os ;
 }
