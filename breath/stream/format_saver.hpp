@@ -18,8 +18,8 @@
 
 namespace breath {
 
-//      format_saver:
-//      =============
+//      basic_format_saver:
+//      ===================
 //
 //!     RAII-based "guard" (saver/restorer) of a stream object's
 //!     formatting info.
