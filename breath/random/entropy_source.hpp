@@ -47,9 +47,11 @@ public:
     //!     type (typically <code>unsigned char</code>); but we don't
     //!     use \c char or <code>unsigned char</code> on the interface
     //!     because we don't want things such as
+    //!
     //!     <code>
     //!         std::cout << rnd.next()
     //!     </code>
+    //!
     //!     to output a character instead of a number.
     // ---------------------------------------------------------------------
     typedef unsigned int
