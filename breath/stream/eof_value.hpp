@@ -44,12 +44,12 @@ eof_value( Stream const & )
     return Stream::traits_type::eof() ;
 }
 
-template< typename IntType, typename StreamBuf >
+template< typename Stream >
 bool
-is_eof_value( IntType x )
+is_eof_value( typename Stream::int_type x, Stream const & )
 {
-    return StreamBuff::traits_type::eq_int_type( pfm(),
-            StreamBuf::traits_type::eof() ) ;
+    return Stream::traits_type::eq_int_type( x,
+            Stream::traits_type::eof() ) ;
 }
 
 }
