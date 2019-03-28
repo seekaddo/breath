@@ -21,6 +21,8 @@
 //      BREATH_DUMP_EXPRESSION:
 //      -----------------------
 //
+//!     \hideinitializer
+//!
 //!     A simple macro for quickly dumping a variable to \c std::cout.
 //!     It was born as "DUMP_VARIABLE()" but then I immediately found
 //!     a usage where I wanted to display something like `i + j', so
