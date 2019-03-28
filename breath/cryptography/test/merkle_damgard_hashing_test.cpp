@@ -186,7 +186,7 @@ void check_known_digests()
         Hasher hasher( src.begin(), src.end() );
 
         // repetitions?
-        for ( std::size_t r( 0 ); r < /*1 + */entry.repetitions; ++r ) {
+        for ( std::size_t r( 0 ); r < entry.repetitions; ++r ) {
             hasher.append( src.begin(), src.end() );
         }
 
