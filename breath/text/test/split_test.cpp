@@ -26,7 +26,8 @@ main()
         std::string         delimiters = { '\0' } ;
         std::vector< std::string >
                             v = split( s, delimiters) ;
-        DO_TEST( v.size() == 0 ) ;
+        DO_TEST( v.size() == 1 ) ;
+        DO_TEST( v[ 0 ].empty() ) ;
     }
 
     {
@@ -36,6 +37,21 @@ main()
 
         DO_TEST( v.size() == 1 ) ;
         DO_TEST( v[ 0 ] == "abcde" ) ;
+    }
+
+    {
+        std::vector< std::string > v = split( "*", "*" ) ;
+        DO_TEST( v.size() == 2 ) ;
+        DO_TEST( v[ 0 ].empty() ) ;
+        DO_TEST( v[ 1 ].empty() ) ;
+    }
+
+    {
+        std::vector< std::string > v = split( "**", "*" ) ;
+        DO_TEST( v.size() == 3 ) ;
+        DO_TEST( v[ 0 ].empty() ) ;
+        DO_TEST( v[ 1 ].empty() ) ;
+        DO_TEST( v[ 2 ].empty() ) ;
     }
 
     {
@@ -61,10 +77,11 @@ main()
         s.push_back( 'C' ) ;
         std::vector< std::string > v = split( s, "ABC" ) ;
 
-        DO_TEST( v.size() == 3 ) ;
+        DO_TEST( v.size() == 4 ) ;
         DO_TEST( v[ 0 ] == "string1" ) ;
         DO_TEST( v[ 1 ] == "string2" ) ;
         DO_TEST( v[ 2 ] == "string3" ) ;
+        DO_TEST( v[ 3 ].empty() ) ;
     }
 
     {
@@ -85,8 +102,9 @@ main()
         std::string const   delimiters = only_delimiters ;
         std::vector< std::string > const
                             v = split( only_delimiters, delimiters ) ;
-        DO_TEST( v.size() == 1 ) ;
-        DO_TEST( v[ 0 ] == "" ) ;
+        DO_TEST( v.size() == 2 ) ;
+        DO_TEST( v[ 0 ].empty() ) ;
+        DO_TEST( v[ 1 ].empty() ) ;
     }
 }
 

@@ -7,16 +7,29 @@
 // _________________________________________________________________________
 
 #include "breath/text/split.hpp"
+#include "breath/diagnostics/assert.hpp"
+#include <cstddef>
 
 namespace breath {
 
 std::vector< std::string >
 split( std::string const & s, std::string const & delimiters )
 {
+    BREATH_ASSERT( s.size() < std::size_t( - 1 ) ) ;
+
     std::vector< std::string >
                         result ;
 
-    for ( std::string::size_type i = 0 ; i < s.size() ; ++ i ) {
+    //      Note:
+    //          The <= (in lieu of <) in the for condition is
+    //          intentional (note that find_first_of() has no
+    //          preconditions).
+    //
+    //          In theory, this is susceptible of an infinite loop, but
+    //          this would only occur with a string of std::size_t( -1 )
+    //          characters, which we do not support.
+    // ---------------------------------------------------------------------
+    for ( std::size_t i = 0 ; i <= s.size() ; ++ i ) {
         auto const          start = i ;
         i = s.find_first_of( delimiters, i );
         if ( i == s.npos ) {

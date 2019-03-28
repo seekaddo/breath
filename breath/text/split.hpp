@@ -22,6 +22,11 @@ namespace breath {
 //!         A vector of strings obtained by splitting \c s at each
 //!         delimiter character \c delim, in order.
 //!
+//!         Consecutive delimiters, or delimiters as first or last
+//!         character in \s lead to an empty string in the resulting
+//!         vector. The size of the vector is always 1 plus the number
+//!         of delimiters in \c s.
+//!
 //!     \note
 //!         This should probably use \c set_of_chars.
 // -------------------------------------------------------------------------
