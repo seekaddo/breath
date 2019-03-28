@@ -158,10 +158,10 @@
 namespace breath {
 namespace        {
 
-constexpr unsigned
+constexpr int
 win_version( int major, int minor )
 {
-    return major * 256u + minor ;
+    return major * 256 + minor ;
 }
 
 bool
@@ -177,7 +177,7 @@ os_id
 identify_nt( windows_version_info const & info )
 {
     os_id               id( os_id::windows_unknown ) ;
-    unsigned const      version(
+    int const           version(
                   win_version( info.major_version(), info.minor_version() ) ) ;
 
     if ( windows_version_info::is_client() ) {
