@@ -31,7 +31,7 @@ find_executable_in_path( std::string const & name,
     }
 
     std::vector< std::string > const &
-                        e = breath::split( extensions, ';' ) ;
+                        e = breath::split( extensions, ";" ) ;
     bool                found = false ;
     char                full_path[ MAX_PATH + 1 ] ;
     for ( auto it = e.cbegin() ; it != e.cend() ; ++ it ) {

@@ -1,5 +1,5 @@
 // =========================================================================
-//                       Copyright 2008 Gennaro Prota
+//                    Copyright 2008-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -11,20 +11,18 @@
 namespace breath {
 
 std::vector< std::string >
-split( std::string const & s, char c )
+split( std::string const & s, std::string const & delimiters )
 {
     std::vector< std::string >
                         result ;
 
-    for ( auto it = s.cbegin() ; it != s.cend() ; ) {
-        auto const          curr =  it ;
-        while ( it != s.cend() && *it != c ) {
-            ++ it ;
+    for ( std::string::size_type i = 0 ; i < s.size() ; ++ i ) {
+        auto const          start = i ;
+        i = s.find_first_of( delimiters, i );
+        if ( i == s.npos ) {
+            i = s.size() ;
         }
-        result.push_back( std::string( curr, it ) ) ;
-        if ( it != s.cend() ) {
-            ++ it ;
-        }
+        result.emplace_back( s.cbegin() + start, s.cbegin() + i ) ;
     }
     return result ;
 }
