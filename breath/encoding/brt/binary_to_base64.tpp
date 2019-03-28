@@ -28,10 +28,10 @@ binary_to_base64( InputIter begin, InputIter end,
                         alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                      "abcdefghijklmnopqrstuvwxyz"
                                      "0123456789+/" ;
-    constexpr int       group_size( 3 ) ;
-    auto                curr( begin ) ;
-    int                 count( 0 ) ;
-    int                 column( 0 ) ;
+    constexpr int       group_size = 3 ;
+    auto                curr = begin ;
+    int                 count = 0 ;
+    int                 column = 0 ;
 
     auto                do_output = [ & ]( char c )
     {
