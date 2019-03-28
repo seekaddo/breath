@@ -19,7 +19,7 @@ lcm( M a, N b ) noexcept
                         g = gcd( a, b ) ;
     return g == 0
         ? 0
-        : abs( a ) / g * abs( b ) ;
+        : std::abs( a ) / g * std::abs( b ) ;
 }
 
 }
