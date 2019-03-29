@@ -37,7 +37,8 @@
 #           command_line_error, in command_line.hpp.
 # ----------------------------------------------------------------------------
 
-# KEEP in sync! (See above.)
+#       KEEP in sync! (See above.)
+# ----------------------------------------------------------------------------
 cpp_basic_options =  -std=c++14                 \
                      -Weverything               \
                      -Wno-c++98-compat          \
@@ -51,8 +52,9 @@ cpp_basic_options += -pipe                      \
                      -Wno-padded                \
                      -Wno-weak-vtables
 
-# The following three options are temporary (the -Wno-documentation... is because
-# Clang doesn't seem to recognize the \cond command)- gps
+#       The following three options are temporary (the -Wno-documentation...
+#       is because Clang doesn't seem to recognize the \cond command)- gps
+# ----------------------------------------------------------------------------
 cpp_basic_options += -Wno-exit-time-destructors \
                      -Wno-global-constructors   \
                      -Wno-documentation-unknown-command
@@ -67,8 +69,9 @@ cpp_basic_options += -Wno-exit-time-destructors \
 include_switch = -I
 object_file_suffix = .o
 
-# Note that this differs from the compiler name, which is in $(compiler)
-#
+#       Note that this differs from the compiler name, which is in
+#       $(compiler).
+# ----------------------------------------------------------------------------
 compiler_command = clang++
 
 # gps mostly by James!

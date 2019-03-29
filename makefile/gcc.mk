@@ -56,8 +56,8 @@
 # ----------------------------------------------------------------------------
 
 
-# This check on the minimum compiler version was implemented thanks to
-# Jonathan Wakely
+#       This check on the minimum compiler version was implemented thanks to
+#       Jonathan Wakely.
 # ----------------------------------------------------------------------------
 
 minimum_gcc_version := 6.4.0
@@ -82,7 +82,8 @@ ifneq "$(lowest_version)" "$(minimum_gcc_version)"
     version is $(minimum_gcc_version))
 endif
 
-# KEEP in sync! (See above.)
+#       KEEP in sync! (See above.)
+# ----------------------------------------------------------------------------
 cpp_basic_options =  -std=c++14                 \
                      -Wall                      \
                      -Wextra                    \
@@ -119,8 +120,9 @@ cpp_basic_options += -pipe                      \
 include_switch = -I
 object_file_suffix = .o
 
-# Note that this differs from the compiler name, which is in $(compiler)
-#
+#       Note that this differs from the compiler name, which is in
+#       $(compiler).
+# ----------------------------------------------------------------------------
 compiler_command = g++
 
 

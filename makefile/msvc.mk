@@ -48,7 +48,8 @@
 #                 this).
 # ----------------------------------------------------------------------------
 
-# KEEP in sync! (See above.)
+#       KEEP in sync! (See above.)
+# ----------------------------------------------------------------------------
 cpp_basic_options = /std:c++14                 \
                     /Zc:forScope               \
                     /Zc:wchar_t                \
@@ -91,10 +92,13 @@ endef
 # gps Per tutte le link_to_exec, non dobbiamo passare anche $(cpp_options)?
 #     Note that the /link option (and its arguments) must appear last.
 #
-#   We need to invoke the linker, not the compiler; but using cl.exe is handy
-#   because it automatically translates some of the options that we have in the variable
-#   $(cpp_options): e.g. /Zd -> /DEBUG. If we invoked link.exe directly, we'd need to
-#   setup another variable, for the linker, with options in sync with the compiler ones. [gps]
+#       We need to invoke the linker, not the compiler; but using cl.exe
+#       is handy because it automatically translates some of the options
+#       that we have in the variable $(cpp_options): e.g. /Zd -> /DEBUG.
+#       If we invoked link.exe directly, we'd need to setup another
+#       variable, for the linker, with options in sync with the compiler
+#       ones. [gps]
+# ----------------------------------------------------------------------------
 define link_to_exec
 $(compiler_command) $(cpp_options) /Fe$@  $+ /link $(linker_options) $(libraries)
 endef
