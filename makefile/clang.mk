@@ -52,7 +52,7 @@ cpp_basic_options += -pipe                      \
                      -Wno-weak-vtables
 
 # The following three options are temporary (the -Wno-documentation... is because
-# Clang doesn't seem to recognize the \cond command in assert.hpp)- gps
+# Clang doesn't seem to recognize the \cond command)- gps
 cpp_basic_options += -Wno-exit-time-destructors \
                      -Wno-global-constructors   \
                      -Wno-documentation-unknown-command
