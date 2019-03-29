@@ -20,11 +20,11 @@ namespace breath {
 unsigned long long
 amount_of_physical_memory()
 {
-    unsigned long long const
-                        pages = sysconf( _SC_PHYS_PAGES ) ;
-    unsigned long long const
-                        page_size = sysconf( _SC_PAGE_SIZE ) ;
-    return pages * page_size / 1024 ;
+    long const          pages = sysconf( _SC_PHYS_PAGES ) ;
+    long const          page_size = sysconf( _SC_PAGE_SIZE ) ;
+
+    return static_cast< unsigned long long >( pages ) *
+           static_cast< unsigned long long >( page_size ) / 1024 ;
 }
 
 }
