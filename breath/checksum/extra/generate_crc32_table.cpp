@@ -13,6 +13,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cstddef>
 #include <cstdint>
 #include <iomanip>
 #include <ios>
@@ -23,7 +24,8 @@
 int
 main()
 {
-    constexpr int       size = 256 ;
+    constexpr std::size_t
+                        size = 256 ;
     std::array< std::uint_fast32_t, size >
                         table ;
     typedef std::uint_fast32_t
@@ -61,7 +63,7 @@ main()
     os.setf( std::ios_base::hex, std::ios_base::basefield ) ;
     os.fill( '0' ) ;
     os << "static constexpr std::uint_fast32_t table[] =\n{\n" << indent ;
-    for ( int i = 0 ; i < size ; ++ i ) {
+    for ( std::size_t i = 0 ; i < size ; ++ i ) {
         os << "0x" << std::setw( 8 ) << table[ i ] ;
         if ( i != ( size - 1 ) ) {
             os << ',' ;
