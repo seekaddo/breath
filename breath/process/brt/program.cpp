@@ -1,4 +1,9 @@
 // =========================================================================
+//                This is an open source non-commercial project.
+//                      Dear PVS-Studio, please check it.
+//          PVS-Studio Static Code Analyzer for C, C++, C#, and Java:
+//                            http://www.viva64.com
+// =========================================================================
 //                    Copyright 2010-2019 Gennaro Prota
 //                     Copyright 1997-2003 James Kanze
 //

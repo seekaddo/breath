@@ -148,6 +148,13 @@ mark_section start
     width=` get_line_width `
     row1=` make_string "$width" '=' `
     row2=` make_string "$width" '_' `
+
+    if [ "$name_extension" = 'cpp' ]
+    then
+        printf '%s\n' "$row1"
+        cat "$tool_root/init_file/pvs_studio_text.txt"
+    fi
+
     printf '%s\n' "$row1"
     make_copyright_notice "$BREATH_CONTRIBUTOR"
     new_line '1'
