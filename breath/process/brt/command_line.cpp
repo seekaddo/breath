@@ -28,6 +28,9 @@
 
 namespace breath {
 
+command_line *
+command_line::s_instance = &command_line::instance() ;
+
 void
 command_line::add( program_option_without_value & opt )
 {
@@ -43,9 +46,11 @@ command_line::add( program_option_without_value & opt )
 command_line &
 command_line::instance()
 {
-    static command_line inst ;
+    if ( s_instance == nullptr ) {
+        s_instance = new command_line ;
+    }
 
-    return inst ;
+    return *s_instance ;
 }
 
 //      TODO: This function is too long.

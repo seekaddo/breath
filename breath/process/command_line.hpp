@@ -43,6 +43,8 @@ private:
     friend class        program_option_with_value;
 
 public:
+    //!     The library arranges for calling this before main starts().
+    // ---------------------------------------------------------------------
     static command_line &
                         instance() ;
 
@@ -74,6 +76,9 @@ private:
                         m_rest ;
     std::vector< std::string >
                         m_errors;
+
+    static command_line *
+                        s_instance ;
 } ;
 
 class command_line_error
