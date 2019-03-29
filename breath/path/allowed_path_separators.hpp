@@ -21,9 +21,6 @@ namespace breath {
 //
 //!     Note that the separators are returned with the "preferred" one
 //!     first.
-//!
-//!     Visual Studio 2015 and 2017 fail to link if I declare this
-//!     function as constexpr, so I avoid that for now.
 // -------------------------------------------------------------------------
 char const *        allowed_path_separators() noexcept ; //gps constexpr?
 
