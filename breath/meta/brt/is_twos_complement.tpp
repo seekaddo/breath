@@ -6,6 +6,7 @@
 //             <https://opensource.org/licenses/BSD-3-Clause>.)
 // _________________________________________________________________________
 
+#include "breath/preprocessing/prevent_macro_expansion.hpp"
 #include <type_traits>
 #include <limits>
 
