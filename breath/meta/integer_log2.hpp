@@ -14,8 +14,6 @@
 #ifndef BREATH_GUARD_4uQJExogJdntOgg4rVCN5jmuqREdR7xS
 #define BREATH_GUARD_4uQJExogJdntOgg4rVCN5jmuqREdR7xS
 
-#include "breath/cpp11/long_long.hpp"
-
 namespace breath {
 //! \cond
 namespace  integer_log2_private {
@@ -37,7 +35,7 @@ namespace  integer_log2_private {
 //      terminates with x = 1 and n = 0 (see the algorithm's
 //      invariant).
 // ---------------------------------------------------------------------
-typedef breath::unsigned_long_long_type
+typedef unsigned long long
                         argument_type ;
 typedef int             result_type ;
 
