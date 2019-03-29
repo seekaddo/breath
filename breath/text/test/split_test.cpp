@@ -22,8 +22,8 @@ main()
     using               breath::split ;
 
     {
-        std::string         s ;
-        std::string         delimiters = { '\0' } ;
+        std::string const   s ;
+        std::string const   delimiters = { '\0' } ;
         std::vector< std::string >
                             v = split( s, delimiters) ;
         DO_TEST( v.size() == 1 ) ;
@@ -31,8 +31,8 @@ main()
     }
 
     {
-        std::string         s( "abcde" ) ;
-        std::string         delimiters = { '\0' } ;
+        std::string const   s( "abcde" ) ;
+        std::string const   delimiters = { '\0' } ;
         std::vector< std::string > v = split( s, delimiters ) ;
 
         DO_TEST( v.size() == 1 ) ;
@@ -40,14 +40,16 @@ main()
     }
 
     {
-        std::vector< std::string > v = split( "*", "*" ) ;
+        std::vector< std::string > const
+                            v = split( "*", "*" ) ;
         DO_TEST( v.size() == 2 ) ;
         DO_TEST( v[ 0 ].empty() ) ;
         DO_TEST( v[ 1 ].empty() ) ;
     }
 
     {
-        std::vector< std::string > v = split( "**", "*" ) ;
+        std::vector< std::string > const
+                            v = split( "**", "*" ) ;
         DO_TEST( v.size() == 3 ) ;
         DO_TEST( v[ 0 ].empty() ) ;
         DO_TEST( v[ 1 ].empty() ) ;
@@ -75,7 +77,8 @@ main()
         s.push_back( 'B' ) ;
         s += "string3" ;
         s.push_back( 'C' ) ;
-        std::vector< std::string > v = split( s, "ABC" ) ;
+        std::vector< std::string > const
+                            v = split( s, "ABC" ) ;
 
         DO_TEST( v.size() == 4 ) ;
         DO_TEST( v[ 0 ] == "string1" ) ;
@@ -89,8 +92,9 @@ main()
         s.push_back( '\0' ) ;
         s.push_back( '\0' ) ;
         s += "string3" ;
-        std::string         delimiters = { '\0' } ;
-        std::vector< std::string > v = split( s, delimiters ) ;
+        std::string const   delimiters = { '\0' } ;
+        std::vector< std::string > const
+                            v = split( s, delimiters ) ;
         DO_TEST( v.size() == 3 ) ;
         DO_TEST( v[ 0 ] == "string1" ) ;
         DO_TEST( v[ 1 ].size() == 0 ) ;
