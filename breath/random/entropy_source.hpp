@@ -101,7 +101,7 @@ public:
 
     //!     \return
     //!         A new random value in the range <code>[min(), maximum]
-    //          </code>.
+    //!         </code>.
     // ---------------------------------------------------------------------
     result_type         operator ()( result_type maximum ) ;
 
