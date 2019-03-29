@@ -28,6 +28,12 @@ public:
     // ---------------------------------------------------------------------
     void                operator=( test_descriptor const & ) = delete ;
 
+    //      Declare this explicitly to avoid a Clang -Wdeprecated
+    //      warning (the implicit definition of the copy constructor is
+    //      deprecated because of the user-declared copy assignment).
+    // ---------------------------------------------------------------------
+                        test_descriptor( test_descriptor const & ) = default ;
+
     //!     Constructs the descriptor for a test having a given \c
     //!     name and running the given function.
     //!     Intentionally not explicit to allow our typical usage:
