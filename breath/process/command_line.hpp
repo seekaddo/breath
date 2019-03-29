@@ -37,7 +37,7 @@ private:
     void                add( program_option_without_value & opt ) ;
     template< typename T >
     void                add( program_option_with_value< T > & opt ) ;
-    
+
     friend              program_option_without_value ;
     template< typename T >
     friend class        program_option_with_value;
