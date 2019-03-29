@@ -85,8 +85,8 @@ check3()
     pair                a = { 1, "OK" } ;
     pair                lo = { 1, "FAIL: LO" } ;
     pair                hi = { 2, "FAIL: HI" } ;
-    a = breath::clamp( a, lo, hi, []( const auto & a, const auto & b ) {
-                            return a.first < b.first ;
+    a = breath::clamp( a, lo, hi, []( const auto & x, const auto & y ) {
+                            return x.first < y.first ;
                         } ) ;
     BREATH_CHECK( a.second == "OK" ) ;
 }
