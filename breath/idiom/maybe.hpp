@@ -110,7 +110,7 @@ public:
 //!           you want to be applied
 //!
 //!        As shown above, in these cases you have to explicitly
-//!        invoke \t value().
+//!        invoke \c value().
 //!
 //!        Curiously enough, B&N's book introduces \c Fallible as an
 //!        example of using conversions "to add a binary state" --

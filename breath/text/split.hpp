@@ -23,7 +23,7 @@ namespace breath {
 //!         delimiter character \c delim, in order.
 //!
 //!         Consecutive delimiters, or delimiters as first or last
-//!         character in \s lead to an empty string in the resulting
+//!         character in \c s lead to an empty string in the resulting
 //!         vector. The size of the vector is always 1 plus the number
 //!         of delimiters in \c s.
 //!
