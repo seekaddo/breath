@@ -17,8 +17,8 @@ void
 binary_to_base64( InputIter begin, InputIter end,
                   OutputIter out, int wrap_column )
 {
-    static_assert( CHAR_BIT == 8
-    && ( std::is_same< typename InputIter::value_type, char >::value
+    static_assert( CHAR_BIT == 8 &&
+       ( std::is_same< typename InputIter::value_type, char >::value
       || std::is_same< typename InputIter::value_type, unsigned char >::value ),
                    "" ) ;
 

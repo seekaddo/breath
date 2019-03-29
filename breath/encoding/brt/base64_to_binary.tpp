@@ -41,9 +41,9 @@ base64_to_binary( InputIter begin, InputIter end, OutputIter out )
         -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
     } ;
 
-    static_assert( ( UCHAR_MAX == count( table ) - 1 )
-               && ( std::is_same< typename InputIter::value_type, char >::value
-      || std::is_same< typename InputIter::value_type, unsigned char>::value ),
+    static_assert( ( UCHAR_MAX == count( table ) - 1 ) &&
+       ( std::is_same< typename InputIter::value_type, char >::value
+      || std::is_same< typename InputIter::value_type, unsigned char >::value ),
                    "" ) ;
     constexpr char      error_message[] = "invalid input to base64_to_binary()" ;
     int const           not_to_be_translated = -1 ;
