@@ -40,25 +40,28 @@
 #           it allows the back end to generate code for one function
 #           while the front end is parsing the next" (insights provided
 #           by James Kanze).
+# ----------------------------------------------------------------------------
+
+
+#       This check on the minimum compiler version was implemented thanks to
+#       Jonathan Wakely.
 #
-#       Options to be added in the future:
-#       ==================================
+#       Note:
+#           when incrementing the minimum version number, check:
 #
-#       These options will be added when the minimum required GCC
-#       version will support them (see <https://gcc.gnu.org/wiki/WarningHistory>):
+#             <https://gcc.gnu.org/wiki/WarningHistory>
+#
+#           to see if there are useful switches that can be enabled.
+#
+#           For the moment, I've seen:
 #
 #           -Waligned-new=all      (introduced in GCC 7.1.0)
 #           -Wcast-align=strict    (    "       "  "  8.1.0)  (note1)
 #           -Wcatch-value=2        (    "       "  "  8.1.0)
 #           -Wduplicated-branches  (    "       "  "  7.2.0)
 #
-# ---
-# note1 This will replace -Wcast-align
-# ----------------------------------------------------------------------------
-
-
-#       This check on the minimum compiler version was implemented thanks to
-#       Jonathan Wakely.
+#       ---
+#       note1 This will replace -Wcast-align
 # ----------------------------------------------------------------------------
 
 minimum_gcc_version := 6.4.0
