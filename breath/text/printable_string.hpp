@@ -32,7 +32,12 @@ namespace breath {
 //!     <tt>\\x...</tt>. The goal is, for instance, to send the output
 //!     to a log and then read it from another machine. The number of
 //!     digits in the hexadecimal escape sequence is
-//!     <code>std::ceil( CHAR_ BIT / 4.0 )</code>.
+//!     <code>std::ceil( CHAR_ BIT / 4.0 )</code> (they are left-padded
+//!     with zeroes); note that this is different from character and
+//!     string literals, where there's no limit to the number of
+//!     hexadecimal digits. Thus, to read a printable_string
+//!     unambiguously all that is needed is to know the value of \c
+//!     CHAR_BIT on the source machine.
 //!
 //!     A \c %printable_string can be constructed "from a non-string"
 //!     (i.e. from a null pointer): this is useful for debugging purposes.
