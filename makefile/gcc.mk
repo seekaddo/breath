@@ -111,6 +111,7 @@ cpp_basic_options += -pipe                      \
                      -Wredundant-decls          \
                      -Wshadow                   \
                      -Wstrict-null-sentinel     \
+                     -Wstrict-overflow=5        \
                      -Wsuggest-override         \
                      -Wsync-nand                \
                      -Wundef                    \
