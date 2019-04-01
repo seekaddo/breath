@@ -49,6 +49,7 @@
 #
 #           -Waligned-new=all      (introduced in GCC 7.1.0)
 #           -Wcast-align=strict    (    "       "  "  8.1.0)  (note1)
+#           -Wcatch-value=2        (    "       "  "  8.1.0)
 #           -Wduplicated-branches  (    "       "  "  7.2.0)
 #
 # ---
