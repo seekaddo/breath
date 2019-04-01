@@ -35,7 +35,8 @@
 //!
 //!     The expression is shown in the form &lt;expression&gt; = value.
 //!     If expression contains macro invocations, the unexpanded form
-//!     is displayed, too.
+//!     is displayed, too. In any case, the output ends with \c
+//!     std::endl.
 //!
 //!     \note
 //!         The <code>#includes</code> are not part of the interface.
