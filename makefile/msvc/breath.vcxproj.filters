@@ -312,6 +312,9 @@
     <ClCompile Include="..\..\breath\process\brt\current_directory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\breath\mathematics\test\representation_in_base_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\breath\algorithm\brt\accumulate.tpp" />
@@ -344,6 +347,7 @@
     <None Include="..\..\breath\cryptography\private\sha_common.tpp">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="..\..\breath\mathematics\brt\representation_in_base.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -692,6 +696,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\meta\exact_width_integer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\mathematics\representation_in_base.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
