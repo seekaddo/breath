@@ -14,7 +14,6 @@
 
 #include "breath/text/printable_string.hpp"
 #include "breath/stream/format_saver.hpp"
-#include <cctype>
 #include <climits>
 #include <iomanip>
 #include <ios>
@@ -90,7 +89,10 @@ operator <<( std::ostream & dest, printable_string const & ps )
             break ;
 
         default:
-            if ( std::isprint( static_cast< unsigned char >( c ) ) ) {
+            // Note: if you change this values, keep the documentation
+            //       in sync.
+            // -------------------------------------------------------------
+            if ( 0x20 <= c && c < 0x7f ) {
                 dest << c ;
             }  else {
                 static_assert( CHAR_BIT == 8, "please, adjust the setw()"

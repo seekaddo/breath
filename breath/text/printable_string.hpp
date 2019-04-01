@@ -26,10 +26,13 @@ namespace breath {
 //!     Represents a string that prints to an \c ostream without
 //!     non-printable characters.
 //!
-//!     Non-printable characters are displayed either using a
+//!     Any character outside the range [0x20, 0x7f) is considered
+//!     non-printable and is displayed either using a
 //!     simple-escape-sequence or an escape sequence of the form
-//!     <tt>\\x...</tt>. The number of digits in the hexadecimal escape
-//!     sequence is <code>std::ceil( CHAR_ BIT / 4.0 )</code>.
+//!     <tt>\\x...</tt>. The goal is, for instance, to send the output
+//!     to a log and then read it from another machine. The number of
+//!     digits in the hexadecimal escape sequence is
+//!     <code>std::ceil( CHAR_ BIT / 4.0 )</code>.
 //!
 //!     A \c %printable_string can be constructed "from a non-string"
 //!     (i.e. from a null pointer): this is useful for debugging purposes.
