@@ -92,7 +92,9 @@ operator <<( std::ostream & dest, printable_string const & ps )
             // Note: if you change this values, keep the documentation
             //       in sync.
             // -------------------------------------------------------------
-            if ( 0x20 <= c && c < 0x7f ) {
+            char const      printable_min = 0x20 ;
+            char const      printable_max = 0x7e ;
+            if ( printable_min <= c && c <= printable_max ) {
                 dest << c ;
             }  else {
                 static_assert( CHAR_BIT == 8, "please, adjust the setw()"
