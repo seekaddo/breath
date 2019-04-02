@@ -4,7 +4,7 @@
 //          PVS-Studio Static Code Analyzer for C, C++, C#, and Java:
 //                            http://www.viva64.com
 // =========================================================================
-//                       Copyright 2015 Gennaro Prota
+//                    Copyright 2015-2019 Gennaro Prota
 //
 //                 Licensed under the 3-Clause BSD License.
 //            (See accompanying file 3_CLAUSE_BSD_LICENSE.txt or
@@ -31,10 +31,12 @@ main()
     }
 
     {
-        printable_string    p( "\'\"\?\\\a\b\f\n\r\t\v\x1\xA0\xFF" ) ;
+        printable_string    p( "\'\"\?\\\a\b\f\n\r\t\v\x1\x2\x3\x1F\x20\x7e\x7F"
+                               "\xA0\xFF" ) ;
         std::ostringstream  ss ;
         ss << p ;
-        DO_TEST( ss.str() == "\"'\\\"\\?\\\\\\a\\b\\f\\n\\r\\t\\v\\x01\\xa0\\xff\"") ;
+        DO_TEST( ss.str() == "\"'\\\"\\?\\\\\\a\\b\\f\\n\\r\\t\\v\\x01\\x02"
+                             "\\x03\\x1f ~\\x7f\\xa0\\xff\"") ;
     }
 
     {
