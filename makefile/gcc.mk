@@ -136,6 +136,16 @@ cpp_basic_options += -pipe                           \
                      -Wunused-macros                 \
                      -Wzero-as-null-pointer-constant
 
+#       See:
+#       <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.
+#
+#       Keep in sync with clang.mk.
+# ----------------------------------------------------------------------------
+cpp_debug_options =  -D _GLIBCXX_ASSERTIONS=1        \
+                     -D _GLIBCXX_CONCEPT_CHECKS      \
+                     -D _GLIBCXX_DEBUG               \
+                     -D _GLIBCXX_DEBUG_PEDANTIC
+
 include_switch = -I
 object_file_suffix = .o
 

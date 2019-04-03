@@ -59,6 +59,17 @@ cpp_basic_options += -Wno-exit-time-destructors \
                      -Wno-global-constructors   \
                      -Wno-documentation-unknown-command
 
+#       See:
+#       <https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html>.
+#
+#       Keep in sync with gcc.mk.
+# ----------------------------------------------------------------------------
+cpp_debug_options =  -D _GLIBCXX_ASSERTIONS=1        \
+                     -D _GLIBCXX_CONCEPT_CHECKS      \
+                     -D _GLIBCXX_DEBUG               \
+                     -D _GLIBCXX_DEBUG_PEDANTIC
+
+
 # gps queste vanno nel debug:
 #cpp_extra_options += -fcatch-undefined-behavior
 
