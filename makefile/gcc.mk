@@ -88,52 +88,52 @@ endif
 
 #       KEEP in sync! (See above.)
 # ----------------------------------------------------------------------------
-cpp_basic_options =  -std=c++14                 \
-                     -Wall                      \
-                     -Wextra                    \
-                     -pedantic                  \
-                     -Werror                    \
-                     -D _POSIX_C_SOURCE=200112L \
-                     -U _GNU_SOURCE             \
+cpp_basic_options =  -std=c++14                      \
+                     -Wall                           \
+                     -Wextra                         \
+                     -pedantic                       \
+                     -Werror                         \
+                     -D _POSIX_C_SOURCE=200112L      \
+                     -U _GNU_SOURCE                  \
                      -D _GLIBCXX_USE_CXX11_ABI=1
 
-cpp_basic_options += -pipe                      \
-                     -Wabi                      \
-                     -Warray-bounds=2           \
-                     -Wcast-align               \
-                     -Wconditionally-supported  \
-                     -Wconversion               \
-                     -Wdate-time                \
-                     -Wdelete-non-virtual-dtor  \
-                     -Wdouble-promotion         \
-                     -Wduplicated-cond          \
-                     -Wfloat-equal              \
-                     -Wformat=2                 \
-                     -Wformat-signedness        \
-                     -Winvalid-pch              \
-                     -Wlogical-op               \
-                     -Wmissing-include-dirs     \
-                     -Wnoexcept                 \
-                     -Wnon-virtual-dtor         \
-                     -Wnull-dereference         \
-                     -Wold-style-cast           \
-                     -Woverloaded-virtual       \
-                     -Wplacement-new=2          \
-                     -Wredundant-decls          \
-                     -Wshadow                   \
-                     -Wshift-overflow=2         \
-                     -Wsign-conversion          \
-                     -Wstack-usage=66560        \
-                     -Wstrict-null-sentinel     \
-                     -Wstrict-overflow=5        \
-                     -Wsuggest-attribute=const  \
-                     -Wsuggest-attribute=noreturn \
-                     -Wsuggest-override         \
-                     -Wswitch-enum              \
-                     -Wsync-nand                \
-                     -Wundef                    \
-                     -Wunreachable-code         \
-                     -Wunused-macros            \
+cpp_basic_options += -pipe                           \
+                     -Wabi                           \
+                     -Warray-bounds=2                \
+                     -Wcast-align                    \
+                     -Wconditionally-supported       \
+                     -Wconversion                    \
+                     -Wdate-time                     \
+                     -Wdelete-non-virtual-dtor       \
+                     -Wdouble-promotion              \
+                     -Wduplicated-cond               \
+                     -Wfloat-equal                   \
+                     -Wformat=2                      \
+                     -Wformat-signedness             \
+                     -Winvalid-pch                   \
+                     -Wlogical-op                    \
+                     -Wmissing-include-dirs          \
+                     -Wnoexcept                      \
+                     -Wnon-virtual-dtor              \
+                     -Wnull-dereference              \
+                     -Wold-style-cast                \
+                     -Woverloaded-virtual            \
+                     -Wplacement-new=2               \
+                     -Wredundant-decls               \
+                     -Wshadow                        \
+                     -Wshift-overflow=2              \
+                     -Wsign-conversion               \
+                     -Wstack-usage=66560             \
+                     -Wstrict-null-sentinel          \
+                     -Wstrict-overflow=5             \
+                     -Wsuggest-attribute=const       \
+                     -Wsuggest-attribute=noreturn    \
+                     -Wsuggest-override              \
+                     -Wswitch-enum                   \
+                     -Wsync-nand                     \
+                     -Wundef                         \
+                     -Wunreachable-code              \
+                     -Wunused-macros                 \
                      -Wzero-as-null-pointer-constant
 
 include_switch = -I
