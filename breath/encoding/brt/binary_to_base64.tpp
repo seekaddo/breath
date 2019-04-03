@@ -24,11 +24,10 @@ binary_to_base64( InputIter begin, InputIter end,
 
     BREATH_ASSERT( wrap_column >= 0 ) ;
 
-    static constexpr char
-                        alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    static char const   alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                      "abcdefghijklmnopqrstuvwxyz"
                                      "0123456789+/" ;
-    constexpr int       group_size = 3 ;
+    int const           group_size = 3 ;
     auto                curr = begin ;
     int                 count = 0 ;
     int                 column = 0 ;

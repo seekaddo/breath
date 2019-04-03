@@ -21,7 +21,7 @@ namespace gcd_lcm_private {
 //      private component.
 // ---------------------------------------------------------------------
 template< typename M, typename N >
-void
+constexpr void
 check_common_gcd_lcm_preconditions( M a, N b )
 {
     static_assert( std::is_integral< M >::value

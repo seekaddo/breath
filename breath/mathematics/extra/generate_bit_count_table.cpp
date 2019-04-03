@@ -20,7 +20,7 @@
 int
 main()
 {
-    constexpr int       size = 256 ;
+    int const           size = 256 ;
     std::array< int, size >
                         table ;
 
@@ -43,8 +43,8 @@ main()
     } ;
 
     std::generate( table.begin(), table.end(), bit_count{} ) ;
-    constexpr int       numbers_per_line = 16 ;
-    constexpr int       indent_size = 4 ;
+    int const           numbers_per_line = 16 ;
+    int const           indent_size = 4 ;
     std::string const   indent( indent_size, ' ' ) ;
 
     std::ostream &      os = std::cout ;

@@ -20,12 +20,12 @@ namespace {
 void
 do_check()
 {
-    constexpr struct
+    struct
     {
         int a ;
         int b ;
         int lcm ;
-    }                   table[] = {
+    } const             table[] = {
         {  0,  0,  0 },
         { -1,  0,  0 },
         { -3,  0,  0 },
@@ -43,6 +43,14 @@ do_check()
     }
 }
 
+void
+check_constexpr()
+{
+    constexpr int       n = breath::lcm( 10, 14 ) ;
+    int                 array[ n ] ;
+    static_cast< void >( array ) ;
+}
+
 }
 
 int
@@ -53,7 +61,7 @@ main()
     console_reporter    cr( std::cout ) ;
     test_runner::instance().attach_reporter( cr ) ;
 
-    return test_runner::instance().run( { do_check } ) ;
+    return test_runner::instance().run( { do_check, check_constexpr } ) ;
 }
 
 // Local Variables:

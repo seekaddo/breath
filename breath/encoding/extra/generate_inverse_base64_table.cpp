@@ -21,14 +21,13 @@
 int
 main()
 {
-    static constexpr char
-                        alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    static char const   alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                      "abcdefghijklmnopqrstuvwxyz"
                                      "0123456789+/" ;
 
-    constexpr int       size = 256 ;
-    constexpr int       entries_per_row = 16 ;
-    constexpr int       invalid = -1 ;
+    int const           size = 256 ;
+    int const           entries_per_row = 16 ;
+    int const           invalid = -1 ;
     std::array< int, size >
                         table ;
     table.assign( invalid ) ;
@@ -38,7 +37,7 @@ main()
 
     std::ostream &      os = std::cout ;
 
-    os << "static constexpr int table[] = \n{\n    " ;
+    os << "static int const    table[] = \n{\n    " ;
     for ( int i = 0 ; i < size ; ++ i ) {
         os << std::setw( 2 ) << table[ i ] ;
         if ( i != ( size - 1 ) ) {
