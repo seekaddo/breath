@@ -71,12 +71,6 @@ cpp_debug_options =  -D _GLIBCXX_ASSERTIONS=1        \
 
 cpp_debug_options += -ggdb3
 
-# gps queste vanno nel debug:
-#cpp_extra_options += -fcatch-undefined-behavior
-
-#                    -fdiagnostics-show-name \
-#                    -verify     #OK?? gps
-
 
 include_switch = -I
 object_file_suffix = .o
