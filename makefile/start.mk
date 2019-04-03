@@ -47,9 +47,9 @@ clean:
 include_dir     = $(root)
 
 cpp_options = $(cpp_basic_options) $(cpp_debug_options) $(cpp_extra_options) $(include_switch)"$(include_dir)" \
-              $(cpp_preprocessor_defines)
+              $(cpp_preprocessing_defines)
 
-cpp_preprocessor_defines = -D BREATH_ARCHITECTURE=$(arch) -D BREATH_SYSTEM=$(system) -D BREATH_COMPILER=$(compiler)
+cpp_preprocessing_defines = -D BREATH_ARCHITECTURE=$(arch) -D BREATH_SYSTEM=$(system) -D BREATH_COMPILER=$(compiler)
 
 bin_root = $(root)/bin
 bin_dir = $(bin_root)/$(arch)/$(system)/$(compiler)
