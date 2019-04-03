@@ -24,11 +24,12 @@
 int
 main()
 {
-    std::size_t const   size = 256 ;
-    std::array< std::uint_fast32_t, size >
-                        table ;
     typedef std::uint_fast32_t
                         fast32_type ;
+
+    std::size_t const   size = 256 ;
+    std::array< fast32_type, size >
+                        table ;
 
     class               byte_checksum
     {
