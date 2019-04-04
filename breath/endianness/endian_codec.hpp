@@ -36,6 +36,14 @@ template< typename T, typename Byte >
 std::size_t const
 width_ratio< T, Byte >::value ;
 
+template< typename T, std::size_t n, typename Byte >
+class width_ratio< T[ n ], Byte >
+{
+public:
+    static std::size_t const
+                        value = n * width_ratio< T, Byte >::value ;
+} ;
+
 }
 //! \endcond
 
