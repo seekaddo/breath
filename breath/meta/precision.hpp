@@ -8,9 +8,6 @@
 //
 //!     \file
 //!     \brief Metafunction yielding the \e precision of a type.
-//!
-//!     The library provides specializations for all integer types.
-//!     The user can specialize it for UDTs. See also \c width< T >. // gps
 // -------------------------------------------------------------------------
 
 #ifndef BREATH_GUARD_crv8sfpsGwWru7Bdt9WKSehiAw6f4zgz
@@ -23,6 +20,19 @@
 namespace breath {
 namespace meta {
 
+//      precision:
+//      ==========
+//
+//!     Metafunction yielding the \e precision of \c T, i.e. the number
+//!     of bits it uses to represent values, excluding any sign and
+//!     padding bits.
+//!
+//!     See also: meta::width.
+//!
+//!     \par Type requirements:
+//!         \c T shall be an integral type or a cv-qualified version
+//!         thereof.
+// -------------------------------------------------------------------------
 template< typename T >
 class precision
     : public constant< T, std::numeric_limits< T >::digits >

@@ -25,13 +25,15 @@ namespace meta {
 //      width:
 //      ======
 //
-//!     A \c meta::constant whose \c value_type is \p T and whose value
-//!     is the \c width of \p T (the number of bits it uses to
-//!     represent values, including any sign but excluding any padding
-//!     bits).
+//!     Metafunction yielding the \e width of \c T, i.e. the number of
+//!     bits it uses to represent values, including any sign but
+//!     excluding any padding bits.
+//!
+//!     See also: meta::precision.
 //!
 //!     \par Type requirements
-//!         See \c meta::precision.
+//!         \c T shall be an integral type or a cv-qualified version
+//!         thereof.
 // -------------------------------------------------------------------------
 template< typename T >
 class width
