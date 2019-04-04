@@ -156,7 +156,7 @@ private:
 
 }
 
-#include "brt/merkle_damgard_hasher.tpp"
+#include "brt/merkle_damgard_machine.tpp"
 #endif
 
 // Local Variables:

@@ -321,7 +321,6 @@
     <None Include="..\..\breath\checksum\brt\crc32.tpp" />
     <None Include="..\..\breath\counting\brt\counter.tpp" />
     <None Include="..\..\breath\cryptography\brt\digest.tpp" />
-    <None Include="..\..\breath\cryptography\brt\merkle_damgard_hasher.tpp" />
     <None Include="..\..\breath\cryptography\private\sensitive_buffer.tpp" />
     <None Include="..\..\breath\encoding\brt\base64_to_binary.tpp" />
     <None Include="..\..\breath\encoding\brt\binary_to_base64.tpp" />
@@ -348,6 +347,7 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="..\..\breath\mathematics\brt\representation_in_base.tpp" />
+    <None Include="..\..\breath\cryptography\brt\merkle_damgard_machine.tpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\breath\algorithm\accumulate.hpp">
@@ -387,9 +387,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\cryptography\merkle_damgard_engine.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\breath\cryptography\merkle_damgard_hasher.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\cryptography\sha1_hasher.hpp">
@@ -699,6 +696,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\breath\mathematics\representation_in_base.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\breath\cryptography\merkle_damgard_machine.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

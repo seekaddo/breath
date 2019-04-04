@@ -14,7 +14,7 @@
 #define BREATH_GUARD_OKBGme15I2KXAgAlHJL4gxgCmNkNyA1w
 
 #include "breath/cryptography/merkle_damgard_engine.hpp"
-#include "breath/cryptography/merkle_damgard_hasher.hpp"
+#include "breath/cryptography/merkle_damgard_machine.hpp"
 
 namespace breath {
 

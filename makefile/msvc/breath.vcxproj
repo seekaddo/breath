@@ -526,7 +526,7 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Assembling %(FileName).asm</Message>
     </CustomBuild>
     <None Include="..\..\breath\cryptography\brt\digest.tpp" />
-    <None Include="..\..\breath\cryptography\brt\merkle_damgard_hasher.tpp" />
+    <None Include="..\..\breath\cryptography\brt\merkle_damgard_machine.tpp" />
     <None Include="..\..\breath\cryptography\private\sensitive_buffer.tpp" />
     <None Include="..\..\breath\cryptography\private\sha_common.tpp" />
     <None Include="..\..\breath\encoding\brt\base64_to_binary.tpp" />
@@ -566,7 +566,7 @@
     <ClInclude Include="..\..\breath\cryptography\hashing_count.hpp" />
     <ClInclude Include="..\..\breath\cryptography\md5_hasher.hpp" />
     <ClInclude Include="..\..\breath\cryptography\merkle_damgard_engine.hpp" />
-    <ClInclude Include="..\..\breath\cryptography\merkle_damgard_hasher.hpp" />
+    <ClInclude Include="..\..\breath\cryptography\merkle_damgard_machine.hpp" />
     <ClInclude Include="..\..\breath\cryptography\private\sensitive_buffer.hpp" />
     <ClInclude Include="..\..\breath\cryptography\sha1_hasher.hpp" />
     <ClInclude Include="..\..\breath\cryptography\sha224_hasher.hpp" />
