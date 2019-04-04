@@ -18,17 +18,12 @@
 namespace breath {
 namespace meta {
 
-//!     This template is a fundamental building block for
-//!     meta-programming. Among other things, it accomplishes three
-//!     goals:
-//!
-//!         - wrapping a constant into a type, as needed for compile
-//!           time polymorphism
-//!         - automatically generating a definition for the constant,
-//!           if needed (see core issue 454)
-//!         - when a definition is generated, making the constant a
-//!           singleton, mapping every pair (type, value) to unique
-//!           storage
+//      constant:
+//      =========
+//
+//!     This template is a fundamental building block for our
+//!     meta-programming facilities, which date from when C++ didn't
+//!     have \c constexpr. So, it wraps a constant into a type.
 //!
 //!     \par Type requirements
 //!         \a T must be a type suitable for declaring an integral
@@ -42,10 +37,6 @@ namespace meta {
 //!         of types, in order to eventually accommodate, for instance,
 //!         floating point types as well, if ever allowed by the
 //!         standard.
-//!
-//!     \par Credit
-//!         The basic idea of this class template was suggested by
-//!         Paul Mensonides as <code>map_integral</code>.
 // -------------------------------------------------------------------------
 template< typename T, T v >
 class constant
@@ -68,6 +59,14 @@ public:
                         value = v ;
 } ;
 
+//!     This automatically generates a definition for the constant (see
+//!     core issue 454).
+//!
+//!     \par Credit
+//!         I got the idea of automating the definition from Paul
+//!         Mensonides and his \c map_integral (again, see core issue
+//!         454).
+// ----------------------------------------------------------------------------
 template< typename T, T v >
 typename constant< T, v >::value_type const
 constant< T, v >::value ;
