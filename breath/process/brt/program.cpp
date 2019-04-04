@@ -136,11 +136,11 @@ program::declare_error( program::gravity g ) // gps nome OK?
 
         case fatal:
             terminate() ;
-            // break ;
+            // no break ;, to avoid compiler warnings
 
         case internal:
             std::abort() ;
-            // break ;
+            // no break ;, to avoid compiler warnings
     }
 }
 
