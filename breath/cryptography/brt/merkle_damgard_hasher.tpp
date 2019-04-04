@@ -64,8 +64,9 @@ merkle_damgard_machine< Engine>::push_back( byte_type b )
     m_input_buffer[ index ] = b ;
     increase_count( byte_width ) ;
 
-    if ( index == ( block_length - 1 ) )
+    if ( index == ( block_length - 1 ) ) {
         this->compress() ;
+    }
 }
 
 template< typename Engine >
@@ -124,8 +125,9 @@ merkle_damgard_machine< Engine >::do_append( InputIter begin,
                                              InputIter end,
                                              std::input_iterator_tag const * )
 {
-    for ( ; begin != end ; ++ begin )
+    for ( ; begin != end ; ++ begin ) {
         push_back( *begin ) ; // gps value type=
+    }
 
     return *this ;
 }
