@@ -13,7 +13,6 @@
 #ifndef BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 #define BREATH_GUARD_KvNAPbTCTNbIqTMjUCtxwBFR3ipIdp2y
 
-#include "breath/meta/constant.hpp"
 #include "breath/meta/has_sign.hpp"
 #include "breath/meta/precision.hpp"
 #include "breath/meta/select.hpp"
