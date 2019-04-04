@@ -27,6 +27,8 @@ namespace meta {
 //!     of bits it uses to represent values, excluding any sign and
 //!     padding bits.
 //!
+//!     This is a meta::constant, with \c value_type \c int.
+//!
 //!     See also: meta::width.
 //!
 //!     \par Type requirements:
@@ -35,7 +37,7 @@ namespace meta {
 // -------------------------------------------------------------------------
 template< typename T >
 class precision
-    : public constant< T, std::numeric_limits< T >::digits >
+    : public constant< int, std::numeric_limits< T >::digits >
 {
 } ;
 

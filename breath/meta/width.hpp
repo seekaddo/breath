@@ -28,6 +28,8 @@ namespace meta {
 //!     bits it uses to represent values, including any sign but
 //!     excluding any padding bits.
 //!
+//!     This is a meta::constant, with \c value_type \c int.
+//!
 //!     See also: meta::precision.
 //!
 //!     \par Type requirements
