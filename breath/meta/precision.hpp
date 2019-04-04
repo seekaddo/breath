@@ -9,8 +9,7 @@
 //!     \file
 //!     \brief Metafunction yielding the \e precision of a type.
 //!
-//!     The library provides specializations for all integer types and
-//!     \e built-in arrays thereof (including multidimensional arrays).
+//!     The library provides specializations for all integer types.
 //!     The user can specialize it for UDTs. See also \c width< T >. // gps
 // -------------------------------------------------------------------------
 
@@ -19,7 +18,6 @@
 
 #include "breath/meta/constant.hpp"
 
-#include <cstddef>
 #include <limits>
 
 namespace breath {
@@ -28,12 +26,6 @@ namespace meta {
 template< typename T >
 class precision
     : public constant< T, std::numeric_limits< T >::digits >
-{
-} ;
-
-template< typename T, std::size_t n >
-class precision< T[ n ] >
-    : public constant< std::size_t, n * precision< T >::value >
 {
 } ;
 

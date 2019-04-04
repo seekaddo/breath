@@ -19,8 +19,6 @@
 #include "breath/meta/select.hpp"
 #include "breath/meta/successor.hpp"
 
-#include <cstddef>
-
 namespace breath {
 namespace meta {
 
@@ -41,12 +39,6 @@ class width
                      successor< precision < T > >,
                      precision < T >
                    >::type
-{
-} ;
-
-template< typename T, std::size_t n >
-class width< T[ n ] >
-    : public constant< std::size_t, n * width< T >::value >
 {
 } ;
 
