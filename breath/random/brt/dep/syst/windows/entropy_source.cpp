@@ -23,7 +23,7 @@ namespace breath {
 
 class entropy_source::impl
 {
-    BREATH_DECLARE_NON_COPYABLE( impl ) ;
+    BREATH_DECLARE_NON_COPYABLE( impl )
 private:
     HCRYPTPROV          m_provider_handle ;
     bool                m_handle_is_valid ;
