@@ -5,5 +5,5 @@ To build the documentation with Doxygen:
     downloaded the zip/tar.gz file)
   - cd to $BREATH_ROOT/doc/source
   - issue the command <doxygen directory>/doxygen doxygen.cfg
-  
+
 The documentation will appear in $BREATH_ROOT/doc.
